@@ -1,0 +1,2074 @@
+nodes:
+- id: CMP_DISCOVERED_FILES
+  type: COMPONENT
+  title: Discovered files
+  summary: 'Files no authored component claims. Inventory, not a design claim: it
+    carries no contract and so cannot be verified.'
+  source: scanned
+  confidence: low
+- id: F_ESLINT_CONFIG_JS
+  type: FILE
+  title: eslint.config.js
+  artifacts:
+  - eslint.config.js
+  source: scanned
+  confidence: medium
+- id: F_P_PUBLIC_TS
+  type: FILE
+  title: p/public.ts
+  artifacts:
+  - p/public.ts
+  symbols:
+  - p/public.ts::load
+  - p/public.ts::render
+  source: scanned
+  confidence: medium
+- id: F_PLAYWRIGHT_CONFIG_TS
+  type: FILE
+  title: playwright.config.ts
+  artifacts:
+  - playwright.config.ts
+  source: scanned
+  confidence: medium
+- id: F_PLAYWRIGHT_LIVE_CONFIG_TS
+  type: FILE
+  title: playwright.live.config.ts
+  artifacts:
+  - playwright.live.config.ts
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_BROWSER_PREVIEW_MJS
+  type: FILE
+  title: scripts/browser-preview.mjs
+  artifacts:
+  - scripts/browser-preview.mjs
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_CHECK_LIVE_UI_MJS
+  type: FILE
+  title: scripts/check-live-ui.mjs
+  artifacts:
+  - scripts/check-live-ui.mjs
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_CHECK_PDF_MJS
+  type: FILE
+  title: scripts/check-pdf.mjs
+  artifacts:
+  - scripts/check-pdf.mjs
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_CREATE_HISTORY_SEED_MJS
+  type: FILE
+  title: scripts/create-history-seed.mjs
+  artifacts:
+  - scripts/create-history-seed.mjs
+  symbols:
+  - scripts/create-history-seed.mjs::uuid
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_CREATE_SEED_MJS
+  type: FILE
+  title: scripts/create-seed.mjs
+  artifacts:
+  - scripts/create-seed.mjs
+  symbols:
+  - scripts/create-seed.mjs::uuid
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_LIVE_API_CHECK_MJS
+  type: FILE
+  title: scripts/live-api-check.mjs
+  artifacts:
+  - scripts/live-api-check.mjs
+  symbols:
+  - scripts/live-api-check.mjs::rpc
+  - scripts/live-api-check.mjs::send
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_SETUP_LOCAL_MJS
+  type: FILE
+  title: scripts/setup-local.mjs
+  artifacts:
+  - scripts/setup-local.mjs
+  source: scanned
+  confidence: medium
+- id: F_SRC_APP_TSX
+  type: FILE
+  title: src/App.tsx
+  artifacts:
+  - src/App.tsx
+  symbols:
+  - src/App.tsx::App
+  - src/App.tsx::Empty
+  - src/App.tsx::Home
+  - src/App.tsx::Label
+  - src/App.tsx::LotTable
+  - src/App.tsx::RecordList
+  - src/App.tsx::Reports
+  - src/App.tsx::SignIn
+  - src/App.tsx::Status
+  - src/App.tsx::exportCSV
+  - src/App.tsx::localDate
+  - src/App.tsx::open
+  source: scanned
+  confidence: medium
+- id: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: FILE
+  title: src/components/ui/button.tsx
+  artifacts:
+  - src/components/ui/button.tsx
+  symbols:
+  - src/components/ui/button.tsx::Button
+  source: scanned
+  confidence: medium
+- id: F_SRC_COMPONENTS_UI_SHEET_TSX
+  type: FILE
+  title: src/components/ui/sheet.tsx
+  artifacts:
+  - src/components/ui/sheet.tsx
+  symbols:
+  - src/components/ui/sheet.tsx::Sheet
+  source: scanned
+  confidence: medium
+- id: F_SRC_DASHBOARD_TSX
+  type: FILE
+  title: src/dashboard.tsx
+  artifacts:
+  - src/dashboard.tsx
+  symbols:
+  - src/dashboard.tsx::Dashboard
+  source: scanned
+  confidence: medium
+- id: F_SRC_EVIDENCE_TSX
+  type: FILE
+  title: src/evidence.tsx
+  artifacts:
+  - src/evidence.tsx
+  symbols:
+  - src/evidence.tsx::EvidenceList
+  - src/evidence.tsx::render
+  source: scanned
+  confidence: medium
+- id: F_SRC_FEATURES_TSX
+  type: FILE
+  title: src/features.tsx
+  artifacts:
+  - src/features.tsx
+  symbols:
+  - src/features.tsx::AdminPanel
+  - src/features.tsx::Field
+  - src/features.tsx::Flow
+  - src/features.tsx::LotDetail
+  - src/features.tsx::lotSelect
+  - src/features.tsx::startVoice
+  - src/features.tsx::submit
+  source: scanned
+  confidence: medium
+- id: F_SRC_I18N_INDEX_TS
+  type: FILE
+  title: src/i18n/index.ts
+  artifacts:
+  - src/i18n/index.ts
+  symbols:
+  - src/i18n/index.ts::direction
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_AUTH_TS
+  type: FILE
+  title: src/lib/auth.ts
+  artifacts:
+  - src/lib/auth.ts
+  symbols:
+  - src/lib/auth.ts::LocalSession
+  - src/lib/auth.ts::login
+  - src/lib/auth.ts::logout
+  - src/lib/auth.ts::switchUser
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_DATA_TS
+  type: FILE
+  title: src/lib/data.ts
+  artifacts:
+  - src/lib/data.ts
+  symbols:
+  - src/lib/data.ts::Row
+  - src/lib/data.ts::Snapshot
+  - src/lib/data.ts::cachedIdentity
+  - src/lib/data.ts::getDevice
+  - src/lib/data.ts::overlay
+  - src/lib/data.ts::saveAction
+  - src/lib/data.ts::signedAction
+  - src/lib/data.ts::snapshot
+  - src/lib/data.ts::synchronize
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_DEMO_TS
+  type: FILE
+  title: src/lib/demo.ts
+  artifacts:
+  - src/lib/demo.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_DOMAIN_TEST_TS
+  type: FILE
+  title: src/lib/domain.test.ts
+  artifacts:
+  - src/lib/domain.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_DOMAIN_TS
+  type: FILE
+  title: src/lib/domain.ts
+  artifacts:
+  - src/lib/domain.ts
+  symbols:
+  - src/lib/domain.ts::ActionClass
+  - src/lib/domain.ts::Checkpoint
+  - src/lib/domain.ts::Config
+  - src/lib/domain.ts::Envelope
+  - src/lib/domain.ts::Identity
+  - src/lib/domain.ts::Lot
+  - src/lib/domain.ts::Role
+  - src/lib/domain.ts::Supplier
+  - src/lib/domain.ts::SyncStatus
+  - src/lib/domain.ts::Task
+  - src/lib/domain.ts::actionClass
+  - src/lib/domain.ts::allocationCheck
+  - src/lib/domain.ts::trace
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_MEDIA_TS
+  type: FILE
+  title: src/lib/media.ts
+  artifacts:
+  - src/lib/media.ts
+  symbols:
+  - src/lib/media.ts::compressPhoto
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_MFA_TS
+  type: FILE
+  title: src/lib/mfa.ts
+  artifacts:
+  - src/lib/mfa.ts
+  symbols:
+  - src/lib/mfa.ts::prepareMfa
+  - src/lib/mfa.ts::verifyMfa
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_PIN_TEST_TS
+  type: FILE
+  title: src/lib/pin.test.ts
+  artifacts:
+  - src/lib/pin.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_PIN_TS
+  type: FILE
+  title: src/lib/pin.ts
+  artifacts:
+  - src/lib/pin.ts
+  symbols:
+  - src/lib/pin.ts::createPinVerifier
+  - src/lib/pin.ts::pinHash
+  - src/lib/pin.ts::verifyPin
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_REPORTS_TS
+  type: FILE
+  title: src/lib/reports.ts
+  artifacts:
+  - src/lib/reports.ts
+  symbols:
+  - src/lib/reports.ts::downloadReport
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SESSION_POLICY_TEST_TS
+  type: FILE
+  title: src/lib/session-policy.test.ts
+  artifacts:
+  - src/lib/session-policy.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SESSION_POLICY_TS
+  type: FILE
+  title: src/lib/session-policy.ts
+  artifacts:
+  - src/lib/session-policy.ts
+  symbols:
+  - src/lib/session-policy.ts::SessionLimits
+  - src/lib/session-policy.ts::cachedSessionLimits
+  - src/lib/session-policy.ts::inactive
+  - src/lib/session-policy.ts::markActive
+  - src/lib/session-policy.ts::offlineExpired
+  - src/lib/session-policy.ts::sessionLimits
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SUPABASE_TS
+  type: FILE
+  title: src/lib/supabase.ts
+  artifacts:
+  - src/lib/supabase.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_MAIN_TSX
+  type: FILE
+  title: src/main.tsx
+  artifacts:
+  - src/main.tsx
+  source: scanned
+  confidence: medium
+- id: F_SRC_MANAGEMENT_TSX
+  type: FILE
+  title: src/management.tsx
+  artifacts:
+  - src/management.tsx
+  symbols:
+  - src/management.tsx::RegistryFlow
+  - src/management.tsx::options
+  source: scanned
+  confidence: medium
+- id: F_SRC_OFFLINE_DB_TEST_TS
+  type: FILE
+  title: src/offline/db.test.ts
+  artifacts:
+  - src/offline/db.test.ts
+  symbols:
+  - src/offline/db.test.ts::envelope
+  source: scanned
+  confidence: medium
+- id: F_SRC_OFFLINE_DB_TS
+  type: FILE
+  title: src/offline/db.ts
+  artifacts:
+  - src/offline/db.ts
+  symbols:
+  - src/offline/db.ts::CachedRecord
+  - src/offline/db.ts::MediaEntry
+  - src/offline/db.ts::OutboxEntry
+  - src/offline/db.ts::WiseDB
+  - src/offline/db.ts::enqueue
+  - src/offline/db.ts::revokeLocalDevice
+  - src/offline/db.ts::syncOutbox
+  source: scanned
+  confidence: medium
+- id: F_SRC_SCANNER_TSX
+  type: FILE
+  title: src/scanner.tsx
+  artifacts:
+  - src/scanner.tsx
+  symbols:
+  - src/scanner.tsx::Scanner
+  - src/scanner.tsx::decoded
+  source: scanned
+  confidence: medium
+- id: F_SRC_TEST_SETUP_TS
+  type: FILE
+  title: src/test-setup.ts
+  artifacts:
+  - src/test-setup.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_TRAINING_EDITOR_TSX
+  type: FILE
+  title: src/training-editor.tsx
+  artifacts:
+  - src/training-editor.tsx
+  symbols:
+  - src/training-editor.tsx::TrainingEditor
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: FILE
+  title: supabase/functions/_shared/http.ts
+  artifacts:
+  - supabase/functions/_shared/http.ts
+  symbols:
+  - supabase/functions/_shared/http.ts::authenticate
+  - supabase/functions/_shared/http.ts::clients
+  - supabase/functions/_shared/http.ts::json
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS
+  type: FILE
+  title: supabase/functions/notifications/index.ts
+  artifacts:
+  - supabase/functions/notifications/index.ts
+  symbols:
+  - supabase/functions/notifications/index.ts::LogProvider
+  - supabase/functions/notifications/index.ts::NotificationProvider
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_OCR_INDEX_TS
+  type: FILE
+  title: supabase/functions/ocr/index.ts
+  artifacts:
+  - supabase/functions/ocr/index.ts
+  symbols:
+  - supabase/functions/ocr/index.ts::ClaudeProvider
+  - supabase/functions/ocr/index.ts::OcrProvider
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS
+  type: FILE
+  title: supabase/functions/report/index.ts
+  artifacts:
+  - supabase/functions/report/index.ts
+  symbols:
+  - supabase/functions/report/index.ts::text
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS
+  type: FILE
+  title: supabase/functions/scheduled-tasks/index.ts
+  artifacts:
+  - supabase/functions/scheduled-tasks/index.ts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS
+  type: FILE
+  title: supabase/functions/sync/index.ts
+  artifacts:
+  - supabase/functions/sync/index.ts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS
+  type: FILE
+  title: supabase/functions/user-admin/index.ts
+  artifacts:
+  - supabase/functions/user-admin/index.ts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL
+  type: FILE
+  title: supabase/migrations/202610060001_foundation.sql
+  artifacts:
+  - supabase/migrations/202610060001_foundation.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610060002_operations.sql
+  artifacts:
+  - supabase/migrations/202610060002_operations.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL
+  type: FILE
+  title: supabase/migrations/202610060003_administration.sql
+  artifacts:
+  - supabase/migrations/202610060003_administration.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL
+  type: FILE
+  title: supabase/migrations/202610060004_kpis.sql
+  artifacts:
+  - supabase/migrations/202610060004_kpis.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL
+  type: FILE
+  title: supabase/migrations/202610060005_provisioning.sql
+  artifacts:
+  - supabase/migrations/202610060005_provisioning.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL
+  type: FILE
+  title: supabase/migrations/202610060006_history.sql
+  artifacts:
+  - supabase/migrations/202610060006_history.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL
+  type: FILE
+  title: supabase/migrations/202610060007_feedback.sql
+  artifacts:
+  - supabase/migrations/202610060007_feedback.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL
+  type: FILE
+  title: supabase/migrations/202610060008_management.sql
+  artifacts:
+  - supabase/migrations/202610060008_management.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL
+  type: FILE
+  title: supabase/migrations/202610060009_validation.sql
+  artifacts:
+  - supabase/migrations/202610060009_validation.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL
+  type: FILE
+  title: supabase/migrations/202610060010_privacy.sql
+  artifacts:
+  - supabase/migrations/202610060010_privacy.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL
+  type: FILE
+  title: supabase/migrations/202610060011_lifecycle.sql
+  artifacts:
+  - supabase/migrations/202610060011_lifecycle.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL
+  type: FILE
+  title: supabase/migrations/202610060012_whey_rules.sql
+  artifacts:
+  - supabase/migrations/202610060012_whey_rules.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL
+  type: FILE
+  title: supabase/migrations/202610060013_sync_qualification.sql
+  artifacts:
+  - supabase/migrations/202610060013_sync_qualification.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL
+  type: FILE
+  title: supabase/migrations/202610060014_execute_privileges.sql
+  artifacts:
+  - supabase/migrations/202610060014_execute_privileges.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL
+  type: FILE
+  title: supabase/migrations/202610060015_explicit_rpc_grants.sql
+  artifacts:
+  - supabase/migrations/202610060015_explicit_rpc_grants.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL
+  type: FILE
+  title: supabase/migrations/202610060016_investigation.sql
+  artifacts:
+  - supabase/migrations/202610060016_investigation.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL
+  type: FILE
+  title: supabase/migrations/202610060017_public_label_source.sql
+  artifacts:
+  - supabase/migrations/202610060017_public_label_source.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL
+  type: FILE
+  title: supabase/migrations/202610060018_task_coverage.sql
+  artifacts:
+  - supabase/migrations/202610060018_task_coverage.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL
+  type: FILE
+  title: supabase/migrations/202610060019_stock_training_rules.sql
+  artifacts:
+  - supabase/migrations/202610060019_stock_training_rules.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL
+  type: FILE
+  title: supabase/migrations/202610060020_balance_query.sql
+  artifacts:
+  - supabase/migrations/202610060020_balance_query.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610060021_viewer_sessions.sql
+  artifacts:
+  - supabase/migrations/202610060021_viewer_sessions.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL
+  type: FILE
+  title: supabase/migrations/202610060022_viewer_pin.sql
+  artifacts:
+  - supabase/migrations/202610060022_viewer_pin.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610060023_training_versions.sql
+  artifacts:
+  - supabase/migrations/202610060023_training_versions.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL
+  type: FILE
+  title: supabase/migrations/202610060024_training_sync.sql
+  artifacts:
+  - supabase/migrations/202610060024_training_sync.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL
+  type: FILE
+  title: supabase/migrations/202610060025_related_scope.sql
+  artifacts:
+  - supabase/migrations/202610060025_related_scope.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL
+  type: FILE
+  title: supabase/migrations/202610060026_stage_history.sql
+  artifacts:
+  - supabase/migrations/202610060026_stage_history.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL
+  type: FILE
+  title: supabase/migrations/202610060027_stage_sync.sql
+  artifacts:
+  - supabase/migrations/202610060027_stage_sync.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL
+  type: FILE
+  title: supabase/migrations/202610060028_attachment_receipts.sql
+  artifacts:
+  - supabase/migrations/202610060028_attachment_receipts.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL
+  type: FILE
+  title: supabase/migrations/202610060029_ledger_controls.sql
+  artifacts:
+  - supabase/migrations/202610060029_ledger_controls.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL
+  type: FILE
+  title: supabase/migrations/202610060030_checkpoint_evidence.sql
+  artifacts:
+  - supabase/migrations/202610060030_checkpoint_evidence.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_SEED_SQL
+  type: FILE
+  title: supabase/seed.sql
+  artifacts:
+  - supabase/seed.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_RULES_TEST_SQL
+  type: TEST
+  title: supabase/tests/rules.test.sql
+  artifacts:
+  - supabase/tests/rules.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_SECURITY_TEST_SQL
+  type: TEST
+  title: supabase/tests/security.test.sql
+  artifacts:
+  - supabase/tests/security.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_FLOWS_SPEC_TS
+  type: TEST
+  title: tests/flows.spec.ts
+  artifacts:
+  - tests/flows.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_ACCEPTANCE_SPEC_TS
+  type: TEST
+  title: tests/live/acceptance.spec.ts
+  artifacts:
+  - tests/live/acceptance.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_FIXTURES_TS
+  type: TEST
+  title: tests/live/fixtures.ts
+  artifacts:
+  - tests/live/fixtures.ts
+  symbols:
+  - tests/live/fixtures.ts::actor
+  - tests/live/fixtures.ts::client
+  - tests/live/fixtures.ts::login
+  - tests/live/fixtures.ts::packedBatch
+  - tests/live/fixtures.ts::readyBatch
+  - tests/live/fixtures.ts::release
+  - tests/live/fixtures.ts::rpc
+  - tests/live/fixtures.ts::send
+  source: scanned
+  confidence: medium
+- id: F_VITE_CONFIG_TS
+  type: FILE
+  title: vite.config.ts
+  artifacts:
+  - vite.config.ts
+  source: scanned
+  confidence: medium
+- id: F_VITEST_CONFIG_TS
+  type: FILE
+  title: vitest.config.ts
+  artifacts:
+  - vitest.config.ts
+  source: scanned
+  confidence: medium
+edges:
+- from: SYS_FRONTEND
+  to: CMP_DISCOVERED_FILES
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_ESLINT_CONFIG_JS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_P_PUBLIC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_PLAYWRIGHT_CONFIG_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_PLAYWRIGHT_LIVE_CONFIG_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_BROWSER_PREVIEW_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_CHECK_LIVE_UI_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_CHECK_PDF_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_CREATE_HISTORY_SEED_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_CREATE_SEED_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_LIVE_API_CHECK_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_SETUP_LOCAL_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_APP_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC_COMPONENTS
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC_COMPONENTS
+  to: F_SRC_COMPONENTS_UI_SHEET_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_DASHBOARD_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_EVIDENCE_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_FEATURES_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_I18N_INDEX_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_AUTH_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_DATA_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_DEMO_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_DOMAIN_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_MEDIA_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_MFA_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_PIN_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_PIN_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_REPORTS_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SESSION_POLICY_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SESSION_POLICY_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_MAIN_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_MANAGEMENT_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_OFFLINE_DB_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_SCANNER_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_TEST_SETUP_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_TRAINING_EDITOR_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_OCR_INDEX_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_SEED_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_RULES_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_SECURITY_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_FLOWS_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_ACCEPTANCE_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_VITE_CONFIG_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_VITEST_CONFIG_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: F_SCRIPTS_CREATE_SEED_MJS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: scripts/create-seed.mjs
+      target: src/lib/demo.ts
+      import: ../src/lib/demo.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_COMPONENTS_UI_SHEET_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/components/ui/sheet.tsx
+      import: ./components/ui/sheet
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_AUTH_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/auth.ts
+      import: ./lib/auth
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/offline/db.ts
+      import: ./offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_MFA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/mfa.ts
+      import: ./lib/mfa
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_SESSION_POLICY_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/session-policy.ts
+      import: ./lib/session-policy
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_MANAGEMENT_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/management.tsx
+      import: ./management
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_SCANNER_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/scanner.tsx
+      import: ./scanner
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_REPORTS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/reports.ts
+      import: ./lib/reports
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_FEATURES_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/features.tsx
+      import: ./features
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DASHBOARD_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/dashboard.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DASHBOARD_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/dashboard.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DASHBOARD_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/dashboard.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DASHBOARD_TSX
+  to: F_SRC_FEATURES_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/dashboard.tsx
+      target: src/features.tsx
+      import: ./features
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_EVIDENCE_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/evidence.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_EVIDENCE_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/evidence.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_EVIDENCE_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/evidence.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_EVIDENCE_TSX
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/evidence.tsx
+      target: src/offline/db.ts
+      import: ./offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_LIB_MEDIA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/lib/media.ts
+      import: ./lib/media
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_TRAINING_EDITOR_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/training-editor.tsx
+      import: ./training-editor
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_EVIDENCE_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/evidence.tsx
+      import: ./evidence
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_APP_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/App.tsx
+      import: ./App
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_AUTH_TS
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/auth.ts
+      target: src/lib/supabase.ts
+      import: ./supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_AUTH_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/auth.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_AUTH_TS
+  to: F_SRC_LIB_PIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/auth.ts
+      target: src/lib/pin.ts
+      import: ./pin
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_AUTH_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/auth.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_AUTH_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/auth.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_AUTH_TS
+  to: F_SRC_LIB_MFA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/auth.ts
+      target: src/lib/mfa.ts
+      import: ./mfa
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_AUTH_TS
+  to: F_SRC_LIB_SESSION_POLICY_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/auth.ts
+      target: src/lib/session-policy.ts
+      import: ./session-policy
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/supabase.ts
+      import: ./supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_SESSION_POLICY_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/session-policy.ts
+      import: ./session-policy
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DEMO_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/demo.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DOMAIN_TEST_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/domain.test.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DOMAIN_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/domain.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_MFA_TS
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/mfa.ts
+      target: src/lib/supabase.ts
+      import: ./supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_PIN_TEST_TS
+  to: F_SRC_LIB_PIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/pin.test.ts
+      target: src/lib/pin.ts
+      import: ./pin
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_REPORTS_TS
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/reports.ts
+      target: src/lib/supabase.ts
+      import: ./supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SESSION_POLICY_TEST_TS
+  to: F_SRC_LIB_SESSION_POLICY_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/session-policy.test.ts
+      target: src/lib/session-policy.ts
+      import: ./session-policy
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SESSION_POLICY_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/session-policy.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SESSION_POLICY_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/session-policy.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MAIN_TSX
+  to: F_SRC_APP_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/main.tsx
+      target: src/App.tsx
+      import: ./App
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MAIN_TSX
+  to: F_SRC_I18N_INDEX_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/main.tsx
+      target: src/i18n/index.ts
+      import: ./i18n
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MANAGEMENT_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/management.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MANAGEMENT_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/management.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MANAGEMENT_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/management.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MANAGEMENT_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/management.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_OFFLINE_DB_TEST_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/offline/db.test.ts
+      target: src/offline/db.ts
+      import: ./db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_OFFLINE_DB_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/offline/db.test.ts
+      target: src/lib/demo.ts
+      import: ../lib/demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_OFFLINE_DB_TEST_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/offline/db.test.ts
+      target: src/lib/domain.ts
+      import: ../lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_OFFLINE_DB_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/offline/db.ts
+      target: src/lib/domain.ts
+      import: ../lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_SCANNER_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/scanner.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_EDITOR_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-editor.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_EDITOR_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-editor.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_EDITOR_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-editor.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/notifications/index.ts
+      target: supabase/functions/_shared/http.ts
+      import: ../_shared/http.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SUPABASE_FUNCTIONS_OCR_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/ocr/index.ts
+      target: supabase/functions/_shared/http.ts
+      import: ../_shared/http.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/report/index.ts
+      target: supabase/functions/_shared/http.ts
+      import: ../_shared/http.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/scheduled-tasks/index.ts
+      target: supabase/functions/_shared/http.ts
+      import: ../_shared/http.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/sync/index.ts
+      target: supabase/functions/_shared/http.ts
+      import: ../_shared/http.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/user-admin/index.ts
+      target: supabase/functions/_shared/http.ts
+      import: ../_shared/http.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_ACCEPTANCE_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/acceptance.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium

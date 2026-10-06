@@ -1,0 +1,14 @@
+# ProjectGraph requirements. Migration cannot infer intent - fill these in.
+nodes:
+- id: REQ_FULL_MVP
+  type: REQUIREMENT
+  title: Every PRD M/S requirement and Appendix A story
+  summary: Full traceability, offline sync, role matrix, audit, public projection and impact. docs/PROGRESS.md holds the per-requirement evidence checklist.
+  artifacts:
+  - docs/PROGRESS.md
+  source: authored
+  confidence: high
+edges:
+- from: WISE_TRACE
+  to: REQ_FULL_MVP
+  type: CONTAINS

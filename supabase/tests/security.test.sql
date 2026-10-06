@@ -1,0 +1,47 @@
+begin;
+create extension if not exists pgtap with schema extensions;
+set local search_path=public,extensions;
+select no_plan();
+select ok((select bool_and(c.relrowsecurity) from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname='public' and c.relkind='r'),'Every public table enables RLS');
+select ok(not has_table_privilege('anon','public.lot','select'),'Anonymous user cannot read internal lots');
+select ok(not has_table_privilege('authenticated','public.audit_event','insert'),'Clients cannot forge audit rows');
+select ok(not has_table_privilege('authenticated','public.audit_event','update'),'Even app admins cannot edit audit rows');
+select ok(not has_table_privilege('authenticated','public.inventory_movement','insert'),'Client cannot bypass ledger RPC');
+select ok(not has_function_privilege('anon','public.apply_sync(jsonb)','execute'),'Anonymous sync forbidden');
+select ok(not has_function_privilege('authenticated','public.provision_membership(uuid,uuid,text,text,text[],jsonb,text,uuid)','execute'),'User provisioning requires service role');
+select throws_ok($$update public.audit_event set reason='changed' where id=(select min(id) from public.audit_event)$$,'P0001','Append-only record: use an amendment','Audit update fails even as owner');
+select throws_ok($$delete from public.audit_event where id=(select min(id) from public.audit_event)$$,'P0001','Append-only record: use an amendment','Audit delete fails even as owner');
+select throws_ok($$update public.lot set facts='{}' where id='60000000-0000-4000-8000-000000000003'$$,'P0001','Locked lot: amendment required','Released rows are locked');
+
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::integer from public.cooperative),1,'Producer sees own cooperative only');
+select is((select count(*)::integer from public.membership where cooperative_id='10000000-0000-4000-8000-000000000002'),0,'Other cooperative identities hidden');
+select is((select count(*)::integer from public.lot where cooperative_id='10000000-0000-4000-8000-000000000002'),0,'Other cooperative lots hidden');
+select throws_ok($$select public.transition_lot('60000000-0000-4000-8000-000000000009','released','reviewed',gen_random_uuid())$$,'P0001','Release permission required','Producer cannot release');
+select is(public.pin_signoff('0000','30000000-0000-4000-8000-000000000001','decision','60000000-0000-4000-8000-000000000001'),null::uuid,'Wrong PIN cannot sign');
+select isnt(public.pin_signoff('2468','30000000-0000-4000-8000-000000000001','decision','60000000-0000-4000-8000-000000000001'),null::uuid,'Valid PIN produces sign-off');
+select is(public.lot_available('60000000-0000-4000-8000-000000000001'),35::numeric,'Available whey derives from ledger and consumption');
+select is((select count(*)::integer from public.genealogy('60000000-0000-4000-8000-000000000001','forward')),2,'Forward trace traverses consumption');
+select is(public.apply_sync('{"id":"90000000-0000-4000-8000-000000000001","cooperative_id":"10000000-0000-4000-8000-000000000001","author_id":"20000000-0000-4000-8000-000000000001","device_id":"30000000-0000-4000-8000-000000000001","config_version_id":"40000000-0000-4000-8000-000000000001","action":"allocation","observed_at":"2026-10-06T00:00:00Z","payload":{"input_lot_id":"60000000-0000-4000-8000-000000000001","output_lot_id":"60000000-0000-4000-8000-000000000008","quantity":40,"unit":"kg","reason":"offline overstock"}}')->>'status','conflict','Over-allocation becomes a retained conflict');
+select is((select count(*)::integer from public.sync_receipt where id='90000000-0000-4000-8000-000000000001'),1,'Original failed payload retained');
+select is((select count(*)::integer from public.task where source_key='conflict:90000000-0000-4000-8000-000000000001'),1,'Conflict creates supervisor task');
+select is(public.lot_available('60000000-0000-4000-8000-000000000001'),35::numeric,'Conflict cannot consume stock');
+select throws_ok($$select public.draft_configuration('sop','{}',now())$$,'P0001','Admin AAL2 required','Producer cannot change configuration');
+
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000002","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select public.transition_lot('60000000-0000-4000-8000-000000000010','released','reviewed',public.pin_signoff('2468','30000000-0000-4000-8000-000000000001','decision','60000000-0000-4000-8000-000000000010'))$$,'P0001','Open critical deviation blocks release','Critical deviation always blocks release');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::integer from public.lot),0,'Admin without MFA cannot read operational data');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal2"}',true);
+select ok((select count(*)>0 from public.lot),'Admin with AAL2 can inspect operations');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000007","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::integer from public.lot),0,'Donor cannot read internal rows');
+select is((select count(*)::integer from public.audit_event),0,'Donor cannot read audit history');
+
+set local role anon;
+select is(public.public_lot_view('unknown')->>'status','unavailable','Unknown QR is neutral');
+select is(public.public_lot_view('demo-released-token')->>'status','available','Released QR available');
+select ok(not exists(select 1 from jsonb_object_keys(public.public_lot_view('demo-released-token')) key where key not in ('product','cooperative','lot','production_date','best_before','package_size_kg','ingredients','allergens','storage_advice','status','notice')),'Public projection has exact allow-list; no measurements, producers, prices, suppliers or audit');
+select * from finish();
+rollback;

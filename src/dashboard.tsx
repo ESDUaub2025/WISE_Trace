@@ -1,0 +1,16 @@
+import { useEffect,useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Leaf } from 'lucide-react';
+import { ResponsiveContainer,AreaChart,Area,XAxis,YAxis,Tooltip } from 'recharts';
+import { demo,supabase } from './lib/supabase';
+import type { Snapshot,Row } from './lib/data';
+import type { Identity } from './lib/domain';
+import { Field } from './features';
+export default function Dashboard({identity}:{data:Snapshot;identity:Identity}){
+ const {t}=useTranslation();const [start,setStart]=useState('2026-01-01'),[end,setEnd]=useState(new Date().toISOString().slice(0,10)),[metrics,setMetrics]=useState<Row[]>([]),[definition,setDefinition]=useState<Row|null>(null);
+ useEffect(()=>{if(!demo&&supabase)void supabase.rpc('impact_metrics',{from_date:start,to_date:end}).then(reply=>{if(!reply.error)setMetrics(reply.data??[]);});},[start,end]);
+ const demoMetrics=[{id:'KPI-01',label:'wheyReceived',value:2480,unit:'kg',definition:'Mass of whey recorded at receipt'},{id:'KPI-03',label:'wheyValorized',value:1860,unit:'kg',definition:'Accepted whey consumed by batches that reached Released'},{id:'KPI-05',label:'kishkPackaged',value:642,unit:'kg',definition:'Net mass in packaging lots'},{id:'KPI-10',label:'recordedSales',value:3480,unit:'USD',definition:'Value of sale transactions'},{id:'KPI-11',label:'unitsSold',value:928,unit:'',definition:'Packages in sale transactions'},{id:'KPI-04',label:'utilization',value:75,unit:'%',definition:'KPI-03 ÷ KPI-02'}];
+ const shown: Row[]=demo?demoMetrics:metrics;const donor=identity.roles.includes('donor');
+ return <><div className="date-filter"><Field name="start" label={t('startDate')}><input type="date" value={start} onChange={e=>setStart(e.target.value)}/></Field><Field name="end" label={t('endDate')}><input type="date" value={end} onChange={e=>setEnd(e.target.value)}/></Field></div><div className="metric-grid">{shown.map(metric=><button className="card metric-card" key={String(metric.id)} onClick={()=>setDefinition(metric)}><p className="eyebrow">{String(metric.id)}</p><h3>{t(String(metric.label))}</h3><strong>{metric.suppressed?t('suppressed'):Number(metric.value??0).toLocaleString('en-US')}<small>{String(metric.unit??'')}</small></strong><span>{t('kpiDefinition')}</span></button>)}</div>{definition&&<div className="callout"><Leaf/><div><strong>{String(definition.id)} · {t(String(definition.label))}</strong><p>{String(definition.definition)}</p></div><button className="icon-button" onClick={()=>setDefinition(null)} aria-label={t('close')}>×</button></div>}{demo&&!donor&&<article className="card chart-card"><h2>{t('wheyValorized')}</h2><ResponsiveContainer width="100%" height={240}><AreaChart data={[{month:'May',kg:180},{month:'Jun',kg:265},{month:'Jul',kg:320},{month:'Aug',kg:420},{month:'Sep',kg:510},{month:'Oct',kg:640}]}><defs><linearGradient id="olive" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#697c49" stopOpacity={.3}/><stop offset="100%" stopColor="#697c49" stopOpacity={0}/></linearGradient></defs><XAxis dataKey="month"/><YAxis/><Tooltip/><Area type="monotone" dataKey="kg" stroke="#52623c" fill="url(#olive)" strokeWidth={2}/></AreaChart></ResponsiveContainer></article>}<p className="quiet">{t('noCertification')}</p></>;
+}
+

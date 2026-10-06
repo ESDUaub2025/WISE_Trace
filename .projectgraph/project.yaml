@@ -1,0 +1,25 @@
+# ProjectGraph project identity (provisional, from migration).
+schema_version: '1.1'
+name: WISE_Trace
+id: WISE_TRACE
+summary: Migrated from existing repository at WISE_Trace.
+created: '2026-10-06T09:16:26+00:00'
+created_by: projectgraph migrate (depth=semantic)
+detection:
+  classification: SUBSTANTIAL
+  score: 10
+  reasons:
+  - 'frontend framework detected: react, react-dom (+3)'
+  - 'persistent data layer detected: @supabase/supabase-js, supabase/migrations (+3)'
+  - '2 languages with real code volume: sql, typescript (+2)'
+  - 25 declared dependencies (+1)
+  - documentation set (README plus docs/) (+1)
+migration:
+  source_files_scanned: 7
+  languages:
+    typescript: 4
+    sql: 2
+    javascript: 1
+  notes: []
+  warning: 'This graph is PROVISIONAL. Nothing here is VERIFIED: existing code has not been verified merely
+    by existing. Review node semantics, add real requirements, then run ''projectgraph verify'' per node.'

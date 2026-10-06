@@ -1,0 +1,27 @@
+name: Encrypted nightly database backup
+on:
+  schedule:
+    - cron: '15 1 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.BACKUP_DATABASE_URL }}
+      AGE_RECIPIENT: ${{ secrets.BACKUP_AGE_RECIPIENT }}
+    steps:
+      - run: sudo apt-get update && sudo apt-get install -y age
+      - name: Dump and encrypt without writing an unencrypted file
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$DATABASE_URL"
+          test -n "$AGE_RECIPIENT"
+          docker run --rm -e DATABASE_URL postgres:17 sh -c 'exec pg_dump --dbname="$DATABASE_URL" --format=custom --no-owner --no-acl' | age --recipient "$AGE_RECIPIENT" --output "wise-$(date -u +%F).dump.age"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: encrypted-database-${{ github.run_id }}
+          path: '*.dump.age'
+          retention-days: 30

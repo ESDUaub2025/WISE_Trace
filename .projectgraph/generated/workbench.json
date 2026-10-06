@@ -1,0 +1,607 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-10-06T09:39:07+00:00",
+  "rule": "workbench.project.v1",
+  "default_scale": "portfolio",
+  "scales": [
+    {
+      "scale": "portfolio",
+      "question": "Where does this project stand overall?",
+      "order": 0,
+      "cluster_by": "parent",
+      "node_types": [
+        "PROJECT",
+        "DOMAIN",
+        "SYSTEM",
+        "SUBSYSTEM",
+        "MILESTONE"
+      ],
+      "total_nodes": 3,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "SYS_DATA",
+          "composite": false,
+          "label": "Data",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "ACTIVE",
+          "cluster": "parent:WISE_TRACE"
+        },
+        {
+          "id": "SYS_FRONTEND",
+          "composite": false,
+          "label": "Frontend",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "ACTIVE",
+          "cluster": "parent:WISE_TRACE"
+        },
+        {
+          "id": "WISE_TRACE",
+          "composite": false,
+          "label": "WISE_Trace",
+          "type": "PROJECT",
+          "tier": 0,
+          "status": "ACTIVE",
+          "cluster": "type:PROJECT"
+        }
+      ],
+      "edges": [
+        {
+          "from": "WISE_TRACE",
+          "to": "SYS_FRONTEND",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "WISE_TRACE",
+          "to": "SYS_DATA",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        }
+      ],
+      "clusters": [
+        {
+          "id": "parent:WISE_TRACE",
+          "label": "WISE_Trace",
+          "strategy": "parent",
+          "members": [
+            "SYS_DATA",
+            "SYS_FRONTEND"
+          ],
+          "size": 2,
+          "status": "ACTIVE"
+        },
+        {
+          "id": "type:PROJECT",
+          "label": "PROJECT",
+          "strategy": "parent",
+          "members": [
+            "WISE_TRACE"
+          ],
+          "size": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "intent",
+      "question": "What is this project trying to achieve?",
+      "order": 1,
+      "cluster_by": "parent",
+      "node_types": [
+        "PROJECT",
+        "MILESTONE",
+        "REQUIREMENT",
+        "CAPABILITY"
+      ],
+      "total_nodes": 2,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "REQ_FULL_MVP",
+          "composite": false,
+          "label": "Every PRD M/S requirement and Appendix A story",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "parent:WISE_TRACE"
+        },
+        {
+          "id": "WISE_TRACE",
+          "composite": false,
+          "label": "WISE_Trace",
+          "type": "PROJECT",
+          "tier": 0,
+          "status": "ACTIVE",
+          "cluster": "type:PROJECT"
+        }
+      ],
+      "edges": [
+        {
+          "from": "WISE_TRACE",
+          "to": "REQ_FULL_MVP",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        }
+      ],
+      "clusters": [
+        {
+          "id": "parent:WISE_TRACE",
+          "label": "WISE_Trace",
+          "strategy": "parent",
+          "members": [
+            "REQ_FULL_MVP"
+          ],
+          "size": 1,
+          "status": "READY"
+        },
+        {
+          "id": "type:PROJECT",
+          "label": "PROJECT",
+          "strategy": "parent",
+          "members": [
+            "WISE_TRACE"
+          ],
+          "size": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "architecture",
+      "question": "What exists and how is it connected?",
+      "order": 2,
+      "cluster_by": "parent",
+      "node_types": [
+        "SYSTEM",
+        "SUBSYSTEM",
+        "COMPONENT",
+        "MODULE",
+        "SCHEMA",
+        "DATA",
+        "INFRASTRUCTURE",
+        "CONFIG"
+      ],
+      "total_nodes": 6,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "CFG_PROJECT_MANIFESTS",
+          "composite": false,
+          "label": "Project manifests",
+          "type": "CONFIG",
+          "tier": 4,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:WISE_TRACE"
+        },
+        {
+          "id": "CMP_SRC",
+          "composite": false,
+          "label": "src",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "ACTIVE",
+          "cluster": "parent:SYS_FRONTEND"
+        },
+        {
+          "id": "CMP_SRC_COMPONENTS",
+          "composite": false,
+          "label": "src / components",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:SYS_FRONTEND"
+        },
+        {
+          "id": "CMP_SUPABASE",
+          "composite": false,
+          "label": "supabase",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "ACTIVE",
+          "cluster": "parent:SYS_DATA"
+        },
+        {
+          "id": "SYS_DATA",
+          "composite": false,
+          "label": "Data",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "ACTIVE",
+          "cluster": "parent:WISE_TRACE"
+        },
+        {
+          "id": "SYS_FRONTEND",
+          "composite": false,
+          "label": "Frontend",
+          "type": "SYSTEM",
+          "tier": 1,
+          "status": "ACTIVE",
+          "cluster": "parent:WISE_TRACE"
+        }
+      ],
+      "edges": [
+        {
+          "from": "SYS_DATA",
+          "to": "CMP_SUPABASE",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "SYS_FRONTEND",
+          "to": "CMP_SRC",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "SYS_FRONTEND",
+          "to": "CMP_SRC_COMPONENTS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        }
+      ],
+      "clusters": [
+        {
+          "id": "parent:WISE_TRACE",
+          "label": "WISE_Trace",
+          "strategy": "parent",
+          "members": [
+            "CFG_PROJECT_MANIFESTS",
+            "SYS_DATA",
+            "SYS_FRONTEND"
+          ],
+          "size": 3,
+          "status": "ACTIVE"
+        },
+        {
+          "id": "parent:SYS_FRONTEND",
+          "label": "Frontend",
+          "strategy": "parent",
+          "members": [
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS"
+          ],
+          "size": 2,
+          "status": "ACTIVE"
+        },
+        {
+          "id": "parent:SYS_DATA",
+          "label": "Data",
+          "strategy": "parent",
+          "members": [
+            "CMP_SUPABASE"
+          ],
+          "size": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "execution",
+      "question": "What is happening now, and what is blocked or stale?",
+      "order": 3,
+      "cluster_by": "status",
+      "node_types": [
+        "MILESTONE",
+        "COMPONENT",
+        "MODULE",
+        "CAPABILITY"
+      ],
+      "total_nodes": 3,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "CMP_SRC",
+          "composite": false,
+          "label": "src",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
+        },
+        {
+          "id": "CMP_SRC_COMPONENTS",
+          "composite": false,
+          "label": "src / components",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "status:IMPLEMENTED"
+        },
+        {
+          "id": "CMP_SUPABASE",
+          "composite": false,
+          "label": "supabase",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "ACTIVE",
+          "cluster": "status:ACTIVE"
+        }
+      ],
+      "edges": [],
+      "clusters": [
+        {
+          "id": "status:ACTIVE",
+          "label": "ACTIVE",
+          "strategy": "status",
+          "members": [
+            "CMP_SRC",
+            "CMP_SUPABASE"
+          ],
+          "size": 2,
+          "status": "ACTIVE"
+        },
+        {
+          "id": "status:IMPLEMENTED",
+          "label": "IMPLEMENTED",
+          "strategy": "status",
+          "members": [
+            "CMP_SRC_COMPONENTS"
+          ],
+          "size": 1,
+          "status": "IMPLEMENTED"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "assurance",
+      "question": "Why does the system believe each answer?",
+      "order": 4,
+      "cluster_by": "evidence",
+      "node_types": [
+        "REQUIREMENT",
+        "CAPABILITY",
+        "COMPONENT",
+        "MODULE",
+        "TEST",
+        "VALIDATION"
+      ],
+      "total_nodes": 4,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "CMP_SRC",
+          "composite": false,
+          "label": "src",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "ACTIVE",
+          "cluster": "evidence:commands"
+        },
+        {
+          "id": "CMP_SRC_COMPONENTS",
+          "composite": false,
+          "label": "src / components",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:commands"
+        },
+        {
+          "id": "CMP_SUPABASE",
+          "composite": false,
+          "label": "supabase",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "ACTIVE",
+          "cluster": "evidence:commands"
+        },
+        {
+          "id": "REQ_FULL_MVP",
+          "composite": false,
+          "label": "Every PRD M/S requirement and Appendix A story",
+          "type": "REQUIREMENT",
+          "tier": 2,
+          "status": "READY",
+          "cluster": "evidence:none"
+        }
+      ],
+      "edges": [],
+      "clusters": [
+        {
+          "id": "evidence:commands",
+          "label": "commands and structure",
+          "strategy": "evidence",
+          "members": [
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS",
+            "CMP_SUPABASE"
+          ],
+          "size": 3,
+          "status": "ACTIVE"
+        },
+        {
+          "id": "evidence:none",
+          "label": "no contract",
+          "strategy": "evidence",
+          "members": [
+            "REQ_FULL_MVP"
+          ],
+          "size": 1,
+          "status": "READY"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    },
+    {
+      "scale": "code",
+      "question": "What is actually in the files?",
+      "order": 5,
+      "cluster_by": "parent",
+      "node_types": [
+        "COMPONENT",
+        "MODULE",
+        "FILE",
+        "CLASS",
+        "FUNCTION",
+        "TEST"
+      ],
+      "total_nodes": 3,
+      "collapsed": false,
+      "collapse_threshold": 60,
+      "truncated": false,
+      "nodes": [
+        {
+          "id": "CMP_SRC",
+          "composite": false,
+          "label": "src",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "ACTIVE",
+          "cluster": "parent:SYS_FRONTEND"
+        },
+        {
+          "id": "CMP_SRC_COMPONENTS",
+          "composite": false,
+          "label": "src / components",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "IMPLEMENTED",
+          "cluster": "parent:SYS_FRONTEND"
+        },
+        {
+          "id": "CMP_SUPABASE",
+          "composite": false,
+          "label": "supabase",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "ACTIVE",
+          "cluster": "parent:SYS_DATA"
+        }
+      ],
+      "edges": [],
+      "clusters": [
+        {
+          "id": "parent:SYS_FRONTEND",
+          "label": "Frontend",
+          "strategy": "parent",
+          "members": [
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS"
+          ],
+          "size": 2,
+          "status": "ACTIVE"
+        },
+        {
+          "id": "parent:SYS_DATA",
+          "label": "Data",
+          "strategy": "parent",
+          "members": [
+            "CMP_SUPABASE"
+          ],
+          "size": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "rule": "workbench.project.v1"
+    }
+  ],
+  "questions": {
+    "portfolio": "Where does this project stand overall?",
+    "intent": "What is this project trying to achieve?",
+    "architecture": "What exists and how is it connected?",
+    "execution": "What is happening now, and what is blocked or stale?",
+    "assurance": "Why does the system believe each answer?",
+    "code": "What is actually in the files?"
+  },
+  "requirement_traces": [
+    {
+      "requirement": "REQ_FULL_MVP",
+      "title": "Every PRD M/S requirement and Appendix A story",
+      "status": "READY",
+      "chains": [],
+      "proven": false,
+      "gap": "nothing fulfils this requirement",
+      "rule": "workbench.project.v1"
+    }
+  ],
+  "provenance": {
+    "by_generator": {
+      "authored": 7
+    },
+    "generated_edges": 0,
+    "authored_edges": 7,
+    "detail": [],
+    "detail_truncated": false,
+    "rule": "workbench.project.v1"
+  },
+  "temporal": {
+    "baseline": null,
+    "comparable": false,
+    "detail": "No previous snapshot, so there is nothing to compare against.",
+    "rule": "workbench.project.v1"
+  },
+  "health": {
+    "available": true,
+    "overall": 0.0,
+    "band": "poor",
+    "weakest_plane": "intent",
+    "planes": {
+      "structural": {
+        "score": 0.0,
+        "band": "poor",
+        "gaps": 1
+      },
+      "intent": {
+        "score": 0.0,
+        "band": "poor",
+        "gaps": 1
+      },
+      "state": {
+        "score": 0.0,
+        "band": "poor",
+        "gaps": 7
+      },
+      "task_context": {
+        "score": 1.0,
+        "band": "strong",
+        "gaps": 0
+      }
+    },
+    "uncertainty": {
+      "unresolved": 0,
+      "ambiguous": 0,
+      "unsupported": 0,
+      "stale_facts": 0,
+      "contradictions": 0
+    }
+  },
+  "capability_evidence": {
+    "available": false
+  },
+  "colors": {
+    "DECLARED": "#9e9e9e",
+    "READY": "#2f6fed",
+    "ACTIVE": "#e6b400",
+    "IMPLEMENTED": "#128f8f",
+    "VERIFYING": "#f08c00",
+    "VERIFIED": "#2e9b48",
+    "FAILED": "#d32f2f",
+    "BLOCKED": "#7b3fbf",
+    "STALE": "#8d6e3a",
+    "SUPERSEDED": "#c9c9c9"
+  },
+  "limitation": "Every projection here is computed by the core. The viewer lays out what it is given and computes no status, clustering or path of its own (ARCHITECTURE.md decision D6)."
+}

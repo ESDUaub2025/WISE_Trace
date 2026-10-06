@@ -1,0 +1,30 @@
+# Verification contracts derived by migration.
+# These are STARTING POINTS: a file-existence check is not proof of
+# correctness. Add real test commands before trusting VERIFIED.
+CMP_SRC:
+  required_files:
+  - src/main.tsx
+  - src/offline/db.ts
+  commands:
+  - name: types
+    run: npm run typecheck
+  - name: lint
+    run: npm run lint
+  - name: unit
+    run: npm test
+  - name: browser
+    run: npm run test:e2e
+CMP_SRC_COMPONENTS:
+  required_files:
+  - src/components/ui/button.tsx
+  - src/components/ui/sheet.tsx
+  commands:
+  - name: types
+    run: npm run typecheck
+CMP_SUPABASE:
+  required_files:
+  - supabase/migrations/202610060001_foundation.sql
+  - supabase/tests/security.test.sql
+  commands:
+  - name: database
+    run: npm run test:db

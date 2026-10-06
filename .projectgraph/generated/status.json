@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-10-06T09:39:07+00:00",
+  "project": "WISE_Trace",
+  "git": {
+    "available": true,
+    "commit": null,
+    "short_commit": null,
+    "branch": null,
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "totals": {
+    "nodes": 8,
+    "edges": 7,
+    "verifiable": 7
+  },
+  "counts": {
+    "DECLARED": 0,
+    "READY": 1,
+    "ACTIVE": 5,
+    "IMPLEMENTED": 2,
+    "VERIFYING": 0,
+    "VERIFIED": 0,
+    "FAILED": 0,
+    "BLOCKED": 0,
+    "STALE": 0,
+    "SUPERSEDED": 0
+  },
+  "progress": 0.0,
+  "coverage": 0.875,
+  "stale": [],
+  "blocked": [],
+  "failed": [],
+  "next": [
+    {
+      "id": "CMP_SRC",
+      "type": "COMPONENT",
+      "status": "ACTIVE",
+      "title": "src"
+    },
+    {
+      "id": "CMP_SUPABASE",
+      "type": "COMPONENT",
+      "status": "ACTIVE",
+      "title": "supabase"
+    },
+    {
+      "id": "CMP_SRC_COMPONENTS",
+      "type": "COMPONENT",
+      "status": "IMPLEMENTED",
+      "title": "src / components"
+    }
+  ],
+  "cycles": []
+}

@@ -1,0 +1,446 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-10-06T09:39:07+00:00",
+  "project": {
+    "name": "WISE_Trace",
+    "id": "WISE_TRACE",
+    "summary": "Migrated from existing repository at WISE_Trace.",
+    "root": "D:\\Programing\\WISE_Trace"
+  },
+  "colors": {
+    "DECLARED": "#9e9e9e",
+    "READY": "#2f6fed",
+    "ACTIVE": "#e6b400",
+    "IMPLEMENTED": "#128f8f",
+    "VERIFYING": "#f08c00",
+    "VERIFIED": "#2e9b48",
+    "FAILED": "#d32f2f",
+    "BLOCKED": "#7b3fbf",
+    "STALE": "#8d6e3a",
+    "SUPERSEDED": "#c9c9c9"
+  },
+  "verifiable": [
+    "CMP_SRC",
+    "CMP_SRC_COMPONENTS",
+    "CMP_SUPABASE",
+    "REQ_FULL_MVP",
+    "SYS_DATA",
+    "SYS_FRONTEND",
+    "WISE_TRACE"
+  ],
+  "tiers": {
+    "0": "root",
+    "1": "organization",
+    "2": "intent",
+    "3": "design",
+    "4": "implementation",
+    "5": "operations",
+    "6": "assurance"
+  },
+  "node_tiers": {
+    "PROJECT": 0,
+    "DOMAIN": 1,
+    "SYSTEM": 1,
+    "SUBSYSTEM": 1,
+    "MILESTONE": 2,
+    "REQUIREMENT": 2,
+    "CAPABILITY": 2,
+    "COMPONENT": 3,
+    "MODULE": 3,
+    "FILE": 4,
+    "CLASS": 4,
+    "FUNCTION": 4,
+    "DATA": 4,
+    "SCHEMA": 4,
+    "CONFIG": 4,
+    "INFRASTRUCTURE": 5,
+    "TEST": 6,
+    "VALIDATION": 6
+  },
+  "nodes": [
+    {
+      "id": "CFG_PROJECT_MANIFESTS",
+      "type": "CONFIG",
+      "title": "Project manifests",
+      "summary": "Dependency and build manifests.",
+      "artifacts": [
+        "package-lock.json",
+        "package.json"
+      ],
+      "source": "migrated",
+      "tier": 4,
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "WISE_TRACE"
+      ]
+    },
+    {
+      "id": "CMP_SRC",
+      "type": "COMPONENT",
+      "title": "src",
+      "summary": "2 source file(s) under src/.",
+      "artifacts": [
+        "src/**"
+      ],
+      "source": "migrated",
+      "confidence": "medium",
+      "tier": 3,
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_FRONTEND"
+      ]
+    },
+    {
+      "id": "CMP_SRC_COMPONENTS",
+      "type": "COMPONENT",
+      "title": "src / components",
+      "summary": "1 source file(s) under src/components/.",
+      "artifacts": [
+        "src/components/**"
+      ],
+      "source": "migrated",
+      "confidence": "medium",
+      "tier": 3,
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_FRONTEND"
+      ]
+    },
+    {
+      "id": "CMP_SUPABASE",
+      "type": "COMPONENT",
+      "title": "supabase",
+      "summary": "2 source file(s) under supabase/.",
+      "artifacts": [
+        "supabase/**"
+      ],
+      "source": "migrated",
+      "confidence": "medium",
+      "tier": 3,
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "has_contract": true,
+      "evidence_strength": {
+        "contract_kind": "commands-and-structure",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "SYS_DATA"
+      ]
+    },
+    {
+      "id": "REQ_FULL_MVP",
+      "type": "REQUIREMENT",
+      "title": "Every PRD M/S requirement and Appendix A story",
+      "summary": "Full traceability, offline sync, role matrix, audit, public projection and impact. docs/PROGRESS.md holds the per-requirement evidence checklist.",
+      "artifacts": [
+        "docs/PROGRESS.md"
+      ],
+      "source": "authored",
+      "tier": 2,
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "nothing-fulfils-this",
+          "detail": "No node yet satisfies or implements this."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [],
+      "parents": [
+        "WISE_TRACE"
+      ]
+    },
+    {
+      "id": "SYS_DATA",
+      "type": "SYSTEM",
+      "title": "Data",
+      "summary": "Persistent data, schemas and migrations.",
+      "source": "migrated",
+      "confidence": "medium",
+      "tier": 1,
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (ACTIVE).",
+          "refs": [
+            "CMP_SUPABASE"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [
+        "CMP_SUPABASE"
+      ],
+      "parents": [
+        "WISE_TRACE"
+      ]
+    },
+    {
+      "id": "SYS_FRONTEND",
+      "type": "SYSTEM",
+      "title": "Frontend",
+      "summary": "Client-side application code.",
+      "source": "migrated",
+      "confidence": "medium",
+      "tier": 1,
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (ACTIVE).",
+          "refs": [
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [
+        "CMP_SRC",
+        "CMP_SRC_COMPONENTS"
+      ],
+      "parents": [
+        "WISE_TRACE"
+      ]
+    },
+    {
+      "id": "WISE_TRACE",
+      "type": "PROJECT",
+      "title": "WISE_Trace",
+      "summary": "Migrated from existing repository at WISE_Trace.",
+      "notes": [
+        "Created by 'projectgraph migrate'."
+      ],
+      "source": "migrated",
+      "confidence": "medium",
+      "tier": 0,
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "has_contract": false,
+      "evidence_strength": {
+        "contract_kind": "no-machine-checks",
+        "executed_commands": [],
+        "structural_checks": 0,
+        "attestations": 0,
+        "attestation_identity": "caller-supplied; not authenticated human approval",
+        "limitation": "Successful commands prove their configured checks, not general behavioral correctness."
+      },
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (ACTIVE).",
+          "refs": [
+            "CFG_PROJECT_MANIFESTS",
+            "SYS_DATA",
+            "SYS_FRONTEND"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_path": null,
+      "children": [
+        "SYS_FRONTEND",
+        "SYS_DATA",
+        "CFG_PROJECT_MANIFESTS",
+        "REQ_FULL_MVP"
+      ],
+      "parents": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "WISE_TRACE",
+      "to": "SYS_FRONTEND",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "WISE_TRACE",
+      "to": "SYS_DATA",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "WISE_TRACE",
+      "to": "CFG_PROJECT_MANIFESTS",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_DATA",
+      "to": "CMP_SUPABASE",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_FRONTEND",
+      "to": "CMP_SRC",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "SYS_FRONTEND",
+      "to": "CMP_SRC_COMPONENTS",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    },
+    {
+      "from": "WISE_TRACE",
+      "to": "REQ_FULL_MVP",
+      "type": "CONTAINS",
+      "gating": false,
+      "staleness": false
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+import { createClient } from 'npm:@supabase/supabase-js@2.117.2';
+export const cors={'Access-Control-Allow-Origin':Deno.env.get('APP_ORIGIN')??'http://127.0.0.1:5173','Access-Control-Allow-Headers':'authorization, apikey, content-type, x-client-info','Access-Control-Allow-Methods':'POST, OPTIONS','Vary':'Origin'};
+export const json=(body:unknown,status=200)=>new Response(JSON.stringify(body),{status,headers:{...cors,'Content-Type':'application/json'}});
+export function clients(request:Request){const authorization=request.headers.get('Authorization');if(!authorization?.startsWith('Bearer '))throw new Error('Authentication required');const url=Deno.env.get('SUPABASE_URL')!;return{user:createClient(url,Deno.env.get('SUPABASE_ANON_KEY')!,{global:{headers:{Authorization:authorization}},auth:{persistSession:false}}),admin:createClient(url,Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,{auth:{persistSession:false}})};}
+export async function authenticate(request:Request){const c=clients(request);const {data,error}=await c.user.auth.getUser();if(error||!data.user)throw new Error('Authentication required');return {...c,identity:data.user};}

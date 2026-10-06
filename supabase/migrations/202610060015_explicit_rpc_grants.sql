@@ -1,0 +1,8 @@
+-- Supabase additionally has schema defaults granting directly to anon and
+-- authenticated. Remove those defaults and rebuild the API allow-list.
+alter default privileges in schema public revoke execute on functions from anon,authenticated;
+alter default privileges in schema public revoke all on tables from anon,authenticated;
+alter default privileges in schema public revoke all on sequences from anon,authenticated;
+revoke execute on all functions in schema public from anon,authenticated;
+grant execute on function public.lot_available(uuid),public.genealogy(uuid,text),public.pin_signoff(text,uuid,text,uuid),public.transition_lot(uuid,text,text,uuid),public.apply_sync(jsonb),public.close_deviation(uuid,text,uuid),public.start_recall(uuid,boolean,text,jsonb,uuid),public.register_device(uuid,text),public.advance_stage(uuid,text),public.draft_configuration(text,jsonb,timestamptz),public.approve_configuration(uuid,uuid),public.register_attachment(uuid,uuid,text,text),public.revoke_device(uuid,text),public.manage_registry(text,uuid,jsonb),public.complete_recall(uuid,jsonb),public.impact_metrics(date,date),public.resolve_sync_conflict(uuid,jsonb,text),public.record_amendment(uuid,jsonb,text,uuid),public.manage_cooperative(uuid,jsonb),public.manage_account(uuid,text,text[],jsonb,text),public.record_consent(text,text,boolean),public.grant_training_exception(uuid,text,timestamptz,boolean),public.notification_read(uuid),public.convert_complaint(uuid,text,uuid),public.reconcile_stock(uuid,numeric,text,uuid),public.abandon_batch(uuid,text),public.handover_batch(uuid,uuid,uuid) to authenticated;
+grant execute on function public.public_lot_view(text),public.report_problem(text,text) to anon,authenticated;

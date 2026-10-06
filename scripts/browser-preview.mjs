@@ -1,0 +1,2 @@
+import { chromium } from '@playwright/test';
+const browser=await chromium.launch();const page=await browser.newPage({viewport:{width:1440,height:1000}});await page.goto('http://127.0.0.1:4173');await page.getByRole('heading',{name:'What needs your attention?'}).waitFor();await page.screenshot({path:'docs/preview-desktop.png',fullPage:true});await page.setViewportSize({width:390,height:844});await page.screenshot({path:'docs/preview-mobile.png',fullPage:true});await browser.close();

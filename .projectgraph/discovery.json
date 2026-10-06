@@ -1,0 +1,1376 @@
+{
+  "relationships": [
+    {
+      "source": "scripts/create-seed.mjs",
+      "target": "src/lib/demo.ts",
+      "import": "../src/lib/demo.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/components/ui/sheet.tsx",
+      "import": "./components/ui/sheet",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/lib/domain.ts",
+      "import": "./lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/lib/auth.ts",
+      "import": "./lib/auth",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/offline/db.ts",
+      "import": "./offline/db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/lib/mfa.ts",
+      "import": "./lib/mfa",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/lib/session-policy.ts",
+      "import": "./lib/session-policy",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/management.tsx",
+      "import": "./management",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/scanner.tsx",
+      "import": "./scanner",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/lib/reports.ts",
+      "import": "./lib/reports",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/features.tsx",
+      "import": "./features",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/dashboard.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/dashboard.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/dashboard.tsx",
+      "target": "src/lib/domain.ts",
+      "import": "./lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/dashboard.tsx",
+      "target": "src/features.tsx",
+      "import": "./features",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/evidence.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/evidence.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/evidence.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/evidence.tsx",
+      "target": "src/offline/db.ts",
+      "import": "./offline/db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/lib/domain.ts",
+      "import": "./lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/lib/media.ts",
+      "import": "./lib/media",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/training-editor.tsx",
+      "import": "./training-editor",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/evidence.tsx",
+      "import": "./evidence",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/App.tsx",
+      "import": "./App",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/auth.ts",
+      "target": "src/lib/supabase.ts",
+      "import": "./supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/auth.ts",
+      "target": "src/offline/db.ts",
+      "import": "../offline/db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/auth.ts",
+      "target": "src/lib/pin.ts",
+      "import": "./pin",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/auth.ts",
+      "target": "src/lib/data.ts",
+      "import": "./data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/auth.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/auth.ts",
+      "target": "src/lib/mfa.ts",
+      "import": "./mfa",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/auth.ts",
+      "target": "src/lib/session-policy.ts",
+      "import": "./session-policy",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/data.ts",
+      "target": "src/offline/db.ts",
+      "import": "../offline/db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/data.ts",
+      "target": "src/lib/supabase.ts",
+      "import": "./supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/data.ts",
+      "target": "src/lib/session-policy.ts",
+      "import": "./session-policy",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/data.ts",
+      "target": "src/lib/demo.ts",
+      "import": "./demo",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/data.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/demo.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/domain.test.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/domain.test.ts",
+      "target": "src/lib/demo.ts",
+      "import": "./demo",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/mfa.ts",
+      "target": "src/lib/supabase.ts",
+      "import": "./supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/pin.test.ts",
+      "target": "src/lib/pin.ts",
+      "import": "./pin",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/reports.ts",
+      "target": "src/lib/supabase.ts",
+      "import": "./supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/session-policy.test.ts",
+      "target": "src/lib/session-policy.ts",
+      "import": "./session-policy",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/session-policy.ts",
+      "target": "src/offline/db.ts",
+      "import": "../offline/db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/session-policy.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/main.tsx",
+      "target": "src/App.tsx",
+      "import": "./App",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/main.tsx",
+      "target": "src/i18n/index.ts",
+      "import": "./i18n",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/management.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/management.tsx",
+      "target": "src/lib/domain.ts",
+      "import": "./lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/management.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/management.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/offline/db.test.ts",
+      "target": "src/offline/db.ts",
+      "import": "./db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/offline/db.test.ts",
+      "target": "src/lib/demo.ts",
+      "import": "../lib/demo",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/offline/db.test.ts",
+      "target": "src/lib/domain.ts",
+      "import": "../lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/offline/db.ts",
+      "target": "src/lib/domain.ts",
+      "import": "../lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/scanner.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-editor.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-editor.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-editor.tsx",
+      "target": "src/lib/domain.ts",
+      "import": "./lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "supabase/functions/notifications/index.ts",
+      "target": "supabase/functions/_shared/http.ts",
+      "import": "../_shared/http.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "supabase/functions/ocr/index.ts",
+      "target": "supabase/functions/_shared/http.ts",
+      "import": "../_shared/http.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "supabase/functions/report/index.ts",
+      "target": "supabase/functions/_shared/http.ts",
+      "import": "../_shared/http.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "supabase/functions/scheduled-tasks/index.ts",
+      "target": "supabase/functions/_shared/http.ts",
+      "import": "../_shared/http.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "supabase/functions/sync/index.ts",
+      "target": "supabase/functions/_shared/http.ts",
+      "import": "../_shared/http.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "supabase/functions/user-admin/index.ts",
+      "target": "supabase/functions/_shared/http.ts",
+      "import": "../_shared/http.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "tests/live/acceptance.spec.ts",
+      "target": "tests/live/fixtures.ts",
+      "import": "./fixtures",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    }
+  ],
+  "unresolved": [
+    {
+      "file": "p/public.ts",
+      "import": "./style.css",
+      "candidates": []
+    },
+    {
+      "file": "src/i18n/index.ts",
+      "import": "./en.json",
+      "candidates": []
+    },
+    {
+      "file": "src/i18n/index.ts",
+      "import": "./ar.json",
+      "candidates": []
+    },
+    {
+      "file": "src/main.tsx",
+      "import": "./styles.css",
+      "candidates": []
+    }
+  ],
+  "external": [
+    {
+      "file": "eslint.config.js",
+      "import": "@eslint/js",
+      "candidates": []
+    },
+    {
+      "file": "eslint.config.js",
+      "import": "typescript-eslint",
+      "candidates": []
+    },
+    {
+      "file": "eslint.config.js",
+      "import": "eslint-plugin-react-hooks",
+      "candidates": []
+    },
+    {
+      "file": "playwright.config.ts",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "playwright.live.config.ts",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "scripts/browser-preview.mjs",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-live-ui.mjs",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-live-ui.mjs",
+      "import": "node:process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-pdf.mjs",
+      "import": "pdf-lib",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-pdf.mjs",
+      "import": "@pdf-lib/fontkit",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-pdf.mjs",
+      "import": "node:fs",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-pdf.mjs",
+      "import": "node:process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/create-history-seed.mjs",
+      "import": "node:fs",
+      "candidates": []
+    },
+    {
+      "file": "scripts/create-seed.mjs",
+      "import": "node:fs",
+      "candidates": []
+    },
+    {
+      "file": "scripts/live-api-check.mjs",
+      "import": "node:child_process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/live-api-check.mjs",
+      "import": "node:process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/live-api-check.mjs",
+      "import": "node:assert/strict",
+      "candidates": []
+    },
+    {
+      "file": "scripts/live-api-check.mjs",
+      "import": "@supabase/supabase-js",
+      "candidates": []
+    },
+    {
+      "file": "scripts/setup-local.mjs",
+      "import": "node:child_process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/setup-local.mjs",
+      "import": "node:fs",
+      "candidates": []
+    },
+    {
+      "file": "scripts/setup-local.mjs",
+      "import": "node:process",
+      "candidates": []
+    },
+    {
+      "file": "src/App.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/App.tsx",
+      "import": "react-router-dom",
+      "candidates": []
+    },
+    {
+      "file": "src/App.tsx",
+      "import": "@tanstack/react-query",
+      "candidates": []
+    },
+    {
+      "file": "src/App.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/App.tsx",
+      "import": "lucide-react",
+      "candidates": []
+    },
+    {
+      "file": "src/App.tsx",
+      "import": "motion/react",
+      "candidates": []
+    },
+    {
+      "file": "src/App.tsx",
+      "import": "date-fns",
+      "candidates": []
+    },
+    {
+      "file": "src/App.tsx",
+      "import": "@date-fns/tz",
+      "candidates": []
+    },
+    {
+      "file": "src/components/ui/button.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/components/ui/button.tsx",
+      "import": "class-variance-authority",
+      "candidates": []
+    },
+    {
+      "file": "src/components/ui/button.tsx",
+      "import": "clsx",
+      "candidates": []
+    },
+    {
+      "file": "src/components/ui/button.tsx",
+      "import": "tailwind-merge",
+      "candidates": []
+    },
+    {
+      "file": "src/components/ui/sheet.tsx",
+      "import": "@radix-ui/react-dialog",
+      "candidates": []
+    },
+    {
+      "file": "src/components/ui/sheet.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/components/ui/sheet.tsx",
+      "import": "lucide-react",
+      "candidates": []
+    },
+    {
+      "file": "src/components/ui/sheet.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/dashboard.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/dashboard.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/dashboard.tsx",
+      "import": "lucide-react",
+      "candidates": []
+    },
+    {
+      "file": "src/dashboard.tsx",
+      "import": "recharts",
+      "candidates": []
+    },
+    {
+      "file": "src/evidence.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/evidence.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/features.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/features.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/features.tsx",
+      "import": "react-hook-form",
+      "candidates": []
+    },
+    {
+      "file": "src/features.tsx",
+      "import": "zod",
+      "candidates": []
+    },
+    {
+      "file": "src/features.tsx",
+      "import": "lucide-react",
+      "candidates": []
+    },
+    {
+      "file": "src/features.tsx",
+      "import": "qrcode",
+      "candidates": []
+    },
+    {
+      "file": "src/i18n/index.ts",
+      "import": "i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/i18n/index.ts",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/auth.ts",
+      "import": "@supabase/supabase-js",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/domain.test.ts",
+      "import": "vitest",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/domain.ts",
+      "import": "zod",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/pin.test.ts",
+      "import": "vitest",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/session-policy.test.ts",
+      "import": "vitest",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/supabase.ts",
+      "import": "@supabase/supabase-js",
+      "candidates": []
+    },
+    {
+      "file": "src/main.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/main.tsx",
+      "import": "react-dom/client",
+      "candidates": []
+    },
+    {
+      "file": "src/main.tsx",
+      "import": "react-router-dom",
+      "candidates": []
+    },
+    {
+      "file": "src/main.tsx",
+      "import": "@tanstack/react-query",
+      "candidates": []
+    },
+    {
+      "file": "src/management.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/management.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/offline/db.test.ts",
+      "import": "vitest",
+      "candidates": []
+    },
+    {
+      "file": "src/offline/db.ts",
+      "import": "dexie",
+      "candidates": []
+    },
+    {
+      "file": "src/scanner.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/scanner.tsx",
+      "import": "@zxing/browser",
+      "candidates": []
+    },
+    {
+      "file": "src/scanner.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/scanner.tsx",
+      "import": "lucide-react",
+      "candidates": []
+    },
+    {
+      "file": "src/test-setup.ts",
+      "import": "fake-indexeddb/auto",
+      "candidates": []
+    },
+    {
+      "file": "src/training-editor.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/training-editor.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/_shared/http.ts",
+      "import": "npm:@supabase/supabase-js@2.117.2",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/ocr/index.ts",
+      "import": "npm:zod@4.6.5",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/report/index.ts",
+      "import": "npm:exceljs@4.4.0",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/report/index.ts",
+      "import": "npm:pdf-lib@1.17.1",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/report/index.ts",
+      "import": "npm:@pdf-lib/fontkit@1.1.1",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/report/index.ts",
+      "import": "npm:zod@4.6.5",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/scheduled-tasks/index.ts",
+      "import": "npm:@supabase/supabase-js@2.117.2",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/sync/index.ts",
+      "import": "npm:zod@4.6.5",
+      "candidates": []
+    },
+    {
+      "file": "supabase/functions/user-admin/index.ts",
+      "import": "npm:zod@4.6.5",
+      "candidates": []
+    },
+    {
+      "file": "tests/flows.spec.ts",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/acceptance.spec.ts",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/acceptance.spec.ts",
+      "import": "qrcode",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/fixtures.ts",
+      "import": "node:child_process",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/fixtures.ts",
+      "import": "@supabase/supabase-js",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/fixtures.ts",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "vite.config.ts",
+      "import": "vite",
+      "candidates": []
+    },
+    {
+      "file": "vite.config.ts",
+      "import": "@vitejs/plugin-react",
+      "candidates": []
+    },
+    {
+      "file": "vite.config.ts",
+      "import": "@tailwindcss/vite",
+      "candidates": []
+    },
+    {
+      "file": "vite.config.ts",
+      "import": "vite-plugin-pwa",
+      "candidates": []
+    },
+    {
+      "file": "vite.config.ts",
+      "import": "node:path",
+      "candidates": []
+    },
+    {
+      "file": "vitest.config.ts",
+      "import": "vitest/config",
+      "candidates": []
+    }
+  ],
+  "diagnostics": [],
+  "symbols": {
+    "eslint.config.js": [],
+    "p/public.ts": [
+      "load",
+      "render"
+    ],
+    "playwright.config.ts": [],
+    "playwright.live.config.ts": [],
+    "scripts/browser-preview.mjs": [],
+    "scripts/check-live-ui.mjs": [],
+    "scripts/check-pdf.mjs": [],
+    "scripts/create-history-seed.mjs": [
+      "uuid"
+    ],
+    "scripts/create-seed.mjs": [
+      "uuid"
+    ],
+    "scripts/live-api-check.mjs": [
+      "rpc",
+      "send"
+    ],
+    "scripts/setup-local.mjs": [],
+    "src/App.tsx": [
+      "App",
+      "Empty",
+      "Home",
+      "Label",
+      "LotTable",
+      "RecordList",
+      "Reports",
+      "SignIn",
+      "Status",
+      "exportCSV",
+      "localDate",
+      "open"
+    ],
+    "src/components/ui/button.tsx": [
+      "Button"
+    ],
+    "src/components/ui/sheet.tsx": [
+      "Sheet"
+    ],
+    "src/dashboard.tsx": [
+      "Dashboard"
+    ],
+    "src/evidence.tsx": [
+      "EvidenceList",
+      "render"
+    ],
+    "src/features.tsx": [
+      "AdminPanel",
+      "Field",
+      "Flow",
+      "LotDetail",
+      "lotSelect",
+      "startVoice",
+      "submit"
+    ],
+    "src/i18n/index.ts": [
+      "direction"
+    ],
+    "src/lib/auth.ts": [
+      "LocalSession",
+      "login",
+      "logout",
+      "switchUser"
+    ],
+    "src/lib/data.ts": [
+      "Row",
+      "Snapshot",
+      "cachedIdentity",
+      "getDevice",
+      "overlay",
+      "saveAction",
+      "signedAction",
+      "snapshot",
+      "synchronize"
+    ],
+    "src/lib/demo.ts": [],
+    "src/lib/domain.test.ts": [],
+    "src/lib/domain.ts": [
+      "ActionClass",
+      "Checkpoint",
+      "Config",
+      "Envelope",
+      "Identity",
+      "Lot",
+      "Role",
+      "Supplier",
+      "SyncStatus",
+      "Task",
+      "actionClass",
+      "allocationCheck",
+      "trace"
+    ],
+    "src/lib/media.ts": [
+      "compressPhoto"
+    ],
+    "src/lib/mfa.ts": [
+      "prepareMfa",
+      "verifyMfa"
+    ],
+    "src/lib/pin.test.ts": [],
+    "src/lib/pin.ts": [
+      "createPinVerifier",
+      "pinHash",
+      "verifyPin"
+    ],
+    "src/lib/reports.ts": [
+      "downloadReport"
+    ],
+    "src/lib/session-policy.test.ts": [],
+    "src/lib/session-policy.ts": [
+      "SessionLimits",
+      "cachedSessionLimits",
+      "inactive",
+      "markActive",
+      "offlineExpired",
+      "sessionLimits"
+    ],
+    "src/lib/supabase.ts": [],
+    "src/main.tsx": [],
+    "src/management.tsx": [
+      "RegistryFlow",
+      "options"
+    ],
+    "src/offline/db.test.ts": [
+      "envelope"
+    ],
+    "src/offline/db.ts": [
+      "CachedRecord",
+      "MediaEntry",
+      "OutboxEntry",
+      "WiseDB",
+      "enqueue",
+      "revokeLocalDevice",
+      "syncOutbox"
+    ],
+    "src/scanner.tsx": [
+      "Scanner",
+      "decoded"
+    ],
+    "src/test-setup.ts": [],
+    "src/training-editor.tsx": [
+      "TrainingEditor"
+    ],
+    "supabase/functions/_shared/http.ts": [
+      "authenticate",
+      "clients",
+      "json"
+    ],
+    "supabase/functions/notifications/index.ts": [
+      "LogProvider",
+      "NotificationProvider"
+    ],
+    "supabase/functions/ocr/index.ts": [
+      "ClaudeProvider",
+      "OcrProvider"
+    ],
+    "supabase/functions/report/index.ts": [
+      "text"
+    ],
+    "supabase/functions/scheduled-tasks/index.ts": [],
+    "supabase/functions/sync/index.ts": [],
+    "supabase/functions/user-admin/index.ts": [],
+    "tests/flows.spec.ts": [],
+    "tests/live/acceptance.spec.ts": [],
+    "tests/live/fixtures.ts": [
+      "actor",
+      "client",
+      "login",
+      "packedBatch",
+      "readyBatch",
+      "release",
+      "rpc",
+      "send"
+    ],
+    "vite.config.ts": [],
+    "vitest.config.ts": []
+  },
+  "truncated": false,
+  "scanned_files": 50,
+  "unsupported_files": [
+    "supabase/migrations/202610060001_foundation.sql",
+    "supabase/migrations/202610060002_operations.sql",
+    "supabase/migrations/202610060003_administration.sql",
+    "supabase/migrations/202610060004_kpis.sql",
+    "supabase/migrations/202610060005_provisioning.sql",
+    "supabase/migrations/202610060006_history.sql",
+    "supabase/migrations/202610060007_feedback.sql",
+    "supabase/migrations/202610060008_management.sql",
+    "supabase/migrations/202610060009_validation.sql",
+    "supabase/migrations/202610060010_privacy.sql",
+    "supabase/migrations/202610060011_lifecycle.sql",
+    "supabase/migrations/202610060012_whey_rules.sql",
+    "supabase/migrations/202610060013_sync_qualification.sql",
+    "supabase/migrations/202610060014_execute_privileges.sql",
+    "supabase/migrations/202610060015_explicit_rpc_grants.sql",
+    "supabase/migrations/202610060016_investigation.sql",
+    "supabase/migrations/202610060017_public_label_source.sql",
+    "supabase/migrations/202610060018_task_coverage.sql",
+    "supabase/migrations/202610060019_stock_training_rules.sql",
+    "supabase/migrations/202610060020_balance_query.sql",
+    "supabase/migrations/202610060021_viewer_sessions.sql",
+    "supabase/migrations/202610060022_viewer_pin.sql",
+    "supabase/migrations/202610060023_training_versions.sql",
+    "supabase/migrations/202610060024_training_sync.sql",
+    "supabase/migrations/202610060025_related_scope.sql",
+    "supabase/migrations/202610060026_stage_history.sql",
+    "supabase/migrations/202610060027_stage_sync.sql",
+    "supabase/migrations/202610060028_attachment_receipts.sql",
+    "supabase/migrations/202610060029_ledger_controls.sql",
+    "supabase/migrations/202610060030_checkpoint_evidence.sql",
+    "supabase/seed.sql",
+    "supabase/tests/rules.test.sql",
+    "supabase/tests/security.test.sql"
+  ],
+  "hashes": {
+    "eslint.config.js": "697c178eaa83a55f4612727e2bc61c55c1078b7f970ced44bb86c70e29bf594c",
+    "p/public.ts": "fc35dd8d3cc616dc2e74c1801074849e6c94ff6331f0779572318735453d219b",
+    "playwright.config.ts": "012fd1027c8109b29990d55add449bc4beaa424f3e03eec0055aa21a6848a57b",
+    "playwright.live.config.ts": "46ea59fd66024859f838e13775a62770bfa5667f2c1efc00e9d2472adc7b2aa3",
+    "scripts/browser-preview.mjs": "b1a3da02ef617783a276aeb5380b4497b212398b37c6677471dd71b9d960c057",
+    "scripts/check-live-ui.mjs": "40621c78e1eed2a3e6ec2ad58564ef7d1f37a6949113638420c0a938c596a233",
+    "scripts/check-pdf.mjs": "8739e76770325afa0073c7b3fa1313db24ebaee661bb409270d43c991c7a6aef",
+    "scripts/create-history-seed.mjs": "564d8ec6274496b7af245a43c241cf891beddfbd075134fe4a6319de3def012e",
+    "scripts/create-seed.mjs": "81803d085bbde6a2f5e80121f5c63347550f65ed9a2d5236d0097ae560918f9e",
+    "scripts/live-api-check.mjs": "d7da8031989da018ca42d1b704c055eef6c35730022a50d150342b9d80652fd5",
+    "scripts/setup-local.mjs": "d7d62ffa76befefc31c99ce8cd9526aa6bb02b423184a1d32be9ee29eb9c41b9",
+    "src/App.tsx": "64a7d8312bca9962642ec6e6d75f6733a153d7a95f6d42fc61f21ff0c2a0d586",
+    "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
+    "src/components/ui/sheet.tsx": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962",
+    "src/dashboard.tsx": "9615de8d923db4ef14f6e26579352a63ac301d0ee0add990640b43660ed3c38d",
+    "src/evidence.tsx": "e02120d12ac364ea901286cc9052084dfe92fb206b5d78cab5330707becfde4f",
+    "src/features.tsx": "029eaecdd35e0ed6675f601c1ceaad08b2ae2cac3684af7d9e583c744d281bbd",
+    "src/i18n/index.ts": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12",
+    "src/lib/auth.ts": "f6c3b61a11487ac16f4f6f4db90f65a9dbf116aa9f473f2bcf08a257fd01ad3a",
+    "src/lib/data.ts": "f3553050dc245b4f69aef843b3f782b7c0f419151b62b070e868eec57ef515b2",
+    "src/lib/demo.ts": "06f451f185d6a4b758a7d51f9a5a1496097de0b190f0917ec90d49abd8cc1b33",
+    "src/lib/domain.test.ts": "f34ef07344fe09491763c6dec3db73428d701a7ce11d0893ec7fae68672ceb6a",
+    "src/lib/domain.ts": "ec959000952eab0bea58d734e3144e647290d0eded85b8330cafe227bff84e4c",
+    "src/lib/media.ts": "1ce3f3f7a6bf56cc23d805741f35b10db1e532f4141aeb3af671373d99806883",
+    "src/lib/mfa.ts": "8850636db751da5c31a9ef0e728da5a97ae107be7d06de7cc4ad19002275c123",
+    "src/lib/pin.test.ts": "a037086e2fee03b7565756f2a53e519524966c77d23bb0d71af9b7155e6678cb",
+    "src/lib/pin.ts": "bc0ced82e329967ae10544be3a6f211eff7f4f00f0dcdf39fcc1d582f415cdc2",
+    "src/lib/reports.ts": "b7bf56f2d51740589cabada46d4b4a6a068dde00de258a4cff51a9f7e4bd8976",
+    "src/lib/session-policy.test.ts": "7fbb9d63954e8cee2b0909cdb58bce17e834c20309cce01fab6663f6c2626097",
+    "src/lib/session-policy.ts": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a",
+    "src/lib/supabase.ts": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024",
+    "src/main.tsx": "8c445e80a57a6792145c28ffe26aa6f2b4157ed9832ae1aba863016e53bd4871",
+    "src/management.tsx": "a6c51115bdecd3c733d5dbc9323720ec7482d7fcfb11439f2da0f7783bbb85cd",
+    "src/offline/db.test.ts": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0",
+    "src/offline/db.ts": "06097f9d9e9fb5f8cdd1a471ad7c41ae577b6d44d65518a51308016ab6b26188",
+    "src/scanner.tsx": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2",
+    "src/test-setup.ts": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9",
+    "src/training-editor.tsx": "f66d96c4ef86d124215be66833dced4534c88eaa3660f9338ec674cb9e7b9be1",
+    "supabase/functions/_shared/http.ts": "8624be847281764334f3502e0738a523473b4735711ff0add3cb71f09768afcb",
+    "supabase/functions/notifications/index.ts": "702765d7b35b8c47350f4d06cfc98162202f3d6b0196c23ed449b02543021a45",
+    "supabase/functions/ocr/index.ts": "7be4532eb7d0a9100848aa10e8f9f89717afaa3a30bc3cf889705b4fef2bda99",
+    "supabase/functions/report/index.ts": "99bb75472c5a3f6400ceefac2e4b6886db14d4dee7e551f188d85ccc90407e59",
+    "supabase/functions/scheduled-tasks/index.ts": "93f5eda2565ebf05f93fe65a3e429bb253c9b0e7b0db04c7b701a670c0b221af",
+    "supabase/functions/sync/index.ts": "ce5686ef9f82e2247bc4f16e4199ee075e24baf8d59522169b620dfdaf23deaf",
+    "supabase/functions/user-admin/index.ts": "a062425eaec04d31ec581cf623a382be6d5844f4c05601a8a60677769bac3e78",
+    "supabase/migrations/202610060001_foundation.sql": "f75d8f77c0ab01710020168b9a6546b723dedc58e48846362d96c0e5ee094024",
+    "supabase/migrations/202610060002_operations.sql": "9eadf85d545163463d7bff8ea242883c02afde0450df374f6b13b055a97eabdb",
+    "supabase/migrations/202610060003_administration.sql": "701ab027a421ca653efedd809b9195e216a43358e24f8b528e6e7aa370d13f44",
+    "supabase/migrations/202610060004_kpis.sql": "42d0fee7e3e6b2a9ae5d94d4e2c423f9749a9b02f08ffe3031cee3727ca38462",
+    "supabase/migrations/202610060005_provisioning.sql": "b64a7cd53336b6d37ceed2ac0610d59884b6396d42c1f38b17eb4dc29bc63b5f",
+    "supabase/migrations/202610060006_history.sql": "984a258c157ce751e186bef131f1c19665c346d6748d3e66d022e937f7840973",
+    "supabase/migrations/202610060007_feedback.sql": "c36978b5f8824cd69c6c20ff78aa0aea544af4c612058bcb3b3405bd102b635d",
+    "supabase/migrations/202610060008_management.sql": "5e32828597aadcdc5c36d103f1da30df18645e2ad07344f46c09b574bcb8e58e",
+    "supabase/migrations/202610060009_validation.sql": "3310b4390a05735bca414d3e203351b7cba52e429642afa4446088a84fc360df",
+    "supabase/migrations/202610060010_privacy.sql": "141d0bee55f94df9e7465509c205ac0690b1cc19cdb3e12fd4884218bf78efac",
+    "supabase/migrations/202610060011_lifecycle.sql": "29f29279420292a68315bd90f7c46af9100063e3b5750e77539558561e95fc52",
+    "supabase/migrations/202610060012_whey_rules.sql": "73d495829c56f709ac540e4223f98454b2be8ddbce4ef0b515d9a33a10c0e4b1",
+    "supabase/migrations/202610060013_sync_qualification.sql": "892eb1f5a88f564ad693a01feca50e38b478827a2a4a0bbdce1dbe21c34a02fa",
+    "supabase/migrations/202610060014_execute_privileges.sql": "931de8a490fe8c8d708ba387b99be4b82b36df09c65618d4f9af872a38e814c6",
+    "supabase/migrations/202610060015_explicit_rpc_grants.sql": "a356db6bc76409879901b5027594f8048198e7d0abc58ec18701fde822d271af",
+    "supabase/migrations/202610060016_investigation.sql": "38da560dfb3452bdd21d393894a3e1cf610aedeb765608f866580fb11652020f",
+    "supabase/migrations/202610060017_public_label_source.sql": "51da6aea8eb66d1a4b7cf06d659f5d761f3d38535a284f5837ce80f19a54c47b",
+    "supabase/migrations/202610060018_task_coverage.sql": "95cf09a059aba8734ec2a15c0e57a44a6ac09aa01ad44135edd5096893027ab8",
+    "supabase/migrations/202610060019_stock_training_rules.sql": "1f86eb75b0544850addae897c4548e2ae09f9a5aa208b7ebfac1af1fa6cdc9fa",
+    "supabase/migrations/202610060020_balance_query.sql": "24b3c9687abf4bebac15ea9cd8f10294371542bb69a53139bd7866fb0bc119df",
+    "supabase/migrations/202610060021_viewer_sessions.sql": "a41e1218de09908fc98de4ef8712990374215cdb07e7e686887921f5e63b0d40",
+    "supabase/migrations/202610060022_viewer_pin.sql": "fe6ddd4320b36a54042c83e11298b8b88ea5a958c37c9dbdb6f61b904907aa6f",
+    "supabase/migrations/202610060023_training_versions.sql": "85975cdb2b4b0726d1c253d3c5d2eec7d3fa000c6a86c8fd00e6a121c1563af6",
+    "supabase/migrations/202610060024_training_sync.sql": "c946620843b59ff3c5334e435ddb93498433aab81132efb56451f4fa918cda4e",
+    "supabase/migrations/202610060025_related_scope.sql": "ac3de77648ad5cc288d35ccc60d9eb2ce49609ea2bbb122d656f251b6ebf3da7",
+    "supabase/migrations/202610060026_stage_history.sql": "79611a708e25f10aec65376bc8278e09ada8466e87896871d983dd7b3a4565b6",
+    "supabase/migrations/202610060027_stage_sync.sql": "6def3d1905ea2204deee66885aa99ff2ab455311c175049f5adb175678e7a479",
+    "supabase/migrations/202610060028_attachment_receipts.sql": "492e68c46dc18710a4f3037c66871c555b5fae50824540c629e88823f8d5b7b2",
+    "supabase/migrations/202610060029_ledger_controls.sql": "9170019ef9a7d9db5d510913605fdda3650e74e0d0c61de655a628b1644f8ac7",
+    "supabase/migrations/202610060030_checkpoint_evidence.sql": "3f507b02078631182b704eee973933f9d3cf7685d375fa63561f4e61e2808e86",
+    "supabase/seed.sql": "6409633d9a378714a4907cf18189b31187b57eb558015ba82aaf9ae0cbef2fa9",
+    "supabase/tests/rules.test.sql": "196624067537fb44a97f0da21dfae3decc7f2fca49bcac49e41e2049c4bca7e7",
+    "supabase/tests/security.test.sql": "78e304bc554d5d32a8a677e3b74f21f4aa6f32cda03668cc3d0590c44c1b3c26",
+    "tests/flows.spec.ts": "be55913d777abe0756757b91fea56be951c4b7f0f204c2dbea0cb9e7eb258d67",
+    "tests/live/acceptance.spec.ts": "dd0073e575fa5355e9c25ad458e007f5806d98a1b1528c4fa37c5874c48057bd",
+    "tests/live/fixtures.ts": "ac80f85886d12c707c6cf6c19d9e59e6684365d31772aa208359d2603922657c",
+    "vite.config.ts": "d774868eaf54e5d3ab5a83f0349a60f16399ec8271f03b3df7b07a8e74e01741",
+    "vitest.config.ts": "a139292ca71b075326f66df8eb54466fa84a8a37284262ad906f5493c3cf6c0d"
+  },
+  "config_hashes": {
+    "tsconfig.json": "bd3ae23ba6869c139d92a538404a27648867e1b6a54310a3d6c7b5f6d56ec8fd"
+  },
+  "version": 1
+}

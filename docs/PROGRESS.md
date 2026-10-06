@@ -1,0 +1,199 @@
+﻿# Build progress
+
+Checked requirements below have implementation and local evidence. Unchecked requirements still need implementation or complete acceptance coverage. No deployment or pilot approval is implied. See TEST_EVIDENCE.md for the exact limits of the test suites.
+
+## Phases
+
+- [ ] 1 Foundation, authentication, RLS, audit, configuration, offline sync
+- [ ] 2 Organizations, suppliers, training
+- [ ] 3 Whey receipts, decisions, expiry and disposal
+- [ ] 4 Batches, stages, checkpoints, tasks and CAPA
+- [ ] 5 Allocation, packaging, labels and mass balance
+- [ ] 6 Stock, release, QR and public page
+- [ ] 7 Recall, sales, equipment
+- [ ] 8 Dashboards, reports, notifications and OCR
+- [ ] 9 Hardening, deployment and user documentation
+
+## Requirement evidence
+
+- [ ] FR-AUTH-01 (M) — Users sign in with phone number or username plus password or PIN; admins and Food-Safety Leads also use a second factor.
+- [x] FR-AUTH-02 (M) — Role-based access with cooperative-level data isolation enforced on the server, not only in the interface. — Evidence: pgTAP security.test.sql and rules.test.sql cooperative and role boundaries.
+- [ ] FR-AUTH-03 (M) — **Shared-device mode \[Added\]:** several users of one cooperative can be signed in on one device and switch with a personal 4–6 digit PIN; each record is attributed to the active user.
+- [ ] FR-AUTH-04 (M) — Critical actions (accept/reject whey, release/reject batch, recall, threshold change) require PIN re-entry at the moment of action as an authenticated sign-off.
+- [x] FR-AUTH-05 (M) — Sessions expire after configurable inactivity; offline sessions remain valid for a configurable period (default 7 days) before requiring online re-authentication. — Evidence: session-policy.test.ts configured inactivity and offline expiry.
+- [ ] FR-AUTH-06 (M) — Accounts can be disabled immediately; a disabled user's pending offline records are still accepted on sync but flagged for review.
+- [ ] FR-AUTH-07 (S) — Lost-device procedure: an admin can revoke a device, which wipes local data on its next connection.
+- [ ] FR-ORG-01 (M) — Admins create and edit cooperatives with ID, name, region, production site(s), contacts, status and date joined.
+- [ ] FR-ORG-02 (M) — Cooperative Managers create users in their own cooperative and assign roles; WISE Admins manage all.
+- [ ] FR-ORG-03 (M) — User records hold role, status, training status, and authorizations (e.g. "may receive whey", "may release batches").
+- [ ] FR-ORG-04 (M) — Demographic data for impact is stored in a separate Producer Profile with restricted access and recorded consent.
+- [ ] FR-ORG-05 (S) — Devices are registered to a cooperative with a friendly label (e.g. "Coop phone 2").
+- [ ] FR-TRN-01 (M) — Knowledge area with GMP, food-safety procedures, SOPs, short videos, illustrated instructions, FAQs and troubleshooting, in Arabic and English.
+- [ ] FR-TRN-02 (M) — All content is versioned; each completion records module, version, date and assessment result.
+- [ ] FR-TRN-03 (M) — Producers cannot independently create batches until required introductory training is complete.
+- [ ] FR-TRN-04 (M) — Admins may grant supervised or exceptional authorization with a logged reason and expiry date.
+- [ ] FR-TRN-05 (M) — When an SOP or module changes, affected users are assigned refresher training with a due date; overdue refreshers appear as tasks.
+- [ ] FR-TRN-06 (M) — **Offline content \[Added\]:** required modules and SOPs can be downloaded to the device; videos are compressed for low bandwidth.
+- [ ] FR-TRN-07 (S) — **Context help \[Added\]:** each checkpoint links to the relevant SOP step or short video.
+- [ ] FR-TRN-08 (S) — Simple picture-based assessments suitable for low-literacy users.
+- [ ] FR-SUP-01 (M) — Reusable supplier registry with types: dairy/labneh, bulgur, salt, other ingredient, packaging.
+- [x] FR-SUP-02 (S) — Supplier approval status (approved, provisional, suspended); suspended suppliers cannot be selected for new receipts. — Evidence: receipt filtering and apply_sync supplier status validation.
+- [ ] FR-SUP-03 (M) — **Ingredient receipt \[Added\]:** every receipt of bulgur, salt, optional ingredients and packaging material creates an Ingredient Lot with internal lot ID, supplier lot if available, quantity, unit, date and expiry if known.
+- [x] FR-SUP-04 (S) — Optional photo of the supplier label at receipt. — Evidence: Playwright receipt/photo workflows and atomic media unit test.
+- [ ] FR-SUP-05 (M) — Batches select ingredients from available Ingredient Lots rather than typing supplier details again.
+- [x] FR-WHY-01 (M) — Creating a receipt generates a unique Whey Lot ID automatically. — Evidence: live A1 plus unique UUID/sequence database constraints.
+- [x] FR-WHY-02 (M) — Source fields: dairy supplier, supplier lot/reference, labneh production lot, milk species, whey generation date/time, collection date/time. — Evidence: live A1 receipt form and immutable receipt facts.
+- [ ] FR-WHY-03 (M) — Supplier declarations: pasteurization confirmation, labneh ingredients, starter culture, salt addition stage, other declarations; each marked "declared by supplier".
+- [x] FR-WHY-04 (S) — **Supplier declaration reuse \[Added\]:** a standing declaration per supplier pre-fills these fields; the receiver confirms or edits per delivery. — Evidence: preview declaration reuse and live A1 confirmation/edit fields.
+- [ ] FR-WHY-05 (M) — Transport and reception: transport method/conditions, container type and condition, receipt date/time, received mass, receipt temperature.
+- [ ] FR-WHY-06 (M) — Quality measurements as required by the active SOP: pH, titratable acidity, °Brix or approved rapid solids indicator, salt/conductivity, appearance, odour. Each stores value, unit, time, user, equipment ID and optional image.
+- [ ] FR-WHY-07 (M) — Sampling: sample ID, sampling date/time, lab, result and reference when available; a lab result can be attached after the decision.
+- [x] FR-WHY-08 (M) — The system evaluates measurements against the active threshold set and shows a suggested outcome, but the user selects the decision. — Evidence: live A1 suggested hold.
+- [x] FR-WHY-09 (M) — Decision options: **Accepted**, **Hold**, **Rejected**, with reason, decision time, checker, authenticated sign-off and evidence. — Evidence: PIN transition_lot and live A1/A4.
+- [x] FR-WHY-10 (M) — Accepting a lot whose measurements fall outside thresholds requires a justification and creates a deviation. — Evidence: live A1 deviation assertion.
+- [x] FR-WHY-11 (M) — Rejected lots can never be allocated (**Always blocking**). Held lots cannot be allocated until formally released. — Evidence: pgTAP rejected and held input tests.
+- [ ] FR-WHY-12 (M) — **Shelf life \[Added\]:** each accepted lot gets a use-by time computed from generation time plus a configurable maximum age (and storage temperature rule). Expiring lots appear as tasks; expired lots cannot be allocated.
+- [ ] FR-WHY-13 (M) — **Disposal \[Added\]:** rejected, expired or leftover whey can be recorded as disposed or diverted (e.g. animal feed) with quantity and method, so mass balance closes.
+- [ ] FR-WHY-14 (S) — Whey stored before use records storage location and temperature checks if required by the SOP.
+- [x] FR-ALC-01 (M) — Allocations record input lot → output batch → quantity, unit, time and user. — Evidence: live allocation ledger plus pgTAP available-balance checks.
+- [x] FR-ALC-02 (M) — One whey lot may be split across batches; a batch may use several whey lots where the SOP allows (configurable). — Evidence: genealogy model and server multi_lot rule.
+- [ ] FR-ALC-03 (M) — The system computes per whey lot: received, accepted, rejected, on hold, allocated, disposed, remaining, valorized.
+- [x] FR-ALC-04 (M) — Allocation exceeding available quantity is blocked online; offline, it is accepted provisionally and resolved on sync (see section 10). — Evidence: live A2 conflict and unit allocation maths.
+- [x] FR-ALC-05 (M) — The same logic applies to ingredient lots (bulgur, salt, others) and packaging material lots. — Evidence: consumption validation shared by ingredient/material lots.
+- [ ] FR-ALC-06 (S) — **Yield check \[Added\]:** at packaging, the system compares output mass with inputs and flags yields outside a configurable expected range.
+- [ ] FR-ALC-07 (S) — Closing a whey lot with a residual quantity requires recording what happened to it (disposed, lost, measurement difference).
+- [x] FR-BAT-01 (M) — Creating a batch generates Batch ID, cooperative, producer, creation time, status, SOP version and traceability reference. — Evidence: live A2 creation and server-generated codes.
+- [ ] FR-BAT-02 (M) — The producer links accepted whey lot(s) and selects ingredient lots (bulgur, salt, optional) with quantities and units.
+- [ ] FR-BAT-03 (M) — Ingredient photos are optional or required per configuration, not universally mandatory.
+- [ ] FR-BAT-04 (M) — Lifecycle states: **Draft → In Production → Awaiting Review → Released**, with **On Hold**, **Rejected**, **Withdrawn/Recalled** and **Closed**.
+- [ ] FR-BAT-05 (M) — All state transitions are recorded in the audit log with user, time and reason.
+- [x] FR-BAT-06 (M) — A batch cannot become Released while unresolved critical deviations exist (**Always blocking**). — Evidence: pgTAP critical block and live A4 disabled release.
+- [ ] FR-BAT-07 (M) — **Production stages \[Added\]:** within In Production, the batch moves through configurable stages (e.g. preparation, mixing, fermentation, drying, grinding/sieving, ready to pack), each with its own checkpoints and expected duration.
+- [ ] FR-BAT-08 (M) — **Multi-day tracking \[Added\]:** stages carry start and end times; elapsed time and overdue stages are visible and drive reminders.
+- [ ] FR-BAT-09 (S) — **Handover \[Added\]:** responsibility for a batch can pass between producers; each record keeps its own author.
+- [ ] FR-BAT-10 (M) — A batch may be abandoned before packaging with a reason; its inputs remain consumed and appear in losses.
+- [ ] FR-BAT-11 (S) — Closed state is reached when all packaged stock is sold, distributed, or written off.
+- [ ] FR-CHK-01 (M) — Pre-production checklist: equipment cleaned and sanitized, area clean, personal hygiene satisfied, ingredients inspected, containers/equipment protected. Items are configurable.
+- [ ] FR-CHK-02 (M) — Repeated checks use quick interactions: "all OK" with one tap, exceptions recorded individually.
+- [x] FR-CHK-03 (M) — Checkpoints are configurable and linked to the active SOP version. Examples: hygiene confirmation, temperature, pH, mixing, fermentation, drying inspection, moisture, appearance, packaging inspection. — Evidence: effective version check, stage-specific definitions and live A3.
+- [ ] FR-CHK-04 (M) — Each checkpoint definition sets: stage and timing, responsible role, required data and units, acceptable range or response, photo requirement, and whether failure is a warning or critical deviation.
+- [x] FR-CHK-05 (M) — The app shows only checks for the current stage, never one long form. — Evidence: preview and live current-stage checkpoint screens.
+- [ ] FR-CHK-06 (M) — **Recurring checks \[Added\]:** checks can repeat on an interval during a stage (e.g. drying inspection every 12 h) and are generated automatically.
+- [x] FR-CHK-07 (S) — **Equipment link \[Added\]:** a measurement can record which device was used; using a device past its calibration date raises a warning. — Evidence: validate_operational equipment scope and calibration warning task.
+- [ ] FR-CHK-08 (M) — **Late entry \[Added\]:** checks recorded after their due time keep both the observed time and the entry time, and are flagged as late.
+- [ ] FR-TSK-01 (M) — The system determines the next required action for every active batch and lot.
+- [ ] FR-TSK-02 (M) — Task types include: check due, missing measurement, stage overdue, awaiting review, storage inspection due, whey lot expiring, held lot awaiting decision, training due, calibration due, deviation action due.
+- [ ] FR-TSK-03 (M) — The producer home screen is a prioritized **"What needs my attention now?"** list, overdue first.
+- [ ] FR-TSK-04 (M) — Tasks work offline from locally cached schedules.
+- [ ] FR-TSK-05 (M) — Supervisors see a review queue of batches and lots awaiting their decision.
+- [x] FR-DEV-01 (M) — Out-of-range values automatically create a deviation; users can also raise one manually. — Evidence: out-of-range creation plus live A1 override deviation.
+- [ ] FR-DEV-02 (M) — A deviation records: affected batch or lot, issue, detected value/condition, time, detector, severity, corrective action, evidence, reviewer, resolution.
+- [ ] FR-DEV-03 (M) — Severity levels: minor, major, critical; categories are configurable.
+- [x] FR-DEV-04 (M) — Critical deviations automatically place the batch or lot **On Hold** pending review. — Evidence: hold_critical trusted transition and pgTAP critical release test.
+- [x] FR-DEV-05 (M) — Only a Supervisor/QA or Food-Safety Lead can close a critical deviation, with sign-off. — Evidence: close_deviation role/sign-off and pgTAP permission check.
+- [ ] FR-DEV-06 (S) — **Preventive action \[Added\]:** a deviation can carry a preventive action with an owner and due date, tracked as a task.
+- [ ] FR-DEV-07 (S) — **Recurrence \[Added\]:** the system flags repeated deviations of the same category at the same cooperative within a configurable window.
+- [ ] FR-DEV-08 (S) — **Complaints \[Added\]:** a consumer or customer complaint can be logged against a packaging lot and converted into a deviation.
+- [ ] FR-STS-01 (M) — **Record completeness:** percentage of required records completed, e.g. "92% of required production records completed".
+- [ ] FR-STS-02 (M) — **Process status:** On Track, Attention Required, On Hold, Released, Rejected.
+- [ ] FR-STS-03 (M) — **Deviations:** counts by severity and resolution, e.g. "0 critical, 2 minor resolved".
+- [ ] FR-STS-04 (M) — **Training/SOP validity:** whether the producer held required training for the SOP version used.
+- [ ] FR-AI-01 (S) — OCR reading of thermometer, pH meter and scale displays, package labels and printed lot numbers.
+- [x] FR-AI-02 (S) — The system keeps the original image, extracted value, confidence, and final confirmed value. — Evidence: live A3 retained photo, AI suggestion, confidence and confirmed reading.
+- [ ] FR-AI-03 (S) — Below a configurable confidence threshold the field stays empty and requires manual entry.
+- [ ] FR-AI-04 (S) — **Offline fallback \[Added\]:** when no model is available offline, the photo is stored and the user enters the value manually; OCR can run later as a cross-check.
+- [x] FR-PKG-01 (M) — Recording packaging creates a Packaging Lot linked to its batch: date/time, packaging type, packaging material lot, package size, number of packages, total packaged mass, responsible producer. — Evidence: live packagedBatch fixture and API workflow.
+- [ ] FR-PKG-02 (M) — Packaging types (kraft pouch, transparent food-grade pouch, vacuum pouch, plastic container, custom) and sizes (250 g, 500 g, 1 kg, custom) are admin-maintained lists.
+- [x] FR-PKG-03 (M) — A batch may be packaged in several sessions, each creating its own packaging lot. — Evidence: apply_sync allows additional awaiting-review packaging sessions.
+- [x] FR-PKG-04 (M) — **Best-before \[Added\]:** each packaging lot gets a best-before date from a configurable shelf life per product and package type; the user can shorten but not extend it. — Evidence: validate_packaging_rules and configurable package shelf life.
+- [ ] FR-PKG-05 (M) — **Label data \[Added\]:** the system assembles mandatory label content: product name, ingredients, allergens (milk; gluten from bulgur), net weight, cooperative, lot code, production date, best-before, storage instructions and QR. Final label rules are set by the Food-Safety Lead (see section 9).
+- [ ] FR-PKG-06 (S) — **Label printing \[Added\]:** print-ready label sheets (PDF, A4 sticker sheets) and support for a small Bluetooth thermal label printer.
+- [x] FR-PKG-07 (M) — Packaging completion moves the batch to Awaiting Review; it never implies release. — Evidence: live A4 packaged batch awaits independent release.
+- [ ] FR-INV-01 (M) — Finished stock records storage location, quantity, storage date and storage requirements.
+- [ ] FR-INV-02 (M) — Periodic storage inspections: clean, dry, pest-protected, off-floor, temperature/humidity if required, photo.
+- [x] FR-INV-03 (M) — Inventory is a ledger of movements (produced, sold, distributed, sample, lost, disposed, returned, adjusted), not an editable number. — Evidence: append-only inventory movement tests.
+- [ ] FR-INV-04 (M) — The balance **Produced = In stock + Sold/Distributed + Removed/Lost** is checked within a configurable tolerance.
+- [x] FR-INV-05 (S) — **Stock count \[Added\]:** periodic physical counts reconcile system stock; differences require a reason. — Evidence: reconcile_stock permission and reason validation.
+- [x] FR-INV-06 (M) — **Expiry \[Added\]:** stock nearing best-before appears as a task; expired stock cannot be sold. — Evidence: expiry task generator and unexpired sale constraint.
+- [ ] FR-INV-07 (M) — Unreleased stock is visually separated and cannot be sold.
+- [ ] FR-REL-01 (M) — An authorized user reviews required checkpoints, deviations, measurements, packaging information and quality checks on one review screen.
+- [x] FR-REL-02 (M) — Decision options: Release, Hold, Reject; decision, reason and person are permanently recorded with sign-off. — Evidence: PIN transition_lot plus live A4.
+- [x] FR-REL-03 (M) — Release is blocked when required records are missing or critical deviations are unresolved. — Evidence: pgTAP missing-checkpoint/critical tests and live A4.
+- [ ] FR-REL-04 (M) — **Separation of duties \[Added\]:** by default the releaser must differ from the producer. Where a cooperative has only one qualified person, a configurable exception allows self-release and flags the batch for WISE remote review.
+- [ ] FR-REL-05 (S) — **Pending lab results \[Added\]:** if the SOP requires a lab result before release, release is blocked until it is attached.
+- [x] FR-REL-06 (M) — Release and rejection lock the batch; later changes are amendments with reason. — Evidence: pgTAP released lock and append-only amendment RPC.
+- [x] FR-QR-01 (M) — Batch-level traceability by default: all packages of a packaging lot share one QR. — Evidence: packaging_detail owns one token per packaging lot.
+- [x] FR-QR-02 (M) — The QR encodes a persistent short URL with an opaque token, not the record itself. — Evidence: opaque 24-byte token and generated /p/ URL.
+- [ ] FR-QR-03 (M) — The design keeps open a later move to GS1 Digital Link or other standard identifiers.
+- [x] FR-QR-04 (M) — Public page shows: product name, cooperative, production date, lot number, ingredients, allergens, package size, best-before, storage advice, WISE project information, circular-economy story. — Evidence: live A6 public allowlist and bilingual label configuration.
+- [x] FR-QR-05 (M) — Public page shows a status only as "Available" or a withdrawal/recall notice; it never claims QR registration proves safety. — Evidence: live A6 Available and A5 recall notice plus disclaimer.
+- [x] FR-QR-06 (M) — The page never shows internal measurements, producer personal data, deviations, commercial data, supplier-sensitive data or audit records. — Evidence: pgTAP exact public allowlist and live A6.
+- [ ] FR-QR-07 (M) — Arabic and English with automatic language detection and a toggle; loads in under 2 s on 3G and works without login.
+- [x] FR-QR-08 (M) — **Unreleased lot \[Added\]:** scanning a QR of an unreleased or rejected lot shows a neutral "information not available" page. — Evidence: live A6 unreleased neutral page.
+- [ ] FR-QR-09 (S) — **Feedback \[Added\]:** optional "report a problem" form feeds the complaints log (FR-DEV-08).
+- [ ] FR-RCL-01 (M) — Authorized users can place a released batch or packaging lot into Withdrawn/Recalled with reason and sign-off.
+- [ ] FR-RCL-02 (M) — Trace-forward from a batch immediately lists: source whey lot(s), other batches sharing those lots, packaged quantities, remaining inventory, recorded sales/distribution, affected cooperatives.
+- [x] FR-RCL-03 (M) — Trace-forward from a whey lot or ingredient lot lists every downstream batch, packaging lot, stock and sale with quantities. — Evidence: live A5 whey genealogy includes stock and sale.
+- [x] FR-RCL-04 (M) — The public QR page of affected lots switches to a configurable withdrawal/recall notice. — Evidence: live A5 custom public recall notice.
+- [ ] FR-RCL-05 (M) — **Recall case \[Added\]:** each recall is a case with scope, actions (stop sale, notify buyers, retrieve, destroy), quantities recovered, status and closure.
+- [ ] FR-RCL-06 (S) — **Notification list \[Added\]:** the case lists buyer categories and recorded customer contacts (where collected) to notify.
+- [x] FR-RCL-07 (M) — **Mock recall \[Added\]:** a simulation mode runs the same trace without changing statuses or public pages, timed for drills. — Evidence: live A5 mock closure preserves public availability; case timestamps record duration.
+- [x] FR-RCL-08 (M) — Recall initiation alerts Supervisors, Coop Managers, WISE Admin and Food-Safety Lead immediately. — Evidence: live A5 notification rows for relevant roles.
+- [x] FR-SAL-01 (M) — A lightweight record captures packaging lot, date, quantity, package size, transaction type, destination/customer category, unit price or total, and currency. — Evidence: live A5 sale and live API transaction workflow.
+- [x] FR-SAL-02 (M) — Transaction types: sale, consignment, donation/sample, internal use, return. — Evidence: server-enforced transaction enum and ledger mapping.
+- [x] FR-SAL-03 (M) — **Currency \[Added\]:** LBP and USD supported; exchange rate stored per transaction for consistent USD reporting. — Evidence: transaction currency/rate columns and USD rate validation.
+- [x] FR-SAL-04 (M) — Only released, unexpired stock can be sold; sales cannot exceed available stock. — Evidence: pgTAP excess sale and live recalled-sale rejection.
+- [ ] FR-SAL-05 (M) — Customer identity is not required; optional named customer only for B2B buyers when needed for recall.
+- [ ] FR-SAL-06 (S) — **Quick sale \[Added\]:** scanning a package QR pre-fills lot and size for a two-tap entry.
+- [ ] FR-EQP-01 (M) — Records for thermometer, scale, pH meter, moisture meter, temperature/humidity logger: device ID, cooperative, type, calibration/check date, next due, status.
+- [ ] FR-EQP-02 (S) — Simple verification checks (e.g. thermometer in ice water, scale with reference weight) can be recorded in the app.
+- [ ] FR-EQP-03 (M) — Calibration due dates generate tasks; out-of-date devices trigger warnings when used.
+- [ ] FR-EQP-04 (M) — Other equipment (containers, utensils, mesh covers, PPE, cleaning supplies, QR labels) stays in training and SOP material, not the software.
+- [ ] FR-CFG-01 (M) — Admins manage cooperatives, users and roles, suppliers, ingredient types, packaging options, SOP versions, training modules, checkpoints, units, thresholds, deviation categories, shelf-life rules, label templates and KPI definitions.
+- [ ] FR-CFG-02 (M) — **Two-step approval \[Added\]:** changes to food-safety thresholds, checkpoints and SOPs are drafted by an Admin and approved by the Food-Safety Lead before taking effect.
+- [ ] FR-CFG-03 (M) — Configuration is versioned with effective dates; active batches keep the version they started under unless an admin migrates them with a reason.
+- [ ] FR-CFG-04 (S) — Configuration can be scoped globally or per cooperative where procedures differ.
+- [ ] FR-CFG-05 (S) — Configuration can be exported and imported as a file to set up new cooperatives or environments.
+- [ ] FR-DQ-01 (M) — Prevent or warn on: impossible dates, negative quantities, allocation over available, duplicate IDs, missing required records, unsupported units, sales over stock, use of rejected/held/expired whey, release with critical deviations.
+- [ ] FR-DQ-02 (M) — Each rule is configurable as blocking or warning, except those marked Always blocking.
+- [ ] FR-DQ-03 (M) — **Plausibility ranges \[Added\]:** measurements far outside physical plausibility (e.g. pH 14) prompt re-entry before saving.
+- [ ] FR-DQ-04 (S) — **Data-quality report \[Added\]:** admins see warnings overridden, late entries and sync conflicts by cooperative.
+- [ ] FR-AUD-01 (M) — Every create, change and state transition on critical records writes an append-only audit event: object, field, old value, new value, user, device, time, reason.
+- [ ] FR-AUD-02 (M) — Corrections require a reason; originals remain visible in history.
+- [ ] FR-AUD-03 (M) — Released, rejected and recalled records are locked; changes are amendments.
+- [x] FR-AUD-04 (M) — The audit log cannot be edited or deleted by any role, including admins. — Evidence: pgTAP owner UPDATE/DELETE denial.
+- [x] FR-AUD-05 (M) — Audit history is viewable per record and exportable. — Evidence: record history UI and scoped audit report export.
+- [ ] FR-RPT-01 (M) — Export to CSV, Excel and PDF, respecting the user's access scope.
+- [ ] FR-RPT-02 (M) — Reports: whey reception register, batch traceability, batch production record, deviations, inventory, sales, training, impact indicators, trace-back/recall, equipment calibration, audit log.
+- [ ] FR-RPT-03 (M) — One batch traceability report reconstructs the full history from incoming whey to finished product and sale.
+- [ ] FR-RPT-04 (S) — **Scheduled reports \[Added\]:** monthly impact and operations reports emailed to configured recipients.
+- [ ] FR-NTF-01 (M) — In-app notifications for tasks, reviews, deviations and recalls.
+- [ ] FR-NTF-02 (S) — **Critical alerts \[Added\]:** recall, critical deviation and expiring held whey also go by WhatsApp or SMS, with user opt-in.
+- [ ] FR-NTF-03 (S) — Web push where the device supports it.
+
+## Acceptance and nonfunctional checks
+
+- [ ] A1 automated acceptance story
+- [x] A2 automated acceptance story — Evidence: tests/live/acceptance.spec.ts offline reload and conflict.
+- [ ] A3 automated acceptance story
+- [ ] A4 automated acceptance story
+- [ ] A5 automated acceptance story
+- [x] A6 automated acceptance story — Evidence: tests/live/acceptance.spec.ts public neutral/released English/Arabic allowlist.
+- [x] A7 automated acceptance story — Evidence: tests/live/acceptance.spec.ts donor date-range dashboard and definitions.
+- [ ] NFR-01
+- [ ] NFR-02
+- [ ] NFR-03
+- [ ] NFR-04
+- [ ] NFR-05
+- [ ] NFR-06
+- [ ] NFR-07
+- [ ] NFR-08
+- [ ] NFR-09
+- [ ] NFR-10
+- [ ] NFR-11
+- [ ] NFR-12
+- [ ] NFR-13
+- [ ] NFR-14
+- [ ] NFR-15
+- [ ] NFR-16
+

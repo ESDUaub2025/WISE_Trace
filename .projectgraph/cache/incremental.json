@@ -1,0 +1,270 @@
+{
+  "version": 3,
+  "graph_fingerprint": "sha256:daa3716eda5203148b47a1c1920140602096f06743561d4c9009afee9140efb6",
+  "generated_at": "2026-10-06T09:16:27+00:00",
+  "trust": "fast-path",
+  "statuses": {
+    "CFG_PROJECT_MANIFESTS": {
+      "id": "CFG_PROJECT_MANIFESTS",
+      "type": "CONFIG",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "CMP_SRC": {
+      "id": "CMP_SRC",
+      "type": "COMPONENT",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "CMP_SRC_COMPONENTS": {
+      "id": "CMP_SRC_COMPONENTS",
+      "type": "COMPONENT",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "CMP_SUPABASE": {
+      "id": "CMP_SUPABASE",
+      "type": "COMPONENT",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "REQ_REQUIREMENTS_TO_BE_CAPTURED": {
+      "id": "REQ_REQUIREMENTS_TO_BE_CAPTURED",
+      "type": "REQUIREMENT",
+      "status": "READY",
+      "lifecycle": "DECLARED",
+      "reasons": [
+        {
+          "code": "ready",
+          "detail": "All gating dependencies satisfy their required state."
+        },
+        {
+          "code": "nothing-fulfils-this",
+          "detail": "No node yet satisfies or implements this."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "SYS_DATA": {
+      "id": "SYS_DATA",
+      "type": "SYSTEM",
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "SYS_FRONTEND": {
+      "id": "SYS_FRONTEND",
+      "type": "SYSTEM",
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (ACTIVE).",
+          "refs": [
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS",
+            "CMP_SUPABASE"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "WISE_TRACE": {
+      "id": "WISE_TRACE",
+      "type": "PROJECT",
+      "status": "ACTIVE",
+      "lifecycle": "ACTIVE",
+      "reasons": [
+        {
+          "code": "active",
+          "detail": "Work is in progress."
+        },
+        {
+          "code": "derived-from-members",
+          "detail": "Derived from contained nodes (ACTIVE).",
+          "refs": [
+            "CFG_PROJECT_MANIFESTS",
+            "SYS_DATA",
+            "SYS_FRONTEND"
+          ]
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    }
+  },
+  "self_fingerprints": {
+    "WISE_TRACE": "sha256:54162d7372d78ae2681679b21448b9f70c05938e4c2943d031ab04a9eab3e260",
+    "SYS_FRONTEND": "sha256:6aa38a220e4b92d1b0006ba07f2a82e679097c969d4f368c8055775ad96cf8e8",
+    "SYS_DATA": "sha256:6aa38a220e4b92d1b0006ba07f2a82e679097c969d4f368c8055775ad96cf8e8",
+    "CFG_PROJECT_MANIFESTS": "sha256:e712dfd6639cc6466d51cb41187d166e049093f9ee930421b3d50b1edcd5dd98",
+    "CMP_SUPABASE": "sha256:60d5f3979a71e6f2d1a80f9250c780e57c975b3e40ffb29be7bb77d5a9ae2aea",
+    "CMP_SRC": "sha256:6eaf5147457232c42a3c846c1c8e994bdf0d0558e418d8658b6094806f228990",
+    "CMP_SRC_COMPONENTS": "sha256:38e232ad671e1955a9060d4ae908852106c0568feca07dcb06411ee12f2119d7",
+    "REQ_REQUIREMENTS_TO_BE_CAPTURED": "sha256:0cfd65db1d8d6a79a8977d4f3c2bbccb417bc018c5a0fac98c4ae0fe64443235"
+  },
+  "dep_fingerprints": {
+    "WISE_TRACE": "sha256:f859dbee50149d1b3a1ec9c66c0b706fb3bb38039971a8f77e79a318bfb57ab5",
+    "SYS_FRONTEND": "sha256:a09630fb0375ac91d6fbc7eb11b649076fab899fda026cac151be6aa3c16638a",
+    "SYS_DATA": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "CFG_PROJECT_MANIFESTS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "CMP_SUPABASE": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "CMP_SRC": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "CMP_SRC_COMPONENTS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "REQ_REQUIREMENTS_TO_BE_CAPTURED": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "file_hashes": {
+    "package-lock.json": "1b8a14af4cffe6db3567d9236dfa9f9fa6a2c64339791ec4cf7d1a9d4b9f777c",
+    "package.json": "c65effa00e1e1a73224b6108312ade610721fc836d54c1da327fde235ac60b4e",
+    "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
+    "src/test-setup.ts": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9",
+    "supabase/migrations/202610060001_foundation.sql": "9287bef41e4c81033860c0cdf994e8da0f2d0b64de8bae58524986f5a5dae470",
+    "supabase/migrations/202610060002_operations.sql": "0e1dcd61d369fd2b6d25e3c93903df6c03d1840260f9c5b9381bf53224d3c4f7"
+  },
+  "file_stats": {
+    "package-lock.json": [
+      65835,
+      1791277949092273300
+    ],
+    "package.json": [
+      1242,
+      1791278140006332900
+    ],
+    "src/components/ui/button.tsx": [
+      702,
+      1791277887801066200
+    ],
+    "src/test-setup.ts": [
+      30,
+      1791277887796239300
+    ],
+    "supabase/migrations/202610060001_foundation.sql": [
+      24757,
+      1791278007041371200
+    ],
+    "supabase/migrations/202610060002_operations.sql": [
+      21367,
+      1791278122499167500
+    ]
+  },
+  "cycles": [],
+  "verifiable": [
+    "CMP_SRC",
+    "CMP_SRC_COMPONENTS",
+    "CMP_SUPABASE",
+    "REQ_REQUIREMENTS_TO_BE_CAPTURED",
+    "SYS_DATA",
+    "SYS_FRONTEND",
+    "WISE_TRACE"
+  ],
+  "discovery_stats": {},
+  "tracked": [
+    "package-lock.json",
+    "package.json",
+    "src/components/ui/button.tsx",
+    "src/test-setup.ts",
+    "supabase/migrations/202610060001_foundation.sql",
+    "supabase/migrations/202610060002_operations.sql"
+  ],
+  "derivation_key": "1f5c360148ad717a1fcbdfe3fd65b7e7ae8b8f142ebeba198fca4ee019de0703",
+  "ownership": {
+    "WISE_TRACE": [],
+    "SYS_FRONTEND": [],
+    "SYS_DATA": [],
+    "CFG_PROJECT_MANIFESTS": [
+      "package-lock.json",
+      "package.json"
+    ],
+    "CMP_SUPABASE": [
+      "supabase/migrations/202610060001_foundation.sql",
+      "supabase/migrations/202610060002_operations.sql"
+    ],
+    "CMP_SRC": [
+      "src/components/ui/button.tsx",
+      "src/test-setup.ts"
+    ],
+    "CMP_SRC_COMPONENTS": [
+      "src/components/ui/button.tsx"
+    ],
+    "REQ_REQUIREMENTS_TO_BE_CAPTURED": []
+  },
+  "note": "Transient cache, not evidence. A 'fast-path' result located changes by size and modification time and must not be used for a delivery decision; see incremental.require_verified."
+}

@@ -1,0 +1,10 @@
+import {useState} from 'react';
+import {useTranslation} from 'react-i18next';
+import {Button} from './components/ui/button';
+import {supabase,demo} from './lib/supabase';
+import type {Identity} from './lib/domain';
+export function TrainingEditor({identity,config,onDone}:{identity:Identity;config:string;onDone:()=>Promise<void>}){
+ const {t}=useTranslation();const [error,setError]=useState(''),[busy,setBusy]=useState(false);
+ return <form className="record-form" onSubmit={async e=>{e.preventDefault();setBusy(true);setError('');const f=new FormData(e.currentTarget);try{if(!supabase||demo||!navigator.onLine)throw new Error('onlineRequired');const response=await supabase.rpc('publish_training',{module_key:String(f.get('module_key')),content:{en:String(f.get('en')),ar:String(f.get('ar'))},assessment:JSON.parse(String(f.get('assessment'))),required:f.has('required'),config,effective:new Date(String(f.get('effective'))).toISOString()});if(response.error)throw response.error;await onDone();}catch(e){setError(e instanceof Error?e.message:'error');}finally{setBusy(false);}}}>
+ <h2>{t('publishTraining')}</h2><label>{t('module_key')}<input name="module_key" required/></label><label>{t('english')}<textarea name="en" rows={6} minLength={20} required/></label><label>{t('language')}<textarea name="ar" dir="rtl" rows={6} minLength={20} required/></label><label>{t('assessment')}<textarea name="assessment" className="mono" rows={5} required defaultValue={JSON.stringify([{key:'hygiene',question:{en:'Which action is safe?',ar:'أي إجراء آمن؟'},correct:'safe',options:[{key:'safe',label:{en:'Clean equipment before use',ar:'تنظيف المعدات قبل الاستخدام'}},{key:'unsafe',label:{en:'Reuse dirty equipment',ar:'إعادة استخدام معدات متسخة'}}]}],null,2)}/></label><label className="checkbox"><input name="required" type="checkbox" defaultChecked/>{t('requiredTraining')}</label><label>{t('effective')}<input name="effective" type="datetime-local" required/></label>{error&&<p className="error-box" role="alert">{t(error)}</p>}<Button disabled={busy||!identity.roles.includes('admin')||demo}>{t(busy?'loading':'publishTraining')}</Button></form>;
+}

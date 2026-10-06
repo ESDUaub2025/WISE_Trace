@@ -1,0 +1,4 @@
+﻿import { supabase } from './supabase';
+export async function prepareMfa(){if(!supabase)throw new Error('setup');const factors=await supabase.auth.mfa.listFactors();const verified=factors.data?.totp.find(f=>f.status==='verified');if(verified)return{factorId:verified.id,qr:'',secret:''};const stale=factors.data?.all.filter(f=>f.factor_type==='totp'&&f.status==='unverified')??[];for(const factor of stale)await supabase.auth.mfa.unenroll({factorId:factor.id});const enrolled=await supabase.auth.mfa.enroll({factorType:'totp',friendlyName:'WISE authenticator'});if(enrolled.error)throw enrolled.error;return{factorId:enrolled.data.id,qr:enrolled.data.totp.qr_code,secret:enrolled.data.totp.secret};}
+export async function verifyMfa(factorId:string,code:string){if(!supabase)throw new Error('setup');const response=await supabase.auth.mfa.challengeAndVerify({factorId,code});if(response.error)throw new Error('authFailed');}
+

@@ -1,0 +1,73 @@
+# ProjectGraph structure, built by migration. Review and refine.
+nodes:
+- id: WISE_TRACE
+  type: PROJECT
+  title: WISE_Trace
+  summary: Migrated from existing repository at WISE_Trace.
+  notes:
+  - Created by 'projectgraph migrate'.
+  source: migrated
+  confidence: medium
+- id: SYS_FRONTEND
+  type: SYSTEM
+  title: Frontend
+  summary: Client-side application code.
+  source: migrated
+  confidence: medium
+- id: SYS_DATA
+  type: SYSTEM
+  title: Data
+  summary: Persistent data, schemas and migrations.
+  source: migrated
+  confidence: medium
+- id: CFG_PROJECT_MANIFESTS
+  type: CONFIG
+  title: Project manifests
+  summary: Dependency and build manifests.
+  artifacts:
+  - package-lock.json
+  - package.json
+  source: migrated
+- id: CMP_SUPABASE
+  type: COMPONENT
+  title: supabase
+  summary: 2 source file(s) under supabase/.
+  artifacts:
+  - supabase/**
+  source: migrated
+  confidence: medium
+- id: CMP_SRC
+  type: COMPONENT
+  title: src
+  summary: 2 source file(s) under src/.
+  artifacts:
+  - src/**
+  source: migrated
+  confidence: medium
+- id: CMP_SRC_COMPONENTS
+  type: COMPONENT
+  title: src / components
+  summary: 1 source file(s) under src/components/.
+  artifacts:
+  - src/components/**
+  source: migrated
+  confidence: medium
+edges:
+- from: WISE_TRACE
+  to: SYS_FRONTEND
+  type: CONTAINS
+- from: WISE_TRACE
+  to: SYS_DATA
+  type: CONTAINS
+- from: WISE_TRACE
+  to: CFG_PROJECT_MANIFESTS
+  type: CONTAINS
+- from: SYS_DATA
+  to: CMP_SUPABASE
+  type: CONTAINS
+- from: SYS_FRONTEND
+  to: CMP_SRC
+  type: CONTAINS
+- from: SYS_FRONTEND
+  to: CMP_SRC_COMPONENTS
+  type: CONTAINS
