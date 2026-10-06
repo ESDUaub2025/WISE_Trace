@@ -11,6 +11,7 @@ supabase/.temp/
 supabase/.branches/
 *.dump
 *.age
+*.bootstrap.json
 
 build/live/
 

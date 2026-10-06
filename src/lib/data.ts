@@ -31,11 +31,13 @@ export async function snapshot(identity: Identity): Promise<Snapshot> {
  const all:Row[]=[];for(let offset=0;;offset+=1000){const reply=await supabase!.from(table).select('*').order(table==='membership'?'user_id':table==='packaging_detail'?'lot_id':'id').range(offset,offset+999);if(reply.error)throw new Error(reply.error.message);all.push(...reply.data);if(reply.data.length<1000)break;}return all;
  }));
  const configs=rows[15] as unknown as Config[];
- const config=configs.filter(c=>(c as unknown as Row).status==='approved'&&Date.parse(String((c as unknown as Row).effective_at))<=Date.now()).sort((a,b)=>Number((b as unknown as Row).version)-Number((a as unknown as Row).version))[0];
- if(!config)throw new Error('setup');
+ const config=configs.filter(c=>((c as unknown as Row).cooperative_id==null||(c as unknown as Row).cooperative_id===identity.cooperative_id)&&(c as unknown as Row).kind==='sop'&&(c as unknown as Row).status==='approved'&&Date.parse(String((c as unknown as Row).effective_at))<=Date.now()).sort((a,b)=>Number((b as unknown as Row).cooperative_id===identity.cooperative_id)-Number((a as unknown as Row).cooperative_id===identity.cooperative_id)||Number((b as unknown as Row).version)-Number((a as unknown as Row).version))[0];
+ const setupDraft=!config&&identity.roles.some(r=>['admin','food_safety'].includes(r))?configs.find(c=>(c as unknown as Row).status==='draft'&&(c as unknown as Row).kind==='sop'):undefined;
+ if(!config&&!setupDraft)throw new Error('setup');
+ const effectiveConfig=config??setupDraft!;
  const lots=rows[0] as unknown as Lot[];
  const balances=await supabase.rpc('lot_balances');if(balances.error)throw new Error(balances.error.message);const byId=new Map((balances.data as {id:string;available:number}[]).map(b=>[b.id,Number(b.available)]));lots.forEach(l=>{l.available=byId.get(l.id)??0;l.sync_status='synced';});
- result={lots,suppliers:rows[1] as unknown as Supplier[],tasks:rows[2] as unknown as Task[],records:rows[3],stageEvents:rows[17],attachments:rows[18],deviations:rows[4],equipment:rows[5],training:rows[6].filter(module=>(String(module.effective_at)==='-infinity'||Date.parse(String(module.effective_at))<=Date.now())&&!rows[6].some(newer=>newer.module_key===module.module_key&&Number(newer.version)>Number(module.version)&&(String(newer.effective_at)==='-infinity'||Date.parse(String(newer.effective_at))<=Date.now()))),completions:rows[7],packaging:rows[8],sales:rows[9],recalls:rows[10],notifications:rows[11],audits:rows[12],members:rows[13],devices:rows[14],configs:rows[15],edges:rows[16] as unknown as Snapshot['edges'],config};
+ result={lots,suppliers:rows[1] as unknown as Supplier[],tasks:rows[2] as unknown as Task[],records:rows[3],stageEvents:rows[17],attachments:rows[18],deviations:rows[4],equipment:rows[5],training:rows[6].filter(module=>(String(module.effective_at)==='-infinity'||Date.parse(String(module.effective_at))<=Date.now())&&!rows[6].some(newer=>newer.module_key===module.module_key&&Number(newer.version)>Number(module.version)&&(String(newer.effective_at)==='-infinity'||Date.parse(String(newer.effective_at))<=Date.now()))),completions:rows[7],packaging:rows[8],sales:rows[9],recalls:rows[10],notifications:rows[11],audits:rows[12],members:rows[13],devices:rows[14],configs:rows[15],edges:rows[16] as unknown as Snapshot['edges'],config:effectiveConfig};
  }
  await db.cache.put({key,value:result});return overlay(result,identity);
 }
@@ -66,7 +68,7 @@ export async function synchronize(identity: Identity) {
  const session=await supabase.auth.getSession();
  if(session.data.session?.user.id!==identity.id){const cached=(await db.cache.get(`session:${identity.id}`))?.value as {session:{access_token:string;refresh_token:string}}|undefined;if(!cached)throw new Error('sessionExpired');const restored=await supabase.auth.setSession(cached.session);if(restored.error)throw new Error('sessionExpired');}
  await syncOutbox(async(envelope:Envelope)=>{const {data,error}=await supabase!.functions.invoke('sync',{body:{records:[envelope]}});if(error)throw error;return data.receipts[0];},identity.id);
- const media=await db.media.filter(m=>!m.uploaded&&m.cooperative_id===identity.cooperative_id).toArray();
+ const media=await db.media.filter(m=>!m.uploaded).toArray();
  for(const entry of media){const receipt=await db.outbox.get(entry.record_id);if(receipt?.status!=='synced'||receipt.envelope.author_id!==identity.id)continue;
  const path=`${entry.cooperative_id}/${entry.id}.${entry.type.startsWith('image')?'jpg':'webm'}`;
  const {error}=await supabase.storage.from('evidence').upload(path,entry.blob,{contentType:entry.type,upsert:false});

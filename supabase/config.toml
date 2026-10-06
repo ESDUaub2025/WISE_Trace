@@ -409,7 +409,19 @@ s3_secret_key = "env(S3_SECRET_KEY)"
 enabled = true
 
 [functions.report]
+verify_jwt = false
 static_files = ["./functions/_shared/plex-arabic.ttf"]
+
+# Each handler verifies the caller with Supabase Auth getUser and uses caller-scoped RLS.
+# The legacy gateway check does not support newer asymmetric signing keys.
+[functions.sync]
+verify_jwt = false
+[functions.user-admin]
+verify_jwt = false
+[functions.ocr]
+verify_jwt = false
+[functions.notifications]
+verify_jwt = false
 
 [functions.scheduled-tasks]
 verify_jwt = false

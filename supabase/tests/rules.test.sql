@@ -26,6 +26,10 @@ select ok(public.pin_signoff('2468','30000000-0000-4000-8000-000000000007','cach
 select throws_ok($$select public.pin_signoff('2468','30000000-0000-4000-8000-000000000007','decision','60000000-0000-4000-8000-000000000002')$$,'P0001','Not authorized','Donor session PIN cannot authorize a critical operation');
 select ok((select bool_and((metric->>'suppressed')::boolean) from public.impact_metrics('2026-01-01','2026-12-31') metric),'Donor groups below five producers are suppressed');
 select ok(not exists(select 1 from public.impact_metrics('2026-01-01','2026-12-31') metric where metric->>'id' in ('KPI-06','KPI-09','KPI-12','KPI-13')),'Donor sees only dictionary-approved indicators');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000005","role":"authenticated","aal":"aal2"}',true);
+select is(public.apply_sync(jsonb_build_object('id',gen_random_uuid(),'cooperative_id','10000000-0000-4000-8000-000000000002','author_id','20000000-0000-4000-8000-000000000005','device_id','30000000-0000-4000-8000-000000000001','config_version_id','40000000-0000-4000-8000-000000000001','action','deviation','observed_at',now(),'payload',jsonb_build_object('lot_id','60000000-0000-4000-8000-000000002012','severity','minor','category','manual','issue','Authorized cross-cooperative food safety review')))->>'status','synced','Food-Safety Lead with MFA can raise a scoped cross-cooperative deviation');
 reset role;
 select is((select count(*)::integer from public.kpi_definition),13,'KPI dictionary contains all thirteen PRD definitions');
+select ok(not has_function_privilege('authenticated','public.bootstrap_installation(uuid,jsonb,jsonb,jsonb)','execute'),'Application users cannot invoke owner bootstrap');
+select ok(not has_function_privilege('anon','public.bootstrap_installation(uuid,jsonb,jsonb,jsonb)','execute'),'Anonymous users cannot bootstrap an installation');
 select * from finish();rollback;

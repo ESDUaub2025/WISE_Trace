@@ -6,7 +6,7 @@ import { Camera, Check, ClipboardCheck, Mic, Plus, Printer, ShieldCheck, StopCir
 import QRCode from 'qrcode';
 import { Button } from './components/ui/button';
 import { saveAction,signedAction,type Snapshot,type Row } from './lib/data';
-import { allocationCheck,trace,type Identity,type Lot } from './lib/domain';
+import { allocationCheck,trace,type Identity,type Lot,type Config } from './lib/domain';
 import { compressPhoto } from './lib/media';
 import { demo,supabase } from './lib/supabase';
 import { TrainingEditor } from './training-editor';
@@ -35,7 +35,7 @@ export function Flow({action,data,identity,lot,onDone}:{action:string;data:Snaps
  if(actionName==='movement')payload={lot_id:lot?.id??text('lot_id'),type:'disposed',quantity:-number('quantity'),unit:lot?.unit??text('unit'),reason:text('reason')};
  if(actionName==='training'){actual='training';payload={module_id:action.split(':')[1],answers:Object.fromEntries([...f.entries()].filter(([key])=>key.startsWith('answer:')).map(([key,value])=>[key.slice(7),String(value)]))};}
  if(['decision','recall','close_deviation'].includes(actionName)){const target=actionName==='close_deviation'?text('deviation_id'):lot?.id??text('lot_id');const args=actionName==='decision'?{outcome:text('outcome'),reason:text('reason')}:actionName==='recall'?{mock:f.has('mock'),reason:text('reason'),notice:{en:text('notice'),ar:text('notice')}}:{resolution:text('resolution')};await signedAction(identity,actionName,target,text('pin'),args);}
- else{await saveAction(identity,data.config,actual,payload,[...(photo?[{blob:photo,type:'image/jpeg'}]:[]),...(voice?[{blob:voice,type:voice.type||'audio/webm'}]:[])]);}
+ else{const subject=data.lots.find(l=>l.id===(payload.lot_id??payload.batch_id??payload.output_lot_id));const config=subject?(data.configs.find(c=>c.id===subject.config_version_id) as unknown as Config)??data.config:data.config;const author=actionName==='deviation'&&subject?{...identity,cooperative_id:subject.cooperative_id}:identity;await saveAction(author,config,actual,payload,[...(photo?[{blob:photo,type:'image/jpeg'}]:[]),...(voice?[{blob:voice,type:voice.type||'audio/webm'}]:[])]);}
  await onDone();
  }catch(e){setError(e instanceof z.ZodError?'positive_quantity':e instanceof Error?e.message:'error');}finally{setBusy(false);}
  }
