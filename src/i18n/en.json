@@ -285,8 +285,8 @@
   "withdrawConsent": "Withdraw demographic consent",
   "consent": "I consent to collection of the selected demographic data",
   "digitStyle": "Digit style",
-  "westernDigits": "Western Arabic digits",
-  "easternDigits": "Eastern Arabic digits",
+  "westernDigits": "Western digits (123)",
+  "easternDigits": "Eastern Arabic digits (١٢٣)",
   "suggestedOutcome": "Suggested outcome",
   "kraft": "Kraft pouch",
   "transparent": "Transparent pouch",
@@ -487,5 +487,7 @@
   "pending": "Pending",
   "selfReleaseBlocked": "Another qualified person must release a batch you produced.",
   "remoteReview": "Self-release exception used. This batch is flagged for WISE remote review.",
-  "labReleaseBlocked": "A passing laboratory report must synchronize before this batch can be released."
+  "labReleaseBlocked": "A passing laboratory report must synchronize before this batch can be released.",
+  "allRegions": "All regions",
+  "numberStyle": "Number style in Arabic"
 }

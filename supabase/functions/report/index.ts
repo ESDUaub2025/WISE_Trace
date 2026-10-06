@@ -5,9 +5,11 @@ import fontkit from 'npm:@pdf-lib/fontkit@1.1.1';
 import { z } from 'npm:zod@4.6.5';
 import {TZDate} from 'npm:@date-fns/tz@1.5.0';
 function midnight(date:string,extraDays=0){const [y,m,d]=date.split('-').map(Number);return new TZDate(y,m-1,d+extraDays,0,0,0,'Asia/Beirut').toISOString();}
-const schema=z.object({report:z.enum(['lot','operational_record','deviation','inventory_movement','sale','training_completion','equipment','audit_event','recall','impact','traceability','production_record','calibration','material_disposition']),format:z.enum(['csv','xlsx','pdf']),target:z.uuid().optional(),cooperative_id:z.uuid().optional(),lot_type:z.enum(['whey','ingredient','batch','packaging','packaging_material']).optional(),config_version_id:z.uuid().optional(),from_date:z.iso.date().default(`${new Date().getFullYear()}-01-01`),to_date:z.iso.date().default(new Date().toISOString().slice(0,10))});
+const schema=z.object({report:z.enum(['lot','operational_record','deviation','inventory_movement','sale','training_completion','equipment','audit_event','recall','impact','traceability','production_record','calibration','material_disposition']),format:z.enum(['csv','xlsx','pdf']),target:z.uuid().optional(),cooperative_id:z.uuid().optional(),region:z.string().max(120).optional(),lot_type:z.enum(['whey','ingredient','batch','packaging','packaging_material']).optional(),config_version_id:z.uuid().optional(),from_date:z.iso.date().default(`${new Date().getFullYear()}-01-01`),to_date:z.iso.date().default(new Date().toISOString().slice(0,10))});
 const text=(v:unknown)=>typeof v==='object'?JSON.stringify(v):String(v??'');
 Deno.serve(async request=>{if(request.method==='OPTIONS')return json({});try{const {user,identity}=await authenticate(request);const body=schema.parse(await request.json());let rows:Record<string,unknown>[]=[];
+ if(body.region&&body.report!=='impact')throw new Error('Region filter is supported for impact reports');
+ if(body.config_version_id&&body.report==='impact')throw new Error('SOP filter is not supported for impact indicators');
  if(body.from_date>body.to_date)throw new Error('Invalid reporting period');
  const member=await user.from('membership').select('roles,status').eq('user_id',identity.id).single();if(member.error||member.data.status!=='active')throw new Error('Active account required');
  if(member.data.roles.includes('donor')&&body.report!=='impact')throw new Error('Donor reports are aggregate only');
@@ -26,7 +28,7 @@ Deno.serve(async request=>{if(request.method==='OPTIONS')return json({});try{con
    result.push(...response.data);if(response.data.length<1000)return result;
   }return result;
  }
- if(body.report==='impact'){const response=await user.rpc('impact_metrics',{from_date:body.from_date,to_date:body.to_date});if(response.error)throw response.error;rows=response.data;}
+ if(body.report==='impact'){const response=await user.rpc('impact_metrics_filtered',{from_date:body.from_date,to_date:body.to_date,cooperative_filter:body.cooperative_id??null,region_filter:body.region??null});if(response.error)throw response.error;rows=response.data;}
  else if(['traceability','production_record'].includes(body.report)){
   if(!body.target)throw new Error('Lot required');const back=await user.rpc('genealogy',{target:body.target,direction:'back'}),forward=await user.rpc('genealogy',{target:body.target,direction:'forward'});if(back.error||forward.error)throw back.error??forward.error;
   const ids:string[]=[...new Set([...back.data,...forward.data].map((r:{id:string})=>r.id))] as string[];if(!ids.length)throw new Error('Lot unavailable');rows=await read('lot',{column:'id',ids});rows=rows.map(row=>({record_type:'lot',...row}));

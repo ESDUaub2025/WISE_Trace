@@ -1,57 +1,45 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-10-06T09:39:07+00:00",
+  "generated_at": "2026-10-06T14:06:33+00:00",
   "project": "WISE_Trace",
   "git": {
     "available": true,
-    "commit": null,
-    "short_commit": null,
-    "branch": null,
+    "commit": "f5077d053849eb171f02076ad43085a0798e4ac3",
+    "short_commit": "f5077d053849",
+    "branch": "master",
     "dirty": true,
     "worktree": "D:\\Programing\\WISE_Trace",
     "linked_worktree": false,
     "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
   },
   "totals": {
-    "nodes": 8,
-    "edges": 7,
-    "verifiable": 7
+    "nodes": 190,
+    "edges": 382,
+    "verifiable": 8
   },
   "counts": {
     "DECLARED": 0,
-    "READY": 1,
-    "ACTIVE": 5,
-    "IMPLEMENTED": 2,
+    "READY": 3,
+    "ACTIVE": 1,
+    "IMPLEMENTED": 181,
     "VERIFYING": 0,
-    "VERIFIED": 0,
+    "VERIFIED": 5,
     "FAILED": 0,
     "BLOCKED": 0,
     "STALE": 0,
     "SUPERSEDED": 0
   },
-  "progress": 0.0,
-  "coverage": 0.875,
+  "progress": 0.625,
+  "coverage": 0.0421,
   "stale": [],
   "blocked": [],
   "failed": [],
   "next": [
     {
-      "id": "CMP_SRC",
+      "id": "CMP_DISCOVERED_FILES",
       "type": "COMPONENT",
-      "status": "ACTIVE",
-      "title": "src"
-    },
-    {
-      "id": "CMP_SUPABASE",
-      "type": "COMPONENT",
-      "status": "ACTIVE",
-      "title": "supabase"
-    },
-    {
-      "id": "CMP_SRC_COMPONENTS",
-      "type": "COMPONENT",
-      "status": "IMPLEMENTED",
-      "title": "src / components"
+      "status": "READY",
+      "title": "Discovered files"
     }
   ],
   "cycles": []

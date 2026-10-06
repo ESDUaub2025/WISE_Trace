@@ -1,0 +1,58 @@
+{
+  "node": "CMP_RECOVERY",
+  "evidence_id": "6a06778f43484dec94a8a35c3cf4773f",
+  "result": "PASS",
+  "started_at": "2026-10-06T13:49:53+00:00",
+  "finished_at": "2026-10-06T13:49:54+00:00",
+  "git": {
+    "available": true,
+    "commit": "f5077d053849eb171f02076ad43085a0798e4ac3",
+    "short_commit": "f5077d053849",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:b99706fde2ba28fa7fbb082a24df8192794004c1a3074f2a4b8d3f8810dd8a30",
+  "dep_fingerprint": "sha256:a72fa98a637373449bee678b8bdeba9c64099ed7d2f61e11cfd756e2e8d54329",
+  "artifacts": [
+    {
+      "path": ".github/workflows/backup.yml",
+      "hash": "c1de0428668169017e60079fe4e2b3d7331c9b9fbff484688aba889ee3d7bbe3"
+    },
+    {
+      "path": "scripts/media-backup.mjs",
+      "hash": "dca723891fe4938603de00d32c829869348ffcdd60836adf972decbc750c1cc5"
+    },
+    {
+      "path": "scripts/media-backup.test.mjs",
+      "hash": "09dd45987a19de453ebea5457f298fe71165db0c69902231d4e7ef032984bfae"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_SCRIPTS_MEDIA_BACKUP_MJS",
+      "fingerprint": "sha256:04fd3893fc45e27d7930bd697e4ee6ff9dd1befbf35f251b7e5c39a5d9c739ea"
+    },
+    {
+      "id": "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
+      "fingerprint": "sha256:9f7b3ed73d12ec81dda7a727ebaec25a338f99b73d7d9d14bdcdecf01ce80088"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "command",
+      "name": "media-recovery",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "node --test scripts/media-backup.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.407,
+      "stdout_digest": "sha256:a44bd52a144a8394d0322b02df3bdcc6e190f6086488250e636544d65e05b2df",
+      "output_tail": "\u00e2\u0153\u201d recursive paginated backup preserves exact media bytes, names and private buckets (18.4003ms)\n\u00e2\u0153\u201d corruption or truncation rejects whole archive before any upload (0.871ms)\n\u00e2\u0153\u201d requires explicit separate target and empty private buckets (0.4184ms)\n\u00e2\u0153\u201d unsafe names, duplicate objects and public buckets fail validation (0.3582ms)\n\u00e2\u0153\u201d actual age encryption round trip rejects tampering and wrong identity (188.0511ms)\n\u00e2\u201e\u00b9 tests 5\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 5\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 325.1776\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

@@ -16,5 +16,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SUPABASE",
+    "note": "194 pgTAP checks pass with cooperative/region scope and donor suppression. Migration 64 applied locally.",
+    "next_action": "Add safe incremental journal RPC and tests; retain original SOP and concurrent commit correctness.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-06T14:06:20.443583+00:00",
+    "git": {
+      "available": true,
+      "commit": "f5077d053849eb171f02076ad43085a0798e4ac3",
+      "short_commit": "f5077d053849",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]

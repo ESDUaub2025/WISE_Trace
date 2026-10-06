@@ -57,7 +57,7 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-WHY-14 (S) — Whey stored before use records storage location and temperature checks if required by the SOP.
 - [x] FR-ALC-01 (M) — Allocations record input lot → output batch → quantity, unit, time and user. — Evidence: live allocation ledger plus pgTAP available-balance checks.
 - [x] FR-ALC-02 (M) — One whey lot may be split across batches; a batch may use several whey lots where the SOP allows (configurable). — Evidence: genealogy model and server multi_lot rule.
-- [ ] FR-ALC-03 (M) — The system computes per whey lot: received, accepted, rejected, on hold, allocated, disposed, remaining, valorized.
+- [x] FR-ALC-03 (M) — The system computes per whey lot: received, accepted, rejected, on hold, allocated, disposed, remaining, valorized. — Evidence: authoritative material_balances RPC, material-balance.test.sql, live diversion/closure and overlay.test.ts preserve offline receipt/decision/allocation quantities and original SOP expiry.
 - [x] FR-ALC-04 (M) — Allocation exceeding available quantity is blocked online; offline, it is accepted provisionally and resolved on sync (see section 10). — Evidence: live A2 conflict and unit allocation maths.
 - [x] FR-ALC-05 (M) — The same logic applies to ingredient lots (bulgur, salt, others) and packaging material lots. — Evidence: consumption validation shared by ingredient/material lots.
 - [ ] FR-ALC-06 (S) — **Yield check \[Added\]:** at packaging, the system compares output mass with inputs and flags yields outside a configurable expected range.

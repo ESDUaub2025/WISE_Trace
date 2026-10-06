@@ -1413,6 +1413,92 @@ nodes:
   - tests/live/self-release.spec.ts
   source: scanned
   confidence: medium
+- id: F_SCRIPTS_MEDIA_BACKUP_MJS
+  type: FILE
+  title: scripts/media-backup.mjs
+  artifacts:
+  - scripts/media-backup.mjs
+  symbols:
+  - scripts/media-backup.mjs::backupRecords
+  - scripts/media-backup.mjs::decryptedRecords
+  - scripts/media-backup.mjs::encryptRecords
+  - scripts/media-backup.mjs::main
+  - scripts/media-backup.mjs::restoreRecords
+  - scripts/media-backup.mjs::validateRecords
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_MEDIA_BACKUP_TEST_MJS
+  type: FILE
+  title: scripts/media-backup.test.mjs
+  artifacts:
+  - scripts/media-backup.test.mjs
+  symbols:
+  - scripts/media-backup.test.mjs::archive
+  - scripts/media-backup.test.mjs::storageFixture
+  source: scanned
+  confidence: medium
+- id: F_SRC_DISPLAY_SETTINGS_TSX
+  type: FILE
+  title: src/display-settings.tsx
+  artifacts:
+  - src/display-settings.tsx
+  symbols:
+  - src/display-settings.tsx::DisplaySettings
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_FORMAT_TEST_TS
+  type: FILE
+  title: src/lib/format.test.ts
+  artifacts:
+  - src/lib/format.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_FORMAT_TS
+  type: FILE
+  title: src/lib/format.ts
+  artifacts:
+  - src/lib/format.ts
+  symbols:
+  - src/lib/format.ts::digitSystem
+  - src/lib/format.ts::formatLocalDate
+  - src/lib/format.ts::formatNumber
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_OVERLAY_TEST_TS
+  type: FILE
+  title: src/lib/overlay.test.ts
+  artifacts:
+  - src/lib/overlay.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_NOTIFICATIONS_TEST_TS
+  type: FILE
+  title: src/notifications.test.ts
+  artifacts:
+  - src/notifications.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL
+  type: FILE
+  title: supabase/migrations/202610060064_dashboard_filters.sql
+  artifacts:
+  - supabase/migrations/202610060064_dashboard_filters.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL
+  type: TEST
+  title: supabase/tests/dashboard-filters.test.sql
+  artifacts:
+  - supabase/tests/dashboard-filters.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS
+  type: TEST
+  title: tests/live/dashboard-filters.spec.ts
+  artifacts:
+  - tests/live/dashboard-filters.spec.ts
+  source: scanned
+  confidence: medium
 edges:
 - from: SYS_FRONTEND
   to: CMP_DISCOVERED_FILES
@@ -2269,6 +2355,56 @@ edges:
   type: CONTAINS
   provenance:
     generator: projectgraph.imports.v1
+- from: CMP_RECOVERY
+  to: F_SCRIPTS_MEDIA_BACKUP_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_RECOVERY
+  to: F_SCRIPTS_MEDIA_BACKUP_TEST_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_DISPLAY_SETTINGS_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_FORMAT_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_FORMAT_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_OVERLAY_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_NOTIFICATIONS_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
 - from: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
@@ -2305,6 +2441,45 @@ edges:
     - source: scripts/create-seed.mjs
       target: src/lib/learning-demo.ts
       import: ../src/lib/learning-demo.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SCRIPTS_MEDIA_BACKUP_TEST_MJS
+  to: F_SCRIPTS_MEDIA_BACKUP_MJS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: scripts/media-backup.test.mjs
+      target: scripts/media-backup.mjs
+      import: ./media-backup.mjs
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_DISPLAY_SETTINGS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/display-settings.tsx
+      import: ./display-settings
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_FORMAT_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/format.ts
+      import: ./lib/format
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2565,6 +2740,19 @@ edges:
     - source: src/configuration-files.tsx
       target: src/lib/domain.ts
       import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DASHBOARD_TSX
+  to: F_SRC_LIB_FORMAT_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/dashboard.tsx
+      target: src/lib/format.ts
+      import: ./lib/format
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -3387,6 +3575,19 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_LIB_FORMAT_TEST_TS
+  to: F_SRC_LIB_FORMAT_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/format.test.ts
+      target: src/lib/format.ts
+      import: ./format
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_LIB_LABELS_TEST_TS
   to: F_SRC_LIB_LABELS_TS
   type: CONSUMES
@@ -3410,6 +3611,19 @@ edges:
     - source: src/lib/labels.test.ts
       target: src/lib/demo.ts
       import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_LABELS_TS
+  to: F_SRC_LIB_FORMAT_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/labels.ts
+      target: src/lib/format.ts
+      import: ./format
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -3499,6 +3713,58 @@ edges:
     generator: projectgraph.imports.v1
     imports:
     - source: src/lib/offline-signoff.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_OVERLAY_TEST_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/overlay.test.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_OVERLAY_TEST_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/overlay.test.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_OVERLAY_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/overlay.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_OVERLAY_TEST_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/overlay.test.ts
       target: src/lib/domain.ts
       import: ./domain
       line: null
@@ -3869,6 +4135,19 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_SRC_MATERIAL_BALANCE_TSX
+  to: F_SRC_LIB_FORMAT_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/material-balance.tsx
+      target: src/lib/format.ts
+      import: ./lib/format
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MATERIAL_BALANCE_TSX
   to: F_SRC_LIB_DATA_TS
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
@@ -3891,6 +4170,58 @@ edges:
     - source: src/material-balance.tsx
       target: src/lib/domain.ts
       import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TEST_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.test.ts
+      target: src/offline/db.ts
+      import: ./offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.test.ts
+      target: src/lib/demo.ts
+      import: ./lib/demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TEST_TS
+  to: F_SRC_NOTIFICATIONS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.test.ts
+      target: src/notifications.tsx
+      import: ./notifications
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TSX
+  to: F_SRC_LIB_FORMAT_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.tsx
+      target: src/lib/format.ts
+      import: ./lib/format
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -4461,6 +4792,19 @@ edges:
     generator: projectgraph.imports.v1
     imports:
     - source: tests/live/configuration.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/dashboard-filters.spec.ts
       target: tests/live/fixtures.ts
       import: ./fixtures
       line: null

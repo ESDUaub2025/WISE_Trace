@@ -1,3 +1,4 @@
+import {formatNumber} from './format';
 import QRCode from 'qrcode';
 import type {Row,Snapshot} from './data';
 import type {Lot} from './domain';
@@ -6,7 +7,7 @@ function localized(value:unknown,lang:'en'|'ar'){const translated=value&&typeof 
 export function labelManifest(lot:Lot,packaging:Row,data:Pick<Snapshot,'lots'|'cooperatives'>,lang:'en'|'ar'):LabelManifest{
  const label=packaging.label as Row;const batch=data.lots.find(l=>l.id===packaging.batch_id);const cooperative=data.cooperatives.find(c=>c.id===lot.cooperative_id);const product=localized(label?.product,lang),ingredients=localized(label?.ingredients,lang),allergens=localized(label?.allergens,lang),storage=localized(label?.storage_advice,lang);
  if(!product||!ingredients||!allergens||!storage||!cooperative?.name||!batch||!packaging.public_token||!packaging.best_before||!(Number(packaging.size_kg)>0))throw new Error('labelDataMissing');
- return{code:lot.code,product,ingredients,allergens,storage,cooperative:String(cooperative.name),netWeight:new Intl.NumberFormat(lang,{maximumFractionDigits:3}).format(Number(packaging.size_kg)*1000)+(lang==='ar'?' غ':' g'),productionDate:new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Beirut'}).format(new Date(batch.observed_at)),bestBefore:String(packaging.best_before),url:`${location.origin}/p/?t=${packaging.public_token}`,released:lot.state==='released'};
+ return{code:lot.code,product,ingredients,allergens,storage,cooperative:String(cooperative.name),netWeight:formatNumber(Number(packaging.size_kg)*1000,lang,{maximumFractionDigits:3})+(lang==='ar'?' غ':' g'),productionDate:new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Beirut'}).format(new Date(batch.observed_at)),bestBefore:String(packaging.best_before),url:`${location.origin}/p/?t=${packaging.public_token}`,released:lot.state==='released'};
 }
 export async function renderLabel(manifest:LabelManifest,lang:'en'|'ar',t:(key:string)=>string){
  await document.fonts.ready;const canvas=document.createElement('canvas');canvas.width=1050;canvas.height=742;const ctx=canvas.getContext('2d');if(!ctx)throw new Error('labelRenderFailed');const qr=new Image();qr.src=await QRCode.toDataURL(manifest.url,{width:240,margin:2,errorCorrectionLevel:'M'});await qr.decode();

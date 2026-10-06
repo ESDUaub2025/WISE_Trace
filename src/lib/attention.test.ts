@@ -17,3 +17,7 @@ it('uses the original checkpoint role and excludes resolved tasks',()=>{
  expect(attentionTasks(data,demoIdentity).map(t=>t.id)).not.toContain('task-1');
  expect(attentionTasks(data,{...demoIdentity,roles:['supervisor']}).map(t=>t.id)).not.toContain('done');
 });
+it('shows expiring held whey to producers without exposing another user assignment',()=>{
+ const due_at=new Date().toISOString();const data={config:demoConfig,configs:[demoConfig],lots:demoLots,tasks:[{id:'held',kind:'held_whey_expiry',status:'open',due_at,details:{}},{id:'private',kind:'held_whey_expiry',status:'open',user_id:ids.supervisor,due_at,details:{}}]} as unknown as Snapshot;
+ expect(attentionTasks(data,demoIdentity).map(task=>task.id)).toEqual(['held']);
+});

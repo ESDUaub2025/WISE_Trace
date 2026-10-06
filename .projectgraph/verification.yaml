@@ -1,6 +1,10 @@
 # Verification contracts derived by migration.
 # These are STARTING POINTS: a file-existence check is not proof of
 # correctness. Add real test commands before trusting VERIFIED.
+CMP_RECOVERY:
+  commands:
+  - name: media-recovery
+    run: node --test scripts/media-backup.test.mjs
 CMP_SRC:
   required_files:
   - src/main.tsx

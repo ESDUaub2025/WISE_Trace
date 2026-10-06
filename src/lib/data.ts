@@ -3,7 +3,7 @@ import { db, enqueue, syncOutbox, revokeLocalDevice } from '../offline/db';
 import { configured, demo, supabase } from './supabase';
 import { cachedSessionLimits,offlineExpired,inactive } from './session-policy';
 import {signOfflineDecision} from './offline-signoff';
-import {localProductionTasks} from './schedules';
+import {localProductionTasks,lotConfig} from './schedules';
 import {introTrainingContent,introAssessment} from './learning-demo';
 import { demoConfig, demoEdges, demoIdentity, demoLots, demoSuppliers, demoTasks, ids } from './demo';
 import { actionClass, envelopeSchema, type Config, type Envelope, type Identity, type Lot, type Supplier, type Task } from './domain';
@@ -47,14 +47,15 @@ export async function snapshot(identity: Identity): Promise<Snapshot> {
  }
  await db.cache.put({key,value:result});return overlay(result,identity);
 }
-async function overlay(data: Snapshot,identity: Identity) {
+export async function overlay(data: Snapshot,identity: Identity) {
  const result=structuredClone(data);
  for(const read of await db.cache.where('key').startsWith(`notification-read:${identity.id}:`).toArray()){const notification=result.notifications.find(row=>row.id===read.key.split(':').at(-1));if(notification)notification.read_at=read.value;}
  const entries=await db.outbox.filter(e=>e.envelope.author_id===identity.id && (demo||e.status!=='synced')).toArray();
  entries.sort((a,b)=>(a.sequence??0)-(b.sequence??0)||a.envelope.observed_at.localeCompare(b.envelope.observed_at));
  for(const entry of entries){const e=entry.envelope;const p=e.payload;
- if(['receipt','batch','packaging'].includes(e.action)&&!result.lots.some(l=>l.id===e.id))result.lots.unshift({id:e.id,cooperative_id:e.cooperative_id,type:e.action==='batch'?'batch':e.action==='packaging'?'packaging':String(p.type),code:entry.code??`~${e.action==='batch'?'KB':'WL'}-${e.id.slice(0,6)}`,state:e.action==='batch'?'draft':'received',unit:String(p.unit??'kg'),initial_quantity:Number(p.quantity??0),available:Number(p.quantity??0),producer_id:e.author_id,device_id:e.device_id,config_version_id:e.config_version_id,observed_at:e.observed_at,generation_at:p.generation_at as string|undefined,stage:e.action==='batch'?result.config.definition.stages[0].key:undefined,facts:p.facts as Record<string,unknown>??{},sync_status:entry.status});
- if(e.action==='whey_decision'&&entry.status!=='conflict'){const lot=result.lots.find(l=>l.id===p.lot_id);if(lot){lot.state=String(p.outcome);lot.sync_status=entry.status;if(lot.generation_at&&p.outcome==='accepted')lot.expires_at=new Date(Date.parse(lot.generation_at)+result.config.definition.whey_max_age_hours*3600000).toISOString();}}
+ if(['receipt','batch','packaging'].includes(e.action)&&!result.lots.some(l=>l.id===e.id))result.lots.unshift({id:e.id,cooperative_id:e.cooperative_id,type:e.action==='batch'?'batch':e.action==='packaging'?'packaging':String(p.type),code:entry.code??`~${e.action==='batch'?'KB':'WL'}-${e.id.slice(0,6)}`,state:e.action==='batch'?'draft':'received',unit:String(p.unit??'kg'),initial_quantity:Number(p.quantity??0),available:Number(p.quantity??0),producer_id:e.author_id,device_id:e.device_id,config_version_id:e.config_version_id,observed_at:e.observed_at,generation_at:p.generation_at as string|undefined,stage:e.action==='batch'?((result.configs.find(config=>config.id===e.config_version_id) as unknown as Config)?.definition??result.config.definition).stages[0]?.key:undefined,facts:p.facts as Record<string,unknown>??{},sync_status:entry.status});
+ if(e.action==='receipt'&&entry.status!=='conflict'&&!result.materialBalances.some(balance=>balance.id===e.id))result.materialBalances.push({id:e.id,received:Number(p.quantity??0),accepted:0,rejected:0,on_hold:0,allocated:0,disposed:0,diverted:0,lost:0,measurement_difference:0,remaining:Number(p.quantity??0),valorized:0,sync_status:entry.status});
+ if(e.action==='whey_decision'&&entry.status!=='conflict'){const lot=result.lots.find(l=>l.id===p.lot_id);if(lot){lot.state=String(p.outcome);lot.sync_status=entry.status;if(lot.generation_at&&p.outcome==='accepted')lot.expires_at=new Date(Date.parse(lot.generation_at)+lotConfig(result,lot).definition.whey_max_age_hours*3600000).toISOString();const balance=result.materialBalances.find(row=>row.id===lot.id);if(balance){for(const key of ['accepted','rejected','on_hold'])balance[key]=0;balance[p.outcome==='hold'?'on_hold':String(p.outcome)]=Number(balance.received);balance.sync_status=entry.status;}}}
  if(e.action==='checkpoint'){result.records.push({id:e.id,lot_id:p.lot_id,kind:e.action,definition_key:p.definition_key,payload:p.values,observed_at:e.observed_at,sync_status:entry.status});if(entry.status!=='conflict')result.tasks=result.tasks.filter(task=>!(task.lot_id===p.lot_id&&task.details.definition_key===p.definition_key));}
  if(e.action==='stage'&&entry.status!=='conflict'){const lot=result.lots.find(l=>l.id===p.lot_id);if(lot){lot.stage=String(p.next_stage);lot.state='in_production';result.stageEvents.push({id:e.id,lot_id:lot.id,stage:lot.stage,observed_at:e.observed_at});}}
  if(e.action==='handover'&&entry.status!=='conflict'){const lot=result.lots.find(l=>l.id===p.lot_id);if(lot)lot.facts.responsible_producer=p.next_producer;}
@@ -82,7 +83,6 @@ export async function synchronize(identity: Identity) {
  if(demo||!supabase||!navigator.onLine)return;
  const session=await supabase.auth.getSession();
  if(session.data.session?.user.id!==identity.id){const cached=(await db.cache.get(`session:${identity.id}`))?.value as {session:{access_token:string;refresh_token:string}}|undefined;if(!cached)throw new Error('sessionExpired');const restored=await supabase.auth.setSession(cached.session);if(restored.error)throw new Error('sessionExpired');}
- await flushNotificationReads(identity);
  await syncOutbox(async(envelope:Envelope)=>{const {data,error}=await supabase!.functions.invoke('sync',{body:{records:[envelope]}});if(error)throw error;return data.receipts[0];},identity.id);
  const media=await db.media.filter(m=>!m.uploaded).toArray();
  for(const entry of media){const receipt=await db.outbox.get(entry.record_id);if(receipt?.status!=='synced'||receipt.envelope.author_id!==identity.id)continue;
@@ -91,6 +91,9 @@ export async function synchronize(identity: Identity) {
  if(error&&String((error as {statusCode?:string}).statusCode)!=='409')continue; const metadata=await supabase.rpc('register_attachment',{target:entry.id,record:entry.record_id,path,media_type:entry.type});if(!metadata.error)await db.media.update(entry.id,{uploaded:true});
  }
  await db.cache.put({key:'last-sync',value:new Date().toISOString()});
+ // A stale notification acknowledgment must never block traceability or media.
+ // Failed acknowledgments remain queued and can be retried independently.
+ await flushNotificationReads(identity).catch(()=>{});
 }
 export async function signedAction(identity:Identity,action:string,target:string,pin:string,args:Record<string,unknown>){
  if(!navigator.onLine||!supabase||demo)throw new Error('onlineRequired');

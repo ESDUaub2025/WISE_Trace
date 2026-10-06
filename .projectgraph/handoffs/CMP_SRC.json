@@ -52,5 +52,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "PASS types/lint/42 unit/16 preview; full live 17 passes. Recovery age integration and actual local media encryption pass; filtered dashboards and offline balance fixes implemented.",
+    "next_action": "Implement resumable incremental snapshots with commit visibility and RLS, then remaining dashboard/report workflows.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-06T14:06:19.908496+00:00",
+    "git": {
+      "available": true,
+      "commit": "f5077d053849eb171f02076ad43085a0798e4ac3",
+      "short_commit": "f5077d053849",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]

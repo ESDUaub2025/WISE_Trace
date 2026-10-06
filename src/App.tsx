@@ -1,11 +1,11 @@
+import {DisplaySettings} from './display-settings';
 import { lazy, Suspense, useCallback, useEffect, useState, type ReactNode } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpRight, Bell, BookOpen, Boxes, Check, ChevronRight, ClipboardCheck, Droplets, Factory, Leaf, LogOut, Menu, Plus, Search, Settings2, ShieldCheck, Sprout, Users, Wifi, WifiOff, Wrench, X, AlertTriangle, FileText, ScanLine } from 'lucide-react';
 import { motion } from 'motion/react';
-import { format } from 'date-fns';
-import { TZDate } from '@date-fns/tz';
+import {formatLocalDate} from './lib/format';
 import { Button } from './components/ui/button';
 import { Sheet } from './components/ui/sheet';
 import { cachedIdentity, snapshot, synchronize, type Snapshot, type Row } from './lib/data';
@@ -27,11 +27,12 @@ import {Notifications} from './notifications';
 
 const Dashboard=lazy(()=>import('./dashboard'));
 const navigation=[{key:'home',path:'/',icon:Sprout},{key:'whey',path:'/whey',icon:Droplets},{key:'batches',path:'/batches',icon:Factory},{key:'inventory',path:'/inventory',icon:Boxes},{key:'review',path:'/review',icon:ClipboardCheck},{key:'deviations',path:'/deviations',icon:AlertTriangle},{key:'recall',path:'/recall',icon:ScanLine},{key:'training',path:'/training',icon:BookOpen},{key:'equipment',path:'/equipment',icon:Wrench},{key:'dashboards',path:'/dashboards',icon:Leaf},{key:'reports',path:'/reports',icon:FileText},{key:'organization',path:'/organization',icon:Users},{key:'admin',path:'/admin',icon:Settings2}];
-export function localDate(value: string){return format(new TZDate(value,'Asia/Beirut'),'dd MMM yyyy · HH:mm');}
+export function localDate(value: string){return formatLocalDate(value,document.documentElement.lang||'en');}
 export function Status({value}:{value:string}){const {t}=useTranslation();return <span className={`status status-${value}`}><span className="status-dot"/>{t(value)}</span>;}
 export function Label({code}:{code:string}){return <bdi className="lot-label" dir="ltr">{code}</bdi>;}
 export function Empty({children}:{children?:ReactNode}){const {t}=useTranslation();return <div className="empty"><Sprout size={32}/><h3>{t('empty')}</h3>{children}</div>;}
 export default function App(){
+ const [,setDisplayRevision]=useState(0);
  const {t,i18n}=useTranslation();const location=useLocation();const navigate=useNavigate();const queryClient=useQueryClient();
  const [identity,setIdentity]=useState<Identity|null>(null),[ready,setReady]=useState(false),[online,setOnline]=useState(navigator.onLine),[menu,setMenu]=useState(false),[flow,setFlow]=useState(''),[lot,setLot]=useState<Lot|null>(null),[message,setMessage]=useState(''),[search,setSearch]=useState(''),[userSheet,setUserSheet]=useState(false);
  useEffect(()=>{void cachedIdentity().then(value=>{setIdentity(value);setReady(true);});const yes=()=>setOnline(true),no=()=>setOnline(false);window.addEventListener('online',yes);window.addEventListener('offline',no);return()=>{window.removeEventListener('online',yes);window.removeEventListener('offline',no);};},[]);
@@ -68,7 +69,7 @@ export default function App(){
  <footer className="page-footer"><span><Leaf size={15}/>{t('tagline')}</span><span>{t('noCertification')}</span></footer></main></div>
  <Sheet open={!!flow} onClose={()=>setFlow('')} title={t(flow==='receipt'?'newReceipt':flow==='batch'?'newBatch':flow==='checkpoint'?'recordCheck':flow==='notifications'?'notifications':flow==='conflicts'?'conflict':flow.split(':')[0])}>{data&&identity&&(flow==='scan'?<Scanner onToken={token=>{const packaging=data.packaging.find(p=>p.public_token===token);const found=data.lots.find(l=>l.id===packaging?.lot_id);if(found){setLot(found);setFlow('sale');}else setMessage('error');}}/>:flow==='notifications'?<Notifications rows={data.notifications} identity={identity} onDone={refresh}/>:flow==='conflicts'?<RecordList rows={data.tasks.filter(task=>task.kind==='sync_conflict')} fields={['kind','details']}/>:flow.startsWith('registry:')?<RegistryFlow entity={flow.split(':')[1]} data={data} identity={identity} onDone={async()=>{setFlow('');setMessage('success');await refresh();}}/>:<Flow action={flow} data={data} identity={identity} lot={lot} onDone={async()=>{setFlow('');setLot(null);setMessage('success');await refresh();}}/>)}</Sheet>
  <Sheet open={!!lot&&!flow} onClose={()=>setLot(null)} title={lot?.code??''}>{lot&&data&&<LotDetail lot={data.lots.find(current=>current.id===lot.id)??lot} data={data} identity={identity} open={open} onDone={refresh}/>}</Sheet>
- <Sheet open={userSheet} onClose={()=>setUserSheet(false)} title={t('switchUser')}><SignIn onLogin={value=>{setIdentity(value);setUserSheet(false);}} switching/><Button variant="outline" onClick={async()=>{await logout();setIdentity(null);setUserSheet(false);}}><LogOut size={18}/>{t('signOut')}</Button></Sheet>
+ <Sheet open={userSheet} onClose={()=>setUserSheet(false)} title={t('switchUser')}><DisplaySettings onChange={()=>setDisplayRevision(value=>value+1)}/><SignIn onLogin={value=>{setIdentity(value);setUserSheet(false);}} switching/><Button variant="outline" onClick={async()=>{await logout();setIdentity(null);setUserSheet(false);}}><LogOut size={18}/>{t('signOut')}</Button></Sheet>
  {message&&<div className="toast" role="status"><Check size={20}/>{t(message)}</div>}</div>;
 }
 function SignIn({onLogin,switching=false}:{onLogin:(value:Identity)=>void;switching?:boolean}){

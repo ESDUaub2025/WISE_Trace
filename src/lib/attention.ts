@@ -17,6 +17,6 @@ export function attentionTasks(data:Snapshot,identity:Identity):Task[] {
    const role=lotConfig(data,lot).definition.checkpoints.find(c=>c.key===task.details.definition_key)?.responsible_role;
    return !role||identity.roles.includes(role);
   }
-  return ['expiry','calibration','sync_conflict'].includes(task.kind);
+  return ['expiry','held_whey_expiry','calibration','sync_conflict'].includes(task.kind);
  }).sort((a,b)=>a.due_at.localeCompare(b.due_at));
 }

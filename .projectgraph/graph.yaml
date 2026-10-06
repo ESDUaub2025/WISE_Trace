@@ -52,7 +52,19 @@ nodes:
   - src/components/**
   source: migrated
   confidence: medium
+- id: CMP_RECOVERY
+  type: COMPONENT
+  title: Encrypted database and media recovery
+  summary: Encrypted backups and non-overwriting recovery with integrity checks.
+  artifacts:
+  - scripts/media-backup.mjs
+  - scripts/media-backup.test.mjs
+  - .github/workflows/backup.yml
+  source: authored
 edges:
+- from: SYS_DATA
+  to: CMP_RECOVERY
+  type: CONTAINS
 - from: WISE_TRACE
   to: SYS_FRONTEND
   type: CONTAINS

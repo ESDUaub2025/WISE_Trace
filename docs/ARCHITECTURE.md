@@ -30,6 +30,6 @@ Recall: Open → In progress → Closed; case actions track stop-sale, notificat
 
 ## Delivery and operations
 
-Vite builds SPA and plain public page to `dist`; Cloudflare Pages provides SPA fallback (no top-level 404). Supabase schema is migrations only. CI runs types, lint, Vitest, pgTAP and Playwright. Nightly hosted pg_dump is encrypted before uploading a 30-day artifact; quarterly restore drill is documented. Deployment requires owner accounts, production secrets and Food-Safety Lead approval. External messaging defaults to a logged provider; OCR defaults to feature-disabled Claude vision behind a server interface.
+Vite builds SPA and plain public page to `dist`; Cloudflare Pages provides SPA fallback (no top-level 404). Supabase schema is migrations only. CI runs types, lint, Vitest, pgTAP and Playwright. The nightly workflow encrypts pg_dump and a separate recursive evidence/training archive before uploading a paired 30-day artifact. Media archives verify hashes and completion before non-overwriting recovery to a separate project; the hosted quarterly restore drill remains an operator gate. Deployment requires owner accounts, production secrets and Food-Safety Lead approval. External messaging defaults to a logged provider; OCR defaults to feature-disabled Claude vision behind a server interface.
 
 Human usability and protocol approval require actual cooperative participants and cannot be replaced by automated tests.

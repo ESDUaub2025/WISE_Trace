@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "graph_fingerprint": "sha256:40df7b10edc267d85926ff17f65614400a1419caa194dbf5fde2d413b910633b",
-  "generated_at": "2026-10-06T12:49:30+00:00",
+  "graph_fingerprint": "sha256:e2d3dc1508d8f9de4bcfd1c086c6a2aa1ceeeffcc5e32c6facf6744068d26fd7",
+  "generated_at": "2026-10-06T13:44:50+00:00",
   "trust": "fast-path",
   "statuses": {
     "CFG_PROJECT_MANIFESTS": {
@@ -60,6 +60,24 @@
     },
     "F_PLAYWRIGHT_LIVE_CONFIG_TS": {
       "id": "F_PLAYWRIGHT_LIVE_CONFIG_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_PUBLIC_PUSH_EVENTS_JS": {
+      "id": "F_PUBLIC_PUSH_EVENTS_JS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -220,6 +238,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SCRIPTS_GENERATE_VAPID_MJS": {
+      "id": "F_SCRIPTS_GENERATE_VAPID_MJS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SCRIPTS_LIVE_API_CHECK_MJS": {
       "id": "F_SCRIPTS_LIVE_API_CHECK_MJS",
       "type": "FILE",
@@ -346,6 +382,24 @@
       "evidence_id": "ce92917fc9b34d5fb6207e6cc6977464",
       "evidence_path": ".projectgraph/evidence/CMP_SRC_COMPONENTS/20261006T104819+0000-ce92917f.json"
     },
+    "F_SRC_CONFIGURATION_FILES_TSX": {
+      "id": "F_SRC_CONFIGURATION_FILES_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_DASHBOARD_TSX": {
       "id": "F_SRC_DASHBOARD_TSX",
       "type": "FILE",
@@ -418,6 +472,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_I18N_TRANSLATIONS_TEST_TS": {
+      "id": "F_SRC_I18N_TRANSLATIONS_TEST_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_KNOWLEDGE_TSX": {
       "id": "F_SRC_KNOWLEDGE_TSX",
       "type": "FILE",
@@ -436,8 +508,98 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_LABEL_CARD_TSX": {
+      "id": "F_SRC_LABEL_CARD_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_ATTENTION_TEST_TS": {
+      "id": "F_SRC_LIB_ATTENTION_TEST_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_ATTENTION_TS": {
+      "id": "F_SRC_LIB_ATTENTION_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_LIB_AUTH_TS": {
       "id": "F_SRC_LIB_AUTH_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_CONFIG_FILES_TEST_TS": {
+      "id": "F_SRC_LIB_CONFIG_FILES_TEST_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_CONFIG_FILES_TS": {
+      "id": "F_SRC_LIB_CONFIG_FILES_TS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -510,6 +672,42 @@
     },
     "F_SRC_LIB_DOMAIN_TS": {
       "id": "F_SRC_LIB_DOMAIN_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_LABELS_TEST_TS": {
+      "id": "F_SRC_LIB_LABELS_TEST_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_LABELS_TS": {
+      "id": "F_SRC_LIB_LABELS_TS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -832,6 +1030,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_LIB_VAPID_TEST_TS": {
+      "id": "F_SRC_LIB_VAPID_TEST_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_MAIN_TSX": {
       "id": "F_SRC_MAIN_TSX",
       "type": "FILE",
@@ -868,6 +1084,42 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_MATERIAL_BALANCE_TSX": {
+      "id": "F_SRC_MATERIAL_BALANCE_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_NOTIFICATIONS_TSX": {
+      "id": "F_SRC_NOTIFICATIONS_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_OFFLINE_DB_TEST_TS": {
       "id": "F_SRC_OFFLINE_DB_TEST_TS",
       "type": "FILE",
@@ -888,6 +1140,42 @@
     },
     "F_SRC_OFFLINE_DB_TS": {
       "id": "F_SRC_OFFLINE_DB_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_PACKAGING_FIELDS_TSX": {
+      "id": "F_SRC_PACKAGING_FIELDS_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_PUSH_SETTINGS_TSX": {
+      "id": "F_SRC_PUSH_SETTINGS_TSX",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -997,96 +1285,20 @@
     "CMP_SRC": {
       "id": "CMP_SRC",
       "type": "COMPONENT",
-      "status": "STALE",
+      "status": "VERIFIED",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
-          "code": "own-inputs-changed",
-          "detail": "Files or contract covered by this node changed since verification."
+          "code": "verified",
+          "detail": "Verification passed at 2026-10-06T13:36:37+00:00 (commit 64c1373bf5f8)."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "self",
-          "path": "src/App.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/dashboard.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/features.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/i18n/ar.json",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/i18n/en.json",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/i18n/translations.test.ts",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/label-card.tsx",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/data.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/domain.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/labels.test.ts",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/labels.ts",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/material-balance.tsx",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/packaging-fields.tsx",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/report-page.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/styles.css",
-          "change": "modified"
-        }
-      ],
-      "verified_at": "2026-10-06T12:21:26+00:00",
-      "evidence_id": "f3a341e2eeeb482d842a329df98716f0",
-      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261006T122126+0000-f3a341e2.json"
+      "stale_causes": [],
+      "verified_at": "2026-10-06T13:36:37+00:00",
+      "evidence_id": "599b862e173d450ba8085fbd8db1b728",
+      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261006T133637+0000-599b862e.json"
     },
     "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": {
       "id": "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
@@ -1162,6 +1374,42 @@
     },
     "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": {
       "id": "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS": {
+      "id": "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS": {
+      "id": "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -2114,6 +2362,240 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_SEED_SQL": {
       "id": "F_SUPABASE_SEED_SQL",
       "type": "FILE",
@@ -2134,6 +2616,78 @@
     },
     "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_IMPACT_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
       "type": "TEST",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -2186,8 +2740,62 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_TESTS_PUSH_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_PUSH_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_QUALITY_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
       "type": "TEST",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -2258,69 +2866,41 @@
       "evidence_id": null,
       "evidence_path": null
     },
-    "CMP_SUPABASE": {
-      "id": "CMP_SUPABASE",
-      "type": "COMPONENT",
-      "status": "STALE",
-      "lifecycle": "ACTIVE",
+    "F_SUPABASE_TESTS_YIELD_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_YIELD_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
       "reasons": [
         {
-          "code": "own-inputs-changed",
-          "detail": "Files or contract covered by this node changed since verification."
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "CMP_SUPABASE": {
+      "id": "CMP_SUPABASE",
+      "type": "COMPONENT",
+      "status": "VERIFIED",
+      "lifecycle": "ACTIVE",
+      "reasons": [
         {
-          "kind": "self",
-          "path": "supabase/functions/report/index.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060051_material_disposition.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060052_material_disposition_sync.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060053_material_balance_order.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060054_packaging_yield_review.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060055_impact_dictionary_calculations.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/impact.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/material-balance.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/yield.test.sql",
-          "change": "added"
+          "code": "verified",
+          "detail": "Verification passed at 2026-10-06T13:34:18+00:00 (commit 64c1373bf5f8)."
         }
       ],
-      "verified_at": "2026-10-06T12:20:48+00:00",
-      "evidence_id": "77155b6451374406a3cfbddc53e98ba3",
-      "evidence_path": ".projectgraph/evidence/CMP_SUPABASE/20261006T122048+0000-77155b64.json"
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": "2026-10-06T13:34:18+00:00",
+      "evidence_id": "ad25ad925c4e49b8b114e488c27800b4",
+      "evidence_path": ".projectgraph/evidence/CMP_SUPABASE/20261006T133418+0000-ad25ad92.json"
     },
     "F_TESTS_FLOWS_SPEC_TS": {
       "id": "F_TESTS_FLOWS_SPEC_TS",
@@ -2358,6 +2938,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_TESTS_LIVE_CONFIGURATION_SPEC_TS": {
+      "id": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_TESTS_LIVE_FIXTURES_TS": {
       "id": "F_TESTS_LIVE_FIXTURES_TS",
       "type": "TEST",
@@ -2376,8 +2974,98 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_TESTS_LIVE_LABELS_SPEC_TS": {
+      "id": "F_TESTS_LIVE_LABELS_SPEC_TS",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS": {
+      "id": "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_TESTS_LIVE_MFA_TS": {
+      "id": "F_TESTS_LIVE_MFA_TS",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS": {
+      "id": "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS": {
       "id": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS": {
+      "id": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
       "type": "TEST",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -2491,7 +3179,7 @@
     "SYS_DATA": {
       "id": "SYS_DATA",
       "type": "SYSTEM",
-      "status": "STALE",
+      "status": "VERIFIED",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
@@ -2499,22 +3187,13 @@
           "detail": "Work is in progress."
         },
         {
-          "code": "derived-from-members",
-          "detail": "Derived from contained nodes (STALE).",
-          "refs": [
-            "CMP_SUPABASE"
-          ]
+          "code": "fully-fulfilled",
+          "detail": "Every contained node is VERIFIED."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "member",
-          "path": "CMP_SUPABASE",
-          "change": "stale"
-        }
-      ],
+      "stale_causes": [],
       "verified_at": null,
       "evidence_id": null,
       "evidence_path": null
@@ -2522,7 +3201,7 @@
     "SYS_FRONTEND": {
       "id": "SYS_FRONTEND",
       "type": "SYSTEM",
-      "status": "STALE",
+      "status": "READY",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
@@ -2531,21 +3210,15 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (STALE).",
+          "detail": "Derived from contained nodes (READY).",
           "refs": [
-            "CMP_SRC"
+            "CMP_DISCOVERED_FILES"
           ]
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "member",
-          "path": "CMP_SRC",
-          "change": "stale"
-        }
-      ],
+      "stale_causes": [],
       "verified_at": null,
       "evidence_id": null,
       "evidence_path": null
@@ -2553,7 +3226,7 @@
     "WISE_TRACE": {
       "id": "WISE_TRACE",
       "type": "PROJECT",
-      "status": "STALE",
+      "status": "ACTIVE",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
@@ -2562,27 +3235,15 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (STALE).",
+          "detail": "Derived from contained nodes (ACTIVE).",
           "refs": [
-            "SYS_DATA",
-            "SYS_FRONTEND"
+            "CFG_PROJECT_MANIFESTS"
           ]
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "member",
-          "path": "SYS_DATA",
-          "change": "stale"
-        },
-        {
-          "kind": "member",
-          "path": "SYS_FRONTEND",
-          "change": "stale"
-        }
-      ],
+      "stale_causes": [],
       "verified_at": null,
       "evidence_id": null,
       "evidence_path": null
@@ -2593,12 +3254,12 @@
     "SYS_FRONTEND": "sha256:6aa38a220e4b92d1b0006ba07f2a82e679097c969d4f368c8055775ad96cf8e8",
     "SYS_DATA": "sha256:6aa38a220e4b92d1b0006ba07f2a82e679097c969d4f368c8055775ad96cf8e8",
     "CFG_PROJECT_MANIFESTS": "sha256:cee7a9bc0769990493bde27a2e18dd14b9cc9d7d3064a074cacd303f86fc99b8",
-    "CMP_SUPABASE": "sha256:eddd2a6987e4e7559f1c52a6920d89c4521b1316ec04389b1164d6c25ff77867",
-    "CMP_SRC": "sha256:3bda8131c82d829e2e889b0f8d2a361dcfd0e20af8db1af2fd192609d8d25fdd",
+    "CMP_SUPABASE": "sha256:01e65b7f023d71d28aa7f80fb1a0587ac020e8eba211d808ad57bfdf97c74d22",
+    "CMP_SRC": "sha256:e5a74bfa19311e0559677c76a69b7a8f5c2dffebc8002695c9d9bcc506e9323a",
     "CMP_SRC_COMPONENTS": "sha256:80ceccc6e2d213e71edb84e4a18313266d9aaba6b648685a77d065375ae43567",
-    "REQ_FULL_MVP": "sha256:afc4c1907e03cecfd25d6eec88a5552c1b8bdd1a647d9114aabc7b96b8631b5f",
+    "REQ_FULL_MVP": "sha256:b66f6cc79aa2acd370467811d1281963e52d6e4bc42e0578e9fb198393635582",
     "CMP_DISCOVERED_FILES": "sha256:1ec5c58062baa41af79a7e3b2fef310fc506149d2a22e1e415824fc22d94b6c4",
-    "F_ESLINT_CONFIG_JS": "sha256:d8683dfa68656f3e5ad4162f164013a516fe5badeb186c6ccab53aaf26c1548a",
+    "F_ESLINT_CONFIG_JS": "sha256:be3e1a7e309d181b9bb84281b0aa910595f5e2ef57b30882b9c61178832d051a",
     "F_P_PUBLIC_TS": "sha256:f1cac71f3921893282dcd5548c4443e007c9f6518251745e53d57719c769b03c",
     "F_PLAYWRIGHT_CONFIG_TS": "sha256:26931b00fe775e58244db4beb75f406b7d3f3ac1d1daaabff6a950e4a9efa2f0",
     "F_PLAYWRIGHT_LIVE_CONFIG_TS": "sha256:e42bc9b20394a0fd21240ea0c8032aefa647a0b717f37ac45c0ba3b346073ff3",
@@ -2609,18 +3270,18 @@
     "F_SCRIPTS_CREATE_SEED_MJS": "sha256:9773911f10bd730038267b72129069dfb630cd1a08fd23a1052456435485441d",
     "F_SCRIPTS_LIVE_API_CHECK_MJS": "sha256:3fc7e68db59bfca0df9c3f8bff63f50dd3a178554a47daa60ce81f85a53fc3e4",
     "F_SCRIPTS_SETUP_LOCAL_MJS": "sha256:73305604a6fce89a16737a0a0fe1f774e3e02db8fb285d505f6fabb78b73b31c",
-    "F_SRC_APP_TSX": "sha256:d1cfca6319e5d6daa57dd9c75db8baabed47fe4d6dfe836a5d0875c7a71b767f",
+    "F_SRC_APP_TSX": "sha256:3651e8ed239828c0fb10a8d0704aa9ff2183059870b4a54debcc517b25d4bd1b",
     "F_SRC_COMPONENTS_UI_BUTTON_TSX": "sha256:ff9744c686545b312fe4c0512c38794f1dfb36344f9f36fb9eaaef36a57b1a11",
     "F_SRC_COMPONENTS_UI_SHEET_TSX": "sha256:7e81c51974eccbda71c9884b3430a03c77340ff2041a19c448da3eb85af6c167",
     "F_SRC_DASHBOARD_TSX": "sha256:4644897555cad533706b86e67b59842272fe793d4436ac6b6d77ccc95cbadfb9",
     "F_SRC_EVIDENCE_TSX": "sha256:6379f392ab076c3be1f03033e7b6ac58d6d86ce5223de11acd180af5b75e5f3e",
-    "F_SRC_FEATURES_TSX": "sha256:052d5465138ec89a6b354bfd712e73523a4c44a0bf6fec09aa6dca2686d2624e",
+    "F_SRC_FEATURES_TSX": "sha256:bf801824dbe85e46a9340888cceb91feebebdbde5aa23ef3dd9667d23bb2f08e",
     "F_SRC_I18N_INDEX_TS": "sha256:0d8ea56614f0ca9612b7ad2653508c7828cfdea765aa1f5e0880c572e5fb1efb",
-    "F_SRC_LIB_AUTH_TS": "sha256:be664f02c05f331b96724daae28c7477486fcd33edbafa4fe3773de5f8276d1a",
-    "F_SRC_LIB_DATA_TS": "sha256:cbf20f0be9c6afeaee73a46bcc80e7ad3fff7469d21f56a6a393868abed4eff3",
+    "F_SRC_LIB_AUTH_TS": "sha256:22e29ed0897289bc119f142926072bb80891519ef3b5d10b98a4278204800192",
+    "F_SRC_LIB_DATA_TS": "sha256:3f8e1d4ddd50429e6805aa11c5d2b89b9b6189eaa339497b7e195097961dcf7d",
     "F_SRC_LIB_DEMO_TS": "sha256:37b026c2f34523c1a9ef488326a7e9c9821ed3b596b613bdd490fdc61a462fd2",
-    "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:2cf33115659d6c0100db7a5fdd9723436f29275ff63af4e103f88d7dc540ecdc",
-    "F_SRC_LIB_DOMAIN_TS": "sha256:f048836fab9e31472a2ff49bf2cc3af34409663439e23e6a76817bd07ab03098",
+    "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:14806866635ab7ca1e0cbd0cec8ed80c3849e8cb55a629de5f6022f2e4625189",
+    "F_SRC_LIB_DOMAIN_TS": "sha256:6a6e21d093406dfd54bfd7d5b92621fa7f882c78e73d9bd30c6246b322b99e9f",
     "F_SRC_LIB_MEDIA_TS": "sha256:07a066e1e3b8dc84cf832719a76879588508ee6bfcc4c9c47147f99256a8c7a1",
     "F_SRC_LIB_MFA_TS": "sha256:dca26923ac160e2f79f66ebf3cc95b193260d08c61d62184015e31b1888c6668",
     "F_SRC_LIB_PIN_TEST_TS": "sha256:0098b8cd5057693b43dfe29cfd40335d6f962d9245f0dccbc5a6cdd8e9386cc7",
@@ -2630,17 +3291,17 @@
     "F_SRC_LIB_SESSION_POLICY_TS": "sha256:c662b4c0708a5f9535c8c0da042ebfa3d8954cd1d3b964c5a25ac119103627fc",
     "F_SRC_LIB_SUPABASE_TS": "sha256:118b0643bfeefe741db6e9f50f54f1fa716186fcc61703054d8928e16ddfd6b3",
     "F_SRC_MAIN_TSX": "sha256:4c85f021ea34ea38629c59c356e09badbd923544a03d7b1202297bf041c2b3b1",
-    "F_SRC_MANAGEMENT_TSX": "sha256:9b78a063de8cadc65cbe97a0d768618733bf6797932914910acddf99dae92d30",
+    "F_SRC_MANAGEMENT_TSX": "sha256:4e6f4714b7d4db3b81fdad628ecc77677b5f28244cf08aa49526229bd16b1bd2",
     "F_SRC_OFFLINE_DB_TEST_TS": "sha256:c129acf3287b6bd9336a0cecb1a8cc2219d1622f2afb3daaeacf1f390c1d3014",
     "F_SRC_OFFLINE_DB_TS": "sha256:75ff9cb2d70c3e3763cafc23183be85fafaa876940d1d35de66e4bb38b7aa2f3",
     "F_SRC_SCANNER_TSX": "sha256:a4270f3e6638de958da6928d193110b4eaaf102b3ad2881383108e93212856e1",
     "F_SRC_TEST_SETUP_TS": "sha256:4f007a9b0c007b18ac970ff56b9b2dd0ef852d2f9eeac9796d1e1387d25ba52f",
     "F_SRC_TRAINING_EDITOR_TSX": "sha256:37f650c61d65729700dde97eb86a2576374c9215385ae002606493e2e7c9c5b2",
-    "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": "sha256:becf001cd41c21d377aeec30d3f51dfdeeb05d3a351a165084b056ce61df6866",
-    "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:704545f4ed4c7ec25f313bf75e39057aca887cc9e9b166cb3be866305037f287",
+    "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": "sha256:43f8b63a3089496ce405787e0ed19ab0b6f102788f2c1e0ef15eaab67bac77ca",
+    "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:264be2a13ddcbecd057cf728fee025828f80e0057624e0398e4faf62f0227a64",
     "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:c71958391cd2d8f8286ab82bc9241b89c5758f0ddcd7c03b86faa80f9b4275e1",
     "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:c35ad7ddadbb2f935656491006ece7b6b6fa2c236b15cd9e9f89548d2e540c18",
-    "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": "sha256:e40c9e4dfcbf87e5cf7b04ca280b8be2b9228d2618fa103b01335981586696d4",
+    "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": "sha256:f317c719d9bd6d101925a4a2671a3869d357fc6cca54778da3a756d65a11f394",
     "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS": "sha256:6fc4317be9779cab74b654ee75c79e388d2f6f22526db89878c93f58ce3643bb",
     "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS": "sha256:9e78fd5f768b5c206a25c174ae39e85592c4ae0c80e0cf6070202a0a1bab2205",
     "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL": "sha256:de89a2b0665c1ac510bea32ab9897abb0826c797c1edc4bf735b75b93f313fb2",
@@ -2677,9 +3338,9 @@
     "F_SUPABASE_TESTS_RULES_TEST_SQL": "sha256:5769810c519a5379a57575b5ef3dabdd3345407c81c64615af4400a76058b16b",
     "F_SUPABASE_TESTS_SECURITY_TEST_SQL": "sha256:fa2a6c95e5018ba5d2f48da26b257de8c9e1dca864863651a92348dd8967277a",
     "F_TESTS_FLOWS_SPEC_TS": "sha256:a3dcb81e6458dbb2bd2efe66857a8a53954fc47c282493301c2b29a95ca7bf90",
-    "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS": "sha256:0f18aa452c414d85643600a0ad15a1f4d0a1f61d06bf39d1170834f93bcbb876",
-    "F_TESTS_LIVE_FIXTURES_TS": "sha256:8e7a9467dc8cd33c2d958d46a18bc777f9cfa84ec15306f2dba50e8b8036b8a0",
-    "F_VITE_CONFIG_TS": "sha256:76a34805ffa9b74c8355c36ba3409fe670a39af76aae66742586b2b36dd5af64",
+    "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS": "sha256:d02372b6973a65c6cc55d374eb4feb4057ecb826cb7ec630e39495977351caad",
+    "F_TESTS_LIVE_FIXTURES_TS": "sha256:4314586b7755fa216c912cb8763658a815ac13a67000f34c21ca5a8765200ccf",
+    "F_VITE_CONFIG_TS": "sha256:460371bd51860ed8240de5cfac832c2c6988e08f435cec0cb1ddf879c4bc305b",
     "F_VITEST_CONFIG_TS": "sha256:6f169944ae843190945e21ee301e92338a9e7e8ed8d0587e6fc80865027e9d16",
     "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": "sha256:32e95ed533086e14a0df3b1e411a2e69fec83f2e794410c68f3fa462e8d6330e",
     "F_SCRIPTS_CHECK_REPORTS_MJS": "sha256:29552ba729fac8516806af30c090fb5b7d85e8fcb8211f5ac0ccc0c9c9a98ced",
@@ -2721,19 +3382,64 @@
     "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL": "sha256:e361bfc5651b83b44224337e933ccfd83f51255f438ce3f7195678e533fd128b",
     "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": "sha256:38c7dca04fd60862e1f2ac52d033562b18d8c59543a907b163191d732f063367",
     "F_SUPABASE_TESTS_TRAINING_TEST_SQL": "sha256:f0b0e1f785285dbf729829c227a2b5646c0fba67ab692055de442c0e734c2a6b",
-    "F_TESTS_LIVE_TRAINING_SPEC_TS": "sha256:83f28322ccc82a8b6750e3f5b35833feb2122bb23106f4c0d558683560f9b35c",
-    "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": "sha256:dd6232ff230ee8ee7dc5e5fc54750366395d2309617fcdffe886b301052fbb79"
+    "F_TESTS_LIVE_TRAINING_SPEC_TS": "sha256:5bbf3ac74a30467836f11c5cab8434cc330a5ae5808ae63267b58c749a7e44d9",
+    "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": "sha256:dd6232ff230ee8ee7dc5e5fc54750366395d2309617fcdffe886b301052fbb79",
+    "F_SRC_I18N_TRANSLATIONS_TEST_TS": "sha256:cd1b9c048c8d9bf8d7d2cc4992d3f15a91f0ce1e49ee737d21e9081179c23288",
+    "F_SRC_LABEL_CARD_TSX": "sha256:1c91799e0e38237ff7cc51e015bf2ec7f0188189034aa6958f4df51e8c7e125c",
+    "F_SRC_LIB_LABELS_TEST_TS": "sha256:a4545e291003ed3cd17e7580050fac2be00d32c238f5926859f5652662fa46d7",
+    "F_SRC_LIB_LABELS_TS": "sha256:4d8e8422427a72e832dfbb0fea5461caa1da0e51557f9f9a9c68993d46e734d6",
+    "F_SRC_MATERIAL_BALANCE_TSX": "sha256:a6c6a97d40d61e8ff5e791a01e7a02ad5d0969d5c1548cdc6b0e8164a15d97df",
+    "F_SRC_PACKAGING_FIELDS_TSX": "sha256:339f519f258afb11422f987730de3496cb52bcf52d240c00bf619531b1417206",
+    "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL": "sha256:8c1a20f10542ac27ff442c8a17a630127b6edb19a394173f06a5d87304b73726",
+    "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL": "sha256:80892e7d1460ea612449603af7dc7b5bc54ef6f8036e116dc5c2e77ea33070ee",
+    "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL": "sha256:d445cdc953545fc506bceb191a0dbe4bfcfb6581d78619d0d741fad326a87a85",
+    "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL": "sha256:b3fba583954a2a42666c1587308e99bb19fb4069deb02afee48e24f16e031bfd",
+    "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION": "sha256:120568c29effe96394fae2a94c139a5e2d7cc0dd09f84f82067ea2feae22b86d",
+    "F_SUPABASE_TESTS_IMPACT_TEST_SQL": "sha256:b5c20fd9b843208243d506ef9de641eb79376f75a68c3434a4febdda3e8755c0",
+    "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL": "sha256:c6717a4a0c471a98704e473873169078cded64e96ba55ac1facc715989f49c04",
+    "F_SUPABASE_TESTS_YIELD_TEST_SQL": "sha256:a8c69a80cec2e20a958bb35add20bff8e077f0cf6bdd761b45e76489796ee34c",
+    "F_TESTS_LIVE_LABELS_SPEC_TS": "sha256:c7f27817703835755184b411eaaa8db56f37b4da63b35a6f4b5772771fdcf97a",
+    "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS": "sha256:595d115bdb7a8027613bd6e4da5eaf4cb8145178966aa66dae3461a176ba93a1",
+    "F_SRC_LIB_ATTENTION_TEST_TS": "sha256:11f2a097f3267a1e7a6b381c9a565578c2cc4cb4d46da39e8762e57a52fa759c",
+    "F_SRC_LIB_ATTENTION_TS": "sha256:d09582293606b584a70e8123a192bd199087c61a143396c7d32b31132d9cbf4d",
+    "F_SRC_NOTIFICATIONS_TSX": "sha256:bdb34d48c38df3c9aef91adce3e1de696d1f0d486ba797b59559b7806b7b731a",
+    "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL": "sha256:d8b6956aa2c75cb213d8fa367d9ca33edd97e991bdf4432198c1100aa97693f0",
+    "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL": "sha256:2cce3d29c8c7cab34ea20c60df25001690d75906c202c91a5cb2669b71dc973c",
+    "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO": "sha256:b30f55478fa2147d317e481d871c9b53f1b5832e16c975389b07a905224aebe6",
+    "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ": "sha256:7435557188fd6f7317572a531de8317e2910b64c9b061cee266f02e626578d37",
+    "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL": "sha256:daa8ad7f06444389a01390e67cf41b9b06e638bc01a8670ca4a151b10c2f2f35",
+    "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS": "sha256:4e6db89362d6fa6ed413c4bf5571ad2c93a908d0eac25d76d03626a76766d07b",
+    "F_PUBLIC_PUSH_EVENTS_JS": "sha256:f4026091ee8951279847344f2929701b6acbd13b1d66327f0261266548fdec26",
+    "F_SCRIPTS_GENERATE_VAPID_MJS": "sha256:95011ba5af6c119d09f09e51b912cd852713dc867868d77ee68593b10af748c0",
+    "F_SRC_CONFIGURATION_FILES_TSX": "sha256:97870f3942e8b537682d062caed9592c578a71016ccc21e54dde3947f9f256cf",
+    "F_SRC_LIB_CONFIG_FILES_TEST_TS": "sha256:ee24b13228d4b9e69c1570fa857d4c364a9e6a2f73ad0227ab0e90624fe3cc5e",
+    "F_SRC_LIB_CONFIG_FILES_TS": "sha256:3e1b0f981b88734d9886245875fd79648b67ff0fd6ec4c86af20e513e41b9044",
+    "F_SRC_LIB_VAPID_TEST_TS": "sha256:0269ad35534f2a4cb4fb1601cce119d08fbf15669e32b2d3624c50b8faed2b18",
+    "F_SRC_PUSH_SETTINGS_TSX": "sha256:3607d47826b88e044943132ee10616903960ce94ee8d96580ab6628f3edbc236",
+    "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS": "sha256:7e704108f878327202abb47e6054b56d96b7bb0a009a63e6d2e2766800a9ec22",
+    "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS": "sha256:acdd0d8c3e54c7cfff02d0ef4a37d880e2ec3323ee48f6aa2c0c7d111893e648",
+    "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL": "sha256:aa11954173b7edc8f6c752231dad0ef125e6c2c45b5043e419457189332b3001",
+    "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL": "sha256:ec7bdc6237846a87b7db93fd19b4cc0523943a274961eea4e5d11761b3c926a1",
+    "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL": "sha256:ce5d123f3b93d54e9dc87c3c4ee01f8dbc30ba61afb4eb696f4cf636dfa550c0",
+    "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL": "sha256:71f8dfd74a97d571f1ee5773a599472db6206f4656ff9252d0109098759e64c0",
+    "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL": "sha256:1b562f535d94f7b8b98d03d491e3ba68d89d659ee5b9fe665311406eaf19c91c",
+    "F_SUPABASE_TESTS_PUSH_TEST_SQL": "sha256:268ccf853e5693708e23360ba9817f2ade17225338185cc022d474576213858f",
+    "F_SUPABASE_TESTS_QUALITY_TEST_SQL": "sha256:50c84dedc11c6e65e4fe3396376f86d3f874d5c26ba291a26a35a12715b45ce3",
+    "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL": "sha256:de2e159dd81787d7c61e7a49ae1d9e94f677e734d6ac558b26b452a7dbccfc2a",
+    "F_TESTS_LIVE_CONFIGURATION_SPEC_TS": "sha256:93983db62c306665f358467769b9d2391cc421f41dcdf06f983335747e15c177",
+    "F_TESTS_LIVE_MFA_TS": "sha256:5da2ec177680eb59eb73ee07aae958ded739271bffbc3fa056430c7fa964991e",
+    "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS": "sha256:7566fd9b411bf83cc846ef48acdb1ed9128c0e28612202662968c1485d2b9bd7"
   },
   "dep_fingerprints": {
-    "WISE_TRACE": "sha256:75bbc9edae96f7bd742409ba3fd49fc59089b045780add3d26c86dfac8d602fa",
-    "SYS_FRONTEND": "sha256:00cd808d3590fa63b2e6650ddd3778bc4d796674521755db047c1e6a77ed6d44",
-    "SYS_DATA": "sha256:eb538625f8da79f334f6f7a68ee9cef11132865170b601502117f8041a98645b",
+    "WISE_TRACE": "sha256:528ce1cebe6f50206233c811ad3fb5e699f517bb3b7b5a382e2712934b9d3070",
+    "SYS_FRONTEND": "sha256:dc3fb607f875f2d61c7ae0509ec8abdb222c7f5b007763e2e75c63eaae525ba7",
+    "SYS_DATA": "sha256:45694b03a4b9adfb3e42e6e25408fb053268bd86e141f05e6755147759674e18",
     "CFG_PROJECT_MANIFESTS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "CMP_SUPABASE": "sha256:307e940e68f3513952b581e89354f1f219d69377ff9c1288a3fd21d5f0226fe8",
-    "CMP_SRC": "sha256:ed8976434ebb802758adf30dd35067a3ed3af7e973b5ceee2aeea58c1beba945",
+    "CMP_SUPABASE": "sha256:05b7dcc1521ca050d2e695c7f8593b24235e10421ab2a6fcdbd6bb6aad24ce28",
+    "CMP_SRC": "sha256:2ea40bd01c07852af2b0deb08a25c151cbee27ab1e854720df89e039abe37597",
     "CMP_SRC_COMPONENTS": "sha256:4ac47fe6c136568d00ca564e6a83c74cafa31c57d5509f0fc372b65b11107e24",
     "REQ_FULL_MVP": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "CMP_DISCOVERED_FILES": "sha256:8bef4cecc93e0f0ae7bce344c949ff270d5b69268cc292237b1a085a2b330616",
+    "CMP_DISCOVERED_FILES": "sha256:0199bb84b2fb24ace0216ac08a5cbacebd98e77d10143865876a803220fa0d77",
     "F_ESLINT_CONFIG_JS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_P_PUBLIC_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_PLAYWRIGHT_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -2742,43 +3448,43 @@
     "F_SCRIPTS_CHECK_LIVE_UI_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_CHECK_PDF_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_CREATE_HISTORY_SEED_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SCRIPTS_CREATE_SEED_MJS": "sha256:50f895beaa06ddc2981d0211d0e80e8b2b791d9406d836eff7b18e6af830dec3",
+    "F_SCRIPTS_CREATE_SEED_MJS": "sha256:9de1c16e2aab987840699cfe5cb29b347321aaec8b6fa883362fbc1b25553323",
     "F_SCRIPTS_LIVE_API_CHECK_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_SETUP_LOCAL_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_APP_TSX": "sha256:982b67bde4942d6c11b313637c538b0ead2fde5b2ac5fb64c7c22ff6eb2f89d8",
+    "F_SRC_APP_TSX": "sha256:80d27f2fa5e946921d5c9e8a579c7f6794da00b7ede410fd2bd040209a106c9b",
     "F_SRC_COMPONENTS_UI_BUTTON_TSX": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_COMPONENTS_UI_SHEET_TSX": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_DASHBOARD_TSX": "sha256:de2745dfbc5ff72b5ff303360eb639249757fbf9f3b63dab0211469b9498e147",
-    "F_SRC_EVIDENCE_TSX": "sha256:41a74fc86c45b098ea377e6d68f350a0cde0252b0dbd1a7ca4a7045cb507b33c",
-    "F_SRC_FEATURES_TSX": "sha256:70c525a79e82cf19aba4653b369c9445ce3416ed097fb1ff616262895890bd62",
+    "F_SRC_DASHBOARD_TSX": "sha256:eeaadcde45c12bb72cd94ce121e43787b64d43bf50b1fd1d47a9f4b1392ad72c",
+    "F_SRC_EVIDENCE_TSX": "sha256:20e2e3e67fd6f178e4a8e7827e0c87b80a4f6d797a67797716506a57c9bb8f52",
+    "F_SRC_FEATURES_TSX": "sha256:47d04383e602667eb16b87bf181e5b3c8826a3f6a75f3f6f1ddaaed2ceaaeaae",
     "F_SRC_I18N_INDEX_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_AUTH_TS": "sha256:23b1ce6da06548681fb52b72fcdc7e40878b1f2657311bd406a4c73b0e2491b8",
-    "F_SRC_LIB_DATA_TS": "sha256:6accbdb410ddd3e604e8e8b5f48a80e138fbab48586dfa178db785cfae9968ae",
-    "F_SRC_LIB_DEMO_TS": "sha256:4ba6f9e985aa61f457e4088a38b2184ff55ddfadcdadaea7e1495e37d0f3179f",
-    "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:f3a6772dc174cde8d00b8b785bde48c53830b5f1af990bf7709dd3abd6683150",
+    "F_SRC_LIB_AUTH_TS": "sha256:f7e51013549a0b05074881e6dd3f54144c6ec1c996ea5f68f84696498d2e8c2f",
+    "F_SRC_LIB_DATA_TS": "sha256:6548999395aaf83ddd06f9948a39c0af7d0812ca7338d6c26014862a8c5c58a2",
+    "F_SRC_LIB_DEMO_TS": "sha256:837bcd0a01055528986b505d5b3c3144812b3a76c385a5dbb545f43b4e560e13",
+    "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:a94339eb8b08caad98eab10cf44f785e6f1ffb8d708648e15f6845fde227dfe4",
     "F_SRC_LIB_DOMAIN_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_MEDIA_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_MFA_TS": "sha256:b91710412b5c767b8f8e488dd46843f8277b53813825cbb6bde63ce66eb1b6a0",
     "F_SRC_LIB_PIN_TEST_TS": "sha256:faed76a55cdfcb620276fbb7e07d8c6fed94ea5dc75fe08159474eff4a2f38d1",
     "F_SRC_LIB_PIN_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_REPORTS_TS": "sha256:b91710412b5c767b8f8e488dd46843f8277b53813825cbb6bde63ce66eb1b6a0",
-    "F_SRC_LIB_SESSION_POLICY_TEST_TS": "sha256:8030112e4b47f56eca8c8109c722b9c2e831e347350369070cffed2abdeb3619",
-    "F_SRC_LIB_SESSION_POLICY_TS": "sha256:92790082fe0605cda6e77f236b43d6a832127446b4f85f634b1e0ae6b9c456f5",
+    "F_SRC_LIB_SESSION_POLICY_TEST_TS": "sha256:0eb4260d68b67ffb324a9bf63505a2b10d71c0f28a344cc0e1c590d58b9bc006",
+    "F_SRC_LIB_SESSION_POLICY_TS": "sha256:cb501d75849807d9fdef84d4a7ef5f8b1df4265ed680c9943a92e04ba7384afa",
     "F_SRC_LIB_SUPABASE_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_MAIN_TSX": "sha256:0e284f49c41033be33e1bda5aa1432b2b9d71d0e21e507893cb61d3f2e19d9a3",
-    "F_SRC_MANAGEMENT_TSX": "sha256:41a74fc86c45b098ea377e6d68f350a0cde0252b0dbd1a7ca4a7045cb507b33c",
-    "F_SRC_OFFLINE_DB_TEST_TS": "sha256:84223c06182163edf54a3a6564ba7de547ed93338e2023689800f66715fd5efa",
-    "F_SRC_OFFLINE_DB_TS": "sha256:4ba6f9e985aa61f457e4088a38b2184ff55ddfadcdadaea7e1495e37d0f3179f",
+    "F_SRC_MAIN_TSX": "sha256:f4e7a27b8aa46798bef07c9b6553d5acd53dff3fb30d3a9412a71ec8be5daa13",
+    "F_SRC_MANAGEMENT_TSX": "sha256:20e2e3e67fd6f178e4a8e7827e0c87b80a4f6d797a67797716506a57c9bb8f52",
+    "F_SRC_OFFLINE_DB_TEST_TS": "sha256:75952949ad01714ec4ca6d33f052a97c6da0bc75b7739884ca3c91544fe6e03d",
+    "F_SRC_OFFLINE_DB_TS": "sha256:837bcd0a01055528986b505d5b3c3144812b3a76c385a5dbb545f43b4e560e13",
     "F_SRC_SCANNER_TSX": "sha256:fc64801a0e08364e46c741103f25316526a44127f1f707778d5a25e790d490b5",
     "F_SRC_TEST_SETUP_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_TRAINING_EDITOR_TSX": "sha256:d9dc64344e776135f47ef72183d87daa843280d5c5b4b3d57f97a5671881e791",
+    "F_SRC_TRAINING_EDITOR_TSX": "sha256:33042bc91096c277db0ff564ddf4f3a90aa9e906aac87bca839cdb20da8eaa3a",
     "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:9f4c2c30bf6177a45d34434d793a6e2da95126d53496ebc622fd31eab726685e",
-    "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:9f4c2c30bf6177a45d34434d793a6e2da95126d53496ebc622fd31eab726685e",
-    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:9f4c2c30bf6177a45d34434d793a6e2da95126d53496ebc622fd31eab726685e",
-    "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": "sha256:9f4c2c30bf6177a45d34434d793a6e2da95126d53496ebc622fd31eab726685e",
-    "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS": "sha256:9f4c2c30bf6177a45d34434d793a6e2da95126d53496ebc622fd31eab726685e",
-    "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS": "sha256:9f4c2c30bf6177a45d34434d793a6e2da95126d53496ebc622fd31eab726685e",
+    "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
+    "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
+    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
+    "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": "sha256:5a7fe95eb3312da2f82d567045fade6184148d02097de3dd00452b302548af19",
+    "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
+    "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
     "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -2813,19 +3519,19 @@
     "F_SUPABASE_TESTS_RULES_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_TESTS_SECURITY_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_TESTS_FLOWS_SPEC_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS": "sha256:8f9f07018647a1ba41e3a4ab3ee3111d68bcf03ff5c3a3135b20ba5a99cf9d65",
+    "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS": "sha256:26835327fbea4471b84f33ab87913b39456f66cfb3fb7f7a478eaabbaffbada7",
     "F_TESTS_LIVE_FIXTURES_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_VITE_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_VITEST_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": "sha256:f3a6772dc174cde8d00b8b785bde48c53830b5f1af990bf7709dd3abd6683150",
+    "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": "sha256:a94339eb8b08caad98eab10cf44f785e6f1ffb8d708648e15f6845fde227dfe4",
     "F_SCRIPTS_CHECK_REPORTS_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_OFFLINE_SIGNOFF_TS": "sha256:448b5527b8582642b11224faa359335280e791ee1a62f09cfdbf6a75b24446d3",
-    "F_SRC_LIB_SCHEDULES_TEST_TS": "sha256:c003845ae2895ae285a73c93274d2c57ce4d4f0fba6b7b32a94883389cb0bb75",
-    "F_SRC_LIB_SCHEDULES_TS": "sha256:f8bb4aeef741c4d23fbf08bcdc1961c1674a727ec5367a47d05775f150247d1b",
-    "F_SRC_LIB_SEALED_TICKET_TEST_TS": "sha256:e7b3e66bb37ffb0fa275cea198aadaa4b8709583e133e8980408b0fbb7671655",
-    "F_SRC_LIB_SEALED_TICKET_TS": "sha256:4ba6f9e985aa61f457e4088a38b2184ff55ddfadcdadaea7e1495e37d0f3179f",
-    "F_SRC_REPORT_PAGE_TSX": "sha256:c9f755f407a059eec78f26a89fa3251f24405edbbb56f6c22f4f89136dbcab72",
+    "F_SRC_LIB_OFFLINE_SIGNOFF_TS": "sha256:37f4a4a6b38a380d28fc503ef8b00f0811b94886ddcfc4e5f8c7d6f74f7fa3b7",
+    "F_SRC_LIB_SCHEDULES_TEST_TS": "sha256:20e2e3e67fd6f178e4a8e7827e0c87b80a4f6d797a67797716506a57c9bb8f52",
+    "F_SRC_LIB_SCHEDULES_TS": "sha256:9803653106a0fafc99441450c04718dc8d6db7ace23856f928b1c3ebdebe228f",
+    "F_SRC_LIB_SEALED_TICKET_TEST_TS": "sha256:9e2ad9fa9697a8da9229f90949e29278d22e039fd9483d448fc6e6d5ba904088",
+    "F_SRC_LIB_SEALED_TICKET_TS": "sha256:837bcd0a01055528986b505d5b3c3144812b3a76c385a5dbb545f43b4e560e13",
+    "F_SRC_REPORT_PAGE_TSX": "sha256:2354efe87411cbce72ac4af4a380bd6cedc60ba7d3719126945dee35f7b3366f",
     "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -2837,18 +3543,18 @@
     "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS": "sha256:8f9f07018647a1ba41e3a4ab3ee3111d68bcf03ff5c3a3135b20ba5a99cf9d65",
+    "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
     "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_KNOWLEDGE_TSX": "sha256:3859ce3d224ae057279d03eb0502c7861410f80290bf1d91af76dac9e3afdd16",
-    "F_SRC_LIB_TRAINING_MEDIA_TS": "sha256:15adb78175c4c9f3069bf6aca2b0ce095ad9bad81f5e227399fc80db3a17658c",
-    "F_SRC_TRAINING_ASSETS_TSX": "sha256:3859ce3d224ae057279d03eb0502c7861410f80290bf1d91af76dac9e3afdd16",
+    "F_SRC_KNOWLEDGE_TSX": "sha256:a5211928c97e66c99fa30c21d1740eb2de6030ea15834b7ca5a3af8be6069c4f",
+    "F_SRC_LIB_TRAINING_MEDIA_TS": "sha256:5ba2f6fdbd12eb20239db0793bc6a81ac3e71ba1a7867654256eb51c7250d0c9",
+    "F_SRC_TRAINING_ASSETS_TSX": "sha256:a5211928c97e66c99fa30c21d1740eb2de6030ea15834b7ca5a3af8be6069c4f",
     "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_LEARNING_DEMO_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_RECEIPTS_TEST_TS": "sha256:56af95bc42e8f6ee014e9196b5fd7f678079badcae0900418f4877fb4bf241ae",
-    "F_SRC_LIB_RECEIPTS_TS": "sha256:4ba6f9e985aa61f457e4088a38b2184ff55ddfadcdadaea7e1495e37d0f3179f",
+    "F_SRC_LIB_RECEIPTS_TEST_TS": "sha256:146860cd08acb6ed536f88743f11a5b806f2e13c7bf1c2e9766e820cf8a63639",
+    "F_SRC_LIB_RECEIPTS_TS": "sha256:837bcd0a01055528986b505d5b3c3144812b3a76c385a5dbb545f43b4e560e13",
     "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -2857,17 +3563,63 @@
     "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_TESTS_TRAINING_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_TESTS_LIVE_TRAINING_SPEC_TS": "sha256:8f9f07018647a1ba41e3a4ab3ee3111d68bcf03ff5c3a3135b20ba5a99cf9d65",
-    "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "F_TESTS_LIVE_TRAINING_SPEC_TS": "sha256:26835327fbea4471b84f33ab87913b39456f66cfb3fb7f7a478eaabbaffbada7",
+    "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SRC_I18N_TRANSLATIONS_TEST_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SRC_LABEL_CARD_TSX": "sha256:a112efc033ba27b6e692d07385c3ddf0f010c40c7c4423cba79d5c1ba4be6d9c",
+    "F_SRC_LIB_LABELS_TEST_TS": "sha256:a112efc033ba27b6e692d07385c3ddf0f010c40c7c4423cba79d5c1ba4be6d9c",
+    "F_SRC_LIB_LABELS_TS": "sha256:20e2e3e67fd6f178e4a8e7827e0c87b80a4f6d797a67797716506a57c9bb8f52",
+    "F_SRC_MATERIAL_BALANCE_TSX": "sha256:20e2e3e67fd6f178e4a8e7827e0c87b80a4f6d797a67797716506a57c9bb8f52",
+    "F_SRC_PACKAGING_FIELDS_TSX": "sha256:20e2e3e67fd6f178e4a8e7827e0c87b80a4f6d797a67797716506a57c9bb8f52",
+    "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_IMPACT_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_YIELD_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_TESTS_LIVE_LABELS_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
+    "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
+    "F_SRC_LIB_ATTENTION_TEST_TS": "sha256:3b1d665f8ecc707c67a3d568642d2fc6ba05c4d9233256e8d8e9da4911b70e48",
+    "F_SRC_LIB_ATTENTION_TS": "sha256:20e2e3e67fd6f178e4a8e7827e0c87b80a4f6d797a67797716506a57c9bb8f52",
+    "F_SRC_NOTIFICATIONS_TSX": "sha256:8e937fb8365fb551232d3f35596004bcbdcf54154fb47a17b37e1bbc0ff7285a",
+    "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
+    "F_PUBLIC_PUSH_EVENTS_JS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SCRIPTS_GENERATE_VAPID_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SRC_CONFIGURATION_FILES_TSX": "sha256:d0369827504d1ab64e7ecbfabccd260aef2e0bca9e0ec0f283945d174eccae0d",
+    "F_SRC_LIB_CONFIG_FILES_TEST_TS": "sha256:45059132085ca25c58564f2ae6f6b3b257056ba2d1e3f28fef30dcd803456821",
+    "F_SRC_LIB_CONFIG_FILES_TS": "sha256:837bcd0a01055528986b505d5b3c3144812b3a76c385a5dbb545f43b4e560e13",
+    "F_SRC_LIB_VAPID_TEST_TS": "sha256:6d58e1ca0853eec82bb6349da0e6ecf43fddb6a988d57ab5e394032e27ef749c",
+    "F_SRC_PUSH_SETTINGS_TSX": "sha256:64d7b233d93b904728961a54e6752092f6675ae4f704b70f7f3eb14add1ce268",
+    "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS": "sha256:6d58e1ca0853eec82bb6349da0e6ecf43fddb6a988d57ab5e394032e27ef749c",
+    "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_PUSH_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_QUALITY_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_TESTS_LIVE_CONFIGURATION_SPEC_TS": "sha256:26835327fbea4471b84f33ab87913b39456f66cfb3fb7f7a478eaabbaffbada7",
+    "F_TESTS_LIVE_MFA_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
+    "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460"
   },
   "file_hashes": {
-    "docs/PROGRESS.md": "ca92bc2e144733cb7fdb9e37ca3a17c0b3459b995a3f010c39122e98a4552576",
-    "eslint.config.js": "697c178eaa83a55f4612727e2bc61c55c1078b7f970ced44bb86c70e29bf594c",
+    "docs/PROGRESS.md": "775a0fe9a7b3a250b37bedd2166fd976b309fab379ac2796393b16d8432ec4c2",
+    "eslint.config.js": "222fedbbff0663c3979d8cf3c70b85b1c38f0c9bb10fc696775c968da4eee9c6",
     "p/public.ts": "fc35dd8d3cc616dc2e74c1801074849e6c94ff6331f0779572318735453d219b",
     "package-lock.json": "8e7f11af4050add8e7a06c387b48d8eb5cf4cc52730d7e481ae3163814ddca59",
     "package.json": "86a0e2e98586feca733b58541cc2a8851f6d7ba2030c1fb18fa79cd6a0ef7cbe",
     "playwright.config.ts": "012fd1027c8109b29990d55add449bc4beaa424f3e03eec0055aa21a6848a57b",
     "playwright.live.config.ts": "46ea59fd66024859f838e13775a62770bfa5667f2c1efc00e9d2472adc7b2aa3",
+    "public/push-events.js": "a5fed33b0dc433acd1d12de5d152b5ed14676187127c8edfa11e020590d4394f",
     "scripts/bootstrap-owner.mjs": "a04355aaa6c51e0bd02a12b59d12df526a3e640cf53a6f2e62085d3da0b8792b",
     "scripts/browser-preview.mjs": "b1a3da02ef617783a276aeb5380b4497b212398b37c6677471dd71b9d960c057",
     "scripts/check-live-ui.mjs": "40621c78e1eed2a3e6ec2ad58564ef7d1f37a6949113638420c0a938c596a233",
@@ -2875,26 +3627,32 @@
     "scripts/check-reports.mjs": "5f0d38f6c73cc6ed7f96186b0eb1ae3f389aff5e5c8a074962fd4a4dd3e8fe3a",
     "scripts/create-history-seed.mjs": "564d8ec6274496b7af245a43c241cf891beddfbd075134fe4a6319de3def012e",
     "scripts/create-seed.mjs": "88a35889a6a3b5bc07bedeea90713cfa88cdbc93035534d20d661cabcdc1de05",
+    "scripts/generate-vapid.mjs": "bbd68247ace2d6fdc7b9e0055b079e3ac8a57cf3551fcba0ffa94da68be6ee18",
     "scripts/live-api-check.mjs": "ad4ea1c3390954bd070ff20db3c9ad59c25e72364f7b83c6197a0a22a7dc9325",
     "scripts/setup-local.mjs": "d7d62ffa76befefc31c99ce8cd9526aa6bb02b423184a1d32be9ee29eb9c41b9",
     "scripts/wait-for-functions.mjs": "9b6396bb4731a5d75ea19febf9d155d7e03c1f48ec5a6814e344af01ec095a51",
-    "src/App.tsx": "ecc683da2dff7b0c63207bc3696c6b876f8b5f7794b91644de116a794322a67b",
+    "src/App.tsx": "83fdc800e992d65d7a78e0991c1ada6388f2a259881357194dd65804c7714233",
     "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
     "src/components/ui/sheet.tsx": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962",
+    "src/configuration-files.tsx": "cad08b149869a8ad30b963accd2f993df4e7f1bc0e9924f2b09918f9ed0381f0",
     "src/dashboard.tsx": "9b7696bbd703ec62979b68289ee38fb4ae160ad61ad2663adf970a4475f445bb",
     "src/evidence.tsx": "e02120d12ac364ea901286cc9052084dfe92fb206b5d78cab5330707becfde4f",
-    "src/features.tsx": "02864295dae72a331d29d5ef17dc1f1168856b877c5bd65bfb7584c7c4126a1a",
-    "src/i18n/ar.json": "d98ba9d2fdf557d62da415af30fd97635ae0d2c440d3374407c92eeb497459cc",
-    "src/i18n/en.json": "434f19668937784d1bd9f8e125ce01ec58ec82186dd9d420131fa12ae0443190",
+    "src/features.tsx": "11ddbff3995ab61a9c869b940ef937c5ef947fc1ac92c1e0a7bda01d008a59c5",
+    "src/i18n/ar.json": "c286b2dec61df56d6c7b94e2df2563435e93dc41d44b681edf430e721545c06e",
+    "src/i18n/en.json": "4cbb8ed00a631bba556c407e224c778d931b20c4ed356e11f5a37fb47e12ca71",
     "src/i18n/index.ts": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12",
     "src/i18n/translations.test.ts": "88b295a32b86fbd640a3606325bc343414112027a7c675635f52e2fecc901136",
     "src/knowledge.tsx": "c883ab11a7c5246ccfd32a6cbdd94a7f08cce9b2001fbb6982531f9f4bbb4802",
     "src/label-card.tsx": "19f58d48ff3bdb678d50de8ac64fe4615100243da53d238c8c4e358a0bed76ec",
-    "src/lib/auth.ts": "6bbe63df374dca86dd14b656049530532089f10fc8b92af24aacfbb52747ab5b",
-    "src/lib/data.ts": "a624d9dd5ad803684f8356bd7a07484fca27ed2b32c10549405758aa77868308",
+    "src/lib/attention.test.ts": "74f8c8ff5a8d1a2da42f905421fd873d39cd93ea7f56913b8cb811fe3de47092",
+    "src/lib/attention.ts": "b67ce147053031564f8735e1273058545927ee5be3907bd956df1df99022e945",
+    "src/lib/auth.ts": "e2c0ed2c1148240c7ac71b085efafd6c44f00541eb8cf087171f0702fe97be01",
+    "src/lib/config-files.test.ts": "67f239ac8e741a83c3612848901545812b592c6407c42e64404a19c57994c049",
+    "src/lib/config-files.ts": "91ba82f907cba4cb30df99e0d66da3a736d6d1e9c6d6573012842d5ad4c71045",
+    "src/lib/data.ts": "4c52f235255c7e70b257afdb1800c4107fbb7932e79e66df4572c73ecf4e8dad",
     "src/lib/demo.ts": "bd89a8079d30231855eeca0f330228061c17c6403be06db3b116174b352f7e46",
-    "src/lib/domain.test.ts": "f34ef07344fe09491763c6dec3db73428d701a7ce11d0893ec7fae68672ceb6a",
-    "src/lib/domain.ts": "3da7f3b71e934f957b0395d9c5392714f72ed77d463acb5990222ca9b65a66ca",
+    "src/lib/domain.test.ts": "d4510044d05c2b7101622e9f70191f388e6de0ca338483d4b76baf1077c57ee6",
+    "src/lib/domain.ts": "0debbff1820232606266b23c1e62e15afe4f961d444a598e6b5aa195989e01d1",
     "src/lib/labels.test.ts": "be61f5e8966326ea52db88062c9b82411368adceee61a2e1c5abf13afb778156",
     "src/lib/labels.ts": "93f502a7e171ac9ef0cd74e2a6f9845c1e38be98142d7f4c940a39b5754036b7",
     "src/lib/learning-demo.ts": "3bf7da4bca04aff53b73dd5512da8b898d2f8a77aef68c00f720d1116aabd71b",
@@ -2914,15 +3672,18 @@
     "src/lib/session-policy.ts": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a",
     "src/lib/supabase.ts": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024",
     "src/lib/training-media.ts": "834616596a57763db295e08ad64f6c0a9f577c5ae2d83dc0695561a9c697bf02",
+    "src/lib/vapid.test.ts": "5e03a9cac77de6cd9a1c8861b20ebe8e92a6874e06410db63376284c23bee538",
     "src/main.tsx": "8c445e80a57a6792145c28ffe26aa6f2b4157ed9832ae1aba863016e53bd4871",
-    "src/management.tsx": "8d3df7b17b7fe5448afda2a29579dc51bba2bd78ccb23512bb55bab1211c41c8",
+    "src/management.tsx": "47f43ca00aeae1fd8f4fb4e2bf79937ff3683fd5024c3c7e57664a053b8381e7",
     "src/material-balance.tsx": "33bf762e17c893fe156bfb978ee99a9d4df9ae3a383f6abfb319047160e18644",
+    "src/notifications.tsx": "35c644fd6b95cd27e62c1a1cc610fea28edfe095b53af1bcd9ad41d8b0aaaae6",
     "src/offline/db.test.ts": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0",
     "src/offline/db.ts": "06097f9d9e9fb5f8cdd1a471ad7c41ae577b6d44d65518a51308016ab6b26188",
     "src/packaging-fields.tsx": "ae351f240d4b443259a238ebe7a6a3a607f55b56ddd7bb5d9c3a76a95d3cf437",
+    "src/push-settings.tsx": "df610cc84a3e4c54669118a8df37f21adf7105b0355bcf804770c2f53a8b7603",
     "src/report-page.tsx": "52a3a7acc15740df03584d085eb4309a13735e8145773a0dfa8d154962753fb4",
     "src/scanner.tsx": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2",
-    "src/styles.css": "faa8d349019faf1704454232c455c7f69fe4ed2f94f610e1b90106e423692c88",
+    "src/styles.css": "324b743067fdff7bfc47beebac0b0a0d7484f181e23e3d4119917def9e938f4c",
     "src/test-setup.ts": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9",
     "src/training-assets.tsx": "94c7789d96168a7a0a813e72bf7ee9e4f072ffcb315b3c997f16def0dda2b105",
     "src/training-editor.tsx": "6e93a0b0144311d6bfce6a97ccd6b511fa48b94fd6c56bdc0d4b1b977952c255",
@@ -2931,12 +3692,14 @@
     "supabase/.temp/cli-latest": "008368133cc42a3c2209c6e9dbf2612e56f28a1534b4c60383ec6403ea4d556f",
     "supabase/config.toml": "d42b352560bdb1cb7611884cb471e4eb52ab80a4d5eabbc788c364b2808ceac8",
     "supabase/functions/_shared/FONT-LICENSE.txt": "1c32ddc3fc6efd167cdcbe475195287f2dc26ed1a4c92fbe31c87ceaffe44f98",
-    "supabase/functions/_shared/http.ts": "0c12115d20c7cdb39847535244e5cdc1f759d0887791f6da2aadbad2bbdcba2b",
+    "supabase/functions/_shared/http.ts": "9212cb8dd2a8e4eecfae43ad90cdf741bfb56b0c585c4cad99db705df9a8dd8a",
     "supabase/functions/_shared/plex-arabic.ttf": "8e0f1046c736bf939d4939ee3ae0116acf61cbcd6592deae7656761627080981",
-    "supabase/functions/notifications/index.ts": "702765d7b35b8c47350f4d06cfc98162202f3d6b0196c23ed449b02543021a45",
+    "supabase/functions/_shared/push.ts": "81230620e9d2a72ecea9c99f831585458208a87d804f85f981459b0a412b908f",
+    "supabase/functions/_shared/vapid.ts": "6706811f4bce1e87ec800689b750ff75984df5b243beb0f02e45b44acbc53549",
+    "supabase/functions/notifications/index.ts": "85e19db250af1bfc05f17bf7337257d084e72d8bc455e6e755d4b0b0fe5e17d5",
     "supabase/functions/ocr/index.ts": "7be4532eb7d0a9100848aa10e8f9f89717afaa3a30bc3cf889705b4fef2bda99",
     "supabase/functions/report/index.ts": "cc2e13a6d59a3a3398bff961d81b38200981f9672ae3c90fc56c042a92743a97",
-    "supabase/functions/scheduled-tasks/index.ts": "93f5eda2565ebf05f93fe65a3e429bb253c9b0e7b0db04c7b701a670c0b221af",
+    "supabase/functions/scheduled-tasks/index.ts": "be449e4bfaf48f938af149974ce443cbfb4069fbdfd482a41303e9fa960cc14b",
     "supabase/functions/sync/index.ts": "ce5686ef9f82e2247bc4f16e4199ee075e24baf8d59522169b620dfdaf23deaf",
     "supabase/functions/user-admin/index.ts": "a062425eaec04d31ec581cf623a382be6d5844f4c05601a8a60677769bac3e78",
     "supabase/migrations/202610060001_foundation.sql": "f75d8f77c0ab01710020168b9a6546b723dedc58e48846362d96c0e5ee094024",
@@ -2994,33 +3757,52 @@
     "supabase/migrations/202610060053_material_balance_order.sql": "1866239e6cc60a034dcba318bd385365b230d4235f8d6799a06f298fab538320",
     "supabase/migrations/202610060054_packaging_yield_review.sql": "876f9bf27c6ddb307e39932925695508c56e764e7771fad168ded40a35b19b6e",
     "supabase/migrations/202610060055_impact_dictionary_calculations.sql": "1762a5ac9adf46dfdf9b7495e837424461abbcf34c6e2eb71c35e3a186c9249e",
+    "supabase/migrations/202610060056_notification_preferences.sql": "383f1bc3e0dead1190483c1147ee4d412e73fbf85a5b17ba91f3ad94008cc5fb",
+    "supabase/migrations/202610060057_task_notifications.sql": "4cccfe8224bfd5824f9c891fb72761106e274b4129f0773ba18f2f208eaacb05",
+    "supabase/migrations/202610060058_closed_material_classification.sql": "866eae53c5c201e575ef34935c68f7b6344ac18a866c337b7e5d2438e57eeb23",
+    "supabase/migrations/202610060059_impact_activity_boundaries.sql": "bee77d06751958337b9738b1413595d894f16f471a2b63ae1faeb010e42eefbc",
+    "supabase/migrations/202610060060_push_subscriptions.sql": "d21d624bb936123b64fde75225256fce35fed60366a53e483d263fbf596f3447",
+    "supabase/migrations/202610060061_scoped_configuration.sql": "1bbda52e2c5768c5f095a30f488cd3c95c923527fe686fbb19ac3fcd29b357ea",
+    "supabase/migrations/202610060062_quality_records.sql": "cc7f74880aaa5cbf085537661d67937f4b4568e21bc057be3944c4b397670b0d",
+    "supabase/migrations/202610060063_release_intervals.sql": "c081fde801224d847a73db760edcd6169bf7a0b0d4401521fe21d92683a97292",
     "supabase/seed.sql": "8a0104c67029b003485e7df9cb3696cb8a441d77c660f35742474f99de934e19",
     "supabase/tests/bootstrap.test.sql": "3b59e2e944902ab2649d7542d64dff3c1b348cac209ee6bd02fc630135d11d02",
+    "supabase/tests/configuration.test.sql": "f416d5d11edcfee0c892af5369f23023124261e3cf7d7feb01a07bd67e02fccb",
     "supabase/tests/impact.test.sql": "018067ea64c089aeb01f0fccfe5d671a47e11e1471fbfd3ce7de3929608e843b",
     "supabase/tests/material-balance.test.sql": "d3ba305596a7d3cc5cb871b78173c324011cc4619236d500824583d4ccf0b7f8",
+    "supabase/tests/notifications.test.sql": "fbdfa34ba01dd34c62ac070e1e42b49ef5a5c59ddcd90afd9a4247a79cd9d1e5",
     "supabase/tests/offline-signoff.test.sql": "79eaf7299f10956efc8c27a4eaf2d142412e8d6859c5c3a8fae674aa6b3dad10",
     "supabase/tests/production.test.sql": "b1ef92405ada2dd92aa88086ab2111225a9da973c5b7be29721911d146ef257b",
+    "supabase/tests/push.test.sql": "b5fe0a055e9a1eabaa85d85b7595fe2a905d3eefc5d13f9c32b96c7322364267",
+    "supabase/tests/quality.test.sql": "20626435d8f993edf1ffc19bdeb734df823e89dc32096b3e08938fa9cc00ef9c",
     "supabase/tests/receipt-measurements.test.sql": "fe82602b8cd59905e5516e6b44ce9c4a13ef73ebcafe670aa3f8c8454a81dbe0",
+    "supabase/tests/release-intervals.test.sql": "24e4a55636924cca4c5170ef8b7cc345546d6652a2c5fc69d98bb2f2ac362274",
     "supabase/tests/rules.test.sql": "112cf7c7f448353182be5e76a8fc05746f3ef80a131cf448d000411a2945b7f2",
     "supabase/tests/security.test.sql": "78e304bc554d5d32a8a677e3b74f21f4aa6f32cda03668cc3d0590c44c1b3c26",
     "supabase/tests/training.test.sql": "6d5630a84c698ee398d50e853f19112c5dbaf707b5f4de09a02213cf6fedf87c",
     "supabase/tests/yield.test.sql": "962ff16324c64d17f254d78d90bf70ae594150f3817ffc781f07f08136c924f2",
     "tests/flows.spec.ts": "caeb828373b1391c5cb5c8de34075002dafeb248c41d494f6ecc2161669dad31",
-    "tests/live/acceptance.spec.ts": "60c72559459e3d5abb4f9505367f080d5e8c5f1fe496d85158ddb4913b6c1af6",
-    "tests/live/fixtures.ts": "ac80f85886d12c707c6cf6c19d9e59e6684365d31772aa208359d2603922657c",
+    "tests/live/acceptance.spec.ts": "885fd006a8d1932c65ebf3d808bdd65dbc5ffcfa9c7f6ed31c7944054322a7fd",
+    "tests/live/configuration.spec.ts": "ad0681ce44a2fbae0a04d1401e4b1eafb272f41f5a7cddbfb804350de77b4bab",
+    "tests/live/fixtures.ts": "da2843c1b70e0a3efdf8bbbc9857e1ed679a626ea977655ef4335b813edbc0a3",
+    "tests/live/labels.spec.ts": "50291e65907a84f02dbfe54783f956fcfe3b8bf40318ada22cf971fe7b218f3a",
+    "tests/live/material-balance.spec.ts": "91e8bcf336dd2b615cc41c7ac3109d5b5533668ccd77f7932d3b631a300880cb",
+    "tests/live/mfa.ts": "f21125deec74a9daee6be4db7aa56623f8147512bbee70ac6a4d7153a1b8aca7",
+    "tests/live/notifications.spec.ts": "9831674321add0ce0d240d57c83ed580217a96468b4b75f9174cbf0ab73ed456",
     "tests/live/offline-receiving.spec.ts": "7af4d47da65c69238f5f2768dad5d523c0fcb8091271f8345f97bceca934ca80",
-    "tests/live/training.spec.ts": "24ac59581fc7a5616c5a7ed9d6d4730c7daafb7b3a622ab8804a592cbcfb9c10",
-    "vite.config.ts": "d774868eaf54e5d3ab5a83f0349a60f16399ec8271f03b3df7b07a8e74e01741",
+    "tests/live/self-release.spec.ts": "58ff9f23696d21c5e5c32a55c1fbe37edf0078eae351eff49ea846a0b0d9fb51",
+    "tests/live/training.spec.ts": "a89153e77bb96af8ffa772b7bd979cc8e8fa1e0d51b024b136c96ce69ec87452",
+    "vite.config.ts": "9d5a51438853e4fc28ef33ea666aa26a2bd9b98bc2b5ece8891ba4eafadd385b",
     "vitest.config.ts": "a139292ca71b075326f66df8eb54466fa84a8a37284262ad906f5493c3cf6c0d"
   },
   "file_stats": {
     "docs/PROGRESS.md": [
-      29776,
-      1791289362715217400
+      31491,
+      1791293964756807000
     ],
     "eslint.config.js": [
-      642,
-      1791283243033935200
+      726,
+      1791291886928351700
     ],
     "p/public.ts": [
       5892,
@@ -3041,6 +3823,10 @@
     "playwright.live.config.ts": [
       520,
       1791283243019443500
+    ],
+    "public/push-events.js": [
+      626,
+      1791291833422995100
     ],
     "scripts/bootstrap-owner.mjs": [
       2321,
@@ -3070,6 +3856,10 @@
       6537,
       1791287837347815200
     ],
+    "scripts/generate-vapid.mjs": [
+      930,
+      1791292513811530600
+    ],
     "scripts/live-api-check.mjs": [
       6706,
       1791286714296232900
@@ -3083,8 +3873,8 @@
       1791284107477406300
     ],
     "src/App.tsx": [
-      21388,
-      1791290233789921600
+      21925,
+      1791293311971540400
     ],
     "src/components/ui/button.tsx": [
       702,
@@ -3093,6 +3883,10 @@
     "src/components/ui/sheet.tsx": [
       819,
       1791278540365416200
+    ],
+    "src/configuration-files.tsx": [
+      1208,
+      1791292081095260500
     ],
     "src/dashboard.tsx": [
       4104,
@@ -3103,16 +3897,16 @@
       1791282673866916100
     ],
     "src/features.tsx": [
-      35272,
-      1791290108419431600
+      36745,
+      1791293311972677400
     ],
     "src/i18n/ar.json": [
-      25920,
-      1791290661804106700
+      29455,
+      1791293329841534400
     ],
     "src/i18n/en.json": [
-      19885,
-      1791290661804106700
+      22528,
+      1791293329840425000
     ],
     "src/i18n/index.ts": [
       656,
@@ -3130,25 +3924,41 @@
       2443,
       1791289835557758500
     ],
+    "src/lib/attention.test.ts": [
+      1538,
+      1791291262216626200
+    ],
+    "src/lib/attention.ts": [
+      1037,
+      1791291047099307100
+    ],
     "src/lib/auth.ts": [
-      3752,
-      1791284688746453900
+      3954,
+      1791291399739961600
+    ],
+    "src/lib/config-files.test.ts": [
+      760,
+      1791292081095594500
+    ],
+    "src/lib/config-files.ts": [
+      770,
+      1791292081093693600
     ],
     "src/lib/data.ts": [
-      14597,
-      1791290108419431600
+      15186,
+      1791291048149096900
     ],
     "src/lib/demo.ts": [
       4859,
       1791287904967078000
     ],
     "src/lib/domain.test.ts": [
-      1646,
-      1791279196595364600
+      2199,
+      1791291433622318600
     ],
     "src/lib/domain.ts": [
-      4207,
-      1791289889243832600
+      4712,
+      1791293021929149100
     ],
     "src/lib/labels.test.ts": [
       1314,
@@ -3226,17 +4036,25 @@
       4934,
       1791288479713408500
     ],
+    "src/lib/vapid.test.ts": [
+      2490,
+      1791292430244198300
+    ],
     "src/main.tsx": [
       544,
       1791278540364356200
     ],
     "src/management.tsx": [
-      7172,
-      1791286103253936800
+      7730,
+      1791291159162457400
     ],
     "src/material-balance.tsx": [
       1111,
       1791289569140085300
+    ],
+    "src/notifications.tsx": [
+      2052,
+      1791291886611770800
     ],
     "src/offline/db.test.ts": [
       2958,
@@ -3250,6 +4068,10 @@
       3300,
       1791290107480787400
     ],
+    "src/push-settings.tsx": [
+      2217,
+      1791291886611770800
+    ],
     "src/report-page.tsx": [
       3509,
       1791290233789921600
@@ -3259,8 +4081,8 @@
       1791280926503899100
     ],
     "src/styles.css": [
-      18888,
-      1791289945626566200
+      19114,
+      1791291521298878300
     ],
     "src/test-setup.ts": [
       30,
@@ -3295,16 +4117,24 @@
       1791283391698537600
     ],
     "supabase/functions/_shared/http.ts": [
-      1536,
-      1791284107478481800
+      1728,
+      1791291886611770800
     ],
     "supabase/functions/_shared/plex-arabic.ttf": [
       236708,
       1791283391697538500
     ],
+    "supabase/functions/_shared/push.ts": [
+      1725,
+      1791292365272084200
+    ],
+    "supabase/functions/_shared/vapid.ts": [
+      2340,
+      1791292365270578800
+    ],
     "supabase/functions/notifications/index.ts": [
-      994,
-      1791279111207617800
+      1275,
+      1791291433624337200
     ],
     "supabase/functions/ocr/index.ts": [
       1955,
@@ -3315,8 +4145,8 @@
       1791290311689698000
     ],
     "supabase/functions/scheduled-tasks/index.ts": [
-      516,
-      1791279111216357200
+      603,
+      1791291886619354000
     ],
     "supabase/functions/sync/index.ts": [
       981,
@@ -3546,6 +4376,38 @@
       11273,
       1791290527407636000
     ],
+    "supabase/migrations/202610060056_notification_preferences.sql": [
+      5029,
+      1791291137998755400
+    ],
+    "supabase/migrations/202610060057_task_notifications.sql": [
+      2716,
+      1791291193352182400
+    ],
+    "supabase/migrations/202610060058_closed_material_classification.sql": [
+      2453,
+      1791291193695789800
+    ],
+    "supabase/migrations/202610060059_impact_activity_boundaries.sql": [
+      11566,
+      1791291277093552300
+    ],
+    "supabase/migrations/202610060060_push_subscriptions.sql": [
+      4789,
+      1791292365562653100
+    ],
+    "supabase/migrations/202610060061_scoped_configuration.sql": [
+      4181,
+      1791292024873471500
+    ],
+    "supabase/migrations/202610060062_quality_records.sql": [
+      2544,
+      1791292926050352300
+    ],
+    "supabase/migrations/202610060063_release_intervals.sql": [
+      2150,
+      1791293417681499600
+    ],
     "supabase/seed.sql": [
       108153,
       1791288325633308200
@@ -3553,6 +4415,10 @@
     "supabase/tests/bootstrap.test.sql": [
       1811,
       1791285107156239100
+    ],
+    "supabase/tests/configuration.test.sql": [
+      2774,
+      1791292175838953300
     ],
     "supabase/tests/impact.test.sql": [
       2190,
@@ -3562,6 +4428,10 @@
       4708,
       1791289641470002200
     ],
+    "supabase/tests/notifications.test.sql": [
+      3005,
+      1791291721334663400
+    ],
     "supabase/tests/offline-signoff.test.sql": [
       5626,
       1791285107144271100
@@ -3570,9 +4440,21 @@
       4996,
       1791286560085038400
     ],
+    "supabase/tests/push.test.sql": [
+      3316,
+      1791292175838953300
+    ],
+    "supabase/tests/quality.test.sql": [
+      4603,
+      1791293329838729000
+    ],
     "supabase/tests/receipt-measurements.test.sql": [
       3063,
       1791289002106444600
+    ],
+    "supabase/tests/release-intervals.test.sql": [
+      4058,
+      1791293522943765400
     ],
     "supabase/tests/rules.test.sql": [
       8996,
@@ -3595,24 +4477,48 @@
       1791288666919435100
     ],
     "tests/live/acceptance.spec.ts": [
-      9397,
-      1791285671863542000
+      12070,
+      1791293888785985500
+    ],
+    "tests/live/configuration.spec.ts": [
+      2942,
+      1791292551964211200
     ],
     "tests/live/fixtures.ts": [
-      4176,
-      1791282786368124400
+      4470,
+      1791293021929149100
+    ],
+    "tests/live/labels.spec.ts": [
+      2366,
+      1791289989086912300
+    ],
+    "tests/live/material-balance.spec.ts": [
+      2390,
+      1791289641470592300
+    ],
+    "tests/live/mfa.ts": [
+      1932,
+      1791292513811223300
+    ],
+    "tests/live/notifications.spec.ts": [
+      3026,
+      1791291671602011200
     ],
     "tests/live/offline-receiving.spec.ts": [
       2858,
       1791285542768411600
     ],
+    "tests/live/self-release.spec.ts": [
+      4060,
+      1791293563649934600
+    ],
     "tests/live/training.spec.ts": [
-      5597,
-      1791289362715217400
+      3802,
+      1791292513811530600
     ],
     "vite.config.ts": [
-      919,
-      1791277887790448500
+      954,
+      1791291886928351700
     ],
     "vitest.config.ts": [
       176,
@@ -3631,8 +4537,8 @@
   ],
   "discovery_stats": {
     "eslint.config.js": [
-      642,
-      1791283243033935200
+      726,
+      1791291886928351700
     ],
     "p/public.ts": [
       5892,
@@ -3645,6 +4551,10 @@
     "playwright.live.config.ts": [
       520,
       1791283243019443500
+    ],
+    "public/push-events.js": [
+      626,
+      1791291833422995100
     ],
     "scripts/bootstrap-owner.mjs": [
       2321,
@@ -3674,6 +4584,10 @@
       6537,
       1791287837347815200
     ],
+    "scripts/generate-vapid.mjs": [
+      930,
+      1791292513811530600
+    ],
     "scripts/live-api-check.mjs": [
       6706,
       1791286714296232900
@@ -3687,8 +4601,8 @@
       1791284107477406300
     ],
     "src/App.tsx": [
-      21388,
-      1791290233789921600
+      21925,
+      1791293311971540400
     ],
     "src/components/ui/button.tsx": [
       702,
@@ -3697,6 +4611,10 @@
     "src/components/ui/sheet.tsx": [
       819,
       1791278540365416200
+    ],
+    "src/configuration-files.tsx": [
+      1208,
+      1791292081095260500
     ],
     "src/dashboard.tsx": [
       4104,
@@ -3707,36 +4625,68 @@
       1791282673866916100
     ],
     "src/features.tsx": [
-      35272,
-      1791290108419431600
+      36745,
+      1791293311972677400
     ],
     "src/i18n/index.ts": [
       656,
       1791278339552541700
     ],
+    "src/i18n/translations.test.ts": [
+      366,
+      1791289403347280100
+    ],
     "src/knowledge.tsx": [
       5494,
       1791288325470772700
     ],
+    "src/label-card.tsx": [
+      2443,
+      1791289835557758500
+    ],
+    "src/lib/attention.test.ts": [
+      1538,
+      1791291262216626200
+    ],
+    "src/lib/attention.ts": [
+      1037,
+      1791291047099307100
+    ],
     "src/lib/auth.ts": [
-      3752,
-      1791284688746453900
+      3954,
+      1791291399739961600
+    ],
+    "src/lib/config-files.test.ts": [
+      760,
+      1791292081095594500
+    ],
+    "src/lib/config-files.ts": [
+      770,
+      1791292081093693600
     ],
     "src/lib/data.ts": [
-      14597,
-      1791290108419431600
+      15186,
+      1791291048149096900
     ],
     "src/lib/demo.ts": [
       4859,
       1791287904967078000
     ],
     "src/lib/domain.test.ts": [
-      1646,
-      1791279196595364600
+      2199,
+      1791291433622318600
     ],
     "src/lib/domain.ts": [
-      4207,
-      1791289889243832600
+      4712,
+      1791293021929149100
+    ],
+    "src/lib/labels.test.ts": [
+      1314,
+      1791290170378224600
+    ],
+    "src/lib/labels.ts": [
+      7861,
+      1791290170378224600
     ],
     "src/lib/learning-demo.ts": [
       4484,
@@ -3806,13 +4756,25 @@
       4934,
       1791288479713408500
     ],
+    "src/lib/vapid.test.ts": [
+      2490,
+      1791292430244198300
+    ],
     "src/main.tsx": [
       544,
       1791278540364356200
     ],
     "src/management.tsx": [
-      7172,
-      1791286103253936800
+      7730,
+      1791291159162457400
+    ],
+    "src/material-balance.tsx": [
+      1111,
+      1791289569140085300
+    ],
+    "src/notifications.tsx": [
+      2052,
+      1791291886611770800
     ],
     "src/offline/db.test.ts": [
       2958,
@@ -3821,6 +4783,14 @@
     "src/offline/db.ts": [
       2457,
       1791282624494230100
+    ],
+    "src/packaging-fields.tsx": [
+      3300,
+      1791290107480787400
+    ],
+    "src/push-settings.tsx": [
+      2217,
+      1791291886611770800
     ],
     "src/report-page.tsx": [
       3509,
@@ -3843,12 +4813,20 @@
       1791288194341509300
     ],
     "supabase/functions/_shared/http.ts": [
-      1536,
-      1791284107478481800
+      1728,
+      1791291886611770800
+    ],
+    "supabase/functions/_shared/push.ts": [
+      1725,
+      1791292365272084200
+    ],
+    "supabase/functions/_shared/vapid.ts": [
+      2340,
+      1791292365270578800
     ],
     "supabase/functions/notifications/index.ts": [
-      994,
-      1791279111207617800
+      1275,
+      1791291433624337200
     ],
     "supabase/functions/ocr/index.ts": [
       1955,
@@ -3859,8 +4837,8 @@
       1791290311689698000
     ],
     "supabase/functions/scheduled-tasks/index.ts": [
-      516,
-      1791279111216357200
+      603,
+      1791291886619354000
     ],
     "supabase/functions/sync/index.ts": [
       981,
@@ -4070,6 +5048,58 @@
       6269,
       1791289188045865400
     ],
+    "supabase/migrations/202610060051_material_disposition.sql": [
+      5110,
+      1791289473255942900
+    ],
+    "supabase/migrations/202610060052_material_disposition_sync.sql": [
+      16100,
+      1791289473562711700
+    ],
+    "supabase/migrations/202610060053_material_balance_order.sql": [
+      1969,
+      1791289517153224900
+    ],
+    "supabase/migrations/202610060054_packaging_yield_review.sql": [
+      2312,
+      1791290038981296100
+    ],
+    "supabase/migrations/202610060055_impact_dictionary_calculations.sql": [
+      11273,
+      1791290527407636000
+    ],
+    "supabase/migrations/202610060056_notification_preferences.sql": [
+      5029,
+      1791291137998755400
+    ],
+    "supabase/migrations/202610060057_task_notifications.sql": [
+      2716,
+      1791291193352182400
+    ],
+    "supabase/migrations/202610060058_closed_material_classification.sql": [
+      2453,
+      1791291193695789800
+    ],
+    "supabase/migrations/202610060059_impact_activity_boundaries.sql": [
+      11566,
+      1791291277093552300
+    ],
+    "supabase/migrations/202610060060_push_subscriptions.sql": [
+      4789,
+      1791292365562653100
+    ],
+    "supabase/migrations/202610060061_scoped_configuration.sql": [
+      4181,
+      1791292024873471500
+    ],
+    "supabase/migrations/202610060062_quality_records.sql": [
+      2544,
+      1791292926050352300
+    ],
+    "supabase/migrations/202610060063_release_intervals.sql": [
+      2150,
+      1791293417681499600
+    ],
     "supabase/seed.sql": [
       108153,
       1791288325633308200
@@ -4077,6 +5107,22 @@
     "supabase/tests/bootstrap.test.sql": [
       1811,
       1791285107156239100
+    ],
+    "supabase/tests/configuration.test.sql": [
+      2774,
+      1791292175838953300
+    ],
+    "supabase/tests/impact.test.sql": [
+      2190,
+      1791290661804106700
+    ],
+    "supabase/tests/material-balance.test.sql": [
+      4708,
+      1791289641470002200
+    ],
+    "supabase/tests/notifications.test.sql": [
+      3005,
+      1791291721334663400
     ],
     "supabase/tests/offline-signoff.test.sql": [
       5626,
@@ -4086,9 +5132,21 @@
       4996,
       1791286560085038400
     ],
+    "supabase/tests/push.test.sql": [
+      3316,
+      1791292175838953300
+    ],
+    "supabase/tests/quality.test.sql": [
+      4603,
+      1791293329838729000
+    ],
     "supabase/tests/receipt-measurements.test.sql": [
       3063,
       1791289002106444600
+    ],
+    "supabase/tests/release-intervals.test.sql": [
+      4058,
+      1791293522943765400
     ],
     "supabase/tests/rules.test.sql": [
       8996,
@@ -4102,33 +5160,61 @@
       9446,
       1791289187688813300
     ],
+    "supabase/tests/yield.test.sql": [
+      2701,
+      1791290170383066600
+    ],
     "tests/flows.spec.ts": [
       4756,
       1791288666919435100
     ],
     "tests/live/acceptance.spec.ts": [
-      9397,
-      1791285671863542000
+      12070,
+      1791293888785985500
+    ],
+    "tests/live/configuration.spec.ts": [
+      2942,
+      1791292551964211200
     ],
     "tests/live/fixtures.ts": [
-      4176,
-      1791282786368124400
+      4470,
+      1791293021929149100
+    ],
+    "tests/live/labels.spec.ts": [
+      2366,
+      1791289989086912300
+    ],
+    "tests/live/material-balance.spec.ts": [
+      2390,
+      1791289641470592300
+    ],
+    "tests/live/mfa.ts": [
+      1932,
+      1791292513811223300
+    ],
+    "tests/live/notifications.spec.ts": [
+      3026,
+      1791291671602011200
     ],
     "tests/live/offline-receiving.spec.ts": [
       2858,
       1791285542768411600
     ],
+    "tests/live/self-release.spec.ts": [
+      4060,
+      1791293563649934600
+    ],
     "tests/live/training.spec.ts": [
-      5597,
-      1791289362715217400
+      3802,
+      1791292513811530600
     ],
     "tsconfig.json": [
       564,
       1791281785469982200
     ],
     "vite.config.ts": [
-      919,
-      1791277887790448500
+      954,
+      1791291886928351700
     ],
     "vitest.config.ts": [
       176,
@@ -4143,6 +5229,7 @@
     "package.json",
     "playwright.config.ts",
     "playwright.live.config.ts",
+    "public/push-events.js",
     "scripts/bootstrap-owner.mjs",
     "scripts/browser-preview.mjs",
     "scripts/check-live-ui.mjs",
@@ -4150,12 +5237,14 @@
     "scripts/check-reports.mjs",
     "scripts/create-history-seed.mjs",
     "scripts/create-seed.mjs",
+    "scripts/generate-vapid.mjs",
     "scripts/live-api-check.mjs",
     "scripts/setup-local.mjs",
     "scripts/wait-for-functions.mjs",
     "src/App.tsx",
     "src/components/ui/button.tsx",
     "src/components/ui/sheet.tsx",
+    "src/configuration-files.tsx",
     "src/dashboard.tsx",
     "src/evidence.tsx",
     "src/features.tsx",
@@ -4165,7 +5254,11 @@
     "src/i18n/translations.test.ts",
     "src/knowledge.tsx",
     "src/label-card.tsx",
+    "src/lib/attention.test.ts",
+    "src/lib/attention.ts",
     "src/lib/auth.ts",
+    "src/lib/config-files.test.ts",
+    "src/lib/config-files.ts",
     "src/lib/data.ts",
     "src/lib/demo.ts",
     "src/lib/domain.test.ts",
@@ -4189,12 +5282,15 @@
     "src/lib/session-policy.ts",
     "src/lib/supabase.ts",
     "src/lib/training-media.ts",
+    "src/lib/vapid.test.ts",
     "src/main.tsx",
     "src/management.tsx",
     "src/material-balance.tsx",
+    "src/notifications.tsx",
     "src/offline/db.test.ts",
     "src/offline/db.ts",
     "src/packaging-fields.tsx",
+    "src/push-settings.tsx",
     "src/report-page.tsx",
     "src/scanner.tsx",
     "src/styles.css",
@@ -4208,6 +5304,8 @@
     "supabase/functions/_shared/FONT-LICENSE.txt",
     "supabase/functions/_shared/http.ts",
     "supabase/functions/_shared/plex-arabic.ttf",
+    "supabase/functions/_shared/push.ts",
+    "supabase/functions/_shared/vapid.ts",
     "supabase/functions/notifications/index.ts",
     "supabase/functions/ocr/index.ts",
     "supabase/functions/report/index.ts",
@@ -4269,26 +5367,45 @@
     "supabase/migrations/202610060053_material_balance_order.sql",
     "supabase/migrations/202610060054_packaging_yield_review.sql",
     "supabase/migrations/202610060055_impact_dictionary_calculations.sql",
+    "supabase/migrations/202610060056_notification_preferences.sql",
+    "supabase/migrations/202610060057_task_notifications.sql",
+    "supabase/migrations/202610060058_closed_material_classification.sql",
+    "supabase/migrations/202610060059_impact_activity_boundaries.sql",
+    "supabase/migrations/202610060060_push_subscriptions.sql",
+    "supabase/migrations/202610060061_scoped_configuration.sql",
+    "supabase/migrations/202610060062_quality_records.sql",
+    "supabase/migrations/202610060063_release_intervals.sql",
     "supabase/seed.sql",
     "supabase/tests/bootstrap.test.sql",
+    "supabase/tests/configuration.test.sql",
     "supabase/tests/impact.test.sql",
     "supabase/tests/material-balance.test.sql",
+    "supabase/tests/notifications.test.sql",
     "supabase/tests/offline-signoff.test.sql",
     "supabase/tests/production.test.sql",
+    "supabase/tests/push.test.sql",
+    "supabase/tests/quality.test.sql",
     "supabase/tests/receipt-measurements.test.sql",
+    "supabase/tests/release-intervals.test.sql",
     "supabase/tests/rules.test.sql",
     "supabase/tests/security.test.sql",
     "supabase/tests/training.test.sql",
     "supabase/tests/yield.test.sql",
     "tests/flows.spec.ts",
     "tests/live/acceptance.spec.ts",
+    "tests/live/configuration.spec.ts",
     "tests/live/fixtures.ts",
+    "tests/live/labels.spec.ts",
+    "tests/live/material-balance.spec.ts",
+    "tests/live/mfa.ts",
+    "tests/live/notifications.spec.ts",
     "tests/live/offline-receiving.spec.ts",
+    "tests/live/self-release.spec.ts",
     "tests/live/training.spec.ts",
     "vite.config.ts",
     "vitest.config.ts"
   ],
-  "derivation_key": "202bf1c17f6843ba5c1afb1691ff6aa388098751cf6f73585d61450f716f3245",
+  "derivation_key": "74418c37d450f4b54665fb71a3aa10c8914388f37f6714a7eb4e877fb0bbee01",
   "ownership": {
     "WISE_TRACE": [],
     "SYS_FRONTEND": [],
@@ -4305,6 +5422,8 @@
       "supabase/functions/_shared/FONT-LICENSE.txt",
       "supabase/functions/_shared/http.ts",
       "supabase/functions/_shared/plex-arabic.ttf",
+      "supabase/functions/_shared/push.ts",
+      "supabase/functions/_shared/vapid.ts",
       "supabase/functions/notifications/index.ts",
       "supabase/functions/ocr/index.ts",
       "supabase/functions/report/index.ts",
@@ -4366,13 +5485,26 @@
       "supabase/migrations/202610060053_material_balance_order.sql",
       "supabase/migrations/202610060054_packaging_yield_review.sql",
       "supabase/migrations/202610060055_impact_dictionary_calculations.sql",
+      "supabase/migrations/202610060056_notification_preferences.sql",
+      "supabase/migrations/202610060057_task_notifications.sql",
+      "supabase/migrations/202610060058_closed_material_classification.sql",
+      "supabase/migrations/202610060059_impact_activity_boundaries.sql",
+      "supabase/migrations/202610060060_push_subscriptions.sql",
+      "supabase/migrations/202610060061_scoped_configuration.sql",
+      "supabase/migrations/202610060062_quality_records.sql",
+      "supabase/migrations/202610060063_release_intervals.sql",
       "supabase/seed.sql",
       "supabase/tests/bootstrap.test.sql",
+      "supabase/tests/configuration.test.sql",
       "supabase/tests/impact.test.sql",
       "supabase/tests/material-balance.test.sql",
+      "supabase/tests/notifications.test.sql",
       "supabase/tests/offline-signoff.test.sql",
       "supabase/tests/production.test.sql",
+      "supabase/tests/push.test.sql",
+      "supabase/tests/quality.test.sql",
       "supabase/tests/receipt-measurements.test.sql",
+      "supabase/tests/release-intervals.test.sql",
       "supabase/tests/rules.test.sql",
       "supabase/tests/security.test.sql",
       "supabase/tests/training.test.sql",
@@ -4382,6 +5514,7 @@
       "src/App.tsx",
       "src/components/ui/button.tsx",
       "src/components/ui/sheet.tsx",
+      "src/configuration-files.tsx",
       "src/dashboard.tsx",
       "src/evidence.tsx",
       "src/features.tsx",
@@ -4391,7 +5524,11 @@
       "src/i18n/translations.test.ts",
       "src/knowledge.tsx",
       "src/label-card.tsx",
+      "src/lib/attention.test.ts",
+      "src/lib/attention.ts",
       "src/lib/auth.ts",
+      "src/lib/config-files.test.ts",
+      "src/lib/config-files.ts",
       "src/lib/data.ts",
       "src/lib/demo.ts",
       "src/lib/domain.test.ts",
@@ -4415,12 +5552,15 @@
       "src/lib/session-policy.ts",
       "src/lib/supabase.ts",
       "src/lib/training-media.ts",
+      "src/lib/vapid.test.ts",
       "src/main.tsx",
       "src/management.tsx",
       "src/material-balance.tsx",
+      "src/notifications.tsx",
       "src/offline/db.test.ts",
       "src/offline/db.ts",
       "src/packaging-fields.tsx",
+      "src/push-settings.tsx",
       "src/report-page.tsx",
       "src/scanner.tsx",
       "src/styles.css",
@@ -4810,6 +5950,141 @@
     ],
     "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": [
       "supabase/migrations/202610060050_future_training_tasks.sql"
+    ],
+    "F_SRC_I18N_TRANSLATIONS_TEST_TS": [
+      "src/i18n/translations.test.ts"
+    ],
+    "F_SRC_LABEL_CARD_TSX": [
+      "src/label-card.tsx"
+    ],
+    "F_SRC_LIB_LABELS_TEST_TS": [
+      "src/lib/labels.test.ts"
+    ],
+    "F_SRC_LIB_LABELS_TS": [
+      "src/lib/labels.ts"
+    ],
+    "F_SRC_MATERIAL_BALANCE_TSX": [
+      "src/material-balance.tsx"
+    ],
+    "F_SRC_PACKAGING_FIELDS_TSX": [
+      "src/packaging-fields.tsx"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL": [
+      "supabase/migrations/202610060051_material_disposition.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL": [
+      "supabase/migrations/202610060052_material_disposition_sync.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL": [
+      "supabase/migrations/202610060053_material_balance_order.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL": [
+      "supabase/migrations/202610060054_packaging_yield_review.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION": [
+      "supabase/migrations/202610060055_impact_dictionary_calculations.sql"
+    ],
+    "F_SUPABASE_TESTS_IMPACT_TEST_SQL": [
+      "supabase/tests/impact.test.sql"
+    ],
+    "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL": [
+      "supabase/tests/material-balance.test.sql"
+    ],
+    "F_SUPABASE_TESTS_YIELD_TEST_SQL": [
+      "supabase/tests/yield.test.sql"
+    ],
+    "F_TESTS_LIVE_LABELS_SPEC_TS": [
+      "tests/live/labels.spec.ts"
+    ],
+    "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS": [
+      "tests/live/material-balance.spec.ts"
+    ],
+    "F_SRC_LIB_ATTENTION_TEST_TS": [
+      "src/lib/attention.test.ts"
+    ],
+    "F_SRC_LIB_ATTENTION_TS": [
+      "src/lib/attention.ts"
+    ],
+    "F_SRC_NOTIFICATIONS_TSX": [
+      "src/notifications.tsx"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL": [
+      "supabase/migrations/202610060056_notification_preferences.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL": [
+      "supabase/migrations/202610060057_task_notifications.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO": [
+      "supabase/migrations/202610060058_closed_material_classification.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ": [
+      "supabase/migrations/202610060059_impact_activity_boundaries.sql"
+    ],
+    "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL": [
+      "supabase/tests/notifications.test.sql"
+    ],
+    "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS": [
+      "tests/live/notifications.spec.ts"
+    ],
+    "F_PUBLIC_PUSH_EVENTS_JS": [
+      "public/push-events.js"
+    ],
+    "F_SCRIPTS_GENERATE_VAPID_MJS": [
+      "scripts/generate-vapid.mjs"
+    ],
+    "F_SRC_CONFIGURATION_FILES_TSX": [
+      "src/configuration-files.tsx"
+    ],
+    "F_SRC_LIB_CONFIG_FILES_TEST_TS": [
+      "src/lib/config-files.test.ts"
+    ],
+    "F_SRC_LIB_CONFIG_FILES_TS": [
+      "src/lib/config-files.ts"
+    ],
+    "F_SRC_LIB_VAPID_TEST_TS": [
+      "src/lib/vapid.test.ts"
+    ],
+    "F_SRC_PUSH_SETTINGS_TSX": [
+      "src/push-settings.tsx"
+    ],
+    "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS": [
+      "supabase/functions/_shared/push.ts"
+    ],
+    "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS": [
+      "supabase/functions/_shared/vapid.ts"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL": [
+      "supabase/migrations/202610060060_push_subscriptions.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL": [
+      "supabase/migrations/202610060061_scoped_configuration.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL": [
+      "supabase/migrations/202610060062_quality_records.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL": [
+      "supabase/migrations/202610060063_release_intervals.sql"
+    ],
+    "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL": [
+      "supabase/tests/configuration.test.sql"
+    ],
+    "F_SUPABASE_TESTS_PUSH_TEST_SQL": [
+      "supabase/tests/push.test.sql"
+    ],
+    "F_SUPABASE_TESTS_QUALITY_TEST_SQL": [
+      "supabase/tests/quality.test.sql"
+    ],
+    "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL": [
+      "supabase/tests/release-intervals.test.sql"
+    ],
+    "F_TESTS_LIVE_CONFIGURATION_SPEC_TS": [
+      "tests/live/configuration.spec.ts"
+    ],
+    "F_TESTS_LIVE_MFA_TS": [
+      "tests/live/mfa.ts"
+    ],
+    "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS": [
+      "tests/live/self-release.spec.ts"
     ]
   },
   "note": "Transient cache, not evidence. A 'fast-path' result located changes by size and modification time and must not be used for a delivery decision; see incremental.require_verified."

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-10-06T09:39:07+00:00",
+  "generated_at": "2026-10-06T14:06:32+00:00",
   "rule": "workbench.project.v1",
   "default_scale": "portfolio",
   "scales": [
@@ -27,7 +27,7 @@
           "label": "Data",
           "type": "SYSTEM",
           "tier": 1,
-          "status": "ACTIVE",
+          "status": "VERIFIED",
           "cluster": "parent:WISE_TRACE"
         },
         {
@@ -36,7 +36,7 @@
           "label": "Frontend",
           "type": "SYSTEM",
           "tier": 1,
-          "status": "ACTIVE",
+          "status": "READY",
           "cluster": "parent:WISE_TRACE"
         },
         {
@@ -75,7 +75,7 @@
             "SYS_FRONTEND"
           ],
           "size": 2,
-          "status": "ACTIVE"
+          "status": "READY"
         },
         {
           "id": "type:PROJECT",
@@ -173,7 +173,7 @@
         "INFRASTRUCTURE",
         "CONFIG"
       ],
-      "total_nodes": 6,
+      "total_nodes": 8,
       "collapsed": false,
       "collapse_threshold": 60,
       "truncated": false,
@@ -188,12 +188,30 @@
           "cluster": "parent:WISE_TRACE"
         },
         {
+          "id": "CMP_DISCOVERED_FILES",
+          "composite": false,
+          "label": "Discovered files",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "READY",
+          "cluster": "parent:SYS_FRONTEND"
+        },
+        {
+          "id": "CMP_RECOVERY",
+          "composite": false,
+          "label": "Encrypted database and media recovery",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "VERIFIED",
+          "cluster": "parent:SYS_DATA"
+        },
+        {
           "id": "CMP_SRC",
           "composite": false,
           "label": "src",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "ACTIVE",
+          "status": "VERIFIED",
           "cluster": "parent:SYS_FRONTEND"
         },
         {
@@ -202,7 +220,7 @@
           "label": "src / components",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "IMPLEMENTED",
+          "status": "VERIFIED",
           "cluster": "parent:SYS_FRONTEND"
         },
         {
@@ -211,7 +229,7 @@
           "label": "supabase",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "ACTIVE",
+          "status": "VERIFIED",
           "cluster": "parent:SYS_DATA"
         },
         {
@@ -220,7 +238,7 @@
           "label": "Data",
           "type": "SYSTEM",
           "tier": 1,
-          "status": "ACTIVE",
+          "status": "VERIFIED",
           "cluster": "parent:WISE_TRACE"
         },
         {
@@ -229,11 +247,18 @@
           "label": "Frontend",
           "type": "SYSTEM",
           "tier": 1,
-          "status": "ACTIVE",
+          "status": "READY",
           "cluster": "parent:WISE_TRACE"
         }
       ],
       "edges": [
+        {
+          "from": "SYS_DATA",
+          "to": "CMP_RECOVERY",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
         {
           "from": "SYS_DATA",
           "to": "CMP_SUPABASE",
@@ -254,9 +279,28 @@
           "type": "CONTAINS",
           "gating": false,
           "staleness": false
+        },
+        {
+          "from": "SYS_FRONTEND",
+          "to": "CMP_DISCOVERED_FILES",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
         }
       ],
       "clusters": [
+        {
+          "id": "parent:SYS_FRONTEND",
+          "label": "Frontend",
+          "strategy": "parent",
+          "members": [
+            "CMP_DISCOVERED_FILES",
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS"
+          ],
+          "size": 3,
+          "status": "READY"
+        },
         {
           "id": "parent:WISE_TRACE",
           "label": "WISE_Trace",
@@ -267,28 +311,18 @@
             "SYS_FRONTEND"
           ],
           "size": 3,
-          "status": "ACTIVE"
-        },
-        {
-          "id": "parent:SYS_FRONTEND",
-          "label": "Frontend",
-          "strategy": "parent",
-          "members": [
-            "CMP_SRC",
-            "CMP_SRC_COMPONENTS"
-          ],
-          "size": 2,
-          "status": "ACTIVE"
+          "status": "READY"
         },
         {
           "id": "parent:SYS_DATA",
           "label": "Data",
           "strategy": "parent",
           "members": [
+            "CMP_RECOVERY",
             "CMP_SUPABASE"
           ],
-          "size": 1,
-          "status": "ACTIVE"
+          "size": 2,
+          "status": "VERIFIED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -304,19 +338,37 @@
         "MODULE",
         "CAPABILITY"
       ],
-      "total_nodes": 3,
+      "total_nodes": 5,
       "collapsed": false,
       "collapse_threshold": 60,
       "truncated": false,
       "nodes": [
+        {
+          "id": "CMP_DISCOVERED_FILES",
+          "composite": false,
+          "label": "Discovered files",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "READY",
+          "cluster": "status:READY"
+        },
+        {
+          "id": "CMP_RECOVERY",
+          "composite": false,
+          "label": "Encrypted database and media recovery",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "VERIFIED",
+          "cluster": "status:VERIFIED"
+        },
         {
           "id": "CMP_SRC",
           "composite": false,
           "label": "src",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "ACTIVE",
-          "cluster": "status:ACTIVE"
+          "status": "VERIFIED",
+          "cluster": "status:VERIFIED"
         },
         {
           "id": "CMP_SRC_COMPONENTS",
@@ -324,8 +376,8 @@
           "label": "src / components",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "IMPLEMENTED",
-          "cluster": "status:IMPLEMENTED"
+          "status": "VERIFIED",
+          "cluster": "status:VERIFIED"
         },
         {
           "id": "CMP_SUPABASE",
@@ -333,32 +385,34 @@
           "label": "supabase",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "ACTIVE",
-          "cluster": "status:ACTIVE"
+          "status": "VERIFIED",
+          "cluster": "status:VERIFIED"
         }
       ],
       "edges": [],
       "clusters": [
         {
-          "id": "status:ACTIVE",
-          "label": "ACTIVE",
+          "id": "status:VERIFIED",
+          "label": "VERIFIED",
           "strategy": "status",
           "members": [
+            "CMP_RECOVERY",
             "CMP_SRC",
+            "CMP_SRC_COMPONENTS",
             "CMP_SUPABASE"
           ],
-          "size": 2,
-          "status": "ACTIVE"
+          "size": 4,
+          "status": "VERIFIED"
         },
         {
-          "id": "status:IMPLEMENTED",
-          "label": "IMPLEMENTED",
+          "id": "status:READY",
+          "label": "READY",
           "strategy": "status",
           "members": [
-            "CMP_SRC_COMPONENTS"
+            "CMP_DISCOVERED_FILES"
           ],
           "size": 1,
-          "status": "IMPLEMENTED"
+          "status": "READY"
         }
       ],
       "rule": "workbench.project.v1"
@@ -376,18 +430,36 @@
         "TEST",
         "VALIDATION"
       ],
-      "total_nodes": 4,
+      "total_nodes": 34,
       "collapsed": false,
       "collapse_threshold": 60,
       "truncated": false,
       "nodes": [
+        {
+          "id": "CMP_DISCOVERED_FILES",
+          "composite": false,
+          "label": "Discovered files",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "READY",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "CMP_RECOVERY",
+          "composite": false,
+          "label": "Encrypted database and media recovery",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "VERIFIED",
+          "cluster": "evidence:commands"
+        },
         {
           "id": "CMP_SRC",
           "composite": false,
           "label": "src",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "ACTIVE",
+          "status": "VERIFIED",
           "cluster": "evidence:commands"
         },
         {
@@ -396,7 +468,7 @@
           "label": "src / components",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "IMPLEMENTED",
+          "status": "VERIFIED",
           "cluster": "evidence:commands"
         },
         {
@@ -405,8 +477,260 @@
           "label": "supabase",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "ACTIVE",
+          "status": "VERIFIED",
           "cluster": "evidence:commands"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/bootstrap.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/configuration.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/dashboard-filters.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/impact.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/material-balance.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/notifications.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/offline-signoff.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/production.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_PUSH_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/push.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/quality.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/receipt-measurements.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/release-intervals.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_RULES_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/rules.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/security.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/training.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_SUPABASE_TESTS_YIELD_TEST_SQL",
+          "composite": false,
+          "label": "supabase/tests/yield.test.sql",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_FLOWS_SPEC_TS",
+          "composite": false,
+          "label": "tests/flows.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/acceptance.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/configuration.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/dashboard-filters.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_FIXTURES_TS",
+          "composite": false,
+          "label": "tests/live/fixtures.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_LABELS_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/labels.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/material-balance.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_MFA_TS",
+          "composite": false,
+          "label": "tests/live/mfa.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/notifications.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/offline-receiving.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/self-release.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
+        },
+        {
+          "id": "F_TESTS_LIVE_TRAINING_SPEC_TS",
+          "composite": false,
+          "label": "tests/live/training.spec.ts",
+          "type": "TEST",
+          "tier": 6,
+          "status": "IMPLEMENTED",
+          "cluster": "evidence:none"
         },
         {
           "id": "REQ_FULL_MVP",
@@ -418,29 +742,347 @@
           "cluster": "evidence:none"
         }
       ],
-      "edges": [],
-      "clusters": [
+      "edges": [
         {
-          "id": "evidence:commands",
-          "label": "commands and structure",
-          "strategy": "evidence",
-          "members": [
-            "CMP_SRC",
-            "CMP_SRC_COMPONENTS",
-            "CMP_SUPABASE"
-          ],
-          "size": 3,
-          "status": "ACTIVE"
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_RULES_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
         },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_FLOWS_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_TRAINING_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_YIELD_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_LABELS_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_PUSH_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_MFA_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_SUPABASE",
+          "to": "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "CMP_DISCOVERED_FILES",
+          "to": "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+          "to": "F_TESTS_LIVE_MFA_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+          "to": "F_TESTS_LIVE_MFA_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_LABELS_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_MFA_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_TRAINING_SPEC_TS",
+          "to": "F_TESTS_LIVE_MFA_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        },
+        {
+          "from": "F_TESTS_LIVE_TRAINING_SPEC_TS",
+          "to": "F_TESTS_LIVE_FIXTURES_TS",
+          "type": "CONSUMES",
+          "gating": false,
+          "staleness": true
+        }
+      ],
+      "clusters": [
         {
           "id": "evidence:none",
           "label": "no contract",
           "strategy": "evidence",
           "members": [
+            "CMP_DISCOVERED_FILES",
+            "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+            "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+            "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
+            "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+            "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+            "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
+            "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+            "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
+            "F_SUPABASE_TESTS_PUSH_TEST_SQL",
+            "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+            "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+            "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
+            "F_SUPABASE_TESTS_RULES_TEST_SQL",
+            "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
+            "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+            "F_SUPABASE_TESTS_YIELD_TEST_SQL",
+            "F_TESTS_FLOWS_SPEC_TS",
+            "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+            "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+            "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+            "F_TESTS_LIVE_FIXTURES_TS",
+            "F_TESTS_LIVE_LABELS_SPEC_TS",
+            "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+            "F_TESTS_LIVE_MFA_TS",
+            "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+            "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+            "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+            "F_TESTS_LIVE_TRAINING_SPEC_TS",
             "REQ_FULL_MVP"
           ],
-          "size": 1,
+          "size": 30,
           "status": "READY"
+        },
+        {
+          "id": "evidence:commands",
+          "label": "commands and structure",
+          "strategy": "evidence",
+          "members": [
+            "CMP_RECOVERY",
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS",
+            "CMP_SUPABASE"
+          ],
+          "size": 4,
+          "status": "VERIFIED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -458,61 +1100,597 @@
         "FUNCTION",
         "TEST"
       ],
-      "total_nodes": 3,
-      "collapsed": false,
+      "total_nodes": 185,
+      "collapsed": true,
       "collapse_threshold": 60,
       "truncated": false,
       "nodes": [
         {
-          "id": "CMP_SRC",
-          "composite": false,
-          "label": "src",
-          "type": "COMPONENT",
-          "tier": 3,
-          "status": "ACTIVE",
-          "cluster": "parent:SYS_FRONTEND"
-        },
-        {
-          "id": "CMP_SRC_COMPONENTS",
-          "composite": false,
-          "label": "src / components",
-          "type": "COMPONENT",
-          "tier": 3,
-          "status": "IMPLEMENTED",
-          "cluster": "parent:SYS_FRONTEND"
-        },
-        {
-          "id": "CMP_SUPABASE",
-          "composite": false,
+          "id": "parent:CMP_SUPABASE",
+          "composite": true,
           "label": "supabase",
-          "type": "COMPONENT",
-          "tier": 3,
-          "status": "ACTIVE",
-          "cluster": "parent:SYS_DATA"
+          "status": "IMPLEMENTED",
+          "size": 90,
+          "members": [
+            "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
+            "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
+            "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
+            "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS",
+            "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS",
+            "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE",
+            "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S",
+            "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
+            "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
+            "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
+            "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
+            "F_SUPABASE_SEED_SQL",
+            "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+            "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+            "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
+            "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+            "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+            "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
+            "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+            "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
+            "F_SUPABASE_TESTS_PUSH_TEST_SQL",
+            "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+            "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+            "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
+            "F_SUPABASE_TESTS_RULES_TEST_SQL",
+            "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
+            "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+            "F_SUPABASE_TESTS_YIELD_TEST_SQL"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:CMP_SRC",
+          "composite": true,
+          "label": "src",
+          "status": "IMPLEMENTED",
+          "size": 56,
+          "members": [
+            "F_SRC_APP_TSX",
+            "F_SRC_CONFIGURATION_FILES_TSX",
+            "F_SRC_DASHBOARD_TSX",
+            "F_SRC_DISPLAY_SETTINGS_TSX",
+            "F_SRC_EVIDENCE_TSX",
+            "F_SRC_FEATURES_TSX",
+            "F_SRC_I18N_INDEX_TS",
+            "F_SRC_I18N_TRANSLATIONS_TEST_TS",
+            "F_SRC_KNOWLEDGE_TSX",
+            "F_SRC_LABEL_CARD_TSX",
+            "F_SRC_LIB_ATTENTION_TEST_TS",
+            "F_SRC_LIB_ATTENTION_TS",
+            "F_SRC_LIB_AUTH_TS",
+            "F_SRC_LIB_CONFIG_FILES_TEST_TS",
+            "F_SRC_LIB_CONFIG_FILES_TS",
+            "F_SRC_LIB_DATA_TS",
+            "F_SRC_LIB_DEMO_TS",
+            "F_SRC_LIB_DOMAIN_TEST_TS",
+            "F_SRC_LIB_DOMAIN_TS",
+            "F_SRC_LIB_FORMAT_TEST_TS",
+            "F_SRC_LIB_FORMAT_TS",
+            "F_SRC_LIB_LABELS_TEST_TS",
+            "F_SRC_LIB_LABELS_TS",
+            "F_SRC_LIB_LEARNING_DEMO_TS",
+            "F_SRC_LIB_MEDIA_TS",
+            "F_SRC_LIB_MFA_TS",
+            "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
+            "F_SRC_LIB_OVERLAY_TEST_TS",
+            "F_SRC_LIB_PIN_TEST_TS",
+            "F_SRC_LIB_PIN_TS",
+            "F_SRC_LIB_RECEIPTS_TEST_TS",
+            "F_SRC_LIB_RECEIPTS_TS",
+            "F_SRC_LIB_REPORTS_TS",
+            "F_SRC_LIB_SCHEDULES_TEST_TS",
+            "F_SRC_LIB_SCHEDULES_TS",
+            "F_SRC_LIB_SEALED_TICKET_TEST_TS",
+            "F_SRC_LIB_SEALED_TICKET_TS",
+            "F_SRC_LIB_SESSION_POLICY_TEST_TS",
+            "F_SRC_LIB_SESSION_POLICY_TS",
+            "F_SRC_LIB_SUPABASE_TS",
+            "F_SRC_LIB_TRAINING_MEDIA_TS",
+            "F_SRC_LIB_VAPID_TEST_TS",
+            "F_SRC_MAIN_TSX",
+            "F_SRC_MANAGEMENT_TSX",
+            "F_SRC_MATERIAL_BALANCE_TSX",
+            "F_SRC_NOTIFICATIONS_TEST_TS",
+            "F_SRC_NOTIFICATIONS_TSX",
+            "F_SRC_OFFLINE_DB_TEST_TS",
+            "F_SRC_OFFLINE_DB_TS",
+            "F_SRC_PACKAGING_FIELDS_TSX",
+            "F_SRC_PUSH_SETTINGS_TSX",
+            "F_SRC_REPORT_PAGE_TSX",
+            "F_SRC_SCANNER_TSX",
+            "F_SRC_TEST_SETUP_TS",
+            "F_SRC_TRAINING_ASSETS_TSX",
+            "F_SRC_TRAINING_EDITOR_TSX"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:CMP_DISCOVERED_FILES",
+          "composite": true,
+          "label": "Discovered files",
+          "status": "IMPLEMENTED",
+          "size": 30,
+          "members": [
+            "F_ESLINT_CONFIG_JS",
+            "F_PLAYWRIGHT_CONFIG_TS",
+            "F_PLAYWRIGHT_LIVE_CONFIG_TS",
+            "F_PUBLIC_PUSH_EVENTS_JS",
+            "F_P_PUBLIC_TS",
+            "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
+            "F_SCRIPTS_BROWSER_PREVIEW_MJS",
+            "F_SCRIPTS_CHECK_LIVE_UI_MJS",
+            "F_SCRIPTS_CHECK_PDF_MJS",
+            "F_SCRIPTS_CHECK_REPORTS_MJS",
+            "F_SCRIPTS_CREATE_HISTORY_SEED_MJS",
+            "F_SCRIPTS_CREATE_SEED_MJS",
+            "F_SCRIPTS_GENERATE_VAPID_MJS",
+            "F_SCRIPTS_LIVE_API_CHECK_MJS",
+            "F_SCRIPTS_SETUP_LOCAL_MJS",
+            "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS",
+            "F_TESTS_FLOWS_SPEC_TS",
+            "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+            "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+            "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+            "F_TESTS_LIVE_FIXTURES_TS",
+            "F_TESTS_LIVE_LABELS_SPEC_TS",
+            "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+            "F_TESTS_LIVE_MFA_TS",
+            "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+            "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+            "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+            "F_TESTS_LIVE_TRAINING_SPEC_TS",
+            "F_VITEST_CONFIG_TS",
+            "F_VITE_CONFIG_TS"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:SYS_FRONTEND",
+          "composite": true,
+          "label": "Frontend",
+          "status": "READY",
+          "size": 3,
+          "members": [
+            "CMP_DISCOVERED_FILES",
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:CMP_RECOVERY",
+          "composite": true,
+          "label": "Encrypted database and media recovery",
+          "status": "IMPLEMENTED",
+          "size": 2,
+          "members": [
+            "F_SCRIPTS_MEDIA_BACKUP_MJS",
+            "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:CMP_SRC_COMPONENTS",
+          "composite": true,
+          "label": "src / components",
+          "status": "IMPLEMENTED",
+          "size": 2,
+          "members": [
+            "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+            "F_SRC_COMPONENTS_UI_SHEET_TSX"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:SYS_DATA",
+          "composite": true,
+          "label": "Data",
+          "status": "VERIFIED",
+          "size": 2,
+          "members": [
+            "CMP_RECOVERY",
+            "CMP_SUPABASE"
+          ],
+          "members_truncated": false
         }
       ],
-      "edges": [],
+      "edges": [
+        {
+          "from": "parent:CMP_DISCOVERED_FILES",
+          "to": "parent:CMP_SRC",
+          "composite": true,
+          "count": 3,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_SRC",
+          "to": "parent:CMP_SRC_COMPONENTS",
+          "composite": true,
+          "count": 15,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_SRC",
+          "to": "parent:CMP_SUPABASE",
+          "composite": true,
+          "count": 1,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:SYS_DATA",
+          "to": "parent:CMP_RECOVERY",
+          "composite": true,
+          "count": 2,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:SYS_DATA",
+          "to": "parent:CMP_SUPABASE",
+          "composite": true,
+          "count": 90,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:SYS_FRONTEND",
+          "to": "parent:CMP_DISCOVERED_FILES",
+          "composite": true,
+          "count": 30,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:SYS_FRONTEND",
+          "to": "parent:CMP_SRC",
+          "composite": true,
+          "count": 56,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:SYS_FRONTEND",
+          "to": "parent:CMP_SRC_COMPONENTS",
+          "composite": true,
+          "count": 2,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
+        }
+      ],
       "clusters": [
+        {
+          "id": "parent:CMP_SUPABASE",
+          "label": "supabase",
+          "strategy": "parent",
+          "members": [
+            "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
+            "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
+            "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
+            "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS",
+            "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS",
+            "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS",
+            "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE",
+            "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S",
+            "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
+            "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
+            "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
+            "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
+            "F_SUPABASE_SEED_SQL",
+            "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+            "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+            "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
+            "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+            "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+            "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
+            "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+            "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
+            "F_SUPABASE_TESTS_PUSH_TEST_SQL",
+            "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+            "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+            "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
+            "F_SUPABASE_TESTS_RULES_TEST_SQL",
+            "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
+            "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+            "F_SUPABASE_TESTS_YIELD_TEST_SQL"
+          ],
+          "size": 90,
+          "status": "IMPLEMENTED"
+        },
+        {
+          "id": "parent:CMP_SRC",
+          "label": "src",
+          "strategy": "parent",
+          "members": [
+            "F_SRC_APP_TSX",
+            "F_SRC_CONFIGURATION_FILES_TSX",
+            "F_SRC_DASHBOARD_TSX",
+            "F_SRC_DISPLAY_SETTINGS_TSX",
+            "F_SRC_EVIDENCE_TSX",
+            "F_SRC_FEATURES_TSX",
+            "F_SRC_I18N_INDEX_TS",
+            "F_SRC_I18N_TRANSLATIONS_TEST_TS",
+            "F_SRC_KNOWLEDGE_TSX",
+            "F_SRC_LABEL_CARD_TSX",
+            "F_SRC_LIB_ATTENTION_TEST_TS",
+            "F_SRC_LIB_ATTENTION_TS",
+            "F_SRC_LIB_AUTH_TS",
+            "F_SRC_LIB_CONFIG_FILES_TEST_TS",
+            "F_SRC_LIB_CONFIG_FILES_TS",
+            "F_SRC_LIB_DATA_TS",
+            "F_SRC_LIB_DEMO_TS",
+            "F_SRC_LIB_DOMAIN_TEST_TS",
+            "F_SRC_LIB_DOMAIN_TS",
+            "F_SRC_LIB_FORMAT_TEST_TS",
+            "F_SRC_LIB_FORMAT_TS",
+            "F_SRC_LIB_LABELS_TEST_TS",
+            "F_SRC_LIB_LABELS_TS",
+            "F_SRC_LIB_LEARNING_DEMO_TS",
+            "F_SRC_LIB_MEDIA_TS",
+            "F_SRC_LIB_MFA_TS",
+            "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
+            "F_SRC_LIB_OVERLAY_TEST_TS",
+            "F_SRC_LIB_PIN_TEST_TS",
+            "F_SRC_LIB_PIN_TS",
+            "F_SRC_LIB_RECEIPTS_TEST_TS",
+            "F_SRC_LIB_RECEIPTS_TS",
+            "F_SRC_LIB_REPORTS_TS",
+            "F_SRC_LIB_SCHEDULES_TEST_TS",
+            "F_SRC_LIB_SCHEDULES_TS",
+            "F_SRC_LIB_SEALED_TICKET_TEST_TS",
+            "F_SRC_LIB_SEALED_TICKET_TS",
+            "F_SRC_LIB_SESSION_POLICY_TEST_TS",
+            "F_SRC_LIB_SESSION_POLICY_TS",
+            "F_SRC_LIB_SUPABASE_TS",
+            "F_SRC_LIB_TRAINING_MEDIA_TS",
+            "F_SRC_LIB_VAPID_TEST_TS",
+            "F_SRC_MAIN_TSX",
+            "F_SRC_MANAGEMENT_TSX",
+            "F_SRC_MATERIAL_BALANCE_TSX",
+            "F_SRC_NOTIFICATIONS_TEST_TS",
+            "F_SRC_NOTIFICATIONS_TSX",
+            "F_SRC_OFFLINE_DB_TEST_TS",
+            "F_SRC_OFFLINE_DB_TS",
+            "F_SRC_PACKAGING_FIELDS_TSX",
+            "F_SRC_PUSH_SETTINGS_TSX",
+            "F_SRC_REPORT_PAGE_TSX",
+            "F_SRC_SCANNER_TSX",
+            "F_SRC_TEST_SETUP_TS",
+            "F_SRC_TRAINING_ASSETS_TSX",
+            "F_SRC_TRAINING_EDITOR_TSX"
+          ],
+          "size": 56,
+          "status": "IMPLEMENTED"
+        },
+        {
+          "id": "parent:CMP_DISCOVERED_FILES",
+          "label": "Discovered files",
+          "strategy": "parent",
+          "members": [
+            "F_ESLINT_CONFIG_JS",
+            "F_PLAYWRIGHT_CONFIG_TS",
+            "F_PLAYWRIGHT_LIVE_CONFIG_TS",
+            "F_PUBLIC_PUSH_EVENTS_JS",
+            "F_P_PUBLIC_TS",
+            "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
+            "F_SCRIPTS_BROWSER_PREVIEW_MJS",
+            "F_SCRIPTS_CHECK_LIVE_UI_MJS",
+            "F_SCRIPTS_CHECK_PDF_MJS",
+            "F_SCRIPTS_CHECK_REPORTS_MJS",
+            "F_SCRIPTS_CREATE_HISTORY_SEED_MJS",
+            "F_SCRIPTS_CREATE_SEED_MJS",
+            "F_SCRIPTS_GENERATE_VAPID_MJS",
+            "F_SCRIPTS_LIVE_API_CHECK_MJS",
+            "F_SCRIPTS_SETUP_LOCAL_MJS",
+            "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS",
+            "F_TESTS_FLOWS_SPEC_TS",
+            "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+            "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+            "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+            "F_TESTS_LIVE_FIXTURES_TS",
+            "F_TESTS_LIVE_LABELS_SPEC_TS",
+            "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+            "F_TESTS_LIVE_MFA_TS",
+            "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+            "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+            "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+            "F_TESTS_LIVE_TRAINING_SPEC_TS",
+            "F_VITEST_CONFIG_TS",
+            "F_VITE_CONFIG_TS"
+          ],
+          "size": 30,
+          "status": "IMPLEMENTED"
+        },
         {
           "id": "parent:SYS_FRONTEND",
           "label": "Frontend",
           "strategy": "parent",
           "members": [
+            "CMP_DISCOVERED_FILES",
             "CMP_SRC",
             "CMP_SRC_COMPONENTS"
           ],
+          "size": 3,
+          "status": "READY"
+        },
+        {
+          "id": "parent:CMP_RECOVERY",
+          "label": "Encrypted database and media recovery",
+          "strategy": "parent",
+          "members": [
+            "F_SCRIPTS_MEDIA_BACKUP_MJS",
+            "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS"
+          ],
           "size": 2,
-          "status": "ACTIVE"
+          "status": "IMPLEMENTED"
+        },
+        {
+          "id": "parent:CMP_SRC_COMPONENTS",
+          "label": "src / components",
+          "strategy": "parent",
+          "members": [
+            "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+            "F_SRC_COMPONENTS_UI_SHEET_TSX"
+          ],
+          "size": 2,
+          "status": "IMPLEMENTED"
         },
         {
           "id": "parent:SYS_DATA",
           "label": "Data",
           "strategy": "parent",
           "members": [
+            "CMP_RECOVERY",
             "CMP_SUPABASE"
           ],
-          "size": 1,
-          "status": "ACTIVE"
+          "size": 2,
+          "status": "VERIFIED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -539,18 +1717,2165 @@
   ],
   "provenance": {
     "by_generator": {
-      "authored": 7
+      "authored": 8,
+      "projectgraph.imports.v1": 374
     },
-    "generated_edges": 0,
-    "authored_edges": 7,
-    "detail": [],
-    "detail_truncated": false,
+    "generated_edges": 374,
+    "authored_edges": 8,
+    "detail": [
+      {
+        "from": "SYS_FRONTEND",
+        "to": "CMP_DISCOVERED_FILES",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_ESLINT_CONFIG_JS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_P_PUBLIC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_PLAYWRIGHT_CONFIG_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_PLAYWRIGHT_LIVE_CONFIG_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_BROWSER_PREVIEW_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_CHECK_LIVE_UI_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_CHECK_PDF_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_CREATE_HISTORY_SEED_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_CREATE_SEED_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_LIVE_API_CHECK_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_SETUP_LOCAL_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_APP_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC_COMPONENTS",
+        "to": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC_COMPONENTS",
+        "to": "F_SRC_COMPONENTS_UI_SHEET_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_DASHBOARD_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_EVIDENCE_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_FEATURES_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_I18N_INDEX_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_AUTH_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_DATA_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_DEMO_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_DOMAIN_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_DOMAIN_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_MEDIA_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_MFA_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_PIN_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_PIN_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_REPORTS_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SESSION_POLICY_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SESSION_POLICY_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SUPABASE_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_MAIN_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_MANAGEMENT_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_OFFLINE_DB_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_OFFLINE_DB_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_SCANNER_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_TEST_SETUP_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_TRAINING_EDITOR_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_SEED_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_RULES_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_FLOWS_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_FIXTURES_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_VITE_CONFIG_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_VITEST_CONFIG_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_CHECK_REPORTS_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SCHEDULES_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SCHEDULES_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SEALED_TICKET_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SEALED_TICKET_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_REPORT_PAGE_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_KNOWLEDGE_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_TRAINING_MEDIA_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_TRAINING_ASSETS_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_LEARNING_DEMO_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_RECEIPTS_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_RECEIPTS_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_TRAINING_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_I18N_TRANSLATIONS_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LABEL_CARD_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_LABELS_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_LABELS_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_MATERIAL_BALANCE_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_PACKAGING_FIELDS_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_YIELD_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_LABELS_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_ATTENTION_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_ATTENTION_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_NOTIFICATIONS_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_PUBLIC_PUSH_EVENTS_JS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_SCRIPTS_GENERATE_VAPID_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_CONFIGURATION_FILES_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_CONFIG_FILES_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_CONFIG_FILES_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_VAPID_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_PUSH_SETTINGS_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_PUSH_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_MFA_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_RECOVERY",
+        "to": "F_SCRIPTS_MEDIA_BACKUP_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_RECOVERY",
+        "to": "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_DISPLAY_SETTINGS_TSX",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_FORMAT_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_FORMAT_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_OVERLAY_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_NOTIFICATIONS_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
+        "to": "F_SRC_LIB_DEMO_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "scripts/bootstrap-owner.mjs",
+          "target": "src/lib/demo.ts",
+          "import": "../src/lib/demo.ts",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SCRIPTS_CREATE_SEED_MJS",
+        "to": "F_SRC_LIB_DEMO_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "scripts/create-seed.mjs",
+          "target": "src/lib/demo.ts",
+          "import": "../src/lib/demo.ts",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SCRIPTS_CREATE_SEED_MJS",
+        "to": "F_SRC_LIB_LEARNING_DEMO_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "scripts/create-seed.mjs",
+          "target": "src/lib/learning-demo.ts",
+          "import": "../src/lib/learning-demo.ts",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
+        "to": "F_SCRIPTS_MEDIA_BACKUP_MJS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "scripts/media-backup.test.mjs",
+          "target": "scripts/media-backup.mjs",
+          "import": "./media-backup.mjs",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_DISPLAY_SETTINGS_TSX",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/display-settings.tsx",
+          "import": "./display-settings",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_LIB_FORMAT_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/lib/format.ts",
+          "import": "./lib/format",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/components/ui/button.tsx",
+          "import": "./components/ui/button",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_COMPONENTS_UI_SHEET_TSX",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/components/ui/sheet.tsx",
+          "import": "./components/ui/sheet",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_LIB_DATA_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/lib/data.ts",
+          "import": "./lib/data",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_LIB_SUPABASE_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/lib/supabase.ts",
+          "import": "./lib/supabase",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_LIB_DOMAIN_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/lib/domain.ts",
+          "import": "./lib/domain",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_LIB_AUTH_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/lib/auth.ts",
+          "import": "./lib/auth",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_OFFLINE_DB_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/offline/db.ts",
+          "import": "./offline/db",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_LIB_MFA_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/lib/mfa.ts",
+          "import": "./lib/mfa",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_LIB_SESSION_POLICY_TS",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/lib/session-policy.ts",
+          "import": "./lib/session-policy",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_MANAGEMENT_TSX",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/management.tsx",
+          "import": "./management",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_SCANNER_TSX",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/scanner.tsx",
+          "import": "./scanner",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_REPORT_PAGE_TSX",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/report-page.tsx",
+          "import": "./report-page",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "F_SRC_APP_TSX",
+        "to": "F_SRC_KNOWLEDGE_TSX",
+        "type": "CONSUMES",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 1,
+        "first_evidence": {
+          "source": "src/App.tsx",
+          "target": "src/knowledge.tsx",
+          "import": "./knowledge",
+          "line": null,
+          "resolver": "projectgraph.imports.v1",
+          "confidence": "medium"
+        },
+        "origin_file": "observed.yaml"
+      }
+    ],
+    "detail_truncated": true,
     "rule": "workbench.project.v1"
   },
   "temporal": {
-    "baseline": null,
-    "comparable": false,
-    "detail": "No previous snapshot, so there is nothing to compare against.",
+    "baseline": "2026-10-06T09:39:07+00:00",
+    "comparable": true,
+    "added": [
+      "CMP_DISCOVERED_FILES",
+      "CMP_RECOVERY",
+      "F_ESLINT_CONFIG_JS",
+      "F_PLAYWRIGHT_CONFIG_TS",
+      "F_PLAYWRIGHT_LIVE_CONFIG_TS",
+      "F_PUBLIC_PUSH_EVENTS_JS",
+      "F_P_PUBLIC_TS",
+      "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
+      "F_SCRIPTS_BROWSER_PREVIEW_MJS",
+      "F_SCRIPTS_CHECK_LIVE_UI_MJS",
+      "F_SCRIPTS_CHECK_PDF_MJS",
+      "F_SCRIPTS_CHECK_REPORTS_MJS",
+      "F_SCRIPTS_CREATE_HISTORY_SEED_MJS",
+      "F_SCRIPTS_CREATE_SEED_MJS",
+      "F_SCRIPTS_GENERATE_VAPID_MJS",
+      "F_SCRIPTS_LIVE_API_CHECK_MJS",
+      "F_SCRIPTS_MEDIA_BACKUP_MJS",
+      "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
+      "F_SCRIPTS_SETUP_LOCAL_MJS",
+      "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS",
+      "F_SRC_APP_TSX",
+      "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+      "F_SRC_COMPONENTS_UI_SHEET_TSX",
+      "F_SRC_CONFIGURATION_FILES_TSX",
+      "F_SRC_DASHBOARD_TSX",
+      "F_SRC_DISPLAY_SETTINGS_TSX",
+      "F_SRC_EVIDENCE_TSX",
+      "F_SRC_FEATURES_TSX",
+      "F_SRC_I18N_INDEX_TS",
+      "F_SRC_I18N_TRANSLATIONS_TEST_TS",
+      "F_SRC_KNOWLEDGE_TSX",
+      "F_SRC_LABEL_CARD_TSX",
+      "F_SRC_LIB_ATTENTION_TEST_TS",
+      "F_SRC_LIB_ATTENTION_TS",
+      "F_SRC_LIB_AUTH_TS",
+      "F_SRC_LIB_CONFIG_FILES_TEST_TS",
+      "F_SRC_LIB_CONFIG_FILES_TS",
+      "F_SRC_LIB_DATA_TS",
+      "F_SRC_LIB_DEMO_TS",
+      "F_SRC_LIB_DOMAIN_TEST_TS",
+      "F_SRC_LIB_DOMAIN_TS",
+      "F_SRC_LIB_FORMAT_TEST_TS",
+      "F_SRC_LIB_FORMAT_TS",
+      "F_SRC_LIB_LABELS_TEST_TS",
+      "F_SRC_LIB_LABELS_TS",
+      "F_SRC_LIB_LEARNING_DEMO_TS",
+      "F_SRC_LIB_MEDIA_TS",
+      "F_SRC_LIB_MFA_TS",
+      "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
+      "F_SRC_LIB_OVERLAY_TEST_TS",
+      "F_SRC_LIB_PIN_TEST_TS",
+      "F_SRC_LIB_PIN_TS",
+      "F_SRC_LIB_RECEIPTS_TEST_TS",
+      "F_SRC_LIB_RECEIPTS_TS",
+      "F_SRC_LIB_REPORTS_TS",
+      "F_SRC_LIB_SCHEDULES_TEST_TS",
+      "F_SRC_LIB_SCHEDULES_TS",
+      "F_SRC_LIB_SEALED_TICKET_TEST_TS",
+      "F_SRC_LIB_SEALED_TICKET_TS",
+      "F_SRC_LIB_SESSION_POLICY_TEST_TS",
+      "F_SRC_LIB_SESSION_POLICY_TS",
+      "F_SRC_LIB_SUPABASE_TS",
+      "F_SRC_LIB_TRAINING_MEDIA_TS",
+      "F_SRC_LIB_VAPID_TEST_TS",
+      "F_SRC_MAIN_TSX",
+      "F_SRC_MANAGEMENT_TSX",
+      "F_SRC_MATERIAL_BALANCE_TSX",
+      "F_SRC_NOTIFICATIONS_TEST_TS",
+      "F_SRC_NOTIFICATIONS_TSX",
+      "F_SRC_OFFLINE_DB_TEST_TS",
+      "F_SRC_OFFLINE_DB_TS",
+      "F_SRC_PACKAGING_FIELDS_TSX",
+      "F_SRC_PUSH_SETTINGS_TSX",
+      "F_SRC_REPORT_PAGE_TSX",
+      "F_SRC_SCANNER_TSX",
+      "F_SRC_TEST_SETUP_TS",
+      "F_SRC_TRAINING_ASSETS_TSX",
+      "F_SRC_TRAINING_EDITOR_TSX",
+      "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
+      "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS",
+      "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS",
+      "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS",
+      "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
+      "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
+      "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
+      "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS",
+      "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS",
+      "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS",
+      "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE",
+      "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S",
+      "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
+      "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
+      "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
+      "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL",
+      "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
+      "F_SUPABASE_SEED_SQL",
+      "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+      "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+      "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
+      "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+      "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+      "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
+      "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+      "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
+      "F_SUPABASE_TESTS_PUSH_TEST_SQL",
+      "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+      "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+      "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
+      "F_SUPABASE_TESTS_RULES_TEST_SQL",
+      "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
+      "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+      "F_SUPABASE_TESTS_YIELD_TEST_SQL",
+      "F_TESTS_FLOWS_SPEC_TS",
+      "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+      "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+      "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+      "F_TESTS_LIVE_FIXTURES_TS",
+      "F_TESTS_LIVE_LABELS_SPEC_TS",
+      "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+      "F_TESTS_LIVE_MFA_TS",
+      "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+      "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+      "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+      "F_TESTS_LIVE_TRAINING_SPEC_TS",
+      "F_VITEST_CONFIG_TS",
+      "F_VITE_CONFIG_TS"
+    ],
+    "removed": [],
+    "status_changes": [
+      {
+        "id": "CMP_SRC",
+        "from": "ACTIVE",
+        "to": "VERIFIED"
+      },
+      {
+        "id": "CMP_SRC_COMPONENTS",
+        "from": "IMPLEMENTED",
+        "to": "VERIFIED"
+      },
+      {
+        "id": "CMP_SUPABASE",
+        "from": "ACTIVE",
+        "to": "VERIFIED"
+      },
+      {
+        "id": "SYS_DATA",
+        "from": "ACTIVE",
+        "to": "VERIFIED"
+      },
+      {
+        "id": "SYS_FRONTEND",
+        "from": "ACTIVE",
+        "to": "READY"
+      }
+    ],
+    "quiet": false,
     "rule": "workbench.project.v1"
   },
   "health": {
@@ -560,9 +3885,9 @@
     "weakest_plane": "intent",
     "planes": {
       "structural": {
-        "score": 0.0,
-        "band": "poor",
-        "gaps": 1
+        "score": 1.0,
+        "band": "strong",
+        "gaps": 20
       },
       "intent": {
         "score": 0.0,
@@ -570,20 +3895,20 @@
         "gaps": 1
       },
       "state": {
-        "score": 0.0,
-        "band": "poor",
-        "gaps": 7
+        "score": 0.625,
+        "band": "weak",
+        "gaps": 3
       },
       "task_context": {
-        "score": 1.0,
-        "band": "strong",
-        "gaps": 0
+        "score": 0.75,
+        "band": "fair",
+        "gaps": 1
       }
     },
     "uncertainty": {
-      "unresolved": 0,
+      "unresolved": 4,
       "ambiguous": 0,
-      "unsupported": 0,
+      "unsupported": 81,
       "stale_facts": 0,
       "contradictions": 0
     }
