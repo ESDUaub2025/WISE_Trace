@@ -16,5 +16,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Material disposition, A4 bilingual labels, impact corrections and personal notification reads pass local contracts; 31 unit and 157 database checks, 16 preview checks, 11 full live scenarios plus new notification scenario pass.",
+    "next_action": "Continue scoped configuration import/export, Web Push, remaining Appendix A bullet coverage, reporting filters, performance and other unchecked PRD requirements.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-06T13:02:21.425797+00:00",
+    "git": {
+      "available": true,
+      "commit": "87bbecb7295f692de825c82bd0179f50749049a0",
+      "short_commit": "87bbecb7295f",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]

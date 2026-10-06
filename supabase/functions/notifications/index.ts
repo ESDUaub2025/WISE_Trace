@@ -1,4 +1,21 @@
-import { authenticate,json } from '../_shared/http.ts';
-interface NotificationProvider{send(destination:string,message:string):Promise<void>;}
-class LogProvider implements NotificationProvider{async send(destination:string,message:string){console.info(JSON.stringify({provider:'log',destination,message,at:new Date().toISOString()}));}}
-Deno.serve(async request=>{if(request.method==='OPTIONS')return json({});try{const {user,identity}=await authenticate(request);const profile=await user.from('membership').select('roles').eq('user_id',identity.id).single();if(!profile.data?.roles.some((r:string)=>['admin','food_safety','supervisor'].includes(r)))return json({error:'Forbidden'},403);const body=await request.json();if(body.opt_in!==true)return json({error:'Recipient opt-in required'},400);await new LogProvider().send(String(body.destination),String(body.message));return json({provider:'log',delivered:false});}catch(e){return json({error:e instanceof Error?e.message:'Failed'},400);}});
+import {authenticate,json} from '../_shared/http.ts';
+interface Alert {notification_id:string;recipient_id:string;channel:string;destination:string;kind:string;}
+interface NotificationProvider {send(alert:Alert):Promise<{provider:string;delivered:boolean}>;}
+class LogProvider implements NotificationProvider {
+ async send(alert:Alert) {
+  console.info(JSON.stringify({provider:'log',notification_id:alert.notification_id,recipient_id:alert.recipient_id,channel:alert.channel,at:new Date().toISOString()}));
+  return {provider:'log',delivered:false};
+ }
+}
+const provider:NotificationProvider=new LogProvider();
+Deno.serve(async request=>{
+ if(request.method==='OPTIONS')return json({});
+ if(request.method!=='POST')return json({error:'Method not allowed'},405);
+ try{
+  const {user}=await authenticate(request);const body=await request.json();
+  const {data,error}=await user.rpc('prepare_notification_delivery',{target:body.notification_id,recipient:body.recipient_id});
+  if(error)throw error;
+  // The development provider never contacts recipients or logs phone numbers.
+  return json({...await provider.send(data),notification_id:data.notification_id,channel:data.channel});
+ }catch(e){return json({error:e instanceof Error?e.message:'Alert delivery failed'},400);}
+});

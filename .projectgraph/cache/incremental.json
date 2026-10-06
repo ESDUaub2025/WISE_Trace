@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "graph_fingerprint": "sha256:ef52142c46e46c821df66085a0ba2657ed0ad301ad6bf1ccb704b043d5eb679d",
-  "generated_at": "2026-10-06T12:02:39+00:00",
+  "graph_fingerprint": "sha256:40df7b10edc267d85926ff17f65614400a1419caa194dbf5fde2d413b910633b",
+  "generated_at": "2026-10-06T12:49:30+00:00",
   "trust": "fast-path",
   "statuses": {
     "CFG_PROJECT_MANIFESTS": {
@@ -526,6 +526,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_LIB_LEARNING_DEMO_TS": {
+      "id": "F_SRC_LIB_LEARNING_DEMO_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_LIB_MEDIA_TS": {
       "id": "F_SRC_LIB_MEDIA_TS",
       "type": "FILE",
@@ -600,6 +618,42 @@
     },
     "F_SRC_LIB_PIN_TS": {
       "id": "F_SRC_LIB_PIN_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_RECEIPTS_TEST_TS": {
+      "id": "F_SRC_LIB_RECEIPTS_TEST_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_RECEIPTS_TS": {
+      "id": "F_SRC_LIB_RECEIPTS_TS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -961,12 +1015,32 @@
         },
         {
           "kind": "self",
+          "path": "src/dashboard.tsx",
+          "change": "modified"
+        },
+        {
+          "kind": "self",
           "path": "src/features.tsx",
           "change": "modified"
         },
         {
           "kind": "self",
-          "path": "src/knowledge.tsx",
+          "path": "src/i18n/ar.json",
+          "change": "modified"
+        },
+        {
+          "kind": "self",
+          "path": "src/i18n/en.json",
+          "change": "modified"
+        },
+        {
+          "kind": "self",
+          "path": "src/i18n/translations.test.ts",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "src/label-card.tsx",
           "change": "added"
         },
         {
@@ -976,38 +1050,43 @@
         },
         {
           "kind": "self",
-          "path": "src/lib/demo.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
           "path": "src/lib/domain.ts",
           "change": "modified"
         },
         {
           "kind": "self",
-          "path": "src/lib/learning-demo.ts",
+          "path": "src/lib/labels.test.ts",
           "change": "added"
         },
         {
           "kind": "self",
-          "path": "src/lib/training-media.ts",
+          "path": "src/lib/labels.ts",
           "change": "added"
         },
         {
           "kind": "self",
-          "path": "src/training-assets.tsx",
+          "path": "src/material-balance.tsx",
           "change": "added"
         },
         {
           "kind": "self",
-          "path": "src/training-editor.tsx",
+          "path": "src/packaging-fields.tsx",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "src/report-page.tsx",
+          "change": "modified"
+        },
+        {
+          "kind": "self",
+          "path": "src/styles.css",
           "change": "modified"
         }
       ],
-      "verified_at": "2026-10-06T11:37:18+00:00",
-      "evidence_id": "b13cfdb63e6c4592a9da5e6ca168fd9e",
-      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261006T113718+0000-b13cfdb6.json"
+      "verified_at": "2026-10-06T12:21:26+00:00",
+      "evidence_id": "f3a341e2eeeb482d842a329df98716f0",
+      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261006T122126+0000-f3a341e2.json"
     },
     "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": {
       "id": "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
@@ -1909,6 +1988,132 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_SEED_SQL": {
       "id": "F_SUPABASE_SEED_SQL",
       "type": "FILE",
@@ -1981,6 +2186,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_TESTS_RULES_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_RULES_TEST_SQL",
       "type": "TEST",
@@ -2017,6 +2240,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_TESTS_TRAINING_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "CMP_SUPABASE": {
       "id": "CMP_SUPABASE",
       "type": "COMPONENT",
@@ -2033,28 +2274,53 @@
       "stale_causes": [
         {
           "kind": "self",
-          "path": "supabase/migrations/202610060041_training_assets.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060042_training_validation.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060043_training_refreshers.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/seed.sql",
+          "path": "supabase/functions/report/index.ts",
           "change": "modified"
+        },
+        {
+          "kind": "self",
+          "path": "supabase/migrations/202610060051_material_disposition.sql",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "supabase/migrations/202610060052_material_disposition_sync.sql",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "supabase/migrations/202610060053_material_balance_order.sql",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "supabase/migrations/202610060054_packaging_yield_review.sql",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "supabase/migrations/202610060055_impact_dictionary_calculations.sql",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "supabase/tests/impact.test.sql",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "supabase/tests/material-balance.test.sql",
+          "change": "added"
+        },
+        {
+          "kind": "self",
+          "path": "supabase/tests/yield.test.sql",
+          "change": "added"
         }
       ],
-      "verified_at": "2026-10-06T11:38:59+00:00",
-      "evidence_id": "2d57e6902a8840a5825ec1aac7061ac0",
-      "evidence_path": ".projectgraph/evidence/CMP_SUPABASE/20261006T113859+0000-2d57e690.json"
+      "verified_at": "2026-10-06T12:20:48+00:00",
+      "evidence_id": "77155b6451374406a3cfbddc53e98ba3",
+      "evidence_path": ".projectgraph/evidence/CMP_SUPABASE/20261006T122048+0000-77155b64.json"
     },
     "F_TESTS_FLOWS_SPEC_TS": {
       "id": "F_TESTS_FLOWS_SPEC_TS",
@@ -2112,6 +2378,24 @@
     },
     "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS": {
       "id": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_TESTS_LIVE_TRAINING_SPEC_TS": {
+      "id": "F_TESTS_LIVE_TRAINING_SPEC_TS",
       "type": "TEST",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -2309,10 +2593,10 @@
     "SYS_FRONTEND": "sha256:6aa38a220e4b92d1b0006ba07f2a82e679097c969d4f368c8055775ad96cf8e8",
     "SYS_DATA": "sha256:6aa38a220e4b92d1b0006ba07f2a82e679097c969d4f368c8055775ad96cf8e8",
     "CFG_PROJECT_MANIFESTS": "sha256:cee7a9bc0769990493bde27a2e18dd14b9cc9d7d3064a074cacd303f86fc99b8",
-    "CMP_SUPABASE": "sha256:48a4ebcac424558965b42283d237b4c545ed4ca53f87d3679d96ed14f85d243e",
-    "CMP_SRC": "sha256:0aec7ec621046c196d9761fbb892f21c9c44cf72fba7a596e6bb6839b53e9a3e",
+    "CMP_SUPABASE": "sha256:eddd2a6987e4e7559f1c52a6920d89c4521b1316ec04389b1164d6c25ff77867",
+    "CMP_SRC": "sha256:3bda8131c82d829e2e889b0f8d2a361dcfd0e20af8db1af2fd192609d8d25fdd",
     "CMP_SRC_COMPONENTS": "sha256:80ceccc6e2d213e71edb84e4a18313266d9aaba6b648685a77d065375ae43567",
-    "REQ_FULL_MVP": "sha256:03bfe56642ff1ff45a2171b3042610cb9ffdb605232c3ea0fd35f71b7017558b",
+    "REQ_FULL_MVP": "sha256:afc4c1907e03cecfd25d6eec88a5552c1b8bdd1a647d9114aabc7b96b8631b5f",
     "CMP_DISCOVERED_FILES": "sha256:1ec5c58062baa41af79a7e3b2fef310fc506149d2a22e1e415824fc22d94b6c4",
     "F_ESLINT_CONFIG_JS": "sha256:d8683dfa68656f3e5ad4162f164013a516fe5badeb186c6ccab53aaf26c1548a",
     "F_P_PUBLIC_TS": "sha256:f1cac71f3921893282dcd5548c4443e007c9f6518251745e53d57719c769b03c",
@@ -2325,18 +2609,18 @@
     "F_SCRIPTS_CREATE_SEED_MJS": "sha256:9773911f10bd730038267b72129069dfb630cd1a08fd23a1052456435485441d",
     "F_SCRIPTS_LIVE_API_CHECK_MJS": "sha256:3fc7e68db59bfca0df9c3f8bff63f50dd3a178554a47daa60ce81f85a53fc3e4",
     "F_SCRIPTS_SETUP_LOCAL_MJS": "sha256:73305604a6fce89a16737a0a0fe1f774e3e02db8fb285d505f6fabb78b73b31c",
-    "F_SRC_APP_TSX": "sha256:77c43ffdeb58897634761c2dd58fdb2806af0cdc4444ba257001c5096d209923",
+    "F_SRC_APP_TSX": "sha256:d1cfca6319e5d6daa57dd9c75db8baabed47fe4d6dfe836a5d0875c7a71b767f",
     "F_SRC_COMPONENTS_UI_BUTTON_TSX": "sha256:ff9744c686545b312fe4c0512c38794f1dfb36344f9f36fb9eaaef36a57b1a11",
     "F_SRC_COMPONENTS_UI_SHEET_TSX": "sha256:7e81c51974eccbda71c9884b3430a03c77340ff2041a19c448da3eb85af6c167",
-    "F_SRC_DASHBOARD_TSX": "sha256:b93a7cc2325c6e143500343b2e9b8a270756ce603f2272616730f03ae0d4a5a6",
+    "F_SRC_DASHBOARD_TSX": "sha256:4644897555cad533706b86e67b59842272fe793d4436ac6b6d77ccc95cbadfb9",
     "F_SRC_EVIDENCE_TSX": "sha256:6379f392ab076c3be1f03033e7b6ac58d6d86ce5223de11acd180af5b75e5f3e",
-    "F_SRC_FEATURES_TSX": "sha256:9873a72b29cce7087c6b4ae5045ea8ea528d249e80cdbfa350159f0f6d449fb7",
+    "F_SRC_FEATURES_TSX": "sha256:052d5465138ec89a6b354bfd712e73523a4c44a0bf6fec09aa6dca2686d2624e",
     "F_SRC_I18N_INDEX_TS": "sha256:0d8ea56614f0ca9612b7ad2653508c7828cfdea765aa1f5e0880c572e5fb1efb",
     "F_SRC_LIB_AUTH_TS": "sha256:be664f02c05f331b96724daae28c7477486fcd33edbafa4fe3773de5f8276d1a",
-    "F_SRC_LIB_DATA_TS": "sha256:80aa2900e7ce3ee19aa8ea335f48fceedb781a4479302f5da2d403111e4d227f",
+    "F_SRC_LIB_DATA_TS": "sha256:cbf20f0be9c6afeaee73a46bcc80e7ad3fff7469d21f56a6a393868abed4eff3",
     "F_SRC_LIB_DEMO_TS": "sha256:37b026c2f34523c1a9ef488326a7e9c9821ed3b596b613bdd490fdc61a462fd2",
     "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:2cf33115659d6c0100db7a5fdd9723436f29275ff63af4e103f88d7dc540ecdc",
-    "F_SRC_LIB_DOMAIN_TS": "sha256:ee84a5c65fff59894c98beefd39e319e3e4c876a7780154e90e639518697e786",
+    "F_SRC_LIB_DOMAIN_TS": "sha256:f048836fab9e31472a2ff49bf2cc3af34409663439e23e6a76817bd07ab03098",
     "F_SRC_LIB_MEDIA_TS": "sha256:07a066e1e3b8dc84cf832719a76879588508ee6bfcc4c9c47147f99256a8c7a1",
     "F_SRC_LIB_MFA_TS": "sha256:dca26923ac160e2f79f66ebf3cc95b193260d08c61d62184015e31b1888c6668",
     "F_SRC_LIB_PIN_TEST_TS": "sha256:0098b8cd5057693b43dfe29cfd40335d6f962d9245f0dccbc5a6cdd8e9386cc7",
@@ -2351,11 +2635,11 @@
     "F_SRC_OFFLINE_DB_TS": "sha256:75ff9cb2d70c3e3763cafc23183be85fafaa876940d1d35de66e4bb38b7aa2f3",
     "F_SRC_SCANNER_TSX": "sha256:a4270f3e6638de958da6928d193110b4eaaf102b3ad2881383108e93212856e1",
     "F_SRC_TEST_SETUP_TS": "sha256:4f007a9b0c007b18ac970ff56b9b2dd0ef852d2f9eeac9796d1e1387d25ba52f",
-    "F_SRC_TRAINING_EDITOR_TSX": "sha256:ea62e94b4fa365f08c4c52b824bff7c02565bda0a7a280a1573fa3fdf0251288",
+    "F_SRC_TRAINING_EDITOR_TSX": "sha256:37f650c61d65729700dde97eb86a2576374c9215385ae002606493e2e7c9c5b2",
     "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": "sha256:becf001cd41c21d377aeec30d3f51dfdeeb05d3a351a165084b056ce61df6866",
     "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:704545f4ed4c7ec25f313bf75e39057aca887cc9e9b166cb3be866305037f287",
     "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:c71958391cd2d8f8286ab82bc9241b89c5758f0ddcd7c03b86faa80f9b4275e1",
-    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:a6c2237246e77965b4bde2106aff83a5f2aff68c85de4f1987192e747bf156e2",
+    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:c35ad7ddadbb2f935656491006ece7b6b6fa2c236b15cd9e9f89548d2e540c18",
     "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": "sha256:e40c9e4dfcbf87e5cf7b04ca280b8be2b9228d2618fa103b01335981586696d4",
     "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS": "sha256:6fc4317be9779cab74b654ee75c79e388d2f6f22526db89878c93f58ce3643bb",
     "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS": "sha256:9e78fd5f768b5c206a25c174ae39e85592c4ae0c80e0cf6070202a0a1bab2205",
@@ -2389,10 +2673,10 @@
     "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL": "sha256:ca9a641c27b1629ebb8255a96d03a22be573e255a18fc5ae671cf9121b4f67c7",
     "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL": "sha256:61f7f2dac44eba03dcacb86c2bad039596c6de820119881e8518aaec12e9f472",
     "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL": "sha256:0bca4d5b93816e3876947e768ae5d9fe9f04244278d583cf46a6dfe56df8d62c",
-    "F_SUPABASE_SEED_SQL": "sha256:8f3a5490e84c9dd1985a204a79894657b53929ac0a35d8890bd094b9e455c63b",
+    "F_SUPABASE_SEED_SQL": "sha256:9e8965b43fb236b69e2c0b665d78395eae3688953239c04a8a84e7fb9b2b8bb0",
     "F_SUPABASE_TESTS_RULES_TEST_SQL": "sha256:5769810c519a5379a57575b5ef3dabdd3345407c81c64615af4400a76058b16b",
     "F_SUPABASE_TESTS_SECURITY_TEST_SQL": "sha256:fa2a6c95e5018ba5d2f48da26b257de8c9e1dca864863651a92348dd8967277a",
-    "F_TESTS_FLOWS_SPEC_TS": "sha256:9a40c59dbc1e4cc928b7908bc615cbb119b505e650c3085d3bb1dc1ce69e872f",
+    "F_TESTS_FLOWS_SPEC_TS": "sha256:a3dcb81e6458dbb2bd2efe66857a8a53954fc47c282493301c2b29a95ca7bf90",
     "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS": "sha256:0f18aa452c414d85643600a0ad15a1f4d0a1f61d06bf39d1170834f93bcbb876",
     "F_TESTS_LIVE_FIXTURES_TS": "sha256:8e7a9467dc8cd33c2d958d46a18bc777f9cfa84ec15306f2dba50e8b8036b8a0",
     "F_VITE_CONFIG_TS": "sha256:76a34805ffa9b74c8355c36ba3409fe670a39af76aae66742586b2b36dd5af64",
@@ -2405,7 +2689,7 @@
     "F_SRC_LIB_SCHEDULES_TS": "sha256:5efbe8a463984e87c941b637a3f5846a0b3ca3d2302d685ea197e1ba5130fd68",
     "F_SRC_LIB_SEALED_TICKET_TEST_TS": "sha256:2aad0922d4672a8e2417dcc3f06f78488d17106522ac1eeb880019d8453e4fb8",
     "F_SRC_LIB_SEALED_TICKET_TS": "sha256:3aa38ba525c270d25bcd3ca9de35046a26894ec6e31c209f60bdefc940c0e1e5",
-    "F_SRC_REPORT_PAGE_TSX": "sha256:6c2a07a8e332fc579029bdf9de455805fb3663323eecda9b5b4b12fa71dd2505",
+    "F_SRC_REPORT_PAGE_TSX": "sha256:0eb732fd2248a35b522ebdc67dc38a3106bfa3c492108f7fb1e07c3993a9e5f5",
     "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL": "sha256:f8e2c2086a7b1849c1cdd93bc3c118ca7bc81374c146cbef1965c7f9bec6266b",
     "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL": "sha256:31953231db25850d2ddcbbc9d520f46e997c259e23486c518b2252c88bc409d0",
     "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL": "sha256:07ccba12de092dda6a162221cb5e41fa43a2f4a7f279ff8084fefa42ff0882a9",
@@ -2420,23 +2704,36 @@
     "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS": "sha256:d2c32fc35bf53e385511f98b82745bd97172fc6ddec81f042c44d555d7b2baa6",
     "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL": "sha256:fca938f61254344f3e501e485333fc97870686590d734010ab19da4961e6c356",
     "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS": "sha256:b11e1ea411cd1bb1a176bbf8c7d066a24e8f13a50c5a1d4658cb0fa763ede5d0",
-    "F_SRC_KNOWLEDGE_TSX": "sha256:646e339463483e9a266bfe4deeb8679a7d7184351e6f0b158d266ffb4047f4fa",
-    "F_SRC_LIB_TRAINING_MEDIA_TS": "sha256:f23d20bebd713cf87cc37985d797f82ced430dc30f4baecc42d8b052f191986d",
+    "F_SRC_KNOWLEDGE_TSX": "sha256:6dd29586d6de8b6755d2176ffb6fb40578f7695a265c5f065b697e1d1e26b97e",
+    "F_SRC_LIB_TRAINING_MEDIA_TS": "sha256:d617337249374ccd0251a5d1a40e9e637bb1099485748c5dc098d7e7ab0865cf",
     "F_SRC_TRAINING_ASSETS_TSX": "sha256:9275f2b3effbcdf8e0a7f7c19bb70af3d0c9618c4fba455903d5bd58a21e85c0",
     "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL": "sha256:aa8dbfd08c7ae202061c1d9dfe19f2d92ae12cd729ffae93c91e9cb281b28275",
     "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL": "sha256:20d9bd9da82faf0b013a6543cff27ca418df6c4e8c329ec777f6bb1105d4706f",
-    "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": "sha256:78fb5e7c47bbd0e72787a6c44bf69408dff4d247478fa87b34ecbec624854869"
+    "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": "sha256:78fb5e7c47bbd0e72787a6c44bf69408dff4d247478fa87b34ecbec624854869",
+    "F_SRC_LIB_LEARNING_DEMO_TS": "sha256:c0a63f79b807219ef9d65233fe1571f6bfc87aec758148c8dab58ceafe2d4efe",
+    "F_SRC_LIB_RECEIPTS_TEST_TS": "sha256:8619ef539394337d8e42084bcbfcc9ea6cd4cc39b092f9c3592929c84c6557a0",
+    "F_SRC_LIB_RECEIPTS_TS": "sha256:94dd71fa884a34aa876058513ecc0aa3a4cb74858ab2df72a4a0725fb810bad0",
+    "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL": "sha256:268b88b648fd5dd50f08533b64742e4f3dd740b1f61e5bfcc2acbaa09c116d9a",
+    "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL": "sha256:2fad49ca3e1dc9cf0afe025ac216756f52cbc19eb8a075bb9f0d513217b08660",
+    "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL": "sha256:bf51ad498e2f0797bfc1f3506d7b5f6a1eb1b0b28875e9c5128837315a9a9f24",
+    "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE": "sha256:72e9d15085c8f2f05956194018850c72cb38877aa104b4d6786df42340fc3cfd",
+    "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S": "sha256:ed06c65a0b1ce77b408799845e00ec5e30e364732f292d1f95efe3e422001b71",
+    "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL": "sha256:e361bfc5651b83b44224337e933ccfd83f51255f438ce3f7195678e533fd128b",
+    "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": "sha256:38c7dca04fd60862e1f2ac52d033562b18d8c59543a907b163191d732f063367",
+    "F_SUPABASE_TESTS_TRAINING_TEST_SQL": "sha256:f0b0e1f785285dbf729829c227a2b5646c0fba67ab692055de442c0e734c2a6b",
+    "F_TESTS_LIVE_TRAINING_SPEC_TS": "sha256:83f28322ccc82a8b6750e3f5b35833feb2122bb23106f4c0d558683560f9b35c",
+    "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": "sha256:dd6232ff230ee8ee7dc5e5fc54750366395d2309617fcdffe886b301052fbb79"
   },
   "dep_fingerprints": {
-    "WISE_TRACE": "sha256:cf8c01caa4dac7c1e37da850dac3d84c650302d80d702686e3929530fe43a30f",
-    "SYS_FRONTEND": "sha256:c45ab7e982cc03439421520e1bbf7522dd19aa241eb6b07b18ac66e9927fd136",
-    "SYS_DATA": "sha256:40158239932c433d9da08ef05fc5af33b3eccef52ecd7e02b1030dd7a149d1c3",
+    "WISE_TRACE": "sha256:75bbc9edae96f7bd742409ba3fd49fc59089b045780add3d26c86dfac8d602fa",
+    "SYS_FRONTEND": "sha256:00cd808d3590fa63b2e6650ddd3778bc4d796674521755db047c1e6a77ed6d44",
+    "SYS_DATA": "sha256:eb538625f8da79f334f6f7a68ee9cef11132865170b601502117f8041a98645b",
     "CFG_PROJECT_MANIFESTS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "CMP_SUPABASE": "sha256:d6d8330c2e68e1ab38f6bf2c128899ed5815d989d79ce6fbf28d178fe7dc7bae",
-    "CMP_SRC": "sha256:721bd58b4cb4098de9080f60b2edf0f482bd534e90e6e5170ab141a01787d6d2",
+    "CMP_SUPABASE": "sha256:307e940e68f3513952b581e89354f1f219d69377ff9c1288a3fd21d5f0226fe8",
+    "CMP_SRC": "sha256:ed8976434ebb802758adf30dd35067a3ed3af7e973b5ceee2aeea58c1beba945",
     "CMP_SRC_COMPONENTS": "sha256:4ac47fe6c136568d00ca564e6a83c74cafa31c57d5509f0fc372b65b11107e24",
     "REQ_FULL_MVP": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "CMP_DISCOVERED_FILES": "sha256:aabf533874710362d541e3474e58790ccbbfdb3564a12e0db166cbfa91f3dbee",
+    "CMP_DISCOVERED_FILES": "sha256:8bef4cecc93e0f0ae7bce344c949ff270d5b69268cc292237b1a085a2b330616",
     "F_ESLINT_CONFIG_JS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_P_PUBLIC_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_PLAYWRIGHT_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -2445,36 +2742,36 @@
     "F_SCRIPTS_CHECK_LIVE_UI_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_CHECK_PDF_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_CREATE_HISTORY_SEED_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SCRIPTS_CREATE_SEED_MJS": "sha256:6a9f90095bdaddf566167df846ea7304ccf19a8026e654c179e3639d8c180e96",
+    "F_SCRIPTS_CREATE_SEED_MJS": "sha256:50f895beaa06ddc2981d0211d0e80e8b2b791d9406d836eff7b18e6af830dec3",
     "F_SCRIPTS_LIVE_API_CHECK_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_SETUP_LOCAL_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_APP_TSX": "sha256:7b5ae0381b2e5b8865d09edd36c0c593d55aa77deb7ea48c04579ede10904fea",
+    "F_SRC_APP_TSX": "sha256:982b67bde4942d6c11b313637c538b0ead2fde5b2ac5fb64c7c22ff6eb2f89d8",
     "F_SRC_COMPONENTS_UI_BUTTON_TSX": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_COMPONENTS_UI_SHEET_TSX": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_DASHBOARD_TSX": "sha256:37f352100646f035b76a3df286a17f7859cda31ca7ace56be95ca82e1187b62e",
-    "F_SRC_EVIDENCE_TSX": "sha256:0744d45eca1f70eba549cd9aaf77fdf5fee45bdfc6fa292be91df16d2225d469",
-    "F_SRC_FEATURES_TSX": "sha256:70a3380257ac61c2bd63d407f3b5151264bb713333684b26095e054a8299144c",
+    "F_SRC_DASHBOARD_TSX": "sha256:de2745dfbc5ff72b5ff303360eb639249757fbf9f3b63dab0211469b9498e147",
+    "F_SRC_EVIDENCE_TSX": "sha256:41a74fc86c45b098ea377e6d68f350a0cde0252b0dbd1a7ca4a7045cb507b33c",
+    "F_SRC_FEATURES_TSX": "sha256:70c525a79e82cf19aba4653b369c9445ce3416ed097fb1ff616262895890bd62",
     "F_SRC_I18N_INDEX_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_AUTH_TS": "sha256:2c4cc4826aad7fbd3eadf12291fa51f919301c2cba889c39f5b674fb871d1609",
-    "F_SRC_LIB_DATA_TS": "sha256:88abded9d0a1bde2e63b858a35b790d98aabbfdd34e8072b6684143ce92789b7",
-    "F_SRC_LIB_DEMO_TS": "sha256:6a21599cc3f967bf82ab347f4fff919d873fe44770a265348cd387ba7ba6e5ce",
-    "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:6a9f90095bdaddf566167df846ea7304ccf19a8026e654c179e3639d8c180e96",
+    "F_SRC_LIB_AUTH_TS": "sha256:23b1ce6da06548681fb52b72fcdc7e40878b1f2657311bd406a4c73b0e2491b8",
+    "F_SRC_LIB_DATA_TS": "sha256:6accbdb410ddd3e604e8e8b5f48a80e138fbab48586dfa178db785cfae9968ae",
+    "F_SRC_LIB_DEMO_TS": "sha256:4ba6f9e985aa61f457e4088a38b2184ff55ddfadcdadaea7e1495e37d0f3179f",
+    "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:f3a6772dc174cde8d00b8b785bde48c53830b5f1af990bf7709dd3abd6683150",
     "F_SRC_LIB_DOMAIN_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_MEDIA_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_MFA_TS": "sha256:b91710412b5c767b8f8e488dd46843f8277b53813825cbb6bde63ce66eb1b6a0",
     "F_SRC_LIB_PIN_TEST_TS": "sha256:faed76a55cdfcb620276fbb7e07d8c6fed94ea5dc75fe08159474eff4a2f38d1",
     "F_SRC_LIB_PIN_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_REPORTS_TS": "sha256:b91710412b5c767b8f8e488dd46843f8277b53813825cbb6bde63ce66eb1b6a0",
-    "F_SRC_LIB_SESSION_POLICY_TEST_TS": "sha256:16dfc1b841877878645fa9722f4b47eacdac699a179ac639f423d10900684d40",
-    "F_SRC_LIB_SESSION_POLICY_TS": "sha256:009da8d0ea95bd88ac8bcb484cc0ad9f3e6f25266d0e3748804441e651c2037e",
+    "F_SRC_LIB_SESSION_POLICY_TEST_TS": "sha256:8030112e4b47f56eca8c8109c722b9c2e831e347350369070cffed2abdeb3619",
+    "F_SRC_LIB_SESSION_POLICY_TS": "sha256:92790082fe0605cda6e77f236b43d6a832127446b4f85f634b1e0ae6b9c456f5",
     "F_SRC_LIB_SUPABASE_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_MAIN_TSX": "sha256:cc13f2ef887e9d0ea0b3455f7bc825c135ec0d84568e60a8bcbf9c13514ce5dd",
-    "F_SRC_MANAGEMENT_TSX": "sha256:0744d45eca1f70eba549cd9aaf77fdf5fee45bdfc6fa292be91df16d2225d469",
-    "F_SRC_OFFLINE_DB_TEST_TS": "sha256:ea41b5a0016665ed83cb5f910520fac1f9018e77f60e6853b2c54ccdfae9779f",
-    "F_SRC_OFFLINE_DB_TS": "sha256:6a21599cc3f967bf82ab347f4fff919d873fe44770a265348cd387ba7ba6e5ce",
+    "F_SRC_MAIN_TSX": "sha256:0e284f49c41033be33e1bda5aa1432b2b9d71d0e21e507893cb61d3f2e19d9a3",
+    "F_SRC_MANAGEMENT_TSX": "sha256:41a74fc86c45b098ea377e6d68f350a0cde0252b0dbd1a7ca4a7045cb507b33c",
+    "F_SRC_OFFLINE_DB_TEST_TS": "sha256:84223c06182163edf54a3a6564ba7de547ed93338e2023689800f66715fd5efa",
+    "F_SRC_OFFLINE_DB_TS": "sha256:4ba6f9e985aa61f457e4088a38b2184ff55ddfadcdadaea7e1495e37d0f3179f",
     "F_SRC_SCANNER_TSX": "sha256:fc64801a0e08364e46c741103f25316526a44127f1f707778d5a25e790d490b5",
     "F_SRC_TEST_SETUP_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_TRAINING_EDITOR_TSX": "sha256:ef8b3d5a24619bbd29fcd6739b387baf461cf3940b8b39d7db04aad4c4334c81",
+    "F_SRC_TRAINING_EDITOR_TSX": "sha256:d9dc64344e776135f47ef72183d87daa843280d5c5b4b3d57f97a5671881e791",
     "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:9f4c2c30bf6177a45d34434d793a6e2da95126d53496ebc622fd31eab726685e",
     "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:9f4c2c30bf6177a45d34434d793a6e2da95126d53496ebc622fd31eab726685e",
@@ -2520,15 +2817,15 @@
     "F_TESTS_LIVE_FIXTURES_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_VITE_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_VITEST_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": "sha256:6a9f90095bdaddf566167df846ea7304ccf19a8026e654c179e3639d8c180e96",
+    "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": "sha256:f3a6772dc174cde8d00b8b785bde48c53830b5f1af990bf7709dd3abd6683150",
     "F_SCRIPTS_CHECK_REPORTS_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_OFFLINE_SIGNOFF_TS": "sha256:dd598e3a4f88a75364a00fc9afc97b1f6bab2ac8072456df87a63a258e9d3a0b",
-    "F_SRC_LIB_SCHEDULES_TEST_TS": "sha256:fd358c8dc4ea659c71134f8ead3f684078de3c56b0475e92696773122fb061f3",
-    "F_SRC_LIB_SCHEDULES_TS": "sha256:be6a1bfca3586c1d59caff5e781c57fb51a8ebc7ee449e0c1679b4c6c7735562",
-    "F_SRC_LIB_SEALED_TICKET_TEST_TS": "sha256:f78baf1310db0d62e67d34235e0f6c32841a9f72b76a3e4a202b9866224055e2",
-    "F_SRC_LIB_SEALED_TICKET_TS": "sha256:6a21599cc3f967bf82ab347f4fff919d873fe44770a265348cd387ba7ba6e5ce",
-    "F_SRC_REPORT_PAGE_TSX": "sha256:7e98ed2135a1520d81c443a92df637987282ee11eddb99bdae0baa295a0c5316",
+    "F_SRC_LIB_OFFLINE_SIGNOFF_TS": "sha256:448b5527b8582642b11224faa359335280e791ee1a62f09cfdbf6a75b24446d3",
+    "F_SRC_LIB_SCHEDULES_TEST_TS": "sha256:c003845ae2895ae285a73c93274d2c57ce4d4f0fba6b7b32a94883389cb0bb75",
+    "F_SRC_LIB_SCHEDULES_TS": "sha256:f8bb4aeef741c4d23fbf08bcdc1961c1674a727ec5367a47d05775f150247d1b",
+    "F_SRC_LIB_SEALED_TICKET_TEST_TS": "sha256:e7b3e66bb37ffb0fa275cea198aadaa4b8709583e133e8980408b0fbb7671655",
+    "F_SRC_LIB_SEALED_TICKET_TS": "sha256:4ba6f9e985aa61f457e4088a38b2184ff55ddfadcdadaea7e1495e37d0f3179f",
+    "F_SRC_REPORT_PAGE_TSX": "sha256:c9f755f407a059eec78f26a89fa3251f24405edbbb56f6c22f4f89136dbcab72",
     "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -2543,15 +2840,28 @@
     "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS": "sha256:8f9f07018647a1ba41e3a4ab3ee3111d68bcf03ff5c3a3135b20ba5a99cf9d65",
     "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_KNOWLEDGE_TSX": "sha256:efeb02bda3609a1b0b835b4101c2e4dc94fb9d5ce27653ffd485a0d20c992580",
-    "F_SRC_LIB_TRAINING_MEDIA_TS": "sha256:da9f9d33040a7aae0dadcc64fc8f539405fb3fa84e1750261937d463b1d985b0",
-    "F_SRC_TRAINING_ASSETS_TSX": "sha256:efeb02bda3609a1b0b835b4101c2e4dc94fb9d5ce27653ffd485a0d20c992580",
+    "F_SRC_KNOWLEDGE_TSX": "sha256:3859ce3d224ae057279d03eb0502c7861410f80290bf1d91af76dac9e3afdd16",
+    "F_SRC_LIB_TRAINING_MEDIA_TS": "sha256:15adb78175c4c9f3069bf6aca2b0ce095ad9bad81f5e227399fc80db3a17658c",
+    "F_SRC_TRAINING_ASSETS_TSX": "sha256:3859ce3d224ae057279d03eb0502c7861410f80290bf1d91af76dac9e3afdd16",
     "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SRC_LIB_LEARNING_DEMO_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SRC_LIB_RECEIPTS_TEST_TS": "sha256:56af95bc42e8f6ee014e9196b5fd7f678079badcae0900418f4877fb4bf241ae",
+    "F_SRC_LIB_RECEIPTS_TS": "sha256:4ba6f9e985aa61f457e4088a38b2184ff55ddfadcdadaea7e1495e37d0f3179f",
+    "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_TRAINING_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_TESTS_LIVE_TRAINING_SPEC_TS": "sha256:8f9f07018647a1ba41e3a4ab3ee3111d68bcf03ff5c3a3135b20ba5a99cf9d65",
+    "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "file_hashes": {
-    "docs/PROGRESS.md": "8e124449184cddbe77f295347eaba817a61046968f259f1931cdc2aab67007a5",
+    "docs/PROGRESS.md": "ca92bc2e144733cb7fdb9e37ca3a17c0b3459b995a3f010c39122e98a4552576",
     "eslint.config.js": "697c178eaa83a55f4612727e2bc61c55c1078b7f970ced44bb86c70e29bf594c",
     "p/public.ts": "fc35dd8d3cc616dc2e74c1801074849e6c94ff6331f0779572318735453d219b",
     "package-lock.json": "8e7f11af4050add8e7a06c387b48d8eb5cf4cc52730d7e481ae3163814ddca59",
@@ -2568,27 +2878,33 @@
     "scripts/live-api-check.mjs": "ad4ea1c3390954bd070ff20db3c9ad59c25e72364f7b83c6197a0a22a7dc9325",
     "scripts/setup-local.mjs": "d7d62ffa76befefc31c99ce8cd9526aa6bb02b423184a1d32be9ee29eb9c41b9",
     "scripts/wait-for-functions.mjs": "9b6396bb4731a5d75ea19febf9d155d7e03c1f48ec5a6814e344af01ec095a51",
-    "src/App.tsx": "f6eec596aae8a78fd5e695ab3839dc945c0cf491507643fcc58e6e800fcf3dae",
+    "src/App.tsx": "ecc683da2dff7b0c63207bc3696c6b876f8b5f7794b91644de116a794322a67b",
     "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
     "src/components/ui/sheet.tsx": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962",
-    "src/dashboard.tsx": "9615de8d923db4ef14f6e26579352a63ac301d0ee0add990640b43660ed3c38d",
+    "src/dashboard.tsx": "9b7696bbd703ec62979b68289ee38fb4ae160ad61ad2663adf970a4475f445bb",
     "src/evidence.tsx": "e02120d12ac364ea901286cc9052084dfe92fb206b5d78cab5330707becfde4f",
-    "src/features.tsx": "f2e16fddf767a7ff47b1ee58000b49dfcfa8dc8a997087c3d0ba86cfc262ca1f",
-    "src/i18n/ar.json": "d74c67732e38cff48b6658f3fce7188116e9df8137c789f4d5bb789e64dcf7e3",
-    "src/i18n/en.json": "17309a10ba24d8ccc2e88bd9f6c6b130e55d8123586ee71d9607c2ff34357666",
+    "src/features.tsx": "02864295dae72a331d29d5ef17dc1f1168856b877c5bd65bfb7584c7c4126a1a",
+    "src/i18n/ar.json": "d98ba9d2fdf557d62da415af30fd97635ae0d2c440d3374407c92eeb497459cc",
+    "src/i18n/en.json": "434f19668937784d1bd9f8e125ce01ec58ec82186dd9d420131fa12ae0443190",
     "src/i18n/index.ts": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12",
-    "src/knowledge.tsx": "e8bf3e4de9b6178eea47bab31fc9b811abf41fe1e86314b8a127bf913b5e1c65",
+    "src/i18n/translations.test.ts": "88b295a32b86fbd640a3606325bc343414112027a7c675635f52e2fecc901136",
+    "src/knowledge.tsx": "c883ab11a7c5246ccfd32a6cbdd94a7f08cce9b2001fbb6982531f9f4bbb4802",
+    "src/label-card.tsx": "19f58d48ff3bdb678d50de8ac64fe4615100243da53d238c8c4e358a0bed76ec",
     "src/lib/auth.ts": "6bbe63df374dca86dd14b656049530532089f10fc8b92af24aacfbb52747ab5b",
-    "src/lib/data.ts": "816286a4992ef4d414cf4a28648cd535f8571d5c197bb845389cdb1fb4557bb3",
+    "src/lib/data.ts": "a624d9dd5ad803684f8356bd7a07484fca27ed2b32c10549405758aa77868308",
     "src/lib/demo.ts": "bd89a8079d30231855eeca0f330228061c17c6403be06db3b116174b352f7e46",
     "src/lib/domain.test.ts": "f34ef07344fe09491763c6dec3db73428d701a7ce11d0893ec7fae68672ceb6a",
-    "src/lib/domain.ts": "96b04547856c004ddde113913594c84225951d47e57bc613affc46bc1e438f03",
+    "src/lib/domain.ts": "3da7f3b71e934f957b0395d9c5392714f72ed77d463acb5990222ca9b65a66ca",
+    "src/lib/labels.test.ts": "be61f5e8966326ea52db88062c9b82411368adceee61a2e1c5abf13afb778156",
+    "src/lib/labels.ts": "93f502a7e171ac9ef0cd74e2a6f9845c1e38be98142d7f4c940a39b5754036b7",
     "src/lib/learning-demo.ts": "3bf7da4bca04aff53b73dd5512da8b898d2f8a77aef68c00f720d1116aabd71b",
     "src/lib/media.ts": "99dc724aa075af6856147c3d994191fe2db5863ce42c61a49855b6406b20ea6a",
     "src/lib/mfa.ts": "8850636db751da5c31a9ef0e728da5a97ae107be7d06de7cc4ad19002275c123",
     "src/lib/offline-signoff.ts": "60fcf28725262274f3a425953b805e08c9a48141fa79edb51d475e7f4c48a834",
     "src/lib/pin.test.ts": "a037086e2fee03b7565756f2a53e519524966c77d23bb0d71af9b7155e6678cb",
     "src/lib/pin.ts": "bc0ced82e329967ae10544be3a6f211eff7f4f00f0dcdf39fcc1d582f415cdc2",
+    "src/lib/receipts.test.ts": "65853034509c38b613cb7193a738be2f60656a570d62245f7009ccd3a41d5b98",
+    "src/lib/receipts.ts": "dc533610e914c91ad0d4923b2a4ec5ba4dfca885f1ed60bca09907412601dcd9",
     "src/lib/reports.ts": "f198f88b99cc7132961151850b9442c221b2db84eb8d26b62d9c1576233e1c0e",
     "src/lib/schedules.test.ts": "05159bce3e746bd49a4ffe937c9b9e641a95cf6cbb02a39b7fafe800c43f8e6b",
     "src/lib/schedules.ts": "ebc536d9e33803d449ff82c4000cc5b9e27dcc48310f60639b04392a5b72101f",
@@ -2597,27 +2913,29 @@
     "src/lib/session-policy.test.ts": "7fbb9d63954e8cee2b0909cdb58bce17e834c20309cce01fab6663f6c2626097",
     "src/lib/session-policy.ts": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a",
     "src/lib/supabase.ts": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024",
-    "src/lib/training-media.ts": "e52859b165205591a05adad89b79f03cb158b0a333f5913a97f4702e93f2509c",
+    "src/lib/training-media.ts": "834616596a57763db295e08ad64f6c0a9f577c5ae2d83dc0695561a9c697bf02",
     "src/main.tsx": "8c445e80a57a6792145c28ffe26aa6f2b4157ed9832ae1aba863016e53bd4871",
     "src/management.tsx": "8d3df7b17b7fe5448afda2a29579dc51bba2bd78ccb23512bb55bab1211c41c8",
+    "src/material-balance.tsx": "33bf762e17c893fe156bfb978ee99a9d4df9ae3a383f6abfb319047160e18644",
     "src/offline/db.test.ts": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0",
     "src/offline/db.ts": "06097f9d9e9fb5f8cdd1a471ad7c41ae577b6d44d65518a51308016ab6b26188",
-    "src/report-page.tsx": "dbceeb608ec61b925ffff809589e44dc97405a87b677a7874d9da856b73db950",
+    "src/packaging-fields.tsx": "ae351f240d4b443259a238ebe7a6a3a607f55b56ddd7bb5d9c3a76a95d3cf437",
+    "src/report-page.tsx": "52a3a7acc15740df03584d085eb4309a13735e8145773a0dfa8d154962753fb4",
     "src/scanner.tsx": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2",
-    "src/styles.css": "65533a68c297a2b78a95fd5f5541cddb9b7d628d333ab9d9c227eddd68d3c597",
+    "src/styles.css": "faa8d349019faf1704454232c455c7f69fe4ed2f94f610e1b90106e423692c88",
     "src/test-setup.ts": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9",
     "src/training-assets.tsx": "94c7789d96168a7a0a813e72bf7ee9e4f072ffcb315b3c997f16def0dda2b105",
-    "src/training-editor.tsx": "78dc0330747b29434ca50dfb376e875aa152a1b981181309ac9e6f957ace43f0",
+    "src/training-editor.tsx": "6e93a0b0144311d6bfce6a97ccd6b511fa48b94fd6c56bdc0d4b1b977952c255",
     "supabase/.branches/_current_branch": "0d6e4079e36703ebd37c00722f5891d28b0e2811dc114b129215123adcce3605",
     "supabase/.gitignore": "507699eb91144818edf61d3a079212cacf31d8db520eae428e3b48fcf0d6919c",
     "supabase/.temp/cli-latest": "008368133cc42a3c2209c6e9dbf2612e56f28a1534b4c60383ec6403ea4d556f",
-    "supabase/config.toml": "eec494aedcb7a6344fa114d3cdff35969338d7a3fb73195124f13cec09d0405f",
+    "supabase/config.toml": "d42b352560bdb1cb7611884cb471e4eb52ab80a4d5eabbc788c364b2808ceac8",
     "supabase/functions/_shared/FONT-LICENSE.txt": "1c32ddc3fc6efd167cdcbe475195287f2dc26ed1a4c92fbe31c87ceaffe44f98",
     "supabase/functions/_shared/http.ts": "0c12115d20c7cdb39847535244e5cdc1f759d0887791f6da2aadbad2bbdcba2b",
     "supabase/functions/_shared/plex-arabic.ttf": "8e0f1046c736bf939d4939ee3ae0116acf61cbcd6592deae7656761627080981",
     "supabase/functions/notifications/index.ts": "702765d7b35b8c47350f4d06cfc98162202f3d6b0196c23ed449b02543021a45",
     "supabase/functions/ocr/index.ts": "7be4532eb7d0a9100848aa10e8f9f89717afaa3a30bc3cf889705b4fef2bda99",
-    "supabase/functions/report/index.ts": "7797467beb0043f6d6d727fdffd98c87b78720c65a9fa0363a99a66993db386a",
+    "supabase/functions/report/index.ts": "cc2e13a6d59a3a3398bff961d81b38200981f9672ae3c90fc56c042a92743a97",
     "supabase/functions/scheduled-tasks/index.ts": "93f5eda2565ebf05f93fe65a3e429bb253c9b0e7b0db04c7b701a670c0b221af",
     "supabase/functions/sync/index.ts": "ce5686ef9f82e2247bc4f16e4199ee075e24baf8d59522169b620dfdaf23deaf",
     "supabase/functions/user-admin/index.ts": "a062425eaec04d31ec581cf623a382be6d5844f4c05601a8a60677769bac3e78",
@@ -2664,23 +2982,41 @@
     "supabase/migrations/202610060041_training_assets.sql": "eaa0432d1ac9fd498d87adbfc7b794353c037ea846d9af3d4ccf90fde00bf8e5",
     "supabase/migrations/202610060042_training_validation.sql": "9d8c78ec0fb08134f41119b774f26ae1dbf710fb2543a355bcdb9cd4293e256b",
     "supabase/migrations/202610060043_training_refreshers.sql": "21411317b890557f7a06f331f4e825701fa8a80b84f321ff07979664ecb64df2",
-    "supabase/seed.sql": "31daaeaa41dfe3c638d9ea7734459dd5dd99e0ed701bfa91eb98203c9bd5c429",
+    "supabase/migrations/202610060044_training_content_contract.sql": "d4fe597596f80d018563b9a510b54539c1ece7e8723f5b5ab0599de63c1c488e",
+    "supabase/migrations/202610060045_training_task_refresh.sql": "6d8e6af1c322d9f474aec066886b88476b35e5526c24650a7492eb017ae5b595",
+    "supabase/migrations/202610060046_training_version_scope.sql": "4e169ae91ce6e72255a6edbeee7b6a49f07a2aa84c5733029eb7b7e5c1fef149",
+    "supabase/migrations/202610060047_receipt_measurement_evidence.sql": "5549871e6e73cf9c48713e1199e4614e70c1f0697cc0a7dc8f06f3df03ef31d4",
+    "supabase/migrations/202610060048_text_reception_measurements.sql": "910a049bc80285b121b49bde942316d5344a62530c1c24a4a4c1092270061d24",
+    "supabase/migrations/202610060049_sop_training_refresh.sql": "1e1c79a34a2c9d94b1c98a7861bbced2664e93995c8d8411675c895052050e90",
+    "supabase/migrations/202610060050_future_training_tasks.sql": "f1401bd8c1ba16cb2c6e7dfcc23333061bfcb14e175245ceac25180c721cdd74",
+    "supabase/migrations/202610060051_material_disposition.sql": "c2c6f618d551efe1ee12effcceafebc26529781a051ef53de9e6d7465919ddc8",
+    "supabase/migrations/202610060052_material_disposition_sync.sql": "69515b4247394ae06f70ec139104f28e7c310742ed63099ea774adcf0676b4e8",
+    "supabase/migrations/202610060053_material_balance_order.sql": "1866239e6cc60a034dcba318bd385365b230d4235f8d6799a06f298fab538320",
+    "supabase/migrations/202610060054_packaging_yield_review.sql": "876f9bf27c6ddb307e39932925695508c56e764e7771fad168ded40a35b19b6e",
+    "supabase/migrations/202610060055_impact_dictionary_calculations.sql": "1762a5ac9adf46dfdf9b7495e837424461abbcf34c6e2eb71c35e3a186c9249e",
+    "supabase/seed.sql": "8a0104c67029b003485e7df9cb3696cb8a441d77c660f35742474f99de934e19",
     "supabase/tests/bootstrap.test.sql": "3b59e2e944902ab2649d7542d64dff3c1b348cac209ee6bd02fc630135d11d02",
+    "supabase/tests/impact.test.sql": "018067ea64c089aeb01f0fccfe5d671a47e11e1471fbfd3ce7de3929608e843b",
+    "supabase/tests/material-balance.test.sql": "d3ba305596a7d3cc5cb871b78173c324011cc4619236d500824583d4ccf0b7f8",
     "supabase/tests/offline-signoff.test.sql": "79eaf7299f10956efc8c27a4eaf2d142412e8d6859c5c3a8fae674aa6b3dad10",
     "supabase/tests/production.test.sql": "b1ef92405ada2dd92aa88086ab2111225a9da973c5b7be29721911d146ef257b",
+    "supabase/tests/receipt-measurements.test.sql": "fe82602b8cd59905e5516e6b44ce9c4a13ef73ebcafe670aa3f8c8454a81dbe0",
     "supabase/tests/rules.test.sql": "112cf7c7f448353182be5e76a8fc05746f3ef80a131cf448d000411a2945b7f2",
     "supabase/tests/security.test.sql": "78e304bc554d5d32a8a677e3b74f21f4aa6f32cda03668cc3d0590c44c1b3c26",
-    "tests/flows.spec.ts": "be55913d777abe0756757b91fea56be951c4b7f0f204c2dbea0cb9e7eb258d67",
+    "supabase/tests/training.test.sql": "6d5630a84c698ee398d50e853f19112c5dbaf707b5f4de09a02213cf6fedf87c",
+    "supabase/tests/yield.test.sql": "962ff16324c64d17f254d78d90bf70ae594150f3817ffc781f07f08136c924f2",
+    "tests/flows.spec.ts": "caeb828373b1391c5cb5c8de34075002dafeb248c41d494f6ecc2161669dad31",
     "tests/live/acceptance.spec.ts": "60c72559459e3d5abb4f9505367f080d5e8c5f1fe496d85158ddb4913b6c1af6",
     "tests/live/fixtures.ts": "ac80f85886d12c707c6cf6c19d9e59e6684365d31772aa208359d2603922657c",
     "tests/live/offline-receiving.spec.ts": "7af4d47da65c69238f5f2768dad5d523c0fcb8091271f8345f97bceca934ca80",
+    "tests/live/training.spec.ts": "24ac59581fc7a5616c5a7ed9d6d4730c7daafb7b3a622ab8804a592cbcfb9c10",
     "vite.config.ts": "d774868eaf54e5d3ab5a83f0349a60f16399ec8271f03b3df7b07a8e74e01741",
     "vitest.config.ts": "a139292ca71b075326f66df8eb54466fa84a8a37284262ad906f5493c3cf6c0d"
   },
   "file_stats": {
     "docs/PROGRESS.md": [
-      27992,
-      1791286714596414300
+      29776,
+      1791289362715217400
     ],
     "eslint.config.js": [
       642,
@@ -2747,8 +3083,8 @@
       1791284107477406300
     ],
     "src/App.tsx": [
-      21358,
-      1791287212801370400
+      21388,
+      1791290233789921600
     ],
     "src/components/ui/button.tsx": [
       702,
@@ -2759,40 +3095,48 @@
       1791278540365416200
     ],
     "src/dashboard.tsx": [
-      3262,
-      1791281854777019800
+      4104,
+      1791290666244344100
     ],
     "src/evidence.tsx": [
       1908,
       1791282673866916100
     ],
     "src/features.tsx": [
-      32663,
-      1791287904950321000
+      35272,
+      1791290108419431600
     ],
     "src/i18n/ar.json": [
-      17546,
-      1791286606580745500
+      25920,
+      1791290661804106700
     ],
     "src/i18n/en.json": [
-      13602,
-      1791286606579862200
+      19885,
+      1791290661804106700
     ],
     "src/i18n/index.ts": [
       656,
       1791278339552541700
     ],
+    "src/i18n/translations.test.ts": [
+      366,
+      1791289403347280100
+    ],
     "src/knowledge.tsx": [
-      4644,
-      1791287074012441600
+      5494,
+      1791288325470772700
+    ],
+    "src/label-card.tsx": [
+      2443,
+      1791289835557758500
     ],
     "src/lib/auth.ts": [
       3752,
       1791284688746453900
     ],
     "src/lib/data.ts": [
-      13241,
-      1791287837581690900
+      14597,
+      1791290108419431600
     ],
     "src/lib/demo.ts": [
       4859,
@@ -2803,8 +3147,16 @@
       1791279196595364600
     ],
     "src/lib/domain.ts": [
-      3902,
-      1791287890035251200
+      4207,
+      1791289889243832600
+    ],
+    "src/lib/labels.test.ts": [
+      1314,
+      1791290170378224600
+    ],
+    "src/lib/labels.ts": [
+      7861,
+      1791290170378224600
     ],
     "src/lib/learning-demo.ts": [
       4484,
@@ -2829,6 +3181,14 @@
     "src/lib/pin.ts": [
       1006,
       1791278187923002700
+    ],
+    "src/lib/receipts.test.ts": [
+      1957,
+      1791288946943515500
+    ],
+    "src/lib/receipts.ts": [
+      1482,
+      1791289019903685400
     ],
     "src/lib/reports.ts": [
       992,
@@ -2863,8 +3223,8 @@
       1791278187921586900
     ],
     "src/lib/training-media.ts": [
-      4177,
-      1791287837349997100
+      4934,
+      1791288479713408500
     ],
     "src/main.tsx": [
       544,
@@ -2874,6 +3234,10 @@
       7172,
       1791286103253936800
     ],
+    "src/material-balance.tsx": [
+      1111,
+      1791289569140085300
+    ],
     "src/offline/db.test.ts": [
       2958,
       1791282624496776700
@@ -2882,17 +3246,21 @@
       2457,
       1791282624494230100
     ],
+    "src/packaging-fields.tsx": [
+      3300,
+      1791290107480787400
+    ],
     "src/report-page.tsx": [
-      2758,
-      1791286023238600800
+      3509,
+      1791290233789921600
     ],
     "src/scanner.tsx": [
       1627,
       1791280926503899100
     ],
     "src/styles.css": [
-      17920,
-      1791278779141028600
+      18888,
+      1791289945626566200
     ],
     "src/test-setup.ts": [
       30,
@@ -2903,8 +3271,8 @@
       1791287837351342200
     ],
     "src/training-editor.tsx": [
-      3396,
-      1791287281685268500
+      3141,
+      1791288194341509300
     ],
     "supabase/.branches/_current_branch": [
       4,
@@ -2919,8 +3287,8 @@
       1791278418909007500
     ],
     "supabase/config.toml": [
-      16129,
-      1791284057363120700
+      16127,
+      1791288676976036000
     ],
     "supabase/functions/_shared/FONT-LICENSE.txt": [
       4808,
@@ -2943,8 +3311,8 @@
       1791279111203356600
     ],
     "supabase/functions/report/index.ts": [
-      6376,
-      1791285978911810000
+      6780,
+      1791290311689698000
     ],
     "supabase/functions/scheduled-tasks/index.ts": [
       516,
@@ -3130,13 +3498,69 @@
       15978,
       1791287019727122900
     ],
+    "supabase/migrations/202610060044_training_content_contract.sql": [
+      3716,
+      1791288299937184500
+    ],
+    "supabase/migrations/202610060045_training_task_refresh.sql": [
+      6106,
+      1791288299937184500
+    ],
+    "supabase/migrations/202610060046_training_version_scope.sql": [
+      3401,
+      1791288511050581300
+    ],
+    "supabase/migrations/202610060047_receipt_measurement_evidence.sql": [
+      3373,
+      1791288946941705500
+    ],
+    "supabase/migrations/202610060048_text_reception_measurements.sql": [
+      1806,
+      1791288995356160000
+    ],
+    "supabase/migrations/202610060049_sop_training_refresh.sql": [
+      3165,
+      1791289142757737700
+    ],
+    "supabase/migrations/202610060050_future_training_tasks.sql": [
+      6269,
+      1791289188045865400
+    ],
+    "supabase/migrations/202610060051_material_disposition.sql": [
+      5110,
+      1791289473255942900
+    ],
+    "supabase/migrations/202610060052_material_disposition_sync.sql": [
+      16100,
+      1791289473562711700
+    ],
+    "supabase/migrations/202610060053_material_balance_order.sql": [
+      1969,
+      1791289517153224900
+    ],
+    "supabase/migrations/202610060054_packaging_yield_review.sql": [
+      2312,
+      1791290038981296100
+    ],
+    "supabase/migrations/202610060055_impact_dictionary_calculations.sql": [
+      11273,
+      1791290527407636000
+    ],
     "supabase/seed.sql": [
-      108077,
-      1791287837752089700
+      108153,
+      1791288325633308200
     ],
     "supabase/tests/bootstrap.test.sql": [
       1811,
       1791285107156239100
+    ],
+    "supabase/tests/impact.test.sql": [
+      2190,
+      1791290661804106700
+    ],
+    "supabase/tests/material-balance.test.sql": [
+      4708,
+      1791289641470002200
     ],
     "supabase/tests/offline-signoff.test.sql": [
       5626,
@@ -3146,6 +3570,10 @@
       4996,
       1791286560085038400
     ],
+    "supabase/tests/receipt-measurements.test.sql": [
+      3063,
+      1791289002106444600
+    ],
     "supabase/tests/rules.test.sql": [
       8996,
       1791284152135369100
@@ -3154,9 +3582,17 @@
       6051,
       1791279266163991300
     ],
+    "supabase/tests/training.test.sql": [
+      9446,
+      1791289187688813300
+    ],
+    "supabase/tests/yield.test.sql": [
+      2701,
+      1791290170383066600
+    ],
     "tests/flows.spec.ts": [
-      3266,
-      1791279196625583100
+      4756,
+      1791288666919435100
     ],
     "tests/live/acceptance.spec.ts": [
       9397,
@@ -3169,6 +3605,10 @@
     "tests/live/offline-receiving.spec.ts": [
       2858,
       1791285542768411600
+    ],
+    "tests/live/training.spec.ts": [
+      5597,
+      1791289362715217400
     ],
     "vite.config.ts": [
       919,
@@ -3247,8 +3687,8 @@
       1791284107477406300
     ],
     "src/App.tsx": [
-      21358,
-      1791287212801370400
+      21388,
+      1791290233789921600
     ],
     "src/components/ui/button.tsx": [
       702,
@@ -3259,32 +3699,32 @@
       1791278540365416200
     ],
     "src/dashboard.tsx": [
-      3262,
-      1791281854777019800
+      4104,
+      1791290666244344100
     ],
     "src/evidence.tsx": [
       1908,
       1791282673866916100
     ],
     "src/features.tsx": [
-      32663,
-      1791287904950321000
+      35272,
+      1791290108419431600
     ],
     "src/i18n/index.ts": [
       656,
       1791278339552541700
     ],
     "src/knowledge.tsx": [
-      4644,
-      1791287074012441600
+      5494,
+      1791288325470772700
     ],
     "src/lib/auth.ts": [
       3752,
       1791284688746453900
     ],
     "src/lib/data.ts": [
-      13241,
-      1791287837581690900
+      14597,
+      1791290108419431600
     ],
     "src/lib/demo.ts": [
       4859,
@@ -3295,8 +3735,12 @@
       1791279196595364600
     ],
     "src/lib/domain.ts": [
-      3902,
-      1791287890035251200
+      4207,
+      1791289889243832600
+    ],
+    "src/lib/learning-demo.ts": [
+      4484,
+      1791287821469818500
     ],
     "src/lib/media.ts": [
       1194,
@@ -3317,6 +3761,14 @@
     "src/lib/pin.ts": [
       1006,
       1791278187923002700
+    ],
+    "src/lib/receipts.test.ts": [
+      1957,
+      1791288946943515500
+    ],
+    "src/lib/receipts.ts": [
+      1482,
+      1791289019903685400
     ],
     "src/lib/reports.ts": [
       992,
@@ -3351,8 +3803,8 @@
       1791278187921586900
     ],
     "src/lib/training-media.ts": [
-      4177,
-      1791287837349997100
+      4934,
+      1791288479713408500
     ],
     "src/main.tsx": [
       544,
@@ -3371,8 +3823,8 @@
       1791282624494230100
     ],
     "src/report-page.tsx": [
-      2758,
-      1791286023238600800
+      3509,
+      1791290233789921600
     ],
     "src/scanner.tsx": [
       1627,
@@ -3387,8 +3839,8 @@
       1791287837351342200
     ],
     "src/training-editor.tsx": [
-      3396,
-      1791287281685268500
+      3141,
+      1791288194341509300
     ],
     "supabase/functions/_shared/http.ts": [
       1536,
@@ -3403,8 +3855,8 @@
       1791279111203356600
     ],
     "supabase/functions/report/index.ts": [
-      6376,
-      1791285978911810000
+      6780,
+      1791290311689698000
     ],
     "supabase/functions/scheduled-tasks/index.ts": [
       516,
@@ -3590,9 +4042,37 @@
       15978,
       1791287019727122900
     ],
+    "supabase/migrations/202610060044_training_content_contract.sql": [
+      3716,
+      1791288299937184500
+    ],
+    "supabase/migrations/202610060045_training_task_refresh.sql": [
+      6106,
+      1791288299937184500
+    ],
+    "supabase/migrations/202610060046_training_version_scope.sql": [
+      3401,
+      1791288511050581300
+    ],
+    "supabase/migrations/202610060047_receipt_measurement_evidence.sql": [
+      3373,
+      1791288946941705500
+    ],
+    "supabase/migrations/202610060048_text_reception_measurements.sql": [
+      1806,
+      1791288995356160000
+    ],
+    "supabase/migrations/202610060049_sop_training_refresh.sql": [
+      3165,
+      1791289142757737700
+    ],
+    "supabase/migrations/202610060050_future_training_tasks.sql": [
+      6269,
+      1791289188045865400
+    ],
     "supabase/seed.sql": [
-      108077,
-      1791287837752089700
+      108153,
+      1791288325633308200
     ],
     "supabase/tests/bootstrap.test.sql": [
       1811,
@@ -3606,6 +4086,10 @@
       4996,
       1791286560085038400
     ],
+    "supabase/tests/receipt-measurements.test.sql": [
+      3063,
+      1791289002106444600
+    ],
     "supabase/tests/rules.test.sql": [
       8996,
       1791284152135369100
@@ -3614,9 +4098,13 @@
       6051,
       1791279266163991300
     ],
+    "supabase/tests/training.test.sql": [
+      9446,
+      1791289187688813300
+    ],
     "tests/flows.spec.ts": [
-      3266,
-      1791279196625583100
+      4756,
+      1791288666919435100
     ],
     "tests/live/acceptance.spec.ts": [
       9397,
@@ -3629,6 +4117,10 @@
     "tests/live/offline-receiving.spec.ts": [
       2858,
       1791285542768411600
+    ],
+    "tests/live/training.spec.ts": [
+      5597,
+      1791289362715217400
     ],
     "tsconfig.json": [
       564,
@@ -3670,18 +4162,24 @@
     "src/i18n/ar.json",
     "src/i18n/en.json",
     "src/i18n/index.ts",
+    "src/i18n/translations.test.ts",
     "src/knowledge.tsx",
+    "src/label-card.tsx",
     "src/lib/auth.ts",
     "src/lib/data.ts",
     "src/lib/demo.ts",
     "src/lib/domain.test.ts",
     "src/lib/domain.ts",
+    "src/lib/labels.test.ts",
+    "src/lib/labels.ts",
     "src/lib/learning-demo.ts",
     "src/lib/media.ts",
     "src/lib/mfa.ts",
     "src/lib/offline-signoff.ts",
     "src/lib/pin.test.ts",
     "src/lib/pin.ts",
+    "src/lib/receipts.test.ts",
+    "src/lib/receipts.ts",
     "src/lib/reports.ts",
     "src/lib/schedules.test.ts",
     "src/lib/schedules.ts",
@@ -3693,8 +4191,10 @@
     "src/lib/training-media.ts",
     "src/main.tsx",
     "src/management.tsx",
+    "src/material-balance.tsx",
     "src/offline/db.test.ts",
     "src/offline/db.ts",
+    "src/packaging-fields.tsx",
     "src/report-page.tsx",
     "src/scanner.tsx",
     "src/styles.css",
@@ -3757,20 +4257,38 @@
     "supabase/migrations/202610060041_training_assets.sql",
     "supabase/migrations/202610060042_training_validation.sql",
     "supabase/migrations/202610060043_training_refreshers.sql",
+    "supabase/migrations/202610060044_training_content_contract.sql",
+    "supabase/migrations/202610060045_training_task_refresh.sql",
+    "supabase/migrations/202610060046_training_version_scope.sql",
+    "supabase/migrations/202610060047_receipt_measurement_evidence.sql",
+    "supabase/migrations/202610060048_text_reception_measurements.sql",
+    "supabase/migrations/202610060049_sop_training_refresh.sql",
+    "supabase/migrations/202610060050_future_training_tasks.sql",
+    "supabase/migrations/202610060051_material_disposition.sql",
+    "supabase/migrations/202610060052_material_disposition_sync.sql",
+    "supabase/migrations/202610060053_material_balance_order.sql",
+    "supabase/migrations/202610060054_packaging_yield_review.sql",
+    "supabase/migrations/202610060055_impact_dictionary_calculations.sql",
     "supabase/seed.sql",
     "supabase/tests/bootstrap.test.sql",
+    "supabase/tests/impact.test.sql",
+    "supabase/tests/material-balance.test.sql",
     "supabase/tests/offline-signoff.test.sql",
     "supabase/tests/production.test.sql",
+    "supabase/tests/receipt-measurements.test.sql",
     "supabase/tests/rules.test.sql",
     "supabase/tests/security.test.sql",
+    "supabase/tests/training.test.sql",
+    "supabase/tests/yield.test.sql",
     "tests/flows.spec.ts",
     "tests/live/acceptance.spec.ts",
     "tests/live/fixtures.ts",
     "tests/live/offline-receiving.spec.ts",
+    "tests/live/training.spec.ts",
     "vite.config.ts",
     "vitest.config.ts"
   ],
-  "derivation_key": "93d9071860c51f634dbb251260aef4664d4e8d590aaeb914dc5a204b4fe5b596",
+  "derivation_key": "202bf1c17f6843ba5c1afb1691ff6aa388098751cf6f73585d61450f716f3245",
   "ownership": {
     "WISE_TRACE": [],
     "SYS_FRONTEND": [],
@@ -3836,12 +4354,29 @@
       "supabase/migrations/202610060041_training_assets.sql",
       "supabase/migrations/202610060042_training_validation.sql",
       "supabase/migrations/202610060043_training_refreshers.sql",
+      "supabase/migrations/202610060044_training_content_contract.sql",
+      "supabase/migrations/202610060045_training_task_refresh.sql",
+      "supabase/migrations/202610060046_training_version_scope.sql",
+      "supabase/migrations/202610060047_receipt_measurement_evidence.sql",
+      "supabase/migrations/202610060048_text_reception_measurements.sql",
+      "supabase/migrations/202610060049_sop_training_refresh.sql",
+      "supabase/migrations/202610060050_future_training_tasks.sql",
+      "supabase/migrations/202610060051_material_disposition.sql",
+      "supabase/migrations/202610060052_material_disposition_sync.sql",
+      "supabase/migrations/202610060053_material_balance_order.sql",
+      "supabase/migrations/202610060054_packaging_yield_review.sql",
+      "supabase/migrations/202610060055_impact_dictionary_calculations.sql",
       "supabase/seed.sql",
       "supabase/tests/bootstrap.test.sql",
+      "supabase/tests/impact.test.sql",
+      "supabase/tests/material-balance.test.sql",
       "supabase/tests/offline-signoff.test.sql",
       "supabase/tests/production.test.sql",
+      "supabase/tests/receipt-measurements.test.sql",
       "supabase/tests/rules.test.sql",
-      "supabase/tests/security.test.sql"
+      "supabase/tests/security.test.sql",
+      "supabase/tests/training.test.sql",
+      "supabase/tests/yield.test.sql"
     ],
     "CMP_SRC": [
       "src/App.tsx",
@@ -3853,18 +4388,24 @@
       "src/i18n/ar.json",
       "src/i18n/en.json",
       "src/i18n/index.ts",
+      "src/i18n/translations.test.ts",
       "src/knowledge.tsx",
+      "src/label-card.tsx",
       "src/lib/auth.ts",
       "src/lib/data.ts",
       "src/lib/demo.ts",
       "src/lib/domain.test.ts",
       "src/lib/domain.ts",
+      "src/lib/labels.test.ts",
+      "src/lib/labels.ts",
       "src/lib/learning-demo.ts",
       "src/lib/media.ts",
       "src/lib/mfa.ts",
       "src/lib/offline-signoff.ts",
       "src/lib/pin.test.ts",
       "src/lib/pin.ts",
+      "src/lib/receipts.test.ts",
+      "src/lib/receipts.ts",
       "src/lib/reports.ts",
       "src/lib/schedules.test.ts",
       "src/lib/schedules.ts",
@@ -3876,8 +4417,10 @@
       "src/lib/training-media.ts",
       "src/main.tsx",
       "src/management.tsx",
+      "src/material-balance.tsx",
       "src/offline/db.test.ts",
       "src/offline/db.ts",
+      "src/packaging-fields.tsx",
       "src/report-page.tsx",
       "src/scanner.tsx",
       "src/styles.css",
@@ -4228,6 +4771,45 @@
     ],
     "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": [
       "supabase/migrations/202610060043_training_refreshers.sql"
+    ],
+    "F_SRC_LIB_LEARNING_DEMO_TS": [
+      "src/lib/learning-demo.ts"
+    ],
+    "F_SRC_LIB_RECEIPTS_TEST_TS": [
+      "src/lib/receipts.test.ts"
+    ],
+    "F_SRC_LIB_RECEIPTS_TS": [
+      "src/lib/receipts.ts"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL": [
+      "supabase/migrations/202610060044_training_content_contract.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL": [
+      "supabase/migrations/202610060045_training_task_refresh.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL": [
+      "supabase/migrations/202610060046_training_version_scope.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE": [
+      "supabase/migrations/202610060047_receipt_measurement_evidence.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S": [
+      "supabase/migrations/202610060048_text_reception_measurements.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL": [
+      "supabase/migrations/202610060049_sop_training_refresh.sql"
+    ],
+    "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": [
+      "supabase/tests/receipt-measurements.test.sql"
+    ],
+    "F_SUPABASE_TESTS_TRAINING_TEST_SQL": [
+      "supabase/tests/training.test.sql"
+    ],
+    "F_TESTS_LIVE_TRAINING_SPEC_TS": [
+      "tests/live/training.spec.ts"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": [
+      "supabase/migrations/202610060050_future_training_tasks.sql"
     ]
   },
   "note": "Transient cache, not evidence. A 'fast-path' result located changes by size and modification time and must not be used for a delivery decision; see incremental.require_verified."

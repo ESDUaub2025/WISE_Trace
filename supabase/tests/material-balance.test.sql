@@ -1,0 +1,28 @@
+begin;
+set local search_path=public,extensions;
+select no_plan();
+create temporary table material_fixture(lot uuid);
+insert into material_fixture values(gen_random_uuid());
+grant select on material_fixture to authenticated;
+create function pg_temp.material_envelope(action text,payload jsonb,target uuid default gen_random_uuid()) returns jsonb language sql as $$
+ select jsonb_build_object('id',target,'cooperative_id','10000000-0000-4000-8000-000000000001','author_id','20000000-0000-4000-8000-000000000001','device_id','30000000-0000-4000-8000-000000000001','config_version_id','40000000-0000-4000-8000-000000000001','action',action,'observed_at',now(),'payload',payload);
+$$;
+grant execute on function pg_temp.material_envelope(text,jsonb,uuid) to authenticated;
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is(public.apply_sync(pg_temp.material_envelope('receipt','{"type":"whey","supplier_id":"50000000-0000-4000-8000-000000000001","quantity":10,"unit":"kg","generation_at":"2026-10-06T00:00:00Z","facts":{"ph":5,"reception_temperature":5}}',(select lot from material_fixture)))->>'status','synced','Receipt enters the material ledger');
+select lives_ok($$select public.transition_lot((select lot from material_fixture),'rejected','Damaged container',public.pin_signoff('2468','30000000-0000-4000-8000-000000000001','decision',(select lot from material_fixture)))$$,'Rejected receipt remains available for disposal accounting');
+select is(public.apply_sync(pg_temp.material_envelope('material_disposition',jsonb_build_object('lot_id',(select lot from material_fixture),'kind','diverted','quantity',3,'unit','kg','method','animal_feed','reason','Approved alternative handling')))->>'status','conflict','Diversion requires a recorded destination');
+select is(public.apply_sync(pg_temp.material_envelope('material_disposition',jsonb_build_object('lot_id',(select lot from material_fixture),'kind','diverted','quantity',3,'unit','kg','method','animal_feed','destination','Recorded recipient','reason','Approved alternative handling')))->>'status','synced','Diversion stores quantity, method and destination');
+select is(public.apply_sync(pg_temp.material_envelope('material_disposition',jsonb_build_object('lot_id',(select lot from material_fixture),'kind','disposed','quantity',2,'unit','kg','method','approved_waste','reason','Recorded disposal')))->>'status','synced','Disposal enters the same append-only stock ledger');
+select is(public.apply_sync(pg_temp.material_envelope('material_disposition',jsonb_build_object('lot_id',(select lot from material_fixture),'kind','disposed','quantity',1,'unit','kg','method','approved_waste','reason','Incomplete residual closure','close_lot',true)))->>'status','conflict','Residual stock cannot disappear when closing');
+select is(public.lot_available((select lot from material_fixture)),5::numeric,'Failed closure rolls back its provisional stock debit');
+select is(public.apply_sync(pg_temp.material_envelope('material_disposition',jsonb_build_object('lot_id',(select lot from material_fixture),'kind','measurement_difference','quantity',1,'unit','kg','method','physical_recount','reason','Physical stock discrepancy')))->>'status','conflict','Producer cannot make an unauthorized stock adjustment');
+select is(public.apply_sync(pg_temp.material_envelope('material_disposition',jsonb_build_object('lot_id',(select lot from material_fixture),'kind','disposed','quantity',5,'unit','kg','method','approved_waste','reason','Final residual disposal','close_lot',true)))->>'status','synced','Full residual disposition closes the material lot');
+select is((select state from public.lot where id=(select lot from material_fixture)),'closed','Closed material cannot re-enter allocation');
+select is((select (b->>'disposed')::numeric from public.material_balances() b where b->>'id'=(select lot::text from material_fixture)),7::numeric,'Disposal is reported separately from diversion');
+select is((select (b->>'diverted')::numeric from public.material_balances() b where b->>'id'=(select lot::text from material_fixture)),3::numeric,'Diversion remains visible in the material balance');
+select is((select (b->>'received')::numeric-(b->>'disposed')::numeric-(b->>'diverted')::numeric-(b->>'remaining')::numeric from public.material_balances() b where b->>'id'=(select lot::text from material_fixture)),0::numeric,'Received material reconciles without hiding residual losses');
+select ok(not has_table_privilege('authenticated','public.material_disposition','update'),'No application role can alter a disposition');
+select * from finish();
+rollback;

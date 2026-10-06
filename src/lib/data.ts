@@ -1,3 +1,4 @@
+import {flushNotificationReads} from '../notifications';
 import { db, enqueue, syncOutbox, revokeLocalDevice } from '../offline/db';
 import { configured, demo, supabase } from './supabase';
 import { cachedSessionLimits,offlineExpired,inactive } from './session-policy';
@@ -6,7 +7,7 @@ import {localProductionTasks} from './schedules';
 import {introTrainingContent,introAssessment} from './learning-demo';
 import { demoConfig, demoEdges, demoIdentity, demoLots, demoSuppliers, demoTasks, ids } from './demo';
 import { actionClass, envelopeSchema, type Config, type Envelope, type Identity, type Lot, type Supplier, type Task } from './domain';
-export interface Snapshot { trainingHistory:Row[]; trainingAssets:Row[]; cooperatives:Row[]; lots: Lot[]; suppliers: Supplier[]; tasks: Task[]; config: Config; records: Row[]; stageEvents:Row[]; attachments:Row[]; deviations: Row[]; equipment: Row[]; training: Row[]; completions: Row[]; packaging: Row[]; sales: Row[]; recalls: Row[]; notifications: Row[]; audits: Row[]; members: Row[]; devices: Row[]; configs: Row[]; edges: {input_lot_id:string;output_lot_id:string}[]; }
+export interface Snapshot { materialBalances:Row[]; dispositions:Row[]; trainingHistory:Row[]; trainingAssets:Row[]; cooperatives:Row[]; lots: Lot[]; suppliers: Supplier[]; tasks: Task[]; config: Config; records: Row[]; stageEvents:Row[]; attachments:Row[]; deviations: Row[]; equipment: Row[]; training: Row[]; completions: Row[]; packaging: Row[]; sales: Row[]; recalls: Row[]; notifications: Row[]; audits: Row[]; members: Row[]; devices: Row[]; configs: Row[]; edges: {input_lot_id:string;output_lot_id:string;quantity?:number;unit?:string}[]; }
 export type Row = Record<string, unknown> & { id?: string };
 export async function cachedIdentity(): Promise<Identity|null> {
  if(demo)return demoIdentity;const identity=(await db.cache.get('identity'))?.value as Identity|undefined;if(!identity)return null;
@@ -17,7 +18,7 @@ export async function cachedIdentity(): Promise<Identity|null> {
 export async function snapshot(identity: Identity): Promise<Snapshot> {
  const key=`snapshot:${identity.id}`;
  let result: Snapshot;
- if (demo) result={trainingHistory:[],trainingAssets:[],cooperatives:[{id:ids.coop,name:'Akkar Harvest',code:'AKR01',region:'Akkar',status:'active'}],lots:demoLots,suppliers:demoSuppliers,tasks:demoTasks,config:demoConfig,records:[],stageEvents:[],attachments:[],deviations:[],equipment:[{id:'eq-1',label:'PH-02',type:'pH meter',next_due_at:new Date(Date.now()+86400000).toISOString()}],training:[{id:'70000000-0000-4000-8000-000000000001',module_key:'gmp',version:1,content:introTrainingContent,assessment:introAssessment}],completions:[],packaging:[],sales:[],recalls:[],notifications:[],audits:[],members:[{...demoIdentity}],devices:[{id:ids.device,label:'Cooperative phone 1'}],configs:[{...demoConfig}],edges:demoEdges};
+ if (demo) result={materialBalances:[],dispositions:[],trainingHistory:[],trainingAssets:[],cooperatives:[{id:ids.coop,name:'Akkar Harvest',code:'AKR01',region:'Akkar',status:'active'}],lots:demoLots,suppliers:demoSuppliers,tasks:demoTasks,config:demoConfig,records:[],stageEvents:[],attachments:[],deviations:[],equipment:[{id:'eq-1',label:'PH-02',type:'pH meter',next_due_at:new Date(Date.now()+86400000).toISOString()}],training:[{id:'70000000-0000-4000-8000-000000000001',module_key:'gmp',version:1,content:introTrainingContent,assessment:introAssessment}],completions:[],packaging:[],sales:[],recalls:[],notifications:[],audits:[],members:[{...demoIdentity}],devices:[{id:ids.device,label:'Cooperative phone 1'}],configs:[{...demoConfig}],edges:demoEdges};
  else {
  const cached=(await db.cache.get(key))?.value as Snapshot|undefined;
  if (!navigator.onLine) { if(cached)return overlay(cached,identity);throw new Error('userNotCached'); }
@@ -26,10 +27,11 @@ export async function snapshot(identity: Identity): Promise<Snapshot> {
  const revocation=await supabase.from('device').select('revoked_at').eq('id',device).maybeSingle();
  if(revocation.data?.revoked_at){await revokeLocalDevice();throw new Error('deviceRevoked');}
  if(identity.roles.includes('donor')){
- const viewer:Snapshot={trainingHistory:[],trainingAssets:[],cooperatives:[],lots:[],suppliers:[],tasks:[],records:[],stageEvents:[],attachments:[],deviations:[],equipment:[],training:[],completions:[],packaging:[],sales:[],recalls:[],notifications:[],audits:[],members:[],devices:[],configs:[],edges:[],config:{id:'',placeholder:false,definition:{stages:[],checkpoints:[],whey_max_age_hours:0,shelf_life_days:0,multi_lot:false,blending_enabled:false,self_release:false,lab_before_release:false}}};
+ const viewer:Snapshot={materialBalances:[],dispositions:[],trainingHistory:[],trainingAssets:[],cooperatives:[],lots:[],suppliers:[],tasks:[],records:[],stageEvents:[],attachments:[],deviations:[],equipment:[],training:[],completions:[],packaging:[],sales:[],recalls:[],notifications:[],audits:[],members:[],devices:[],configs:[],edges:[],config:{id:'',placeholder:false,definition:{stages:[],checkpoints:[],whey_max_age_hours:0,shelf_life_days:0,multi_lot:false,blending_enabled:false,self_release:false,lab_before_release:false}}};
  await db.cache.put({key,value:viewer});return viewer;
  }
- const tables=['lot','supplier','task','operational_record','deviation','equipment','training_module','training_completion','packaging_detail','sale','recall','notification','audit_event','membership','device','config_version','consumption','stage_event','attachment','cooperative','training_asset'];
+ const tables=['lot','supplier','task','operational_record','deviation','equipment','training_module','training_completion','packaging_detail','sale','recall','notification','audit_event','membership','device','config_version','consumption','stage_event','attachment','cooperative','training_asset','material_disposition'];
+ const reads=await supabase.from('notification_receipt').select('notification_id,read_at').eq('user_id',identity.id);if(reads.error)throw reads.error;
  const rows=await Promise.all(tables.map(async table=>{
  const all:Row[]=[];for(let offset=0;;offset+=1000){const reply=await supabase!.from(table).select('*').order(table==='membership'?'user_id':table==='packaging_detail'?'lot_id':'id').range(offset,offset+999);if(reply.error)throw new Error(reply.error.message);all.push(...reply.data);if(reply.data.length<1000)break;}return all;
  }));
@@ -40,12 +42,14 @@ export async function snapshot(identity: Identity): Promise<Snapshot> {
  const effectiveConfig=config??setupDraft!;
  const lots=rows[0] as unknown as Lot[];
  const byId=new Map<string,number>();for(let offset=0;;offset+=1000){const balances=await supabase.rpc('lot_balances').order('id').range(offset,offset+999);if(balances.error)throw new Error(balances.error.message);for(const b of balances.data as {id:string;available:number}[])byId.set(b.id,Number(b.available));if(balances.data.length<1000)break;}lots.forEach(l=>{l.available=byId.get(l.id)??0;l.sync_status='synced';});
- result={trainingHistory:rows[6],trainingAssets:rows[20],cooperatives:rows[19],lots,suppliers:rows[1] as unknown as Supplier[],tasks:rows[2] as unknown as Task[],records:rows[3],stageEvents:rows[17],attachments:rows[18],deviations:rows[4],equipment:rows[5],training:rows[6].filter(module=>module.config_version_id===effectiveConfig.id&&(String(module.effective_at)==='-infinity'||Date.parse(String(module.effective_at))<=Date.now())&&!rows[6].some(newer=>newer.module_key===module.module_key&&newer.config_version_id===module.config_version_id&&Number(newer.version)>Number(module.version)&&(String(newer.effective_at)==='-infinity'||Date.parse(String(newer.effective_at))<=Date.now()))),completions:rows[7],packaging:rows[8],sales:rows[9],recalls:rows[10],notifications:rows[11],audits:rows[12],members:rows[13],devices:rows[14],configs:rows[15],edges:rows[16] as unknown as Snapshot['edges'],config:effectiveConfig};
+ const materialBalances:Row[]=[];for(let offset=0;;offset+=1000){const response=await supabase.rpc('material_balances').range(offset,offset+999);if(response.error)throw response.error;materialBalances.push(...response.data);if(response.data.length<1000)break;}
+ result={materialBalances,dispositions:rows[21],trainingHistory:rows[6],trainingAssets:rows[20],cooperatives:rows[19],lots,suppliers:rows[1] as unknown as Supplier[],tasks:rows[2] as unknown as Task[],records:rows[3],stageEvents:rows[17],attachments:rows[18],deviations:rows[4],equipment:rows[5],training:rows[6].filter(module=>module.config_version_id===effectiveConfig.id&&(String(module.effective_at)==='-infinity'||Date.parse(String(module.effective_at))<=Date.now())&&!rows[6].some(newer=>newer.module_key===module.module_key&&newer.config_version_id===module.config_version_id&&Number(newer.version)>Number(module.version)&&(String(newer.effective_at)==='-infinity'||Date.parse(String(newer.effective_at))<=Date.now()))),completions:rows[7],packaging:rows[8],sales:rows[9],recalls:rows[10],notifications:rows[11].map(row=>({...row,read_at:reads.data.find(read=>read.notification_id===row.id)?.read_at??null})),audits:rows[12],members:rows[13],devices:rows[14],configs:rows[15],edges:rows[16] as unknown as Snapshot['edges'],config:effectiveConfig};
  }
  await db.cache.put({key,value:result});return overlay(result,identity);
 }
 async function overlay(data: Snapshot,identity: Identity) {
  const result=structuredClone(data);
+ for(const read of await db.cache.where('key').startsWith(`notification-read:${identity.id}:`).toArray()){const notification=result.notifications.find(row=>row.id===read.key.split(':').at(-1));if(notification)notification.read_at=read.value;}
  const entries=await db.outbox.filter(e=>e.envelope.author_id===identity.id && (demo||e.status!=='synced')).toArray();
  entries.sort((a,b)=>(a.sequence??0)-(b.sequence??0)||a.envelope.observed_at.localeCompare(b.envelope.observed_at));
  for(const entry of entries){const e=entry.envelope;const p=e.payload;
@@ -58,7 +62,8 @@ async function overlay(data: Snapshot,identity: Identity) {
  if(['sample','lab','note','storage_inspection','handover'].includes(e.action))result.records.push({id:e.id,lot_id:p.lot_id,kind:e.action,payload:p.values??p,observed_at:e.observed_at,sync_status:entry.status});
  if(e.action==='deviation')result.deviations.push({id:e.id,...p,sync_status:entry.status});
  if(e.action==='training'&&entry.status!=='conflict')result.completions.push({id:e.id,user_id:e.author_id,...p});
- if(e.action==='allocation'&&entry.status!=='conflict'){result.edges.push({input_lot_id:String(p.input_lot_id),output_lot_id:String(p.output_lot_id)});const input=result.lots.find(l=>l.id===p.input_lot_id);if(input)input.available=(input.available??0)-Number(p.quantity);}
+ if(e.action==='material_disposition'&&entry.status!=='conflict'){const lot=result.lots.find(l=>l.id===p.lot_id);if(lot){lot.available=(lot.available??0)-Number(p.quantity);if(p.close_lot)lot.state='closed';}const balance=result.materialBalances?.find(b=>b.id===p.lot_id);if(balance){balance.remaining=Number(balance.remaining)-Number(p.quantity);balance[String(p.kind)]=Number(balance[String(p.kind)]??0)+Number(p.quantity);}result.dispositions??=[];result.dispositions.push({id:e.id,...p,observed_at:e.observed_at,sync_status:entry.status});}
+ if(e.action==='allocation'&&entry.status!=='conflict'){result.edges.push({input_lot_id:String(p.input_lot_id),output_lot_id:String(p.output_lot_id),quantity:Number(p.quantity),unit:String(p.unit)});const input=result.lots.find(l=>l.id===p.input_lot_id);if(input)input.available=(input.available??0)-Number(p.quantity);const balance=result.materialBalances?.find(b=>b.id===p.input_lot_id);if(balance){balance.allocated=Number(balance.allocated)+Number(p.quantity);balance.remaining=Number(balance.remaining)-Number(p.quantity);}}
  if(entry.status==='conflict')result.tasks.unshift({id:`conflict:${e.id}`,kind:'sync_conflict',status:'open',due_at:e.observed_at,details:{error:entry.error,receipt_id:e.id}});
  }
  if(!demo&&!navigator.onLine){result.tasks=result.tasks.filter(task=>!['checkpoint_due','stage_overdue'].includes(task.kind));result.tasks.push(...localProductionTasks(result));}
@@ -77,6 +82,7 @@ export async function synchronize(identity: Identity) {
  if(demo||!supabase||!navigator.onLine)return;
  const session=await supabase.auth.getSession();
  if(session.data.session?.user.id!==identity.id){const cached=(await db.cache.get(`session:${identity.id}`))?.value as {session:{access_token:string;refresh_token:string}}|undefined;if(!cached)throw new Error('sessionExpired');const restored=await supabase.auth.setSession(cached.session);if(restored.error)throw new Error('sessionExpired');}
+ await flushNotificationReads(identity);
  await syncOutbox(async(envelope:Envelope)=>{const {data,error}=await supabase!.functions.invoke('sync',{body:{records:[envelope]}});if(error)throw error;return data.receipts[0];},identity.id);
  const media=await db.media.filter(m=>!m.uploaded).toArray();
  for(const entry of media){const receipt=await db.outbox.get(entry.record_id);if(receipt?.status!=='synced'||receipt.envelope.author_id!==identity.id)continue;

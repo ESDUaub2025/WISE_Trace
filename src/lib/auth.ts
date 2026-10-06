@@ -29,9 +29,11 @@ export async function login(username:string,password:string,pin:string,factorId?
 export async function switchUser(id:string,pin:string){
  const local=(await db.cache.get(`session:${id}`))?.value as LocalSession|undefined;
  if(!local)throw new Error('userNotCached');if(offlineExpired(local.authenticated_at,Date.now(),await cachedSessionLimits(id)))throw new Error('sessionExpired');
- const attempts=Number(sessionStorage.getItem(`pin-attempts:${id}`)??0);if(attempts>=5)throw new Error('authFailed');
- if(!await verifyPin(pin,local.verifier)){sessionStorage.setItem(`pin-attempts:${id}`,String(attempts+1));throw new Error('authFailed');}
- sessionStorage.removeItem(`pin-attempts:${id}`);
+ const key=`pin-attempts:${id}`;const failure=(await db.cache.get(key))?.value as {attempts:number;blockedUntil:number}|undefined;
+ if(failure&&failure.blockedUntil>Date.now())throw new Error('pinLocked');
+ const attempts=failure?.blockedUntil&&failure.blockedUntil<=Date.now()?0:failure?.attempts??0;
+ if(!await verifyPin(pin,local.verifier)){await db.cache.put({key,value:{attempts:attempts+1,blockedUntil:attempts+1>=5?Date.now()+15*60000:0}});throw new Error('authFailed');}
+ await db.cache.delete(key);
  if(navigator.onLine&&supabase){const session=await supabase.auth.setSession(local.session);if(session.error)throw session.error;}
  await db.cache.put({key:'identity',value:local.identity});markActive(id);return local.identity;
 }

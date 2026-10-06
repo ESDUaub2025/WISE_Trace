@@ -234,6 +234,7 @@ nodes:
   - src/lib/domain.ts::Task
   - src/lib/domain.ts::actionClass
   - src/lib/domain.ts::allocationCheck
+  - src/lib/domain.ts::recallTrace
   - src/lib/domain.ts::trace
   source: scanned
   confidence: medium
@@ -396,6 +397,7 @@ nodes:
   artifacts:
   - supabase/functions/notifications/index.ts
   symbols:
+  - supabase/functions/notifications/index.ts::Alert
   - supabase/functions/notifications/index.ts::LogProvider
   - supabase/functions/notifications/index.ts::NotificationProvider
   source: scanned
@@ -1050,6 +1052,204 @@ nodes:
   - supabase/migrations/202610060050_future_training_tasks.sql
   source: scanned
   confidence: medium
+- id: F_SRC_I18N_TRANSLATIONS_TEST_TS
+  type: FILE
+  title: src/i18n/translations.test.ts
+  artifacts:
+  - src/i18n/translations.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LABEL_CARD_TSX
+  type: FILE
+  title: src/label-card.tsx
+  artifacts:
+  - src/label-card.tsx
+  symbols:
+  - src/label-card.tsx::LabelCard
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_LABELS_TEST_TS
+  type: FILE
+  title: src/lib/labels.test.ts
+  artifacts:
+  - src/lib/labels.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_LABELS_TS
+  type: FILE
+  title: src/lib/labels.ts
+  artifacts:
+  - src/lib/labels.ts
+  symbols:
+  - src/lib/labels.ts::LabelManifest
+  - src/lib/labels.ts::PrinterCharacteristic
+  - src/lib/labels.ts::PrinterDevice
+  - src/lib/labels.ts::labelManifest
+  - src/lib/labels.ts::labelSheet
+  - src/lib/labels.ts::localized
+  - src/lib/labels.ts::printBluetooth
+  - src/lib/labels.ts::renderLabel
+  - src/lib/labels.ts::thermalLabel
+  - src/lib/labels.ts::thermalRaster
+  source: scanned
+  confidence: medium
+- id: F_SRC_MATERIAL_BALANCE_TSX
+  type: FILE
+  title: src/material-balance.tsx
+  artifacts:
+  - src/material-balance.tsx
+  symbols:
+  - src/material-balance.tsx::MaterialBalance
+  source: scanned
+  confidence: medium
+- id: F_SRC_PACKAGING_FIELDS_TSX
+  type: FILE
+  title: src/packaging-fields.tsx
+  artifacts:
+  - src/packaging-fields.tsx
+  symbols:
+  - src/packaging-fields.tsx::PackagingFields
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL
+  type: FILE
+  title: supabase/migrations/202610060051_material_disposition.sql
+  artifacts:
+  - supabase/migrations/202610060051_material_disposition.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL
+  type: FILE
+  title: supabase/migrations/202610060052_material_disposition_sync.sql
+  artifacts:
+  - supabase/migrations/202610060052_material_disposition_sync.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL
+  type: FILE
+  title: supabase/migrations/202610060053_material_balance_order.sql
+  artifacts:
+  - supabase/migrations/202610060053_material_balance_order.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL
+  type: FILE
+  title: supabase/migrations/202610060054_packaging_yield_review.sql
+  artifacts:
+  - supabase/migrations/202610060054_packaging_yield_review.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION
+  type: FILE
+  title: supabase/migrations/202610060055_impact_dictionary_calculations.sql
+  artifacts:
+  - supabase/migrations/202610060055_impact_dictionary_calculations.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_IMPACT_TEST_SQL
+  type: TEST
+  title: supabase/tests/impact.test.sql
+  artifacts:
+  - supabase/tests/impact.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL
+  type: TEST
+  title: supabase/tests/material-balance.test.sql
+  artifacts:
+  - supabase/tests/material-balance.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_YIELD_TEST_SQL
+  type: TEST
+  title: supabase/tests/yield.test.sql
+  artifacts:
+  - supabase/tests/yield.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_LABELS_SPEC_TS
+  type: TEST
+  title: tests/live/labels.spec.ts
+  artifacts:
+  - tests/live/labels.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS
+  type: TEST
+  title: tests/live/material-balance.spec.ts
+  artifacts:
+  - tests/live/material-balance.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_ATTENTION_TEST_TS
+  type: FILE
+  title: src/lib/attention.test.ts
+  artifacts:
+  - src/lib/attention.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_ATTENTION_TS
+  type: FILE
+  title: src/lib/attention.ts
+  artifacts:
+  - src/lib/attention.ts
+  symbols:
+  - src/lib/attention.ts::attentionTasks
+  - src/lib/attention.ts::responsibleFor
+  source: scanned
+  confidence: medium
+- id: F_SRC_NOTIFICATIONS_TSX
+  type: FILE
+  title: src/notifications.tsx
+  artifacts:
+  - src/notifications.tsx
+  symbols:
+  - src/notifications.tsx::Notifications
+  - src/notifications.tsx::flushNotificationReads
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL
+  type: FILE
+  title: supabase/migrations/202610060056_notification_preferences.sql
+  artifacts:
+  - supabase/migrations/202610060056_notification_preferences.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610060057_task_notifications.sql
+  artifacts:
+  - supabase/migrations/202610060057_task_notifications.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO
+  type: FILE
+  title: supabase/migrations/202610060058_closed_material_classification.sql
+  artifacts:
+  - supabase/migrations/202610060058_closed_material_classification.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ
+  type: FILE
+  title: supabase/migrations/202610060059_impact_activity_boundaries.sql
+  artifacts:
+  - supabase/migrations/202610060059_impact_activity_boundaries.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL
+  type: TEST
+  title: supabase/tests/notifications.test.sql
+  artifacts:
+  - supabase/tests/notifications.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS
+  type: TEST
+  title: tests/live/notifications.spec.ts
+  artifacts:
+  - tests/live/notifications.spec.ts
+  source: scanned
+  confidence: medium
 edges:
 - from: SYS_FRONTEND
   to: CMP_DISCOVERED_FILES
@@ -1681,6 +1881,131 @@ edges:
   type: CONTAINS
   provenance:
     generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_I18N_TRANSLATIONS_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LABEL_CARD_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_LABELS_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_LABELS_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_MATERIAL_BALANCE_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_PACKAGING_FIELDS_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_IMPACT_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_YIELD_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_LABELS_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_ATTENTION_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_ATTENTION_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_NOTIFICATIONS_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
 - from: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
@@ -1902,6 +2227,45 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_ATTENTION_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/attention.ts
+      import: ./lib/attention
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/lib/schedules.ts
+      import: ./lib/schedules
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_NOTIFICATIONS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/notifications.tsx
+      import: ./notifications
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_DASHBOARD_TSX
   to: F_SRC_LIB_SUPABASE_TS
   type: CONSUMES
@@ -1951,6 +2315,32 @@ edges:
     - source: src/dashboard.tsx
       target: src/features.tsx
       import: ./features
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DASHBOARD_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/dashboard.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DASHBOARD_TSX
+  to: F_SRC_LIB_REPORTS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/dashboard.tsx
+      target: src/lib/reports.ts
+      import: ./lib/reports
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2150,6 +2540,45 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_SRC_FEATURES_TSX
+  to: F_SRC_MATERIAL_BALANCE_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/material-balance.tsx
+      import: ./material-balance
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_LABEL_CARD_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/label-card.tsx
+      import: ./label-card
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_PACKAGING_FIELDS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/packaging-fields.tsx
+      import: ./packaging-fields
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
   to: F_SRC_APP_TSX
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
@@ -2211,6 +2640,136 @@ edges:
     - source: src/knowledge.tsx
       target: src/lib/domain.ts
       import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LABEL_CARD_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/label-card.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LABEL_CARD_TSX
+  to: F_SRC_LIB_LABELS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/label-card.tsx
+      target: src/lib/labels.ts
+      import: ./lib/labels
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LABEL_CARD_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/label-card.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LABEL_CARD_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/label-card.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_ATTENTION_TEST_TS
+  to: F_SRC_LIB_ATTENTION_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/attention.test.ts
+      target: src/lib/attention.ts
+      import: ./attention
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_ATTENTION_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/attention.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_ATTENTION_TEST_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/attention.test.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_ATTENTION_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/attention.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_ATTENTION_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/attention.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_ATTENTION_TS
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/attention.ts
+      target: src/lib/schedules.ts
+      import: ./schedules
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2315,6 +2874,19 @@ edges:
     - source: src/lib/auth.ts
       target: src/lib/sealed-ticket.ts
       import: ./sealed-ticket
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_NOTIFICATIONS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/notifications.tsx
+      import: ../notifications
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2458,6 +3030,58 @@ edges:
     - source: src/lib/domain.test.ts
       target: src/lib/demo.ts
       import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_LABELS_TEST_TS
+  to: F_SRC_LIB_LABELS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/labels.test.ts
+      target: src/lib/labels.ts
+      import: ./labels
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_LABELS_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/labels.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_LABELS_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/labels.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_LABELS_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/labels.ts
+      target: src/lib/domain.ts
+      import: ./domain
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2877,6 +3501,97 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_MATERIAL_BALANCE_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/material-balance.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MATERIAL_BALANCE_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/material-balance.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TSX
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.tsx
+      target: src/offline/db.ts
+      import: ./offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_NOTIFICATIONS_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_OFFLINE_DB_TEST_TS
   to: F_SRC_OFFLINE_DB_TS
   type: CONSUMES
@@ -2926,6 +3641,45 @@ edges:
     - source: src/offline/db.ts
       target: src/lib/domain.ts
       import: ../lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_PACKAGING_FIELDS_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/packaging-fields.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_PACKAGING_FIELDS_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/packaging-fields.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_PACKAGING_FIELDS_TSX
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/packaging-fields.tsx
+      target: src/lib/schedules.ts
+      import: ./lib/schedules
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -3223,6 +3977,45 @@ edges:
     generator: projectgraph.imports.v1
     imports:
     - source: tests/live/acceptance.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_LABELS_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/labels.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/material-balance.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/notifications.spec.ts
       target: tests/live/fixtures.ts
       import: ./fixtures
       line: null

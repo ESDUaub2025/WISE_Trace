@@ -26,8 +26,13 @@
 
 **Consumer:** Scan the package QR for origin, ingredients, allergens, best-before and storage advice. A recalled product shows a recall notice. Unknown or unreleased product information is unavailable. Follow the printed product label.
 
-**Learning offline:** Open Knowledge to read illustrated steps, FAQs and troubleshooting in Arabic or English. Use ?Download module for offline use? while connected to store its private pictures/videos for the signed-in person. Complete the picture assessment; incorrect answers require another attempt. Checkpoint help follows the batch?s original SOP step.
+**Learning offline:** Open Knowledge to read illustrated steps, FAQs and troubleshooting in Arabic or English. Use “Download module for offline use” while connected to store its private pictures/videos for the signed-in person. Complete the picture assessment; incorrect answers require another attempt. Checkpoint help follows the batch’s original SOP step.
 
 **Training administration:** Admins upload pictures or videos (maximum three minutes, compressed output up to 10 MB) and publish bilingual versioned modules against an approved SOP. Configure optional refresher days; 0 means no expiry. Approving a changed SOP versions its required training and assigns affected producers a 14-day refresher task. New installations must publish required introductory training before producers can create batches.
 
 **Receipt measurements:** Each whey receipt shows the measurements configured by its SOP. Enter readings and select the instruments used; blank optional fields stay blank. Confirm or edit each supplier declaration separately. A calibration warning calls for supervisor review. Ingredient and packaging-material receipts retain supplier lots, quantity, unit, receipt time and any known expiry.
+**Material balance:** Open a whey or ingredient lot to see received, allocated, disposed, diverted and remaining quantities. Record disposal with a method, or diversion with a recipient. Select closure only after recording all remaining material. Offline entries stay provisional until synchronized.
+
+**Labels:** Open a packaging lot, choose the language and number of copies, then download its A4 label PDF. Print at actual size. Bluetooth printing is available when the approved SOP contains a compatible printer profile. Review final label content with the Food-Safety Lead before production use.
+
+**Notifications:** Open the bell to read alerts and mark them read. Your acknowledgments survive offline reloads. In Organization, Alert preferences records your international phone number and explicit critical-alert consent; save with consent unchecked to withdraw. External delivery uses a development log provider until configured for production.
