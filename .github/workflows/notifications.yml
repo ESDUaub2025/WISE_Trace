@@ -1,0 +1,28 @@
+name: Scheduled task and push delivery
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/15 * * * *'
+permissions:
+  contents: read
+concurrency:
+  group: scheduled-notification-delivery
+  cancel-in-progress: false
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Process configured alerts
+        env:
+          SCHEDULER_URL: ${{ secrets.SCHEDULER_URL }}
+          SCHEDULER_SECRET: ${{ secrets.SCHEDULER_SECRET }}
+        shell: bash
+        run: |
+          if [ -z "$SCHEDULER_URL" ] || [ -z "$SCHEDULER_SECRET" ]; then
+            echo 'Hosted alert delivery is not configured.'
+            exit 0
+          fi
+          curl --fail --silent --show-error --max-time 100 \
+            --request POST --header "Authorization: Bearer $SCHEDULER_SECRET" \
+            --output /dev/null "$SCHEDULER_URL"

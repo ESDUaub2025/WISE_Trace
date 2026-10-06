@@ -389,6 +389,7 @@ nodes:
   - supabase/functions/_shared/http.ts::clients
   - supabase/functions/_shared/http.ts::json
   - supabase/functions/_shared/http.ts::key
+  - supabase/functions/_shared/http.ts::serverClient
   source: scanned
   confidence: medium
 - id: F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS
@@ -703,6 +704,7 @@ nodes:
   - tests/live/fixtures.ts::release
   - tests/live/fixtures.ts::rpc
   - tests/live/fixtures.ts::send
+  - tests/live/fixtures.ts::serviceClient
   source: scanned
   confidence: medium
 - id: F_VITE_CONFIG_TS
@@ -1040,9 +1042,6 @@ nodes:
   title: tests/live/training.spec.ts
   artifacts:
   - tests/live/training.spec.ts
-  symbols:
-  - tests/live/training.spec.ts::loginAdmin
-  - tests/live/training.spec.ts::totp
   source: scanned
   confidence: medium
 - id: F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL
@@ -1248,6 +1247,170 @@ nodes:
   title: tests/live/notifications.spec.ts
   artifacts:
   - tests/live/notifications.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_PUBLIC_PUSH_EVENTS_JS
+  type: FILE
+  title: public/push-events.js
+  artifacts:
+  - public/push-events.js
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_GENERATE_VAPID_MJS
+  type: FILE
+  title: scripts/generate-vapid.mjs
+  artifacts:
+  - scripts/generate-vapid.mjs
+  source: scanned
+  confidence: medium
+- id: F_SRC_CONFIGURATION_FILES_TSX
+  type: FILE
+  title: src/configuration-files.tsx
+  artifacts:
+  - src/configuration-files.tsx
+  symbols:
+  - src/configuration-files.tsx::ConfigurationFiles
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_CONFIG_FILES_TEST_TS
+  type: FILE
+  title: src/lib/config-files.test.ts
+  artifacts:
+  - src/lib/config-files.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_CONFIG_FILES_TS
+  type: FILE
+  title: src/lib/config-files.ts
+  artifacts:
+  - src/lib/config-files.ts
+  symbols:
+  - src/lib/config-files.ts::configurationFile
+  - src/lib/config-files.ts::importConfiguration
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_VAPID_TEST_TS
+  type: FILE
+  title: src/lib/vapid.test.ts
+  artifacts:
+  - src/lib/vapid.test.ts
+  symbols:
+  - src/lib/vapid.test.ts::encode
+  - src/lib/vapid.test.ts::keys
+  source: scanned
+  confidence: medium
+- id: F_SRC_PUSH_SETTINGS_TSX
+  type: FILE
+  title: src/push-settings.tsx
+  artifacts:
+  - src/push-settings.tsx
+  symbols:
+  - src/push-settings.tsx::PushSettings
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS
+  type: FILE
+  title: supabase/functions/_shared/push.ts
+  artifacts:
+  - supabase/functions/_shared/push.ts
+  symbols:
+  - supabase/functions/_shared/push.ts::deliverPush
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS
+  type: FILE
+  title: supabase/functions/_shared/vapid.ts
+  artifacts:
+  - supabase/functions/_shared/vapid.ts
+  symbols:
+  - supabase/functions/_shared/vapid.ts::PushProviderError
+  - supabase/functions/_shared/vapid.ts::VapidKeys
+  - supabase/functions/_shared/vapid.ts::decode
+  - supabase/functions/_shared/vapid.ts::encode
+  - supabase/functions/_shared/vapid.ts::pushEndpoint
+  - supabase/functions/_shared/vapid.ts::sendPush
+  - supabase/functions/_shared/vapid.ts::utf8
+  - supabase/functions/_shared/vapid.ts::vapidAuthorization
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610060060_push_subscriptions.sql
+  artifacts:
+  - supabase/migrations/202610060060_push_subscriptions.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL
+  type: FILE
+  title: supabase/migrations/202610060061_scoped_configuration.sql
+  artifacts:
+  - supabase/migrations/202610060061_scoped_configuration.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL
+  type: FILE
+  title: supabase/migrations/202610060062_quality_records.sql
+  artifacts:
+  - supabase/migrations/202610060062_quality_records.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL
+  type: FILE
+  title: supabase/migrations/202610060063_release_intervals.sql
+  artifacts:
+  - supabase/migrations/202610060063_release_intervals.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL
+  type: TEST
+  title: supabase/tests/configuration.test.sql
+  artifacts:
+  - supabase/tests/configuration.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_PUSH_TEST_SQL
+  type: TEST
+  title: supabase/tests/push.test.sql
+  artifacts:
+  - supabase/tests/push.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_QUALITY_TEST_SQL
+  type: TEST
+  title: supabase/tests/quality.test.sql
+  artifacts:
+  - supabase/tests/quality.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL
+  type: TEST
+  title: supabase/tests/release-intervals.test.sql
+  artifacts:
+  - supabase/tests/release-intervals.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_CONFIGURATION_SPEC_TS
+  type: TEST
+  title: tests/live/configuration.spec.ts
+  artifacts:
+  - tests/live/configuration.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_MFA_TS
+  type: TEST
+  title: tests/live/mfa.ts
+  artifacts:
+  - tests/live/mfa.ts
+  symbols:
+  - tests/live/mfa.ts::loginMfa
+  - tests/live/mfa.ts::totp
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_SELF_RELEASE_SPEC_TS
+  type: TEST
+  title: tests/live/self-release.spec.ts
+  artifacts:
+  - tests/live/self-release.spec.ts
   source: scanned
   confidence: medium
 edges:
@@ -2006,6 +2169,106 @@ edges:
   type: CONTAINS
   provenance:
     generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_PUBLIC_PUSH_EVENTS_JS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_GENERATE_VAPID_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_CONFIGURATION_FILES_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_CONFIG_FILES_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_CONFIG_FILES_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_VAPID_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_PUSH_SETTINGS_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_PUSH_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_QUALITY_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_CONFIGURATION_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_MFA_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_SELF_RELEASE_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
 - from: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
@@ -2266,6 +2529,45 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_CONFIGURATION_FILES_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/configuration-files.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_CONFIGURATION_FILES_TSX
+  to: F_SRC_LIB_CONFIG_FILES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/configuration-files.tsx
+      target: src/lib/config-files.ts
+      import: ./lib/config-files
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_CONFIGURATION_FILES_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/configuration-files.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_DASHBOARD_TSX
   to: F_SRC_LIB_SUPABASE_TS
   type: CONSUMES
@@ -2393,6 +2695,19 @@ edges:
     - source: src/evidence.tsx
       target: src/offline/db.ts
       import: ./offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_CONFIGURATION_FILES_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/configuration-files.tsx
+      import: ./configuration-files
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2874,6 +3189,45 @@ edges:
     - source: src/lib/auth.ts
       target: src/lib/sealed-ticket.ts
       import: ./sealed-ticket
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_CONFIG_FILES_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/config-files.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_CONFIG_FILES_TEST_TS
+  to: F_SRC_LIB_CONFIG_FILES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/config-files.test.ts
+      target: src/lib/config-files.ts
+      import: ./config-files
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_CONFIG_FILES_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/config-files.ts
+      target: src/lib/domain.ts
+      import: ./domain
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -3423,6 +3777,19 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_LIB_VAPID_TEST_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/vapid.test.ts
+      target: supabase/functions/_shared/vapid.ts
+      import: ../../supabase/functions/_shared/vapid
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_MAIN_TSX
   to: F_SRC_APP_TSX
   type: CONSUMES
@@ -3592,6 +3959,19 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_NOTIFICATIONS_TSX
+  to: F_SRC_PUSH_SETTINGS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/notifications.tsx
+      target: src/push-settings.tsx
+      import: ./push-settings
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_OFFLINE_DB_TEST_TS
   to: F_SRC_OFFLINE_DB_TS
   type: CONSUMES
@@ -3680,6 +4060,45 @@ edges:
     - source: src/packaging-fields.tsx
       target: src/lib/schedules.ts
       import: ./lib/schedules
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_PUSH_SETTINGS_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/push-settings.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_PUSH_SETTINGS_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/push-settings.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_PUSH_SETTINGS_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/push-settings.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -3891,6 +4310,19 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/_shared/push.ts
+      target: supabase/functions/_shared/vapid.ts
+      import: ./vapid.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS
   to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
   type: CONSUMES
@@ -3943,6 +4375,19 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/scheduled-tasks/index.ts
+      target: supabase/functions/_shared/push.ts
+      import: ../_shared/push.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS
   to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
   type: CONSUMES
@@ -3970,6 +4415,19 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_TESTS_LIVE_ACCEPTANCE_SPEC_TS
+  to: F_TESTS_LIVE_MFA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/acceptance.spec.ts
+      target: tests/live/mfa.ts
+      import: ./mfa
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_ACCEPTANCE_SPEC_TS
   to: F_TESTS_LIVE_FIXTURES_TS
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
@@ -3977,6 +4435,32 @@ edges:
     generator: projectgraph.imports.v1
     imports:
     - source: tests/live/acceptance.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_CONFIGURATION_SPEC_TS
+  to: F_TESTS_LIVE_MFA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/configuration.spec.ts
+      target: tests/live/mfa.ts
+      import: ./mfa
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_CONFIGURATION_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/configuration.spec.ts
       target: tests/live/fixtures.ts
       import: ./fixtures
       line: null
@@ -4008,6 +4492,19 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_TESTS_LIVE_MFA_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/mfa.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS
   to: F_TESTS_LIVE_FIXTURES_TS
   type: CONSUMES
@@ -4031,6 +4528,32 @@ edges:
     - source: tests/live/offline-receiving.spec.ts
       target: tests/live/fixtures.ts
       import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_SELF_RELEASE_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/self-release.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_TRAINING_SPEC_TS
+  to: F_TESTS_LIVE_MFA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/training.spec.ts
+      target: tests/live/mfa.ts
+      import: ./mfa
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium

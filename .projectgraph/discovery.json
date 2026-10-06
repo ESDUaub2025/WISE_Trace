@@ -161,6 +161,30 @@
       "confidence": "medium"
     },
     {
+      "source": "src/configuration-files.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/configuration-files.tsx",
+      "target": "src/lib/config-files.ts",
+      "import": "./lib/config-files",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/configuration-files.tsx",
+      "target": "src/lib/domain.ts",
+      "import": "./lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "src/dashboard.tsx",
       "target": "src/lib/supabase.ts",
       "import": "./lib/supabase",
@@ -236,6 +260,14 @@
       "source": "src/evidence.tsx",
       "target": "src/offline/db.ts",
       "import": "./offline/db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/configuration-files.tsx",
+      "import": "./configuration-files",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -532,6 +564,30 @@
       "source": "src/lib/auth.ts",
       "target": "src/lib/sealed-ticket.ts",
       "import": "./sealed-ticket",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/config-files.test.ts",
+      "target": "src/lib/demo.ts",
+      "import": "./demo",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/config-files.test.ts",
+      "target": "src/lib/config-files.ts",
+      "import": "./config-files",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/config-files.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -873,6 +929,14 @@
       "confidence": "medium"
     },
     {
+      "source": "src/lib/vapid.test.ts",
+      "target": "supabase/functions/_shared/vapid.ts",
+      "import": "../../supabase/functions/_shared/vapid",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "src/main.tsx",
       "target": "src/App.tsx",
       "import": "./App",
@@ -977,6 +1041,14 @@
       "confidence": "medium"
     },
     {
+      "source": "src/notifications.tsx",
+      "target": "src/push-settings.tsx",
+      "import": "./push-settings",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "src/offline/db.test.ts",
       "target": "src/offline/db.ts",
       "import": "./db",
@@ -1028,6 +1100,30 @@
       "source": "src/packaging-fields.tsx",
       "target": "src/lib/schedules.ts",
       "import": "./lib/schedules",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/push-settings.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/push-settings.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/push-settings.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -1161,6 +1257,14 @@
       "confidence": "medium"
     },
     {
+      "source": "supabase/functions/_shared/push.ts",
+      "target": "supabase/functions/_shared/vapid.ts",
+      "import": "./vapid.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "supabase/functions/notifications/index.ts",
       "target": "supabase/functions/_shared/http.ts",
       "import": "../_shared/http.ts",
@@ -1193,6 +1297,14 @@
       "confidence": "medium"
     },
     {
+      "source": "supabase/functions/scheduled-tasks/index.ts",
+      "target": "supabase/functions/_shared/push.ts",
+      "import": "../_shared/push.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "supabase/functions/sync/index.ts",
       "target": "supabase/functions/_shared/http.ts",
       "import": "../_shared/http.ts",
@@ -1210,6 +1322,30 @@
     },
     {
       "source": "tests/live/acceptance.spec.ts",
+      "target": "tests/live/mfa.ts",
+      "import": "./mfa",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "tests/live/acceptance.spec.ts",
+      "target": "tests/live/fixtures.ts",
+      "import": "./fixtures",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "tests/live/configuration.spec.ts",
+      "target": "tests/live/mfa.ts",
+      "import": "./mfa",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "tests/live/configuration.spec.ts",
       "target": "tests/live/fixtures.ts",
       "import": "./fixtures",
       "line": null,
@@ -1233,6 +1369,14 @@
       "confidence": "medium"
     },
     {
+      "source": "tests/live/mfa.ts",
+      "target": "tests/live/fixtures.ts",
+      "import": "./fixtures",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "tests/live/notifications.spec.ts",
       "target": "tests/live/fixtures.ts",
       "import": "./fixtures",
@@ -1244,6 +1388,22 @@
       "source": "tests/live/offline-receiving.spec.ts",
       "target": "tests/live/fixtures.ts",
       "import": "./fixtures",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "tests/live/self-release.spec.ts",
+      "target": "tests/live/fixtures.ts",
+      "import": "./fixtures",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "tests/live/training.spec.ts",
+      "target": "tests/live/mfa.ts",
+      "import": "./mfa",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -1406,6 +1566,26 @@
       "candidates": []
     },
     {
+      "file": "scripts/generate-vapid.mjs",
+      "import": "node:fs/promises",
+      "candidates": []
+    },
+    {
+      "file": "scripts/generate-vapid.mjs",
+      "import": "node:path",
+      "candidates": []
+    },
+    {
+      "file": "scripts/generate-vapid.mjs",
+      "import": "node:buffer",
+      "candidates": []
+    },
+    {
+      "file": "scripts/generate-vapid.mjs",
+      "import": "node:process",
+      "candidates": []
+    },
+    {
       "file": "scripts/live-api-check.mjs",
       "import": "node:child_process",
       "candidates": []
@@ -1536,6 +1716,11 @@
       "candidates": []
     },
     {
+      "file": "src/configuration-files.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
       "file": "src/dashboard.tsx",
       "import": "react",
       "candidates": []
@@ -1651,6 +1836,11 @@
       "candidates": []
     },
     {
+      "file": "src/lib/config-files.test.ts",
+      "import": "vitest",
+      "candidates": []
+    },
+    {
       "file": "src/lib/domain.test.ts",
       "import": "vitest",
       "candidates": []
@@ -1698,6 +1888,11 @@
     {
       "file": "src/lib/supabase.ts",
       "import": "@supabase/supabase-js",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/vapid.test.ts",
+      "import": "vitest",
       "candidates": []
     },
     {
@@ -1776,6 +1971,16 @@
       "candidates": []
     },
     {
+      "file": "src/push-settings.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/push-settings.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
       "file": "src/report-page.tsx",
       "import": "react",
       "candidates": []
@@ -1846,6 +2051,11 @@
       "candidates": []
     },
     {
+      "file": "supabase/functions/_shared/push.ts",
+      "import": "npm:@supabase/supabase-js@2.117.2",
+      "candidates": []
+    },
+    {
       "file": "supabase/functions/ocr/index.ts",
       "import": "npm:zod@4.6.5",
       "candidates": []
@@ -1876,11 +2086,6 @@
       "candidates": []
     },
     {
-      "file": "supabase/functions/scheduled-tasks/index.ts",
-      "import": "npm:@supabase/supabase-js@2.117.2",
-      "candidates": []
-    },
-    {
       "file": "supabase/functions/sync/index.ts",
       "import": "npm:zod@4.6.5",
       "candidates": []
@@ -1903,6 +2108,11 @@
     {
       "file": "tests/live/acceptance.spec.ts",
       "import": "qrcode",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/configuration.spec.ts",
+      "import": "@playwright/test",
       "candidates": []
     },
     {
@@ -1941,6 +2151,16 @@
       "candidates": []
     },
     {
+      "file": "tests/live/mfa.ts",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/mfa.ts",
+      "import": "node:crypto",
+      "candidates": []
+    },
+    {
       "file": "tests/live/notifications.spec.ts",
       "import": "node:child_process",
       "candidates": []
@@ -1961,13 +2181,13 @@
       "candidates": []
     },
     {
-      "file": "tests/live/training.spec.ts",
+      "file": "tests/live/self-release.spec.ts",
       "import": "@playwright/test",
       "candidates": []
     },
     {
       "file": "tests/live/training.spec.ts",
-      "import": "node:crypto",
+      "import": "@playwright/test",
       "candidates": []
     },
     {
@@ -2020,6 +2240,7 @@
     ],
     "playwright.config.ts": [],
     "playwright.live.config.ts": [],
+    "public/push-events.js": [],
     "scripts/bootstrap-owner.mjs": [],
     "scripts/browser-preview.mjs": [],
     "scripts/check-live-ui.mjs": [],
@@ -2033,6 +2254,7 @@
     "scripts/create-seed.mjs": [
       "uuid"
     ],
+    "scripts/generate-vapid.mjs": [],
     "scripts/live-api-check.mjs": [
       "rpc",
       "send"
@@ -2056,6 +2278,9 @@
     ],
     "src/components/ui/sheet.tsx": [
       "Sheet"
+    ],
+    "src/configuration-files.tsx": [
+      "ConfigurationFiles"
     ],
     "src/dashboard.tsx": [
       "Dashboard"
@@ -2098,6 +2323,11 @@
       "login",
       "logout",
       "switchUser"
+    ],
+    "src/lib/config-files.test.ts": [],
+    "src/lib/config-files.ts": [
+      "configurationFile",
+      "importConfiguration"
     ],
     "src/lib/data.ts": [
       "Row",
@@ -2200,6 +2430,10 @@
       "stop",
       "trainingAssetURL"
     ],
+    "src/lib/vapid.test.ts": [
+      "encode",
+      "keys"
+    ],
     "src/main.tsx": [],
     "src/management.tsx": [
       "RegistryFlow",
@@ -2227,6 +2461,9 @@
     "src/packaging-fields.tsx": [
       "PackagingFields"
     ],
+    "src/push-settings.tsx": [
+      "PushSettings"
+    ],
     "src/report-page.tsx": [
       "ReportPage"
     ],
@@ -2245,7 +2482,21 @@
       "authenticate",
       "clients",
       "json",
-      "key"
+      "key",
+      "serverClient"
+    ],
+    "supabase/functions/_shared/push.ts": [
+      "deliverPush"
+    ],
+    "supabase/functions/_shared/vapid.ts": [
+      "PushProviderError",
+      "VapidKeys",
+      "decode",
+      "encode",
+      "pushEndpoint",
+      "sendPush",
+      "utf8",
+      "vapidAuthorization"
     ],
     "supabase/functions/notifications/index.ts": [
       "Alert",
@@ -2266,6 +2517,7 @@
     "supabase/functions/user-admin/index.ts": [],
     "tests/flows.spec.ts": [],
     "tests/live/acceptance.spec.ts": [],
+    "tests/live/configuration.spec.ts": [],
     "tests/live/fixtures.ts": [
       "actor",
       "client",
@@ -2274,21 +2526,24 @@
       "readyBatch",
       "release",
       "rpc",
-      "send"
+      "send",
+      "serviceClient"
     ],
     "tests/live/labels.spec.ts": [],
     "tests/live/material-balance.spec.ts": [],
-    "tests/live/notifications.spec.ts": [],
-    "tests/live/offline-receiving.spec.ts": [],
-    "tests/live/training.spec.ts": [
-      "loginAdmin",
+    "tests/live/mfa.ts": [
+      "loginMfa",
       "totp"
     ],
+    "tests/live/notifications.spec.ts": [],
+    "tests/live/offline-receiving.spec.ts": [],
+    "tests/live/self-release.spec.ts": [],
+    "tests/live/training.spec.ts": [],
     "vite.config.ts": [],
     "vitest.config.ts": []
   },
   "truncated": false,
-  "scanned_files": 79,
+  "scanned_files": 91,
   "unsupported_files": [
     "supabase/migrations/202610060001_foundation.sql",
     "supabase/migrations/202610060002_operations.sql",
@@ -2349,24 +2604,33 @@
     "supabase/migrations/202610060057_task_notifications.sql",
     "supabase/migrations/202610060058_closed_material_classification.sql",
     "supabase/migrations/202610060059_impact_activity_boundaries.sql",
+    "supabase/migrations/202610060060_push_subscriptions.sql",
+    "supabase/migrations/202610060061_scoped_configuration.sql",
+    "supabase/migrations/202610060062_quality_records.sql",
+    "supabase/migrations/202610060063_release_intervals.sql",
     "supabase/seed.sql",
     "supabase/tests/bootstrap.test.sql",
+    "supabase/tests/configuration.test.sql",
     "supabase/tests/impact.test.sql",
     "supabase/tests/material-balance.test.sql",
     "supabase/tests/notifications.test.sql",
     "supabase/tests/offline-signoff.test.sql",
     "supabase/tests/production.test.sql",
+    "supabase/tests/push.test.sql",
+    "supabase/tests/quality.test.sql",
     "supabase/tests/receipt-measurements.test.sql",
+    "supabase/tests/release-intervals.test.sql",
     "supabase/tests/rules.test.sql",
     "supabase/tests/security.test.sql",
     "supabase/tests/training.test.sql",
     "supabase/tests/yield.test.sql"
   ],
   "hashes": {
-    "eslint.config.js": "697c178eaa83a55f4612727e2bc61c55c1078b7f970ced44bb86c70e29bf594c",
+    "eslint.config.js": "222fedbbff0663c3979d8cf3c70b85b1c38f0c9bb10fc696775c968da4eee9c6",
     "p/public.ts": "fc35dd8d3cc616dc2e74c1801074849e6c94ff6331f0779572318735453d219b",
     "playwright.config.ts": "012fd1027c8109b29990d55add449bc4beaa424f3e03eec0055aa21a6848a57b",
     "playwright.live.config.ts": "46ea59fd66024859f838e13775a62770bfa5667f2c1efc00e9d2472adc7b2aa3",
+    "public/push-events.js": "a5fed33b0dc433acd1d12de5d152b5ed14676187127c8edfa11e020590d4394f",
     "scripts/bootstrap-owner.mjs": "a04355aaa6c51e0bd02a12b59d12df526a3e640cf53a6f2e62085d3da0b8792b",
     "scripts/browser-preview.mjs": "b1a3da02ef617783a276aeb5380b4497b212398b37c6677471dd71b9d960c057",
     "scripts/check-live-ui.mjs": "40621c78e1eed2a3e6ec2ad58564ef7d1f37a6949113638420c0a938c596a233",
@@ -2374,15 +2638,17 @@
     "scripts/check-reports.mjs": "5f0d38f6c73cc6ed7f96186b0eb1ae3f389aff5e5c8a074962fd4a4dd3e8fe3a",
     "scripts/create-history-seed.mjs": "564d8ec6274496b7af245a43c241cf891beddfbd075134fe4a6319de3def012e",
     "scripts/create-seed.mjs": "88a35889a6a3b5bc07bedeea90713cfa88cdbc93035534d20d661cabcdc1de05",
+    "scripts/generate-vapid.mjs": "bbd68247ace2d6fdc7b9e0055b079e3ac8a57cf3551fcba0ffa94da68be6ee18",
     "scripts/live-api-check.mjs": "ad4ea1c3390954bd070ff20db3c9ad59c25e72364f7b83c6197a0a22a7dc9325",
     "scripts/setup-local.mjs": "d7d62ffa76befefc31c99ce8cd9526aa6bb02b423184a1d32be9ee29eb9c41b9",
     "scripts/wait-for-functions.mjs": "9b6396bb4731a5d75ea19febf9d155d7e03c1f48ec5a6814e344af01ec095a51",
-    "src/App.tsx": "9ee66d28baf7548c1cfaa4b54001e06cc246ac984b48ce4ae250606340ed4454",
+    "src/App.tsx": "83fdc800e992d65d7a78e0991c1ada6388f2a259881357194dd65804c7714233",
     "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
     "src/components/ui/sheet.tsx": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962",
+    "src/configuration-files.tsx": "cad08b149869a8ad30b963accd2f993df4e7f1bc0e9924f2b09918f9ed0381f0",
     "src/dashboard.tsx": "9b7696bbd703ec62979b68289ee38fb4ae160ad61ad2663adf970a4475f445bb",
     "src/evidence.tsx": "e02120d12ac364ea901286cc9052084dfe92fb206b5d78cab5330707becfde4f",
-    "src/features.tsx": "69812a2aada5c5dc4770f085755640b16b8123a2e934da0f449047f9279efb53",
+    "src/features.tsx": "11ddbff3995ab61a9c869b940ef937c5ef947fc1ac92c1e0a7bda01d008a59c5",
     "src/i18n/index.ts": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12",
     "src/i18n/translations.test.ts": "88b295a32b86fbd640a3606325bc343414112027a7c675635f52e2fecc901136",
     "src/knowledge.tsx": "c883ab11a7c5246ccfd32a6cbdd94a7f08cce9b2001fbb6982531f9f4bbb4802",
@@ -2390,10 +2656,12 @@
     "src/lib/attention.test.ts": "74f8c8ff5a8d1a2da42f905421fd873d39cd93ea7f56913b8cb811fe3de47092",
     "src/lib/attention.ts": "b67ce147053031564f8735e1273058545927ee5be3907bd956df1df99022e945",
     "src/lib/auth.ts": "e2c0ed2c1148240c7ac71b085efafd6c44f00541eb8cf087171f0702fe97be01",
+    "src/lib/config-files.test.ts": "67f239ac8e741a83c3612848901545812b592c6407c42e64404a19c57994c049",
+    "src/lib/config-files.ts": "91ba82f907cba4cb30df99e0d66da3a736d6d1e9c6d6573012842d5ad4c71045",
     "src/lib/data.ts": "4c52f235255c7e70b257afdb1800c4107fbb7932e79e66df4572c73ecf4e8dad",
     "src/lib/demo.ts": "bd89a8079d30231855eeca0f330228061c17c6403be06db3b116174b352f7e46",
     "src/lib/domain.test.ts": "d4510044d05c2b7101622e9f70191f388e6de0ca338483d4b76baf1077c57ee6",
-    "src/lib/domain.ts": "6bcbcd74922b2f3b56f87bf06d3cdc02bb53ab12437cec975356954fb5511346",
+    "src/lib/domain.ts": "0debbff1820232606266b23c1e62e15afe4f961d444a598e6b5aa195989e01d1",
     "src/lib/labels.test.ts": "be61f5e8966326ea52db88062c9b82411368adceee61a2e1c5abf13afb778156",
     "src/lib/labels.ts": "93f502a7e171ac9ef0cd74e2a6f9845c1e38be98142d7f4c940a39b5754036b7",
     "src/lib/learning-demo.ts": "3bf7da4bca04aff53b73dd5512da8b898d2f8a77aef68c00f720d1116aabd71b",
@@ -2413,23 +2681,27 @@
     "src/lib/session-policy.ts": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a",
     "src/lib/supabase.ts": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024",
     "src/lib/training-media.ts": "834616596a57763db295e08ad64f6c0a9f577c5ae2d83dc0695561a9c697bf02",
+    "src/lib/vapid.test.ts": "5e03a9cac77de6cd9a1c8861b20ebe8e92a6874e06410db63376284c23bee538",
     "src/main.tsx": "8c445e80a57a6792145c28ffe26aa6f2b4157ed9832ae1aba863016e53bd4871",
     "src/management.tsx": "47f43ca00aeae1fd8f4fb4e2bf79937ff3683fd5024c3c7e57664a053b8381e7",
     "src/material-balance.tsx": "33bf762e17c893fe156bfb978ee99a9d4df9ae3a383f6abfb319047160e18644",
-    "src/notifications.tsx": "25c5657266965f9d893d784cf85e2bd6a44cbdada591b52c6ba3f72f6998ce0b",
+    "src/notifications.tsx": "35c644fd6b95cd27e62c1a1cc610fea28edfe095b53af1bcd9ad41d8b0aaaae6",
     "src/offline/db.test.ts": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0",
     "src/offline/db.ts": "06097f9d9e9fb5f8cdd1a471ad7c41ae577b6d44d65518a51308016ab6b26188",
     "src/packaging-fields.tsx": "ae351f240d4b443259a238ebe7a6a3a607f55b56ddd7bb5d9c3a76a95d3cf437",
+    "src/push-settings.tsx": "df610cc84a3e4c54669118a8df37f21adf7105b0355bcf804770c2f53a8b7603",
     "src/report-page.tsx": "52a3a7acc15740df03584d085eb4309a13735e8145773a0dfa8d154962753fb4",
     "src/scanner.tsx": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2",
     "src/test-setup.ts": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9",
     "src/training-assets.tsx": "94c7789d96168a7a0a813e72bf7ee9e4f072ffcb315b3c997f16def0dda2b105",
     "src/training-editor.tsx": "6e93a0b0144311d6bfce6a97ccd6b511fa48b94fd6c56bdc0d4b1b977952c255",
-    "supabase/functions/_shared/http.ts": "0c12115d20c7cdb39847535244e5cdc1f759d0887791f6da2aadbad2bbdcba2b",
+    "supabase/functions/_shared/http.ts": "9212cb8dd2a8e4eecfae43ad90cdf741bfb56b0c585c4cad99db705df9a8dd8a",
+    "supabase/functions/_shared/push.ts": "81230620e9d2a72ecea9c99f831585458208a87d804f85f981459b0a412b908f",
+    "supabase/functions/_shared/vapid.ts": "6706811f4bce1e87ec800689b750ff75984df5b243beb0f02e45b44acbc53549",
     "supabase/functions/notifications/index.ts": "85e19db250af1bfc05f17bf7337257d084e72d8bc455e6e755d4b0b0fe5e17d5",
     "supabase/functions/ocr/index.ts": "7be4532eb7d0a9100848aa10e8f9f89717afaa3a30bc3cf889705b4fef2bda99",
     "supabase/functions/report/index.ts": "cc2e13a6d59a3a3398bff961d81b38200981f9672ae3c90fc56c042a92743a97",
-    "supabase/functions/scheduled-tasks/index.ts": "93f5eda2565ebf05f93fe65a3e429bb253c9b0e7b0db04c7b701a670c0b221af",
+    "supabase/functions/scheduled-tasks/index.ts": "be449e4bfaf48f938af149974ce443cbfb4069fbdfd482a41303e9fa960cc14b",
     "supabase/functions/sync/index.ts": "ce5686ef9f82e2247bc4f16e4199ee075e24baf8d59522169b620dfdaf23deaf",
     "supabase/functions/user-admin/index.ts": "a062425eaec04d31ec581cf623a382be6d5844f4c05601a8a60677769bac3e78",
     "supabase/migrations/202610060001_foundation.sql": "f75d8f77c0ab01710020168b9a6546b723dedc58e48846362d96c0e5ee094024",
@@ -2491,27 +2763,38 @@
     "supabase/migrations/202610060057_task_notifications.sql": "4cccfe8224bfd5824f9c891fb72761106e274b4129f0773ba18f2f208eaacb05",
     "supabase/migrations/202610060058_closed_material_classification.sql": "866eae53c5c201e575ef34935c68f7b6344ac18a866c337b7e5d2438e57eeb23",
     "supabase/migrations/202610060059_impact_activity_boundaries.sql": "bee77d06751958337b9738b1413595d894f16f471a2b63ae1faeb010e42eefbc",
+    "supabase/migrations/202610060060_push_subscriptions.sql": "d21d624bb936123b64fde75225256fce35fed60366a53e483d263fbf596f3447",
+    "supabase/migrations/202610060061_scoped_configuration.sql": "1bbda52e2c5768c5f095a30f488cd3c95c923527fe686fbb19ac3fcd29b357ea",
+    "supabase/migrations/202610060062_quality_records.sql": "cc7f74880aaa5cbf085537661d67937f4b4568e21bc057be3944c4b397670b0d",
+    "supabase/migrations/202610060063_release_intervals.sql": "c081fde801224d847a73db760edcd6169bf7a0b0d4401521fe21d92683a97292",
     "supabase/seed.sql": "8a0104c67029b003485e7df9cb3696cb8a441d77c660f35742474f99de934e19",
     "supabase/tests/bootstrap.test.sql": "3b59e2e944902ab2649d7542d64dff3c1b348cac209ee6bd02fc630135d11d02",
+    "supabase/tests/configuration.test.sql": "f416d5d11edcfee0c892af5369f23023124261e3cf7d7feb01a07bd67e02fccb",
     "supabase/tests/impact.test.sql": "018067ea64c089aeb01f0fccfe5d671a47e11e1471fbfd3ce7de3929608e843b",
     "supabase/tests/material-balance.test.sql": "d3ba305596a7d3cc5cb871b78173c324011cc4619236d500824583d4ccf0b7f8",
     "supabase/tests/notifications.test.sql": "fbdfa34ba01dd34c62ac070e1e42b49ef5a5c59ddcd90afd9a4247a79cd9d1e5",
     "supabase/tests/offline-signoff.test.sql": "79eaf7299f10956efc8c27a4eaf2d142412e8d6859c5c3a8fae674aa6b3dad10",
     "supabase/tests/production.test.sql": "b1ef92405ada2dd92aa88086ab2111225a9da973c5b7be29721911d146ef257b",
+    "supabase/tests/push.test.sql": "b5fe0a055e9a1eabaa85d85b7595fe2a905d3eefc5d13f9c32b96c7322364267",
+    "supabase/tests/quality.test.sql": "20626435d8f993edf1ffc19bdeb734df823e89dc32096b3e08938fa9cc00ef9c",
     "supabase/tests/receipt-measurements.test.sql": "fe82602b8cd59905e5516e6b44ce9c4a13ef73ebcafe670aa3f8c8454a81dbe0",
+    "supabase/tests/release-intervals.test.sql": "24e4a55636924cca4c5170ef8b7cc345546d6652a2c5fc69d98bb2f2ac362274",
     "supabase/tests/rules.test.sql": "112cf7c7f448353182be5e76a8fc05746f3ef80a131cf448d000411a2945b7f2",
     "supabase/tests/security.test.sql": "78e304bc554d5d32a8a677e3b74f21f4aa6f32cda03668cc3d0590c44c1b3c26",
     "supabase/tests/training.test.sql": "6d5630a84c698ee398d50e853f19112c5dbaf707b5f4de09a02213cf6fedf87c",
     "supabase/tests/yield.test.sql": "962ff16324c64d17f254d78d90bf70ae594150f3817ffc781f07f08136c924f2",
     "tests/flows.spec.ts": "caeb828373b1391c5cb5c8de34075002dafeb248c41d494f6ecc2161669dad31",
-    "tests/live/acceptance.spec.ts": "60c72559459e3d5abb4f9505367f080d5e8c5f1fe496d85158ddb4913b6c1af6",
-    "tests/live/fixtures.ts": "ac80f85886d12c707c6cf6c19d9e59e6684365d31772aa208359d2603922657c",
+    "tests/live/acceptance.spec.ts": "885fd006a8d1932c65ebf3d808bdd65dbc5ffcfa9c7f6ed31c7944054322a7fd",
+    "tests/live/configuration.spec.ts": "ad0681ce44a2fbae0a04d1401e4b1eafb272f41f5a7cddbfb804350de77b4bab",
+    "tests/live/fixtures.ts": "da2843c1b70e0a3efdf8bbbc9857e1ed679a626ea977655ef4335b813edbc0a3",
     "tests/live/labels.spec.ts": "50291e65907a84f02dbfe54783f956fcfe3b8bf40318ada22cf971fe7b218f3a",
     "tests/live/material-balance.spec.ts": "91e8bcf336dd2b615cc41c7ac3109d5b5533668ccd77f7932d3b631a300880cb",
+    "tests/live/mfa.ts": "f21125deec74a9daee6be4db7aa56623f8147512bbee70ac6a4d7153a1b8aca7",
     "tests/live/notifications.spec.ts": "9831674321add0ce0d240d57c83ed580217a96468b4b75f9174cbf0ab73ed456",
     "tests/live/offline-receiving.spec.ts": "7af4d47da65c69238f5f2768dad5d523c0fcb8091271f8345f97bceca934ca80",
-    "tests/live/training.spec.ts": "24ac59581fc7a5616c5a7ed9d6d4730c7daafb7b3a622ab8804a592cbcfb9c10",
-    "vite.config.ts": "d774868eaf54e5d3ab5a83f0349a60f16399ec8271f03b3df7b07a8e74e01741",
+    "tests/live/self-release.spec.ts": "58ff9f23696d21c5e5c32a55c1fbe37edf0078eae351eff49ea846a0b0d9fb51",
+    "tests/live/training.spec.ts": "a89153e77bb96af8ffa772b7bd979cc8e8fa1e0d51b024b136c96ce69ec87452",
+    "vite.config.ts": "9d5a51438853e4fc28ef33ea666aa26a2bd9b98bc2b5ece8891ba4eafadd385b",
     "vitest.config.ts": "a139292ca71b075326f66df8eb54466fa84a8a37284262ad906f5493c3cf6c0d"
   },
   "config_hashes": {

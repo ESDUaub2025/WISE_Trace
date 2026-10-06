@@ -470,5 +470,22 @@
   "held_whey_expiry": "Held whey nearing expiry",
   "notification_training": "Required training is available in the learning library.",
   "notification_equipment_verification_failed": "An equipment verification failed. Review the calibration record before using the equipment.",
-  "pinLocked": "Too many incorrect PIN attempts. Try again in 15 minutes."
+  "pinLocked": "Too many incorrect PIN attempts. Try again in 15 minutes.",
+  "webPush": "Device notifications",
+  "pushUnsupported": "This browser does not support Web Push.",
+  "pushNotConfigured": "Device notifications are not configured for this installation.",
+  "pushSharedDevice": "Alerts show generic text on shared phones. Open WISE and sign in to read details.",
+  "pushPermissionDenied": "Allow notifications in your browser settings to enable this feature.",
+  "enablePush": "Enable device notifications",
+  "disablePush": "Disable device notifications",
+  "exportConfig": "Export configuration",
+  "importConfig": "Import configuration into draft",
+  "configScope": "Configuration scope",
+  "globalConfig": "All cooperatives",
+  "configFileTooLarge": "Configuration files must be smaller than 1 MB.",
+  "configFileInvalid": "Choose a WISE SOP configuration file.",
+  "pending": "Pending",
+  "selfReleaseBlocked": "Another qualified person must release a batch you produced.",
+  "remoteReview": "Self-release exception used. This batch is flagged for WISE remote review.",
+  "labReleaseBlocked": "A passing laboratory report must synchronize before this batch can be released."
 }

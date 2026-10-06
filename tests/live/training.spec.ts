@@ -1,15 +1,11 @@
-import {test,expect,type Page} from '@playwright/test';
-import {createHmac} from 'node:crypto';
+import {loginMfa} from './mfa';
+import {test,expect} from '@playwright/test';
 import QRCode from 'qrcode';
 import {readFileSync} from 'node:fs';
 import {client,login,rpc,config} from './fixtures';
 
-// RFC 6238 / RFC 4226, using the fresh local test account's authenticator secret.
-function totp(secret:string){let bits='';for(const char of secret.toUpperCase().replace(/=+$/,'')){const index='ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'.indexOf(char);if(index<0)throw Error('Invalid test authenticator');bits+=index.toString(2).padStart(5,'0');}const key=Buffer.from(Array.from({length:Math.floor(bits.length/8)},(_,i)=>parseInt(bits.slice(i*8,i*8+8),2)));const time=Buffer.alloc(8);time.writeBigUInt64BE(BigInt(Math.floor(Date.now()/30000)));const hash=createHmac('sha1',key).update(time).digest();const offset=hash[hash.length-1]&15;return String((hash.readUInt32BE(offset)&0x7fffffff)%1000000).padStart(6,'0');}
-async function loginAdmin(page:Page){await page.goto('/');await page.getByLabel('Username',{exact:true}).fill('admin1');await page.getByLabel('Password',{exact:true}).fill('wise-demo-only');await page.getByLabel('Personal PIN',{exact:true}).fill('2468');await page.getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('.login-card bdi.mono')).toBeVisible();const secret=(await page.locator('.login-card bdi.mono').innerText()).trim();await page.locator('input[name=totp]').fill(totp(secret));await page.getByRole('button',{name:'Sign in',exact:true}).click();await expect(page.locator('main')).toBeVisible();const session=await page.evaluate(()=>{const key=Object.keys(localStorage).find(k=>k.startsWith('sb-')&&k.endsWith('-auth-token'));if(!key)throw Error('Authenticated session absent');return JSON.parse(localStorage.getItem(key)!);});const c=client();const response=await c.auth.setSession(session);if(response.error)throw response.error;expect((await c.auth.mfa.getAuthenticatorAssuranceLevel()).data?.currentLevel).toBe('aal2');return c;}
-
 test('real admin TOTP, private training upload, producer download and offline media',async({page,context})=>{
- test.setTimeout(90000);const admin=await loginAdmin(page);const factors=await admin.auth.mfa.listFactors();
+ test.setTimeout(90000);const admin=await loginMfa(page,'admin1');const factors=await admin.auth.mfa.listFactors();
  try{
   await page.goto('/admin');const upload=page.locator('form').filter({has:page.getByRole('heading',{name:'Training pictures and videos',exact:true})});const title='Training-'+crypto.randomUUID();await upload.getByLabel('Title in English',{exact:true}).fill(title);await upload.getByLabel('Title in Arabic',{exact:true}).fill('صورة تدريبية');await upload.locator('input[type=file]').setInputFiles({name:'guide.png',mimeType:'image/png',buffer:await QRCode.toBuffer('Illustrated learning test')});await upload.getByRole('button',{name:'Upload training media',exact:true}).click();
   await expect.poll(async()=>{const r=await admin.from('training_asset').select('id').eq('title->>en',title);return r.data?.length??0;}).toBe(1);const asset=(await admin.from('training_asset').select('*').eq('title->>en',title).single()).data!;expect(asset.media_type).toBe('image/jpeg');expect(asset.byte_size).toBeLessThan(300*1024);const anonymous=await client().storage.from('training').download(asset.storage_path);expect(anonymous.error).toBeTruthy();

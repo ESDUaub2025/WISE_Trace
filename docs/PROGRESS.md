@@ -47,7 +47,7 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [x] FR-WHY-04 (S) — **Supplier declaration reuse \[Added\]:** a standing declaration per supplier pre-fills these fields; the receiver confirms or edits per delivery. — Evidence: preview declaration reuse and live A1 confirmation/edit fields.
 - [x] FR-WHY-05 (M) — Transport and reception: transport method/conditions, container type and condition, receipt date/time, received mass, receipt temperature. — Evidence: Receipt form records transport method/conditions, container type/condition, time, mass and configured temperature.
 - [x] FR-WHY-06 (M) — Quality measurements as required by the active SOP: pH, titratable acidity, °Brix or approved rapid solids indicator, salt/conductivity, appearance, odour. Each stores value, unit, time, user, equipment ID and optional image. — Evidence: Configured reception fields preserve unit, time, user, equipment and optional receipt-photo reference; receipts.test.ts and receipt-measurements.test.sql cover blank values, plausibility, unit and attribution boundaries.
-- [ ] FR-WHY-07 (M) — Sampling: sample ID, sampling date/time, lab, result and reference when available; a lab result can be attached after the decision.
+- [x] FR-WHY-07 (M) — Sampling: sample ID, sampling date/time, lab, result and reference when available; a lab result can be attached after the decision. — Evidence: Structured sample/lab form and quality.test.sql preserve sample ID, time, laboratory, reference and outcome; lab records can append separately.
 - [x] FR-WHY-08 (M) — The system evaluates measurements against the active threshold set and shows a suggested outcome, but the user selects the decision. — Evidence: live A1 suggested hold.
 - [x] FR-WHY-09 (M) — Decision options: **Accepted**, **Hold**, **Rejected**, with reason, decision time, checker, authenticated sign-off and evidence. — Evidence: PIN transition_lot and live A1/A4.
 - [x] FR-WHY-10 (M) — Accepting a lot whose measurements fall outside thresholds requires a justification and creates a deviation. — Evidence: live A1 deviation assertion.
@@ -119,8 +119,8 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-REL-01 (M) — An authorized user reviews required checkpoints, deviations, measurements, packaging information and quality checks on one review screen.
 - [x] FR-REL-02 (M) — Decision options: Release, Hold, Reject; decision, reason and person are permanently recorded with sign-off. — Evidence: PIN transition_lot plus live A4.
 - [x] FR-REL-03 (M) — Release is blocked when required records are missing or critical deviations are unresolved. — Evidence: pgTAP missing-checkpoint/critical tests and live A4.
-- [ ] FR-REL-04 (M) — **Separation of duties \[Added\]:** by default the releaser must differ from the producer. Where a cooperative has only one qualified person, a configurable exception allows self-release and flags the batch for WISE remote review.
-- [ ] FR-REL-05 (S) — **Pending lab results \[Added\]:** if the SOP requires a lab result before release, release is blocked until it is attached.
+- [x] FR-REL-04 (M) — **Separation of duties \[Added\]:** by default the releaser must differ from the producer. Where a cooperative has only one qualified person, a configurable exception allows self-release and flags the batch for WISE remote review. — Evidence: live self-release.spec.ts checks a producer with QA role, default separation, the original SOP exception and visible wise_review flag.
+- [x] FR-REL-05 (S) — **Pending lab results \[Added\]:** if the SOP requires a lab result before release, release is blocked until it is attached. — Evidence: quality.test.sql blocks a passing typed result until its report evidence has synchronized.
 - [x] FR-REL-06 (M) — Release and rejection lock the batch; later changes are amendments with reason. — Evidence: pgTAP released lock and append-only amendment RPC.
 - [x] FR-QR-01 (M) — Batch-level traceability by default: all packages of a packaging lot share one QR. — Evidence: packaging_detail owns one token per packaging lot.
 - [x] FR-QR-02 (M) — The QR encodes a persistent short URL with an opaque token, not the record itself. — Evidence: opaque 24-byte token and generated /p/ URL.
@@ -150,10 +150,10 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-EQP-03 (M) — Calibration due dates generate tasks; out-of-date devices trigger warnings when used.
 - [ ] FR-EQP-04 (M) — Other equipment (containers, utensils, mesh covers, PPE, cleaning supplies, QR labels) stays in training and SOP material, not the software.
 - [ ] FR-CFG-01 (M) — Admins manage cooperatives, users and roles, suppliers, ingredient types, packaging options, SOP versions, training modules, checkpoints, units, thresholds, deviation categories, shelf-life rules, label templates and KPI definitions.
-- [ ] FR-CFG-02 (M) — **Two-step approval \[Added\]:** changes to food-safety thresholds, checkpoints and SOPs are drafted by an Admin and approved by the Food-Safety Lead before taking effect.
+- [x] FR-CFG-02 (M) — **Two-step approval \[Added\]:** changes to food-safety thresholds, checkpoints and SOPs are drafted by an Admin and approved by the Food-Safety Lead before taking effect. — Evidence: configuration.test.sql and live configuration.spec.ts enforce Admin AAL2 drafting, separate Food-Safety Lead AAL2/PIN approval.
 - [ ] FR-CFG-03 (M) — Configuration is versioned with effective dates; active batches keep the version they started under unless an admin migrates them with a reason.
-- [ ] FR-CFG-04 (S) — Configuration can be scoped globally or per cooperative where procedures differ.
-- [ ] FR-CFG-05 (S) — Configuration can be exported and imported as a file to set up new cooperatives or environments.
+- [x] FR-CFG-04 (S) — Configuration can be scoped globally or per cooperative where procedures differ. — Evidence: draft_scoped_configuration validates cooperative scope; live configuration import targets cooperative 2.
+- [x] FR-CFG-05 (S) — Configuration can be exported and imported as a file to set up new cooperatives or environments. — Evidence: config-files.test.ts and live configuration.spec.ts import/export a versioned SOP file; imported approvals and identities cannot bypass new drafting/approval.
 - [ ] FR-DQ-01 (M) — Prevent or warn on: impossible dates, negative quantities, allocation over available, duplicate IDs, missing required records, unsupported units, sales over stock, use of rejected/held/expired whey, release with critical deviations.
 - [ ] FR-DQ-02 (M) — Each rule is configurable as blocking or warning, except those marked Always blocking.
 - [ ] FR-DQ-03 (M) — **Plausibility ranges \[Added\]:** measurements far outside physical plausibility (e.g. pH 14) prompt re-entry before saving.
@@ -173,11 +173,11 @@ Checked requirements below have implementation and local evidence. Unchecked req
 
 ## Acceptance and nonfunctional checks
 
-- [ ] A1 automated acceptance story
+- [x] A1 automated acceptance story — Evidence: live acceptance suite, second-device receipt check and actual MFA/self-release scenarios.
 - [x] A2 automated acceptance story — Evidence: tests/live/acceptance.spec.ts offline reload and conflict.
-- [ ] A3 automated acceptance story
-- [ ] A4 automated acceptance story
-- [ ] A5 automated acceptance story
+- [x] A3 automated acceptance story — Evidence: live acceptance suite, second-device receipt check and actual MFA/self-release scenarios.
+- [x] A4 automated acceptance story — Evidence: live acceptance suite, second-device receipt check and actual MFA/self-release scenarios.
+- [x] A5 automated acceptance story — Evidence: live acceptance suite, second-device receipt check and actual MFA/self-release scenarios.
 - [x] A6 automated acceptance story — Evidence: tests/live/acceptance.spec.ts public neutral/released English/Arabic allowlist.
 - [x] A7 automated acceptance story — Evidence: tests/live/acceptance.spec.ts donor date-range dashboard and definitions.
 - [ ] NFR-01

@@ -36,3 +36,9 @@
 **Labels:** Open a packaging lot, choose the language and number of copies, then download its A4 label PDF. Print at actual size. Bluetooth printing is available when the approved SOP contains a compatible printer profile. Review final label content with the Food-Safety Lead before production use.
 
 **Notifications:** Open the bell to read alerts and mark them read. Your acknowledgments survive offline reloads. In Organization, Alert preferences records your international phone number and explicit critical-alert consent; save with consent unchecked to withdraw. External delivery uses a development log provider until configured for production.
+
+**Device alerts:** In the bell panel, enable device notifications and accept your browser's permission request. Shared phones show generic text; sign into WISE for details. Disable device notifications there to withdraw. This option stays unavailable until the owner configures Web Push.
+
+**Configuration files (Admin and Food-Safety Lead):** Export the current SOP for reuse. Importing fills a new draft; choose global or cooperative scope and an effective date, then save. The Food-Safety Lead approves the separate draft with MFA and a fresh PIN. Import never transfers approval. Existing batches continue under their original version.
+
+**Samples and laboratory reports:** Record the sample ID and sampling time when collected. Add the laboratory, report reference, result and report photograph later. If the batch SOP requires a laboratory report, release remains blocked until its passing result and evidence have synchronized. For recurring checkpoints, every required interval needs its own reading.

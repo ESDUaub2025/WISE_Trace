@@ -34,5 +34,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Full local checks pass: 36 unit, 185 database, 16 preview and 15 live browser scenarios; A1-A7 now include original stage, second-device rejection, recurring home tasks, MFA Food-Safety Lead recall and self-release exception. Configuration import/scope and payload-free Web Push implemented; real hosted push still untested.",
+    "next_action": "Continue full PRD: media backup/restore, real dashboard/filter coverage, shared-user UX, active SOP validation, complete release review, stock/recall case UX, remaining offline-safe workflows and hardening.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-06T13:40:06.011672+00:00",
+    "git": {
+      "available": true,
+      "commit": "64c1373bf5f805b040de43c59bf580df2d3448e1",
+      "short_commit": "64c1373bf5f8",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]
