@@ -17,6 +17,14 @@
       "confidence": "medium"
     },
     {
+      "source": "scripts/create-seed.mjs",
+      "target": "src/lib/learning-demo.ts",
+      "import": "../src/lib/learning-demo.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "src/App.tsx",
       "target": "src/components/ui/button.tsx",
       "import": "./components/ui/button",
@@ -108,6 +116,14 @@
       "source": "src/App.tsx",
       "target": "src/report-page.tsx",
       "import": "./report-page",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
+      "target": "src/knowledge.tsx",
+      "import": "./knowledge",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -258,8 +274,56 @@
     },
     {
       "source": "src/features.tsx",
+      "target": "src/knowledge.tsx",
+      "import": "./knowledge",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/lib/receipts.ts",
+      "import": "./lib/receipts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
       "target": "src/App.tsx",
       "import": "./App",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/knowledge.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/knowledge.tsx",
+      "target": "src/lib/training-media.ts",
+      "import": "./lib/training-media",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/knowledge.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/knowledge.tsx",
+      "target": "src/lib/domain.ts",
+      "import": "./lib/domain",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -370,6 +434,14 @@
     },
     {
       "source": "src/lib/data.ts",
+      "target": "src/lib/learning-demo.ts",
+      "import": "./learning-demo",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/data.ts",
       "target": "src/lib/demo.ts",
       "import": "./demo",
       "line": null,
@@ -452,6 +524,30 @@
       "source": "src/lib/pin.test.ts",
       "target": "src/lib/pin.ts",
       "import": "./pin",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/receipts.test.ts",
+      "target": "src/lib/receipts.ts",
+      "import": "./receipts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/receipts.test.ts",
+      "target": "src/lib/demo.ts",
+      "import": "./demo",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/receipts.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -556,6 +652,38 @@
       "source": "src/lib/session-policy.ts",
       "target": "src/lib/domain.ts",
       "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/training-media.ts",
+      "target": "src/offline/db.ts",
+      "import": "../offline/db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/training-media.ts",
+      "target": "src/lib/supabase.ts",
+      "import": "./supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/training-media.ts",
+      "target": "src/lib/media.ts",
+      "import": "./media",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/training-media.ts",
+      "target": "src/lib/data.ts",
+      "import": "./data",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -689,6 +817,38 @@
       "confidence": "medium"
     },
     {
+      "source": "src/training-assets.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-assets.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-assets.tsx",
+      "target": "src/lib/training-media.ts",
+      "import": "./lib/training-media",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-assets.tsx",
+      "target": "src/lib/domain.ts",
+      "import": "./lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "src/training-editor.tsx",
       "target": "src/components/ui/button.tsx",
       "import": "./components/ui/button",
@@ -708,6 +868,30 @@
       "source": "src/training-editor.tsx",
       "target": "src/lib/domain.ts",
       "import": "./lib/domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-editor.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-editor.tsx",
+      "target": "src/training-assets.tsx",
+      "import": "./training-assets",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/training-editor.tsx",
+      "target": "src/lib/learning-demo.ts",
+      "import": "./lib/learning-demo",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -770,6 +954,14 @@
     },
     {
       "source": "tests/live/offline-receiving.spec.ts",
+      "target": "tests/live/fixtures.ts",
+      "import": "./fixtures",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "tests/live/training.spec.ts",
       "target": "tests/live/fixtures.ts",
       "import": "./fixtures",
       "line": null,
@@ -1116,6 +1308,21 @@
       "candidates": []
     },
     {
+      "file": "src/knowledge.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/knowledge.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/knowledge.tsx",
+      "import": "lucide-react",
+      "candidates": []
+    },
+    {
       "file": "src/lib/auth.ts",
       "import": "@supabase/supabase-js",
       "candidates": []
@@ -1132,6 +1339,11 @@
     },
     {
       "file": "src/lib/pin.test.ts",
+      "import": "vitest",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/receipts.test.ts",
       "import": "vitest",
       "candidates": []
     },
@@ -1236,6 +1448,21 @@
       "candidates": []
     },
     {
+      "file": "src/training-assets.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/training-assets.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/training-assets.tsx",
+      "import": "lucide-react",
+      "candidates": []
+    },
+    {
       "file": "src/training-editor.tsx",
       "import": "react",
       "candidates": []
@@ -1328,6 +1555,26 @@
     {
       "file": "tests/live/offline-receiving.spec.ts",
       "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/training.spec.ts",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/training.spec.ts",
+      "import": "node:crypto",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/training.spec.ts",
+      "import": "qrcode",
+      "candidates": []
+    },
+    {
+      "file": "tests/live/training.spec.ts",
+      "import": "node:fs",
       "candidates": []
     },
     {
@@ -1426,6 +1673,14 @@
     "src/i18n/index.ts": [
       "direction"
     ],
+    "src/knowledge.tsx": [
+      "InstructionPicture",
+      "Knowledge",
+      "LearningContent",
+      "LearningMedia",
+      "Localized",
+      "ModuleContent"
+    ],
     "src/lib/auth.ts": [
       "LocalSession",
       "login",
@@ -1452,6 +1707,7 @@
       "Envelope",
       "Identity",
       "Lot",
+      "ReceptionMeasurement",
       "Role",
       "Supplier",
       "SyncStatus",
@@ -1460,6 +1716,7 @@
       "allocationCheck",
       "trace"
     ],
+    "src/lib/learning-demo.ts": [],
     "src/lib/media.ts": [
       "compressPhoto"
     ],
@@ -1475,6 +1732,12 @@
       "createPinVerifier",
       "pinHash",
       "verifyPin"
+    ],
+    "src/lib/receipts.test.ts": [],
+    "src/lib/receipts.ts": [
+      "measurementUnit",
+      "receiptField",
+      "receiptMeasurements"
     ],
     "src/lib/reports.ts": [
       "downloadReport"
@@ -1504,6 +1767,13 @@
       "sessionLimits"
     ],
     "src/lib/supabase.ts": [],
+    "src/lib/training-media.ts": [
+      "cacheTrainingAsset",
+      "draw",
+      "prepareTrainingMedia",
+      "stop",
+      "trainingAssetURL"
+    ],
     "src/main.tsx": [],
     "src/management.tsx": [
       "RegistryFlow",
@@ -1529,6 +1799,9 @@
       "decoded"
     ],
     "src/test-setup.ts": [],
+    "src/training-assets.tsx": [
+      "TrainingAssetUpload"
+    ],
     "src/training-editor.tsx": [
       "TrainingEditor"
     ],
@@ -1567,11 +1840,15 @@
       "send"
     ],
     "tests/live/offline-receiving.spec.ts": [],
+    "tests/live/training.spec.ts": [
+      "loginAdmin",
+      "totp"
+    ],
     "vite.config.ts": [],
     "vitest.config.ts": []
   },
   "truncated": false,
-  "scanned_files": 60,
+  "scanned_files": 67,
   "unsupported_files": [
     "supabase/migrations/202610060001_foundation.sql",
     "supabase/migrations/202610060002_operations.sql",
@@ -1613,12 +1890,24 @@
     "supabase/migrations/202610060038_registry_edits.sql",
     "supabase/migrations/202610060039_equipment_verification.sql",
     "supabase/migrations/202610060040_verification_required_fields.sql",
+    "supabase/migrations/202610060041_training_assets.sql",
+    "supabase/migrations/202610060042_training_validation.sql",
+    "supabase/migrations/202610060043_training_refreshers.sql",
+    "supabase/migrations/202610060044_training_content_contract.sql",
+    "supabase/migrations/202610060045_training_task_refresh.sql",
+    "supabase/migrations/202610060046_training_version_scope.sql",
+    "supabase/migrations/202610060047_receipt_measurement_evidence.sql",
+    "supabase/migrations/202610060048_text_reception_measurements.sql",
+    "supabase/migrations/202610060049_sop_training_refresh.sql",
+    "supabase/migrations/202610060050_future_training_tasks.sql",
     "supabase/seed.sql",
     "supabase/tests/bootstrap.test.sql",
     "supabase/tests/offline-signoff.test.sql",
     "supabase/tests/production.test.sql",
+    "supabase/tests/receipt-measurements.test.sql",
     "supabase/tests/rules.test.sql",
-    "supabase/tests/security.test.sql"
+    "supabase/tests/security.test.sql",
+    "supabase/tests/training.test.sql"
   ],
   "hashes": {
     "eslint.config.js": "697c178eaa83a55f4612727e2bc61c55c1078b7f970ced44bb86c70e29bf594c",
@@ -1631,27 +1920,31 @@
     "scripts/check-pdf.mjs": "92db49f0818f435fad244d1f08c0b8b6f00bcdf28607204aeeaddbfe75115bc6",
     "scripts/check-reports.mjs": "5f0d38f6c73cc6ed7f96186b0eb1ae3f389aff5e5c8a074962fd4a4dd3e8fe3a",
     "scripts/create-history-seed.mjs": "564d8ec6274496b7af245a43c241cf891beddfbd075134fe4a6319de3def012e",
-    "scripts/create-seed.mjs": "81803d085bbde6a2f5e80121f5c63347550f65ed9a2d5236d0097ae560918f9e",
-    "scripts/live-api-check.mjs": "e8ca5ae8569233c5921887d46a1e435b3a4dd7dd89ace00a1961053ebe134450",
+    "scripts/create-seed.mjs": "88a35889a6a3b5bc07bedeea90713cfa88cdbc93035534d20d661cabcdc1de05",
+    "scripts/live-api-check.mjs": "ad4ea1c3390954bd070ff20db3c9ad59c25e72364f7b83c6197a0a22a7dc9325",
     "scripts/setup-local.mjs": "d7d62ffa76befefc31c99ce8cd9526aa6bb02b423184a1d32be9ee29eb9c41b9",
     "scripts/wait-for-functions.mjs": "9b6396bb4731a5d75ea19febf9d155d7e03c1f48ec5a6814e344af01ec095a51",
-    "src/App.tsx": "55d7d867f6b42cec40ae156604c79f78d453be4be6de5d31a27e5d5800c6d1c0",
+    "src/App.tsx": "f6eec596aae8a78fd5e695ab3839dc945c0cf491507643fcc58e6e800fcf3dae",
     "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
     "src/components/ui/sheet.tsx": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962",
     "src/dashboard.tsx": "9615de8d923db4ef14f6e26579352a63ac301d0ee0add990640b43660ed3c38d",
     "src/evidence.tsx": "e02120d12ac364ea901286cc9052084dfe92fb206b5d78cab5330707becfde4f",
-    "src/features.tsx": "56df580263d83825e1cc2f39b84eef7fb163bf6a8518c3a62899fef6bc58fdd0",
+    "src/features.tsx": "fc963ecfb5db4395b5b243345f0457e80cb8832d1981467ddbe852f7a2574d6a",
     "src/i18n/index.ts": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12",
+    "src/knowledge.tsx": "c883ab11a7c5246ccfd32a6cbdd94a7f08cce9b2001fbb6982531f9f4bbb4802",
     "src/lib/auth.ts": "6bbe63df374dca86dd14b656049530532089f10fc8b92af24aacfbb52747ab5b",
-    "src/lib/data.ts": "b9ba7796dd9928b70bc60bfcd2686dbbd0b59ef39d9dbd21d129eaf060d12699",
-    "src/lib/demo.ts": "06f451f185d6a4b758a7d51f9a5a1496097de0b190f0917ec90d49abd8cc1b33",
+    "src/lib/data.ts": "1537d7216a8938ca807a71fa9afe658a5cdd5f792028a7e4783ad645d91ef4ed",
+    "src/lib/demo.ts": "bd89a8079d30231855eeca0f330228061c17c6403be06db3b116174b352f7e46",
     "src/lib/domain.test.ts": "f34ef07344fe09491763c6dec3db73428d701a7ce11d0893ec7fae68672ceb6a",
-    "src/lib/domain.ts": "a8d13224b1a0d111212166a0db4b5c9694235dc9842d33b580ff5e919a072d26",
+    "src/lib/domain.ts": "6021e7cac076bb9297623543bba22691fd1649f7d88f08deb9daf97f9fc85469",
+    "src/lib/learning-demo.ts": "3bf7da4bca04aff53b73dd5512da8b898d2f8a77aef68c00f720d1116aabd71b",
     "src/lib/media.ts": "99dc724aa075af6856147c3d994191fe2db5863ce42c61a49855b6406b20ea6a",
     "src/lib/mfa.ts": "8850636db751da5c31a9ef0e728da5a97ae107be7d06de7cc4ad19002275c123",
     "src/lib/offline-signoff.ts": "60fcf28725262274f3a425953b805e08c9a48141fa79edb51d475e7f4c48a834",
     "src/lib/pin.test.ts": "a037086e2fee03b7565756f2a53e519524966c77d23bb0d71af9b7155e6678cb",
     "src/lib/pin.ts": "bc0ced82e329967ae10544be3a6f211eff7f4f00f0dcdf39fcc1d582f415cdc2",
+    "src/lib/receipts.test.ts": "65853034509c38b613cb7193a738be2f60656a570d62245f7009ccd3a41d5b98",
+    "src/lib/receipts.ts": "dc533610e914c91ad0d4923b2a4ec5ba4dfca885f1ed60bca09907412601dcd9",
     "src/lib/reports.ts": "f198f88b99cc7132961151850b9442c221b2db84eb8d26b62d9c1576233e1c0e",
     "src/lib/schedules.test.ts": "05159bce3e746bd49a4ffe937c9b9e641a95cf6cbb02a39b7fafe800c43f8e6b",
     "src/lib/schedules.ts": "ebc536d9e33803d449ff82c4000cc5b9e27dcc48310f60639b04392a5b72101f",
@@ -1660,6 +1953,7 @@
     "src/lib/session-policy.test.ts": "7fbb9d63954e8cee2b0909cdb58bce17e834c20309cce01fab6663f6c2626097",
     "src/lib/session-policy.ts": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a",
     "src/lib/supabase.ts": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024",
+    "src/lib/training-media.ts": "834616596a57763db295e08ad64f6c0a9f577c5ae2d83dc0695561a9c697bf02",
     "src/main.tsx": "8c445e80a57a6792145c28ffe26aa6f2b4157ed9832ae1aba863016e53bd4871",
     "src/management.tsx": "8d3df7b17b7fe5448afda2a29579dc51bba2bd78ccb23512bb55bab1211c41c8",
     "src/offline/db.test.ts": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0",
@@ -1667,7 +1961,8 @@
     "src/report-page.tsx": "dbceeb608ec61b925ffff809589e44dc97405a87b677a7874d9da856b73db950",
     "src/scanner.tsx": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2",
     "src/test-setup.ts": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9",
-    "src/training-editor.tsx": "f66d96c4ef86d124215be66833dced4534c88eaa3660f9338ec674cb9e7b9be1",
+    "src/training-assets.tsx": "94c7789d96168a7a0a813e72bf7ee9e4f072ffcb315b3c997f16def0dda2b105",
+    "src/training-editor.tsx": "6e93a0b0144311d6bfce6a97ccd6b511fa48b94fd6c56bdc0d4b1b977952c255",
     "supabase/functions/_shared/http.ts": "0c12115d20c7cdb39847535244e5cdc1f759d0887791f6da2aadbad2bbdcba2b",
     "supabase/functions/notifications/index.ts": "702765d7b35b8c47350f4d06cfc98162202f3d6b0196c23ed449b02543021a45",
     "supabase/functions/ocr/index.ts": "7be4532eb7d0a9100848aa10e8f9f89717afaa3a30bc3cf889705b4fef2bda99",
@@ -1715,16 +2010,29 @@
     "supabase/migrations/202610060038_registry_edits.sql": "3eaa389153063d639c950397479653e8adab9d51d6c5a9ef5181f5ec0d63d249",
     "supabase/migrations/202610060039_equipment_verification.sql": "508171a3184bf5544ef381b18f61d1cbcbf9fc3e6d789f819c5914dfcb8750d3",
     "supabase/migrations/202610060040_verification_required_fields.sql": "d4014d360bdf851c87894a698f37c0bc51552a03ed201fb78aa71fef58653147",
-    "supabase/seed.sql": "ac9706254c11f8d5ed9f5d19b747aa9e7f25223884643a74803313bfb90731b5",
+    "supabase/migrations/202610060041_training_assets.sql": "eaa0432d1ac9fd498d87adbfc7b794353c037ea846d9af3d4ccf90fde00bf8e5",
+    "supabase/migrations/202610060042_training_validation.sql": "9d8c78ec0fb08134f41119b774f26ae1dbf710fb2543a355bcdb9cd4293e256b",
+    "supabase/migrations/202610060043_training_refreshers.sql": "21411317b890557f7a06f331f4e825701fa8a80b84f321ff07979664ecb64df2",
+    "supabase/migrations/202610060044_training_content_contract.sql": "d4fe597596f80d018563b9a510b54539c1ece7e8723f5b5ab0599de63c1c488e",
+    "supabase/migrations/202610060045_training_task_refresh.sql": "6d8e6af1c322d9f474aec066886b88476b35e5526c24650a7492eb017ae5b595",
+    "supabase/migrations/202610060046_training_version_scope.sql": "4e169ae91ce6e72255a6edbeee7b6a49f07a2aa84c5733029eb7b7e5c1fef149",
+    "supabase/migrations/202610060047_receipt_measurement_evidence.sql": "5549871e6e73cf9c48713e1199e4614e70c1f0697cc0a7dc8f06f3df03ef31d4",
+    "supabase/migrations/202610060048_text_reception_measurements.sql": "910a049bc80285b121b49bde942316d5344a62530c1c24a4a4c1092270061d24",
+    "supabase/migrations/202610060049_sop_training_refresh.sql": "1e1c79a34a2c9d94b1c98a7861bbced2664e93995c8d8411675c895052050e90",
+    "supabase/migrations/202610060050_future_training_tasks.sql": "f1401bd8c1ba16cb2c6e7dfcc23333061bfcb14e175245ceac25180c721cdd74",
+    "supabase/seed.sql": "8a0104c67029b003485e7df9cb3696cb8a441d77c660f35742474f99de934e19",
     "supabase/tests/bootstrap.test.sql": "3b59e2e944902ab2649d7542d64dff3c1b348cac209ee6bd02fc630135d11d02",
     "supabase/tests/offline-signoff.test.sql": "79eaf7299f10956efc8c27a4eaf2d142412e8d6859c5c3a8fae674aa6b3dad10",
     "supabase/tests/production.test.sql": "b1ef92405ada2dd92aa88086ab2111225a9da973c5b7be29721911d146ef257b",
+    "supabase/tests/receipt-measurements.test.sql": "fe82602b8cd59905e5516e6b44ce9c4a13ef73ebcafe670aa3f8c8454a81dbe0",
     "supabase/tests/rules.test.sql": "112cf7c7f448353182be5e76a8fc05746f3ef80a131cf448d000411a2945b7f2",
     "supabase/tests/security.test.sql": "78e304bc554d5d32a8a677e3b74f21f4aa6f32cda03668cc3d0590c44c1b3c26",
-    "tests/flows.spec.ts": "be55913d777abe0756757b91fea56be951c4b7f0f204c2dbea0cb9e7eb258d67",
+    "supabase/tests/training.test.sql": "6d5630a84c698ee398d50e853f19112c5dbaf707b5f4de09a02213cf6fedf87c",
+    "tests/flows.spec.ts": "caeb828373b1391c5cb5c8de34075002dafeb248c41d494f6ecc2161669dad31",
     "tests/live/acceptance.spec.ts": "60c72559459e3d5abb4f9505367f080d5e8c5f1fe496d85158ddb4913b6c1af6",
     "tests/live/fixtures.ts": "ac80f85886d12c707c6cf6c19d9e59e6684365d31772aa208359d2603922657c",
     "tests/live/offline-receiving.spec.ts": "7af4d47da65c69238f5f2768dad5d523c0fcb8091271f8345f97bceca934ca80",
+    "tests/live/training.spec.ts": "10cad202630f3c4c1b60ea8cc12724addec8a2a25e8cc9e3dc0d819c3dc6a35e",
     "vite.config.ts": "d774868eaf54e5d3ab5a83f0349a60f16399ec8271f03b3df7b07a8e74e01741",
     "vitest.config.ts": "a139292ca71b075326f66df8eb54466fa84a8a37284262ad906f5493c3cf6c0d"
   },

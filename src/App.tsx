@@ -18,6 +18,7 @@ import { markActive,inactive,sessionLimits } from './lib/session-policy';
 import { RegistryFlow } from './management';
 import { Scanner } from './scanner';
 import {ReportPage} from './report-page';
+import {Knowledge} from './knowledge';
 import { Flow, LotDetail, AdminPanel } from './features';
 
 const Dashboard=lazy(()=>import('./dashboard'));
@@ -53,7 +54,7 @@ export default function App(){
  {['whey','batches','inventory','review','recall'].includes(section)&&<><div className="section-toolbar"><div className="search"><Search size={18}/><input aria-label={t('search')} placeholder={t('search')} value={search} onChange={e=>setSearch(e.target.value)}/></div><div className="button-group">{section==='batches'&&<Button variant="outline" onClick={()=>open('allocation')}>{t('allocate')}</Button>}{section==='inventory'&&<><Button variant="outline" onClick={()=>open('scan')}><ScanLine size={18}/>{t('quickSale')}</Button><Button variant="outline" onClick={()=>open('packaging')}>{t('newPackaging')}</Button><Button variant="outline" onClick={()=>open('storage_inspection')}>{t('newInspection')}</Button><Button variant="outline" onClick={()=>open('registry:stock_count')}>{t('stockCount')}</Button></>}</div></div><LotTable lots={data.lots.filter(l=>l.code.toLowerCase().includes(search.toLowerCase())&&(section==='whey'?['whey','ingredient','packaging_material'].includes(l.type):section==='batches'?l.type==='batch':section==='inventory'?l.type==='packaging':section==='review'?['received','awaiting_review','on_hold','hold'].includes(l.state):true))} onLot={setLot}/></>}
  {section==='recall'&&<><h2>{t('recall')}</h2><RecordList rows={data.recalls} fields={['mock','reason','status','started_at','completed_at']} onClick={()=>open('registry:complete_recall')}/></>}
  {section==='deviations'&&<RecordList rows={data.deviations} fields={['issue','severity','corrective_action','closed_at']} onClick={row=>{setFlow('close_deviation');setLot(data.lots.find(l=>l.id===row.lot_id)??null);}}/>}
- {section==='training'&&<div className="training-grid">{data.training.map(module=><article className="card training-card" key={String(module.id)}><BookOpen size={32}/><p className="eyebrow">{t('version')} {String(module.version)}</p><h2>{String(module.module_key).toUpperCase()}</h2><p>{String((module.content as Record<string,string>)?.[i18n.language]??'')}</p><Button onClick={()=>open(`training:${module.id}`)}><Check size={18}/>{t('completeModule')}</Button></article>)}</div>}
+ {section==='training'&&<Knowledge data={data} identity={identity} open={open}/>} 
  {section==='equipment'&&<><div className="button-group"><Button variant="outline" onClick={()=>open('registry:equipment')}>{t('equipment')}</Button><Button variant="outline" onClick={()=>open('calibration')}>{t('calibrationCheck')}</Button></div><RecordList rows={data.equipment} fields={['label','type','calibrated_at','next_due_at','status']}/></>}
  {section==='dashboards'&&<Suspense fallback={<p>{t('loading')}</p>}><Dashboard data={data} identity={identity}/></Suspense>}
  {section==='reports'&&<ReportPage data={data}/>}

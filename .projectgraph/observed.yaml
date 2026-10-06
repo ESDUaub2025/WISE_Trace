@@ -227,6 +227,7 @@ nodes:
   - src/lib/domain.ts::Envelope
   - src/lib/domain.ts::Identity
   - src/lib/domain.ts::Lot
+  - src/lib/domain.ts::ReceptionMeasurement
   - src/lib/domain.ts::Role
   - src/lib/domain.ts::Supplier
   - src/lib/domain.ts::SyncStatus
@@ -894,6 +895,161 @@ nodes:
   - supabase/migrations/202610060040_verification_required_fields.sql
   source: scanned
   confidence: medium
+- id: F_SRC_KNOWLEDGE_TSX
+  type: FILE
+  title: src/knowledge.tsx
+  artifacts:
+  - src/knowledge.tsx
+  symbols:
+  - src/knowledge.tsx::InstructionPicture
+  - src/knowledge.tsx::Knowledge
+  - src/knowledge.tsx::LearningContent
+  - src/knowledge.tsx::LearningMedia
+  - src/knowledge.tsx::Localized
+  - src/knowledge.tsx::ModuleContent
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_TRAINING_MEDIA_TS
+  type: FILE
+  title: src/lib/training-media.ts
+  artifacts:
+  - src/lib/training-media.ts
+  symbols:
+  - src/lib/training-media.ts::cacheTrainingAsset
+  - src/lib/training-media.ts::draw
+  - src/lib/training-media.ts::prepareTrainingMedia
+  - src/lib/training-media.ts::stop
+  - src/lib/training-media.ts::trainingAssetURL
+  source: scanned
+  confidence: medium
+- id: F_SRC_TRAINING_ASSETS_TSX
+  type: FILE
+  title: src/training-assets.tsx
+  artifacts:
+  - src/training-assets.tsx
+  symbols:
+  - src/training-assets.tsx::TrainingAssetUpload
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL
+  type: FILE
+  title: supabase/migrations/202610060041_training_assets.sql
+  artifacts:
+  - supabase/migrations/202610060041_training_assets.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL
+  type: FILE
+  title: supabase/migrations/202610060042_training_validation.sql
+  artifacts:
+  - supabase/migrations/202610060042_training_validation.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL
+  type: FILE
+  title: supabase/migrations/202610060043_training_refreshers.sql
+  artifacts:
+  - supabase/migrations/202610060043_training_refreshers.sql
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_LEARNING_DEMO_TS
+  type: FILE
+  title: src/lib/learning-demo.ts
+  artifacts:
+  - src/lib/learning-demo.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_RECEIPTS_TEST_TS
+  type: FILE
+  title: src/lib/receipts.test.ts
+  artifacts:
+  - src/lib/receipts.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_RECEIPTS_TS
+  type: FILE
+  title: src/lib/receipts.ts
+  artifacts:
+  - src/lib/receipts.ts
+  symbols:
+  - src/lib/receipts.ts::measurementUnit
+  - src/lib/receipts.ts::receiptField
+  - src/lib/receipts.ts::receiptMeasurements
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL
+  type: FILE
+  title: supabase/migrations/202610060044_training_content_contract.sql
+  artifacts:
+  - supabase/migrations/202610060044_training_content_contract.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL
+  type: FILE
+  title: supabase/migrations/202610060045_training_task_refresh.sql
+  artifacts:
+  - supabase/migrations/202610060045_training_task_refresh.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL
+  type: FILE
+  title: supabase/migrations/202610060046_training_version_scope.sql
+  artifacts:
+  - supabase/migrations/202610060046_training_version_scope.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE
+  type: FILE
+  title: supabase/migrations/202610060047_receipt_measurement_evidence.sql
+  artifacts:
+  - supabase/migrations/202610060047_receipt_measurement_evidence.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S
+  type: FILE
+  title: supabase/migrations/202610060048_text_reception_measurements.sql
+  artifacts:
+  - supabase/migrations/202610060048_text_reception_measurements.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL
+  type: FILE
+  title: supabase/migrations/202610060049_sop_training_refresh.sql
+  artifacts:
+  - supabase/migrations/202610060049_sop_training_refresh.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL
+  type: TEST
+  title: supabase/tests/receipt-measurements.test.sql
+  artifacts:
+  - supabase/tests/receipt-measurements.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_TRAINING_TEST_SQL
+  type: TEST
+  title: supabase/tests/training.test.sql
+  artifacts:
+  - supabase/tests/training.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_TRAINING_SPEC_TS
+  type: TEST
+  title: tests/live/training.spec.ts
+  artifacts:
+  - tests/live/training.spec.ts
+  symbols:
+  - tests/live/training.spec.ts::loginAdmin
+  - tests/live/training.spec.ts::totp
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL
+  type: FILE
+  title: supabase/migrations/202610060050_future_training_tasks.sql
+  artifacts:
+  - supabase/migrations/202610060050_future_training_tasks.sql
+  source: scanned
+  confidence: medium
 edges:
 - from: SYS_FRONTEND
   to: CMP_DISCOVERED_FILES
@@ -1430,6 +1586,101 @@ edges:
   type: CONTAINS
   provenance:
     generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_KNOWLEDGE_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_TRAINING_MEDIA_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_TRAINING_ASSETS_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_LEARNING_DEMO_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_RECEIPTS_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_RECEIPTS_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_TRAINING_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_TRAINING_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
 - from: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
@@ -1453,6 +1704,19 @@ edges:
     - source: scripts/create-seed.mjs
       target: src/lib/demo.ts
       import: ../src/lib/demo.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SCRIPTS_CREATE_SEED_MJS
+  to: F_SRC_LIB_LEARNING_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: scripts/create-seed.mjs
+      target: src/lib/learning-demo.ts
+      import: ../src/lib/learning-demo.ts
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -1609,6 +1873,19 @@ edges:
     - source: src/App.tsx
       target: src/report-page.tsx
       import: ./report-page
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_KNOWLEDGE_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/knowledge.tsx
+      import: ./knowledge
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -1847,6 +2124,32 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_SRC_FEATURES_TSX
+  to: F_SRC_KNOWLEDGE_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/knowledge.tsx
+      import: ./knowledge
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_LIB_RECEIPTS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/lib/receipts.ts
+      import: ./lib/receipts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
   to: F_SRC_APP_TSX
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
@@ -1856,6 +2159,58 @@ edges:
     - source: src/features.tsx
       target: src/App.tsx
       import: ./App
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_KNOWLEDGE_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/knowledge.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_KNOWLEDGE_TSX
+  to: F_SRC_LIB_TRAINING_MEDIA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/knowledge.tsx
+      target: src/lib/training-media.ts
+      import: ./lib/training-media
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_KNOWLEDGE_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/knowledge.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_KNOWLEDGE_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/knowledge.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2029,6 +2384,19 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_LEARNING_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/learning-demo.ts
+      import: ./learning-demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
@@ -2168,6 +2536,45 @@ edges:
     - source: src/lib/pin.test.ts
       target: src/lib/pin.ts
       import: ./pin
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_RECEIPTS_TEST_TS
+  to: F_SRC_LIB_RECEIPTS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/receipts.test.ts
+      target: src/lib/receipts.ts
+      import: ./receipts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_RECEIPTS_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/receipts.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_RECEIPTS_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/receipts.ts
+      target: src/lib/domain.ts
+      import: ./domain
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2337,6 +2744,58 @@ edges:
     - source: src/lib/session-policy.ts
       target: src/lib/domain.ts
       import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_TRAINING_MEDIA_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/training-media.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_TRAINING_MEDIA_TS
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/training-media.ts
+      target: src/lib/supabase.ts
+      import: ./supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_TRAINING_MEDIA_TS
+  to: F_SRC_LIB_MEDIA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/training-media.ts
+      target: src/lib/media.ts
+      import: ./media
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_TRAINING_MEDIA_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/training-media.ts
+      target: src/lib/data.ts
+      import: ./data
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2548,6 +3007,58 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_TRAINING_ASSETS_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-assets.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_ASSETS_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-assets.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_ASSETS_TSX
+  to: F_SRC_LIB_TRAINING_MEDIA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-assets.tsx
+      target: src/lib/training-media.ts
+      import: ./lib/training-media
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_ASSETS_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-assets.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_TRAINING_EDITOR_TSX
   to: F_SRC_COMPONENTS_UI_BUTTON_TSX
   type: CONSUMES
@@ -2584,6 +3095,45 @@ edges:
     - source: src/training-editor.tsx
       target: src/lib/domain.ts
       import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_EDITOR_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-editor.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_EDITOR_TSX
+  to: F_SRC_TRAINING_ASSETS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-editor.tsx
+      target: src/training-assets.tsx
+      import: ./training-assets
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_TRAINING_EDITOR_TSX
+  to: F_SRC_LIB_LEARNING_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/training-editor.tsx
+      target: src/lib/learning-demo.ts
+      import: ./lib/learning-demo
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2686,6 +3236,19 @@ edges:
     generator: projectgraph.imports.v1
     imports:
     - source: tests/live/offline-receiving.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_TRAINING_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/training.spec.ts
       target: tests/live/fixtures.ts
       import: ./fixtures
       line: null

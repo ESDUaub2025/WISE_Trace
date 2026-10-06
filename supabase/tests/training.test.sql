@@ -1,0 +1,61 @@
+begin;
+set local search_path=public,extensions;
+select no_plan();
+create temporary table learning_fixture(config uuid,module uuid,published uuid);
+insert into learning_fixture values(gen_random_uuid(),gen_random_uuid(),null);
+grant select,update on learning_fixture to authenticated;
+insert into public.config_version(id,cooperative_id,kind,version,effective_at,status,definition,placeholder)
+select f.config,'10000000-0000-4000-8000-000000000001','sop',99,now()-interval '1 day','approved',cv.definition,false from learning_fixture f cross join public.config_version cv where cv.id='40000000-0000-4000-8000-000000000001';
+insert into public.training_module(id,config_version_id,module_key,version,required,content,assessment,effective_at)
+select f.module,f.config,'gmp',99,true,'{"en":"Refresher training for the current cooperative SOP.","ar":"تدريب تجديد لإجراءات التشغيل المعتمدة في التعاونية.","refresh_days":30}',tm.assessment,now()-interval '1 day' from learning_fixture f cross join public.training_module tm where tm.id='70000000-0000-4000-8000-000000000001';
+create function pg_temp.publish_learning(content jsonb,assessment jsonb default null) returns uuid language sql as $$
+ select public.publish_training('scoped_module',content,coalesce(assessment,(select assessment from public.training_module where id='70000000-0000-4000-8000-000000000001')),true,(select config from learning_fixture),now()+interval '1 day');
+$$;
+grant execute on function pg_temp.publish_learning(jsonb,jsonb) to authenticated;
+create function pg_temp.learning_envelope(action text,payload jsonb,config uuid,observed timestamptz default now()) returns jsonb language sql as $$
+ select jsonb_build_object('id',gen_random_uuid(),'cooperative_id','10000000-0000-4000-8000-000000000001','author_id','20000000-0000-4000-8000-000000000001','device_id','30000000-0000-4000-8000-000000000001','config_version_id',config,'action',action,'observed_at',observed,'payload',payload);
+$$;
+grant execute on function pg_temp.learning_envelope(text,jsonb,uuid,timestamptz) to authenticated;
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select pg_temp.publish_learning('{"en":"Detailed English instructions for the cooperative.","ar":"تعليمات مفصلة باللغة العربية للتعاونية."}')$$,'P0001','Admin AAL2 required','Publishing requires actual AAL2 claims');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal2"}',true);
+select throws_ok($$select pg_temp.publish_learning('{"en":"Detailed English instructions for the cooperative.","ar":"تعليمات مفصلة باللغة العربية للتعاونية.","steps":{}}')$$,'P0001','Training sections must be arrays','Malformed step collections cannot break the reader');
+select throws_ok($$select pg_temp.publish_learning('{"en":"Detailed English instructions for the cooperative.","ar":"تعليمات مفصلة باللغة العربية للتعاونية.","faqs":[{"question":{"en":"Question"},"answer":{"en":"Answer"}}]}')$$,'P0001','Bilingual training section required','Training FAQs require both languages');
+select throws_ok($$select pg_temp.publish_learning('{"en":"Detailed English instructions for the cooperative.","ar":"تعليمات مفصلة باللغة العربية للتعاونية."}','[{"key":"test","question":{"en":"Question","ar":"سؤال"},"correct":"safe","options":[{"key":"safe","label":{"en":"Safe","ar":"آمن"}},{"key":"safe","label":{"en":"Unsafe","ar":"غير آمن"}}]}]')$$,'P0001','Duplicate assessment option','Duplicate answer keys cannot bypass assessments');
+select throws_ok($$select pg_temp.publish_learning('{"en":"Detailed English instructions for the cooperative.","ar":"تعليمات مفصلة باللغة العربية للتعاونية.","resources":["90000000-0000-4000-8000-000000000001"]}')$$,'P0001','Training resource configuration mismatch','Foreign or absent media cannot be published');
+update learning_fixture set published=pg_temp.publish_learning('{"en":"Detailed English instructions for the cooperative.","ar":"تعليمات مفصلة باللغة العربية للتعاونية.","steps":[{"title":{"en":"Check equipment","ar":"فحص المعدات"},"text":{"en":"Confirm the checklist","ar":"أكد قائمة الفحص"}}]}');
+select ok(exists(select 1 from public.task where details->>'module_id'=(select published::text from learning_fixture)),'Publication assigns affected producers a refresher task');
+select ok(not exists(select 1 from public.task where details->>'module_id'=(select published::text from learning_fixture) and cooperative_id='10000000-0000-4000-8000-000000000002'),'Scoped training does not assign other cooperatives');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000008","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::integer from public.training_module where config_version_id=(select config from learning_fixture)),0,'Other cooperative cannot read scoped training');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000007","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::integer from public.training_module),0,'Donor cannot read operational training content');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is(public.apply_sync(pg_temp.learning_envelope('batch','{"quantity":0,"unit":"kg"}',(select config from learning_fixture)))->>'status','conflict','Untrained producer cannot create a batch under the new SOP');
+select is(public.apply_sync(pg_temp.learning_envelope('batch','{"quantity":0,"unit":"kg"}','40000000-0000-4000-8000-000000000001'))->>'status','synced','New training for a different SOP does not invalidate original-SOP qualifications');
+reset role;
+select lives_ok($$select public.generate_tasks()$$,'Task generator handles effective and future training');
+set local role authenticated;
+select is(public.apply_sync(pg_temp.learning_envelope('training',jsonb_build_object('module_id',(select module from learning_fixture),'answers','{"hygiene":"safe"}'::jsonb),(select config from learning_fixture)))->>'status','synced','Assessment answers are validated for the selected SOP');
+select is((select expires_at-completed_at from public.training_completion where module_id=(select module from learning_fixture)),interval '30 days','Completion expiry uses the configured refresher interval');
+select ok(not exists(select 1 from public.task where user_id=auth.uid() and details->>'module_id'=(select module::text from learning_fixture) and status='open'),'Completion closes assigned refresher tasks');
+select ok(not has_function_privilege('authenticated','private.publish_training_validated_v42(text,jsonb,jsonb,boolean,uuid,timestamptz)','execute'),'Application users cannot bypass content validation');
+select ok(not has_table_privilege('authenticated','public.training_asset','insert'),'Training metadata is created only after storage confirmation');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000004","role":"authenticated","aal":"aal2"}',true);
+select throws_ok($$select public.grant_training_exception('20000000-0000-4000-8000-000000000001','Supervised practice',now()-interval '1 day',true)$$,'P0001','Training exception denied','Training exceptions require a future expiry');
+select lives_ok($$select public.grant_training_exception('20000000-0000-4000-8000-000000000001','Supervised practice',now()+interval '1 day',true)$$,'Admin can grant a reasoned, expiring exception');
+reset role;
+insert into public.config_version(id,cooperative_id,kind,version,effective_at,status,definition,drafted_by)
+select gen_random_uuid(),'10000000-0000-4000-8000-000000000001','sop',100,now()+interval '2 days','draft',definition,'20000000-0000-4000-8000-000000000004' from public.config_version where id=(select config from learning_fixture);
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000005","role":"authenticated","aal":"aal2"}',true);
+select lives_ok($$select public.approve_configuration((select id from public.config_version where version=100),public.pin_signoff('2468','30000000-0000-4000-8000-000000000001','config',(select id from public.config_version where version=100)))$$,'Separate Food-Safety Lead approves a changed SOP with PIN');
+select ok(exists(select 1 from public.training_module where config_version_id=(select id from public.config_version where version=100) and required),'SOP approval versions required refresher modules');
+select ok(exists(select 1 from public.task where details->>'config_version_id'=(select id::text from public.config_version where version=100) and user_id='20000000-0000-4000-8000-000000000001'),'SOP approval assigns affected producers due refresher tasks');
+reset role;
+select public.generate_tasks();
+set local role authenticated;
+select ok(exists(select 1 from public.task where details->>'module_id'=(select published::text from learning_fixture) and status='open'),'Scheduler preserves future assigned training until it takes effect');
+select * from finish();
+rollback;

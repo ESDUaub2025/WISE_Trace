@@ -3,9 +3,10 @@ import { configured, demo, supabase } from './supabase';
 import { cachedSessionLimits,offlineExpired,inactive } from './session-policy';
 import {signOfflineDecision} from './offline-signoff';
 import {localProductionTasks} from './schedules';
+import {introTrainingContent,introAssessment} from './learning-demo';
 import { demoConfig, demoEdges, demoIdentity, demoLots, demoSuppliers, demoTasks, ids } from './demo';
 import { actionClass, envelopeSchema, type Config, type Envelope, type Identity, type Lot, type Supplier, type Task } from './domain';
-export interface Snapshot { cooperatives:Row[]; lots: Lot[]; suppliers: Supplier[]; tasks: Task[]; config: Config; records: Row[]; stageEvents:Row[]; attachments:Row[]; deviations: Row[]; equipment: Row[]; training: Row[]; completions: Row[]; packaging: Row[]; sales: Row[]; recalls: Row[]; notifications: Row[]; audits: Row[]; members: Row[]; devices: Row[]; configs: Row[]; edges: {input_lot_id:string;output_lot_id:string}[]; }
+export interface Snapshot { trainingHistory:Row[]; trainingAssets:Row[]; cooperatives:Row[]; lots: Lot[]; suppliers: Supplier[]; tasks: Task[]; config: Config; records: Row[]; stageEvents:Row[]; attachments:Row[]; deviations: Row[]; equipment: Row[]; training: Row[]; completions: Row[]; packaging: Row[]; sales: Row[]; recalls: Row[]; notifications: Row[]; audits: Row[]; members: Row[]; devices: Row[]; configs: Row[]; edges: {input_lot_id:string;output_lot_id:string}[]; }
 export type Row = Record<string, unknown> & { id?: string };
 export async function cachedIdentity(): Promise<Identity|null> {
  if(demo)return demoIdentity;const identity=(await db.cache.get('identity'))?.value as Identity|undefined;if(!identity)return null;
@@ -16,7 +17,7 @@ export async function cachedIdentity(): Promise<Identity|null> {
 export async function snapshot(identity: Identity): Promise<Snapshot> {
  const key=`snapshot:${identity.id}`;
  let result: Snapshot;
- if (demo) result={cooperatives:[{id:ids.coop,name:'Akkar Harvest',code:'AKR01',region:'Akkar',status:'active'}],lots:demoLots,suppliers:demoSuppliers,tasks:demoTasks,config:demoConfig,records:[],stageEvents:[],attachments:[],deviations:[],equipment:[{id:'eq-1',label:'PH-02',type:'pH meter',next_due_at:new Date(Date.now()+86400000).toISOString()}],training:[{id:'70000000-0000-4000-8000-000000000001',module_key:'gmp',version:1,content:{en:'Clean equipment, safe handling and traceable records.',ar:'معدات نظيفة ومناولة سليمة وسجلات قابلة للتتبّع.'}}],completions:[],packaging:[],sales:[],recalls:[],notifications:[],audits:[],members:[{...demoIdentity}],devices:[{id:ids.device,label:'Cooperative phone 1'}],configs:[{...demoConfig}],edges:demoEdges};
+ if (demo) result={trainingHistory:[],trainingAssets:[],cooperatives:[{id:ids.coop,name:'Akkar Harvest',code:'AKR01',region:'Akkar',status:'active'}],lots:demoLots,suppliers:demoSuppliers,tasks:demoTasks,config:demoConfig,records:[],stageEvents:[],attachments:[],deviations:[],equipment:[{id:'eq-1',label:'PH-02',type:'pH meter',next_due_at:new Date(Date.now()+86400000).toISOString()}],training:[{id:'70000000-0000-4000-8000-000000000001',module_key:'gmp',version:1,content:introTrainingContent,assessment:introAssessment}],completions:[],packaging:[],sales:[],recalls:[],notifications:[],audits:[],members:[{...demoIdentity}],devices:[{id:ids.device,label:'Cooperative phone 1'}],configs:[{...demoConfig}],edges:demoEdges};
  else {
  const cached=(await db.cache.get(key))?.value as Snapshot|undefined;
  if (!navigator.onLine) { if(cached)return overlay(cached,identity);throw new Error('userNotCached'); }
@@ -25,10 +26,10 @@ export async function snapshot(identity: Identity): Promise<Snapshot> {
  const revocation=await supabase.from('device').select('revoked_at').eq('id',device).maybeSingle();
  if(revocation.data?.revoked_at){await revokeLocalDevice();throw new Error('deviceRevoked');}
  if(identity.roles.includes('donor')){
- const viewer:Snapshot={cooperatives:[],lots:[],suppliers:[],tasks:[],records:[],stageEvents:[],attachments:[],deviations:[],equipment:[],training:[],completions:[],packaging:[],sales:[],recalls:[],notifications:[],audits:[],members:[],devices:[],configs:[],edges:[],config:{id:'',placeholder:false,definition:{stages:[],checkpoints:[],whey_max_age_hours:0,shelf_life_days:0,multi_lot:false,blending_enabled:false,self_release:false,lab_before_release:false}}};
+ const viewer:Snapshot={trainingHistory:[],trainingAssets:[],cooperatives:[],lots:[],suppliers:[],tasks:[],records:[],stageEvents:[],attachments:[],deviations:[],equipment:[],training:[],completions:[],packaging:[],sales:[],recalls:[],notifications:[],audits:[],members:[],devices:[],configs:[],edges:[],config:{id:'',placeholder:false,definition:{stages:[],checkpoints:[],whey_max_age_hours:0,shelf_life_days:0,multi_lot:false,blending_enabled:false,self_release:false,lab_before_release:false}}};
  await db.cache.put({key,value:viewer});return viewer;
  }
- const tables=['lot','supplier','task','operational_record','deviation','equipment','training_module','training_completion','packaging_detail','sale','recall','notification','audit_event','membership','device','config_version','consumption','stage_event','attachment','cooperative'];
+ const tables=['lot','supplier','task','operational_record','deviation','equipment','training_module','training_completion','packaging_detail','sale','recall','notification','audit_event','membership','device','config_version','consumption','stage_event','attachment','cooperative','training_asset'];
  const rows=await Promise.all(tables.map(async table=>{
  const all:Row[]=[];for(let offset=0;;offset+=1000){const reply=await supabase!.from(table).select('*').order(table==='membership'?'user_id':table==='packaging_detail'?'lot_id':'id').range(offset,offset+999);if(reply.error)throw new Error(reply.error.message);all.push(...reply.data);if(reply.data.length<1000)break;}return all;
  }));
@@ -39,7 +40,7 @@ export async function snapshot(identity: Identity): Promise<Snapshot> {
  const effectiveConfig=config??setupDraft!;
  const lots=rows[0] as unknown as Lot[];
  const byId=new Map<string,number>();for(let offset=0;;offset+=1000){const balances=await supabase.rpc('lot_balances').order('id').range(offset,offset+999);if(balances.error)throw new Error(balances.error.message);for(const b of balances.data as {id:string;available:number}[])byId.set(b.id,Number(b.available));if(balances.data.length<1000)break;}lots.forEach(l=>{l.available=byId.get(l.id)??0;l.sync_status='synced';});
- result={cooperatives:rows[19],lots,suppliers:rows[1] as unknown as Supplier[],tasks:rows[2] as unknown as Task[],records:rows[3],stageEvents:rows[17],attachments:rows[18],deviations:rows[4],equipment:rows[5],training:rows[6].filter(module=>(String(module.effective_at)==='-infinity'||Date.parse(String(module.effective_at))<=Date.now())&&!rows[6].some(newer=>newer.module_key===module.module_key&&Number(newer.version)>Number(module.version)&&(String(newer.effective_at)==='-infinity'||Date.parse(String(newer.effective_at))<=Date.now()))),completions:rows[7],packaging:rows[8],sales:rows[9],recalls:rows[10],notifications:rows[11],audits:rows[12],members:rows[13],devices:rows[14],configs:rows[15],edges:rows[16] as unknown as Snapshot['edges'],config:effectiveConfig};
+ result={trainingHistory:rows[6],trainingAssets:rows[20],cooperatives:rows[19],lots,suppliers:rows[1] as unknown as Supplier[],tasks:rows[2] as unknown as Task[],records:rows[3],stageEvents:rows[17],attachments:rows[18],deviations:rows[4],equipment:rows[5],training:rows[6].filter(module=>module.config_version_id===effectiveConfig.id&&(String(module.effective_at)==='-infinity'||Date.parse(String(module.effective_at))<=Date.now())&&!rows[6].some(newer=>newer.module_key===module.module_key&&newer.config_version_id===module.config_version_id&&Number(newer.version)>Number(module.version)&&(String(newer.effective_at)==='-infinity'||Date.parse(String(newer.effective_at))<=Date.now()))),completions:rows[7],packaging:rows[8],sales:rows[9],recalls:rows[10],notifications:rows[11],audits:rows[12],members:rows[13],devices:rows[14],configs:rows[15],edges:rows[16] as unknown as Snapshot['edges'],config:effectiveConfig};
  }
  await db.cache.put({key,value:result});return overlay(result,identity);
 }

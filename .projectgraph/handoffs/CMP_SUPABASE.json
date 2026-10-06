@@ -1,0 +1,20 @@
+[
+  {
+    "node": "CMP_SUPABASE",
+    "note": "Migrations through 50 applied; training scope, SOP refreshers and receipt evidence pass 119 pgTAP checks.",
+    "next_action": "Implement audited disposal/diversion, residual closure and material-balance evidence; verify clean migration reset.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-06T12:21:40.009696+00:00",
+    "git": {
+      "available": true,
+      "commit": "f7cfde54973ff556da4b3b39b6382b45ef36e825",
+      "short_commit": "f7cfde54973f",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  }
+]

@@ -25,3 +25,9 @@
 **Donor:** View aggregate indicators only. Groups with fewer than five producers are suppressed. Read each indicator's definition; no unsupported CO₂, income or certification claim is made.
 
 **Consumer:** Scan the package QR for origin, ingredients, allergens, best-before and storage advice. A recalled product shows a recall notice. Unknown or unreleased product information is unavailable. Follow the printed product label.
+
+**Learning offline:** Open Knowledge to read illustrated steps, FAQs and troubleshooting in Arabic or English. Use ?Download module for offline use? while connected to store its private pictures/videos for the signed-in person. Complete the picture assessment; incorrect answers require another attempt. Checkpoint help follows the batch?s original SOP step.
+
+**Training administration:** Admins upload pictures or videos (maximum three minutes, compressed output up to 10 MB) and publish bilingual versioned modules against an approved SOP. Configure optional refresher days; 0 means no expiry. Approving a changed SOP versions its required training and assigns affected producers a 14-day refresher task. New installations must publish required introductory training before producers can create batches.
+
+**Receipt measurements:** Each whey receipt shows the measurements configured by its SOP. Enter readings and select the instruments used; blank optional fields stay blank. Confirm or edit each supplier declaration separately. A calibration warning calls for supervisor review. Ingredient and packaging-material receipts retain supplier lots, quantity, unit, receipt time and any known expiry.

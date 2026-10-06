@@ -1,5 +1,6 @@
 ﻿import { readFileSync,writeFileSync } from 'node:fs';
 import { demoConfig } from '../src/lib/demo.ts';
+import {introTrainingContent,introAssessment} from '../src/lib/learning-demo.ts';
 const quote=value=>`'${String(value).replaceAll("'","''")}'`;
 const uuid=(family,n)=>`${family}0000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
 const coop=uuid(1,1),coop2=uuid(1,2),device=uuid(3,1),cfg=uuid(4,1),producer=uuid(2,1),supervisor=uuid(2,2),supplier=uuid(5,1);
@@ -16,7 +17,7 @@ sql+=`insert into public.device values('${device}','${coop}','Cooperative phone 
 sql+=`insert into public.config_version(id,kind,version,effective_at,status,placeholder,definition,drafted_by,approved_by,approved_at) values('${cfg}','sop',1,'2026-01-01','approved',true,${quote(JSON.stringify(demoConfig.definition))},'${uuid(2,4)}','${uuid(2,5)}',now());\n`;
 sql+=`insert into public.supplier values('${supplier}','${coop}','Cedar Dairy','dairy','approved','{}','{"pasteurized":true,"starter_culture":"Cultured labneh","salt_stage":"After separation"}');\n`;
 const module=uuid(7,1);
-sql+=`insert into public.training_module(id,config_version_id,module_key,version,content,assessment) values('${module}','${cfg}','gmp',1,'{"en":"Clean equipment, safe handling and traceable records.","ar":"معدات نظيفة ومناولة سليمة وسجلات قابلة للتتبع."}','[{"key":"hygiene","correct":"safe"}]');\n`;
+sql+=`insert into public.training_module(id,config_version_id,module_key,version,content,assessment) values('${module}','${cfg}','gmp',1,${quote(JSON.stringify(introTrainingContent))},${quote(JSON.stringify(introAssessment))});\n`;
 for(let i=1;i<=14;i++)sql+=`insert into public.training_completion values('${uuid(8,i)}','${uuid(1,i<=7?1:2)}','${uuid(2,i)}','${module}','2026-01-02',100,null);\n`;
 const states=['accepted','in_production','released','received','hold','rejected','received','draft','awaiting_review','on_hold','rejected','closed'];
 for(let i=1;i<=states.length;i++){

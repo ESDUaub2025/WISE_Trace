@@ -16,7 +16,7 @@ Checked requirements below have implementation and local evidence. Unchecked req
 
 ## Requirement evidence
 
-- [ ] FR-AUTH-01 (M) — Users sign in with phone number or username plus password or PIN; admins and Food-Safety Leads also use a second factor.
+- [x] FR-AUTH-01 (M) — Users sign in with phone number or username plus password or PIN; admins and Food-Safety Leads also use a second factor. ? Evidence: Actual Supabase TOTP enrollment/verification and admin AAL2 browser login in training.spec.ts; username/password and cached PIN flows.
 - [x] FR-AUTH-02 (M) — Role-based access with cooperative-level data isolation enforced on the server, not only in the interface. — Evidence: pgTAP security.test.sql and rules.test.sql cooperative and role boundaries.
 - [ ] FR-AUTH-03 (M) — **Shared-device mode \[Added\]:** several users of one cooperative can be signed in on one device and switch with a personal 4–6 digit PIN; each record is attributed to the active user.
 - [ ] FR-AUTH-04 (M) — Critical actions (accept/reject whey, release/reject batch, recall, threshold change) require PIN re-entry at the moment of action as an authenticated sign-off.
@@ -28,14 +28,14 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-ORG-03 (M) — User records hold role, status, training status, and authorizations (e.g. "may receive whey", "may release batches").
 - [ ] FR-ORG-04 (M) — Demographic data for impact is stored in a separate Producer Profile with restricted access and recorded consent.
 - [ ] FR-ORG-05 (S) — Devices are registered to a cooperative with a friendly label (e.g. "Coop phone 2").
-- [ ] FR-TRN-01 (M) — Knowledge area with GMP, food-safety procedures, SOPs, short videos, illustrated instructions, FAQs and troubleshooting, in Arabic and English.
-- [ ] FR-TRN-02 (M) — All content is versioned; each completion records module, version, date and assessment result.
-- [ ] FR-TRN-03 (M) — Producers cannot independently create batches until required introductory training is complete.
-- [ ] FR-TRN-04 (M) — Admins may grant supervised or exceptional authorization with a logged reason and expiry date.
-- [ ] FR-TRN-05 (M) — When an SOP or module changes, affected users are assigned refresher training with a due date; overdue refreshers appear as tasks.
-- [ ] FR-TRN-06 (M) — **Offline content \[Added\]:** required modules and SOPs can be downloaded to the device; videos are compressed for low bandwidth.
-- [ ] FR-TRN-07 (S) — **Context help \[Added\]:** each checkpoint links to the relevant SOP step or short video.
-- [ ] FR-TRN-08 (S) — Simple picture-based assessments suitable for low-literacy users.
+- [x] FR-TRN-01 (M) — Knowledge area with GMP, food-safety procedures, SOPs, short videos, illustrated instructions, FAQs and troubleshooting, in Arabic and English. ? Evidence: Bilingual knowledge reader, illustrated instructions, FAQs/troubleshooting and private image/video authoring; live media browser test. Default learning text describes recordkeeping, while production procedures remain subject to Food-Safety Lead approval.
+- [x] FR-TRN-02 (M) — All content is versioned; each completion records module, version, date and assessment result. ? Evidence: Append-only module revisions and attributed assessment completion; training.test.sql.
+- [x] FR-TRN-03 (M) — Producers cannot independently create batches until required introductory training is complete. ? Evidence: training.test.sql denies batch creation without current qualifications; required introductory modules cannot be absent.
+- [x] FR-TRN-04 (M) — Admins may grant supervised or exceptional authorization with a logged reason and expiry date. ? Evidence: training.test.sql tests reasoned admin authorization and denies expired exceptions.
+- [x] FR-TRN-05 (M) — When an SOP or module changes, affected users are assigned refresher training with a due date; overdue refreshers appear as tasks. ? Evidence: training.test.sql verifies SOP-triggered module revisions, affected-producer tasks, completion closure, expiry and preservation of future assignments.
+- [x] FR-TRN-06 (M) — **Offline content \[Added\]:** required modules and SOPs can be downloaded to the device; videos are compressed for low bandwidth. ? Evidence: training.spec.ts compresses an actual picture/video, downloads private resources and reloads them offline; content is cached per signed-in user.
+- [x] FR-TRN-07 (S) — **Context help \[Added\]:** each checkpoint links to the relevant SOP step or short video. ? Evidence: Checkpoint help selects the original batch SOP and the configured step.
+- [x] FR-TRN-08 (S) — Simple picture-based assessments suitable for low-literacy users. ? Evidence: flows.spec.ts checks illustrated bilingual assessments offline and rejects incorrect answers.
 - [ ] FR-SUP-01 (M) — Reusable supplier registry with types: dairy/labneh, bulgur, salt, other ingredient, packaging.
 - [x] FR-SUP-02 (S) — Supplier approval status (approved, provisional, suspended); suspended suppliers cannot be selected for new receipts. — Evidence: receipt filtering and apply_sync supplier status validation.
 - [ ] FR-SUP-03 (M) — **Ingredient receipt \[Added\]:** every receipt of bulgur, salt, optional ingredients and packaging material creates an Ingredient Lot with internal lot ID, supplier lot if available, quantity, unit, date and expiry if known.
@@ -43,10 +43,10 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-SUP-05 (M) — Batches select ingredients from available Ingredient Lots rather than typing supplier details again.
 - [x] FR-WHY-01 (M) — Creating a receipt generates a unique Whey Lot ID automatically. — Evidence: live A1 plus unique UUID/sequence database constraints.
 - [x] FR-WHY-02 (M) — Source fields: dairy supplier, supplier lot/reference, labneh production lot, milk species, whey generation date/time, collection date/time. — Evidence: live A1 receipt form and immutable receipt facts.
-- [ ] FR-WHY-03 (M) — Supplier declarations: pasteurization confirmation, labneh ingredients, starter culture, salt addition stage, other declarations; each marked "declared by supplier".
+- [x] FR-WHY-03 (M) — Supplier declarations: pasteurization confirmation, labneh ingredients, starter culture, salt addition stage, other declarations; each marked "declared by supplier". ? Evidence: Structured supplier declaration fields pre-fill pasteurization, ingredients, starter and salt stage, with receiver confirmation; live A1.
 - [x] FR-WHY-04 (S) — **Supplier declaration reuse \[Added\]:** a standing declaration per supplier pre-fills these fields; the receiver confirms or edits per delivery. — Evidence: preview declaration reuse and live A1 confirmation/edit fields.
-- [ ] FR-WHY-05 (M) — Transport and reception: transport method/conditions, container type and condition, receipt date/time, received mass, receipt temperature.
-- [ ] FR-WHY-06 (M) — Quality measurements as required by the active SOP: pH, titratable acidity, °Brix or approved rapid solids indicator, salt/conductivity, appearance, odour. Each stores value, unit, time, user, equipment ID and optional image.
+- [x] FR-WHY-05 (M) — Transport and reception: transport method/conditions, container type and condition, receipt date/time, received mass, receipt temperature. ? Evidence: Receipt form records transport method/conditions, container type/condition, time, mass and configured temperature.
+- [x] FR-WHY-06 (M) — Quality measurements as required by the active SOP: pH, titratable acidity, °Brix or approved rapid solids indicator, salt/conductivity, appearance, odour. Each stores value, unit, time, user, equipment ID and optional image. ? Evidence: Configured reception fields preserve unit, time, user, equipment and optional receipt-photo reference; receipts.test.ts and receipt-measurements.test.sql cover blank values, plausibility, unit and attribution boundaries.
 - [ ] FR-WHY-07 (M) — Sampling: sample ID, sampling date/time, lab, result and reference when available; a lab result can be attached after the decision.
 - [x] FR-WHY-08 (M) — The system evaluates measurements against the active threshold set and shows a suggested outcome, but the user selects the decision. — Evidence: live A1 suggested hold.
 - [x] FR-WHY-09 (M) — Decision options: **Accepted**, **Hold**, **Rejected**, with reason, decision time, checker, authenticated sign-off and evidence. — Evidence: PIN transition_lot and live A1/A4.
