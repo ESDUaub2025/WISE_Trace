@@ -17,3 +17,4 @@ build/live/
 
 build/
 out/
+.projectgraph/.writer.lock

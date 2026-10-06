@@ -1,0 +1,359 @@
+{
+  "node": "CMP_SRC",
+  "evidence_id": "b13cfdb63e6c4592a9da5e6ca168fd9e",
+  "result": "PASS",
+  "started_at": "2026-10-06T11:36:48+00:00",
+  "finished_at": "2026-10-06T11:37:18+00:00",
+  "git": {
+    "available": true,
+    "commit": "84b8517d5df29fbcb9ee5bf93683ab954fee7bde",
+    "short_commit": "84b8517d5df2",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:a6599f128d61a208ee2f3ecb9303eff645e32d683c1fe0001f38724e205088be",
+  "dep_fingerprint": "sha256:6f57a2fa815424504e9e12ccebe0c6c7ea81b6606c588028878e27d4e0c413b2",
+  "artifacts": [
+    {
+      "path": "src/App.tsx",
+      "hash": "55d7d867f6b42cec40ae156604c79f78d453be4be6de5d31a27e5d5800c6d1c0"
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "hash": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85"
+    },
+    {
+      "path": "src/components/ui/sheet.tsx",
+      "hash": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962"
+    },
+    {
+      "path": "src/dashboard.tsx",
+      "hash": "9615de8d923db4ef14f6e26579352a63ac301d0ee0add990640b43660ed3c38d"
+    },
+    {
+      "path": "src/evidence.tsx",
+      "hash": "e02120d12ac364ea901286cc9052084dfe92fb206b5d78cab5330707becfde4f"
+    },
+    {
+      "path": "src/features.tsx",
+      "hash": "56df580263d83825e1cc2f39b84eef7fb163bf6a8518c3a62899fef6bc58fdd0"
+    },
+    {
+      "path": "src/i18n/ar.json",
+      "hash": "d74c67732e38cff48b6658f3fce7188116e9df8137c789f4d5bb789e64dcf7e3"
+    },
+    {
+      "path": "src/i18n/en.json",
+      "hash": "17309a10ba24d8ccc2e88bd9f6c6b130e55d8123586ee71d9607c2ff34357666"
+    },
+    {
+      "path": "src/i18n/index.ts",
+      "hash": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12"
+    },
+    {
+      "path": "src/lib/auth.ts",
+      "hash": "6bbe63df374dca86dd14b656049530532089f10fc8b92af24aacfbb52747ab5b"
+    },
+    {
+      "path": "src/lib/data.ts",
+      "hash": "b9ba7796dd9928b70bc60bfcd2686dbbd0b59ef39d9dbd21d129eaf060d12699"
+    },
+    {
+      "path": "src/lib/demo.ts",
+      "hash": "06f451f185d6a4b758a7d51f9a5a1496097de0b190f0917ec90d49abd8cc1b33"
+    },
+    {
+      "path": "src/lib/domain.test.ts",
+      "hash": "f34ef07344fe09491763c6dec3db73428d701a7ce11d0893ec7fae68672ceb6a"
+    },
+    {
+      "path": "src/lib/domain.ts",
+      "hash": "a8d13224b1a0d111212166a0db4b5c9694235dc9842d33b580ff5e919a072d26"
+    },
+    {
+      "path": "src/lib/media.ts",
+      "hash": "99dc724aa075af6856147c3d994191fe2db5863ce42c61a49855b6406b20ea6a"
+    },
+    {
+      "path": "src/lib/mfa.ts",
+      "hash": "8850636db751da5c31a9ef0e728da5a97ae107be7d06de7cc4ad19002275c123"
+    },
+    {
+      "path": "src/lib/offline-signoff.ts",
+      "hash": "60fcf28725262274f3a425953b805e08c9a48141fa79edb51d475e7f4c48a834"
+    },
+    {
+      "path": "src/lib/pin.test.ts",
+      "hash": "a037086e2fee03b7565756f2a53e519524966c77d23bb0d71af9b7155e6678cb"
+    },
+    {
+      "path": "src/lib/pin.ts",
+      "hash": "bc0ced82e329967ae10544be3a6f211eff7f4f00f0dcdf39fcc1d582f415cdc2"
+    },
+    {
+      "path": "src/lib/reports.ts",
+      "hash": "f198f88b99cc7132961151850b9442c221b2db84eb8d26b62d9c1576233e1c0e"
+    },
+    {
+      "path": "src/lib/schedules.test.ts",
+      "hash": "05159bce3e746bd49a4ffe937c9b9e641a95cf6cbb02a39b7fafe800c43f8e6b"
+    },
+    {
+      "path": "src/lib/schedules.ts",
+      "hash": "ebc536d9e33803d449ff82c4000cc5b9e27dcc48310f60639b04392a5b72101f"
+    },
+    {
+      "path": "src/lib/sealed-ticket.test.ts",
+      "hash": "2057cdf00f64507873c546241d5dbf9de8b8a1e8f4c8172c5dc4aff99a646f57"
+    },
+    {
+      "path": "src/lib/sealed-ticket.ts",
+      "hash": "9eddec2e52492e0a09396e95c054929bcb99e7e85968206f7a2236110040f403"
+    },
+    {
+      "path": "src/lib/session-policy.test.ts",
+      "hash": "7fbb9d63954e8cee2b0909cdb58bce17e834c20309cce01fab6663f6c2626097"
+    },
+    {
+      "path": "src/lib/session-policy.ts",
+      "hash": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a"
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "hash": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024"
+    },
+    {
+      "path": "src/main.tsx",
+      "hash": "8c445e80a57a6792145c28ffe26aa6f2b4157ed9832ae1aba863016e53bd4871"
+    },
+    {
+      "path": "src/management.tsx",
+      "hash": "8d3df7b17b7fe5448afda2a29579dc51bba2bd78ccb23512bb55bab1211c41c8"
+    },
+    {
+      "path": "src/offline/db.test.ts",
+      "hash": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0"
+    },
+    {
+      "path": "src/offline/db.ts",
+      "hash": "06097f9d9e9fb5f8cdd1a471ad7c41ae577b6d44d65518a51308016ab6b26188"
+    },
+    {
+      "path": "src/report-page.tsx",
+      "hash": "dbceeb608ec61b925ffff809589e44dc97405a87b677a7874d9da856b73db950"
+    },
+    {
+      "path": "src/scanner.tsx",
+      "hash": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2"
+    },
+    {
+      "path": "src/styles.css",
+      "hash": "65533a68c297a2b78a95fd5f5541cddb9b7d628d333ab9d9c227eddd68d3c597"
+    },
+    {
+      "path": "src/test-setup.ts",
+      "hash": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9"
+    },
+    {
+      "path": "src/training-editor.tsx",
+      "hash": "f66d96c4ef86d124215be66833dced4534c88eaa3660f9338ec674cb9e7b9be1"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_SRC_APP_TSX",
+      "fingerprint": "sha256:319e242581e2fb529b2c638bdacd0916cad4887a8f3a0b68dedba173e3ef75c1"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+      "fingerprint": "sha256:ff9744c686545b312fe4c0512c38794f1dfb36344f9f36fb9eaaef36a57b1a11"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_SHEET_TSX",
+      "fingerprint": "sha256:7e81c51974eccbda71c9884b3430a03c77340ff2041a19c448da3eb85af6c167"
+    },
+    {
+      "id": "F_SRC_DASHBOARD_TSX",
+      "fingerprint": "sha256:b93a7cc2325c6e143500343b2e9b8a270756ce603f2272616730f03ae0d4a5a6"
+    },
+    {
+      "id": "F_SRC_EVIDENCE_TSX",
+      "fingerprint": "sha256:6379f392ab076c3be1f03033e7b6ac58d6d86ce5223de11acd180af5b75e5f3e"
+    },
+    {
+      "id": "F_SRC_FEATURES_TSX",
+      "fingerprint": "sha256:8c135b49f44dbf522616341ec1cd9d9309077f4443463e04b66d03a602eeb6d1"
+    },
+    {
+      "id": "F_SRC_I18N_INDEX_TS",
+      "fingerprint": "sha256:0d8ea56614f0ca9612b7ad2653508c7828cfdea765aa1f5e0880c572e5fb1efb"
+    },
+    {
+      "id": "F_SRC_LIB_AUTH_TS",
+      "fingerprint": "sha256:be664f02c05f331b96724daae28c7477486fcd33edbafa4fe3773de5f8276d1a"
+    },
+    {
+      "id": "F_SRC_LIB_DATA_TS",
+      "fingerprint": "sha256:62c8ff79f18e3d7ba4db7a16cb54239b27e7ee0d665237bf0dc135e5faedebd0"
+    },
+    {
+      "id": "F_SRC_LIB_DEMO_TS",
+      "fingerprint": "sha256:48fa94dfe328555a4eab18cd665496e0f778d24b19a9494d1c4d4ab2e8ad3bc9"
+    },
+    {
+      "id": "F_SRC_LIB_DOMAIN_TEST_TS",
+      "fingerprint": "sha256:2cf33115659d6c0100db7a5fdd9723436f29275ff63af4e103f88d7dc540ecdc"
+    },
+    {
+      "id": "F_SRC_LIB_DOMAIN_TS",
+      "fingerprint": "sha256:bd94239caf23d85a65fcde487b9232f876ec45134a43a8c8ac779f4df3b482eb"
+    },
+    {
+      "id": "F_SRC_LIB_MEDIA_TS",
+      "fingerprint": "sha256:07a066e1e3b8dc84cf832719a76879588508ee6bfcc4c9c47147f99256a8c7a1"
+    },
+    {
+      "id": "F_SRC_LIB_MFA_TS",
+      "fingerprint": "sha256:dca26923ac160e2f79f66ebf3cc95b193260d08c61d62184015e31b1888c6668"
+    },
+    {
+      "id": "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
+      "fingerprint": "sha256:5967b604228128dd943ed907fec480ed6ec2dc8b63bc8362ca43ab3378a17f49"
+    },
+    {
+      "id": "F_SRC_LIB_PIN_TEST_TS",
+      "fingerprint": "sha256:0098b8cd5057693b43dfe29cfd40335d6f962d9245f0dccbc5a6cdd8e9386cc7"
+    },
+    {
+      "id": "F_SRC_LIB_PIN_TS",
+      "fingerprint": "sha256:d7d3547cc947880295b9a122f2436fb60ddf02ede6215568017426e17280ed24"
+    },
+    {
+      "id": "F_SRC_LIB_REPORTS_TS",
+      "fingerprint": "sha256:05bc36e8cbb4455e27c50c432550a82410e4ffea4e16edfe932c96d2152baaf3"
+    },
+    {
+      "id": "F_SRC_LIB_SCHEDULES_TEST_TS",
+      "fingerprint": "sha256:60734e00c9f8807866498acdac7ca91063951e26152ef894d21c909d25b2de58"
+    },
+    {
+      "id": "F_SRC_LIB_SCHEDULES_TS",
+      "fingerprint": "sha256:5efbe8a463984e87c941b637a3f5846a0b3ca3d2302d685ea197e1ba5130fd68"
+    },
+    {
+      "id": "F_SRC_LIB_SEALED_TICKET_TEST_TS",
+      "fingerprint": "sha256:2aad0922d4672a8e2417dcc3f06f78488d17106522ac1eeb880019d8453e4fb8"
+    },
+    {
+      "id": "F_SRC_LIB_SEALED_TICKET_TS",
+      "fingerprint": "sha256:3aa38ba525c270d25bcd3ca9de35046a26894ec6e31c209f60bdefc940c0e1e5"
+    },
+    {
+      "id": "F_SRC_LIB_SESSION_POLICY_TEST_TS",
+      "fingerprint": "sha256:604efc226edcb666c7b81f9b4bc4afeed19a656fd87e81d92ad6896d98bacf2e"
+    },
+    {
+      "id": "F_SRC_LIB_SESSION_POLICY_TS",
+      "fingerprint": "sha256:c662b4c0708a5f9535c8c0da042ebfa3d8954cd1d3b964c5a25ac119103627fc"
+    },
+    {
+      "id": "F_SRC_LIB_SUPABASE_TS",
+      "fingerprint": "sha256:118b0643bfeefe741db6e9f50f54f1fa716186fcc61703054d8928e16ddfd6b3"
+    },
+    {
+      "id": "F_SRC_MAIN_TSX",
+      "fingerprint": "sha256:4c85f021ea34ea38629c59c356e09badbd923544a03d7b1202297bf041c2b3b1"
+    },
+    {
+      "id": "F_SRC_MANAGEMENT_TSX",
+      "fingerprint": "sha256:9b78a063de8cadc65cbe97a0d768618733bf6797932914910acddf99dae92d30"
+    },
+    {
+      "id": "F_SRC_OFFLINE_DB_TEST_TS",
+      "fingerprint": "sha256:c129acf3287b6bd9336a0cecb1a8cc2219d1622f2afb3daaeacf1f390c1d3014"
+    },
+    {
+      "id": "F_SRC_OFFLINE_DB_TS",
+      "fingerprint": "sha256:75ff9cb2d70c3e3763cafc23183be85fafaa876940d1d35de66e4bb38b7aa2f3"
+    },
+    {
+      "id": "F_SRC_REPORT_PAGE_TSX",
+      "fingerprint": "sha256:6c2a07a8e332fc579029bdf9de455805fb3663323eecda9b5b4b12fa71dd2505"
+    },
+    {
+      "id": "F_SRC_SCANNER_TSX",
+      "fingerprint": "sha256:a4270f3e6638de958da6928d193110b4eaaf102b3ad2881383108e93212856e1"
+    },
+    {
+      "id": "F_SRC_TEST_SETUP_TS",
+      "fingerprint": "sha256:4f007a9b0c007b18ac970ff56b9b2dd0ef852d2f9eeac9796d1e1387d25ba52f"
+    },
+    {
+      "id": "F_SRC_TRAINING_EDITOR_TSX",
+      "fingerprint": "sha256:888d791d14b7348799cb42e8a5ac26351c961279efae11af5ec17e9ef3238b89"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "src/main.tsx",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "src/offline/db.ts",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "types",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run typecheck",
+      "exit_code": 0,
+      "duration_s": 4.078,
+      "stdout_digest": "sha256:7aacbbafb0eab13e5c3a6ab7214826f6c6e4b0e01058ab8de1015d391ca182e1",
+      "output_tail": "\n> wise_trace@1.0.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "lint",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run lint",
+      "exit_code": 0,
+      "duration_s": 2.531,
+      "stdout_digest": "sha256:858387c90a13db210686c6fdfc4e50cd365f1384f7af51cc7219608480c63f55",
+      "output_tail": "\n> wise_trace@1.0.0 lint\n> eslint .\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "unit",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm test",
+      "exit_code": 0,
+      "duration_s": 1.172,
+      "stdout_digest": "sha256:31ec61b9a70f64232713e7b5d8f58e6ff49d829577e21a6cbe25bccae121e552",
+      "output_tail": "\n> wise_trace@1.0.0 test\n> vitest run\n\n\n RUN  v5.0.3 D:/Programing/WISE_Trace\n\n\n Test Files  6 passed (6)\n      Tests  21 passed (21)\n   Start at  14:36:55\n   Duration  367ms (tests 32%, setup 23%, transform 21%, import 21%, worker 3%)\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "browser",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run test:e2e",
+      "exit_code": 0,
+      "duration_s": 21.765,
+      "stdout_digest": "sha256:2c9afe0486944e3b7503d6b342eaba81b668a7f1f1192c771bb8050cea3fd701",
+      "output_tail": "ests\\flows.spec.ts:6:1 \u00e2\u20ac\u00ba Arabic changes document direction and keeps lot codes LTR (1.0s)\n  ok 14 [mobile] \u00e2\u20ac\u00ba tests\\flows.spec.ts:5:1 \u00e2\u20ac\u00ba genealogy shows ancestry and leaves unrelated packaging materials out (763ms)\n\n  14 passed (20.7s)\n[WebServer] (node:34364) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:3640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] [plugin builtin:vite-reporter] \n[WebServer] (!) Some chunks are larger than 500 kB after minification. Consider:\n[WebServer] - Using dynamic import() to code-split the application\n[WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n[WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n[WebServer] [INEFFECTIVE_DYNAMIC_IMPORT] src/lib/data.ts is dynamically imported by src/features.tsx but also statically imported by src/App.tsx, src/features.tsx, src/lib/auth.ts, src/management.tsx, dynamic import will not move module into another chunk.\n[WebServer] \n[WebServer] (node:32480) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:29784) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:22620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:28868) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:29156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:32260) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:18316) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:19776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:31592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:26896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:35596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:19168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:13372) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:7076) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:33124) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

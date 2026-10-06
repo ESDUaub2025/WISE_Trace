@@ -6,7 +6,8 @@ import { getDevice } from './data';
 import type { Identity } from './domain';
 import { verifyMfa } from './mfa';
 import { cachedSessionLimits,offlineExpired,markActive } from './session-policy';
-interface LocalSession { identity: Identity; session: Session; verifier: {salt:number[];hash:string}; authenticated_at: number; }
+import {sealSecret,type OfflineCredential} from './sealed-ticket';
+interface LocalSession { identity: Identity; session: Session; verifier: {salt:number[];hash:string}; authenticated_at: number; offline_credential?:OfflineCredential; }
 supabase?.auth.onAuthStateChange((_event,session)=>{if(session)void db.cache.get(`session:${session.user.id}`).then(row=>{if(row){const local=row.value as LocalSession;return db.cache.put({key:row.key,value:{...local,session}});}});});
 export async function login(username:string,password:string,pin:string,factorId?:string,totpCode?:string):Promise<Identity>{
  if(!supabase)throw new Error('setup');
@@ -22,6 +23,7 @@ export async function login(username:string,password:string,pin:string,factorId?
  const sign=await supabase.rpc('pin_signoff',{pin,device,action:'cache_session',object_id:identity.id});if(sign.error||!sign.data)throw new Error('authFailed');
  const current=await supabase.auth.getSession();
  const local:LocalSession={identity,session:current.data.session??data.session,verifier:await createPinVerifier(pin),authenticated_at:Date.now()};
+ if(identity.roles.includes('supervisor')||(identity.roles.includes('producer')&&identity.authorizations.receive_whey)){const issued=await supabase.rpc('issue_offline_credential',{device,sign:sign.data});if(issued.error)throw issued.error;local.offline_credential={id:issued.data.id,expires_at:issued.data.expires_at,sealed:await sealSecret(issued.data.secret,pin)};}
  await db.cache.put({key:`session:${identity.id}`,value:local});await db.cache.put({key:'identity',value:identity});markActive(identity.id);return identity;
 }
 export async function switchUser(id:string,pin:string){

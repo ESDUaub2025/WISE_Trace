@@ -105,10 +105,8 @@ nodes:
   - src/App.tsx::Label
   - src/App.tsx::LotTable
   - src/App.tsx::RecordList
-  - src/App.tsx::Reports
   - src/App.tsx::SignIn
   - src/App.tsx::Status
-  - src/App.tsx::exportCSV
   - src/App.tsx::localDate
   - src/App.tsx::open
   source: scanned
@@ -388,6 +386,7 @@ nodes:
   - supabase/functions/_shared/http.ts::authenticate
   - supabase/functions/_shared/http.ts::clients
   - supabase/functions/_shared/http.ts::json
+  - supabase/functions/_shared/http.ts::key
   source: scanned
   confidence: medium
 - id: F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS
@@ -416,6 +415,8 @@ nodes:
   artifacts:
   - supabase/functions/report/index.ts
   symbols:
+  - supabase/functions/report/index.ts::midnight
+  - supabase/functions/report/index.ts::read
   - supabase/functions/report/index.ts::text
   source: scanned
   confidence: medium
@@ -713,6 +714,184 @@ nodes:
   title: vitest.config.ts
   artifacts:
   - vitest.config.ts
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
+  type: FILE
+  title: scripts/bootstrap-owner.mjs
+  artifacts:
+  - scripts/bootstrap-owner.mjs
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_CHECK_REPORTS_MJS
+  type: FILE
+  title: scripts/check-reports.mjs
+  artifacts:
+  - scripts/check-reports.mjs
+  symbols:
+  - scripts/check-reports.mjs::csv
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS
+  type: FILE
+  title: scripts/wait-for-functions.mjs
+  artifacts:
+  - scripts/wait-for-functions.mjs
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_OFFLINE_SIGNOFF_TS
+  type: FILE
+  title: src/lib/offline-signoff.ts
+  artifacts:
+  - src/lib/offline-signoff.ts
+  symbols:
+  - src/lib/offline-signoff.ts::signOfflineDecision
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SCHEDULES_TEST_TS
+  type: FILE
+  title: src/lib/schedules.test.ts
+  artifacts:
+  - src/lib/schedules.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SCHEDULES_TS
+  type: FILE
+  title: src/lib/schedules.ts
+  artifacts:
+  - src/lib/schedules.ts
+  symbols:
+  - src/lib/schedules.ts::localProductionTasks
+  - src/lib/schedules.ts::lotConfig
+  - src/lib/schedules.ts::stageTimeline
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SEALED_TICKET_TEST_TS
+  type: FILE
+  title: src/lib/sealed-ticket.test.ts
+  artifacts:
+  - src/lib/sealed-ticket.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SEALED_TICKET_TS
+  type: FILE
+  title: src/lib/sealed-ticket.ts
+  artifacts:
+  - src/lib/sealed-ticket.ts
+  symbols:
+  - src/lib/sealed-ticket.ts::OfflineCredential
+  - src/lib/sealed-ticket.ts::SealedSecret
+  - src/lib/sealed-ticket.ts::decisionProof
+  - src/lib/sealed-ticket.ts::openSecret
+  - src/lib/sealed-ticket.ts::sealSecret
+  - src/lib/sealed-ticket.ts::wrappingKey
+  source: scanned
+  confidence: medium
+- id: F_SRC_REPORT_PAGE_TSX
+  type: FILE
+  title: src/report-page.tsx
+  artifacts:
+  - src/report-page.tsx
+  symbols:
+  - src/report-page.tsx::ReportPage
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL
+  type: FILE
+  title: supabase/migrations/202610060031_permission_scope.sql
+  artifacts:
+  - supabase/migrations/202610060031_permission_scope.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL
+  type: FILE
+  title: supabase/migrations/202610060032_bootstrap.sql
+  artifacts:
+  - supabase/migrations/202610060032_bootstrap.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL
+  type: FILE
+  title: supabase/migrations/202610060033_offline_signoff.sql
+  artifacts:
+  - supabase/migrations/202610060033_offline_signoff.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL
+  type: FILE
+  title: supabase/migrations/202610060034_offline_decision_sync.sql
+  artifacts:
+  - supabase/migrations/202610060034_offline_decision_sync.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610060035_impact_permissions.sql
+  artifacts:
+  - supabase/migrations/202610060035_impact_permissions.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL
+  type: FILE
+  title: supabase/migrations/202610060036_production_sync.sql
+  artifacts:
+  - supabase/migrations/202610060036_production_sync.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL
+  type: FILE
+  title: supabase/migrations/202610060037_stage_schedules.sql
+  artifacts:
+  - supabase/migrations/202610060037_stage_schedules.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL
+  type: FILE
+  title: supabase/migrations/202610060038_registry_edits.sql
+  artifacts:
+  - supabase/migrations/202610060038_registry_edits.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL
+  type: TEST
+  title: supabase/tests/bootstrap.test.sql
+  artifacts:
+  - supabase/tests/bootstrap.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL
+  type: TEST
+  title: supabase/tests/offline-signoff.test.sql
+  artifacts:
+  - supabase/tests/offline-signoff.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_PRODUCTION_TEST_SQL
+  type: TEST
+  title: supabase/tests/production.test.sql
+  artifacts:
+  - supabase/tests/production.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS
+  type: TEST
+  title: tests/live/offline-receiving.spec.ts
+  artifacts:
+  - tests/live/offline-receiving.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL
+  type: FILE
+  title: supabase/migrations/202610060039_equipment_verification.sql
+  artifacts:
+  - supabase/migrations/202610060039_equipment_verification.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS
+  type: FILE
+  title: supabase/migrations/202610060040_verification_required_fields.sql
+  artifacts:
+  - supabase/migrations/202610060040_verification_required_fields.sql
   source: scanned
   confidence: medium
 edges:
@@ -1136,6 +1315,134 @@ edges:
   type: CONTAINS
   provenance:
     generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_CHECK_REPORTS_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_OFFLINE_SIGNOFF_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SCHEDULES_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SEALED_TICKET_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SEALED_TICKET_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_REPORT_PAGE_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_PRODUCTION_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: scripts/bootstrap-owner.mjs
+      target: src/lib/demo.ts
+      import: ../src/lib/demo.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SCRIPTS_CREATE_SEED_MJS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
@@ -1293,15 +1600,15 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_SRC_APP_TSX
-  to: F_SRC_LIB_REPORTS_TS
+  to: F_SRC_REPORT_PAGE_TSX
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
   provenance:
     generator: projectgraph.imports.v1
     imports:
     - source: src/App.tsx
-      target: src/lib/reports.ts
-      import: ./lib/reports
+      target: src/report-page.tsx
+      import: ./report-page
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -1514,6 +1821,32 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_SRC_FEATURES_TSX
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/lib/schedules.ts
+      import: ./lib/schedules
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_LIB_REPORTS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/lib/reports.ts
+      import: ./lib/reports
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
   to: F_SRC_APP_TSX
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
@@ -1617,6 +1950,19 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_LIB_AUTH_TS
+  to: F_SRC_LIB_SEALED_TICKET_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/auth.ts
+      target: src/lib/sealed-ticket.ts
+      import: ./sealed-ticket
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_LIB_DATA_TS
   to: F_SRC_OFFLINE_DB_TS
   type: CONSUMES
@@ -1653,6 +1999,32 @@ edges:
     - source: src/lib/data.ts
       target: src/lib/session-policy.ts
       import: ./session-policy
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_OFFLINE_SIGNOFF_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/offline-signoff.ts
+      import: ./offline-signoff
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/schedules.ts
+      import: ./schedules
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -1734,6 +2106,58 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_LIB_OFFLINE_SIGNOFF_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/offline-signoff.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_OFFLINE_SIGNOFF_TS
+  to: F_SRC_LIB_SEALED_TICKET_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/offline-signoff.ts
+      target: src/lib/sealed-ticket.ts
+      import: ./sealed-ticket
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_OFFLINE_SIGNOFF_TS
+  to: F_SRC_LIB_PIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/offline-signoff.ts
+      target: src/lib/pin.ts
+      import: ./pin
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_OFFLINE_SIGNOFF_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/offline-signoff.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_LIB_PIN_TEST_TS
   to: F_SRC_LIB_PIN_TS
   type: CONSUMES
@@ -1757,6 +2181,123 @@ edges:
     - source: src/lib/reports.ts
       target: src/lib/supabase.ts
       import: ./supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SCHEDULES_TEST_TS
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/schedules.test.ts
+      target: src/lib/schedules.ts
+      import: ./schedules
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SCHEDULES_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/schedules.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SCHEDULES_TEST_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/schedules.test.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SCHEDULES_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/schedules.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SCHEDULES_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/schedules.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SEALED_TICKET_TEST_TS
+  to: F_SRC_LIB_SEALED_TICKET_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/sealed-ticket.test.ts
+      target: src/lib/sealed-ticket.ts
+      import: ./sealed-ticket
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SEALED_TICKET_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/sealed-ticket.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SEALED_TICKET_TEST_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/sealed-ticket.test.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SEALED_TICKET_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/sealed-ticket.ts
+      target: src/lib/domain.ts
+      import: ./domain
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -1929,6 +2470,71 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_REPORT_PAGE_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-page.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REPORT_PAGE_TSX
+  to: F_SRC_FEATURES_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-page.tsx
+      target: src/features.tsx
+      import: ./features
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REPORT_PAGE_TSX
+  to: F_SRC_LIB_REPORTS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-page.tsx
+      target: src/lib/reports.ts
+      import: ./lib/reports
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REPORT_PAGE_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-page.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REPORT_PAGE_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-page.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_SCANNER_TSX
   to: F_SRC_COMPONENTS_UI_BUTTON_TSX
   type: CONSUMES
@@ -2067,6 +2673,19 @@ edges:
     generator: projectgraph.imports.v1
     imports:
     - source: tests/live/acceptance.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/offline-receiving.spec.ts
       target: tests/live/fixtures.ts
       import: ./fixtures
       line: null

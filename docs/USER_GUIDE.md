@@ -4,6 +4,14 @@
 
 **Shared phone:** Each person signs in separately with their own username/password and PIN. Use the person button to switch with a PIN. Every saved record carries the active person's identity. Do not share PINs. Re-authenticate online when the offline session expires.
 
+**Offline receiving:** An authorized receiver signing in online prepares a PIN-protected credential on that device. Enter the PIN again to Accept, Hold or Reject whey received on that same device while offline. The decision remains provisional; other devices must wait for synchronization. Expired, revoked or altered signatures become review conflicts. Batch release, recall and critical deviation closure still require a connection.
+
+**Production records:** Stage history shows entry, end, elapsed hours and overdue status. Recurring checks advance locally while offline. For a late entry, supply the actual observed time; entered time stays separate and the server derives the due-time flag. Handovers preserve the original producer and every record's author. Abandoning an unpackaged batch requires a reason and retains its allocated inputs as consumed losses.
+
+**Samples and equipment:** Open a lot to record a sample or attach a later laboratory result and evidence. Equipment verification records a method, reference, measured value, unit and result. A failed verification creates a review task; it does not replace official calibration.
+
+**Exports:** Reports accept a date period, authorized cooperative and SOP version; the whey and batch registers retain their material filters in CSV, Excel and PDF. A lot's traceability export reconstructs its genealogy and linked operations, allocations, packaging, transactions, decisions, stage history and evidence metadata.
+
 **Supervisor/QA:** Review evidence and outstanding deviations. An open critical deviation blocks release. Release, rejection, critical CAPA closure and recall require a connection and fresh PIN. The producer cannot release their own batch unless the approved exception is active. Decisions lock records; corrections require amendments.
 
 **Cooperative Manager:** Review cooperative inventory and sales, registered people and devices. Record only actual transactions, with LBP exchange rate stored on each transaction. A donor-style sales total is gross recorded revenue, never profit or income.

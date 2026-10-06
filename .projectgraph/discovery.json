@@ -1,6 +1,14 @@
 {
   "relationships": [
     {
+      "source": "scripts/bootstrap-owner.mjs",
+      "target": "src/lib/demo.ts",
+      "import": "../src/lib/demo.ts",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "scripts/create-seed.mjs",
       "target": "src/lib/demo.ts",
       "import": "../src/lib/demo.ts",
@@ -98,8 +106,8 @@
     },
     {
       "source": "src/App.tsx",
-      "target": "src/lib/reports.ts",
-      "import": "./lib/reports",
+      "target": "src/report-page.tsx",
+      "import": "./report-page",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -234,6 +242,22 @@
     },
     {
       "source": "src/features.tsx",
+      "target": "src/lib/schedules.ts",
+      "import": "./lib/schedules",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
+      "target": "src/lib/reports.ts",
+      "import": "./lib/reports",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/features.tsx",
       "target": "src/App.tsx",
       "import": "./App",
       "line": null,
@@ -297,6 +321,14 @@
       "confidence": "medium"
     },
     {
+      "source": "src/lib/auth.ts",
+      "target": "src/lib/sealed-ticket.ts",
+      "import": "./sealed-ticket",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "src/lib/data.ts",
       "target": "src/offline/db.ts",
       "import": "../offline/db",
@@ -316,6 +348,22 @@
       "source": "src/lib/data.ts",
       "target": "src/lib/session-policy.ts",
       "import": "./session-policy",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/data.ts",
+      "target": "src/lib/offline-signoff.ts",
+      "import": "./offline-signoff",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/data.ts",
+      "target": "src/lib/schedules.ts",
+      "import": "./schedules",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -369,6 +417,38 @@
       "confidence": "medium"
     },
     {
+      "source": "src/lib/offline-signoff.ts",
+      "target": "src/offline/db.ts",
+      "import": "../offline/db",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/offline-signoff.ts",
+      "target": "src/lib/sealed-ticket.ts",
+      "import": "./sealed-ticket",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/offline-signoff.ts",
+      "target": "src/lib/pin.ts",
+      "import": "./pin",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/offline-signoff.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "src/lib/pin.test.ts",
       "target": "src/lib/pin.ts",
       "import": "./pin",
@@ -380,6 +460,78 @@
       "source": "src/lib/reports.ts",
       "target": "src/lib/supabase.ts",
       "import": "./supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/schedules.test.ts",
+      "target": "src/lib/schedules.ts",
+      "import": "./schedules",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/schedules.test.ts",
+      "target": "src/lib/demo.ts",
+      "import": "./demo",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/schedules.test.ts",
+      "target": "src/lib/data.ts",
+      "import": "./data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/schedules.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/schedules.ts",
+      "target": "src/lib/data.ts",
+      "import": "./data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/sealed-ticket.test.ts",
+      "target": "src/lib/sealed-ticket.ts",
+      "import": "./sealed-ticket",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/sealed-ticket.test.ts",
+      "target": "src/lib/demo.ts",
+      "import": "./demo",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/sealed-ticket.test.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/lib/sealed-ticket.ts",
+      "target": "src/lib/domain.ts",
+      "import": "./domain",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -489,6 +641,46 @@
       "confidence": "medium"
     },
     {
+      "source": "src/report-page.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/report-page.tsx",
+      "target": "src/features.tsx",
+      "import": "./features",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/report-page.tsx",
+      "target": "src/lib/reports.ts",
+      "import": "./lib/reports",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/report-page.tsx",
+      "target": "src/lib/supabase.ts",
+      "import": "./lib/supabase",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/report-page.tsx",
+      "target": "src/lib/data.ts",
+      "import": "./lib/data",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
       "source": "src/scanner.tsx",
       "target": "src/components/ui/button.tsx",
       "import": "./components/ui/button",
@@ -575,6 +767,14 @@
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
+    },
+    {
+      "source": "tests/live/offline-receiving.spec.ts",
+      "target": "tests/live/fixtures.ts",
+      "import": "./fixtures",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
     }
   ],
   "unresolved": [
@@ -626,6 +826,26 @@
       "candidates": []
     },
     {
+      "file": "scripts/bootstrap-owner.mjs",
+      "import": "node:fs",
+      "candidates": []
+    },
+    {
+      "file": "scripts/bootstrap-owner.mjs",
+      "import": "node:process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/bootstrap-owner.mjs",
+      "import": "@supabase/supabase-js",
+      "candidates": []
+    },
+    {
+      "file": "scripts/bootstrap-owner.mjs",
+      "import": "zod",
+      "candidates": []
+    },
+    {
       "file": "scripts/browser-preview.mjs",
       "import": "@playwright/test",
       "candidates": []
@@ -658,6 +878,31 @@
     {
       "file": "scripts/check-pdf.mjs",
       "import": "node:process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-reports.mjs",
+      "import": "node:child_process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-reports.mjs",
+      "import": "node:process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-reports.mjs",
+      "import": "node:buffer",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-reports.mjs",
+      "import": "node:assert/strict",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-reports.mjs",
+      "import": "@supabase/supabase-js",
       "candidates": []
     },
     {
@@ -702,6 +947,21 @@
     },
     {
       "file": "scripts/setup-local.mjs",
+      "import": "node:process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/wait-for-functions.mjs",
+      "import": "node:child_process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/wait-for-functions.mjs",
+      "import": "node:timers/promises",
+      "candidates": []
+    },
+    {
+      "file": "scripts/wait-for-functions.mjs",
       "import": "node:process",
       "candidates": []
     },
@@ -876,6 +1136,16 @@
       "candidates": []
     },
     {
+      "file": "src/lib/schedules.test.ts",
+      "import": "vitest",
+      "candidates": []
+    },
+    {
+      "file": "src/lib/sealed-ticket.test.ts",
+      "import": "vitest",
+      "candidates": []
+    },
+    {
       "file": "src/lib/session-policy.test.ts",
       "import": "vitest",
       "candidates": []
@@ -923,6 +1193,21 @@
     {
       "file": "src/offline/db.ts",
       "import": "dexie",
+      "candidates": []
+    },
+    {
+      "file": "src/report-page.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/report-page.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/report-page.tsx",
+      "import": "lucide-react",
       "candidates": []
     },
     {
@@ -991,6 +1276,11 @@
       "candidates": []
     },
     {
+      "file": "supabase/functions/report/index.ts",
+      "import": "npm:@date-fns/tz@1.5.0",
+      "candidates": []
+    },
+    {
       "file": "supabase/functions/scheduled-tasks/index.ts",
       "import": "npm:@supabase/supabase-js@2.117.2",
       "candidates": []
@@ -1036,6 +1326,11 @@
       "candidates": []
     },
     {
+      "file": "tests/live/offline-receiving.spec.ts",
+      "import": "@playwright/test",
+      "candidates": []
+    },
+    {
       "file": "vite.config.ts",
       "import": "vite",
       "candidates": []
@@ -1075,9 +1370,13 @@
     ],
     "playwright.config.ts": [],
     "playwright.live.config.ts": [],
+    "scripts/bootstrap-owner.mjs": [],
     "scripts/browser-preview.mjs": [],
     "scripts/check-live-ui.mjs": [],
     "scripts/check-pdf.mjs": [],
+    "scripts/check-reports.mjs": [
+      "csv"
+    ],
     "scripts/create-history-seed.mjs": [
       "uuid"
     ],
@@ -1089,6 +1388,7 @@
       "send"
     ],
     "scripts/setup-local.mjs": [],
+    "scripts/wait-for-functions.mjs": [],
     "src/App.tsx": [
       "App",
       "Empty",
@@ -1096,10 +1396,8 @@
       "Label",
       "LotTable",
       "RecordList",
-      "Reports",
       "SignIn",
       "Status",
-      "exportCSV",
       "localDate",
       "open"
     ],
@@ -1169,6 +1467,9 @@
       "prepareMfa",
       "verifyMfa"
     ],
+    "src/lib/offline-signoff.ts": [
+      "signOfflineDecision"
+    ],
     "src/lib/pin.test.ts": [],
     "src/lib/pin.ts": [
       "createPinVerifier",
@@ -1177,6 +1478,21 @@
     ],
     "src/lib/reports.ts": [
       "downloadReport"
+    ],
+    "src/lib/schedules.test.ts": [],
+    "src/lib/schedules.ts": [
+      "localProductionTasks",
+      "lotConfig",
+      "stageTimeline"
+    ],
+    "src/lib/sealed-ticket.test.ts": [],
+    "src/lib/sealed-ticket.ts": [
+      "OfflineCredential",
+      "SealedSecret",
+      "decisionProof",
+      "openSecret",
+      "sealSecret",
+      "wrappingKey"
     ],
     "src/lib/session-policy.test.ts": [],
     "src/lib/session-policy.ts": [
@@ -1205,6 +1521,9 @@
       "revokeLocalDevice",
       "syncOutbox"
     ],
+    "src/report-page.tsx": [
+      "ReportPage"
+    ],
     "src/scanner.tsx": [
       "Scanner",
       "decoded"
@@ -1216,7 +1535,8 @@
     "supabase/functions/_shared/http.ts": [
       "authenticate",
       "clients",
-      "json"
+      "json",
+      "key"
     ],
     "supabase/functions/notifications/index.ts": [
       "LogProvider",
@@ -1227,6 +1547,8 @@
       "OcrProvider"
     ],
     "supabase/functions/report/index.ts": [
+      "midnight",
+      "read",
       "text"
     ],
     "supabase/functions/scheduled-tasks/index.ts": [],
@@ -1244,11 +1566,12 @@
       "rpc",
       "send"
     ],
+    "tests/live/offline-receiving.spec.ts": [],
     "vite.config.ts": [],
     "vitest.config.ts": []
   },
   "truncated": false,
-  "scanned_files": 50,
+  "scanned_files": 60,
   "unsupported_files": [
     "supabase/migrations/202610060001_foundation.sql",
     "supabase/migrations/202610060002_operations.sql",
@@ -1280,7 +1603,20 @@
     "supabase/migrations/202610060028_attachment_receipts.sql",
     "supabase/migrations/202610060029_ledger_controls.sql",
     "supabase/migrations/202610060030_checkpoint_evidence.sql",
+    "supabase/migrations/202610060031_permission_scope.sql",
+    "supabase/migrations/202610060032_bootstrap.sql",
+    "supabase/migrations/202610060033_offline_signoff.sql",
+    "supabase/migrations/202610060034_offline_decision_sync.sql",
+    "supabase/migrations/202610060035_impact_permissions.sql",
+    "supabase/migrations/202610060036_production_sync.sql",
+    "supabase/migrations/202610060037_stage_schedules.sql",
+    "supabase/migrations/202610060038_registry_edits.sql",
+    "supabase/migrations/202610060039_equipment_verification.sql",
+    "supabase/migrations/202610060040_verification_required_fields.sql",
     "supabase/seed.sql",
+    "supabase/tests/bootstrap.test.sql",
+    "supabase/tests/offline-signoff.test.sql",
+    "supabase/tests/production.test.sql",
     "supabase/tests/rules.test.sql",
     "supabase/tests/security.test.sql"
   ],
@@ -1289,44 +1625,53 @@
     "p/public.ts": "fc35dd8d3cc616dc2e74c1801074849e6c94ff6331f0779572318735453d219b",
     "playwright.config.ts": "012fd1027c8109b29990d55add449bc4beaa424f3e03eec0055aa21a6848a57b",
     "playwright.live.config.ts": "46ea59fd66024859f838e13775a62770bfa5667f2c1efc00e9d2472adc7b2aa3",
+    "scripts/bootstrap-owner.mjs": "a04355aaa6c51e0bd02a12b59d12df526a3e640cf53a6f2e62085d3da0b8792b",
     "scripts/browser-preview.mjs": "b1a3da02ef617783a276aeb5380b4497b212398b37c6677471dd71b9d960c057",
     "scripts/check-live-ui.mjs": "40621c78e1eed2a3e6ec2ad58564ef7d1f37a6949113638420c0a938c596a233",
-    "scripts/check-pdf.mjs": "8739e76770325afa0073c7b3fa1313db24ebaee661bb409270d43c991c7a6aef",
+    "scripts/check-pdf.mjs": "92db49f0818f435fad244d1f08c0b8b6f00bcdf28607204aeeaddbfe75115bc6",
+    "scripts/check-reports.mjs": "5f0d38f6c73cc6ed7f96186b0eb1ae3f389aff5e5c8a074962fd4a4dd3e8fe3a",
     "scripts/create-history-seed.mjs": "564d8ec6274496b7af245a43c241cf891beddfbd075134fe4a6319de3def012e",
     "scripts/create-seed.mjs": "81803d085bbde6a2f5e80121f5c63347550f65ed9a2d5236d0097ae560918f9e",
-    "scripts/live-api-check.mjs": "d7da8031989da018ca42d1b704c055eef6c35730022a50d150342b9d80652fd5",
+    "scripts/live-api-check.mjs": "e8ca5ae8569233c5921887d46a1e435b3a4dd7dd89ace00a1961053ebe134450",
     "scripts/setup-local.mjs": "d7d62ffa76befefc31c99ce8cd9526aa6bb02b423184a1d32be9ee29eb9c41b9",
-    "src/App.tsx": "64a7d8312bca9962642ec6e6d75f6733a153d7a95f6d42fc61f21ff0c2a0d586",
+    "scripts/wait-for-functions.mjs": "9b6396bb4731a5d75ea19febf9d155d7e03c1f48ec5a6814e344af01ec095a51",
+    "src/App.tsx": "55d7d867f6b42cec40ae156604c79f78d453be4be6de5d31a27e5d5800c6d1c0",
     "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
     "src/components/ui/sheet.tsx": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962",
     "src/dashboard.tsx": "9615de8d923db4ef14f6e26579352a63ac301d0ee0add990640b43660ed3c38d",
     "src/evidence.tsx": "e02120d12ac364ea901286cc9052084dfe92fb206b5d78cab5330707becfde4f",
-    "src/features.tsx": "029eaecdd35e0ed6675f601c1ceaad08b2ae2cac3684af7d9e583c744d281bbd",
+    "src/features.tsx": "56df580263d83825e1cc2f39b84eef7fb163bf6a8518c3a62899fef6bc58fdd0",
     "src/i18n/index.ts": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12",
-    "src/lib/auth.ts": "f6c3b61a11487ac16f4f6f4db90f65a9dbf116aa9f473f2bcf08a257fd01ad3a",
-    "src/lib/data.ts": "f3553050dc245b4f69aef843b3f782b7c0f419151b62b070e868eec57ef515b2",
+    "src/lib/auth.ts": "6bbe63df374dca86dd14b656049530532089f10fc8b92af24aacfbb52747ab5b",
+    "src/lib/data.ts": "b9ba7796dd9928b70bc60bfcd2686dbbd0b59ef39d9dbd21d129eaf060d12699",
     "src/lib/demo.ts": "06f451f185d6a4b758a7d51f9a5a1496097de0b190f0917ec90d49abd8cc1b33",
     "src/lib/domain.test.ts": "f34ef07344fe09491763c6dec3db73428d701a7ce11d0893ec7fae68672ceb6a",
-    "src/lib/domain.ts": "ec959000952eab0bea58d734e3144e647290d0eded85b8330cafe227bff84e4c",
-    "src/lib/media.ts": "1ce3f3f7a6bf56cc23d805741f35b10db1e532f4141aeb3af671373d99806883",
+    "src/lib/domain.ts": "a8d13224b1a0d111212166a0db4b5c9694235dc9842d33b580ff5e919a072d26",
+    "src/lib/media.ts": "99dc724aa075af6856147c3d994191fe2db5863ce42c61a49855b6406b20ea6a",
     "src/lib/mfa.ts": "8850636db751da5c31a9ef0e728da5a97ae107be7d06de7cc4ad19002275c123",
+    "src/lib/offline-signoff.ts": "60fcf28725262274f3a425953b805e08c9a48141fa79edb51d475e7f4c48a834",
     "src/lib/pin.test.ts": "a037086e2fee03b7565756f2a53e519524966c77d23bb0d71af9b7155e6678cb",
     "src/lib/pin.ts": "bc0ced82e329967ae10544be3a6f211eff7f4f00f0dcdf39fcc1d582f415cdc2",
-    "src/lib/reports.ts": "b7bf56f2d51740589cabada46d4b4a6a068dde00de258a4cff51a9f7e4bd8976",
+    "src/lib/reports.ts": "f198f88b99cc7132961151850b9442c221b2db84eb8d26b62d9c1576233e1c0e",
+    "src/lib/schedules.test.ts": "05159bce3e746bd49a4ffe937c9b9e641a95cf6cbb02a39b7fafe800c43f8e6b",
+    "src/lib/schedules.ts": "ebc536d9e33803d449ff82c4000cc5b9e27dcc48310f60639b04392a5b72101f",
+    "src/lib/sealed-ticket.test.ts": "2057cdf00f64507873c546241d5dbf9de8b8a1e8f4c8172c5dc4aff99a646f57",
+    "src/lib/sealed-ticket.ts": "9eddec2e52492e0a09396e95c054929bcb99e7e85968206f7a2236110040f403",
     "src/lib/session-policy.test.ts": "7fbb9d63954e8cee2b0909cdb58bce17e834c20309cce01fab6663f6c2626097",
     "src/lib/session-policy.ts": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a",
     "src/lib/supabase.ts": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024",
     "src/main.tsx": "8c445e80a57a6792145c28ffe26aa6f2b4157ed9832ae1aba863016e53bd4871",
-    "src/management.tsx": "a6c51115bdecd3c733d5dbc9323720ec7482d7fcfb11439f2da0f7783bbb85cd",
+    "src/management.tsx": "8d3df7b17b7fe5448afda2a29579dc51bba2bd78ccb23512bb55bab1211c41c8",
     "src/offline/db.test.ts": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0",
     "src/offline/db.ts": "06097f9d9e9fb5f8cdd1a471ad7c41ae577b6d44d65518a51308016ab6b26188",
+    "src/report-page.tsx": "dbceeb608ec61b925ffff809589e44dc97405a87b677a7874d9da856b73db950",
     "src/scanner.tsx": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2",
     "src/test-setup.ts": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9",
     "src/training-editor.tsx": "f66d96c4ef86d124215be66833dced4534c88eaa3660f9338ec674cb9e7b9be1",
-    "supabase/functions/_shared/http.ts": "8624be847281764334f3502e0738a523473b4735711ff0add3cb71f09768afcb",
+    "supabase/functions/_shared/http.ts": "0c12115d20c7cdb39847535244e5cdc1f759d0887791f6da2aadbad2bbdcba2b",
     "supabase/functions/notifications/index.ts": "702765d7b35b8c47350f4d06cfc98162202f3d6b0196c23ed449b02543021a45",
     "supabase/functions/ocr/index.ts": "7be4532eb7d0a9100848aa10e8f9f89717afaa3a30bc3cf889705b4fef2bda99",
-    "supabase/functions/report/index.ts": "99bb75472c5a3f6400ceefac2e4b6886db14d4dee7e551f188d85ccc90407e59",
+    "supabase/functions/report/index.ts": "7797467beb0043f6d6d727fdffd98c87b78720c65a9fa0363a99a66993db386a",
     "supabase/functions/scheduled-tasks/index.ts": "93f5eda2565ebf05f93fe65a3e429bb253c9b0e7b0db04c7b701a670c0b221af",
     "supabase/functions/sync/index.ts": "ce5686ef9f82e2247bc4f16e4199ee075e24baf8d59522169b620dfdaf23deaf",
     "supabase/functions/user-admin/index.ts": "a062425eaec04d31ec581cf623a382be6d5844f4c05601a8a60677769bac3e78",
@@ -1360,12 +1705,26 @@
     "supabase/migrations/202610060028_attachment_receipts.sql": "492e68c46dc18710a4f3037c66871c555b5fae50824540c629e88823f8d5b7b2",
     "supabase/migrations/202610060029_ledger_controls.sql": "9170019ef9a7d9db5d510913605fdda3650e74e0d0c61de655a628b1644f8ac7",
     "supabase/migrations/202610060030_checkpoint_evidence.sql": "3f507b02078631182b704eee973933f9d3cf7685d375fa63561f4e61e2808e86",
-    "supabase/seed.sql": "6409633d9a378714a4907cf18189b31187b57eb558015ba82aaf9ae0cbef2fa9",
-    "supabase/tests/rules.test.sql": "196624067537fb44a97f0da21dfae3decc7f2fca49bcac49e41e2049c4bca7e7",
+    "supabase/migrations/202610060031_permission_scope.sql": "75472baf8e5b1a4b9642c4fb229f3a162d4493cc7b426b1816bfe7e6d66e7c4e",
+    "supabase/migrations/202610060032_bootstrap.sql": "a4d9671b470342061e06fb679f93de2bafd7570c95e000f282ccf48bd4d5cff7",
+    "supabase/migrations/202610060033_offline_signoff.sql": "8e9399e52a0ac893b05e776eeddc5a4974317ad598f784c9698f697d7b43f192",
+    "supabase/migrations/202610060034_offline_decision_sync.sql": "a0be87f07b4a5ed51ea7ad76c7b6696d82ada37ba8046fc8b5ccd88944974e14",
+    "supabase/migrations/202610060035_impact_permissions.sql": "dec4b81a63776056972e89d5fd4d566c86519841fbabcffabe47ab55649cbde7",
+    "supabase/migrations/202610060036_production_sync.sql": "c473819955ff00af658cbb71160b186dfa93e0722d60faf54c44caac26b79332",
+    "supabase/migrations/202610060037_stage_schedules.sql": "ee899e233c56107416b4f524438769db479fd3f1f5874fc3594565d92b6ea144",
+    "supabase/migrations/202610060038_registry_edits.sql": "3eaa389153063d639c950397479653e8adab9d51d6c5a9ef5181f5ec0d63d249",
+    "supabase/migrations/202610060039_equipment_verification.sql": "508171a3184bf5544ef381b18f61d1cbcbf9fc3e6d789f819c5914dfcb8750d3",
+    "supabase/migrations/202610060040_verification_required_fields.sql": "d4014d360bdf851c87894a698f37c0bc51552a03ed201fb78aa71fef58653147",
+    "supabase/seed.sql": "ac9706254c11f8d5ed9f5d19b747aa9e7f25223884643a74803313bfb90731b5",
+    "supabase/tests/bootstrap.test.sql": "3b59e2e944902ab2649d7542d64dff3c1b348cac209ee6bd02fc630135d11d02",
+    "supabase/tests/offline-signoff.test.sql": "79eaf7299f10956efc8c27a4eaf2d142412e8d6859c5c3a8fae674aa6b3dad10",
+    "supabase/tests/production.test.sql": "b1ef92405ada2dd92aa88086ab2111225a9da973c5b7be29721911d146ef257b",
+    "supabase/tests/rules.test.sql": "112cf7c7f448353182be5e76a8fc05746f3ef80a131cf448d000411a2945b7f2",
     "supabase/tests/security.test.sql": "78e304bc554d5d32a8a677e3b74f21f4aa6f32cda03668cc3d0590c44c1b3c26",
     "tests/flows.spec.ts": "be55913d777abe0756757b91fea56be951c4b7f0f204c2dbea0cb9e7eb258d67",
-    "tests/live/acceptance.spec.ts": "dd0073e575fa5355e9c25ad458e007f5806d98a1b1528c4fa37c5874c48057bd",
+    "tests/live/acceptance.spec.ts": "60c72559459e3d5abb4f9505367f080d5e8c5f1fe496d85158ddb4913b6c1af6",
     "tests/live/fixtures.ts": "ac80f85886d12c707c6cf6c19d9e59e6684365d31772aa208359d2603922657c",
+    "tests/live/offline-receiving.spec.ts": "7af4d47da65c69238f5f2768dad5d523c0fcb8091271f8345f97bceca934ca80",
     "vite.config.ts": "d774868eaf54e5d3ab5a83f0349a60f16399ec8271f03b3df7b07a8e74e01741",
     "vitest.config.ts": "a139292ca71b075326f66df8eb54466fa84a8a37284262ad906f5493c3cf6c0d"
   },

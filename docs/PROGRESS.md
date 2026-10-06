@@ -1,4 +1,4 @@
-﻿# Build progress
+# Build progress
 
 Checked requirements below have implementation and local evidence. Unchecked requirements still need implementation or complete acceptance coverage. No deployment or pilot approval is implied. See TEST_EVIDENCE.md for the exact limits of the test suites.
 
@@ -70,8 +70,8 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [x] FR-BAT-06 (M) — A batch cannot become Released while unresolved critical deviations exist (**Always blocking**). — Evidence: pgTAP critical block and live A4 disabled release.
 - [ ] FR-BAT-07 (M) — **Production stages \[Added\]:** within In Production, the batch moves through configurable stages (e.g. preparation, mixing, fermentation, drying, grinding/sieving, ready to pack), each with its own checkpoints and expected duration.
 - [ ] FR-BAT-08 (M) — **Multi-day tracking \[Added\]:** stages carry start and end times; elapsed time and overdue stages are visible and drive reminders.
-- [ ] FR-BAT-09 (S) — **Handover \[Added\]:** responsibility for a batch can pass between producers; each record keeps its own author.
-- [ ] FR-BAT-10 (M) — A batch may be abandoned before packaging with a reason; its inputs remain consumed and appear in losses.
+- [x] FR-BAT-09 (S) — **Handover \[Added\]:** responsibility for a batch can pass between producers; each record keeps its own author. — Evidence: production.test.sql validates scoped handover and preserves the original author; LotDetail exposes handover.
+- [x] FR-BAT-10 (M) — A batch may be abandoned before packaging with a reason; its inputs remain consumed and appear in losses. — Evidence: production.test.sql confirms abandonment rejects an unpackaged batch and retains consumed inputs.
 - [ ] FR-BAT-11 (S) — Closed state is reached when all packaged stock is sold, distributed, or written off.
 - [ ] FR-CHK-01 (M) — Pre-production checklist: equipment cleaned and sanitized, area clean, personal hygiene satisfied, ingredients inspected, containers/equipment protected. Items are configurable.
 - [ ] FR-CHK-02 (M) — Repeated checks use quick interactions: "all OK" with one tap, exceptions recorded individually.
@@ -80,11 +80,11 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [x] FR-CHK-05 (M) — The app shows only checks for the current stage, never one long form. — Evidence: preview and live current-stage checkpoint screens.
 - [ ] FR-CHK-06 (M) — **Recurring checks \[Added\]:** checks can repeat on an interval during a stage (e.g. drying inspection every 12 h) and are generated automatically.
 - [x] FR-CHK-07 (S) — **Equipment link \[Added\]:** a measurement can record which device was used; using a device past its calibration date raises a warning. — Evidence: validate_operational equipment scope and calibration warning task.
-- [ ] FR-CHK-08 (M) — **Late entry \[Added\]:** checks recorded after their due time keep both the observed time and the entry time, and are flagged as late.
+- [x] FR-CHK-08 (M) — **Late entry \[Added\]:** checks recorded after their due time keep both the observed time and the entry time, and are flagged as late. — Evidence: production.test.sql proves the server derives due time and flags a late observation; the form retains observed and entered times.
 - [ ] FR-TSK-01 (M) — The system determines the next required action for every active batch and lot.
 - [ ] FR-TSK-02 (M) — Task types include: check due, missing measurement, stage overdue, awaiting review, storage inspection due, whey lot expiring, held lot awaiting decision, training due, calibration due, deviation action due.
 - [ ] FR-TSK-03 (M) — The producer home screen is a prioritized **"What needs my attention now?"** list, overdue first.
-- [ ] FR-TSK-04 (M) — Tasks work offline from locally cached schedules.
+- [x] FR-TSK-04 (M) — Tasks work offline from locally cached schedules. — Evidence: schedules.test.ts covers stage-based recurring checks from cached events; offline snapshots regenerate production schedules.
 - [ ] FR-TSK-05 (M) — Supervisors see a review queue of batches and lots awaiting their decision.
 - [x] FR-DEV-01 (M) — Out-of-range values automatically create a deviation; users can also raise one manually. — Evidence: out-of-range creation plus live A1 override deviation.
 - [ ] FR-DEV-02 (M) — A deviation records: affected batch or lot, issue, detected value/condition, time, detector, severity, corrective action, evidence, reviewer, resolution.
@@ -146,7 +146,7 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-SAL-05 (M) — Customer identity is not required; optional named customer only for B2B buyers when needed for recall.
 - [ ] FR-SAL-06 (S) — **Quick sale \[Added\]:** scanning a package QR pre-fills lot and size for a two-tap entry.
 - [ ] FR-EQP-01 (M) — Records for thermometer, scale, pH meter, moisture meter, temperature/humidity logger: device ID, cooperative, type, calibration/check date, next due, status.
-- [ ] FR-EQP-02 (S) — Simple verification checks (e.g. thermometer in ice water, scale with reference weight) can be recorded in the app.
+- [x] FR-EQP-02 (S) — Simple verification checks (e.g. thermometer in ice water, scale with reference weight) can be recorded in the app. — Evidence: production.test.sql records reference/measured values, rejects empty checks, and creates a task for failed verification.
 - [ ] FR-EQP-03 (M) — Calibration due dates generate tasks; out-of-date devices trigger warnings when used.
 - [ ] FR-EQP-04 (M) — Other equipment (containers, utensils, mesh covers, PPE, cleaning supplies, QR labels) stays in training and SOP material, not the software.
 - [ ] FR-CFG-01 (M) — Admins manage cooperatives, users and roles, suppliers, ingredient types, packaging options, SOP versions, training modules, checkpoints, units, thresholds, deviation categories, shelf-life rules, label templates and KPI definitions.
@@ -163,7 +163,7 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-AUD-03 (M) — Released, rejected and recalled records are locked; changes are amendments.
 - [x] FR-AUD-04 (M) — The audit log cannot be edited or deleted by any role, including admins. — Evidence: pgTAP owner UPDATE/DELETE denial.
 - [x] FR-AUD-05 (M) — Audit history is viewable per record and exportable. — Evidence: record history UI and scoped audit report export.
-- [ ] FR-RPT-01 (M) — Export to CSV, Excel and PDF, respecting the user's access scope.
+- [x] FR-RPT-01 (M) — Export to CSV, Excel and PDF, respecting the user's access scope. — Evidence: check-reports.mjs exports actual CSV, Excel and PDF through authenticated RLS queries and tests period/material filters.
 - [ ] FR-RPT-02 (M) — Reports: whey reception register, batch traceability, batch production record, deviations, inventory, sales, training, impact indicators, trace-back/recall, equipment calibration, audit log.
 - [ ] FR-RPT-03 (M) — One batch traceability report reconstructs the full history from incoming whey to finished product and sale.
 - [ ] FR-RPT-04 (S) — **Scheduled reports \[Added\]:** monthly impact and operations reports emailed to configured recipients.

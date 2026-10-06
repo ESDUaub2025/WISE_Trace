@@ -1,0 +1,5 @@
+{
+  "cooperative": {"code":"COOP01","name":"REPLACE cooperative name","region":"REPLACE region","contacts":{},"sites":[]},
+  "admin": {"username":"wise_admin","display_name":"REPLACE admin name","password":"REPLACE_WITH_RANDOM_ADMIN_PASSWORD","pin":"0000"},
+  "food_safety": {"username":"wise_food_safety","display_name":"REPLACE lead name","password":"REPLACE_WITH_RANDOM_LEAD_PASSWORD","pin":"0000"}
+}

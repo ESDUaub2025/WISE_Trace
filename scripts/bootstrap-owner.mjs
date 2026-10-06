@@ -3,7 +3,7 @@ import {env,argv,stdout} from 'node:process';
 import {createClient} from '@supabase/supabase-js';
 import {z} from 'zod';
 import {demoConfig} from '../src/lib/demo.ts';
-const account=z.object({username:z.string().regex(/^[a-z0-9._-]{3,40}$/),display_name:z.string().min(2),password:z.string().min(12),pin:z.string().regex(/^\d{4,6}$/)});
+const account=z.object({username:z.string().regex(/^[a-z0-9._-]{3,40}$/),display_name:z.string().min(2),password:z.string().min(12).refine(value=>!value.startsWith('REPLACE_')&&!value.startsWith('CHANGE_'),'Replace the example password'),pin:z.string().regex(/^\d{4,6}$/)});
 const schema=z.object({cooperative:z.object({code:z.string().regex(/^[A-Z0-9]{3,12}$/),name:z.string().min(3),region:z.string().min(2),contacts:z.record(z.string(),z.unknown()).default({}),sites:z.array(z.unknown()).default([])}),admin:account,food_safety:account});
 if(!env.SUPABASE_URL||!env.SUPABASE_SERVICE_ROLE_KEY)throw new Error('Set server-only SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the terminal environment.');
 const input=schema.parse(JSON.parse(readFileSync(argv[2]??'wise.bootstrap.json','utf8')));if(input.admin.username===input.food_safety.username)throw new Error('Separate accounts are required');
