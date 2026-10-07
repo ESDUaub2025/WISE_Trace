@@ -24,9 +24,10 @@ export async function login(username:string,password:string,pin:string,factorId?
  const current=await supabase.auth.getSession();
  const local:LocalSession={identity,session:current.data.session??data.session,verifier:await createPinVerifier(pin),authenticated_at:Date.now()};
  if(identity.roles.includes('supervisor')||(identity.roles.includes('producer')&&identity.authorizations.receive_whey)){const issued=await supabase.rpc('issue_offline_credential',{device,sign:sign.data});if(issued.error)throw issued.error;local.offline_credential={id:issued.data.id,expires_at:issued.data.expires_at,sealed:await sealSecret(issued.data.secret,pin)};}
- await db.cache.put({key:`session:${identity.id}`,value:local});await db.cache.put({key:'identity',value:identity});markActive(identity.id);return identity;
+ await db.cache.put({key:`session:${identity.id}`,value:local});await db.cache.put({key:'identity',value:identity});await db.cache.delete(`access-blocked:${identity.id}`);markActive(identity.id);return identity;
 }
 export async function switchUser(id:string,pin:string){
+ const blocked=await db.cache.get(`access-blocked:${id}`);if(blocked)throw new Error(String(blocked.value));
  const local=(await db.cache.get(`session:${id}`))?.value as LocalSession|undefined;
  if(!local)throw new Error('userNotCached');if(offlineExpired(local.authenticated_at,Date.now(),await cachedSessionLimits(id)))throw new Error('sessionExpired');
  const key=`pin-attempts:${id}`;const failure=(await db.cache.get(key))?.value as {attempts:number;blockedUntil:number}|undefined;

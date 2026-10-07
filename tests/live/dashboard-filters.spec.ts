@@ -5,7 +5,7 @@ test('manager dashboard filters and exported impact stay within cooperative scop
  await expect(page.locator('.metric-card')).toHaveCount(13);
  const select=page.getByLabel('Organization',{exact:true});
  await expect(select.locator('option')).toHaveCount(2);
- const response=page.waitForResponse(reply=>reply.url().includes('/rpc/impact_metrics_filtered'));
+ const response=page.waitForResponse(reply=>reply.url().includes('/rpc/impact_metrics_cohort'));
  await select.selectOption('10000000-0000-4000-8000-000000000001');await response;
  const download=page.waitForEvent('download');const report=page.waitForRequest(request=>request.url().endsWith('/functions/v1/report'));
  await page.getByRole('button',{name:/CSV.*CSV$/}).click();
@@ -15,7 +15,7 @@ test('manager dashboard filters and exported impact stay within cooperative scop
 test('donor filters use safe cooperative metadata and preserve suppressed cells',async({page})=>{
  await login(page,'donor1');await page.goto('/dashboards');await expect(page.locator('.metric-card')).toHaveCount(9);
  const region=page.getByLabel('Region',{exact:true});await expect(region.locator('option')).toHaveCount(3);
- const response=page.waitForResponse(reply=>reply.url().includes('/rpc/impact_metrics_filtered'));
+ const response=page.waitForResponse(reply=>reply.url().includes('/rpc/impact_metrics_cohort'));
  await region.selectOption('Bekaa');const result=await (await response).json();expect(result.every((metric:{suppressed:boolean;value:unknown})=>metric.suppressed&&metric.value===null)).toBe(true);
  await expect(page.locator('.metric-card').first()).toContainText('Suppressed');
 });

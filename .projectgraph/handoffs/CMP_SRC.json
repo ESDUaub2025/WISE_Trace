@@ -70,5 +70,41 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Local MVP source contract passed: types, lint, 46 unit checks and 16 preview checks. Final 24-case live run is in progress after filter/accessibility fixes. All operational additions and documentation are ready for final commit.",
+    "next_action": "Inspect final live results, capture running preview, commit and push. Hosted targets and real provider/field acceptance remain owner gates.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-07T07:50:19.304426+00:00",
+    "git": {
+      "available": true,
+      "commit": "cb7783e08ce5798009df00ed628a22c1b4b8755f",
+      "short_commit": "cb7783e08ce5",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Final local MVP source verified by the component contract. All 24 live scenarios pass; clean preview at http://127.0.0.1:5173 uses dist with Supabase demo mode disabled. Screenshots capture loaded desktop/mobile screens. No remaining implementation work was intentionally deferred in the identified software-gap list.",
+    "next_action": "Commit/push final release, monitor CI, and deploy when Supabase/Cloudflare targets and production secrets are supplied. External hardware, usability, performance and protocol acceptance remain pilot gates.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-07T07:59:21.658112+00:00",
+    "git": {
+      "available": true,
+      "commit": "cb7783e08ce5798009df00ed628a22c1b4b8755f",
+      "short_commit": "cb7783e08ce5",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]

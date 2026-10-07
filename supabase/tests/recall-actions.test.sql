@@ -1,0 +1,20 @@
+begin;
+set local search_path=public,extensions;
+select no_plan();
+create temporary table recall_fixture(id uuid);
+insert into recall_fixture values(gen_random_uuid());
+grant select on recall_fixture to authenticated;
+insert into public.recall(id,cooperative_id,trigger_lot_id,mock,reason,author_id)
+select id,'10000000-0000-4000-8000-000000000001','60000000-0000-4000-8000-000000000001',true,'Recall action test','20000000-0000-4000-8000-000000000002' from recall_fixture;
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select public.record_recall_action((select id from recall_fixture),'stop_sale',0,'Confirmed')$$,'P0001','Recall permission required','Producer cannot manage a recall case');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000002","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select public.complete_recall((select id from recall_fixture),'[]')$$,'P0001','Confirm stop-sale action before closing','Empty case cannot be closed');
+select lives_ok($$select public.record_recall_action((select id from recall_fixture),'stop_sale',0,'Sale stopped in mock exercise')$$,'Supervisor records action without closing');
+select is((select status from public.recall where id=(select id from recall_fixture)),'open','Recording an action leaves the case open');
+select lives_ok($$select public.record_recall_action((select id from recall_fixture),'retrieve',2,'Two packs recovered')$$,'Recovery quantities are preserved');
+select throws_ok($$select public.record_recall_action((select id from recall_fixture),'destroy',-1,'Invalid quantity')$$,'P0001','Action, nonnegative quantity and notes required','Negative quantities rejected');
+select lives_ok($$select public.complete_recall((select id from recall_fixture),'[]')$$,'Case closes with existing actions');
+select throws_ok($$select public.record_recall_action((select id from recall_fixture),'notify',0,'Late action')$$,'P0001','Recall case is closed','Closed actions cannot be appended');
+select * from finish();rollback;

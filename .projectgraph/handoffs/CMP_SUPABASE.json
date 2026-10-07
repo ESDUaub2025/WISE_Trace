@@ -34,5 +34,59 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SUPABASE",
+    "note": "Effort audit requested by user. Uncommitted incremental snapshot migration 65 and stage clock migration 66 are implemented. Latest checks: 43 unit tests, 208 database assertions and transaction concurrency check passed. Full 21 live-browser run before clock fix passed 18 and failed 3 release cases; those 3 now pass after migration 66. Full browser rerun after fix remains outstanding. Source verification passed; database ProjectGraph verification needs refresh. Latest pushed milestone cb7783e.",
+    "next_action": "Address user effort and prioritization concerns, then rerun all live browser tests after migration 66, refresh database verification, update evidence and commit the current milestone before proceeding to remaining Must workflows and dashboards.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-07T06:13:26.030958+00:00",
+    "git": {
+      "available": true,
+      "commit": "cb7783e08ce5798009df00ed628a22c1b4b8755f",
+      "short_commit": "cb7783e08ce5",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SUPABASE",
+    "note": "Fresh reset applied all 90 migrations. Database contract and snapshot concurrency passed. API and CSV/XLSX/PDF/full-cooperative exports pass. Product/status cohorts, consent aggregates, dictionaries, diagnostics and configurable process controls are implemented.",
+    "next_action": "Keep preview running and push the final private repository commit. Configure hosted owner projects/providers and perform pilot gates when supplied.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-07T07:50:19.754539+00:00",
+    "git": {
+      "available": true,
+      "commit": "cb7783e08ce5798009df00ed628a22c1b4b8755f",
+      "short_commit": "cb7783e08ce5",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SUPABASE",
+    "note": "Fresh reset applies all 91 migrations; final database/concurrent-snapshot contract passes (278 assertions). Actual privacy Edge/Auth test passes after clearing metadata keys and using a keyed epoch update compatible with REST safe-update. API and report formats pass; no real email/SMS/push/OCR provider credentials are configured.",
+    "next_action": "Publish the final private repository commit. Activate providers and owner-managed cloud deployment; perform production/field acceptance gates.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-07T07:59:22.154916+00:00",
+    "git": {
+      "available": true,
+      "commit": "cb7783e08ce5798009df00ed628a22c1b4b8755f",
+      "short_commit": "cb7783e08ce5",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]

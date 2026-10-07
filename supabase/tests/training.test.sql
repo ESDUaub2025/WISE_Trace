@@ -33,7 +33,7 @@ select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-00000000
 select is((select count(*)::integer from public.training_module),0,'Donor cannot read operational training content');
 select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
 select is(public.apply_sync(pg_temp.learning_envelope('batch','{"quantity":0,"unit":"kg"}',(select config from learning_fixture)))->>'status','conflict','Untrained producer cannot create a batch under the new SOP');
-select is(public.apply_sync(pg_temp.learning_envelope('batch','{"quantity":0,"unit":"kg"}','40000000-0000-4000-8000-000000000001'))->>'status','synced','New training for a different SOP does not invalidate original-SOP qualifications');
+select is(public.apply_sync(pg_temp.learning_envelope('batch','{"quantity":0,"unit":"kg"}','40000000-0000-4000-8000-000000000001'))->>'status','conflict','New batches must use the current scoped SOP even if old training is complete');
 reset role;
 select lives_ok($$select public.generate_tasks()$$,'Task generator handles effective and future training');
 set local role authenticated;

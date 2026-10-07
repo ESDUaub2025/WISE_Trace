@@ -21,12 +21,12 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-AUTH-03 (M) — **Shared-device mode \[Added\]:** several users of one cooperative can be signed in on one device and switch with a personal 4–6 digit PIN; each record is attributed to the active user.
 - [ ] FR-AUTH-04 (M) — Critical actions (accept/reject whey, release/reject batch, recall, threshold change) require PIN re-entry at the moment of action as an authenticated sign-off.
 - [x] FR-AUTH-05 (M) — Sessions expire after configurable inactivity; offline sessions remain valid for a configurable period (default 7 days) before requiring online re-authentication. — Evidence: session-policy.test.ts configured inactivity and offline expiry.
-- [ ] FR-AUTH-06 (M) — Accounts can be disabled immediately; a disabled user's pending offline records are still accepted on sync but flagged for review.
+- [x] FR-AUTH-06 (M) — Accounts can be disabled immediately; a disabled user's pending offline records are still accepted on sync but flagged for review. ? Evidence: snapshot.spec.ts covers disablement, blocked cached access and retained pending authorship entering review.
 - [ ] FR-AUTH-07 (S) — Lost-device procedure: an admin can revoke a device, which wipes local data on its next connection.
 - [ ] FR-ORG-01 (M) — Admins create and edit cooperatives with ID, name, region, production site(s), contacts, status and date joined.
 - [ ] FR-ORG-02 (M) — Cooperative Managers create users in their own cooperative and assign roles; WISE Admins manage all.
 - [ ] FR-ORG-03 (M) — User records hold role, status, training status, and authorizations (e.g. "may receive whey", "may release batches").
-- [ ] FR-ORG-04 (M) — Demographic data for impact is stored in a separate Producer Profile with restricted access and recorded consent.
+- [x] FR-ORG-04 (M) — Demographic data for impact is stored in a separate Producer Profile with restricted access and recorded consent. ? Evidence: producer_profile RLS, consent RPC and subject-privacy.test.sql preserve scoped consent separately from production.
 - [ ] FR-ORG-05 (S) — Devices are registered to a cooperative with a friendly label (e.g. "Coop phone 2").
 - [x] FR-TRN-01 (M) — Knowledge area with GMP, food-safety procedures, SOPs, short videos, illustrated instructions, FAQs and troubleshooting, in Arabic and English. — Evidence: Bilingual knowledge reader, illustrated instructions, FAQs/troubleshooting and private image/video authoring; live media browser test. Default learning text describes recordkeeping, while production procedures remain subject to Food-Safety Lead approval.
 - [x] FR-TRN-02 (M) — All content is versioned; each completion records module, version, date and assessment result. — Evidence: Append-only module revisions and attributed assessment completion; training.test.sql.
@@ -64,7 +64,7 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-ALC-07 (S) — Closing a whey lot with a residual quantity requires recording what happened to it (disposed, lost, measurement difference).
 - [x] FR-BAT-01 (M) — Creating a batch generates Batch ID, cooperative, producer, creation time, status, SOP version and traceability reference. — Evidence: live A2 creation and server-generated codes.
 - [ ] FR-BAT-02 (M) — The producer links accepted whey lot(s) and selects ingredient lots (bulgur, salt, optional) with quantities and units.
-- [ ] FR-BAT-03 (M) — Ingredient photos are optional or required per configuration, not universally mandatory.
+- [x] FR-BAT-03 (M) — Ingredient photos are optional or required per configuration, not universally mandatory. ? Evidence: ingredient_photo_required is enforced in receipt entry and by the release-evidence trigger; optional remains the default.
 - [ ] FR-BAT-04 (M) — Lifecycle states: **Draft → In Production → Awaiting Review → Released**, with **On Hold**, **Rejected**, **Withdrawn/Recalled** and **Closed**.
 - [ ] FR-BAT-05 (M) — All state transitions are recorded in the audit log with user, time and reason.
 - [x] FR-BAT-06 (M) — A batch cannot become Released while unresolved critical deviations exist (**Always blocking**). — Evidence: pgTAP critical block and live A4 disabled release.
@@ -88,34 +88,34 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-TSK-05 (M) — Supervisors see a review queue of batches and lots awaiting their decision.
 - [x] FR-DEV-01 (M) — Out-of-range values automatically create a deviation; users can also raise one manually. — Evidence: out-of-range creation plus live A1 override deviation.
 - [ ] FR-DEV-02 (M) — A deviation records: affected batch or lot, issue, detected value/condition, time, detector, severity, corrective action, evidence, reviewer, resolution.
-- [ ] FR-DEV-03 (M) — Severity levels: minor, major, critical; categories are configurable.
+- [x] FR-DEV-03 (M) — Severity levels: minor, major, critical; categories are configurable. ? Evidence: configured categories appear in the deviation form; minor/major/critical are server-enforced.
 - [x] FR-DEV-04 (M) — Critical deviations automatically place the batch or lot **On Hold** pending review. — Evidence: hold_critical trusted transition and pgTAP critical release test.
 - [x] FR-DEV-05 (M) — Only a Supervisor/QA or Food-Safety Lead can close a critical deviation, with sign-off. — Evidence: close_deviation role/sign-off and pgTAP permission check.
-- [ ] FR-DEV-06 (S) — **Preventive action \[Added\]:** a deviation can carry a preventive action with an owner and due date, tracked as a task.
-- [ ] FR-DEV-07 (S) — **Recurrence \[Added\]:** the system flags repeated deviations of the same category at the same cooperative within a configurable window.
-- [ ] FR-DEV-08 (S) — **Complaints \[Added\]:** a consumer or customer complaint can be logged against a packaging lot and converted into a deviation.
-- [ ] FR-STS-01 (M) — **Record completeness:** percentage of required records completed, e.g. "92% of required production records completed".
-- [ ] FR-STS-02 (M) — **Process status:** On Track, Attention Required, On Hold, Released, Rejected.
+- [x] FR-DEV-06 (S) — **Preventive action \[Added\]:** a deviation can carry a preventive action with an owner and due date, tracked as a task. ? Evidence: preventive_action, owner_id and due_at persist with generated CAPA tasks.
+- [x] FR-DEV-07 (S) — **Recurrence \[Added\]:** the system flags repeated deviations of the same category at the same cooperative within a configurable window. ? Evidence: recurrence_count and deviation_recurrence tasks use SOP-defined threshold and day window.
+- [x] FR-DEV-08 (S) — **Complaints \[Added\]:** a consumer or customer complaint can be logged against a packaging lot and converted into a deviation. ? Evidence: public complaints persist and scoped QA users can convert them into deviations from QualityPanel.
+- [x] FR-STS-01 (M) — **Record completeness:** percentage of required records completed, e.g. "92% of required production records completed". ? Evidence: checkpoint-review.test.ts proves interval-based completion rather than duplicate-reading counts.
+- [x] FR-STS-02 (M) — **Process status:** On Track, Attention Required, On Hold, Released, Rejected. ? Evidence: BatchStatus derives process attention from deviations and required interval coverage and preserves terminal/hold states.
 - [ ] FR-STS-03 (M) — **Deviations:** counts by severity and resolution, e.g. "0 critical, 2 minor resolved".
-- [ ] FR-STS-04 (M) — **Training/SOP validity:** whether the producer held required training for the SOP version used.
-- [ ] FR-AI-01 (S) — OCR reading of thermometer, pH meter and scale displays, package labels and printed lot numbers.
+- [x] FR-STS-04 (M) — **Training/SOP validity:** whether the producer held required training for the SOP version used. ? Evidence: batch_training_validity checks the original qualification or explicit migration time; BatchStatus displays the result.
+- [x] FR-AI-01 (S) — OCR reading of thermometer, pH meter and scale displays, package labels and printed lot numbers. ? Evidence: OCR accepts instrument numbers or printed lot strings; receipt entry shows and retains a printed-lot suggestion for confirmation. Actual provider quality remains a credential-dependent pilot test.
 - [x] FR-AI-02 (S) — The system keeps the original image, extracted value, confidence, and final confirmed value. — Evidence: live A3 retained photo, AI suggestion, confidence and confirmed reading.
-- [ ] FR-AI-03 (S) — Below a configurable confidence threshold the field stays empty and requires manual entry.
-- [ ] FR-AI-04 (S) — **Offline fallback \[Added\]:** when no model is available offline, the photo is stored and the user enters the value manually; OCR can run later as a cross-check.
+- [x] FR-AI-03 (S) — Below a configurable confidence threshold the field stays empty and requires manual entry. ? Evidence: Low-confidence instrument suggestions leave an empty value; printed-lot suggestions require manual entry and preserve an existing manual code.
+- [x] FR-AI-04 (S) — **Offline fallback \[Added\]:** when no model is available offline, the photo is stored and the user enters the value manually; OCR can run later as a cross-check. ? Evidence: evidence pictures survive offline saves; record_ocr_crosscheck appends a later review note and mvp-completion.test.sql preserves the original reading.
 - [x] FR-PKG-01 (M) — Recording packaging creates a Packaging Lot linked to its batch: date/time, packaging type, packaging material lot, package size, number of packages, total packaged mass, responsible producer. — Evidence: live packagedBatch fixture and API workflow.
-- [ ] FR-PKG-02 (M) — Packaging types (kraft pouch, transparent food-grade pouch, vacuum pouch, plastic container, custom) and sizes (250 g, 500 g, 1 kg, custom) are admin-maintained lists.
+- [x] FR-PKG-02 (M) — Packaging types (kraft pouch, transparent food-grade pouch, vacuum pouch, plastic container, custom) and sizes (250 g, 500 g, 1 kg, custom) are admin-maintained lists. ? Evidence: approved SOP packaging_options and packaging_sizes drive the type list and quick-size buttons, with custom numeric sizing.
 - [x] FR-PKG-03 (M) — A batch may be packaged in several sessions, each creating its own packaging lot. — Evidence: apply_sync allows additional awaiting-review packaging sessions.
 - [x] FR-PKG-04 (M) — **Best-before \[Added\]:** each packaging lot gets a best-before date from a configurable shelf life per product and package type; the user can shorten but not extend it. — Evidence: validate_packaging_rules and configurable package shelf life.
 - [x] FR-PKG-05 (M) — **Label data \[Added\]:** the system assembles mandatory label content: product name, ingredients, allergens (milk; gluten from bulgur), net weight, cooperative, lot code, production date, best-before, storage instructions and QR. Final label rules are set by the Food-Safety Lead (see section 9). — Evidence: labels.test.ts and live label scenario confirm bilingual mandatory template fields, weight, dates, cooperative and QR.
 - [ ] FR-PKG-06 (S) — **Label printing \[Added\]:** print-ready label sheets (PDF, A4 sticker sheets) and support for a small Bluetooth thermal label printer.
 - [x] FR-PKG-07 (M) — Packaging completion moves the batch to Awaiting Review; it never implies release. — Evidence: live A4 packaged batch awaits independent release.
-- [ ] FR-INV-01 (M) — Finished stock records storage location, quantity, storage date and storage requirements.
-- [ ] FR-INV-02 (M) — Periodic storage inspections: clean, dry, pest-protected, off-floor, temperature/humidity if required, photo.
+- [x] FR-INV-01 (M) — Finished stock records storage location, quantity, storage date and storage requirements. ? Evidence: packaging requires storage_location and persists storage date and approved configuration.
+- [x] FR-INV-02 (M) — Periodic storage inspections: clean, dry, pest-protected, off-floor, temperature/humidity if required, photo. ? Evidence: photo-backed inspections capture location, clean/dry/pest/off-floor and configured temperature/humidity; storage-stock.test.sql checks invalid values.
 - [x] FR-INV-03 (M) — Inventory is a ledger of movements (produced, sold, distributed, sample, lost, disposed, returned, adjusted), not an editable number. — Evidence: append-only inventory movement tests.
-- [ ] FR-INV-04 (M) — The balance **Produced = In stock + Sold/Distributed + Removed/Lost** is checked within a configurable tolerance.
+- [x] FR-INV-04 (M) — The balance **Produced = In stock + Sold/Distributed + Removed/Lost** is checked within a configurable tolerance. ? Evidence: finished_stock_balance returns the ledger equation, difference and SOP tolerance; storage-stock.test.sql proves balance.
 - [x] FR-INV-05 (S) — **Stock count \[Added\]:** periodic physical counts reconcile system stock; differences require a reason. — Evidence: reconcile_stock permission and reason validation.
 - [x] FR-INV-06 (M) — **Expiry \[Added\]:** stock nearing best-before appears as a task; expired stock cannot be sold. — Evidence: expiry task generator and unexpired sale constraint.
-- [ ] FR-INV-07 (M) — Unreleased stock is visually separated and cannot be sold.
+- [x] FR-INV-07 (M) — Unreleased stock is visually separated and cannot be sold. ? Evidence: Inventory separates released and restricted stock; API and SQL tests reject unreleased sales.
 - [ ] FR-REL-01 (M) — An authorized user reviews required checkpoints, deviations, measurements, packaging information and quality checks on one review screen.
 - [x] FR-REL-02 (M) — Decision options: Release, Hold, Reject; decision, reason and person are permanently recorded with sign-off. — Evidence: PIN transition_lot plus live A4.
 - [x] FR-REL-03 (M) — Release is blocked when required records are missing or critical deviations are unresolved. — Evidence: pgTAP missing-checkpoint/critical tests and live A4.
@@ -135,29 +135,29 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] FR-RCL-02 (M) — Trace-forward from a batch immediately lists: source whey lot(s), other batches sharing those lots, packaged quantities, remaining inventory, recorded sales/distribution, affected cooperatives.
 - [x] FR-RCL-03 (M) — Trace-forward from a whey lot or ingredient lot lists every downstream batch, packaging lot, stock and sale with quantities. — Evidence: live A5 whey genealogy includes stock and sale.
 - [x] FR-RCL-04 (M) — The public QR page of affected lots switches to a configurable withdrawal/recall notice. — Evidence: live A5 custom public recall notice.
-- [ ] FR-RCL-05 (M) — **Recall case \[Added\]:** each recall is a case with scope, actions (stop sale, notify buyers, retrieve, destroy), quantities recovered, status and closure.
-- [ ] FR-RCL-06 (S) — **Notification list \[Added\]:** the case lists buyer categories and recorded customer contacts (where collected) to notify.
+- [x] FR-RCL-05 (M) — **Recall case \[Added\]:** each recall is a case with scope, actions (stop sale, notify buyers, retrieve, destroy), quantities recovered, status and closure. ? Evidence: recall-actions.test.sql validates scoped actions and closure; operations.spec.ts records and closes a mock through the UI.
+- [x] FR-RCL-06 (S) — **Notification list \[Added\]:** the case lists buyer categories and recorded customer contacts (where collected) to notify. ? Evidence: recall_trace returns recorded buyer categories and optional contacts; RecallCases displays them.
 - [x] FR-RCL-07 (M) — **Mock recall \[Added\]:** a simulation mode runs the same trace without changing statuses or public pages, timed for drills. — Evidence: live A5 mock closure preserves public availability; case timestamps record duration.
 - [x] FR-RCL-08 (M) — Recall initiation alerts Supervisors, Coop Managers, WISE Admin and Food-Safety Lead immediately. — Evidence: live A5 notification rows for relevant roles.
 - [x] FR-SAL-01 (M) — A lightweight record captures packaging lot, date, quantity, package size, transaction type, destination/customer category, unit price or total, and currency. — Evidence: live A5 sale and live API transaction workflow.
 - [x] FR-SAL-02 (M) — Transaction types: sale, consignment, donation/sample, internal use, return. — Evidence: server-enforced transaction enum and ledger mapping.
 - [x] FR-SAL-03 (M) — **Currency \[Added\]:** LBP and USD supported; exchange rate stored per transaction for consistent USD reporting. — Evidence: transaction currency/rate columns and USD rate validation.
 - [x] FR-SAL-04 (M) — Only released, unexpired stock can be sold; sales cannot exceed available stock. — Evidence: pgTAP excess sale and live recalled-sale rejection.
-- [ ] FR-SAL-05 (M) — Customer identity is not required; optional named customer only for B2B buyers when needed for recall.
-- [ ] FR-SAL-06 (S) — **Quick sale \[Added\]:** scanning a package QR pre-fills lot and size for a two-tap entry.
+- [x] FR-SAL-05 (M) — Customer identity is not required; optional named customer only for B2B buyers when needed for recall. ? Evidence: sale entry leaves customer name/phone optional and retains provided contacts for recall.
+- [x] FR-SAL-06 (S) — **Quick sale \[Added\]:** scanning a package QR pre-fills lot and size for a two-tap entry. ? Evidence: Scanner resolves a package token and opens sale entry with its packaging lot selected.
 - [ ] FR-EQP-01 (M) — Records for thermometer, scale, pH meter, moisture meter, temperature/humidity logger: device ID, cooperative, type, calibration/check date, next due, status.
 - [x] FR-EQP-02 (S) — Simple verification checks (e.g. thermometer in ice water, scale with reference weight) can be recorded in the app. — Evidence: production.test.sql records reference/measured values, rejects empty checks, and creates a task for failed verification.
 - [ ] FR-EQP-03 (M) — Calibration due dates generate tasks; out-of-date devices trigger warnings when used.
 - [ ] FR-EQP-04 (M) — Other equipment (containers, utensils, mesh covers, PPE, cleaning supplies, QR labels) stays in training and SOP material, not the software.
-- [ ] FR-CFG-01 (M) — Admins manage cooperatives, users and roles, suppliers, ingredient types, packaging options, SOP versions, training modules, checkpoints, units, thresholds, deviation categories, shelf-life rules, label templates and KPI definitions.
+- [x] FR-CFG-01 (M) — Admins manage cooperatives, users and roles, suppliers, ingredient types, packaging options, SOP versions, training modules, checkpoints, units, thresholds, deviation categories, shelf-life rules, label templates and KPI definitions. ? Evidence: Admin SOP JSON manages lists and thresholds; MetricEditor drafts complete dated KPI metadata for separate approval. Methodology/calculation changes remain reviewed code changes.
 - [x] FR-CFG-02 (M) — **Two-step approval \[Added\]:** changes to food-safety thresholds, checkpoints and SOPs are drafted by an Admin and approved by the Food-Safety Lead before taking effect. — Evidence: configuration.test.sql and live configuration.spec.ts enforce Admin AAL2 drafting, separate Food-Safety Lead AAL2/PIN approval.
-- [ ] FR-CFG-03 (M) — Configuration is versioned with effective dates; active batches keep the version they started under unless an admin migrates them with a reason.
+- [x] FR-CFG-03 (M) — Configuration is versioned with effective dates; active batches keep the version they started under unless an admin migrates them with a reason. ? Evidence: mvp-completion.test.sql proves Admin MFA/PIN migration, immutable historical evidence and an append-only reason; active migration requires compatible stages/checkpoints.
 - [x] FR-CFG-04 (S) — Configuration can be scoped globally or per cooperative where procedures differ. — Evidence: draft_scoped_configuration validates cooperative scope; live configuration import targets cooperative 2.
 - [x] FR-CFG-05 (S) — Configuration can be exported and imported as a file to set up new cooperatives or environments. — Evidence: config-files.test.ts and live configuration.spec.ts import/export a versioned SOP file; imported approvals and identities cannot bypass new drafting/approval.
 - [ ] FR-DQ-01 (M) — Prevent or warn on: impossible dates, negative quantities, allocation over available, duplicate IDs, missing required records, unsupported units, sales over stock, use of rejected/held/expired whey, release with critical deviations.
-- [ ] FR-DQ-02 (M) — Each rule is configurable as blocking or warning, except those marked Always blocking.
+- [x] FR-DQ-02 (M) — Each rule is configurable as blocking or warning, except those marked Always blocking. ? Evidence: Configurable reception, calibration, storage and late-entry rules allow warning or blocking. Physical/safety invariants always block; dashboard-completion.test.sql prevents downgrading them.
 - [ ] FR-DQ-03 (M) — **Plausibility ranges \[Added\]:** measurements far outside physical plausibility (e.g. pH 14) prompt re-entry before saving.
-- [ ] FR-DQ-04 (S) — **Data-quality report \[Added\]:** admins see warnings overridden, late entries and sync conflicts by cooperative.
+- [x] FR-DQ-04 (S) — **Data-quality report \[Added\]:** admins see warnings overridden, late entries and sync conflicts by cooperative. ? Evidence: operational_dashboard and data_quality export include reception overrides, late entries and conflicts; check-reports.mjs checks the export.
 - [ ] FR-AUD-01 (M) — Every create, change and state transition on critical records writes an append-only audit event: object, field, old value, new value, user, device, time, reason.
 - [ ] FR-AUD-02 (M) — Corrections require a reason; originals remain visible in history.
 - [ ] FR-AUD-03 (M) — Released, rejected and recalled records are locked; changes are amendments.
@@ -165,11 +165,11 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [x] FR-AUD-05 (M) — Audit history is viewable per record and exportable. — Evidence: record history UI and scoped audit report export.
 - [x] FR-RPT-01 (M) — Export to CSV, Excel and PDF, respecting the user's access scope. — Evidence: check-reports.mjs exports actual CSV, Excel and PDF through authenticated RLS queries and tests period/material filters.
 - [ ] FR-RPT-02 (M) — Reports: whey reception register, batch traceability, batch production record, deviations, inventory, sales, training, impact indicators, trace-back/recall, equipment calibration, audit log.
-- [ ] FR-RPT-03 (M) — One batch traceability report reconstructs the full history from incoming whey to finished product and sale.
-- [ ] FR-RPT-04 (S) — **Scheduled reports \[Added\]:** monthly impact and operations reports emailed to configured recipients.
+- [x] FR-RPT-03 (M) — One batch traceability report reconstructs the full history from incoming whey to finished product and sale. ? Evidence: check-reports.mjs verifies consumption, production records, packaging and state history in the complete trace report.
+- [x] FR-RPT-04 (S) — **Scheduled reports \[Added\]:** monthly impact and operations reports emailed to configured recipients. ? Evidence: report schedules and service-only monthly leases share the impact core; scheduled-delivery.test.sql validates scope and claim-once behavior. Real sends need Resend credentials.
 - [x] FR-NTF-01 (M) — In-app notifications for tasks, reviews, deviations and recalls. — Evidence: notifications.test.sql checks per-user broadcast reads; task/review/held expiry notifications are generated from scoped tasks, with existing deviation/recall alerts.
-- [ ] FR-NTF-02 (S) — **Critical alerts \[Added\]:** recall, critical deviation and expiring held whey also go by WhatsApp or SMS, with user opt-in.
-- [ ] FR-NTF-03 (S) — Web push where the device supports it.
+- [x] FR-NTF-02 (S) — **Critical alerts \[Added\]:** recall, critical deviation and expiring held whey also go by WhatsApp or SMS, with user opt-in. ? Evidence: consent-aware alert_delivery leases retry through a configurable HTTPS adapter; scheduled-delivery.test.sql covers withdrawal. Default is logged, not delivered.
+- [x] FR-NTF-03 (S) — Web push where the device supports it. ? Evidence: private subscription consent, VAPID signatures, leases and withdrawal have SQL/unit evidence; hosted device delivery remains a pilot gate.
 
 ## Acceptance and nonfunctional checks
 
@@ -193,7 +193,15 @@ Checked requirements below have implementation and local evidence. Unchecked req
 - [ ] NFR-11
 - [ ] NFR-12
 - [ ] NFR-13
-- [ ] NFR-14
-- [ ] NFR-15
+- [x] NFR-14 ? Evidence: CI runs types, lint, unit, database, recovery, preview and live workflow checks on pushes and pull requests.
+- [x] NFR-15 ? Evidence: Sanitized client diagnostics are queued per user/device and visible to oversight; Edge handlers emit structured error-status logs. Dashboard-completion.test.sql checks device attribution, private access and bounded screen identifiers.
 - [ ] NFR-16
 
+
+## Readiness at this handoff
+
+The local MVP has real offline production, Supabase authentication/storage, supervised release, inventory/sales, recall cases, three dashboard views, exports, training and administration. The automated local suites pass; see TEST_EVIDENCE.md and current ProjectGraph evidence.
+
+The previously identified software gaps are implemented: product/status cohorts share the interactive/export metric core; current consent-based demographics suppress small groups; SOP dictionaries configure units/ingredients and process rules; formal KPI metadata uses dated two-step approval; printed-label OCR retains suggestions for confirmation; sanitized diagnostics and structured Edge error logs support error tracking. Unchecked requirements retain details whose complete acceptance evidence or external pilot validation has not been established; they are not all absent features. This document does not assert full hosted PRD acceptance.
+
+Hosted publishing is awaiting the owner's Supabase and Cloudflare targets and production secrets. Actual email/SMS/push/OCR provider tests, phone/printer compatibility, hosted performance and recovery drills, Arabic/usability review and validated food-safety protocols remain external pilot gates. Local placeholder protocols must not be approved as production food-safety advice.

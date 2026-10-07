@@ -51,3 +51,12 @@ Broadcast acknowledgments belong to each recipient. Queued acknowledgments persi
 Push uses a payload-free request authenticated by native Web Crypto VAPID (RFC 8292), and the worker displays fixed bilingual generic text. Subscription endpoints are private to the recipient and restricted to supported HTTPS push services. The server needs only the endpoint, not the browser's payload-encryption secrets. Failed delivery leases retry; provider acceptance does not prove device display. No VAPID secret is available in frontend code. Cryptographic tests verify tokens independently, check audience/expiry and deny private/redirect destinations. Hosted delivery remains untested without installed subscriptions and deployment keys.
 
 SOP import/export uses a versioned file envelope. Imports re-establish scope, effective date, drafter and separate approval instead of trusting those fields in a file. Global and cooperative versions increment independently. The original batch SOP controls release, including self-release, laboratory evidence and recurring intervals. Structured lab records link sample ID, time, laboratory, reference and outcome; required lab evidence must synchronize before release. Whey receipt quantities use measured kilograms, preventing volume units from silently disappearing from mass indicators.
+
+
+### Operational completion
+
+Monthly reporting shares `private.impact_metrics_core` with interactive metrics so formulas remain identical. Resend attachment and idempotency request shapes follow the [official OpenAPI specification](https://github.com/resend/resend-openapi/blob/main/resend.yaml). Deliveries are leased, bounded to five retries and checked against current schedule/owner authorization. No credentials means no external send.
+
+The departure workflow uses the server-only [Supabase Auth admin update API](https://supabase.com/docs/reference/javascript/auth-admin-updateuserbyid) after a scoped database action. It preserves UUID-based operational authorship and records the reason rather than deleting traceability. Protected archives are retained separately from app-visible profile history.
+
+Active-batch SOP migration requires unchanged stages/checkpoints, current new training, Admin MFA and a fresh PIN. This avoids retroactively applying different safety checks to measurements collected under another protocol. Materially changed protocols apply to newly created batches. Cross-check OCR is append-only, never an automatic safety decision.

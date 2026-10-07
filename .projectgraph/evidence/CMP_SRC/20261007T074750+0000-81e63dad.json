@@ -1,0 +1,667 @@
+{
+  "node": "CMP_SRC",
+  "evidence_id": "81e63dadb5c74316af976c5fb1175403",
+  "result": "PASS",
+  "started_at": "2026-10-07T07:47:19+00:00",
+  "finished_at": "2026-10-07T07:47:50+00:00",
+  "git": {
+    "available": true,
+    "commit": "cb7783e08ce5798009df00ed628a22c1b4b8755f",
+    "short_commit": "cb7783e08ce5",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:589e1695a72edf698374b16eebf5c93155986723484c6613cba0785dbd3ec37f",
+  "dep_fingerprint": "sha256:2325ea3d94c7813222876df741fb47f1b9b25e1df1fa65d0aa1e44fa495f2766",
+  "artifacts": [
+    {
+      "path": "src/App.tsx",
+      "hash": "d5165081e1cbd31b4aafce1a6cc6dd7f554c9f5148990e40b7561be8347f8978"
+    },
+    {
+      "path": "src/archive-search.tsx",
+      "hash": "65f14dbcb8f782d8c70d7d0480b360c8c8252053e6db7046f7e61ffc13565234"
+    },
+    {
+      "path": "src/batch-status.tsx",
+      "hash": "40b8f0c49a33d978c546a8ea34dae475a2db59d192b1bbe0dbcbe367388098e8"
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "hash": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85"
+    },
+    {
+      "path": "src/components/ui/sheet.tsx",
+      "hash": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962"
+    },
+    {
+      "path": "src/configuration-files.tsx",
+      "hash": "cad08b149869a8ad30b963accd2f993df4e7f1bc0e9924f2b09918f9ed0381f0"
+    },
+    {
+      "path": "src/dashboard.tsx",
+      "hash": "c7b87d72f4cc25a06d48c73e6aebb6b7956e41b63608d96e9a94f9fe800c56ca"
+    },
+    {
+      "path": "src/diagnostics.tsx",
+      "hash": "8055caeffd8a51f228aae21b3a081f7d30cd30cb989e309717739dfe3259e97c"
+    },
+    {
+      "path": "src/display-settings.tsx",
+      "hash": "9ba9d585d3bfeb684822ebcceadf9ff2a525df9e469768e020e83604330fb7d7"
+    },
+    {
+      "path": "src/evidence.tsx",
+      "hash": "0266630745f8271b1795cd2ae1b156a31b18299091a72482177b0674cc34844f"
+    },
+    {
+      "path": "src/features.tsx",
+      "hash": "a783cb6c34a95ceda7c507d73d53259264a40c6d991d411b61759a2b261fe70f"
+    },
+    {
+      "path": "src/i18n/ar.json",
+      "hash": "e783aacf9ce52373d440463b0ec6fb911633751be99cde01f4cf469f7e076683"
+    },
+    {
+      "path": "src/i18n/en.json",
+      "hash": "2927407c5fc0d0906f6c469d4a192949f1a7b8de7ae781355aa97b8d0eec2e2f"
+    },
+    {
+      "path": "src/i18n/index.ts",
+      "hash": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12"
+    },
+    {
+      "path": "src/i18n/translations.test.ts",
+      "hash": "88b295a32b86fbd640a3606325bc343414112027a7c675635f52e2fecc901136"
+    },
+    {
+      "path": "src/knowledge.tsx",
+      "hash": "c883ab11a7c5246ccfd32a6cbdd94a7f08cce9b2001fbb6982531f9f4bbb4802"
+    },
+    {
+      "path": "src/label-card.tsx",
+      "hash": "19f58d48ff3bdb678d50de8ac64fe4615100243da53d238c8c4e358a0bed76ec"
+    },
+    {
+      "path": "src/lib/attention.test.ts",
+      "hash": "47ace1e8cd6fe19d66528e3a13385aedf9917e8310a4cf05c2fed6e8d0dbb032"
+    },
+    {
+      "path": "src/lib/attention.ts",
+      "hash": "e42aaa5892fe1fb96a50b410e523c86b943385e4f70444e6c30b9acc745b7b8a"
+    },
+    {
+      "path": "src/lib/auth.ts",
+      "hash": "1c82db71e18f5864e43ecd0c5219508297f8d3f89c8a25a037e918c2ec6804de"
+    },
+    {
+      "path": "src/lib/checkpoint-review.test.ts",
+      "hash": "510728ef9d8fc100a191902e71effaa46d740b1a576b6a3f8a5f3f24ee01faad"
+    },
+    {
+      "path": "src/lib/config-files.test.ts",
+      "hash": "67f239ac8e741a83c3612848901545812b592c6407c42e64404a19c57994c049"
+    },
+    {
+      "path": "src/lib/config-files.ts",
+      "hash": "91ba82f907cba4cb30df99e0d66da3a736d6d1e9c6d6573012842d5ad4c71045"
+    },
+    {
+      "path": "src/lib/data.ts",
+      "hash": "9362b344f3f68fa758c59ef0b343cc0cd87570576c5c70c50e73475242fce3bb"
+    },
+    {
+      "path": "src/lib/demo.ts",
+      "hash": "bd89a8079d30231855eeca0f330228061c17c6403be06db3b116174b352f7e46"
+    },
+    {
+      "path": "src/lib/domain.test.ts",
+      "hash": "d4510044d05c2b7101622e9f70191f388e6de0ca338483d4b76baf1077c57ee6"
+    },
+    {
+      "path": "src/lib/domain.ts",
+      "hash": "84cc8331accb5b4609dac21e1d2735dc64d88af423c50fdffc2c23ad61e86e01"
+    },
+    {
+      "path": "src/lib/format.test.ts",
+      "hash": "e2542e09a8111f27a1a71ecd21c42e420cae931d71fdcfcbb7d4acff6c4d8876"
+    },
+    {
+      "path": "src/lib/format.ts",
+      "hash": "df829f2aa23164165d03678ee4dc61d5557c57c71958d179de491f015055eb5e"
+    },
+    {
+      "path": "src/lib/labels.test.ts",
+      "hash": "be61f5e8966326ea52db88062c9b82411368adceee61a2e1c5abf13afb778156"
+    },
+    {
+      "path": "src/lib/labels.ts",
+      "hash": "d01a856208f863b4a25081d60812602cf17508d6804379768d7c8433ef573b5c"
+    },
+    {
+      "path": "src/lib/learning-demo.ts",
+      "hash": "3bf7da4bca04aff53b73dd5512da8b898d2f8a77aef68c00f720d1116aabd71b"
+    },
+    {
+      "path": "src/lib/media.ts",
+      "hash": "99dc724aa075af6856147c3d994191fe2db5863ce42c61a49855b6406b20ea6a"
+    },
+    {
+      "path": "src/lib/mfa.ts",
+      "hash": "8850636db751da5c31a9ef0e728da5a97ae107be7d06de7cc4ad19002275c123"
+    },
+    {
+      "path": "src/lib/offline-signoff.ts",
+      "hash": "60fcf28725262274f3a425953b805e08c9a48141fa79edb51d475e7f4c48a834"
+    },
+    {
+      "path": "src/lib/overlay.test.ts",
+      "hash": "587d55ccb923e969fd91dcde0430fabade4484aeb76e3a57e88d23ebc3893b20"
+    },
+    {
+      "path": "src/lib/pin.test.ts",
+      "hash": "a037086e2fee03b7565756f2a53e519524966c77d23bb0d71af9b7155e6678cb"
+    },
+    {
+      "path": "src/lib/pin.ts",
+      "hash": "bc0ced82e329967ae10544be3a6f211eff7f4f00f0dcdf39fcc1d582f415cdc2"
+    },
+    {
+      "path": "src/lib/receipts.test.ts",
+      "hash": "65853034509c38b613cb7193a738be2f60656a570d62245f7009ccd3a41d5b98"
+    },
+    {
+      "path": "src/lib/receipts.ts",
+      "hash": "dc533610e914c91ad0d4923b2a4ec5ba4dfca885f1ed60bca09907412601dcd9"
+    },
+    {
+      "path": "src/lib/reports.ts",
+      "hash": "566016fbd350ea00694e8da7f1e133819a132f61b781996b28a584b2b1e0b730"
+    },
+    {
+      "path": "src/lib/schedules.test.ts",
+      "hash": "05159bce3e746bd49a4ffe937c9b9e641a95cf6cbb02a39b7fafe800c43f8e6b"
+    },
+    {
+      "path": "src/lib/schedules.ts",
+      "hash": "7c0554c5264df34e49ebceac6237185bd248ed88d10cf2d278af1783fd5fe6e6"
+    },
+    {
+      "path": "src/lib/sealed-ticket.test.ts",
+      "hash": "2057cdf00f64507873c546241d5dbf9de8b8a1e8f4c8172c5dc4aff99a646f57"
+    },
+    {
+      "path": "src/lib/sealed-ticket.ts",
+      "hash": "9eddec2e52492e0a09396e95c054929bcb99e7e85968206f7a2236110040f403"
+    },
+    {
+      "path": "src/lib/session-policy.test.ts",
+      "hash": "7fbb9d63954e8cee2b0909cdb58bce17e834c20309cce01fab6663f6c2626097"
+    },
+    {
+      "path": "src/lib/session-policy.ts",
+      "hash": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a"
+    },
+    {
+      "path": "src/lib/snapshot-lock.test.ts",
+      "hash": "e72bafd7c7afe18033b45c48ff9f56f8e580aeaf09ab418cbcec6fc79474a93e"
+    },
+    {
+      "path": "src/lib/snapshot-sync.test.ts",
+      "hash": "4fe0e78b914a9278ec608b2e4c6b90866628d3f98a5065d8235e2a5a97190378"
+    },
+    {
+      "path": "src/lib/snapshot-sync.ts",
+      "hash": "abe3a7d68a788bbb3b9e5e5ed5ffd9fc2ac4928d3404699551c240b725288a73"
+    },
+    {
+      "path": "src/lib/supabase.ts",
+      "hash": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024"
+    },
+    {
+      "path": "src/lib/telemetry.ts",
+      "hash": "9114062ef86ce96af099e48820529321121b36769fe3bf2ba706731f46bfbc32"
+    },
+    {
+      "path": "src/lib/training-media.ts",
+      "hash": "834616596a57763db295e08ad64f6c0a9f577c5ae2d83dc0695561a9c697bf02"
+    },
+    {
+      "path": "src/lib/vapid.test.ts",
+      "hash": "5e03a9cac77de6cd9a1c8861b20ebe8e92a6874e06410db63376284c23bee538"
+    },
+    {
+      "path": "src/main.tsx",
+      "hash": "ea4b272c36ddaaaf3e35f4d96589c32bc1feecb26e1a6f86404263608a031e96"
+    },
+    {
+      "path": "src/management.tsx",
+      "hash": "9e413902a48d4e631ea0463e0c3ae2bdbd6e1905d23662f5b8602143f7d898da"
+    },
+    {
+      "path": "src/material-balance.tsx",
+      "hash": "208e01c8dc935f8fb7d458e55148ef4ccaa55a5e9c564585461ef3d5ad7dc811"
+    },
+    {
+      "path": "src/metric-editor.tsx",
+      "hash": "d6b5bd70f0ff8eae97d6ba7ef4e62c2a29d34a4c454bad561224d0c97d3c565e"
+    },
+    {
+      "path": "src/notifications.test.ts",
+      "hash": "68ec479574ec7c10ce8254f73ebf7f631b582644ede20a20ce12c641399aca72"
+    },
+    {
+      "path": "src/notifications.tsx",
+      "hash": "8b6f5c02dbc1ba4ada42b3351c09c11471c013f3cf4f96d55ecc5bb33de97676"
+    },
+    {
+      "path": "src/offline/db.test.ts",
+      "hash": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0"
+    },
+    {
+      "path": "src/offline/db.ts",
+      "hash": "06097f9d9e9fb5f8cdd1a471ad7c41ae577b6d44d65518a51308016ab6b26188"
+    },
+    {
+      "path": "src/packaging-fields.tsx",
+      "hash": "f75a9b4c6064ce2b3a732d1a5d4562aceee37cb89b5e6d08f1465b5747dc54c1"
+    },
+    {
+      "path": "src/push-settings.tsx",
+      "hash": "df610cc84a3e4c54669118a8df37f21adf7105b0355bcf804770c2f53a8b7603"
+    },
+    {
+      "path": "src/quality-panel.tsx",
+      "hash": "98d00f2bdece650e5871d45bc3513b72b6f7c9aebb049818765b6d1bef96e247"
+    },
+    {
+      "path": "src/recall-cases.tsx",
+      "hash": "0d1994b689248063dc43ac0659c90cd69b0ce4bea57c70ff8e6dd256fc926da8"
+    },
+    {
+      "path": "src/report-page.tsx",
+      "hash": "052b08ac62e6fcb597d8964b907f50989643e7c41497f2cfb7a55edd25f433ba"
+    },
+    {
+      "path": "src/report-schedules.tsx",
+      "hash": "90e5f157c3f3c4ff8c59b46820a5f3c5a724c54a43edf5c7e613886fb31d92cd"
+    },
+    {
+      "path": "src/scanner.tsx",
+      "hash": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2"
+    },
+    {
+      "path": "src/stock-balance.tsx",
+      "hash": "002325e0a661b410c0cfd1f0c01b0d2d044ac32be6e890620288cfcb6a2008d1"
+    },
+    {
+      "path": "src/styles.css",
+      "hash": "324b743067fdff7bfc47beebac0b0a0d7484f181e23e3d4119917def9e938f4c"
+    },
+    {
+      "path": "src/test-setup.ts",
+      "hash": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9"
+    },
+    {
+      "path": "src/training-assets.tsx",
+      "hash": "94c7789d96168a7a0a813e72bf7ee9e4f072ffcb315b3c997f16def0dda2b105"
+    },
+    {
+      "path": "src/training-editor.tsx",
+      "hash": "6e93a0b0144311d6bfce6a97ccd6b511fa48b94fd6c56bdc0d4b1b977952c255"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_SRC_APP_TSX",
+      "fingerprint": "sha256:961f89735648df428b68e567f2ec335a1b94bbaff7530d8f97d42560c71ce37b"
+    },
+    {
+      "id": "F_SRC_ARCHIVE_SEARCH_TSX",
+      "fingerprint": "sha256:00bffde871c3a2b08f3454748558b1ff39a15f31bc7915fd7772070e9aabcb7c"
+    },
+    {
+      "id": "F_SRC_BATCH_STATUS_TSX",
+      "fingerprint": "sha256:b7c8cc08a95b99f5dbad9b1ea0ac82254d68cde82fa46d5dc40d2216c8c38bc3"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+      "fingerprint": "sha256:ff9744c686545b312fe4c0512c38794f1dfb36344f9f36fb9eaaef36a57b1a11"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_SHEET_TSX",
+      "fingerprint": "sha256:7e81c51974eccbda71c9884b3430a03c77340ff2041a19c448da3eb85af6c167"
+    },
+    {
+      "id": "F_SRC_CONFIGURATION_FILES_TSX",
+      "fingerprint": "sha256:97870f3942e8b537682d062caed9592c578a71016ccc21e54dde3947f9f256cf"
+    },
+    {
+      "id": "F_SRC_DASHBOARD_TSX",
+      "fingerprint": "sha256:1449b3e68afee5b9b27d463747d96bd6f10a584ffdf4d8fe4e58ec16b396b8c6"
+    },
+    {
+      "id": "F_SRC_DIAGNOSTICS_TSX",
+      "fingerprint": "sha256:870f6a79bbe0975cd828ce524e299fe504502819b66ae80ed93300a799017b1f"
+    },
+    {
+      "id": "F_SRC_DISPLAY_SETTINGS_TSX",
+      "fingerprint": "sha256:7b876b27451f444b3c38d7091e9be8b2a4113f8c801ee149f35bb65be821a9d4"
+    },
+    {
+      "id": "F_SRC_EVIDENCE_TSX",
+      "fingerprint": "sha256:ed2369ca00a21b6996650408dae2619058722e87ce1e85bbc01e345da150f7a5"
+    },
+    {
+      "id": "F_SRC_FEATURES_TSX",
+      "fingerprint": "sha256:cc51de0edf9487a5395e0b50ff80227843d78ce8ba666381fe493e2592e455f6"
+    },
+    {
+      "id": "F_SRC_I18N_INDEX_TS",
+      "fingerprint": "sha256:0d8ea56614f0ca9612b7ad2653508c7828cfdea765aa1f5e0880c572e5fb1efb"
+    },
+    {
+      "id": "F_SRC_I18N_TRANSLATIONS_TEST_TS",
+      "fingerprint": "sha256:cd1b9c048c8d9bf8d7d2cc4992d3f15a91f0ce1e49ee737d21e9081179c23288"
+    },
+    {
+      "id": "F_SRC_KNOWLEDGE_TSX",
+      "fingerprint": "sha256:6dd29586d6de8b6755d2176ffb6fb40578f7695a265c5f065b697e1d1e26b97e"
+    },
+    {
+      "id": "F_SRC_LABEL_CARD_TSX",
+      "fingerprint": "sha256:1c91799e0e38237ff7cc51e015bf2ec7f0188189034aa6958f4df51e8c7e125c"
+    },
+    {
+      "id": "F_SRC_LIB_ATTENTION_TEST_TS",
+      "fingerprint": "sha256:df9a59cc0b69a4bb56ad6732e6c4f8943e2ad7a629103efa90e9d1e742e51099"
+    },
+    {
+      "id": "F_SRC_LIB_ATTENTION_TS",
+      "fingerprint": "sha256:c8ccb97f5b19fd54926fea76d3c787b27a1c1531eb1c69dcb1fc448e9fd16185"
+    },
+    {
+      "id": "F_SRC_LIB_AUTH_TS",
+      "fingerprint": "sha256:b9dc8d9f98b995e87aa0205ce8b6a0993dd069f421d548fa31f0ec8aa44d48c4"
+    },
+    {
+      "id": "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS",
+      "fingerprint": "sha256:dcb8832e69dd3f15d979124daddfd48fa79f12e1f646b70ef59fe5ad44ca7f77"
+    },
+    {
+      "id": "F_SRC_LIB_CONFIG_FILES_TEST_TS",
+      "fingerprint": "sha256:ee24b13228d4b9e69c1570fa857d4c364a9e6a2f73ad0227ab0e90624fe3cc5e"
+    },
+    {
+      "id": "F_SRC_LIB_CONFIG_FILES_TS",
+      "fingerprint": "sha256:3e1b0f981b88734d9886245875fd79648b67ff0fd6ec4c86af20e513e41b9044"
+    },
+    {
+      "id": "F_SRC_LIB_DATA_TS",
+      "fingerprint": "sha256:762a2881e359be47e15545efa66f4fb7047e28da46e86bcb149ecd9ad015cc0c"
+    },
+    {
+      "id": "F_SRC_LIB_DEMO_TS",
+      "fingerprint": "sha256:37b026c2f34523c1a9ef488326a7e9c9821ed3b596b613bdd490fdc61a462fd2"
+    },
+    {
+      "id": "F_SRC_LIB_DOMAIN_TEST_TS",
+      "fingerprint": "sha256:14806866635ab7ca1e0cbd0cec8ed80c3849e8cb55a629de5f6022f2e4625189"
+    },
+    {
+      "id": "F_SRC_LIB_DOMAIN_TS",
+      "fingerprint": "sha256:c880cd18489225fd8bacc8869245ae14243a8254f48aa43596e3eeffc83b09ee"
+    },
+    {
+      "id": "F_SRC_LIB_FORMAT_TEST_TS",
+      "fingerprint": "sha256:e5abb465f37cfd6ad198d298680eb15630558549c6fbcfba21acd239f8e322ee"
+    },
+    {
+      "id": "F_SRC_LIB_FORMAT_TS",
+      "fingerprint": "sha256:fb1db0401981de26e546ab3ec88fcebe49eec1a1b8af22790aad17353c0c4499"
+    },
+    {
+      "id": "F_SRC_LIB_LABELS_TEST_TS",
+      "fingerprint": "sha256:a4545e291003ed3cd17e7580050fac2be00d32c238f5926859f5652662fa46d7"
+    },
+    {
+      "id": "F_SRC_LIB_LABELS_TS",
+      "fingerprint": "sha256:77663aafc4f5bed7ce86bd60079830562c179d5efa7ab6a74bdd225abbaa7ed4"
+    },
+    {
+      "id": "F_SRC_LIB_LEARNING_DEMO_TS",
+      "fingerprint": "sha256:c0a63f79b807219ef9d65233fe1571f6bfc87aec758148c8dab58ceafe2d4efe"
+    },
+    {
+      "id": "F_SRC_LIB_MEDIA_TS",
+      "fingerprint": "sha256:07a066e1e3b8dc84cf832719a76879588508ee6bfcc4c9c47147f99256a8c7a1"
+    },
+    {
+      "id": "F_SRC_LIB_MFA_TS",
+      "fingerprint": "sha256:dca26923ac160e2f79f66ebf3cc95b193260d08c61d62184015e31b1888c6668"
+    },
+    {
+      "id": "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
+      "fingerprint": "sha256:5967b604228128dd943ed907fec480ed6ec2dc8b63bc8362ca43ab3378a17f49"
+    },
+    {
+      "id": "F_SRC_LIB_OVERLAY_TEST_TS",
+      "fingerprint": "sha256:7abbe4411be01aea21d33acedb3bf6aa7edcc9f308dabbb4477557a2cb752b95"
+    },
+    {
+      "id": "F_SRC_LIB_PIN_TEST_TS",
+      "fingerprint": "sha256:0098b8cd5057693b43dfe29cfd40335d6f962d9245f0dccbc5a6cdd8e9386cc7"
+    },
+    {
+      "id": "F_SRC_LIB_PIN_TS",
+      "fingerprint": "sha256:d7d3547cc947880295b9a122f2436fb60ddf02ede6215568017426e17280ed24"
+    },
+    {
+      "id": "F_SRC_LIB_RECEIPTS_TEST_TS",
+      "fingerprint": "sha256:8619ef539394337d8e42084bcbfcc9ea6cd4cc39b092f9c3592929c84c6557a0"
+    },
+    {
+      "id": "F_SRC_LIB_RECEIPTS_TS",
+      "fingerprint": "sha256:94dd71fa884a34aa876058513ecc0aa3a4cb74858ab2df72a4a0725fb810bad0"
+    },
+    {
+      "id": "F_SRC_LIB_REPORTS_TS",
+      "fingerprint": "sha256:97295bdf0c8f65479803c523049c6a451d269f45c5e3242e58ec0ab5a73193fa"
+    },
+    {
+      "id": "F_SRC_LIB_SCHEDULES_TEST_TS",
+      "fingerprint": "sha256:60734e00c9f8807866498acdac7ca91063951e26152ef894d21c909d25b2de58"
+    },
+    {
+      "id": "F_SRC_LIB_SCHEDULES_TS",
+      "fingerprint": "sha256:f4d374c9d611e220377e7473cc4ea2b15801d95455645097d577b68cf37fe376"
+    },
+    {
+      "id": "F_SRC_LIB_SEALED_TICKET_TEST_TS",
+      "fingerprint": "sha256:2aad0922d4672a8e2417dcc3f06f78488d17106522ac1eeb880019d8453e4fb8"
+    },
+    {
+      "id": "F_SRC_LIB_SEALED_TICKET_TS",
+      "fingerprint": "sha256:3aa38ba525c270d25bcd3ca9de35046a26894ec6e31c209f60bdefc940c0e1e5"
+    },
+    {
+      "id": "F_SRC_LIB_SESSION_POLICY_TEST_TS",
+      "fingerprint": "sha256:604efc226edcb666c7b81f9b4bc4afeed19a656fd87e81d92ad6896d98bacf2e"
+    },
+    {
+      "id": "F_SRC_LIB_SESSION_POLICY_TS",
+      "fingerprint": "sha256:c662b4c0708a5f9535c8c0da042ebfa3d8954cd1d3b964c5a25ac119103627fc"
+    },
+    {
+      "id": "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS",
+      "fingerprint": "sha256:619df8df19540d425efa11face2ca690024abd78f8f7c4c61445316b77ab043b"
+    },
+    {
+      "id": "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS",
+      "fingerprint": "sha256:80f09480f12d9e24918b15757c227ce875b91d84e701f70ce4965878913e5981"
+    },
+    {
+      "id": "F_SRC_LIB_SNAPSHOT_SYNC_TS",
+      "fingerprint": "sha256:5bacdff1acf3da463a2ac2a69d4bf83656c44fdde5d4179a7a174b2996f596ca"
+    },
+    {
+      "id": "F_SRC_LIB_SUPABASE_TS",
+      "fingerprint": "sha256:118b0643bfeefe741db6e9f50f54f1fa716186fcc61703054d8928e16ddfd6b3"
+    },
+    {
+      "id": "F_SRC_LIB_TELEMETRY_TS",
+      "fingerprint": "sha256:7c9511392f31f51cd3b97ca45d9a7683e2c96b01f86583f521e261e707bbcabd"
+    },
+    {
+      "id": "F_SRC_LIB_TRAINING_MEDIA_TS",
+      "fingerprint": "sha256:d617337249374ccd0251a5d1a40e9e637bb1099485748c5dc098d7e7ab0865cf"
+    },
+    {
+      "id": "F_SRC_LIB_VAPID_TEST_TS",
+      "fingerprint": "sha256:0269ad35534f2a4cb4fb1601cce119d08fbf15669e32b2d3624c50b8faed2b18"
+    },
+    {
+      "id": "F_SRC_MAIN_TSX",
+      "fingerprint": "sha256:feb0e8772fb0c0c00049f29ae8847c4be33f88510a5bb405853a2988d8c18379"
+    },
+    {
+      "id": "F_SRC_MANAGEMENT_TSX",
+      "fingerprint": "sha256:bf9d38a2f31a71d6a287f4e9ace4ee5d9487796b03e77f7270e5ff15738d7fca"
+    },
+    {
+      "id": "F_SRC_MATERIAL_BALANCE_TSX",
+      "fingerprint": "sha256:f04cb2eb9d3aa66c795b0687ecc8519f2443e8b765ec967cbe067817181b61e2"
+    },
+    {
+      "id": "F_SRC_METRIC_EDITOR_TSX",
+      "fingerprint": "sha256:5d07f0e930ee43239c1dea09cc9cbd20d9dd502fb8f84ac862445b6272d0c928"
+    },
+    {
+      "id": "F_SRC_NOTIFICATIONS_TEST_TS",
+      "fingerprint": "sha256:496f028a07becedc36ec04148f6757dad2fb0742f34fe5143c354088e4bf7a42"
+    },
+    {
+      "id": "F_SRC_NOTIFICATIONS_TSX",
+      "fingerprint": "sha256:53a94efa6a4c37fd25085bb6a91509aeb711bb00a956745a6971c82a19f7d32d"
+    },
+    {
+      "id": "F_SRC_OFFLINE_DB_TEST_TS",
+      "fingerprint": "sha256:c129acf3287b6bd9336a0cecb1a8cc2219d1622f2afb3daaeacf1f390c1d3014"
+    },
+    {
+      "id": "F_SRC_OFFLINE_DB_TS",
+      "fingerprint": "sha256:75ff9cb2d70c3e3763cafc23183be85fafaa876940d1d35de66e4bb38b7aa2f3"
+    },
+    {
+      "id": "F_SRC_PACKAGING_FIELDS_TSX",
+      "fingerprint": "sha256:84aa310bed77286ad24b8f2bccea1beae1db121682ca989b28e7d3ccfac61653"
+    },
+    {
+      "id": "F_SRC_PUSH_SETTINGS_TSX",
+      "fingerprint": "sha256:3607d47826b88e044943132ee10616903960ce94ee8d96580ab6628f3edbc236"
+    },
+    {
+      "id": "F_SRC_QUALITY_PANEL_TSX",
+      "fingerprint": "sha256:0c7068bb55f488e9e064802e68ad561886bcc6e4dc25b8cab03d921d27b5e7e6"
+    },
+    {
+      "id": "F_SRC_RECALL_CASES_TSX",
+      "fingerprint": "sha256:8cbaad2890f76bb4d295c05270ed4d2af3b249904385eafcef478f43728301ab"
+    },
+    {
+      "id": "F_SRC_REPORT_PAGE_TSX",
+      "fingerprint": "sha256:8e25bcccd676381eb673b6cd4e38c003b7217edcc7e7fb6c0261707bb28c72d1"
+    },
+    {
+      "id": "F_SRC_REPORT_SCHEDULES_TSX",
+      "fingerprint": "sha256:ec24f66921be1a4f1090f1e535358d252600c3cea831986642a4f99b211ee548"
+    },
+    {
+      "id": "F_SRC_SCANNER_TSX",
+      "fingerprint": "sha256:a4270f3e6638de958da6928d193110b4eaaf102b3ad2881383108e93212856e1"
+    },
+    {
+      "id": "F_SRC_STOCK_BALANCE_TSX",
+      "fingerprint": "sha256:56fdfcd4247c671a2a4bfcb9e8eccbc77934144879e06eda7a2e5959cb9cd3c6"
+    },
+    {
+      "id": "F_SRC_TEST_SETUP_TS",
+      "fingerprint": "sha256:4f007a9b0c007b18ac970ff56b9b2dd0ef852d2f9eeac9796d1e1387d25ba52f"
+    },
+    {
+      "id": "F_SRC_TRAINING_ASSETS_TSX",
+      "fingerprint": "sha256:9275f2b3effbcdf8e0a7f7c19bb70af3d0c9618c4fba455903d5bd58a21e85c0"
+    },
+    {
+      "id": "F_SRC_TRAINING_EDITOR_TSX",
+      "fingerprint": "sha256:37f650c61d65729700dde97eb86a2576374c9215385ae002606493e2e7c9c5b2"
+    },
+    {
+      "id": "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
+      "fingerprint": "sha256:acdd0d8c3e54c7cfff02d0ef4a37d880e2ec3323ee48f6aa2c0c7d111893e648"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "src/main.tsx",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "src/offline/db.ts",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "types",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run typecheck",
+      "exit_code": 0,
+      "duration_s": 4.735,
+      "stdout_digest": "sha256:7aacbbafb0eab13e5c3a6ab7214826f6c6e4b0e01058ab8de1015d391ca182e1",
+      "output_tail": "\n> wise_trace@1.0.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "lint",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run lint",
+      "exit_code": 0,
+      "duration_s": 2.953,
+      "stdout_digest": "sha256:858387c90a13db210686c6fdfc4e50cd365f1384f7af51cc7219608480c63f55",
+      "output_tail": "\n> wise_trace@1.0.0 lint\n> eslint .\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "unit",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm test",
+      "exit_code": 0,
+      "duration_s": 1.641,
+      "stdout_digest": "sha256:6f90e2a9fc905a7b5b57ce80d502c3db26130a5318c71ad3ad8352e3205a6a3c",
+      "output_tail": "\n> wise_trace@1.0.0 test\n> vitest run\n\n\n RUN  v5.0.3 D:/Programing/WISE_Trace\n\n\n Test Files  18 passed (18)\n      Tests  46 passed (46)\n   Start at  10:47:27\n   Duration  886ms (transform 41%, setup 22%, import 21%, tests 13%, worker 3%)\n\n  Transform  transforming modules took 2.61s \u00c2\u00b7 41% of tracked time, re-done on every run\n             persist transforms across runs with fsModuleCache: true\n             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "browser",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run test:e2e",
+      "exit_code": 0,
+      "duration_s": 21.187,
+      "stdout_digest": "sha256:59e6a1294688f9ebcc3c85438154275c523898e1734ff4fadd62f38c536d09e6",
+      "output_tail": " ok 16 [mobile] \u00e2\u20ac\u00ba tests\\flows.spec.ts:4:1 \u00e2\u20ac\u00ba material receipt pre-fills supplier declarations (1.1s)\n  ok 15 [mobile] \u00e2\u20ac\u00ba tests\\flows.spec.ts:6:1 \u00e2\u20ac\u00ba Arabic changes document direction and keeps lot codes LTR (1.2s)\n  ok 13 [mobile] \u00e2\u20ac\u00ba tests\\flows.spec.ts:8:1 \u00e2\u20ac\u00ba all producer routes load without uncaught errors (2.3s)\n\n  16 passed (20.2s)\n[WebServer] (node:13128) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:12524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] [plugin builtin:vite-reporter] \n[WebServer] (!) Some chunks are larger than 500 kB after minification. Consider:\n[WebServer] - Using dynamic import() to code-split the application\n[WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n[WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n[WebServer] (node:22380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:12584) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:30824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:27436) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:29240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:27736) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:28976) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:17400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:18920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:24680) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:20292) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:27044) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:29268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:29444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:30076) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:19836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:28820) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

@@ -33,3 +33,20 @@ Recall: Open → In progress → Closed; case actions track stop-sale, notificat
 Vite builds SPA and plain public page to `dist`; Cloudflare Pages provides SPA fallback (no top-level 404). Supabase schema is migrations only. CI runs types, lint, Vitest, pgTAP and Playwright. The nightly workflow encrypts pg_dump and a separate recursive evidence/training archive before uploading a paired 30-day artifact. Media archives verify hashes and completion before non-overwriting recovery to a separate project; the hosted quarterly restore drill remains an operator gate. Deployment requires owner accounts, production secrets and Food-Safety Lead approval. External messaging defaults to a logged provider; OCR defaults to feature-disabled Claude vision behind a server interface.
 
 Human usability and protocol approval require actual cooperative participants and cannot be replaced by automated tests.
+
+## Resumable snapshot replication
+
+Private snapshot_change stores table keys and top-level transaction IDs, never record bodies. snapshot_changes reads the actual row under caller RLS and sends deletion markers for removed/hidden records. A pinned PostgreSQL transaction window and primary-key pagination let clients resume and handle lower sequence numbers that commit late. Snapshot rows and their cursor are persisted together. Stock balance IDs remain dirty until the final snapshot cache commits successfully.
+
+Read clients pin the original account token for the full download. Browser Web Locks serialize same-account replica writes; clients without Web Locks use an IndexedDB transaction lease across tabs, renew ownership when persisting replica pages, and guard final snapshot writes by generation. Expired leases are recoverable; a tab that loses ownership cannot overwrite a newer replica. Actual Safari/Samsung hardware coverage remains a pilot check. Each replica is partitioned by user, endpoint, installation epoch and access fingerprint. Cached screen data hydrates first; permission changes require fresh sign-in and remove that account's cached snapshots/training media while preserving outbox evidence.
+
+Bootstrap is resumable and bounded to recent history, active production, positive stock and required ancestors. Online archive lookup retrieves older closed lots without adding them to the offline replica. References remain available, and monthly cache fingerprints rebase historical amendments received through deltas. Routine refreshes only transfer changed rows and affected stock balances. The visibility design follows PostgreSQL's [transaction snapshot functions](https://www.postgresql.org/docs/current/functions-info.html#FUNCTIONS-PG-SNAPSHOT), and the local concurrent-transaction check covers a delayed lower-revision commit.
+
+
+## Final operational controls
+
+Product/status cohort filters are applied to the same impact calculation core used by dashboard exports and monthly reports. Source receipts are included when linked to a matching batch; an unallocated receipt is not part of a filtered production cohort. Operational activity uses the same matching rule. Demographic presentation is a separate current-consent aggregate and suppresses groups under five for all roles.
+
+Formal KPI metadata is selected from approved, effective, global dictionary versions. Calculation/visibility fields cannot be changed through metadata drafts. Physical/safety invariants always block; the approved SOP can choose warning/blocking for reception range overrides, overdue calibration, storage conditions and late records. Critical stock deviations prevent outgoing sales.
+
+Client diagnostics keep only a code, bounded screen identifier, user/device binding and timestamp. They queue in user-partitioned local storage and upload on reconnection. Oversight RLS scopes reads. Shared Edge JSON responses log only structured error status, not bodies or credentials. Deployment operators monitor these logs and existing per-device sync health.

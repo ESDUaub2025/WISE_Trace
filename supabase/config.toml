@@ -425,6 +425,8 @@ verify_jwt = false
 
 [functions.scheduled-tasks]
 verify_jwt = false
+[functions.subject-privacy]
+verify_jwt = false
 # Directory under `supabase/` where declarative files are written.
 # declarative_schema_path = "./schemas"
 # JSON string passed through to pg-delta SQL formatting. When omitted, SQL is

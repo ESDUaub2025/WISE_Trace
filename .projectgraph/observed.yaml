@@ -145,6 +145,7 @@ nodes:
   - src/evidence.tsx
   symbols:
   - src/evidence.tsx::EvidenceList
+  - src/evidence.tsx::crosscheck
   - src/evidence.tsx::render
   source: scanned
   confidence: medium
@@ -195,6 +196,7 @@ nodes:
   - src/lib/data.ts::cachedIdentity
   - src/lib/data.ts::getDevice
   - src/lib/data.ts::overlay
+  - src/lib/data.ts::readSnapshot
   - src/lib/data.ts::saveAction
   - src/lib/data.ts::signedAction
   - src/lib/data.ts::snapshot
@@ -766,6 +768,7 @@ nodes:
   artifacts:
   - src/lib/schedules.ts
   symbols:
+  - src/lib/schedules.ts::checkpointReview
   - src/lib/schedules.ts::localProductionTasks
   - src/lib/schedules.ts::lotConfig
   - src/lib/schedules.ts::stageTimeline
@@ -1497,6 +1500,460 @@ nodes:
   title: tests/live/dashboard-filters.spec.ts
   artifacts:
   - tests/live/dashboard-filters.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_CHECK_SNAPSHOT_CONCURRENCY_MJS
+  type: FILE
+  title: scripts/check-snapshot-concurrency.mjs
+  artifacts:
+  - scripts/check-snapshot-concurrency.mjs
+  symbols:
+  - scripts/check-snapshot-concurrency.mjs::changes
+  - scripts/check-snapshot-concurrency.mjs::rpc
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS
+  type: FILE
+  title: src/lib/snapshot-sync.test.ts
+  artifacts:
+  - src/lib/snapshot-sync.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  type: FILE
+  title: src/lib/snapshot-sync.ts
+  artifacts:
+  - src/lib/snapshot-sync.ts
+  symbols:
+  - src/lib/snapshot-sync.ts::Replica
+  - src/lib/snapshot-sync.ts::SnapshotChange
+  - src/lib/snapshot-sync.ts::assertLease
+  - src/lib/snapshot-sync.ts::authorizations
+  - src/lib/snapshot-sync.ts::blockCachedAccess
+  - src/lib/snapshot-sync.ts::checkSnapshotAccess
+  - src/lib/snapshot-sync.ts::commitSnapshot
+  - src/lib/snapshot-sync.ts::incrementalSnapshot
+  - src/lib/snapshot-sync.ts::keyColumn
+  - src/lib/snapshot-sync.ts::leaseKey
+  - src/lib/snapshot-sync.ts::leased
+  - src/lib/snapshot-sync.ts::mergeSnapshotChanges
+  - src/lib/snapshot-sync.ts::putReplica
+  - src/lib/snapshot-sync.ts::scopedReadClient
+  - src/lib/snapshot-sync.ts::withSnapshotLock
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL
+  type: FILE
+  title: supabase/migrations/202610060065_incremental_snapshots.sql
+  artifacts:
+  - supabase/migrations/202610060065_incremental_snapshots.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL
+  type: TEST
+  title: supabase/tests/snapshot.test.sql
+  artifacts:
+  - supabase/tests/snapshot.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_SNAPSHOT_SPEC_TS
+  type: TEST
+  title: tests/live/snapshot.spec.ts
+  artifacts:
+  - tests/live/snapshot.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL
+  type: FILE
+  title: supabase/migrations/202610060066_stage_clock_boundaries.sql
+  artifacts:
+  - supabase/migrations/202610060066_stage_clock_boundaries.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL
+  type: TEST
+  title: supabase/tests/stage-clock.test.sql
+  artifacts:
+  - supabase/tests/stage-clock.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SRC_ARCHIVE_SEARCH_TSX
+  type: FILE
+  title: src/archive-search.tsx
+  artifacts:
+  - src/archive-search.tsx
+  symbols:
+  - src/archive-search.tsx::ArchiveSearch
+  - src/archive-search.tsx::open
+  - src/archive-search.tsx::read
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS
+  type: FILE
+  title: src/lib/checkpoint-review.test.ts
+  artifacts:
+  - src/lib/checkpoint-review.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_QUALITY_PANEL_TSX
+  type: FILE
+  title: src/quality-panel.tsx
+  artifacts:
+  - src/quality-panel.tsx
+  symbols:
+  - src/quality-panel.tsx::QualityPanel
+  source: scanned
+  confidence: medium
+- id: F_SRC_RECALL_CASES_TSX
+  type: FILE
+  title: src/recall-cases.tsx
+  artifacts:
+  - src/recall-cases.tsx
+  symbols:
+  - src/recall-cases.tsx::RecallCases
+  source: scanned
+  confidence: medium
+- id: F_SRC_REPORT_SCHEDULES_TSX
+  type: FILE
+  title: src/report-schedules.tsx
+  artifacts:
+  - src/report-schedules.tsx
+  symbols:
+  - src/report-schedules.tsx::ReportSchedules
+  - src/report-schedules.tsx::load
+  source: scanned
+  confidence: medium
+- id: F_SRC_STOCK_BALANCE_TSX
+  type: FILE
+  title: src/stock-balance.tsx
+  artifacts:
+  - src/stock-balance.tsx
+  symbols:
+  - src/stock-balance.tsx::StockBalance
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS
+  type: FILE
+  title: supabase/functions/_shared/alerts.ts
+  artifacts:
+  - supabase/functions/_shared/alerts.ts
+  symbols:
+  - supabase/functions/_shared/alerts.ts::deliverAlerts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS
+  type: FILE
+  title: supabase/functions/_shared/monthly-reports.ts
+  artifacts:
+  - supabase/functions/_shared/monthly-reports.ts
+  symbols:
+  - supabase/functions/_shared/monthly-reports.ts::attachment
+  - supabase/functions/_shared/monthly-reports.ts::deliverMonthlyReports
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS
+  type: FILE
+  title: supabase/functions/subject-privacy/index.ts
+  artifacts:
+  - supabase/functions/subject-privacy/index.ts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610070067_recall_actions.sql
+  artifacts:
+  - supabase/migrations/202610070067_recall_actions.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL
+  type: FILE
+  title: supabase/migrations/202610070068_operational_dashboards.sql
+  artifacts:
+  - supabase/migrations/202610070068_operational_dashboards.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070069_CREATION_SOP_SQL
+  type: FILE
+  title: supabase/migrations/202610070069_creation_sop.sql
+  artifacts:
+  - supabase/migrations/202610070069_creation_sop.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL
+  type: FILE
+  title: supabase/migrations/202610070070_partner_agreements.sql
+  artifacts:
+  - supabase/migrations/202610070070_partner_agreements.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL
+  type: FILE
+  title: supabase/migrations/202610070071_critical_alert_queue.sql
+  artifacts:
+  - supabase/migrations/202610070071_critical_alert_queue.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL
+  type: FILE
+  title: supabase/migrations/202610070072_monthly_reports.sql
+  artifacts:
+  - supabase/migrations/202610070072_monthly_reports.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL
+  type: FILE
+  title: supabase/migrations/202610070073_subject_privacy.sql
+  artifacts:
+  - supabase/migrations/202610070073_subject_privacy.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL
+  type: FILE
+  title: supabase/migrations/202610070074_operational_cache.sql
+  artifacts:
+  - supabase/migrations/202610070074_operational_cache.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610070075_dashboard_operations.sql
+  artifacts:
+  - supabase/migrations/202610070075_dashboard_operations.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL
+  type: FILE
+  title: supabase/migrations/202610070076_storage_inspections.sql
+  artifacts:
+  - supabase/migrations/202610070076_storage_inspections.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL
+  type: FILE
+  title: supabase/migrations/202610070077_stock_balance.sql
+  artifacts:
+  - supabase/migrations/202610070077_stock_balance.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL
+  type: FILE
+  title: supabase/migrations/202610070078_mock_recall_completion.sql
+  artifacts:
+  - supabase/migrations/202610070078_mock_recall_completion.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL
+  type: FILE
+  title: supabase/migrations/202610070079_deviation_recurrence.sql
+  artifacts:
+  - supabase/migrations/202610070079_deviation_recurrence.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070080_SOP_MIGRATION_SQL
+  type: FILE
+  title: supabase/migrations/202610070080_sop_migration.sql
+  artifacts:
+  - supabase/migrations/202610070080_sop_migration.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL
+  type: TEST
+  title: supabase/tests/creation-sop.test.sql
+  artifacts:
+  - supabase/tests/creation-sop.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL
+  type: TEST
+  title: supabase/tests/operational-cache.test.sql
+  artifacts:
+  - supabase/tests/operational-cache.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL
+  type: TEST
+  title: supabase/tests/operational-dashboard.test.sql
+  artifacts:
+  - supabase/tests/operational-dashboard.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL
+  type: TEST
+  title: supabase/tests/recall-actions.test.sql
+  artifacts:
+  - supabase/tests/recall-actions.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL
+  type: TEST
+  title: supabase/tests/scheduled-delivery.test.sql
+  artifacts:
+  - supabase/tests/scheduled-delivery.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL
+  type: TEST
+  title: supabase/tests/storage-stock.test.sql
+  artifacts:
+  - supabase/tests/storage-stock.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL
+  type: TEST
+  title: supabase/tests/subject-privacy.test.sql
+  artifacts:
+  - supabase/tests/subject-privacy.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_OPERATIONS_SPEC_TS
+  type: TEST
+  title: tests/live/operations.spec.ts
+  artifacts:
+  - tests/live/operations.spec.ts
+  source: scanned
+  confidence: medium
+- id: F_SRC_BATCH_STATUS_TSX
+  type: FILE
+  title: src/batch-status.tsx
+  artifacts:
+  - src/batch-status.tsx
+  symbols:
+  - src/batch-status.tsx::BatchStatus
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS
+  type: FILE
+  title: src/lib/snapshot-lock.test.ts
+  artifacts:
+  - src/lib/snapshot-lock.test.ts
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_S
+  type: FILE
+  title: supabase/migrations/202610070081_sop_migration_compatibility.sql
+  artifacts:
+  - supabase/migrations/202610070081_sop_migration_compatibility.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL
+  type: FILE
+  title: supabase/migrations/202610070082_ocr_crosscheck.sql
+  artifacts:
+  - supabase/migrations/202610070082_ocr_crosscheck.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL
+  type: FILE
+  title: supabase/migrations/202610070083_data_quality_overrides.sql
+  artifacts:
+  - supabase/migrations/202610070083_data_quality_overrides.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL
+  type: FILE
+  title: supabase/migrations/202610070084_ingredient_photo_policy.sql
+  artifacts:
+  - supabase/migrations/202610070084_ingredient_photo_policy.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL
+  type: TEST
+  title: supabase/tests/mvp-completion.test.sql
+  artifacts:
+  - supabase/tests/mvp-completion.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SRC_DIAGNOSTICS_TSX
+  type: FILE
+  title: src/diagnostics.tsx
+  artifacts:
+  - src/diagnostics.tsx
+  symbols:
+  - src/diagnostics.tsx::DiagnosticPanel
+  source: scanned
+  confidence: medium
+- id: F_SRC_METRIC_EDITOR_TSX
+  type: FILE
+  title: src/metric-editor.tsx
+  artifacts:
+  - src/metric-editor.tsx
+  symbols:
+  - src/metric-editor.tsx::MetricEditor
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL
+  type: FILE
+  title: supabase/migrations/202610070085_metric_cohorts_dictionary.sql
+  artifacts:
+  - supabase/migrations/202610070085_metric_cohorts_dictionary.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS
+  type: FILE
+  title: supabase/migrations/202610070086_dashboard_privacy_diagnostics.sql
+  artifacts:
+  - supabase/migrations/202610070086_dashboard_privacy_diagnostics.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ
+  type: FILE
+  title: supabase/migrations/202610070087_operational_product_filter.sql
+  artifacts:
+  - supabase/migrations/202610070087_operational_product_filter.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL
+  type: FILE
+  title: supabase/migrations/202610070088_configurable_data_quality.sql
+  artifacts:
+  - supabase/migrations/202610070088_configurable_data_quality.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL
+  type: FILE
+  title: supabase/migrations/202610070089_metric_editor_read.sql
+  artifacts:
+  - supabase/migrations/202610070089_metric_editor_read.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_DASHBOARD_COMPLETION_TEST_SQL
+  type: TEST
+  title: supabase/tests/dashboard-completion.test.sql
+  artifacts:
+  - supabase/tests/dashboard-completion.test.sql
+  source: scanned
+  confidence: medium
+- id: F_SRC_LIB_TELEMETRY_TS
+  type: FILE
+  title: src/lib/telemetry.ts
+  artifacts:
+  - src/lib/telemetry.ts
+  symbols:
+  - src/lib/telemetry.ts::Diagnostic
+  - src/lib/telemetry.ts::captureDiagnostic
+  - src/lib/telemetry.ts::flushDiagnostics
+  - src/lib/telemetry.ts::installDiagnostics
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL
+  type: FILE
+  title: supabase/migrations/202610070090_demographic_consent_guard.sql
+  artifacts:
+  - supabase/migrations/202610070090_demographic_consent_guard.sql
+  source: scanned
+  confidence: medium
+- id: F_SCRIPTS_CHECK_PRIVACY_MJS
+  type: FILE
+  title: scripts/check-privacy.mjs
+  artifacts:
+  - scripts/check-privacy.mjs
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL
+  type: FILE
+  title: supabase/migrations/202610070091_privacy_epoch_update.sql
+  artifacts:
+  - supabase/migrations/202610070091_privacy_epoch_update.sql
   source: scanned
   confidence: medium
 edges:
@@ -2405,6 +2862,296 @@ edges:
   type: CONTAINS
   provenance:
     generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SCRIPTS_CHECK_SNAPSHOT_CONCURRENCY_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_SNAPSHOT_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_ARCHIVE_SEARCH_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_QUALITY_PANEL_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_RECALL_CASES_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_REPORT_SCHEDULES_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_STOCK_BALANCE_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070069_CREATION_SOP_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070080_SOP_MIGRATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_OPERATIONS_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_BATCH_STATUS_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_S
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_DIAGNOSTICS_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_METRIC_EDITOR_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_DASHBOARD_COMPLETION_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_LIB_TELEMETRY_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_SCRIPTS_CHECK_PRIVACY_MJS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
 - from: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
@@ -2454,6 +3201,58 @@ edges:
     - source: scripts/media-backup.test.mjs
       target: scripts/media-backup.mjs
       import: ./media-backup.mjs
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_QUALITY_PANEL_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/quality-panel.tsx
+      import: ./quality-panel
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_ARCHIVE_SEARCH_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/archive-search.tsx
+      import: ./archive-search
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_REPORT_SCHEDULES_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/report-schedules.tsx
+      import: ./report-schedules
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_RECALL_CASES_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/recall-cases.tsx
+      import: ./recall-cases
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2704,6 +3503,123 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_ARCHIVE_SEARCH_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/archive-search.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_ARCHIVE_SEARCH_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/archive-search.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_ARCHIVE_SEARCH_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/archive-search.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_ARCHIVE_SEARCH_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/archive-search.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_ARCHIVE_SEARCH_TSX
+  to: F_SRC_APP_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/archive-search.tsx
+      target: src/App.tsx
+      import: ./App
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_BATCH_STATUS_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/batch-status.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_BATCH_STATUS_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/batch-status.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_BATCH_STATUS_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/batch-status.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_BATCH_STATUS_TSX
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/batch-status.tsx
+      target: src/lib/schedules.ts
+      import: ./lib/schedules
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_CONFIGURATION_FILES_TSX
   to: F_SRC_COMPONENTS_UI_BUTTON_TSX
   type: CONSUMES
@@ -2822,6 +3738,19 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_SRC_DASHBOARD_TSX
+  to: F_SRC_APP_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/dashboard.tsx
+      target: src/App.tsx
+      import: ./App
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DASHBOARD_TSX
   to: F_SRC_LIB_REPORTS_TS
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
@@ -2831,6 +3760,45 @@ edges:
     - source: src/dashboard.tsx
       target: src/lib/reports.ts
       import: ./lib/reports
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DIAGNOSTICS_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/diagnostics.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DIAGNOSTICS_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/diagnostics.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_DIAGNOSTICS_TSX
+  to: F_SRC_APP_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/diagnostics.tsx
+      target: src/App.tsx
+      import: ./App
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -2887,6 +3855,32 @@ edges:
       resolver: projectgraph.imports.v1
       confidence: medium
 - from: F_SRC_FEATURES_TSX
+  to: F_SRC_METRIC_EDITOR_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/metric-editor.tsx
+      import: ./metric-editor
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_DIAGNOSTICS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/diagnostics.tsx
+      import: ./diagnostics
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
   to: F_SRC_CONFIGURATION_FILES_TSX
   type: CONSUMES
   note: Discovered code import (not a work prerequisite)
@@ -2896,6 +3890,32 @@ edges:
     - source: src/features.tsx
       target: src/configuration-files.tsx
       import: ./configuration-files
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_BATCH_STATUS_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/batch-status.tsx
+      import: ./batch-status
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_FEATURES_TSX
+  to: F_SRC_STOCK_BALANCE_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/features.tsx
+      target: src/stock-balance.tsx
+      import: ./stock-balance
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -3380,6 +4400,45 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS
+  to: F_SRC_LIB_SCHEDULES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/checkpoint-review.test.ts
+      target: src/lib/schedules.ts
+      import: ./schedules
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS
+  to: F_SRC_LIB_DEMO_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/checkpoint-review.test.ts
+      target: src/lib/demo.ts
+      import: ./demo
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/checkpoint-review.test.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_LIB_CONFIG_FILES_TEST_TS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
@@ -3416,6 +4475,32 @@ edges:
     - source: src/lib/config-files.ts
       target: src/lib/domain.ts
       import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_TELEMETRY_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/telemetry.ts
+      import: ./telemetry
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_DATA_TS
+  to: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/data.ts
+      target: src/lib/snapshot-sync.ts
+      import: ./snapshot-sync
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -3991,6 +5076,123 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS
+  to: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/snapshot-lock.test.ts
+      target: src/lib/snapshot-sync.ts
+      import: ./snapshot-sync
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/snapshot-lock.test.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS
+  to: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/snapshot-sync.test.ts
+      target: src/lib/snapshot-sync.ts
+      import: ./snapshot-sync
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/snapshot-sync.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/snapshot-sync.ts
+      target: src/lib/supabase.ts
+      import: ./supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/snapshot-sync.ts
+      target: src/lib/domain.ts
+      import: ./domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_SNAPSHOT_SYNC_TS
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/snapshot-sync.ts
+      target: src/lib/data.ts
+      import: ./data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_TELEMETRY_TS
+  to: F_SRC_OFFLINE_DB_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/telemetry.ts
+      target: src/offline/db.ts
+      import: ../offline/db
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_LIB_TELEMETRY_TS
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/lib/telemetry.ts
+      target: src/lib/supabase.ts
+      import: ./supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_LIB_TRAINING_MEDIA_TS
   to: F_SRC_OFFLINE_DB_TS
   type: CONSUMES
@@ -4053,6 +5255,19 @@ edges:
     - source: src/lib/vapid.test.ts
       target: supabase/functions/_shared/vapid.ts
       import: ../../supabase/functions/_shared/vapid
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_MAIN_TSX
+  to: F_SRC_LIB_TELEMETRY_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/main.tsx
+      target: src/lib/telemetry.ts
+      import: ./lib/telemetry
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -4170,6 +5385,32 @@ edges:
     - source: src/material-balance.tsx
       target: src/lib/domain.ts
       import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_METRIC_EDITOR_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/metric-editor.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_METRIC_EDITOR_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/metric-editor.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -4433,6 +5674,123 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_QUALITY_PANEL_TSX
+  to: F_SRC_APP_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/quality-panel.tsx
+      target: src/App.tsx
+      import: ./App
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_QUALITY_PANEL_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/quality-panel.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_QUALITY_PANEL_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/quality-panel.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_QUALITY_PANEL_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/quality-panel.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_QUALITY_PANEL_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/quality-panel.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_RECALL_CASES_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/recall-cases.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_RECALL_CASES_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/recall-cases.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_RECALL_CASES_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/recall-cases.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_RECALL_CASES_TSX
+  to: F_SRC_APP_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/recall-cases.tsx
+      target: src/App.tsx
+      import: ./App
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_REPORT_PAGE_TSX
   to: F_SRC_COMPONENTS_UI_BUTTON_TSX
   type: CONSUMES
@@ -4498,6 +5856,58 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_REPORT_SCHEDULES_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-schedules.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REPORT_SCHEDULES_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-schedules.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REPORT_SCHEDULES_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-schedules.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REPORT_SCHEDULES_TSX
+  to: F_SRC_APP_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/report-schedules.tsx
+      target: src/App.tsx
+      import: ./App
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_SCANNER_TSX
   to: F_SRC_COMPONENTS_UI_BUTTON_TSX
   type: CONSUMES
@@ -4508,6 +5918,58 @@ edges:
     - source: src/scanner.tsx
       target: src/components/ui/button.tsx
       import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_STOCK_BALANCE_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/stock-balance.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_STOCK_BALANCE_TSX
+  to: F_SRC_LIB_FORMAT_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/stock-balance.tsx
+      target: src/lib/format.ts
+      import: ./lib/format
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_STOCK_BALANCE_TSX
+  to: F_SRC_LIB_DOMAIN_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/stock-balance.tsx
+      target: src/lib/domain.ts
+      import: ./lib/domain
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_STOCK_BALANCE_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/stock-balance.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -4719,6 +6181,45 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/scheduled-tasks/index.ts
+      target: supabase/functions/_shared/alerts.ts
+      import: ../_shared/alerts.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/scheduled-tasks/index.ts
+      target: supabase/functions/_shared/monthly-reports.ts
+      import: ../_shared/monthly-reports.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS
+  to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: supabase/functions/subject-privacy/index.ts
+      target: supabase/functions/_shared/http.ts
+      import: ../_shared/http.ts
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS
   to: F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS
   type: CONSUMES
@@ -4875,6 +6376,19 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_TESTS_LIVE_OPERATIONS_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/operations.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_TESTS_LIVE_SELF_RELEASE_SPEC_TS
   to: F_TESTS_LIVE_FIXTURES_TS
   type: CONSUMES
@@ -4883,6 +6397,19 @@ edges:
     generator: projectgraph.imports.v1
     imports:
     - source: tests/live/self-release.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_SNAPSHOT_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/snapshot.spec.ts
       target: tests/live/fixtures.ts
       import: ./fixtures
       line: null

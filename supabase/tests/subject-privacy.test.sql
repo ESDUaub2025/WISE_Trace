@@ -1,0 +1,12 @@
+begin;
+set local search_path=public,extensions;
+select no_plan();
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select public.anonymize_producer('20000000-0000-4000-8000-000000000001','Verified request')$$,'P0001','Disable the producer and record the verified request before anonymizing','An active account cannot be anonymized accidentally');
+select lives_ok($$select public.manage_account('20000000-0000-4000-8000-000000000001','disabled',array['producer'],'{}','Verified departure request')$$,'Manager disables departing producer first');
+select lives_ok($$select public.anonymize_producer('20000000-0000-4000-8000-000000000001','Verified departure request')$$,'Verified departure retains pseudonymous authorship');
+select is((select display_name from public.membership where user_id='20000000-0000-4000-8000-000000000001'),'Anonymous producer','Profile no longer identifies producer');
+select ok(exists(select 1 from public.lot where producer_id='20000000-0000-4000-8000-000000000001'),'Production authorship and traceability are preserved');
+select is((select count(*)::integer from public.audit_event where object_type='membership' and object_id='20000000-0000-4000-8000-000000000001' and field='display_name'),0,'Identity history is hidden from app roles without deleting the immutable archive');
+select * from finish();rollback;

@@ -1,0 +1,10 @@
+begin;
+set local search_path=public,extensions;
+select no_plan();
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000001","role":"authenticated","aal":"aal1"}',true);
+select is(public.finished_stock_balance('60000000-0000-4000-8000-000000000003')->>'balanced','true','Finished stock ledger closes across production and sales');
+select throws_ok($$select public.finished_stock_balance('60000000-0000-4000-8000-000000000012')$$,'P0001','Packaging lot unavailable','Foreign or absent stock cannot be inspected');
+select is(public.apply_sync(jsonb_build_object('id',gen_random_uuid(),'cooperative_id','10000000-0000-4000-8000-000000000001','author_id','20000000-0000-4000-8000-000000000001','device_id','30000000-0000-4000-8000-000000000001','config_version_id','40000000-0000-4000-8000-000000000001','observed_at',now(),'action','storage_inspection','payload',jsonb_build_object('lot_id','60000000-0000-4000-8000-000000000003','values','{}'::jsonb)))->>'status','conflict','Inspection cannot omit storage location');
+select is(public.apply_sync(jsonb_build_object('id',gen_random_uuid(),'cooperative_id','10000000-0000-4000-8000-000000000001','author_id','20000000-0000-4000-8000-000000000001','device_id','30000000-0000-4000-8000-000000000001','config_version_id','40000000-0000-4000-8000-000000000001','observed_at',now(),'action','storage_inspection','payload',jsonb_build_object('lot_id','60000000-0000-4000-8000-000000000003','values',jsonb_build_object('storage_location','Dry store','humidity',101,'all_ok',true))))->>'status','conflict','Impossible humidity remains a retained conflict');
+select * from finish();rollback;

@@ -1,0 +1,18 @@
+begin;
+set local search_path=public,extensions;
+select no_plan();
+set local role authenticated;
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal1"}',true);
+select is(jsonb_array_length(public.operational_dashboard(current_date-30,current_date)->'cooperatives'),1,'Manager summary remains within own cooperative');
+select throws_ok($$select public.operational_dashboard(current_date-30,current_date,'10000000-0000-4000-8000-000000000002')$$,'P0001','Cooperative outside dashboard scope','Foreign operational filter is denied');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000006","role":"authenticated","aal":"aal1"}',true);
+select is((select count(*)::integer from public.lot),0,'Partner defaults to aggregate access, including own registered cooperative');
+select is(jsonb_array_length(public.operational_dashboard(current_date-30,current_date)->'cooperatives'),2,'Partner sees cross-cooperative aggregates without raw permission');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000003","role":"authenticated","aal":"aal1"}',true);
+select lives_ok($$select public.set_partner_data_agreement('10000000-0000-4000-8000-000000000001',true,'SIGNED-AGREEMENT-TEST')$$,'Data owner can record an agreement');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000006","role":"authenticated","aal":"aal1"}',true);
+select ok((select count(*) from public.lot)>0,'Partner reads operational records only after the cooperative agrees');
+select is((select count(*)::integer from public.lot where cooperative_id='10000000-0000-4000-8000-000000000002'),0,'Agreement does not expose other cooperative records');
+select set_config('request.jwt.claims','{"sub":"20000000-0000-4000-8000-000000000007","role":"authenticated","aal":"aal1"}',true);
+select throws_ok($$select public.operational_dashboard(current_date-30,current_date)$$,'P0001','Operational dashboard permission required','Donor cannot access operational summary');
+select * from finish();rollback;
