@@ -14,7 +14,7 @@ test('manager dashboard filters and exported impact stay within cooperative scop
 });
 test('donor filters use safe cooperative metadata and preserve suppressed cells',async({page})=>{
  await login(page,'donor1');await page.goto('/dashboards');await expect(page.locator('.metric-card')).toHaveCount(9);
- const region=page.getByLabel('Region',{exact:true});await expect(region.locator('option')).toHaveCount(3);
+ const region=page.getByLabel('Region',{exact:true});await expect(region.locator('option').filter({hasText:'Akkar'})).toHaveCount(1);await expect(region.locator('option').filter({hasText:'Bekaa'})).toHaveCount(1);
  const response=page.waitForResponse(reply=>reply.url().includes('/rpc/impact_metrics_cohort'));
  await region.selectOption('Bekaa');const result=await (await response).json();expect(result.every((metric:{suppressed:boolean;value:unknown})=>metric.suppressed&&metric.value===null)).toBe(true);
  await expect(page.locator('.metric-card').first()).toContainText('Suppressed');

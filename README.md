@@ -25,6 +25,6 @@ npm run test:live
 npm run build
 ```
 
-See [architecture](docs/ARCHITECTURE.md), [data model](docs/DATA_MODEL.md), [requirement evidence and remaining work](docs/PROGRESS.md), [decisions](docs/DECISIONS.md), [deployment](docs/DEPLOYMENT.md) and [role guide](docs/USER_GUIDE.md). Food-safety defaults are placeholders pending Food-Safety Lead approval. The build is not a food-safety certification.
+See [architecture](docs/ARCHITECTURE.md), [data model](docs/DATA_MODEL.md), [requirement evidence and remaining work](docs/PROGRESS.md), [decisions](docs/DECISIONS.md), [MVP deployment walkthrough](docs/DEPLOY_MVP.md), [deployment and recovery](docs/DEPLOYMENT.md) and [user guide](docs/USER_GUIDE.md). Food-safety defaults are placeholders pending Food-Safety Lead approval. The build is not a food-safety certification.
 
 The local MVP runs with real Supabase Auth, database, private media and offline sync. Hosted deployment and field acceptance remain owner/pilot gates. PROGRESS.md distinguishes implemented workflows from details awaiting complete acceptance evidence. [Test evidence](docs/TEST_EVIDENCE.md) distinguishes the passing workflows from acceptance details and field checks still outstanding.

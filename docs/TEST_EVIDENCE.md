@@ -56,3 +56,11 @@ ProjectGraph `CMP_SRC` verification passed types, lint, all 46 unit tests and al
 
 Screenshots: [Welcome](preview-help-welcome.png), [Desktop page help](preview-help-desktop.png), [Mobile page help](preview-help-mobile.png), [Arabic page help](preview-help-arabic.png).
 
+# Controlled registration and online trials — 7 October 2026
+
+Migration 92 adds verified-email registration requests, administrator MFA approval/rejection, isolated trial/full workspaces and a database-enforced one-account trial limit. Migration 93 excludes trials from global operations, impact, donor filter metadata, demographics and global monthly reporting while retaining the trial owner's own reporting. Approved workspace founders can register their own suppliers/instruments; trial team creation is rejected before Auth provisioning and also by the database.
+
+Final ProjectGraph checks: `CMP_SUPABASE` passed all 306 database assertions and snapshot concurrency; `CMP_SRC` passed types, lint, 46 unit tests and 20 desktop/mobile browser cases. A full live run passed 24 of 25 cases, with the remaining donor-filter assertion assuming exactly two seeded regions. After fixing that assumption for registered workspaces and adding trial reporting exclusions, all three focused registration/manager/donor cases passed. The signup case uses the real backend and actual MFA administrator UI: request pending with no membership, approval, empty trial, user-entered supplier/receipt, persistence after reload and sign-out/sign-in, and full-service upgrade. Existing live MFA tests now dismiss the first-account welcome popup.
+
+Production email verification is enforced by the registration RPC; pgTAP rejects an unconfirmed account, self-approval, an administrator without MFA, cross-workspace registry writes and trial team provisioning. Local Auth auto-confirms email; a hosted SMTP/confirmation-link check remains part of the deployment walkthrough. No hosted project was published: the CLI reported `AccessTokenRequiredError`, and no owner Cloudflare project was supplied. See [MVP deployment walkthrough](DEPLOY_MVP.md).
+

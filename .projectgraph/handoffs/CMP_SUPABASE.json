@@ -88,5 +88,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SUPABASE",
+    "note": "Applied migrations 92/93 locally without reset. Registration requires verified email and admin MFA approval; scopes are isolated and trials have one-account DB limit. Trial activities excluded from global reports. Final contract passed 306 pgTAP assertions and snapshot concurrency.",
+    "next_action": "Apply migrations to the owner-hosted project without fictional seed, bootstrap separate owner accounts, and validate procedures before production.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-07T10:41:48.693640+00:00",
+    "git": {
+      "available": true,
+      "commit": "35a8fa5f8ff6d5a6b34ec567605c0074a7671e6a",
+      "short_commit": "35a8fa5f8ff6",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]

@@ -1978,6 +1978,58 @@ nodes:
   - src/help.tsx::needsWelcome
   source: scanned
   confidence: medium
+- id: F_SRC_REGISTRATION_REVIEW_TSX
+  type: FILE
+  title: src/registration-review.tsx
+  artifacts:
+  - src/registration-review.tsx
+  symbols:
+  - src/registration-review.tsx::RegistrationReview
+  - src/registration-review.tsx::decide
+  - src/registration-review.tsx::refresh
+  source: scanned
+  confidence: medium
+- id: F_SRC_REGISTRATION_TSX
+  type: FILE
+  title: src/registration.tsx
+  artifacts:
+  - src/registration.tsx
+  symbols:
+  - src/registration.tsx::Registration
+  - src/registration.tsx::RegistrationStatus
+  - src/registration.tsx::refresh
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070092_SELF_REGISTRATION_SQL
+  type: FILE
+  title: supabase/migrations/202610070092_self_registration.sql
+  artifacts:
+  - supabase/migrations/202610070092_self_registration.sql
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_TESTS_REGISTRATION_TEST_SQL
+  type: TEST
+  title: supabase/tests/registration.test.sql
+  artifacts:
+  - supabase/tests/registration.test.sql
+  source: scanned
+  confidence: medium
+- id: F_TESTS_LIVE_REGISTRATION_SPEC_TS
+  type: TEST
+  title: tests/live/registration.spec.ts
+  artifacts:
+  - tests/live/registration.spec.ts
+  symbols:
+  - tests/live/registration.spec.ts::signIn
+  source: scanned
+  confidence: medium
+- id: F_SUPABASE_MIGRATIONS_202610070093_TRIAL_REPORTING_SCOPE_SQL
+  type: FILE
+  title: supabase/migrations/202610070093_trial_reporting_scope.sql
+  artifacts:
+  - supabase/migrations/202610070093_trial_reporting_scope.sql
+  source: scanned
+  confidence: medium
 edges:
 - from: SYS_FRONTEND
   to: CMP_DISCOVERED_FILES
@@ -3184,6 +3236,36 @@ edges:
   type: CONTAINS
   provenance:
     generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_REGISTRATION_REVIEW_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SRC
+  to: F_SRC_REGISTRATION_TSX
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070092_SELF_REGISTRATION_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_TESTS_REGISTRATION_TEST_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_DISCOVERED_FILES
+  to: F_TESTS_LIVE_REGISTRATION_SPEC_TS
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
+- from: CMP_SUPABASE
+  to: F_SUPABASE_MIGRATIONS_202610070093_TRIAL_REPORTING_SCOPE_SQL
+  type: CONTAINS
+  provenance:
+    generator: projectgraph.imports.v1
 - from: F_SCRIPTS_BOOTSTRAP_OWNER_MJS
   to: F_SRC_LIB_DEMO_TS
   type: CONSUMES
@@ -3233,6 +3315,32 @@ edges:
     - source: scripts/media-backup.test.mjs
       target: scripts/media-backup.mjs
       import: ./media-backup.mjs
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_REGISTRATION_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/registration.tsx
+      import: ./registration
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_APP_TSX
+  to: F_SRC_REGISTRATION_REVIEW_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/App.tsx
+      target: src/registration-review.tsx
+      import: ./registration-review
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
@@ -5875,6 +5983,71 @@ edges:
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium
+- from: F_SRC_REGISTRATION_REVIEW_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/registration-review.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REGISTRATION_REVIEW_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/registration-review.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REGISTRATION_REVIEW_TSX
+  to: F_SRC_LIB_DATA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/registration-review.tsx
+      target: src/lib/data.ts
+      import: ./lib/data
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REGISTRATION_TSX
+  to: F_SRC_COMPONENTS_UI_BUTTON_TSX
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/registration.tsx
+      target: src/components/ui/button.tsx
+      import: ./components/ui/button
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_SRC_REGISTRATION_TSX
+  to: F_SRC_LIB_SUPABASE_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: src/registration.tsx
+      target: src/lib/supabase.ts
+      import: ./lib/supabase
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
 - from: F_SRC_REPORT_PAGE_TSX
   to: F_SRC_COMPONENTS_UI_BUTTON_TSX
   type: CONSUMES
@@ -6470,6 +6643,32 @@ edges:
     - source: tests/live/operations.spec.ts
       target: tests/live/fixtures.ts
       import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_REGISTRATION_SPEC_TS
+  to: F_TESTS_LIVE_FIXTURES_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/registration.spec.ts
+      target: tests/live/fixtures.ts
+      import: ./fixtures
+      line: null
+      resolver: projectgraph.imports.v1
+      confidence: medium
+- from: F_TESTS_LIVE_REGISTRATION_SPEC_TS
+  to: F_TESTS_LIVE_MFA_TS
+  type: CONSUMES
+  note: Discovered code import (not a work prerequisite)
+  provenance:
+    generator: projectgraph.imports.v1
+    imports:
+    - source: tests/live/registration.spec.ts
+      target: tests/live/mfa.ts
+      import: ./mfa
       line: null
       resolver: projectgraph.imports.v1
       confidence: medium

@@ -11,9 +11,10 @@ interface LocalSession { identity: Identity; session: Session; verifier: {salt:n
 supabase?.auth.onAuthStateChange((_event,session)=>{if(session)void db.cache.get(`session:${session.user.id}`).then(row=>{if(row){const local=row.value as LocalSession;return db.cache.put({key:row.key,value:{...local,session}});}});});
 export async function login(username:string,password:string,pin:string,factorId?:string,totpCode?:string):Promise<Identity>{
  if(!supabase)throw new Error('setup');
- if(!/^[a-z0-9._-]{3,40}$/.test(username))throw new Error('authFailed');
- const {data,error}=await supabase.auth.signInWithPassword({email:`${username}@users.wise.invalid`,password});if(error||!data.session)throw new Error('authFailed');
- const profile=await supabase.from('membership').select('*').eq('user_id',data.user.id).single();if(profile.error)throw new Error('authFailed');
+ username=username.trim();
+ if(!/^[a-z0-9._-]{3,40}$/.test(username)&&!/^\S+@\S+\.\S+$/.test(username))throw new Error('authFailed');
+ const {data,error}=await supabase.auth.signInWithPassword({email:username.includes('@')?username.toLowerCase():`${username}@users.wise.invalid`,password});if(error||!data.session)throw new Error('authFailed');
+ const profile=await supabase.from('membership').select('*').eq('user_id',data.user.id).single();if(profile.error){const request=await supabase.from('registration_request').select('status').eq('user_id',data.user.id).maybeSingle();throw new Error(request.data?'registrationPending':'finishRegistration');}
  const identity={...profile.data,id:profile.data.user_id} as Identity;
  if(identity.roles.some(r=>r==='admin'||r==='food_safety')){
  if(factorId&&totpCode)await verifyMfa(factorId,totpCode);

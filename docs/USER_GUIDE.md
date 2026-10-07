@@ -10,6 +10,21 @@ WISE helps a cooperative record where materials came from, how a product was mad
 4. Open a lot code to inspect its status, history, measurements and linked materials. A lot is a separately identified quantity of material or product.
 5. Use **Help** at the top of any page. **This page** explains its purpose and steps; **Getting started** replays the walkthrough; **Explore pages** explains the pages available to your account. Help is available in Arabic and English. The full downloadable guide is in English.
 
+## Registering and using the free online trial
+
+On the sign-in screen, choose **Sign up** for full-service access or **Free online trial**. Both use the actual online application and require project administrator approval. Trials start with zero lots, suppliers, equipment, sales or production records; only entries you create appear in your workspace. Procedure definitions and learning materials are configuration, not example business records.
+
+1. Enter your real email, a password of at least 12 characters, a username, your name, workspace name, region and a personal PIN. Choose the requested access plan.
+2. Confirm your email using the verification message. If the signup screen asks you to check your email, sign in afterward using that email, password and PIN, then complete the workspace request. Production email verification must be enabled; local development automatically confirms email.
+3. The request status page remains available while the administrator reviews it. You cannot enter an unapproved workspace. Use **Refresh status** to check the decision.
+4. An administrator with MFA opens **Administration → Registration requests**, enters a review reason and chooses trial approval, full-service approval or rejection. Approval creates a new isolated workspace and grants manager/producer roles, never platform-admin or Food-Safety Lead roles.
+5. Once approved, return to sign in. Newly registered accounts sign in using their email. Previously provisioned staff accounts retain username sign-in.
+6. Trial workspaces support one account and store real entries online. In **Whey & materials**, the workspace founder can register their own supplier before receiving material. They can also register instruments in **Equipment**. Complete required training before starting production.
+7. A workspace without an effective approved procedure shows a setup message. Its administrator must arrange the normal procedure and training approvals before production; registration never substitutes for those approvals.
+8. The administrator can upgrade a trial to full service, with a recorded reason, to permit a team. Existing records remain in the same workspace. Batch release still needs an authorized independent reviewer and the required evidence.
+
+The previous fictional browser fixture mode is retained only for development/browser tests. It is not the public free trial. Public deployment uses `VITE_DEMO_MODE=false`.
+
 ## The normal workflow
 
 **Receive materials → start a batch → allocate inputs → record stage checks → package → review and release → record sales.**

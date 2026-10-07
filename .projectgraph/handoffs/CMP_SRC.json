@@ -124,5 +124,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Added controlled signup/email sign-in, pending request status, MFA admin review and empty online trials with real persistent records. Final source contract passed types/lint/46 unit/20 preview tests. Live signup/approval/empty state/user receipt/re-login/full upgrade passed; updated manager/donor live checks passed. Preview runs on 127.0.0.1:5173 from build/live.",
+    "next_action": "Connect owner Supabase and Cloudflare projects using docs/DEPLOY_MVP.md; enable production email confirmation/custom SMTP and complete hosted signup smoke test.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-07T10:41:48.072529+00:00",
+    "git": {
+      "available": true,
+      "commit": "35a8fa5f8ff6d5a6b34ec567605c0074a7671e6a",
+      "short_commit": "35a8fa5f8ff6",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]
