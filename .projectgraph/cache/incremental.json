@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "graph_fingerprint": "sha256:a2d5890e0d7c895c84877d46888d87b83b664441e62e22c873087d671bc06536",
-  "generated_at": "2026-10-07T07:12:55+00:00",
+  "graph_fingerprint": "sha256:47543930ace2c5b4bf035031c92e6e90aab4db5c1bea4dd884c62c2982e4f851",
+  "generated_at": "2026-10-07T08:21:13+00:00",
   "trust": "fast-path",
   "statuses": {
     "CFG_PROJECT_MANIFESTS": {
@@ -168,6 +168,24 @@
     },
     "F_SCRIPTS_CHECK_PDF_MJS": {
       "id": "F_SCRIPTS_CHECK_PDF_MJS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SCRIPTS_CHECK_PRIVACY_MJS": {
+      "id": "F_SCRIPTS_CHECK_PRIVACY_MJS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -400,6 +418,42 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_ARCHIVE_SEARCH_TSX": {
+      "id": "F_SRC_ARCHIVE_SEARCH_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_BATCH_STATUS_TSX": {
+      "id": "F_SRC_BATCH_STATUS_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_COMPONENTS_UI_BUTTON_TSX": {
       "id": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
       "type": "FILE",
@@ -474,6 +528,24 @@
     },
     "F_SRC_DASHBOARD_TSX": {
       "id": "F_SRC_DASHBOARD_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_DIAGNOSTICS_TSX": {
+      "id": "F_SRC_DIAGNOSTICS_TSX",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -654,6 +726,24 @@
     },
     "F_SRC_LIB_AUTH_TS": {
       "id": "F_SRC_LIB_AUTH_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS": {
+      "id": "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -1138,6 +1228,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS": {
+      "id": "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS": {
       "id": "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS",
       "type": "FILE",
@@ -1176,6 +1284,24 @@
     },
     "F_SRC_LIB_SUPABASE_TS": {
       "id": "F_SRC_LIB_SUPABASE_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_LIB_TELEMETRY_TS": {
+      "id": "F_SRC_LIB_TELEMETRY_TS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -1266,6 +1392,24 @@
     },
     "F_SRC_MATERIAL_BALANCE_TSX": {
       "id": "F_SRC_MATERIAL_BALANCE_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_METRIC_EDITOR_TSX": {
+      "id": "F_SRC_METRIC_EDITOR_TSX",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -1390,6 +1534,42 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_QUALITY_PANEL_TSX": {
+      "id": "F_SRC_QUALITY_PANEL_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_RECALL_CASES_TSX": {
+      "id": "F_SRC_RECALL_CASES_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_REPORT_PAGE_TSX": {
       "id": "F_SRC_REPORT_PAGE_TSX",
       "type": "FILE",
@@ -1408,8 +1588,44 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SRC_REPORT_SCHEDULES_TSX": {
+      "id": "F_SRC_REPORT_SCHEDULES_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SRC_SCANNER_TSX": {
       "id": "F_SRC_SCANNER_TSX",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SRC_STOCK_BALANCE_TSX": {
+      "id": "F_SRC_STOCK_BALANCE_TSX",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -1483,116 +1699,20 @@
     "CMP_SRC": {
       "id": "CMP_SRC",
       "type": "COMPONENT",
-      "status": "STALE",
-      "lifecycle": "ACTIVE",
+      "status": "VERIFIED",
+      "lifecycle": "IMPLEMENTED",
       "reasons": [
         {
-          "code": "own-inputs-changed",
-          "detail": "Files or contract covered by this node changed since verification."
+          "code": "verified",
+          "detail": "Verification passed at 2026-10-07T07:47:50+00:00 (commit cb7783e08ce5)."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "self",
-          "path": "src/App.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/archive-search.tsx",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/dashboard.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/features.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/i18n/ar.json",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/i18n/en.json",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/checkpoint-review.test.ts",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/data.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/domain.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/overlay.test.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/schedules.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/lib/snapshot-sync.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/management.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/packaging-fields.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/quality-panel.tsx",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/recall-cases.tsx",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/report-page.tsx",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "src/report-schedules.tsx",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "src/stock-balance.tsx",
-          "change": "added"
-        }
-      ],
-      "verified_at": "2026-10-06T14:35:22+00:00",
-      "evidence_id": "954b9c8491aa42a59bf4c6f3a8d16099",
-      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261006T143522+0000-954b9c84.json"
+      "stale_causes": [],
+      "verified_at": "2026-10-07T07:47:50+00:00",
+      "evidence_id": "81e63dadb5c74316af976c5fb1175403",
+      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261007T074750+0000-81e63dad.json"
     },
     "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": {
       "id": "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
@@ -1666,8 +1786,44 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS": {
+      "id": "F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": {
       "id": "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS": {
+      "id": "F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -1704,6 +1860,24 @@
     },
     "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS": {
       "id": "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS": {
+      "id": "F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS",
       "type": "FILE",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -2944,6 +3118,456 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070069_CREATION_SOP_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070069_CREATION_SOP_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070080_SOP_MIGRATION_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070080_SOP_MIGRATION_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_S": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_S",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL": {
+      "id": "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL",
+      "type": "FILE",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_SEED_SQL": {
       "id": "F_SUPABASE_SEED_SQL",
       "type": "FILE",
@@ -2982,6 +3606,42 @@
     },
     "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_DASHBOARD_COMPLETION_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_DASHBOARD_COMPLETION_TEST_SQL",
       "type": "TEST",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -3052,6 +3712,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
       "type": "TEST",
@@ -3072,6 +3750,42 @@
     },
     "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL",
       "type": "TEST",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -3142,6 +3856,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
       "type": "TEST",
@@ -3180,6 +3912,24 @@
     },
     "F_SUPABASE_TESTS_RULES_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_RULES_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL",
       "type": "TEST",
       "status": "IMPLEMENTED",
       "lifecycle": "IMPLEMENTED",
@@ -3250,6 +4000,42 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
+    "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL": {
+      "id": "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_SUPABASE_TESTS_TRAINING_TEST_SQL": {
       "id": "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
       "type": "TEST",
@@ -3289,191 +4075,20 @@
     "CMP_SUPABASE": {
       "id": "CMP_SUPABASE",
       "type": "COMPONENT",
-      "status": "STALE",
-      "lifecycle": "ACTIVE",
+      "status": "VERIFIED",
+      "lifecycle": "IMPLEMENTED",
       "reasons": [
         {
-          "code": "own-inputs-changed",
-          "detail": "Files or contract covered by this node changed since verification."
+          "code": "verified",
+          "detail": "Verification passed at 2026-10-07T07:57:33+00:00 (commit cb7783e08ce5)."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "self",
-          "path": "scripts/check-snapshot-concurrency.mjs",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/.temp/cli-latest",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/config.toml",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/functions/_shared/alerts.ts",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/functions/_shared/monthly-reports.ts",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/functions/report/index.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/functions/scheduled-tasks/index.ts",
-          "change": "modified"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/functions/subject-privacy/index.ts",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060065_incremental_snapshots.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610060066_stage_clock_boundaries.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070067_recall_actions.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070068_operational_dashboards.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070069_creation_sop.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070070_partner_agreements.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070071_critical_alert_queue.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070072_monthly_reports.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070073_subject_privacy.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070074_operational_cache.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070075_dashboard_operations.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070076_storage_inspections.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070077_stock_balance.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070078_mock_recall_completion.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070079_deviation_recurrence.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/migrations/202610070080_sop_migration.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/creation-sop.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/operational-cache.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/operational-dashboard.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/recall-actions.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/scheduled-delivery.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/snapshot.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/stage-clock.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/storage-stock.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/subject-privacy.test.sql",
-          "change": "added"
-        },
-        {
-          "kind": "self",
-          "path": "supabase/tests/training.test.sql",
-          "change": "modified"
-        }
-      ],
-      "verified_at": "2026-10-06T14:06:18+00:00",
-      "evidence_id": "a3af322405f540fc870982d41a49e207",
-      "evidence_path": ".projectgraph/evidence/CMP_SUPABASE/20261006T140618+0000-a3af3224.json"
+      "stale_causes": [],
+      "verified_at": "2026-10-07T07:57:33+00:00",
+      "evidence_id": "5034cbd92e9544699ebb47485733e172",
+      "evidence_path": ".projectgraph/evidence/CMP_SUPABASE/20261007T075733+0000-5034cbd9.json"
     },
     "F_TESTS_FLOWS_SPEC_TS": {
       "id": "F_TESTS_FLOWS_SPEC_TS",
@@ -3655,6 +4270,24 @@
       "evidence_id": null,
       "evidence_path": null
     },
+    "F_TESTS_LIVE_OPERATIONS_SPEC_TS": {
+      "id": "F_TESTS_LIVE_OPERATIONS_SPEC_TS",
+      "type": "TEST",
+      "status": "IMPLEMENTED",
+      "lifecycle": "IMPLEMENTED",
+      "reasons": [
+        {
+          "code": "implemented",
+          "detail": "Implementation asserted; verification has not passed yet."
+        }
+      ],
+      "blocked_by": [],
+      "waiting_on": [],
+      "stale_causes": [],
+      "verified_at": null,
+      "evidence_id": null,
+      "evidence_path": null
+    },
     "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS": {
       "id": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
       "type": "TEST",
@@ -3788,7 +4421,7 @@
     "SYS_DATA": {
       "id": "SYS_DATA",
       "type": "SYSTEM",
-      "status": "STALE",
+      "status": "VERIFIED",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
@@ -3796,22 +4429,13 @@
           "detail": "Work is in progress."
         },
         {
-          "code": "derived-from-members",
-          "detail": "Derived from contained nodes (STALE).",
-          "refs": [
-            "CMP_SUPABASE"
-          ]
+          "code": "fully-fulfilled",
+          "detail": "Every contained node is VERIFIED."
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "member",
-          "path": "CMP_SUPABASE",
-          "change": "stale"
-        }
-      ],
+      "stale_causes": [],
       "verified_at": null,
       "evidence_id": null,
       "evidence_path": null
@@ -3819,7 +4443,7 @@
     "SYS_FRONTEND": {
       "id": "SYS_FRONTEND",
       "type": "SYSTEM",
-      "status": "STALE",
+      "status": "READY",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
@@ -3828,21 +4452,15 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (STALE).",
+          "detail": "Derived from contained nodes (READY).",
           "refs": [
-            "CMP_SRC"
+            "CMP_DISCOVERED_FILES"
           ]
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "member",
-          "path": "CMP_SRC",
-          "change": "stale"
-        }
-      ],
+      "stale_causes": [],
       "verified_at": null,
       "evidence_id": null,
       "evidence_path": null
@@ -3850,7 +4468,7 @@
     "WISE_TRACE": {
       "id": "WISE_TRACE",
       "type": "PROJECT",
-      "status": "STALE",
+      "status": "ACTIVE",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
@@ -3859,27 +4477,15 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (STALE).",
+          "detail": "Derived from contained nodes (ACTIVE).",
           "refs": [
-            "SYS_DATA",
-            "SYS_FRONTEND"
+            "CFG_PROJECT_MANIFESTS"
           ]
         }
       ],
       "blocked_by": [],
       "waiting_on": [],
-      "stale_causes": [
-        {
-          "kind": "member",
-          "path": "SYS_DATA",
-          "change": "stale"
-        },
-        {
-          "kind": "member",
-          "path": "SYS_FRONTEND",
-          "change": "stale"
-        }
-      ],
+      "stale_causes": [],
       "verified_at": null,
       "evidence_id": null,
       "evidence_path": null
@@ -3890,54 +4496,54 @@
     "SYS_FRONTEND": "sha256:6aa38a220e4b92d1b0006ba07f2a82e679097c969d4f368c8055775ad96cf8e8",
     "SYS_DATA": "sha256:6aa38a220e4b92d1b0006ba07f2a82e679097c969d4f368c8055775ad96cf8e8",
     "CFG_PROJECT_MANIFESTS": "sha256:cee7a9bc0769990493bde27a2e18dd14b9cc9d7d3064a074cacd303f86fc99b8",
-    "CMP_SUPABASE": "sha256:6725cff8975825a055f6e4c6c9250690aa7436400898e7b12fff44e34ec2c685",
-    "CMP_SRC": "sha256:79c2e604fbf01b5a30c45ee33ee161b99c31a66a266143d737d9d9ab10696ff1",
+    "CMP_SUPABASE": "sha256:88a4de3cece5f616fb005160f3d0587983baceca39176ddfbb384a9102eba259",
+    "CMP_SRC": "sha256:589e1695a72edf698374b16eebf5c93155986723484c6613cba0785dbd3ec37f",
     "CMP_SRC_COMPONENTS": "sha256:80ceccc6e2d213e71edb84e4a18313266d9aaba6b648685a77d065375ae43567",
     "CMP_RECOVERY": "sha256:f034bbb322f57f707e3a6ca385ed7af444ace7145718804cd917f2d351cc6097",
-    "REQ_FULL_MVP": "sha256:04ba6de19ca5c4f6b8b4be1e7db22edc7f4eef7dca4820f47e375fd73dd64b90",
+    "REQ_FULL_MVP": "sha256:c20a9d6ff0e51091cf832248fbdb32218dfcfb7333d6acc1427aacd92490687f",
     "CMP_DISCOVERED_FILES": "sha256:1ec5c58062baa41af79a7e3b2fef310fc506149d2a22e1e415824fc22d94b6c4",
     "F_ESLINT_CONFIG_JS": "sha256:be3e1a7e309d181b9bb84281b0aa910595f5e2ef57b30882b9c61178832d051a",
     "F_P_PUBLIC_TS": "sha256:f1cac71f3921893282dcd5548c4443e007c9f6518251745e53d57719c769b03c",
     "F_PLAYWRIGHT_CONFIG_TS": "sha256:26931b00fe775e58244db4beb75f406b7d3f3ac1d1daaabff6a950e4a9efa2f0",
     "F_PLAYWRIGHT_LIVE_CONFIG_TS": "sha256:e42bc9b20394a0fd21240ea0c8032aefa647a0b717f37ac45c0ba3b346073ff3",
     "F_SCRIPTS_BROWSER_PREVIEW_MJS": "sha256:978ca04a2e5ac1d5172b93190f6fa5946239a9a0975e58c078d613c7e3b98e97",
-    "F_SCRIPTS_CHECK_LIVE_UI_MJS": "sha256:86d93e2c2b0032655cfc1ce514fada61d0cf7e23dbfbf0b597b38af5a03ce617",
+    "F_SCRIPTS_CHECK_LIVE_UI_MJS": "sha256:9d9f6a6648f86eecd9ad9e396a1acd5ab8bb8f79c89692d295b308129d74f32e",
     "F_SCRIPTS_CHECK_PDF_MJS": "sha256:cce3e7c286038b2ff16f5e0c7743748032ff066ba1850ac2083c3743e5d06e6d",
     "F_SCRIPTS_CREATE_HISTORY_SEED_MJS": "sha256:3fa65a4301ef2839d506c76dc010ebb491e21d0904e89a62743b6c89a3edaf3d",
     "F_SCRIPTS_CREATE_SEED_MJS": "sha256:9773911f10bd730038267b72129069dfb630cd1a08fd23a1052456435485441d",
     "F_SCRIPTS_LIVE_API_CHECK_MJS": "sha256:3fc7e68db59bfca0df9c3f8bff63f50dd3a178554a47daa60ce81f85a53fc3e4",
     "F_SCRIPTS_SETUP_LOCAL_MJS": "sha256:73305604a6fce89a16737a0a0fe1f774e3e02db8fb285d505f6fabb78b73b31c",
-    "F_SRC_APP_TSX": "sha256:55385766497d1a71dd30506b01c359cb71e824dab1ecb47dfa578a2f2c3a03fa",
+    "F_SRC_APP_TSX": "sha256:961f89735648df428b68e567f2ec335a1b94bbaff7530d8f97d42560c71ce37b",
     "F_SRC_COMPONENTS_UI_BUTTON_TSX": "sha256:ff9744c686545b312fe4c0512c38794f1dfb36344f9f36fb9eaaef36a57b1a11",
     "F_SRC_COMPONENTS_UI_SHEET_TSX": "sha256:7e81c51974eccbda71c9884b3430a03c77340ff2041a19c448da3eb85af6c167",
-    "F_SRC_DASHBOARD_TSX": "sha256:06c5210222bfab9f89fb9fe1bd4352e499fd6e227c48c2b87a1fb3cf1d9ad909",
-    "F_SRC_EVIDENCE_TSX": "sha256:6379f392ab076c3be1f03033e7b6ac58d6d86ce5223de11acd180af5b75e5f3e",
-    "F_SRC_FEATURES_TSX": "sha256:e6f2a021bb0349ff6ae137556d89e22c4f5591049add62c5cc62b2a6c48a229c",
+    "F_SRC_DASHBOARD_TSX": "sha256:1449b3e68afee5b9b27d463747d96bd6f10a584ffdf4d8fe4e58ec16b396b8c6",
+    "F_SRC_EVIDENCE_TSX": "sha256:ed2369ca00a21b6996650408dae2619058722e87ce1e85bbc01e345da150f7a5",
+    "F_SRC_FEATURES_TSX": "sha256:cc51de0edf9487a5395e0b50ff80227843d78ce8ba666381fe493e2592e455f6",
     "F_SRC_I18N_INDEX_TS": "sha256:0d8ea56614f0ca9612b7ad2653508c7828cfdea765aa1f5e0880c572e5fb1efb",
     "F_SRC_LIB_AUTH_TS": "sha256:b9dc8d9f98b995e87aa0205ce8b6a0993dd069f421d548fa31f0ec8aa44d48c4",
-    "F_SRC_LIB_DATA_TS": "sha256:e90eba1aede8a4e221c44631f233d87a5fade00673bcdb5e29d2cd8d4a5de4db",
+    "F_SRC_LIB_DATA_TS": "sha256:762a2881e359be47e15545efa66f4fb7047e28da46e86bcb149ecd9ad015cc0c",
     "F_SRC_LIB_DEMO_TS": "sha256:37b026c2f34523c1a9ef488326a7e9c9821ed3b596b613bdd490fdc61a462fd2",
     "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:14806866635ab7ca1e0cbd0cec8ed80c3849e8cb55a629de5f6022f2e4625189",
-    "F_SRC_LIB_DOMAIN_TS": "sha256:6cd5ea9328be4a6d79171252387125c20b4a67ff35d7296d55837eda12df265c",
+    "F_SRC_LIB_DOMAIN_TS": "sha256:c880cd18489225fd8bacc8869245ae14243a8254f48aa43596e3eeffc83b09ee",
     "F_SRC_LIB_MEDIA_TS": "sha256:07a066e1e3b8dc84cf832719a76879588508ee6bfcc4c9c47147f99256a8c7a1",
     "F_SRC_LIB_MFA_TS": "sha256:dca26923ac160e2f79f66ebf3cc95b193260d08c61d62184015e31b1888c6668",
     "F_SRC_LIB_PIN_TEST_TS": "sha256:0098b8cd5057693b43dfe29cfd40335d6f962d9245f0dccbc5a6cdd8e9386cc7",
     "F_SRC_LIB_PIN_TS": "sha256:d7d3547cc947880295b9a122f2436fb60ddf02ede6215568017426e17280ed24",
-    "F_SRC_LIB_REPORTS_TS": "sha256:f17892e043dcea8298fcbcc08e06b2a83173fa9b189805d448e313d8369718b6",
+    "F_SRC_LIB_REPORTS_TS": "sha256:97295bdf0c8f65479803c523049c6a451d269f45c5e3242e58ec0ab5a73193fa",
     "F_SRC_LIB_SESSION_POLICY_TEST_TS": "sha256:604efc226edcb666c7b81f9b4bc4afeed19a656fd87e81d92ad6896d98bacf2e",
     "F_SRC_LIB_SESSION_POLICY_TS": "sha256:c662b4c0708a5f9535c8c0da042ebfa3d8954cd1d3b964c5a25ac119103627fc",
     "F_SRC_LIB_SUPABASE_TS": "sha256:118b0643bfeefe741db6e9f50f54f1fa716186fcc61703054d8928e16ddfd6b3",
-    "F_SRC_MAIN_TSX": "sha256:4c85f021ea34ea38629c59c356e09badbd923544a03d7b1202297bf041c2b3b1",
-    "F_SRC_MANAGEMENT_TSX": "sha256:d3153b29f10c1c4b9522f3ae04cd36d3ee3ca6741c9350a00741040f715929e1",
+    "F_SRC_MAIN_TSX": "sha256:feb0e8772fb0c0c00049f29ae8847c4be33f88510a5bb405853a2988d8c18379",
+    "F_SRC_MANAGEMENT_TSX": "sha256:bf9d38a2f31a71d6a287f4e9ace4ee5d9487796b03e77f7270e5ff15738d7fca",
     "F_SRC_OFFLINE_DB_TEST_TS": "sha256:c129acf3287b6bd9336a0cecb1a8cc2219d1622f2afb3daaeacf1f390c1d3014",
     "F_SRC_OFFLINE_DB_TS": "sha256:75ff9cb2d70c3e3763cafc23183be85fafaa876940d1d35de66e4bb38b7aa2f3",
     "F_SRC_SCANNER_TSX": "sha256:a4270f3e6638de958da6928d193110b4eaaf102b3ad2881383108e93212856e1",
     "F_SRC_TEST_SETUP_TS": "sha256:4f007a9b0c007b18ac970ff56b9b2dd0ef852d2f9eeac9796d1e1387d25ba52f",
     "F_SRC_TRAINING_EDITOR_TSX": "sha256:37f650c61d65729700dde97eb86a2576374c9215385ae002606493e2e7c9c5b2",
-    "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": "sha256:43f8b63a3089496ce405787e0ed19ab0b6f102788f2c1e0ef15eaab67bac77ca",
+    "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": "sha256:e8eeaa1ecfd85a32c07a9631ed01548884351cec92812c91cdb9b40175f8649a",
     "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:264be2a13ddcbecd057cf728fee025828f80e0057624e0398e4faf62f0227a64",
-    "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:c71958391cd2d8f8286ab82bc9241b89c5758f0ddcd7c03b86faa80f9b4275e1",
-    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:ef112f9b690e7034a0fb93c23d1d9e6d8ceb51d2a814916b37af899be1653dff",
+    "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:0402d684346ba27a7d96d2106ddae9403d89e0f8f68eb49b3c7d2758755ca91c",
+    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:ebd949735deaaacbec50a27715b89f6628a006f3196a2ca2b36975380ea8ca68",
     "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": "sha256:6b25ad2cb974b65c8d0946314fb723d461259131b42c5bcbc6efe66cffa3e3a1",
     "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS": "sha256:6fc4317be9779cab74b654ee75c79e388d2f6f22526db89878c93f58ce3643bb",
     "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS": "sha256:9e78fd5f768b5c206a25c174ae39e85592c4ae0c80e0cf6070202a0a1bab2205",
@@ -3980,14 +4586,14 @@
     "F_VITE_CONFIG_TS": "sha256:460371bd51860ed8240de5cfac832c2c6988e08f435cec0cb1ddf879c4bc305b",
     "F_VITEST_CONFIG_TS": "sha256:6f169944ae843190945e21ee301e92338a9e7e8ed8d0587e6fc80865027e9d16",
     "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": "sha256:32e95ed533086e14a0df3b1e411a2e69fec83f2e794410c68f3fa462e8d6330e",
-    "F_SCRIPTS_CHECK_REPORTS_MJS": "sha256:29552ba729fac8516806af30c090fb5b7d85e8fcb8211f5ac0ccc0c9c9a98ced",
+    "F_SCRIPTS_CHECK_REPORTS_MJS": "sha256:b91e45f3e27c3796baf57ac5a2ff98b1b1238aeffb5430b06e9e1a8b3fc61baf",
     "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS": "sha256:58b865940305eebd4758a1c7c67e7604e4b2ecd9c84daf5148bec7efc0ec38cb",
     "F_SRC_LIB_OFFLINE_SIGNOFF_TS": "sha256:5967b604228128dd943ed907fec480ed6ec2dc8b63bc8362ca43ab3378a17f49",
     "F_SRC_LIB_SCHEDULES_TEST_TS": "sha256:60734e00c9f8807866498acdac7ca91063951e26152ef894d21c909d25b2de58",
-    "F_SRC_LIB_SCHEDULES_TS": "sha256:efaa02edd276d5df046329e796a257802562df8ed2943520b1a035bc7e559b25",
+    "F_SRC_LIB_SCHEDULES_TS": "sha256:f4d374c9d611e220377e7473cc4ea2b15801d95455645097d577b68cf37fe376",
     "F_SRC_LIB_SEALED_TICKET_TEST_TS": "sha256:2aad0922d4672a8e2417dcc3f06f78488d17106522ac1eeb880019d8453e4fb8",
     "F_SRC_LIB_SEALED_TICKET_TS": "sha256:3aa38ba525c270d25bcd3ca9de35046a26894ec6e31c209f60bdefc940c0e1e5",
-    "F_SRC_REPORT_PAGE_TSX": "sha256:962ecc1bf906153824401d0c74286f903418fcc3ed3650f14de689e2dd809d39",
+    "F_SRC_REPORT_PAGE_TSX": "sha256:8e25bcccd676381eb673b6cd4e38c003b7217edcc7e7fb6c0261707bb28c72d1",
     "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL": "sha256:f8e2c2086a7b1849c1cdd93bc3c118ca7bc81374c146cbef1965c7f9bec6266b",
     "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL": "sha256:31953231db25850d2ddcbbc9d520f46e997c259e23486c518b2252c88bc409d0",
     "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL": "sha256:07ccba12de092dda6a162221cb5e41fa43a2f4a7f279ff8084fefa42ff0882a9",
@@ -4075,27 +4681,77 @@
     "F_SRC_NOTIFICATIONS_TEST_TS": "sha256:496f028a07becedc36ec04148f6757dad2fb0742f34fe5143c354088e4bf7a42",
     "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL": "sha256:6e906d3e1e4f01e5dff2e56441c499a546f1835b79ab412b4871163b7dd204c3",
     "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL": "sha256:92f17f6f6e2cabdd3ac97a954cccc81628325d895e48b34417d2a4d1a344386e",
-    "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS": "sha256:54312b24b9d35d7fc30f00ea3469917803bbf55daa397fff7065fc69e052e03f",
+    "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS": "sha256:e11de45e4658ed9f14930e2c008519003d6da040dc2a0684f37353e31079f2ea",
     "F_SCRIPTS_CHECK_SNAPSHOT_CONCURRENCY_MJS": "sha256:5e49530c8d4b37893f405fa0bc7ab4c709f9946cfd9b00ec25edee13f3c2bc52",
     "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS": "sha256:80f09480f12d9e24918b15757c227ce875b91d84e701f70ce4965878913e5981",
-    "F_SRC_LIB_SNAPSHOT_SYNC_TS": "sha256:0bcc30944a6355a70765bba261ddbf482f04ea51b0c1953f1b764f57252687f6",
+    "F_SRC_LIB_SNAPSHOT_SYNC_TS": "sha256:5bacdff1acf3da463a2ac2a69d4bf83656c44fdde5d4179a7a174b2996f596ca",
     "F_SUPABASE_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL": "sha256:a82d3260afa525df69d6fc997381ca6b62cf128683a001fe8f45c9cdaedfcd23",
     "F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL": "sha256:38d3a1136e27ff8bd82242809e3b306d982f347038a70a7ced1a7789b460bf98",
     "F_TESTS_LIVE_SNAPSHOT_SPEC_TS": "sha256:281ee1b5666335e6812c7e4d139f9110a4e7b2d8047d4396d89fa57f7e658803",
     "F_SUPABASE_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL": "sha256:881b4f858330824456bafdcf6eb8d212dd01da3376c9b4adba8485405964f1ff",
-    "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL": "sha256:716be6306673942348bf8ccf1f020ad21b8712eacdc5827545f927c4acb3fa7f"
+    "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL": "sha256:716be6306673942348bf8ccf1f020ad21b8712eacdc5827545f927c4acb3fa7f",
+    "F_SRC_ARCHIVE_SEARCH_TSX": "sha256:00bffde871c3a2b08f3454748558b1ff39a15f31bc7915fd7772070e9aabcb7c",
+    "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS": "sha256:dcb8832e69dd3f15d979124daddfd48fa79f12e1f646b70ef59fe5ad44ca7f77",
+    "F_SRC_QUALITY_PANEL_TSX": "sha256:0c7068bb55f488e9e064802e68ad561886bcc6e4dc25b8cab03d921d27b5e7e6",
+    "F_SRC_RECALL_CASES_TSX": "sha256:8cbaad2890f76bb4d295c05270ed4d2af3b249904385eafcef478f43728301ab",
+    "F_SRC_REPORT_SCHEDULES_TSX": "sha256:ec24f66921be1a4f1090f1e535358d252600c3cea831986642a4f99b211ee548",
+    "F_SRC_STOCK_BALANCE_TSX": "sha256:56fdfcd4247c671a2a4bfcb9e8eccbc77934144879e06eda7a2e5959cb9cd3c6",
+    "F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS": "sha256:db4cc3283900e64b961567b7452b82fbbf13e8a9cfe64678a03689f54a877796",
+    "F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS": "sha256:d195e762fbb84198d14d3a73773a419dca3b3bedd9f2f41b0ab33fdfb06a9b33",
+    "F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS": "sha256:0792b3273b3389ff322da8a8dd70ed0d037ea8e28374973be78d2670da5f8c83",
+    "F_SUPABASE_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL": "sha256:c4fb9aba3d094877e583c69935b68079350b623f5d077ed38f645d22cd01a86b",
+    "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL": "sha256:86596f867c432f16e7e8d831f2cf101dbfb96cc5a076e8c4f6b84a3a1fb00c84",
+    "F_SUPABASE_MIGRATIONS_202610070069_CREATION_SOP_SQL": "sha256:b9f907ed0e2942b5673cbea411ece5386a113ebf322122e1228d4e7a969be353",
+    "F_SUPABASE_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL": "sha256:1d3dee252b39dcd368553c6a50c606b70f081794a2bfaad04357ee2f260155a5",
+    "F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL": "sha256:642c92755258288853abbd01ebc6977143e7312d4515ebdac6541cac6eb805fc",
+    "F_SUPABASE_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL": "sha256:b4bf881c35183ce0c5f8ca40fa2acf5282bb03ca9cf52bba7ee40f9cce1531c3",
+    "F_SUPABASE_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL": "sha256:77cdbe82187f8e46d3428389b264b7f3151cf4bd3e8c88fca00ae393bdc04e30",
+    "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL": "sha256:0dad0265814b89d11e173b0421ad466fa51e5302be1794b45337c04bc39947f1",
+    "F_SUPABASE_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL": "sha256:7b3089680eafe7a5d74285024de71ecdcb9e5cd0922087f165be71dc311bbea5",
+    "F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL": "sha256:b5d02ee7e5dc26ecf31c1c822d3cbe0c3845c589e897af7c082e6d6ae1b75a9c",
+    "F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL": "sha256:70931ef4d46645bb134f3d14ebf6ddda897626023115f07ec8b3282881637875",
+    "F_SUPABASE_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL": "sha256:b972604405355e45a2cb84be61a20630da1c73925862fe239120acd81d92da74",
+    "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL": "sha256:5e7c72da03dd40651c8ade373f7eca75de9a1e3f34674823c0c38946d43e3dc3",
+    "F_SUPABASE_MIGRATIONS_202610070080_SOP_MIGRATION_SQL": "sha256:bc41c786dd96c59dd6b61a0f526a4bf6c8175c4b598b5b8712e46f2aff7a8be1",
+    "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL": "sha256:abe948e3ddfa4ba2a3d67320d643edb1347ed5c2866bf3de70f7bf7700a43375",
+    "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL": "sha256:a6685a2786dd756273cd41dffa9874b803f307392dfd8ee1d2667cab17b77842",
+    "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL": "sha256:0b9b50a6c37ae0da6b52e50d3a3a361c5cd9af40359c1a9fdf0c52613850db44",
+    "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL": "sha256:b7a9cf122f50caeee45dc383422aa0ce779823850435541de6845ab91c930a07",
+    "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL": "sha256:0ab4bb935c86e4d95335c3b8350047fb114d479d670072e58f480379cebe0a3f",
+    "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL": "sha256:52e1e2b3297a84ec551255ac371ccaa9051ba381e47a2803814099be8510611b",
+    "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL": "sha256:9df71f020b57fb40b0c54abf50a6889043ab3aabbc19f4f044828f9ddbe3b1a2",
+    "F_TESTS_LIVE_OPERATIONS_SPEC_TS": "sha256:8d5e09ecd79c9a55a891b42a3c6fa49adde7946e7165d2164eb56d7de98a3e85",
+    "F_SRC_BATCH_STATUS_TSX": "sha256:b7c8cc08a95b99f5dbad9b1ea0ac82254d68cde82fa46d5dc40d2216c8c38bc3",
+    "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS": "sha256:619df8df19540d425efa11face2ca690024abd78f8f7c4c61445316b77ab043b",
+    "F_SUPABASE_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_S": "sha256:bd9b22e92fa1c08b758c15a79cdd2134f3bf3858d3cb7f319ce243844a11577e",
+    "F_SUPABASE_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL": "sha256:ba4c5c12e84cdddeb76d984c8a780bcef5feaeab598516335a4bd09c8e4a83c2",
+    "F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL": "sha256:0ec085df1d4933d863d212ce92407c1567a9fa674023d48292aac06b3691328d",
+    "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL": "sha256:a69e463654461fc45700e14bcac4eca98709d7f9813c4147c0d136d5c93ed06a",
+    "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL": "sha256:948e2b72abe365a30082ddc13efefd83fa6cf5c817d91018c5e67499258d0a2c",
+    "F_SRC_DIAGNOSTICS_TSX": "sha256:870f6a79bbe0975cd828ce524e299fe504502819b66ae80ed93300a799017b1f",
+    "F_SRC_METRIC_EDITOR_TSX": "sha256:5d07f0e930ee43239c1dea09cc9cbd20d9dd502fb8f84ac862445b6272d0c928",
+    "F_SUPABASE_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL": "sha256:2e29c47dd9b50e794895ffca1c01860f59487e9d17c6eb8a6a01f1570b98a920",
+    "F_SUPABASE_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS": "sha256:7ee3243771ebf6298769a8456fa184c699dae81413efafedd82e5cce3d5a9c4f",
+    "F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ": "sha256:b402c3c2bb4571588c8739d91a76ae6c03095c26b57a54cee9fb1082937e7b1a",
+    "F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL": "sha256:32f859cdf0cbfe5be50df61cb8333a1627662a14a2c8ae021221cf873c74a49b",
+    "F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL": "sha256:f5a55224fe5c1ea3470d348cec12511e1cb43fe31e19687510cf532d20c4847d",
+    "F_SUPABASE_TESTS_DASHBOARD_COMPLETION_TEST_SQL": "sha256:78d33383557c1205ecfc931762f19b0fa71d296d8e0c7e26d1c26bbf6e6c0da9",
+    "F_SRC_LIB_TELEMETRY_TS": "sha256:7c9511392f31f51cd3b97ca45d9a7683e2c96b01f86583f521e261e707bbcabd",
+    "F_SUPABASE_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL": "sha256:5b4d218a08e421c877f47b80f91aa193f54e795aed2b8ad2471b092743bb47a9",
+    "F_SCRIPTS_CHECK_PRIVACY_MJS": "sha256:3f09cc9cbe23358dd094d9b2f7526b101c75fbe8620ae17627c2f0b7a4f7cb8d",
+    "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL": "sha256:f538620397c226742738cc74ff3e6d595602173eb57647bf81575844b5da2a05"
   },
   "dep_fingerprints": {
-    "WISE_TRACE": "sha256:50209c0c964d55727d0666b8b33448a61608bc99be73dab5ee88d5a33056d5ff",
-    "SYS_FRONTEND": "sha256:08ab441fb993c1b99ad61224a9af6f2c2c0e6eb27b7f54cf218fa27a53f00516",
-    "SYS_DATA": "sha256:dada5994b450ff07d684cc9befb7057f40c93110a21013d47ced1243d73c2aa9",
+    "WISE_TRACE": "sha256:294c6b16b244252c0f153395d2d6a58de04a4f8573ee92678f06e3b36180b92d",
+    "SYS_FRONTEND": "sha256:93f5f6e1697ad937be8bdfa10926a18c1895ef7552080a66d51bd07e60e341b3",
+    "SYS_DATA": "sha256:6ca6194fdfeb7b2138014c99a1d5c46110515ff0147684471437e036a2363a82",
     "CFG_PROJECT_MANIFESTS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "CMP_SUPABASE": "sha256:46ed4092768c7482fbacee3a48fb0aa83ae6efd80005adbb662ee1683e5eb0f9",
-    "CMP_SRC": "sha256:94912e4e560f7647dedfb13f54ce0d6d93a5d284a746b211f57f218953fcebae",
+    "CMP_SUPABASE": "sha256:2907eda3ac36653d8a8012d026fa28ceb91c43e2da7627562f4a0aafd1c75491",
+    "CMP_SRC": "sha256:2325ea3d94c7813222876df741fb47f1b9b25e1df1fa65d0aa1e44fa495f2766",
     "CMP_SRC_COMPONENTS": "sha256:4ac47fe6c136568d00ca564e6a83c74cafa31c57d5509f0fc372b65b11107e24",
     "CMP_RECOVERY": "sha256:687e273868e446819b7e78e4f11c221325d4d8340d4eef4efadaaf3a4c49e840",
     "REQ_FULL_MVP": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "CMP_DISCOVERED_FILES": "sha256:3e939eb124ded31c3a32d1205b778c9988fd6da5fa0a7e9d2a7e783470304020",
+    "CMP_DISCOVERED_FILES": "sha256:784d075473394c4ca2d1482930f3eafb7ddf54f15857f191854ba41123658800",
     "F_ESLINT_CONFIG_JS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_P_PUBLIC_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_PLAYWRIGHT_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -4104,43 +4760,43 @@
     "F_SCRIPTS_CHECK_LIVE_UI_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_CHECK_PDF_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_CREATE_HISTORY_SEED_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SCRIPTS_CREATE_SEED_MJS": "sha256:f944ed09a6b20ed6884640d1e449355dc81a0e8468f7e5ca9f1b02e49be6e004",
+    "F_SCRIPTS_CREATE_SEED_MJS": "sha256:9ec4b2852f25bb1beec119e5271151e5487728592637af84aa33362878ac7d74",
     "F_SCRIPTS_LIVE_API_CHECK_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_SETUP_LOCAL_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_APP_TSX": "sha256:1df7ca432303884cc6f4244d34272220654ec2aa3450d2d52e74755e169817a4",
+    "F_SRC_APP_TSX": "sha256:e648fd9ff1a650ddd7d54c10c261a5fcc365088cdb30378da40aa08fb0a9dfc5",
     "F_SRC_COMPONENTS_UI_BUTTON_TSX": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_COMPONENTS_UI_SHEET_TSX": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_DASHBOARD_TSX": "sha256:d55a0a1b54b254889fcc6c5cb4aed9aa0ed40e493a98f83dfc20abef553a69f4",
-    "F_SRC_EVIDENCE_TSX": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
-    "F_SRC_FEATURES_TSX": "sha256:a3a84bf12ac55931ad5226573d20df78bb93e7ffe4b9c2758b86c2af683118fb",
+    "F_SRC_DASHBOARD_TSX": "sha256:57abf7deba33f1c4450e3adb1ca9e8e807ecc7980352a4c15c2f8adff4d00c7a",
+    "F_SRC_EVIDENCE_TSX": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_FEATURES_TSX": "sha256:a8b8db9891c5609941daf947bb329fadfa6ffb21a41ee31d97890d5cf8f31e64",
     "F_SRC_I18N_INDEX_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_AUTH_TS": "sha256:58e33485e7c74a1d64571b3f92e4a391c6bcc6daedf22193971fa11088b36918",
-    "F_SRC_LIB_DATA_TS": "sha256:8a496ed2e02d03a565c01487b662efef4113c76866641c2c5f21ff2060328af0",
-    "F_SRC_LIB_DEMO_TS": "sha256:a39102bb208f00fcb4b87600484762adfe9515592c2e1cdf5228596dc70bfc7e",
-    "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:3e3a14a11537df100f531f0de4f64d1566d0bcb5ddced311e5b90834552801fb",
+    "F_SRC_LIB_AUTH_TS": "sha256:8f3a7ba1857996ea370e1247da25dc4b7f896125da684dbf1f735f135cb545ff",
+    "F_SRC_LIB_DATA_TS": "sha256:330aa983cf5fe5604ca0f3065c8119f7dd10fb359eec42cd3c771a3bdaf7d628",
+    "F_SRC_LIB_DEMO_TS": "sha256:a9770386b794ced6174aeca2ff947347e12302af3641f6f95f9224236a08d326",
+    "F_SRC_LIB_DOMAIN_TEST_TS": "sha256:3e983d3e9d84d214c74ef42f6219c6ab38f261216d11c9b7d89decf7cadcbff3",
     "F_SRC_LIB_DOMAIN_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_MEDIA_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_MFA_TS": "sha256:b91710412b5c767b8f8e488dd46843f8277b53813825cbb6bde63ce66eb1b6a0",
     "F_SRC_LIB_PIN_TEST_TS": "sha256:faed76a55cdfcb620276fbb7e07d8c6fed94ea5dc75fe08159474eff4a2f38d1",
     "F_SRC_LIB_PIN_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_REPORTS_TS": "sha256:b91710412b5c767b8f8e488dd46843f8277b53813825cbb6bde63ce66eb1b6a0",
-    "F_SRC_LIB_SESSION_POLICY_TEST_TS": "sha256:4164dc9db3a17de714e6186495046dd6d47adba2ec73e5a2a768c89846b6fb46",
-    "F_SRC_LIB_SESSION_POLICY_TS": "sha256:30a18e39623092303138fda9b5bda4cb3baacae106256aa3d15fe4d97efa3552",
+    "F_SRC_LIB_SESSION_POLICY_TEST_TS": "sha256:d430ae29749f7245ae629a68dc14b774bf2daf6f55dd149e785845bc4fb94f87",
+    "F_SRC_LIB_SESSION_POLICY_TS": "sha256:0e25a0b54fccdb04dc6a8926f86f40797741d01bf87c09218ebf7c48a8ea7d3a",
     "F_SRC_LIB_SUPABASE_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_MAIN_TSX": "sha256:47051ed99f526535409eeaa3d83f9ed2703fe93cdb657a1ab076f7973abbe8c5",
-    "F_SRC_MANAGEMENT_TSX": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
-    "F_SRC_OFFLINE_DB_TEST_TS": "sha256:15a80756d9c37ea4b5ba712e5511ff92a1f63b0b75935dfd8a5e047c67dbb496",
-    "F_SRC_OFFLINE_DB_TS": "sha256:a39102bb208f00fcb4b87600484762adfe9515592c2e1cdf5228596dc70bfc7e",
+    "F_SRC_MAIN_TSX": "sha256:23d39d1007cb41fc6a812d03014be20756ec3781427221cfdbd7e5f9c1b92c28",
+    "F_SRC_MANAGEMENT_TSX": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_OFFLINE_DB_TEST_TS": "sha256:f57cfe5033e8edbbdf0d656fd09c0e7fc91fa702b6eac5dcc02548beb4e0aae5",
+    "F_SRC_OFFLINE_DB_TS": "sha256:a9770386b794ced6174aeca2ff947347e12302af3641f6f95f9224236a08d326",
     "F_SRC_SCANNER_TSX": "sha256:fc64801a0e08364e46c741103f25316526a44127f1f707778d5a25e790d490b5",
     "F_SRC_TEST_SETUP_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_TRAINING_EDITOR_TSX": "sha256:8f98c566b7096d98fa410f0d19e3f17ae18d268396c8e1a3d024e596f14ee2a8",
+    "F_SRC_TRAINING_EDITOR_TSX": "sha256:128f72f9465d38d39b7daf5fba55ca5a6ba92ea7f9f0e0c311d895af8af706eb",
     "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
-    "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
-    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
-    "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": "sha256:5a7fe95eb3312da2f82d567045fade6184148d02097de3dd00452b302548af19",
-    "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
-    "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS": "sha256:59acf5c18daf83850f45187d2ff32567b5726de109fc0797037339e75e964b8c",
+    "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": "sha256:c1e45f11b46e73edd5619bbff5a2670533209f102c4cad7b6d37a02c146a2ec8",
+    "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": "sha256:c1e45f11b46e73edd5619bbff5a2670533209f102c4cad7b6d37a02c146a2ec8",
+    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": "sha256:c1e45f11b46e73edd5619bbff5a2670533209f102c4cad7b6d37a02c146a2ec8",
+    "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": "sha256:0e74b98724c6079f03c447f92fe41d7c046ec439f6ec713e41bad81c44df3d4c",
+    "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS": "sha256:c1e45f11b46e73edd5619bbff5a2670533209f102c4cad7b6d37a02c146a2ec8",
+    "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS": "sha256:c1e45f11b46e73edd5619bbff5a2670533209f102c4cad7b6d37a02c146a2ec8",
     "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -4179,15 +4835,15 @@
     "F_TESTS_LIVE_FIXTURES_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_VITE_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_VITEST_CONFIG_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": "sha256:3e3a14a11537df100f531f0de4f64d1566d0bcb5ddced311e5b90834552801fb",
+    "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": "sha256:3e983d3e9d84d214c74ef42f6219c6ab38f261216d11c9b7d89decf7cadcbff3",
     "F_SCRIPTS_CHECK_REPORTS_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_OFFLINE_SIGNOFF_TS": "sha256:bbe8d13d5f01a86fc25c9b6b2ae959bc7a7dc5cab1e7a903612413c172e3ef93",
-    "F_SRC_LIB_SCHEDULES_TEST_TS": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
-    "F_SRC_LIB_SCHEDULES_TS": "sha256:0e67014fa15df52a5afa563eef6266fda8b1bd3fe4f15ba7f606527da1319c9f",
-    "F_SRC_LIB_SEALED_TICKET_TEST_TS": "sha256:bc0ecb668aa3530c68eaeef2cdbf2d621159685cf907994f41337f7280d5c777",
-    "F_SRC_LIB_SEALED_TICKET_TS": "sha256:a39102bb208f00fcb4b87600484762adfe9515592c2e1cdf5228596dc70bfc7e",
-    "F_SRC_REPORT_PAGE_TSX": "sha256:c7b39af7347455c7b504c1025beafcd36c396ea27a434e0280d4a84ad34aeef1",
+    "F_SRC_LIB_OFFLINE_SIGNOFF_TS": "sha256:9d574f442867a86f4ec92755121001e7f2025e5b16c2980436d9e16438629871",
+    "F_SRC_LIB_SCHEDULES_TEST_TS": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_LIB_SCHEDULES_TS": "sha256:74798eff98abad38c8775df1f2ff3f48078fc362ce930115c0fe81329a84e559",
+    "F_SRC_LIB_SEALED_TICKET_TEST_TS": "sha256:4b37fc70bb5437a6314bdee88bac38d3f34f437afa898d4971f9f6d8c8e139a1",
+    "F_SRC_LIB_SEALED_TICKET_TS": "sha256:a9770386b794ced6174aeca2ff947347e12302af3641f6f95f9224236a08d326",
+    "F_SRC_REPORT_PAGE_TSX": "sha256:0ea46bba0a7609cb3240c295252fbe124d5abacc0eb5741396eb9071bd5a378f",
     "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -4202,15 +4858,15 @@
     "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
     "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_KNOWLEDGE_TSX": "sha256:c51a7c386e3fe0c9d3ce3733797966c561c968915abea7ce394d0984a5dc5132",
-    "F_SRC_LIB_TRAINING_MEDIA_TS": "sha256:35d3447cccf92ddaa38d37ef33c683ecb4112b962a55e38b6fb09344abedbc1f",
-    "F_SRC_TRAINING_ASSETS_TSX": "sha256:c51a7c386e3fe0c9d3ce3733797966c561c968915abea7ce394d0984a5dc5132",
+    "F_SRC_KNOWLEDGE_TSX": "sha256:4916667023e7044d984a9c599f072c7d04aacd7c44ec5a9d87e3d91b47cf2e84",
+    "F_SRC_LIB_TRAINING_MEDIA_TS": "sha256:fb86e07ab295a1dc8a85f54d68e1097d9bfb3ed93c7cdee99d3675d32a2bbfa8",
+    "F_SRC_TRAINING_ASSETS_TSX": "sha256:4916667023e7044d984a9c599f072c7d04aacd7c44ec5a9d87e3d91b47cf2e84",
     "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_LEARNING_DEMO_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_RECEIPTS_TEST_TS": "sha256:2461fb8e287d7f7995da546eccf07555b47aefb3330563a3048204884220da28",
-    "F_SRC_LIB_RECEIPTS_TS": "sha256:a39102bb208f00fcb4b87600484762adfe9515592c2e1cdf5228596dc70bfc7e",
+    "F_SRC_LIB_RECEIPTS_TEST_TS": "sha256:53d80eb4de7eb0011d28c21aeb4cb1e16ee916b72315a0e4e5fe1465de1e0e29",
+    "F_SRC_LIB_RECEIPTS_TS": "sha256:a9770386b794ced6174aeca2ff947347e12302af3641f6f95f9224236a08d326",
     "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -4222,11 +4878,11 @@
     "F_TESTS_LIVE_TRAINING_SPEC_TS": "sha256:26835327fbea4471b84f33ab87913b39456f66cfb3fb7f7a478eaabbaffbada7",
     "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_I18N_TRANSLATIONS_TEST_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LABEL_CARD_TSX": "sha256:79006ec1aa537de8fcb93531350b293279b83e869ba55bd9bcee28f972e51c7a",
-    "F_SRC_LIB_LABELS_TEST_TS": "sha256:79006ec1aa537de8fcb93531350b293279b83e869ba55bd9bcee28f972e51c7a",
-    "F_SRC_LIB_LABELS_TS": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
-    "F_SRC_MATERIAL_BALANCE_TSX": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
-    "F_SRC_PACKAGING_FIELDS_TSX": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
+    "F_SRC_LABEL_CARD_TSX": "sha256:c0ab36267d3275950e36f0070043d4efe7268732b3b719727b50fe866111ac6b",
+    "F_SRC_LIB_LABELS_TEST_TS": "sha256:c0ab36267d3275950e36f0070043d4efe7268732b3b719727b50fe866111ac6b",
+    "F_SRC_LIB_LABELS_TS": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_MATERIAL_BALANCE_TSX": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_PACKAGING_FIELDS_TSX": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
     "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -4237,9 +4893,9 @@
     "F_SUPABASE_TESTS_YIELD_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_TESTS_LIVE_LABELS_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
     "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
-    "F_SRC_LIB_ATTENTION_TEST_TS": "sha256:5494817da023c37fbf7bb8a8bd33e4f51ca152cac057963f1a08b085d4f209a1",
-    "F_SRC_LIB_ATTENTION_TS": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
-    "F_SRC_NOTIFICATIONS_TSX": "sha256:c25bad70ed0c67411ec4b8fde2c0154f34b43513977e709a9283bdbbf5950ba5",
+    "F_SRC_LIB_ATTENTION_TEST_TS": "sha256:1a23aa4437593f7c88f6a65934401999e8eafba5896f7d81f28f56804a166b25",
+    "F_SRC_LIB_ATTENTION_TS": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_NOTIFICATIONS_TSX": "sha256:6100cbbb89df17732f31e635c3711f0f1784b9e89ffee28ba4f4996b7c6c852d",
     "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -4248,11 +4904,11 @@
     "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
     "F_PUBLIC_PUSH_EVENTS_JS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SCRIPTS_GENERATE_VAPID_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_CONFIGURATION_FILES_TSX": "sha256:6ef06fcf950022109feddbf8320a4f1e741de0461c575672f2a25f9b1856077c",
-    "F_SRC_LIB_CONFIG_FILES_TEST_TS": "sha256:90a4bb9f53a3fdfb1c3c597715073210fcc0047acb878a7d4d830efa60f7845d",
-    "F_SRC_LIB_CONFIG_FILES_TS": "sha256:a39102bb208f00fcb4b87600484762adfe9515592c2e1cdf5228596dc70bfc7e",
+    "F_SRC_CONFIGURATION_FILES_TSX": "sha256:95b4c972b3a5553a6f576c08b839b5f506d00cf7cb576a28d919db2420f2f247",
+    "F_SRC_LIB_CONFIG_FILES_TEST_TS": "sha256:669ff4a21754e6b8d96d7588164234f493d0e34251085a9e37cd97b819550cc2",
+    "F_SRC_LIB_CONFIG_FILES_TS": "sha256:a9770386b794ced6174aeca2ff947347e12302af3641f6f95f9224236a08d326",
     "F_SRC_LIB_VAPID_TEST_TS": "sha256:6d58e1ca0853eec82bb6349da0e6ecf43fddb6a988d57ab5e394032e27ef749c",
-    "F_SRC_PUSH_SETTINGS_TSX": "sha256:79acd83c12c2cdd3aac3844a66f88423223583d83e20283cffb07db37cc2919e",
+    "F_SRC_PUSH_SETTINGS_TSX": "sha256:65474a1087dea6893ca392e32f488cc3327d32c82afccb579e332901f65b8c3f",
     "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS": "sha256:6d58e1ca0853eec82bb6349da0e6ecf43fddb6a988d57ab5e394032e27ef749c",
     "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -4271,23 +4927,73 @@
     "F_SRC_DISPLAY_SETTINGS_TSX": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SRC_LIB_FORMAT_TEST_TS": "sha256:3314689b7d80da90dc2b37d8ef4042eb6466c3b46d2bddb2ba15400c0ce5fae6",
     "F_SRC_LIB_FORMAT_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_OVERLAY_TEST_TS": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
-    "F_SRC_NOTIFICATIONS_TEST_TS": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
+    "F_SRC_LIB_OVERLAY_TEST_TS": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_NOTIFICATIONS_TEST_TS": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
     "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
     "F_SCRIPTS_CHECK_SNAPSHOT_CONCURRENCY_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS": "sha256:1eb220a0fe82b5c49f7840601081bd9dbf296abfc4b8a11d24e55fe4668a3460",
-    "F_SRC_LIB_SNAPSHOT_SYNC_TS": "sha256:0c0685a9d5b795bfd1dedbc3db05bc5a481cb083ab974f82179e61dbeea67eef",
+    "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_LIB_SNAPSHOT_SYNC_TS": "sha256:6ab7b821cdcc93aa70256d562f27a86e63af33bd414960102cd28a9113deb036",
     "F_SUPABASE_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "F_TESTS_LIVE_SNAPSHOT_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
     "F_SUPABASE_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SRC_ARCHIVE_SEARCH_TSX": "sha256:29a2d81c6b00363b893876aaa4338ded8c1f9bd0c0e4df9728de63a421f5d3a1",
+    "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_QUALITY_PANEL_TSX": "sha256:0ee0e95304f6e1e134ee3e0f03bbff15aaa574ebd2aad83cd3ba10c21a02cff7",
+    "F_SRC_RECALL_CASES_TSX": "sha256:2d3bff741a5f0cd9cbdfc1bcd4385066dfe40dabb59274f1486f9b94e9df175a",
+    "F_SRC_REPORT_SCHEDULES_TSX": "sha256:c2fb13e2f4d9524a4727a437331f59bfc8de262653196fc08a5515278cf8b389",
+    "F_SRC_STOCK_BALANCE_TSX": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS": "sha256:c1e45f11b46e73edd5619bbff5a2670533209f102c4cad7b6d37a02c146a2ec8",
+    "F_SUPABASE_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070069_CREATION_SOP_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070080_SOP_MIGRATION_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_TESTS_LIVE_OPERATIONS_SPEC_TS": "sha256:f7030bb7bf34b5c126ea42c838406a20b14e7593bd264df57a8c8bd0f3369460",
+    "F_SRC_BATCH_STATUS_TSX": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS": "sha256:54dc7bdfcfacc7cc29d939b9b0388c54c4c0bbf83bb59a57c4f493d2cf4beb76",
+    "F_SUPABASE_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_S": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SRC_DIAGNOSTICS_TSX": "sha256:b5b16badd1a946fc3cc1394c90e06843a5aeaa255ceef36470bbd15a10757ac7",
+    "F_SRC_METRIC_EDITOR_TSX": "sha256:464736e0d0ad52007fb9f0139f6dd4080bfddd856d0aee0de1cf1c1049b6761a",
+    "F_SUPABASE_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_TESTS_DASHBOARD_COMPLETION_TEST_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SRC_LIB_TELEMETRY_TS": "sha256:28611308698ea60064ed8cd22fe49e2edb49661c99d3ed73c0c14e122ce04d3e",
+    "F_SUPABASE_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SCRIPTS_CHECK_PRIVACY_MJS": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "file_hashes": {
     ".github/workflows/backup.yml": "c1de0428668169017e60079fe4e2b3d7331c9b9fbff484688aba889ee3d7bbe3",
-    "docs/PROGRESS.md": "2241c2692a7693b8a6dcc794963473e2786703d8b8cce0aeffa4c0b062325992",
+    "docs/PROGRESS.md": "d99079351efefcf5ddfd33abd05986490d47c30f6a6535c0a4b5a6df94c2d5af",
     "eslint.config.js": "222fedbbff0663c3979d8cf3c70b85b1c38f0c9bb10fc696775c968da4eee9c6",
     "p/public.ts": "fc35dd8d3cc616dc2e74c1801074849e6c94ff6331f0779572318735453d219b",
     "package-lock.json": "8e7f11af4050add8e7a06c387b48d8eb5cf4cc52730d7e481ae3163814ddca59",
@@ -4297,9 +5003,10 @@
     "public/push-events.js": "a5fed33b0dc433acd1d12de5d152b5ed14676187127c8edfa11e020590d4394f",
     "scripts/bootstrap-owner.mjs": "a04355aaa6c51e0bd02a12b59d12df526a3e640cf53a6f2e62085d3da0b8792b",
     "scripts/browser-preview.mjs": "b1a3da02ef617783a276aeb5380b4497b212398b37c6677471dd71b9d960c057",
-    "scripts/check-live-ui.mjs": "40621c78e1eed2a3e6ec2ad58564ef7d1f37a6949113638420c0a938c596a233",
+    "scripts/check-live-ui.mjs": "c856721829a885aa8c57d1c324605b96b87f846e45a7ced0b363859206806b5a",
     "scripts/check-pdf.mjs": "92db49f0818f435fad244d1f08c0b8b6f00bcdf28607204aeeaddbfe75115bc6",
-    "scripts/check-reports.mjs": "5f0d38f6c73cc6ed7f96186b0eb1ae3f389aff5e5c8a074962fd4a4dd3e8fe3a",
+    "scripts/check-privacy.mjs": "7f9ddc874e4bf7d4624e83f985e63df697a7e2b9ad0dbe7ec268a0801d13a308",
+    "scripts/check-reports.mjs": "97a989ba74089e4045ab8700f214221e7b429e8c2e0052e9f048f3d152aef8dc",
     "scripts/check-snapshot-concurrency.mjs": "77647fad83b4c67c2c510a1abcf6e483311047d2f01fd8d7a1a1bd43747a504e",
     "scripts/create-history-seed.mjs": "564d8ec6274496b7af245a43c241cf891beddfbd075134fe4a6319de3def012e",
     "scripts/create-seed.mjs": "88a35889a6a3b5bc07bedeea90713cfa88cdbc93035534d20d661cabcdc1de05",
@@ -4309,17 +5016,19 @@
     "scripts/media-backup.test.mjs": "b7b1e5474ed1bd93a7b74d62266bcd98ae22518025b770d8e79b298d076746a3",
     "scripts/setup-local.mjs": "d7d62ffa76befefc31c99ce8cd9526aa6bb02b423184a1d32be9ee29eb9c41b9",
     "scripts/wait-for-functions.mjs": "9b6396bb4731a5d75ea19febf9d155d7e03c1f48ec5a6814e344af01ec095a51",
-    "src/App.tsx": "4b304181573ff1a3427a89dd45f523d70b7308583e74d0d6b377d0bdd4fa6228",
+    "src/App.tsx": "d5165081e1cbd31b4aafce1a6cc6dd7f554c9f5148990e40b7561be8347f8978",
     "src/archive-search.tsx": "65f14dbcb8f782d8c70d7d0480b360c8c8252053e6db7046f7e61ffc13565234",
+    "src/batch-status.tsx": "40b8f0c49a33d978c546a8ea34dae475a2db59d192b1bbe0dbcbe367388098e8",
     "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
     "src/components/ui/sheet.tsx": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962",
     "src/configuration-files.tsx": "cad08b149869a8ad30b963accd2f993df4e7f1bc0e9924f2b09918f9ed0381f0",
-    "src/dashboard.tsx": "4b9e3276186c2f7cd0035f53a572fa0a61dcbb2d85c2d8f55f22454159d797da",
+    "src/dashboard.tsx": "c7b87d72f4cc25a06d48c73e6aebb6b7956e41b63608d96e9a94f9fe800c56ca",
+    "src/diagnostics.tsx": "8055caeffd8a51f228aae21b3a081f7d30cd30cb989e309717739dfe3259e97c",
     "src/display-settings.tsx": "9ba9d585d3bfeb684822ebcceadf9ff2a525df9e469768e020e83604330fb7d7",
-    "src/evidence.tsx": "e02120d12ac364ea901286cc9052084dfe92fb206b5d78cab5330707becfde4f",
-    "src/features.tsx": "9b2da4d98ce7da6f7febc2da4ee26ce094e00420211f7f4536298cc6b7c4c19c",
-    "src/i18n/ar.json": "8637902862ce165736c217927198cf76e940196ed78a321dadce08c559d18c3f",
-    "src/i18n/en.json": "68d3336ec4a466c930c05eea2068201c84e7538c775865ce7fba393c53ceb098",
+    "src/evidence.tsx": "0266630745f8271b1795cd2ae1b156a31b18299091a72482177b0674cc34844f",
+    "src/features.tsx": "a783cb6c34a95ceda7c507d73d53259264a40c6d991d411b61759a2b261fe70f",
+    "src/i18n/ar.json": "e783aacf9ce52373d440463b0ec6fb911633751be99cde01f4cf469f7e076683",
+    "src/i18n/en.json": "2927407c5fc0d0906f6c469d4a192949f1a7b8de7ae781355aa97b8d0eec2e2f",
     "src/i18n/index.ts": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12",
     "src/i18n/translations.test.ts": "88b295a32b86fbd640a3606325bc343414112027a7c675635f52e2fecc901136",
     "src/knowledge.tsx": "c883ab11a7c5246ccfd32a6cbdd94a7f08cce9b2001fbb6982531f9f4bbb4802",
@@ -4330,10 +5039,10 @@
     "src/lib/checkpoint-review.test.ts": "510728ef9d8fc100a191902e71effaa46d740b1a576b6a3f8a5f3f24ee01faad",
     "src/lib/config-files.test.ts": "67f239ac8e741a83c3612848901545812b592c6407c42e64404a19c57994c049",
     "src/lib/config-files.ts": "91ba82f907cba4cb30df99e0d66da3a736d6d1e9c6d6573012842d5ad4c71045",
-    "src/lib/data.ts": "ff35722e5c702664a4ca2e6d9643aa63b939e0032051eecf009f22d935523095",
+    "src/lib/data.ts": "9362b344f3f68fa758c59ef0b343cc0cd87570576c5c70c50e73475242fce3bb",
     "src/lib/demo.ts": "bd89a8079d30231855eeca0f330228061c17c6403be06db3b116174b352f7e46",
     "src/lib/domain.test.ts": "d4510044d05c2b7101622e9f70191f388e6de0ca338483d4b76baf1077c57ee6",
-    "src/lib/domain.ts": "0d714a7e0a884f26e0ab7954d2efdd4080c81e6e66cf4a2c3a2f63e6c78d6e3c",
+    "src/lib/domain.ts": "84cc8331accb5b4609dac21e1d2735dc64d88af423c50fdffc2c23ad61e86e01",
     "src/lib/format.test.ts": "e2542e09a8111f27a1a71ecd21c42e420cae931d71fdcfcbb7d4acff6c4d8876",
     "src/lib/format.ts": "df829f2aa23164165d03678ee4dc61d5557c57c71958d179de491f015055eb5e",
     "src/lib/labels.test.ts": "be61f5e8966326ea52db88062c9b82411368adceee61a2e1c5abf13afb778156",
@@ -4347,21 +5056,24 @@
     "src/lib/pin.ts": "bc0ced82e329967ae10544be3a6f211eff7f4f00f0dcdf39fcc1d582f415cdc2",
     "src/lib/receipts.test.ts": "65853034509c38b613cb7193a738be2f60656a570d62245f7009ccd3a41d5b98",
     "src/lib/receipts.ts": "dc533610e914c91ad0d4923b2a4ec5ba4dfca885f1ed60bca09907412601dcd9",
-    "src/lib/reports.ts": "d6de94b31d306c143c921ea2908750f08f7a02f164ea6fdadeb5dbf1383043c7",
+    "src/lib/reports.ts": "566016fbd350ea00694e8da7f1e133819a132f61b781996b28a584b2b1e0b730",
     "src/lib/schedules.test.ts": "05159bce3e746bd49a4ffe937c9b9e641a95cf6cbb02a39b7fafe800c43f8e6b",
     "src/lib/schedules.ts": "7c0554c5264df34e49ebceac6237185bd248ed88d10cf2d278af1783fd5fe6e6",
     "src/lib/sealed-ticket.test.ts": "2057cdf00f64507873c546241d5dbf9de8b8a1e8f4c8172c5dc4aff99a646f57",
     "src/lib/sealed-ticket.ts": "9eddec2e52492e0a09396e95c054929bcb99e7e85968206f7a2236110040f403",
     "src/lib/session-policy.test.ts": "7fbb9d63954e8cee2b0909cdb58bce17e834c20309cce01fab6663f6c2626097",
     "src/lib/session-policy.ts": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a",
+    "src/lib/snapshot-lock.test.ts": "e72bafd7c7afe18033b45c48ff9f56f8e580aeaf09ab418cbcec6fc79474a93e",
     "src/lib/snapshot-sync.test.ts": "4fe0e78b914a9278ec608b2e4c6b90866628d3f98a5065d8235e2a5a97190378",
-    "src/lib/snapshot-sync.ts": "6aee33023cd60fc57afc2e6f407e5c53eb97e92ac28277e4b55b18e6b473977f",
+    "src/lib/snapshot-sync.ts": "abe3a7d68a788bbb3b9e5e5ed5ffd9fc2ac4928d3404699551c240b725288a73",
     "src/lib/supabase.ts": "13496478a2d0d5fb2ad9b407e03f39f1c415fa46e7a07693a3ac543df3875024",
+    "src/lib/telemetry.ts": "9114062ef86ce96af099e48820529321121b36769fe3bf2ba706731f46bfbc32",
     "src/lib/training-media.ts": "834616596a57763db295e08ad64f6c0a9f577c5ae2d83dc0695561a9c697bf02",
     "src/lib/vapid.test.ts": "5e03a9cac77de6cd9a1c8861b20ebe8e92a6874e06410db63376284c23bee538",
-    "src/main.tsx": "8c445e80a57a6792145c28ffe26aa6f2b4157ed9832ae1aba863016e53bd4871",
-    "src/management.tsx": "db3b25a7223798160c3645648d23ab679186e1b9cdf7a428c0e110df241cf97a",
+    "src/main.tsx": "ea4b272c36ddaaaf3e35f4d96589c32bc1feecb26e1a6f86404263608a031e96",
+    "src/management.tsx": "9e413902a48d4e631ea0463e0c3ae2bdbd6e1905d23662f5b8602143f7d898da",
     "src/material-balance.tsx": "208e01c8dc935f8fb7d458e55148ef4ccaa55a5e9c564585461ef3d5ad7dc811",
+    "src/metric-editor.tsx": "d6b5bd70f0ff8eae97d6ba7ef4e62c2a29d34a4c454bad561224d0c97d3c565e",
     "src/notifications.test.ts": "68ec479574ec7c10ce8254f73ebf7f631b582644ede20a20ce12c641399aca72",
     "src/notifications.tsx": "8b6f5c02dbc1ba4ada42b3351c09c11471c013f3cf4f96d55ecc5bb33de97676",
     "src/offline/db.test.ts": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0",
@@ -4370,7 +5082,7 @@
     "src/push-settings.tsx": "df610cc84a3e4c54669118a8df37f21adf7105b0355bcf804770c2f53a8b7603",
     "src/quality-panel.tsx": "98d00f2bdece650e5871d45bc3513b72b6f7c9aebb049818765b6d1bef96e247",
     "src/recall-cases.tsx": "0d1994b689248063dc43ac0659c90cd69b0ce4bea57c70ff8e6dd256fc926da8",
-    "src/report-page.tsx": "76882d5da0c86552098623dcc03d06b73f8faf6423d1db06b3ab607166e11ed8",
+    "src/report-page.tsx": "052b08ac62e6fcb597d8964b907f50989643e7c41497f2cfb7a55edd25f433ba",
     "src/report-schedules.tsx": "90e5f157c3f3c4ff8c59b46820a5f3c5a724c54a43edf5c7e613886fb31d92cd",
     "src/scanner.tsx": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2",
     "src/stock-balance.tsx": "002325e0a661b410c0cfd1f0c01b0d2d044ac32be6e890620288cfcb6a2008d1",
@@ -4384,16 +5096,16 @@
     "supabase/config.toml": "032d2a7d9c847ac5e9f84c6ceb5ef861aaebb3ad4a3ea76d7f07ebd39374b5fe",
     "supabase/functions/_shared/FONT-LICENSE.txt": "1c32ddc3fc6efd167cdcbe475195287f2dc26ed1a4c92fbe31c87ceaffe44f98",
     "supabase/functions/_shared/alerts.ts": "85932755f1e1ae1c857bb5ba525043f76c2c946de1fcbb6fdb4fda720db559ed",
-    "supabase/functions/_shared/http.ts": "9212cb8dd2a8e4eecfae43ad90cdf741bfb56b0c585c4cad99db705df9a8dd8a",
+    "supabase/functions/_shared/http.ts": "794f574fa003426eca70557da28cb5c276d2f31bce865cf0da6afbed8b8b9ec3",
     "supabase/functions/_shared/monthly-reports.ts": "acef4373b0ab110836804f00b5add4fea7f794656f5f5a02c055629fd1c6d444",
     "supabase/functions/_shared/plex-arabic.ttf": "8e0f1046c736bf939d4939ee3ae0116acf61cbcd6592deae7656761627080981",
     "supabase/functions/_shared/push.ts": "81230620e9d2a72ecea9c99f831585458208a87d804f85f981459b0a412b908f",
     "supabase/functions/_shared/vapid.ts": "6706811f4bce1e87ec800689b750ff75984df5b243beb0f02e45b44acbc53549",
     "supabase/functions/notifications/index.ts": "85e19db250af1bfc05f17bf7337257d084e72d8bc455e6e755d4b0b0fe5e17d5",
-    "supabase/functions/ocr/index.ts": "7be4532eb7d0a9100848aa10e8f9f89717afaa3a30bc3cf889705b4fef2bda99",
-    "supabase/functions/report/index.ts": "81138cec36499fcc1fe5c01f768051c7b573b58c6eb5d334881b1b25fe4d2114",
+    "supabase/functions/ocr/index.ts": "1ead51973f2fee069fb3367b50f436260cf8b925c1adbe05162368a8560d12ea",
+    "supabase/functions/report/index.ts": "cdbf8013effb8eaeed5984558fd610876ad72dede32983429e6a7359ce024b07",
     "supabase/functions/scheduled-tasks/index.ts": "bc9c125880607800bf18746578d1da93c50af83e146cf2781ee7a6dcbe5819e0",
-    "supabase/functions/subject-privacy/index.ts": "4ed4176b71b6521fb33387e475d8a3e981abfa94b026ffb71b9abac4d62eb9e5",
+    "supabase/functions/subject-privacy/index.ts": "456abe9deef7a2b9069ebe569d57c208a087553d686a8452210bef2608aa8f1b",
     "supabase/functions/sync/index.ts": "ce5686ef9f82e2247bc4f16e4199ee075e24baf8d59522169b620dfdaf23deaf",
     "supabase/functions/user-admin/index.ts": "a062425eaec04d31ec581cf623a382be6d5844f4c05601a8a60677769bac3e78",
     "supabase/migrations/202610060001_foundation.sql": "f75d8f77c0ab01710020168b9a6546b723dedc58e48846362d96c0e5ee094024",
@@ -4476,13 +5188,26 @@
     "supabase/migrations/202610070078_mock_recall_completion.sql": "c9f25ae50d346227845da9f7d49d095f89aaacc8705abe73fa737360b38b6c9c",
     "supabase/migrations/202610070079_deviation_recurrence.sql": "48756c33346bfa4c383cff5aaa3ab9f43a9ca656048456e8c1c1420cefd3a22c",
     "supabase/migrations/202610070080_sop_migration.sql": "1ac8761d19e922208461271e3937ed5131a41f92ef80cf4ee5053b105c7ab9d2",
+    "supabase/migrations/202610070081_sop_migration_compatibility.sql": "c5eaf7d157a5f33a74d61b1e03dbf089c922b4785a08920a425cadc586bba6b4",
+    "supabase/migrations/202610070082_ocr_crosscheck.sql": "04fe043e8868feb440f61886ffbfaa17d2013317d39254e19fa0458cb6d0518c",
+    "supabase/migrations/202610070083_data_quality_overrides.sql": "93c6562189d984a39b284a2e55b5b1155ae5f60ae9818b69d42bcc814e536481",
+    "supabase/migrations/202610070084_ingredient_photo_policy.sql": "7e11731977fa9a0b56b1830ea3900c6523decc0159258811ba75c6bf38e854dc",
+    "supabase/migrations/202610070085_metric_cohorts_dictionary.sql": "76ccd1bdcca55963041f10d93794936e0e37093004a4340be09b7a6dfd01a17f",
+    "supabase/migrations/202610070086_dashboard_privacy_diagnostics.sql": "f4073dfcbd9f1b0c9a5814cc3dd3105d6fdc9f01ad6c90a10cd5fe9377117d7b",
+    "supabase/migrations/202610070087_operational_product_filter.sql": "a2f9f00460ad972cf1565bdd737b2a11095494eff78964e4e2c1a09389d05442",
+    "supabase/migrations/202610070088_configurable_data_quality.sql": "8cd36d79ebeb6f61bba5d24dfc09bba3b14961e47a47a8351afcef152ee09800",
+    "supabase/migrations/202610070089_metric_editor_read.sql": "b48f3fb8af20b6e03c8615ab11b2068584edb8d3a319408f6f6b53f3f44bcca9",
+    "supabase/migrations/202610070090_demographic_consent_guard.sql": "ff6b1ccaed4bc4f77f809de6763afecb2666af494dc67ef0d17c2a745e9202bc",
+    "supabase/migrations/202610070091_privacy_epoch_update.sql": "5c5eec85fd03db31965d71be5f4e7ab328e0527b43153e6d87a6804fd853b52b",
     "supabase/seed.sql": "8a0104c67029b003485e7df9cb3696cb8a441d77c660f35742474f99de934e19",
     "supabase/tests/bootstrap.test.sql": "3b59e2e944902ab2649d7542d64dff3c1b348cac209ee6bd02fc630135d11d02",
     "supabase/tests/configuration.test.sql": "f416d5d11edcfee0c892af5369f23023124261e3cf7d7feb01a07bd67e02fccb",
     "supabase/tests/creation-sop.test.sql": "58324ab7289c4cfe8da0657734e7d22d496e7371685aa14cd769f7a5777182ad",
+    "supabase/tests/dashboard-completion.test.sql": "302af1ca169b4f6dcb873812025c9902e54e9c7abb92e92aee36c5062c981dd9",
     "supabase/tests/dashboard-filters.test.sql": "462db960afe805d92d574a61a5e0012d64f0cd53a2405d4bca4777daf4c9ec27",
     "supabase/tests/impact.test.sql": "018067ea64c089aeb01f0fccfe5d671a47e11e1471fbfd3ce7de3929608e843b",
     "supabase/tests/material-balance.test.sql": "d3ba305596a7d3cc5cb871b78173c324011cc4619236d500824583d4ccf0b7f8",
+    "supabase/tests/mvp-completion.test.sql": "ff48ad71c25f54aad0b0b2228088bc74e1ab4025d7266b903854e6ffe73ec4be",
     "supabase/tests/notifications.test.sql": "fbdfa34ba01dd34c62ac070e1e42b49ef5a5c59ddcd90afd9a4247a79cd9d1e5",
     "supabase/tests/offline-signoff.test.sql": "79eaf7299f10956efc8c27a4eaf2d142412e8d6859c5c3a8fae674aa6b3dad10",
     "supabase/tests/operational-cache.test.sql": "910664f2adcc72bc04c5aecca125368f8bdc80015c48ca174c47f16f615cb6f1",
@@ -4505,13 +5230,14 @@
     "tests/flows.spec.ts": "caeb828373b1391c5cb5c8de34075002dafeb248c41d494f6ecc2161669dad31",
     "tests/live/acceptance.spec.ts": "516b8b50f284bd45e790d50b75ce5ab3289b5dae730f31ff6e66bbcb43ee4b02",
     "tests/live/configuration.spec.ts": "ad0681ce44a2fbae0a04d1401e4b1eafb272f41f5a7cddbfb804350de77b4bab",
-    "tests/live/dashboard-filters.spec.ts": "65c14c80bd24b756874fd31b3da1a4c300278203cf126e9bf8840c6a2eebfa97",
+    "tests/live/dashboard-filters.spec.ts": "6f9befd194b869dba52e0e61af26739ac3989e7908c07ed21da15f22012f06a7",
     "tests/live/fixtures.ts": "da2843c1b70e0a3efdf8bbbc9857e1ed679a626ea977655ef4335b813edbc0a3",
     "tests/live/labels.spec.ts": "50291e65907a84f02dbfe54783f956fcfe3b8bf40318ada22cf971fe7b218f3a",
     "tests/live/material-balance.spec.ts": "91e8bcf336dd2b615cc41c7ac3109d5b5533668ccd77f7932d3b631a300880cb",
     "tests/live/mfa.ts": "f21125deec74a9daee6be4db7aa56623f8147512bbee70ac6a4d7153a1b8aca7",
     "tests/live/notifications.spec.ts": "9831674321add0ce0d240d57c83ed580217a96468b4b75f9174cbf0ab73ed456",
     "tests/live/offline-receiving.spec.ts": "7af4d47da65c69238f5f2768dad5d523c0fcb8091271f8345f97bceca934ca80",
+    "tests/live/operations.spec.ts": "56952007a6d9846c73008d2071a5a17b6fdf0b3e85a0909b47d6392cb43dcf5c",
     "tests/live/self-release.spec.ts": "05524dfba5bc26e44bdf5522d0c44204f8a91fa02d62fb9182440976d0d119d0",
     "tests/live/snapshot.spec.ts": "71644d6be1ce5351fdfbb27cebb8ba09d255197e31b413f45d8643c60676a0a3",
     "tests/live/training.spec.ts": "a89153e77bb96af8ffa772b7bd979cc8e8fa1e0d51b024b136c96ce69ec87452",
@@ -4524,8 +5250,8 @@
       1791294535179591300
     ],
     "docs/PROGRESS.md": [
-      31693,
-      1791295416696369600
+      37743,
+      1791359808178627500
     ],
     "eslint.config.js": [
       726,
@@ -4564,16 +5290,20 @@
       1791279406247042600
     ],
     "scripts/check-live-ui.mjs": [
-      1311,
-      1791280686771578800
+      1442,
+      1791358083890887400
     ],
     "scripts/check-pdf.mjs": [
       725,
       1791283493999094300
     ],
+    "scripts/check-privacy.mjs": [
+      2359,
+      1791359958101012300
+    ],
     "scripts/check-reports.mjs": [
-      2533,
-      1791286037609829300
+      3650,
+      1791357579926672500
     ],
     "scripts/check-snapshot-concurrency.mjs": [
       3340,
@@ -4612,12 +5342,16 @@
       1791284107477406300
     ],
     "src/App.tsx": [
-      24597,
-      1791356649235482600
+      24690,
+      1791357526005928300
     ],
     "src/archive-search.tsx": [
       3991,
       1791356028169409400
+    ],
+    "src/batch-status.tsx": [
+      1212,
+      1791357265746397600
     ],
     "src/components/ui/button.tsx": [
       702,
@@ -4632,28 +5366,32 @@
       1791292081095260500
     ],
     "src/dashboard.tsx": [
-      7848,
-      1791355503866936700
+      9284,
+      1791359075050105500
+    ],
+    "src/diagnostics.tsx": [
+      691,
+      1791359153849167500
     ],
     "src/display-settings.tsx": [
       591,
       1791295273639088600
     ],
     "src/evidence.tsx": [
-      1908,
-      1791282673866916100
+      3466,
+      1791357326165774300
     ],
     "src/features.tsx": [
-      40041,
-      1791356542037421600
+      41834,
+      1791358953835666500
     ],
     "src/i18n/ar.json": [
-      36339,
-      1791356564887810200
+      38522,
+      1791358857800880800
     ],
     "src/i18n/en.json": [
-      27677,
-      1791356564887810200
+      29258,
+      1791358857800880800
     ],
     "src/i18n/index.ts": [
       656,
@@ -4696,8 +5434,8 @@
       1791292081093693600
     ],
     "src/lib/data.ts": [
-      18304,
-      1791355851286448600
+      18438,
+      1791359153850167800
     ],
     "src/lib/demo.ts": [
       4859,
@@ -4708,8 +5446,8 @@
       1791291433622318600
     ],
     "src/lib/domain.ts": [
-      4806,
-      1791356542038390600
+      4944,
+      1791358387386616800
     ],
     "src/lib/format.test.ts": [
       1077,
@@ -4764,8 +5502,8 @@
       1791289019903685400
     ],
     "src/lib/reports.ts": [
-      1007,
-      1791294860234977400
+      1058,
+      1791358509643821400
     ],
     "src/lib/schedules.test.ts": [
       1575,
@@ -4791,17 +5529,25 @@
       1005,
       1791281642465191600
     ],
+    "src/lib/snapshot-lock.test.ts": [
+      796,
+      1791357414044533900
+    ],
     "src/lib/snapshot-sync.test.ts": [
       925,
       1791296063211890100
     ],
     "src/lib/snapshot-sync.ts": [
-      7610,
-      1791355382356472900
+      9108,
+      1791357361263326700
     ],
     "src/lib/supabase.ts": [
       463,
       1791278187921586900
+    ],
+    "src/lib/telemetry.ts": [
+      1994,
+      1791359153849167500
     ],
     "src/lib/training-media.ts": [
       4934,
@@ -4812,16 +5558,20 @@
       1791292430244198300
     ],
     "src/main.tsx": [
-      544,
-      1791278540364356200
+      629,
+      1791359153850167800
     ],
     "src/management.tsx": [
-      9296,
-      1791356649219807900
+      9580,
+      1791358628911563200
     ],
     "src/material-balance.tsx": [
       1120,
       1791294654308565400
+    ],
+    "src/metric-editor.tsx": [
+      1423,
+      1791358628912564500
     ],
     "src/notifications.test.ts": [
       1178,
@@ -4856,8 +5606,8 @@
       1791356094774497600
     ],
     "src/report-page.tsx": [
-      3730,
-      1791356207155716700
+      3811,
+      1791357526005928300
     ],
     "src/report-schedules.tsx": [
       2761,
@@ -4912,8 +5662,8 @@
       1791354903684638100
     ],
     "supabase/functions/_shared/http.ts": [
-      1728,
-      1791291886611770800
+      1827,
+      1791358387386616800
     ],
     "supabase/functions/_shared/monthly-reports.ts": [
       2350,
@@ -4936,20 +5686,20 @@
       1791291433624337200
     ],
     "supabase/functions/ocr/index.ts": [
-      1955,
-      1791279111203356600
+      2189,
+      1791357291265409800
     ],
     "supabase/functions/report/index.ts": [
-      10986,
-      1791356207141892300
+      11640,
+      1791358421497776800
     ],
     "supabase/functions/scheduled-tasks/index.ts": [
       803,
       1791355015017158200
     ],
     "supabase/functions/subject-privacy/index.ts": [
-      876,
-      1791355157904894800
+      1203,
+      1791359641672544700
     ],
     "supabase/functions/sync/index.ts": [
       981,
@@ -5279,6 +6029,50 @@
       3895,
       1791356648889167600
     ],
+    "supabase/migrations/202610070081_sop_migration_compatibility.sql": [
+      4447,
+      1791357265678071200
+    ],
+    "supabase/migrations/202610070082_ocr_crosscheck.sql": [
+      1694,
+      1791357452500833400
+    ],
+    "supabase/migrations/202610070083_data_quality_overrides.sql": [
+      4690,
+      1791357624564065300
+    ],
+    "supabase/migrations/202610070084_ingredient_photo_policy.sql": [
+      820,
+      1791357624637064100
+    ],
+    "supabase/migrations/202610070085_metric_cohorts_dictionary.sql": [
+      16950,
+      1791358262240515100
+    ],
+    "supabase/migrations/202610070086_dashboard_privacy_diagnostics.sql": [
+      5126,
+      1791358820076768400
+    ],
+    "supabase/migrations/202610070087_operational_product_filter.sql": [
+      4748,
+      1791358316232380900
+    ],
+    "supabase/migrations/202610070088_configurable_data_quality.sql": [
+      6934,
+      1791358509644457200
+    ],
+    "supabase/migrations/202610070089_metric_editor_read.sql": [
+      491,
+      1791358628957630900
+    ],
+    "supabase/migrations/202610070090_demographic_consent_guard.sql": [
+      1860,
+      1791358820076768400
+    ],
+    "supabase/migrations/202610070091_privacy_epoch_update.sql": [
+      1166,
+      1791359698291509100
+    ],
     "supabase/seed.sql": [
       108153,
       1791288325633308200
@@ -5295,6 +6089,10 @@
       2299,
       1791354704791735700
     ],
+    "supabase/tests/dashboard-completion.test.sql": [
+      6457,
+      1791359153849167500
+    ],
     "supabase/tests/dashboard-filters.test.sql": [
       3476,
       1791294968380608700
@@ -5306,6 +6104,10 @@
     "supabase/tests/material-balance.test.sql": [
       4708,
       1791289641470002200
+    ],
+    "supabase/tests/mvp-completion.test.sql": [
+      3535,
+      1791357452500833400
     ],
     "supabase/tests/notifications.test.sql": [
       3005,
@@ -5396,8 +6198,8 @@
       1791292551964211200
     ],
     "tests/live/dashboard-filters.spec.ts": [
-      1929,
-      1791295108599948800
+      1946,
+      1791358820076768400
     ],
     "tests/live/fixtures.ts": [
       4470,
@@ -5422,6 +6224,10 @@
     "tests/live/offline-receiving.spec.ts": [
       2858,
       1791285542768411600
+    ],
+    "tests/live/operations.spec.ts": [
+      2675,
+      1791359193333554800
     ],
     "tests/live/self-release.spec.ts": [
       4133,
@@ -5485,16 +6291,20 @@
       1791279406247042600
     ],
     "scripts/check-live-ui.mjs": [
-      1311,
-      1791280686771578800
+      1442,
+      1791358083890887400
     ],
     "scripts/check-pdf.mjs": [
       725,
       1791283493999094300
     ],
+    "scripts/check-privacy.mjs": [
+      2359,
+      1791359958101012300
+    ],
     "scripts/check-reports.mjs": [
-      2533,
-      1791286037609829300
+      3650,
+      1791357579926672500
     ],
     "scripts/check-snapshot-concurrency.mjs": [
       3340,
@@ -5533,8 +6343,16 @@
       1791284107477406300
     ],
     "src/App.tsx": [
-      24597,
-      1791356649235482600
+      24690,
+      1791357526005928300
+    ],
+    "src/archive-search.tsx": [
+      3991,
+      1791356028169409400
+    ],
+    "src/batch-status.tsx": [
+      1212,
+      1791357265746397600
     ],
     "src/components/ui/button.tsx": [
       702,
@@ -5549,20 +6367,24 @@
       1791292081095260500
     ],
     "src/dashboard.tsx": [
-      7848,
-      1791355503866936700
+      9284,
+      1791359075050105500
+    ],
+    "src/diagnostics.tsx": [
+      691,
+      1791359153849167500
     ],
     "src/display-settings.tsx": [
       591,
       1791295273639088600
     ],
     "src/evidence.tsx": [
-      1908,
-      1791282673866916100
+      3466,
+      1791357326165774300
     ],
     "src/features.tsx": [
-      40041,
-      1791356542037421600
+      41834,
+      1791358953835666500
     ],
     "src/i18n/index.ts": [
       656,
@@ -5592,6 +6414,10 @@
       4118,
       1791296590324164400
     ],
+    "src/lib/checkpoint-review.test.ts": [
+      1281,
+      1791354584451524600
+    ],
     "src/lib/config-files.test.ts": [
       760,
       1791292081095594500
@@ -5601,8 +6427,8 @@
       1791292081093693600
     ],
     "src/lib/data.ts": [
-      18304,
-      1791355851286448600
+      18438,
+      1791359153850167800
     ],
     "src/lib/demo.ts": [
       4859,
@@ -5613,8 +6439,8 @@
       1791291433622318600
     ],
     "src/lib/domain.ts": [
-      4806,
-      1791356542038390600
+      4944,
+      1791358387386616800
     ],
     "src/lib/format.test.ts": [
       1077,
@@ -5669,8 +6495,8 @@
       1791289019903685400
     ],
     "src/lib/reports.ts": [
-      1007,
-      1791294860234977400
+      1058,
+      1791358509643821400
     ],
     "src/lib/schedules.test.ts": [
       1575,
@@ -5696,17 +6522,25 @@
       1005,
       1791281642465191600
     ],
+    "src/lib/snapshot-lock.test.ts": [
+      796,
+      1791357414044533900
+    ],
     "src/lib/snapshot-sync.test.ts": [
       925,
       1791296063211890100
     ],
     "src/lib/snapshot-sync.ts": [
-      7610,
-      1791355382356472900
+      9108,
+      1791357361263326700
     ],
     "src/lib/supabase.ts": [
       463,
       1791278187921586900
+    ],
+    "src/lib/telemetry.ts": [
+      1994,
+      1791359153849167500
     ],
     "src/lib/training-media.ts": [
       4934,
@@ -5717,16 +6551,20 @@
       1791292430244198300
     ],
     "src/main.tsx": [
-      544,
-      1791278540364356200
+      629,
+      1791359153850167800
     ],
     "src/management.tsx": [
-      9296,
-      1791356649219807900
+      9580,
+      1791358628911563200
     ],
     "src/material-balance.tsx": [
       1120,
       1791294654308565400
+    ],
+    "src/metric-editor.tsx": [
+      1423,
+      1791358628912564500
     ],
     "src/notifications.test.ts": [
       1178,
@@ -5752,13 +6590,29 @@
       2217,
       1791291886611770800
     ],
+    "src/quality-panel.tsx": [
+      2226,
+      1791356540253962200
+    ],
+    "src/recall-cases.tsx": [
+      3823,
+      1791356094774497600
+    ],
     "src/report-page.tsx": [
-      3730,
-      1791356207155716700
+      3811,
+      1791357526005928300
+    ],
+    "src/report-schedules.tsx": [
+      2761,
+      1791355015018889300
     ],
     "src/scanner.tsx": [
       1627,
       1791280926503899100
+    ],
+    "src/stock-balance.tsx": [
+      1143,
+      1791355900638567100
     ],
     "src/test-setup.ts": [
       30,
@@ -5772,9 +6626,17 @@
       3141,
       1791288194341509300
     ],
+    "supabase/functions/_shared/alerts.ts": [
+      1609,
+      1791354903684638100
+    ],
     "supabase/functions/_shared/http.ts": [
-      1728,
-      1791291886611770800
+      1827,
+      1791358387386616800
+    ],
+    "supabase/functions/_shared/monthly-reports.ts": [
+      2350,
+      1791355015015152800
     ],
     "supabase/functions/_shared/push.ts": [
       1725,
@@ -5789,16 +6651,20 @@
       1791291433624337200
     ],
     "supabase/functions/ocr/index.ts": [
-      1955,
-      1791279111203356600
+      2189,
+      1791357291265409800
     ],
     "supabase/functions/report/index.ts": [
-      10986,
-      1791356207141892300
+      11640,
+      1791358421497776800
     ],
     "supabase/functions/scheduled-tasks/index.ts": [
       803,
       1791355015017158200
+    ],
+    "supabase/functions/subject-privacy/index.ts": [
+      1203,
+      1791359641672544700
     ],
     "supabase/functions/sync/index.ts": [
       981,
@@ -6072,6 +6938,106 @@
       18411,
       1791297745082996200
     ],
+    "supabase/migrations/202610070067_recall_actions.sql": [
+      2106,
+      1791354301987019600
+    ],
+    "supabase/migrations/202610070068_operational_dashboards.sql": [
+      2861,
+      1791354515430242600
+    ],
+    "supabase/migrations/202610070069_creation_sop.sql": [
+      17963,
+      1791354655920210300
+    ],
+    "supabase/migrations/202610070070_partner_agreements.sql": [
+      5552,
+      1791355382012750900
+    ],
+    "supabase/migrations/202610070071_critical_alert_queue.sql": [
+      2289,
+      1791354903682658900
+    ],
+    "supabase/migrations/202610070072_monthly_reports.sql": [
+      13861,
+      1791354963113965400
+    ],
+    "supabase/migrations/202610070073_subject_privacy.sql": [
+      2002,
+      1791355180632930700
+    ],
+    "supabase/migrations/202610070074_operational_cache.sql": [
+      3560,
+      1791355382064819400
+    ],
+    "supabase/migrations/202610070075_dashboard_operations.sql": [
+      5105,
+      1791355503866936700
+    ],
+    "supabase/migrations/202610070076_storage_inspections.sql": [
+      3789,
+      1791355764128687800
+    ],
+    "supabase/migrations/202610070077_stock_balance.sql": [
+      1538,
+      1791355900637081000
+    ],
+    "supabase/migrations/202610070078_mock_recall_completion.sql": [
+      2325,
+      1791356094759984200
+    ],
+    "supabase/migrations/202610070079_deviation_recurrence.sql": [
+      1727,
+      1791356540253962200
+    ],
+    "supabase/migrations/202610070080_sop_migration.sql": [
+      3895,
+      1791356648889167600
+    ],
+    "supabase/migrations/202610070081_sop_migration_compatibility.sql": [
+      4447,
+      1791357265678071200
+    ],
+    "supabase/migrations/202610070082_ocr_crosscheck.sql": [
+      1694,
+      1791357452500833400
+    ],
+    "supabase/migrations/202610070083_data_quality_overrides.sql": [
+      4690,
+      1791357624564065300
+    ],
+    "supabase/migrations/202610070084_ingredient_photo_policy.sql": [
+      820,
+      1791357624637064100
+    ],
+    "supabase/migrations/202610070085_metric_cohorts_dictionary.sql": [
+      16950,
+      1791358262240515100
+    ],
+    "supabase/migrations/202610070086_dashboard_privacy_diagnostics.sql": [
+      5126,
+      1791358820076768400
+    ],
+    "supabase/migrations/202610070087_operational_product_filter.sql": [
+      4748,
+      1791358316232380900
+    ],
+    "supabase/migrations/202610070088_configurable_data_quality.sql": [
+      6934,
+      1791358509644457200
+    ],
+    "supabase/migrations/202610070089_metric_editor_read.sql": [
+      491,
+      1791358628957630900
+    ],
+    "supabase/migrations/202610070090_demographic_consent_guard.sql": [
+      1860,
+      1791358820076768400
+    ],
+    "supabase/migrations/202610070091_privacy_epoch_update.sql": [
+      1166,
+      1791359698291509100
+    ],
     "supabase/seed.sql": [
       108153,
       1791288325633308200
@@ -6083,6 +7049,14 @@
     "supabase/tests/configuration.test.sql": [
       2774,
       1791292175838953300
+    ],
+    "supabase/tests/creation-sop.test.sql": [
+      2299,
+      1791354704791735700
+    ],
+    "supabase/tests/dashboard-completion.test.sql": [
+      6457,
+      1791359153849167500
     ],
     "supabase/tests/dashboard-filters.test.sql": [
       3476,
@@ -6096,6 +7070,10 @@
       4708,
       1791289641470002200
     ],
+    "supabase/tests/mvp-completion.test.sql": [
+      3535,
+      1791357452500833400
+    ],
     "supabase/tests/notifications.test.sql": [
       3005,
       1791291721334663400
@@ -6103,6 +7081,14 @@
     "supabase/tests/offline-signoff.test.sql": [
       5626,
       1791285107144271100
+    ],
+    "supabase/tests/operational-cache.test.sql": [
+      2125,
+      1791355630891722000
+    ],
+    "supabase/tests/operational-dashboard.test.sql": [
+      2106,
+      1791354827778120400
     ],
     "supabase/tests/production.test.sql": [
       4996,
@@ -6116,6 +7102,10 @@
       4603,
       1791293329838729000
     ],
+    "supabase/tests/recall-actions.test.sql": [
+      2163,
+      1791354464653135500
+    ],
     "supabase/tests/receipt-measurements.test.sql": [
       3063,
       1791289002106444600
@@ -6128,6 +7118,10 @@
       8996,
       1791284152135369100
     ],
+    "supabase/tests/scheduled-delivery.test.sql": [
+      2448,
+      1791355040544842400
+    ],
     "supabase/tests/security.test.sql": [
       6051,
       1791279266163991300
@@ -6139,6 +7133,14 @@
     "supabase/tests/stage-clock.test.sql": [
       2350,
       1791297845721129900
+    ],
+    "supabase/tests/storage-stock.test.sql": [
+      1697,
+      1791355970850543700
+    ],
+    "supabase/tests/subject-privacy.test.sql": [
+      1471,
+      1791355630891722000
     ],
     "supabase/tests/training.test.sql": [
       9505,
@@ -6161,8 +7163,8 @@
       1791292551964211200
     ],
     "tests/live/dashboard-filters.spec.ts": [
-      1929,
-      1791295108599948800
+      1946,
+      1791358820076768400
     ],
     "tests/live/fixtures.ts": [
       4470,
@@ -6187,6 +7189,10 @@
     "tests/live/offline-receiving.spec.ts": [
       2858,
       1791285542768411600
+    ],
+    "tests/live/operations.spec.ts": [
+      2675,
+      1791359193333554800
     ],
     "tests/live/self-release.spec.ts": [
       4133,
@@ -6227,6 +7233,7 @@
     "scripts/browser-preview.mjs",
     "scripts/check-live-ui.mjs",
     "scripts/check-pdf.mjs",
+    "scripts/check-privacy.mjs",
     "scripts/check-reports.mjs",
     "scripts/check-snapshot-concurrency.mjs",
     "scripts/create-history-seed.mjs",
@@ -6239,10 +7246,12 @@
     "scripts/wait-for-functions.mjs",
     "src/App.tsx",
     "src/archive-search.tsx",
+    "src/batch-status.tsx",
     "src/components/ui/button.tsx",
     "src/components/ui/sheet.tsx",
     "src/configuration-files.tsx",
     "src/dashboard.tsx",
+    "src/diagnostics.tsx",
     "src/display-settings.tsx",
     "src/evidence.tsx",
     "src/features.tsx",
@@ -6282,14 +7291,17 @@
     "src/lib/sealed-ticket.ts",
     "src/lib/session-policy.test.ts",
     "src/lib/session-policy.ts",
+    "src/lib/snapshot-lock.test.ts",
     "src/lib/snapshot-sync.test.ts",
     "src/lib/snapshot-sync.ts",
     "src/lib/supabase.ts",
+    "src/lib/telemetry.ts",
     "src/lib/training-media.ts",
     "src/lib/vapid.test.ts",
     "src/main.tsx",
     "src/management.tsx",
     "src/material-balance.tsx",
+    "src/metric-editor.tsx",
     "src/notifications.test.ts",
     "src/notifications.tsx",
     "src/offline/db.test.ts",
@@ -6404,13 +7416,26 @@
     "supabase/migrations/202610070078_mock_recall_completion.sql",
     "supabase/migrations/202610070079_deviation_recurrence.sql",
     "supabase/migrations/202610070080_sop_migration.sql",
+    "supabase/migrations/202610070081_sop_migration_compatibility.sql",
+    "supabase/migrations/202610070082_ocr_crosscheck.sql",
+    "supabase/migrations/202610070083_data_quality_overrides.sql",
+    "supabase/migrations/202610070084_ingredient_photo_policy.sql",
+    "supabase/migrations/202610070085_metric_cohorts_dictionary.sql",
+    "supabase/migrations/202610070086_dashboard_privacy_diagnostics.sql",
+    "supabase/migrations/202610070087_operational_product_filter.sql",
+    "supabase/migrations/202610070088_configurable_data_quality.sql",
+    "supabase/migrations/202610070089_metric_editor_read.sql",
+    "supabase/migrations/202610070090_demographic_consent_guard.sql",
+    "supabase/migrations/202610070091_privacy_epoch_update.sql",
     "supabase/seed.sql",
     "supabase/tests/bootstrap.test.sql",
     "supabase/tests/configuration.test.sql",
     "supabase/tests/creation-sop.test.sql",
+    "supabase/tests/dashboard-completion.test.sql",
     "supabase/tests/dashboard-filters.test.sql",
     "supabase/tests/impact.test.sql",
     "supabase/tests/material-balance.test.sql",
+    "supabase/tests/mvp-completion.test.sql",
     "supabase/tests/notifications.test.sql",
     "supabase/tests/offline-signoff.test.sql",
     "supabase/tests/operational-cache.test.sql",
@@ -6440,13 +7465,14 @@
     "tests/live/mfa.ts",
     "tests/live/notifications.spec.ts",
     "tests/live/offline-receiving.spec.ts",
+    "tests/live/operations.spec.ts",
     "tests/live/self-release.spec.ts",
     "tests/live/snapshot.spec.ts",
     "tests/live/training.spec.ts",
     "vite.config.ts",
     "vitest.config.ts"
   ],
-  "derivation_key": "5bc6cd2e947d4d32d6ac131760fddf8d022df053405f56e4237b5438ca0f8ee8",
+  "derivation_key": "29cf0d92a90d7d6609914c5810fb9273835be3273f2e501f0f985b4f06a46678",
   "ownership": {
     "WISE_TRACE": [],
     "SYS_FRONTEND": [],
@@ -6555,13 +7581,26 @@
       "supabase/migrations/202610070078_mock_recall_completion.sql",
       "supabase/migrations/202610070079_deviation_recurrence.sql",
       "supabase/migrations/202610070080_sop_migration.sql",
+      "supabase/migrations/202610070081_sop_migration_compatibility.sql",
+      "supabase/migrations/202610070082_ocr_crosscheck.sql",
+      "supabase/migrations/202610070083_data_quality_overrides.sql",
+      "supabase/migrations/202610070084_ingredient_photo_policy.sql",
+      "supabase/migrations/202610070085_metric_cohorts_dictionary.sql",
+      "supabase/migrations/202610070086_dashboard_privacy_diagnostics.sql",
+      "supabase/migrations/202610070087_operational_product_filter.sql",
+      "supabase/migrations/202610070088_configurable_data_quality.sql",
+      "supabase/migrations/202610070089_metric_editor_read.sql",
+      "supabase/migrations/202610070090_demographic_consent_guard.sql",
+      "supabase/migrations/202610070091_privacy_epoch_update.sql",
       "supabase/seed.sql",
       "supabase/tests/bootstrap.test.sql",
       "supabase/tests/configuration.test.sql",
       "supabase/tests/creation-sop.test.sql",
+      "supabase/tests/dashboard-completion.test.sql",
       "supabase/tests/dashboard-filters.test.sql",
       "supabase/tests/impact.test.sql",
       "supabase/tests/material-balance.test.sql",
+      "supabase/tests/mvp-completion.test.sql",
       "supabase/tests/notifications.test.sql",
       "supabase/tests/offline-signoff.test.sql",
       "supabase/tests/operational-cache.test.sql",
@@ -6585,10 +7624,12 @@
     "CMP_SRC": [
       "src/App.tsx",
       "src/archive-search.tsx",
+      "src/batch-status.tsx",
       "src/components/ui/button.tsx",
       "src/components/ui/sheet.tsx",
       "src/configuration-files.tsx",
       "src/dashboard.tsx",
+      "src/diagnostics.tsx",
       "src/display-settings.tsx",
       "src/evidence.tsx",
       "src/features.tsx",
@@ -6628,14 +7669,17 @@
       "src/lib/sealed-ticket.ts",
       "src/lib/session-policy.test.ts",
       "src/lib/session-policy.ts",
+      "src/lib/snapshot-lock.test.ts",
       "src/lib/snapshot-sync.test.ts",
       "src/lib/snapshot-sync.ts",
       "src/lib/supabase.ts",
+      "src/lib/telemetry.ts",
       "src/lib/training-media.ts",
       "src/lib/vapid.test.ts",
       "src/main.tsx",
       "src/management.tsx",
       "src/material-balance.tsx",
+      "src/metric-editor.tsx",
       "src/notifications.test.ts",
       "src/notifications.tsx",
       "src/offline/db.test.ts",
@@ -7229,6 +8273,156 @@
     ],
     "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL": [
       "supabase/tests/stage-clock.test.sql"
+    ],
+    "F_SRC_ARCHIVE_SEARCH_TSX": [
+      "src/archive-search.tsx"
+    ],
+    "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS": [
+      "src/lib/checkpoint-review.test.ts"
+    ],
+    "F_SRC_QUALITY_PANEL_TSX": [
+      "src/quality-panel.tsx"
+    ],
+    "F_SRC_RECALL_CASES_TSX": [
+      "src/recall-cases.tsx"
+    ],
+    "F_SRC_REPORT_SCHEDULES_TSX": [
+      "src/report-schedules.tsx"
+    ],
+    "F_SRC_STOCK_BALANCE_TSX": [
+      "src/stock-balance.tsx"
+    ],
+    "F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS": [
+      "supabase/functions/_shared/alerts.ts"
+    ],
+    "F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS": [
+      "supabase/functions/_shared/monthly-reports.ts"
+    ],
+    "F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS": [
+      "supabase/functions/subject-privacy/index.ts"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL": [
+      "supabase/migrations/202610070067_recall_actions.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL": [
+      "supabase/migrations/202610070068_operational_dashboards.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070069_CREATION_SOP_SQL": [
+      "supabase/migrations/202610070069_creation_sop.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL": [
+      "supabase/migrations/202610070070_partner_agreements.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL": [
+      "supabase/migrations/202610070071_critical_alert_queue.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL": [
+      "supabase/migrations/202610070072_monthly_reports.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL": [
+      "supabase/migrations/202610070073_subject_privacy.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL": [
+      "supabase/migrations/202610070074_operational_cache.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL": [
+      "supabase/migrations/202610070075_dashboard_operations.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL": [
+      "supabase/migrations/202610070076_storage_inspections.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL": [
+      "supabase/migrations/202610070077_stock_balance.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL": [
+      "supabase/migrations/202610070078_mock_recall_completion.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL": [
+      "supabase/migrations/202610070079_deviation_recurrence.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070080_SOP_MIGRATION_SQL": [
+      "supabase/migrations/202610070080_sop_migration.sql"
+    ],
+    "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL": [
+      "supabase/tests/creation-sop.test.sql"
+    ],
+    "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL": [
+      "supabase/tests/operational-cache.test.sql"
+    ],
+    "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL": [
+      "supabase/tests/operational-dashboard.test.sql"
+    ],
+    "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL": [
+      "supabase/tests/recall-actions.test.sql"
+    ],
+    "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL": [
+      "supabase/tests/scheduled-delivery.test.sql"
+    ],
+    "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL": [
+      "supabase/tests/storage-stock.test.sql"
+    ],
+    "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL": [
+      "supabase/tests/subject-privacy.test.sql"
+    ],
+    "F_TESTS_LIVE_OPERATIONS_SPEC_TS": [
+      "tests/live/operations.spec.ts"
+    ],
+    "F_SRC_BATCH_STATUS_TSX": [
+      "src/batch-status.tsx"
+    ],
+    "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS": [
+      "src/lib/snapshot-lock.test.ts"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_S": [
+      "supabase/migrations/202610070081_sop_migration_compatibility.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL": [
+      "supabase/migrations/202610070082_ocr_crosscheck.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL": [
+      "supabase/migrations/202610070083_data_quality_overrides.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL": [
+      "supabase/migrations/202610070084_ingredient_photo_policy.sql"
+    ],
+    "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL": [
+      "supabase/tests/mvp-completion.test.sql"
+    ],
+    "F_SRC_DIAGNOSTICS_TSX": [
+      "src/diagnostics.tsx"
+    ],
+    "F_SRC_METRIC_EDITOR_TSX": [
+      "src/metric-editor.tsx"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL": [
+      "supabase/migrations/202610070085_metric_cohorts_dictionary.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS": [
+      "supabase/migrations/202610070086_dashboard_privacy_diagnostics.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ": [
+      "supabase/migrations/202610070087_operational_product_filter.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL": [
+      "supabase/migrations/202610070088_configurable_data_quality.sql"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL": [
+      "supabase/migrations/202610070089_metric_editor_read.sql"
+    ],
+    "F_SUPABASE_TESTS_DASHBOARD_COMPLETION_TEST_SQL": [
+      "supabase/tests/dashboard-completion.test.sql"
+    ],
+    "F_SRC_LIB_TELEMETRY_TS": [
+      "src/lib/telemetry.ts"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL": [
+      "supabase/migrations/202610070090_demographic_consent_guard.sql"
+    ],
+    "F_SCRIPTS_CHECK_PRIVACY_MJS": [
+      "scripts/check-privacy.mjs"
+    ],
+    "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL": [
+      "supabase/migrations/202610070091_privacy_epoch_update.sql"
     ]
   },
   "note": "Transient cache, not evidence. A 'fast-path' result located changes by size and modification time and must not be used for a delivery decision; see incremental.require_verified."

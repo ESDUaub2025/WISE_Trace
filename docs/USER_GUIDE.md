@@ -1,4 +1,85 @@
-# Role guide
+# WISE platform guide
+
+WISE helps a cooperative record where materials came from, how a product was made, who checked it, and where it went. It also provides training, quality records, stock management and reporting. Start with the daily tasks rather than trying to learn every page at once.
+
+## Your first ten minutes
+
+1. Sign in with your own username, password and PIN. The local demonstration accounts are `rima` (producer), `karim` (supervisor) and `manager1` (manager), with password `wise-demo-only` and PIN `2468`. These are fictional local accounts, not production credentials.
+2. Read the three welcome screens. You can dismiss them with **Not now** or the close button. The walkthrough is remembered separately for each account on this browser.
+3. On **Today**, open one due task. This takes you to its relevant record or form. Start with required training if you have not completed it.
+4. Open a lot code to inspect its status, history, measurements and linked materials. A lot is a separately identified quantity of material or product.
+5. Use **Help** at the top of any page. **This page** explains its purpose and steps; **Getting started** replays the walkthrough; **Explore pages** explains the pages available to your account. Help is available in Arabic and English. The full downloadable guide is in English.
+
+## The normal workflow
+
+**Receive materials → start a batch → allocate inputs → record stage checks → package → review and release → record sales.**
+
+For example, record a whey delivery with its supplier lot and receipt measurements. An authorized receiver decides whether to accept it. After completing required training, a producer starts a batch and allocates accepted materials. During each stage, the producer records the required observations and photos. Packaging creates identified stock awaiting review. A reviewer inspects the evidence and makes a separate release decision. Only released stock is available for sale. Opening the final packaging lot traces it back to its production batch and source materials.
+
+Use the actual observation time, quantity and measurement. An entry made later retains both the observation time and the entry time. Do not treat example thresholds as an approved food-safety procedure: the cooperative's approved SOP controls production.
+
+## What each page does
+
+| Page | Why you use it | First action |
+| --- | --- | --- |
+| Today | Find due checks, training and other work; follow active batches. | Open a due task. |
+| Whey & materials | Record incoming whey, ingredients and packaging materials, decisions and remaining balances. | Choose **Receive material**. |
+| Production | Create batches, allocate accepted inputs and record each stage's checks. | Open a batch code, or choose **Start a batch** after training. |
+| Stock & sales | Package completed production, review stock, print labels, record sales, losses, storage checks and counts. | Open a packaging lot and inspect its status. |
+| Review | Inspect required evidence and decide release, hold or rejection. | Open a lot awaiting review. |
+| Deviations | Document problems, complaints and corrective actions. | Create a deviation or inspect an open one. |
+| Trace & recall | Follow genealogy and manage recall cases or practice exercises. | Open the affected lot or case. |
+| Knowledge | Read illustrated procedures, FAQs and troubleshooting; complete training assessments. | Open a required module. |
+| Equipment | Register instruments and record verification/calibration checks. | Check the instrument's status and due date. |
+| Dashboards | Inspect authorized operations and impact summaries with filters and definitions. | Choose a view and reporting period. |
+| Reports | Export authorized registers, indicators and traceability records. | Select a report and its filters. |
+| Organization | Manage profiles, consent, alerts, people, devices, agreements and monthly reports. | Update your own profile or preferences. |
+| Administration | Draft and approve procedure versions, publish training and manage operational controls. | Inspect the current approved procedure before drafting changes. |
+
+## Accounts and responsibilities
+
+Your role, cooperative scope and individual authorizations determine what you can see and save. A visible page does not grant permission for every action on it.
+
+| Role | Main responsibility |
+| --- | --- |
+| Producer | Complete training, receive materials if authorized, record production checks and evidence. |
+| Supervisor | Review cooperative work, check instruments and make authorized quality decisions. |
+| Cooperative manager | Monitor stock and sales, manage authorized people/devices and cooperative reports. |
+| WISE administrator | Manage platform configuration, registries, training and diagnostics. |
+| Food-Safety Lead | Independently approve procedures and perform authorized safety reviews and recalls. |
+| Partner | Inspect agreed data within authorized scope; raw cooperative access requires an enabled agreement. |
+| Donor | Read aggregate impact indicators with privacy suppression. |
+| Consumer | Scan the package QR to see available public product information without a staff account. |
+
+Administrators and Food-Safety Leads use additional MFA verification. A different Food-Safety Lead approves an administrator's procedure draft. Keep your own password and PIN private; switch accounts when sharing a phone.
+
+## Understanding status and offline work
+
+**Received** means a material has been recorded, while **accepted** means an authorized receiving decision permits its use. **In production** means work is ongoing. **Awaiting review** means production or packaging still needs a reviewer. **Released** means the stock has passed its required release workflow. **On hold**, **rejected** and **recalled** require the indicated restriction to be respected. A packaging record or a completed check does not itself release a product.
+
+**Saved on device** means the record is stored locally. **Synced** means it has reached the server. **Provisional** means server checks or decisions are still pending. A **conflict** needs authorized review; repeatedly submitting the same record does not resolve it.
+
+Sign in online before working offline so your authorized session and working records are cached. Keep using the same browser and device. Required media must be downloaded in Knowledge while connected. Reconnect and press the connection indicator to synchronize, then check for conflicts or pending evidence. Offline critical receiving decisions require the previously prepared, valid credential and your PIN. Release, recall and configuration changes require online authorization. Older archived records need an online search.
+
+Do not clear browser storage while unsynchronized records exist. On a shared device, restore the original author's session to upload their pending records; switching people does not transfer authorship.
+
+## Common questions
+
+- **Why can I not start a batch?** Check required training, the approved procedure and your authorization.
+- **Why is a source lot missing from allocation?** Check its acceptance, expiry, cooperative and remaining balance.
+- **Why can I not release or sell?** Inspect the lot status, required interval checks, photo uploads, laboratory results, critical deviations and the review decision. Release also needs a connection and fresh PIN.
+- **Why is a button unavailable?** Your role, current status, connection or required evidence may restrict that action. Ask the responsible supervisor to inspect the record.
+- **Why do dashboard numbers change?** Verify the dates, cooperative, region, product and status filters, then read the indicator definition. Demographic summaries use current consenting profiles and suppress small groups.
+- **Why did a notification or email not arrive?** Read in-app alerts first. External delivery needs explicit consent where applicable and a configured provider. Inspect delivery status with an authorized manager.
+- **How do I correct a saved record?** Use the available correction/amendment workflow with a reason. Approved history remains preserved.
+- **How do I reopen the introduction?** Choose **Help → Getting started**. The close button or Escape dismisses the popup.
+
+## Detailed feature reference
+
+The following sections describe the remaining controls and advanced workflows. Work only with actions your account is authorized to perform.
+
+
+## Role and advanced workflow reference
 
 **Producer:** Sign in online once. Complete current required training. Today shows overdue checks first. Receive materials from registered suppliers; supplier declarations remain distinct from your measurements. Open a batch to record a current-stage check; photograph the display, confirm the value and save. Attach a voice note when useful. Records show saved on device until synchronization succeeds. Excess provisional allocation needs a reason and supervisor review. Rejected/held/expired inputs are excluded. Packaging creates review stock and never implies release.
 

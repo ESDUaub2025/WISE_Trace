@@ -1,4 +1,21 @@
 import { test,expect } from '@playwright/test';
+test.beforeEach(async({page},info)=>{if(!info.title.startsWith('Help:'))await page.addInitScript(()=>localStorage.setItem('wise-help:v1:20000000-0000-4000-8000-000000000001','seen'));});
+test('Help: welcome is dismissible, remembered, and replayable with page guidance',async({page})=>{
+ await page.goto('/');const dialog=page.getByRole('dialog');await expect(dialog.getByRole('heading',{name:'Welcome to WISE'})).toBeVisible();
+ await dialog.getByRole('button',{name:'Next',exact:true}).click();await expect(dialog.getByRole('heading',{name:'Follow the product from source to sale'})).toBeVisible();
+ await dialog.getByRole('button',{name:'Next',exact:true}).click();await dialog.getByRole('button',{name:'Start using WISE'}).click();
+ await page.reload();await expect(page.locator('main')).toBeVisible();await expect(dialog).toHaveCount(0);
+ await page.goto('/batches');await page.getByRole('button',{name:'Help',exact:true}).click();await expect(dialog.getByText('Follow production from allocated inputs through stages, checks and packaging.')).toBeVisible();
+ await dialog.getByRole('button',{name:'Explore pages'}).click();await expect(dialog.locator('summary')).toHaveCount(10);await expect(dialog.locator('summary').filter({hasText:'Administration'})).toHaveCount(0);
+ const guide=dialog.getByRole('link',{name:'Download the full guide (English)'});const response=await page.request.get((await guide.getAttribute('href'))!);expect(response.ok()).toBeTruthy();expect(await response.text()).toContain('Your first ten minutes');
+ await dialog.getByRole('button',{name:'Getting started'}).click();await expect(dialog.getByRole('heading',{name:'Start with your daily tasks'})).toBeVisible();await page.keyboard.press('Escape');await expect(dialog).toHaveCount(0);
+ await page.getByRole('button',{name:'Help',exact:true}).click();await dialog.getByRole('button',{name:'Close',exact:true}).click();
+});
+test('Help: Arabic page explanations and welcome work on mobile and offline',async({page,context})=>{
+ await page.goto('/');await page.getByRole('dialog').getByRole('button',{name:'Not now'}).click();await page.getByRole('button',{name:'العربية',exact:true}).click();
+ await page.getByRole('button',{name:'مساعدة',exact:true}).click();await expect(page.getByRole('dialog').getByText('نقطة البداية اليومية: شاهد المهام التي تحتاج انتباهك والدفعات النشطة.')).toBeVisible();
+ await page.keyboard.press('Escape');await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await context.setOffline(true);await page.reload();await page.getByRole('button',{name:'مساعدة',exact:true}).click();await expect(page.getByRole('dialog').getByRole('button',{name:'البدء',exact:true})).toBeVisible();
+});
 test('producer attention cards open a camera-first checkpoint flow',async({page})=>{await page.goto('/');await page.getByRole('button',{name:/Checkpoint due/}).click();await expect(page.getByText('Photograph evidence',{exact:true})).toBeVisible();await page.getByRole('spinbutton',{name:'Confirmed value'}).fill('26');await page.getByRole('button',{name:'Save record',exact:true}).click();await expect(page.getByRole('status')).toContainText('Saved successfully');});
 test('batch created offline survives reload with device-saved status',async({page,context})=>{await page.goto('/');await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await page.reload();await page.goto('/batches');await context.setOffline(true);await page.getByRole('button',{name:'Start a batch',exact:true}).click();await page.getByRole('button',{name:'Save record',exact:true}).click();await expect(page.getByText('Saved on device',{exact:true})).toBeVisible();await page.reload();await expect(page.getByText('Saved on device',{exact:true})).toBeVisible();});
 test('material receipt pre-fills supplier declarations',async({page})=>{await page.goto('/');await page.getByRole('button',{name:'Receive material',exact:true}).click();await expect(page.getByText('Declared by supplier',{exact:true})).toBeVisible();await expect(page.getByText('starter culture: Cultured labneh')).toBeVisible();});

@@ -66,12 +66,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "81e63dadb5c74316af976c5fb1175403",
-      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261007T074750+0000-81e63dad.json",
-      "verified_at": "2026-10-07T07:47:50+00:00",
-      "self_fingerprint": "sha256:589e1695a72edf698374b16eebf5c93155986723484c6613cba0785dbd3ec37f",
-      "dep_fingerprint": "sha256:2325ea3d94c7813222876df741fb47f1b9b25e1df1fa65d0aa1e44fa495f2766",
-      "git_commit": "cb7783e08ce5798009df00ed628a22c1b4b8755f",
+      "evidence_id": "339f9f2328e54690b1cd48b35379a477",
+      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261007T082602+0000-339f9f23.json",
+      "verified_at": "2026-10-07T08:26:02+00:00",
+      "self_fingerprint": "sha256:7ceab7f7a3d8486de6eb631b2c2e5aac5b80777aa7f2969a6f57a4887ab1af08",
+      "dep_fingerprint": "sha256:72556373f0e360251801bd6249827854088db9900e82ae96eb3cef72d7d1063a",
+      "git_commit": "bf4c6dd0b8d3832921c023fd2bdb8468bdd52c5e",
       "attestations": [],
       "history": [
         {
@@ -232,6 +232,19 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "81e63dadb5c74316af976c5fb1175403"
+        },
+        {
+          "at": "2026-10-07T08:21:23+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-10-07T08:26:02+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "339f9f2328e54690b1cd48b35379a477"
         }
       ]
     },
@@ -813,6 +826,32 @@
       "history": []
     },
     "F_SRC_FEATURES_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_HELP_CONTENT_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_HELP_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,

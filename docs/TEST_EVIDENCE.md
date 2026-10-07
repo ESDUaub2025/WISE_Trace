@@ -48,3 +48,11 @@ The completion follow-up adds product/status cohorts, consent aggregates, versio
 
 
 The final 24-scenario live suite passes (including product/status export parity). The dedicated real Auth privacy check also passes: disabled profile pseudonymization, metadata-key removal, anonymized sign-in address and banned login. It exposed and fixed the REST safe-update requirement on epoch rotation; SQL-only tests had not exercised that connection setting. Fresh preview fixtures replace transient acceptance data before handoff.
+# Beginner guidance follow-up — 7 October 2026
+
+The user guide now starts with a ten-minute introduction, daily workflow, page directory, role responsibilities, status/offline explanations and troubleshooting, followed by the full feature reference. The application includes bilingual page help, a replayable three-step welcome popup, account-specific dismissal on this browser, a directory of authorized pages and a guide download.
+
+ProjectGraph `CMP_SRC` verification passed types, lint, all 46 unit tests and all 20 desktop/mobile browser cases (including four help cases). The help cases cover walkthrough completion and replay, dismissal after reload, role-filtered page guidance, guide download, Arabic and offline help after reload. A separate real-backend browser check signed in as `rima` and `karim`, confirmed independent welcome state on the shared browser and persistence, and captured desktop/mobile/Arabic screens without browser exceptions. The existing live login helper dismisses the introduction for workflow tests; the full database/live suite was not repeated for this UI-only change.
+
+Screenshots: [Welcome](preview-help-welcome.png), [Desktop page help](preview-help-desktop.png), [Mobile page help](preview-help-mobile.png), [Arabic page help](preview-help-arabic.png).
+

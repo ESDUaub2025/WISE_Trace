@@ -34,6 +34,14 @@
     },
     {
       "source": "src/App.tsx",
+      "target": "src/help.tsx",
+      "import": "./help",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/App.tsx",
       "target": "src/quality-panel.tsx",
       "import": "./quality-panel",
       "line": null,
@@ -588,6 +596,30 @@
       "source": "src/features.tsx",
       "target": "src/App.tsx",
       "import": "./App",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/help.tsx",
+      "target": "src/components/ui/sheet.tsx",
+      "import": "./components/ui/sheet",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/help.tsx",
+      "target": "src/components/ui/button.tsx",
+      "import": "./components/ui/button",
+      "line": null,
+      "resolver": "projectgraph.imports.v1",
+      "confidence": "medium"
+    },
+    {
+      "source": "src/help.tsx",
+      "target": "src/help-content.ts",
+      "import": "./help-content",
       "line": null,
       "resolver": "projectgraph.imports.v1",
       "confidence": "medium"
@@ -2032,6 +2064,11 @@
       "candidates": []
     },
     {
+      "file": "src/help.tsx",
+      "import": "../docs/USER_GUIDE.md?url",
+      "candidates": []
+    },
+    {
       "file": "src/i18n/index.ts",
       "import": "./en.json",
       "candidates": []
@@ -2141,6 +2178,16 @@
     {
       "file": "scripts/check-privacy.mjs",
       "import": "node:child_process",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-privacy.mjs",
+      "import": "node:url",
+      "candidates": []
+    },
+    {
+      "file": "scripts/check-privacy.mjs",
+      "import": "node:process",
       "candidates": []
     },
     {
@@ -2556,6 +2603,21 @@
     {
       "file": "src/features.tsx",
       "import": "qrcode",
+      "candidates": []
+    },
+    {
+      "file": "src/help.tsx",
+      "import": "react",
+      "candidates": []
+    },
+    {
+      "file": "src/help.tsx",
+      "import": "react-i18next",
+      "candidates": []
+    },
+    {
+      "file": "src/help.tsx",
+      "import": "lucide-react",
       "candidates": []
     },
     {
@@ -3233,6 +3295,16 @@
       "startVoice",
       "submit"
     ],
+    "src/help-content.ts": [
+      "PageHelp"
+    ],
+    "src/help.tsx": [
+      "Help",
+      "close",
+      "details",
+      "helpKey",
+      "needsWelcome"
+    ],
     "src/i18n/index.ts": [
       "direction"
     ],
@@ -3541,7 +3613,7 @@
     "vitest.config.ts": []
   },
   "truncated": false,
-  "scanned_files": 119,
+  "scanned_files": 121,
   "unsupported_files": [
     "supabase/migrations/202610060001_foundation.sql",
     "supabase/migrations/202610060002_operations.sql",
@@ -3673,7 +3745,7 @@
     "scripts/browser-preview.mjs": "b1a3da02ef617783a276aeb5380b4497b212398b37c6677471dd71b9d960c057",
     "scripts/check-live-ui.mjs": "c856721829a885aa8c57d1c324605b96b87f846e45a7ced0b363859206806b5a",
     "scripts/check-pdf.mjs": "92db49f0818f435fad244d1f08c0b8b6f00bcdf28607204aeeaddbfe75115bc6",
-    "scripts/check-privacy.mjs": "b8d78aeb8f15edb52510668c40245c72ec23f023a6af2c6efda46bccabc2e464",
+    "scripts/check-privacy.mjs": "7f9ddc874e4bf7d4624e83f985e63df697a7e2b9ad0dbe7ec268a0801d13a308",
     "scripts/check-reports.mjs": "97a989ba74089e4045ab8700f214221e7b429e8c2e0052e9f048f3d152aef8dc",
     "scripts/check-snapshot-concurrency.mjs": "77647fad83b4c67c2c510a1abcf6e483311047d2f01fd8d7a1a1bd43747a504e",
     "scripts/create-history-seed.mjs": "564d8ec6274496b7af245a43c241cf891beddfbd075134fe4a6319de3def012e",
@@ -3684,7 +3756,7 @@
     "scripts/media-backup.test.mjs": "b7b1e5474ed1bd93a7b74d62266bcd98ae22518025b770d8e79b298d076746a3",
     "scripts/setup-local.mjs": "d7d62ffa76befefc31c99ce8cd9526aa6bb02b423184a1d32be9ee29eb9c41b9",
     "scripts/wait-for-functions.mjs": "9b6396bb4731a5d75ea19febf9d155d7e03c1f48ec5a6814e344af01ec095a51",
-    "src/App.tsx": "d5165081e1cbd31b4aafce1a6cc6dd7f554c9f5148990e40b7561be8347f8978",
+    "src/App.tsx": "c243b8d2504d612518e180db370eb7e7fa358c93befb39aeb7b8d855586ca1b2",
     "src/archive-search.tsx": "65f14dbcb8f782d8c70d7d0480b360c8c8252053e6db7046f7e61ffc13565234",
     "src/batch-status.tsx": "40b8f0c49a33d978c546a8ea34dae475a2db59d192b1bbe0dbcbe367388098e8",
     "src/components/ui/button.tsx": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85",
@@ -3695,6 +3767,8 @@
     "src/display-settings.tsx": "9ba9d585d3bfeb684822ebcceadf9ff2a525df9e469768e020e83604330fb7d7",
     "src/evidence.tsx": "0266630745f8271b1795cd2ae1b156a31b18299091a72482177b0674cc34844f",
     "src/features.tsx": "a783cb6c34a95ceda7c507d73d53259264a40c6d991d411b61759a2b261fe70f",
+    "src/help-content.ts": "c36009b74965f12b5f190e1f2347cd760b7b4a6c2dd842c3f0cf756af0f1e5a1",
+    "src/help.tsx": "04bf5bb43f95848088779c96fcb56814ca197a4c20b77bdb0503f8d62c86b181",
     "src/i18n/index.ts": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12",
     "src/i18n/translations.test.ts": "88b295a32b86fbd640a3606325bc343414112027a7c675635f52e2fecc901136",
     "src/knowledge.tsx": "c883ab11a7c5246ccfd32a6cbdd94a7f08cce9b2001fbb6982531f9f4bbb4802",
@@ -3886,11 +3960,11 @@
     "supabase/tests/subject-privacy.test.sql": "890e5ab02c7f6223181e0ec912abbb16f5e1f411710f0db2bb9a0df77678e615",
     "supabase/tests/training.test.sql": "44e725d2eb6ac127bd698666f3dba366fe8ffe78d48b7dfe747c9c004e085f0e",
     "supabase/tests/yield.test.sql": "962ff16324c64d17f254d78d90bf70ae594150f3817ffc781f07f08136c924f2",
-    "tests/flows.spec.ts": "caeb828373b1391c5cb5c8de34075002dafeb248c41d494f6ecc2161669dad31",
+    "tests/flows.spec.ts": "5d94b58cdf5fe21571aa107579682a884cb969ae14737251b65374e1f95de3fe",
     "tests/live/acceptance.spec.ts": "516b8b50f284bd45e790d50b75ce5ab3289b5dae730f31ff6e66bbcb43ee4b02",
     "tests/live/configuration.spec.ts": "ad0681ce44a2fbae0a04d1401e4b1eafb272f41f5a7cddbfb804350de77b4bab",
     "tests/live/dashboard-filters.spec.ts": "6f9befd194b869dba52e0e61af26739ac3989e7908c07ed21da15f22012f06a7",
-    "tests/live/fixtures.ts": "da2843c1b70e0a3efdf8bbbc9857e1ed679a626ea977655ef4335b813edbc0a3",
+    "tests/live/fixtures.ts": "7b519bd90e7e7980ae757d23d95009dd8bb573336ef40c57159294e090cf5f89",
     "tests/live/labels.spec.ts": "50291e65907a84f02dbfe54783f956fcfe3b8bf40318ada22cf971fe7b218f3a",
     "tests/live/material-balance.spec.ts": "91e8bcf336dd2b615cc41c7ac3109d5b5533668ccd77f7932d3b631a300880cb",
     "tests/live/mfa.ts": "f21125deec74a9daee6be4db7aa56623f8147512bbee70ac6a4d7153a1b8aca7",
