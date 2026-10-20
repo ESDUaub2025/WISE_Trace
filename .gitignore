@@ -19,3 +19,10 @@ build/
 out/
 .projectgraph/.writer.lock
 .vapid.env
+
+# Local credentials and private keys. Never commit their contents.
+/secrets/
+*.pem
+*.key
+*.p12
+*.pfx

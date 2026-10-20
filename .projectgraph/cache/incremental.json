@@ -1,7 +1,7 @@
 {
   "version": 3,
   "graph_fingerprint": "sha256:1a1a73b01bfc8184c5894213bf9f88ac5d85e817462246494465fe1425052776",
-  "generated_at": "2026-10-20T08:08:46+00:00",
+  "generated_at": "2026-10-20T09:41:41+00:00",
   "trust": "fast-path",
   "statuses": {
     "CFG_PROJECT_MANIFESTS": {
@@ -4525,12 +4525,12 @@
     "CMP_DISCOVERED_FILES": {
       "id": "CMP_DISCOVERED_FILES",
       "type": "COMPONENT",
-      "status": "READY",
-      "lifecycle": "DECLARED",
+      "status": "FAILED",
+      "lifecycle": "ACTIVE",
       "reasons": [
         {
-          "code": "ready",
-          "detail": "All gating dependencies satisfy their required state."
+          "code": "unverifiable",
+          "detail": "The contract has no machine-checkable checks."
         }
       ],
       "blocked_by": [],
@@ -4587,7 +4587,7 @@
     "SYS_FRONTEND": {
       "id": "SYS_FRONTEND",
       "type": "SYSTEM",
-      "status": "READY",
+      "status": "FAILED",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
@@ -4596,7 +4596,7 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (READY).",
+          "detail": "Derived from contained nodes (FAILED).",
           "refs": [
             "CMP_DISCOVERED_FILES"
           ]
@@ -4612,7 +4612,7 @@
     "WISE_TRACE": {
       "id": "WISE_TRACE",
       "type": "PROJECT",
-      "status": "ACTIVE",
+      "status": "FAILED",
       "lifecycle": "ACTIVE",
       "reasons": [
         {
@@ -4621,9 +4621,9 @@
         },
         {
           "code": "derived-from-members",
-          "detail": "Derived from contained nodes (ACTIVE).",
+          "detail": "Derived from contained nodes (FAILED).",
           "refs": [
-            "CFG_PROJECT_MANIFESTS"
+            "SYS_FRONTEND"
           ]
         }
       ],
@@ -7712,7 +7712,7 @@
     "vite.config.ts",
     "vitest.config.ts"
   ],
-  "derivation_key": "1ecff3dec1f5ee1655fabf3dae5208680b272e98dfa0e3274dfb62a35df1ba8c",
+  "derivation_key": "4251d5458975eb954953d33b8e2b5fe554de7bd6954c0630dea84eb0e75f14bb",
   "ownership": {
     "WISE_TRACE": [],
     "SYS_FRONTEND": [],

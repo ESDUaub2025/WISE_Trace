@@ -38,6 +38,12 @@
           "event": "verify",
           "result": "UNVERIFIABLE",
           "detail": "This node has no verification contract. Add one to `.projectgraph/verification.yaml` before it can be verified."
+        },
+        {
+          "at": "2026-10-20T09:42:27+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "FAILED"
         }
       ]
     },

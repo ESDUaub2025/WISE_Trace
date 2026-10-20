@@ -88,6 +88,8 @@ If any real records need migration, first produce and restore an encrypted expor
 
 Do not put server passwords, private SSH keys or database credentials in Git or this chat. A read-only repository deploy key can fetch the private source without granting permission to edit it.
 
+For this Windows workspace, the downloaded EC2 key is stored locally at `secrets/wise-server.pem`. The folder and private-key extensions are excluded from Git and Docker build contexts. NTFS permissions on the folder/key are restricted to the current Windows user and SYSTEM. The original Downloads copy was removed after copying. These controls do not encrypt the key or prevent deliberate forced inclusion; keep an encrypted recovery copy outside the repository. Do not upload this folder to the VPS. Browser EC2 Instance Connect can be used independently of this local key. If a key is ever committed or otherwise exposed, replace its authorized public key on the server; deleting the file from the latest commit does not revoke it.
+
 ## 5. Configure networking and Docker
 
 Apply both the provider's network firewall and the host firewall:

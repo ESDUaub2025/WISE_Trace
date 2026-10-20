@@ -16,5 +16,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_DISCOVERED_FILES",
+    "note": "Protected local project secrets: .gitignore excludes secrets/private keys and .dockerignore excludes credentials/build artifacts. Copied the downloaded EC2 PEM into secrets with NTFS access limited to the current Windows user and SYSTEM; removed Downloads copy. No key contents were displayed. git check-ignore confirms exclusion and key is untracked. Documented local handling in VPS guide. Browser EC2 Instance Connect already works. Screenshot shows Ubuntu 26.04 and root filesystem about 6.61 GiB; verify disk/memory before installing containers. Application still needs the planned Supabase replacement.",
+    "next_action": "Continue browser-based server setup with lsblk/df/free, size storage appropriately after checking AWS coverage, then implement the independent backend migration. Never print private-key contents.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-20T09:43:19.888201+00:00",
+    "git": {
+      "available": true,
+      "commit": "3586ebaedb1443e3162c5411707a1f6ac56d9662",
+      "short_commit": "3586ebaedb14",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]
