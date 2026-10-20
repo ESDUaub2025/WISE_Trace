@@ -1,5 +1,7 @@
 # Deployment and recovery
 
+**Deployment direction updated 20 October 2026:** see [the independent VPS plan](VPS_DEPLOYMENT_PLAN.md). Supabase removal requires a backend migration; the managed-service instructions below describe the existing implementation and earlier deployment option.
+
 This repository targets Cloudflare Pages and Supabase. Do not run the fictional seed against a hosted project. Production food-safety configuration, owner accounts and a custom domain require owner setup. Passing code checks does not constitute pilot sign-off.
 
 ## Local development

@@ -25,6 +25,8 @@ npm run test:live
 npm run build
 ```
 
-See [architecture](docs/ARCHITECTURE.md), [data model](docs/DATA_MODEL.md), [requirement evidence and remaining work](docs/PROGRESS.md), [decisions](docs/DECISIONS.md), [MVP deployment walkthrough](docs/DEPLOY_MVP.md), [deployment and recovery](docs/DEPLOYMENT.md) and [user guide](docs/USER_GUIDE.md). Food-safety defaults are placeholders pending Food-Safety Lead approval. The build is not a food-safety certification.
+The current deployment target is an [independent VPS with Supabase removed](docs/VPS_DEPLOYMENT_PLAN.md). That plan includes the required backend migration; the existing application still uses Supabase until the replacement is implemented and tested.
+
+See [architecture](docs/ARCHITECTURE.md), [data model](docs/DATA_MODEL.md), [requirement evidence and remaining work](docs/PROGRESS.md), [decisions](docs/DECISIONS.md), [earlier managed deployment walkthrough](docs/DEPLOY_MVP.md), [deployment and recovery reference](docs/DEPLOYMENT.md) and [user guide](docs/USER_GUIDE.md). Food-safety defaults are placeholders pending Food-Safety Lead approval. The build is not a food-safety certification.
 
 The local MVP runs with real Supabase Auth, database, private media and offline sync. Hosted deployment and field acceptance remain owner/pilot gates. PROGRESS.md distinguishes implemented workflows from details awaiting complete acceptance evidence. [Test evidence](docs/TEST_EVIDENCE.md) distinguishes the passing workflows from acceptance details and field checks still outstanding.

@@ -1,0 +1,20 @@
+[
+  {
+    "node": "CMP_DISCOVERED_FILES",
+    "note": "Documented the user-selected independent VPS target, with Supabase software removed by a future backend migration. Added docs/VPS_DEPLOYMENT_PLAN.md and supersession links in prior managed deployment documents/README. Checked official provider/security/library sources and local documentation links. This is a plan only: replacement backend and server infrastructure have not been implemented or deployed; this inventory node has no executable verification contract.",
+    "next_action": "Provision an eligible VPS and hostname; prototype replacement authentication/API/PostgreSQL boundaries, then estimate and implement the migration before VPS launch. Preserve existing functional app until parity is proved.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-20T08:16:12.042440+00:00",
+    "git": {
+      "available": true,
+      "commit": "08d1fd9090c453a2ef39a3ac6ba0cfe0e54ea5ea",
+      "short_commit": "08d1fd9090c4",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  }
+]

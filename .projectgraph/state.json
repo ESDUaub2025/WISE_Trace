@@ -16,9 +16,9 @@
       "history": []
     },
     "CMP_DISCOVERED_FILES": {
-      "lifecycle": "DECLARED",
+      "lifecycle": "ACTIVE",
       "run_status": "IDLE",
-      "result": null,
+      "result": "UNVERIFIABLE",
       "evidence_id": null,
       "evidence_path": null,
       "verified_at": null,
@@ -26,7 +26,20 @@
       "dep_fingerprint": null,
       "git_commit": null,
       "attestations": [],
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-20T08:09:33+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-10-20T08:16:11+00:00",
+          "event": "verify",
+          "result": "UNVERIFIABLE",
+          "detail": "This node has no verification contract. Add one to `.projectgraph/verification.yaml` before it can be verified."
+        }
+      ]
     },
     "CMP_RECOVERY": {
       "lifecycle": "IMPLEMENTED",

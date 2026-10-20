@@ -1,5 +1,7 @@
 # Deploy the WISE MVP
 
+**Deployment direction updated 20 October 2026:** the requested target is now an independent VPS with Supabase removed entirely. Follow [the VPS migration and deployment plan](VPS_DEPLOYMENT_PLAN.md). This document describes the earlier managed-service option and does not implement the new target.
+
 The production app uses Supabase for authentication, private files and records, and Cloudflare Pages for the website. You need owner access to both accounts. Keep passwords and server secrets in their dashboards or your local ignored environment files.
 
 ## 1. Create the Supabase project
