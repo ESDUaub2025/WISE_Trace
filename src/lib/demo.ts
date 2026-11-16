@@ -45,12 +45,55 @@ export const demoConfig: Config = {
     whey_max_age_hours: 48,
     shelf_life_days: 180,
     stages: [
-      { key: 'preparation', label: { en: 'Preparation', ar: 'التحضير' } },
-      { key: 'mixing', label: { en: 'Mixing', ar: 'الخلط' } },
-      { key: 'fermentation', label: { en: 'Fermentation', ar: 'التخمير' } },
-      { key: 'drying', label: { en: 'Drying', ar: 'التجفيف' } },
-      { key: 'grinding', label: { en: 'Grinding & sieving', ar: 'الطحن والنخل' } },
-      { key: 'packing', label: { en: 'Ready to pack', ar: 'جاهز للتعبئة' } },
+      // Sample wording only: the cooperative's approved procedure replaces these instructions.
+      {
+        key: 'preparation',
+        label: { en: 'Preparation', ar: 'التحضير' },
+        instructions: {
+          en: 'Clean and prepare the area and equipment, weigh the ingredients, then complete the hygiene check.',
+          ar: 'نظّف وجهّز المكان والمعدات، وزِن المكونات، ثم أكمل فحص النظافة.',
+        },
+      },
+      {
+        key: 'mixing',
+        label: { en: 'Mixing', ar: 'الخلط' },
+        instructions: {
+          en: 'Mix the whey with the bulgur and salt until even, then cover the container.',
+          ar: 'اخلط المصل مع البرغل والملح حتى يتجانس الخليط، ثم غطِّ الوعاء.',
+        },
+      },
+      {
+        key: 'fermentation',
+        label: { en: 'Fermentation', ar: 'التخمير' },
+        instructions: {
+          en: 'Leave the mix to ferment in a clean, covered container, kneading it as your procedure says. This usually takes several days.',
+          ar: 'اترك الخليط ليتخمر في وعاء نظيف ومغطى، واعجنه كما يحدد الإجراء. يستغرق ذلك عادة عدة أيام.',
+        },
+      },
+      {
+        key: 'drying',
+        label: { en: 'Drying', ar: 'التجفيف' },
+        instructions: {
+          en: 'Spread the kishk in thin layers to dry, protected from dust and insects, and record the drying check.',
+          ar: 'افرد الكشك بطبقات رقيقة ليجف، محمياً من الغبار والحشرات، وسجّل فحص التجفيف.',
+        },
+      },
+      {
+        key: 'grinding',
+        label: { en: 'Grinding & sieving', ar: 'الطحن والنخل' },
+        instructions: {
+          en: 'When the kishk is fully dry, grind it and sieve it into clean containers.',
+          ar: 'عندما يجف الكشك تماماً، اطحنه وانخله في أوعية نظيفة.',
+        },
+      },
+      {
+        key: 'packing',
+        label: { en: 'Ready to pack', ar: 'جاهز للتعبئة' },
+        instructions: {
+          en: 'The kishk is ready. Pack it into clean, dry pouches and record the packing.',
+          ar: 'الكشك جاهز. عبّئه في أكياس نظيفة وجافة وسجّل التعبئة.',
+        },
+      },
     ],
     checkpoints: [
       {

@@ -377,7 +377,6 @@ export function TestReview({ data, lot, identity, refresh, onClose }: RecordScre
           ),
       }}
     >
-      <p className="w-notice">{w('reviewNote')}</p>
       {/* The system suggests; the person decides (PRD FR-WHY-08). */}
       {suggestion && (
         <div className={`s-banner ${suggestion.outcome === 'accepted' ? 's-good' : 's-warn-banner'}`}>

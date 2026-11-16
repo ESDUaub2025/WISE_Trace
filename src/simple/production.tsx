@@ -53,7 +53,7 @@ function useNextFor(props: PipelineProps) {
     const lot = data?.lots.find((l) => l.id === lotId);
     if (!data || !lot || !['draft', 'in_production'].includes(lot.state)) return undefined;
     const job = nextForBatch(data, lot, new Date());
-    return { label: t('whatNext', { action: label(job) }), onClick: () => props.open(job) };
+    return { job, label: t('whatNext', { action: label(job) }), onClick: () => props.open(job) };
   };
 }
 
@@ -286,7 +286,7 @@ export function Check(props: PipelineProps) {
     return String((used?.payload as Record<string, unknown> | undefined)?.equipment_id ?? '');
   }, [props.data.records, checkpoint?.key]);
   const [problem, setProblem] = useState(false),
-    [checks, setChecks] = useState<Record<string, boolean>>(Object.fromEntries(items.map((i) => [i.key, true])));
+    [checks, setChecks] = useState<Record<string, boolean>>({});
   const [value, setValue] = useState<number | undefined>(),
     [note, setNote] = useState(''),
     [photo, setPhoto] = useState<Blob | null>(null);
@@ -381,44 +381,35 @@ export function Check(props: PipelineProps) {
         {photoInput}
       </Step>
     );
-  if (!problem)
-    return (
-      <Step
-        title={title}
-        pipeline="check"
-        hint="check"
-        help={t('help_checklist')}
-        onClose={props.onClose}
-        busy={busy}
-        error={error}
-        action={{ label: t('allOk'), onClick: () => save(true), disabled: !!checkpoint.required_photo && !photo }}
-        secondary={{ label: t('notOk'), onClick: () => setProblem(true) }}
-      >
-        {meta}
-        <ul className="s-checklist">
-          {items.map((i) => (
-            <li key={i.key}>{words(i.label)}</li>
-          ))}
-        </ul>
-        {photoInput}
-      </Step>
-    );
+  // One screen: tick what was checked. "Everything OK" stays a single tap (PRD FR-CHK-02);
+  // ticking only some items, or pressing "Something's not right", records the unticked ones as not OK.
+  const ticked = items.filter((i) => checks[i.key]).length;
+  const allTicked = ticked === items.length;
+  const reporting = !allTicked && (problem || ticked > 0);
   return (
     <Step
-      title={t('untick')}
+      title={title}
       pipeline="check"
+      hint="check"
+      help={t('help_checklist')}
       onClose={props.onClose}
-      onBack={() => setProblem(false)}
       busy={busy}
       error={error}
-      action={{
-        label: t('save'),
-        tone: 'warning',
-        onClick: () => save(false),
-        // "Something's not right" must name what was not right; otherwise it would be saved as all OK.
-        disabled: items.every((i) => checks[i.key]),
-      }}
+      action={
+        reporting
+          ? {
+              label: t('saveProblems'),
+              tone: 'warning',
+              onClick: () => save(false),
+              // Say what was not right: tick the items that were fine, or describe what happened.
+              disabled: (ticked === 0 && note.trim().length < 3) || (!!checkpoint.required_photo && !photo),
+            }
+          : { label: t('allOk'), onClick: () => save(true), disabled: !!checkpoint.required_photo && !photo }
+      }
+      secondary={reporting ? undefined : { label: t('notOk'), onClick: () => setProblem(true) }}
     >
+      {meta}
+      <p className="s-meta">{t(reporting ? 'checklistProblem' : 'checklistHint')}</p>
       <div className="s-stack">
         {items.map((i) => (
           <label key={i.key} className="s-toggle">
@@ -431,10 +422,12 @@ export function Check(props: PipelineProps) {
           </label>
         ))}
       </div>
-      <label className="s-number">
-        <span className="s-field-label">{t('whatHappened')}</span>
-        <textarea rows={3} value={note} onChange={(e) => setNote(e.target.value)} />
-      </label>
+      {reporting && (
+        <label className="s-number">
+          <span className="s-field-label">{t('whatHappened')}</span>
+          <textarea rows={3} value={note} onChange={(e) => setNote(e.target.value)} />
+        </label>
+      )}
       {photoInput}
     </Step>
   );
@@ -454,13 +447,18 @@ export function MoveStage(props: PipelineProps) {
   const upcoming = nextStage(config, lot);
   if (saved !== null) {
     const now = props.data.lots.find((l) => l.id === lot.id);
+    const entered = config.definition.stages.find((s) => s.key === now?.stage) ?? upcoming;
+    const following = nextFor(saved, lot.id);
+    // A step takes hours or days. Offering "move on" the moment it starts only invites skipping it,
+    // so the person is told what to do now; a check that is due is still offered straight away.
     return (
       <Done
-        title={t('stageSaved', {
-          stage: words(config.definition.stages.find((s) => s.key === now?.stage)?.label ?? upcoming?.label),
-        })}
+        title={t('stageSaved', { stage: words(entered?.label) })}
+        message={[words(entered?.instructions), following?.job.pipeline === 'stage' ? t('comeBack') : '']
+          .filter(Boolean)
+          .join(' ')}
         onHome={props.onCompleted ?? props.onClose}
-        next={nextFor(saved, lot.id)}
+        next={following?.job.pipeline === 'stage' ? undefined : following}
       />
     );
   }
@@ -494,6 +492,8 @@ export function MoveStage(props: PipelineProps) {
       action={{ label: t('startNext', { to: words(upcoming.label) }), onClick: save }}
     >
       <p className="s-meta">{name(lot)}</p>
+      {current?.instructions && <p className="s-banner">{words(current.instructions)}</p>}
+      <p className="s-meta">{t('finishWhenDone')}</p>
       <ol className="s-stages">
         {config.definition.stages.map((s) => (
           <li

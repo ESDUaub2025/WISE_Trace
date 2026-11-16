@@ -436,3 +436,38 @@ test('an old Google deployment gives an update message instead of asking for a k
   await expect(page.getByRole('alert')).toHaveText('Testing is being updated. Please try again shortly.');
   await expect(page.locator('input[type="password"]')).toHaveCount(0);
 });
+
+test('the hygiene list is ticked item by item, and a step explains itself without a dead button', async ({
+  page,
+  context,
+}) => {
+  const backend = service();
+  await backend.connect(context);
+  await signIn(page, 'alice');
+  await addSupplier(page);
+  await receive(page);
+  await accept(page);
+  await page.goto('/wise-trace-test/#/task/batch/');
+  await page.locator('input[type="number"]').fill('40');
+  await page.locator('.s-step-foot .s-primary').click();
+  await page.locator('.s-step-foot .s-primary').click();
+  await page.getByRole('button', { name: /Do the check/ }).click();
+  const boxes = page.locator('.s-step input[type="checkbox"]');
+  await expect(boxes).toHaveCount(6);
+  await expect(page.locator('.s-step input[type="checkbox"]:checked')).toHaveCount(0);
+  // Ticking only some items turns the save into a report of what was not OK.
+  await boxes.nth(0).check();
+  await expect(page.getByRole('button', { name: 'Save with problems', exact: true })).toBeVisible();
+  for (let i = 1; i < 6; i++) await boxes.nth(i).check();
+  await page.getByRole('button', { name: 'Everything OK', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Check saved' })).toBeVisible();
+  await page.getByRole('button', { name: /Move to the next step/ }).click();
+  await expect(page.locator('.s-step')).toContainText('Clean and prepare the area');
+  await expect(page.locator('.s-step')).toContainText('There is no timer');
+  await page.locator('.s-step-foot .s-primary').click();
+  await expect(page.getByRole('heading', { name: 'Now: Mixing' })).toBeVisible();
+  await expect(page.locator('.s-done')).toContainText('Mix the whey with the bulgur and salt');
+  // Mixing has only just started: nothing invites the person to skip it.
+  await expect(page.getByRole('button', { name: /Move to the next step/ })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Home', exact: true })).toBeVisible();
+});

@@ -464,15 +464,26 @@ button {
 }
 .s-toggle {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
   min-height: var(--s-tap);
   padding: 10px 14px;
   border: 2px solid var(--s-line);
   border-radius: 14px;
   background: var(--s-surface);
 }
+.s-toggle:has(:checked) {
+  border-color: var(--s-green);
+  background: var(--s-green-soft);
+}
 .s-toggle input {
+  flex: none;
+  min-block-size: 0;
+  padding: 0;
   width: 26px;
   height: 26px;
   accent-color: var(--s-green);

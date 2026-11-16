@@ -75,7 +75,13 @@ export interface Config {
     thermal_printer?: { service: string; characteristic: string; width_dots?: number };
     session_offline_days?: number;
     session_inactivity_minutes?: number;
-    stages: { key: string; label: { en: string; ar: string }; expected_hours?: number }[];
+    stages: {
+      key: string;
+      label: { en: string; ar: string };
+      expected_hours?: number;
+      /** What to do during this step, in plain words, shown while the batch is in it. */
+      instructions?: { en: string; ar: string };
+    }[];
     checkpoints: Checkpoint[];
     whey_max_age_hours: number;
     shelf_life_days: number;

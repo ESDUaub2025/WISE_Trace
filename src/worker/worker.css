@@ -598,8 +598,11 @@
 }
 .w-review-choices label {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 12px;
+  font-size: 1rem;
+  font-weight: 500;
   min-height: 60px;
   padding: 12px 16px;
   background: #fff;
@@ -612,6 +615,9 @@
   border-color: #47623d;
 }
 .w-review-choices input {
+  flex: none;
+  min-block-size: 0;
+  padding: 0;
   accent-color: #254d3b;
   width: 22px;
   height: 22px;
