@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#344b32" />
+    <meta name="description" content="Discover the origin of your WISE kishk" />
+    <title>WISE · Your kishk's story</title>
+    <script type="module" crossorigin src="/WISE_Trace/assets/public-D_5n5jNC.js"></script>
+    <link rel="modulepreload" crossorigin href="/WISE_Trace/assets/modulepreload-polyfill-P2Xu9kJm.js">
+    <link rel="stylesheet" crossorigin href="/WISE_Trace/assets/public-D81Cq2uD.css">
+  <link rel="manifest" href="/WISE_Trace/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/WISE_Trace/registerSW.js"></script></head>
+  <body>
+    <header>
+      <a href="./" aria-label="WISE"><img src="/WISE_Trace/wise.svg" width="36" height="36" alt="" /><strong>WISE</strong></a
+      ><button id="language" type="button">العربية</button>
+    </header>
+    <main>
+      <p class="eyebrow" data-key="origin">CRAFTED WITH PURPOSE</p>
+      <div class="illustration" aria-hidden="true">
+        <svg viewBox="0 0 350 260" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="175" cy="223" rx="107" ry="13" fill="#cfc6a4" opacity=".35" />
+          <path d="M96 43h160l-9 170q-73 23-142 0Z" fill="#c9b187" />
+          <path d="M99 42h152v20H99z" fill="#a99068" />
+          <path d="M111 80h128v109H111z" fill="#f5efde" />
+          <path
+            d="M169 97v29m-2-16q-23-20-31-4 5 17 28 11m9 3q25-21 31-5-5 15-29 13"
+            fill="none"
+            stroke="#60734c"
+            stroke-width="3"
+          />
+          <text x="175" y="155" text-anchor="middle" fill="#344b32" font-family="serif" font-size="24">KISHK</text>
+          <path d="M145 170h60" stroke="#b7b49b" />
+          <circle cx="66" cy="204" r="6" fill="#d4b97e" />
+          <circle cx="83" cy="211" r="4" fill="#d4b97e" />
+        </svg>
+      </div>
+      <h1 data-key="title">A dairy by-product.<br />A new chapter.</h1>
+      <p class="story" data-key="story">
+        Traditional kishk, made with whey through the WISE initiative. Supporting the productive use of a dairy
+        by-product and the craft of local cooperatives.
+      </p>
+      <div id="status" role="status" data-key="loading">Finding your product…</div>
+      <section id="product" hidden>
+        <h2 id="product-name"></h2>
+        <div class="origin-block">
+          <span data-key="cooperative">Made by</span>
+          <h2 id="cooperative"></h2>
+        </div>
+        <div class="facts">
+          <div><span data-key="lot">Lot</span><strong id="lot" dir="ltr"></strong></div>
+          <div><span data-key="bestBefore">Best before</span><strong id="best-before"></strong></div>
+          <div><span data-key="size">Net weight</span><strong id="size"></strong></div>
+          <div><span data-key="produced">Produced</span><strong id="produced"></strong></div>
+        </div>
+        <div class="allergens">
+          <h3 data-key="allergens">Allergens</h3>
+          <p id="allergens"></p>
+        </div>
+        <div class="detail">
+          <h3 data-key="ingredients">Ingredients</h3>
+          <p id="ingredients"></p>
+          <h3 data-key="storage">Storage advice</h3>
+          <p id="storage"></p>
+        </div>
+        <form id="feedback">
+          <label for="problem" data-key="reportProblem">Report a problem</label
+          ><textarea id="problem" name="message" minlength="5" maxlength="2000" required></textarea
+          ><button type="submit" data-key="send">Send report</button>
+          <p id="feedback-status" role="status"></p>
+        </form>
+      </section>
+      <p class="disclaimer" data-key="disclaimer">
+        Traceability records do not certify food safety. Follow the information printed on your package.
+      </p>
+    </main>
+    <footer>
+      <img src="/WISE_Trace/wise.svg" width="25" height="25" alt="" /><span data-key="footer"
+        >Local craft. A traceable journey.</span
+      >
+    </footer>
+  </body>
+</html>
