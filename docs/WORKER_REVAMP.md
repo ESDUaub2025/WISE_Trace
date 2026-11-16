@@ -1,6 +1,6 @@
 ﻿# Live worker application revamp
 
-The published application is the `build:file-test` build deployed to `NizarSH98/wise-trace-test` and served at `https://nizarsh98.github.io/wise-trace-test/`. It keeps the existing Google Apps Script URL and username-only testing protocol. This update does not require changing or redeploying Apps Script and does not clear shared records.
+The published application is the `build:file-test` build deployed to the `gh-pages` branch of `ESDUaub2025/WISE_Trace` and served at `https://esduaub2025.github.io/WISE_Trace/` (until 2026-11-16 it was `NizarSH98/wise-trace-test`, kept as a backup). It keeps the existing Google Apps Script URL and username-only testing protocol. This update does not require changing or redeploying Apps Script and does not clear shared records.
 
 ## Interface ownership
 

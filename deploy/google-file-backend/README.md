@@ -45,12 +45,12 @@ The public endpoint and GitHub Pages subpath live in config.json.
 npm run build:file-test
 ~~~
 
-Publish only build/file-test/ to the main branch of the dedicated public
-NizarSH98/wise-trace-test repository. The app is served at
-<https://nizarsh98.github.io/wise-trace-test/>. No source checkout, environment
+Publish only build/file-test/ to the `gh-pages` branch of the public
+ESDUaub2025/WISE_Trace repository (that branch holds the built site and nothing else). The app is served at
+<https://esduaub2025.github.io/WISE_Trace/>. No source checkout, environment
 file or private Drive data belongs in that repository.
 
-The build includes a copy of Code.gs at /wise-trace-test/Code.gs for the owner
+The build includes a copy of Code.gs at /WISE_Trace/Code.gs for the owner
 to copy during the one-time Google update. Publishing code here does not update
 Google's deployed version. While Google still runs the old version, the new
 login shows “Testing is being updated” instead of requesting obsolete keys.
