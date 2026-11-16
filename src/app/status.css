@@ -1,0 +1,103 @@
+/* Connection and sending indicator (src/app/ConnectionStatus.tsx). Words and an icon carry the meaning; colour only supports it. */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.status-pill svg {
+  flex: none;
+}
+.status-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.status-ok {
+  background: #e3ead9;
+  color: #26391f;
+  border-color: #b8c7a8;
+}
+.status-busy {
+  background: #e4ecf3;
+  color: #1f3c57;
+  border-color: #a9bfd3;
+}
+.status-warn {
+  background: #fbecd2;
+  color: #6f4200;
+  border-color: #dcb877;
+}
+.status-count {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  background: rgb(0 0 0 / 0.12);
+  font-variant-numeric: tabular-nums;
+}
+/* In tight headers only the icon (and the waiting count) shows; the words stay in the accessible name. */
+@media (max-width: 520px) {
+  .status-compact .status-text,
+  .topbar .status-pill .status-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+}
+.status-pill:focus-visible {
+  outline: 3px solid var(--color-terracotta, #a95032);
+  outline-offset: 2px;
+}
+.status-details {
+  margin: 0 0 16px;
+  display: flex;
+  flex-direction: column;
+}
+.status-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line, #dfdfd1);
+}
+.status-details dt {
+  color: var(--color-muted, #696d60);
+}
+.status-details dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: end;
+}
+.status-warning {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fbecd2;
+  color: #6f4200;
+}
+.status-reassure {
+  margin: 0 0 16px;
+  color: var(--color-muted, #696d60);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .status-spin {
+    animation: status-spin 900ms linear infinite;
+  }
+}
+@keyframes status-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

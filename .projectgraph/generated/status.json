@@ -1,11 +1,11 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-10-06T14:06:33+00:00",
+  "generated_at": "2026-11-15T17:29:10+00:00",
   "project": "WISE_Trace",
   "git": {
     "available": true,
-    "commit": "f5077d053849eb171f02076ad43085a0798e4ac3",
-    "short_commit": "f5077d053849",
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
     "branch": "master",
     "dirty": true,
     "worktree": "D:\\Programing\\WISE_Trace",
@@ -13,33 +13,53 @@
     "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
   },
   "totals": {
-    "nodes": 190,
-    "edges": 382,
-    "verifiable": 8
+    "nodes": 355,
+    "edges": 1012,
+    "verifiable": 11
   },
   "counts": {
     "DECLARED": 0,
-    "READY": 3,
+    "READY": 1,
     "ACTIVE": 1,
-    "IMPLEMENTED": 181,
+    "IMPLEMENTED": 342,
     "VERIFYING": 0,
     "VERIFIED": 5,
-    "FAILED": 0,
+    "FAILED": 3,
     "BLOCKED": 0,
-    "STALE": 0,
+    "STALE": 3,
     "SUPERSEDED": 0
   },
-  "progress": 0.625,
-  "coverage": 0.0421,
-  "stale": [],
+  "progress": 0.4545,
+  "coverage": 0.031,
+  "stale": [
+    "CMP_RECOVERY",
+    "CMP_SELF_HOSTED",
+    "SYS_DATA"
+  ],
   "blocked": [],
-  "failed": [],
+  "failed": [
+    "CMP_DISCOVERED_FILES",
+    "SYS_FRONTEND",
+    "WISE_TRACE"
+  ],
   "next": [
     {
       "id": "CMP_DISCOVERED_FILES",
       "type": "COMPONENT",
-      "status": "READY",
+      "status": "FAILED",
       "title": "Discovered files"
+    },
+    {
+      "id": "CMP_RECOVERY",
+      "type": "COMPONENT",
+      "status": "STALE",
+      "title": "Encrypted database and media recovery"
+    },
+    {
+      "id": "CMP_SELF_HOSTED",
+      "type": "COMPONENT",
+      "status": "STALE",
+      "title": "Independent PostgreSQL backend"
     }
   ],
   "cycles": []

@@ -1,26 +1,158 @@
-import { test,expect } from '@playwright/test';
-test.beforeEach(async({page},info)=>{if(!info.title.startsWith('Help:'))await page.addInitScript(()=>localStorage.setItem('wise-help:v1:20000000-0000-4000-8000-000000000001','seen'));});
-test('Help: welcome is dismissible, remembered, and replayable with page guidance',async({page})=>{
- await page.goto('/');const dialog=page.getByRole('dialog');await expect(dialog.getByRole('heading',{name:'Welcome to WISE'})).toBeVisible();
- await dialog.getByRole('button',{name:'Next',exact:true}).click();await expect(dialog.getByRole('heading',{name:'Follow the product from source to sale'})).toBeVisible();
- await dialog.getByRole('button',{name:'Next',exact:true}).click();await dialog.getByRole('button',{name:'Start using WISE'}).click();
- await page.reload();await expect(page.locator('main')).toBeVisible();await expect(dialog).toHaveCount(0);
- await page.goto('/batches');await page.getByRole('button',{name:'Help',exact:true}).click();await expect(dialog.getByText('Follow production from allocated inputs through stages, checks and packaging.')).toBeVisible();
- await dialog.getByRole('button',{name:'Explore pages'}).click();await expect(dialog.locator('summary')).toHaveCount(10);await expect(dialog.locator('summary').filter({hasText:'Administration'})).toHaveCount(0);
- const guide=dialog.getByRole('link',{name:'Download the full guide (English)'});const response=await page.request.get((await guide.getAttribute('href'))!);expect(response.ok()).toBeTruthy();expect(await response.text()).toContain('Your first ten minutes');
- await dialog.getByRole('button',{name:'Getting started'}).click();await expect(dialog.getByRole('heading',{name:'Start with your daily tasks'})).toBeVisible();await page.keyboard.press('Escape');await expect(dialog).toHaveCount(0);
- await page.getByRole('button',{name:'Help',exact:true}).click();await dialog.getByRole('button',{name:'Close',exact:true}).click();
+import { test, expect } from '@playwright/test';
+test.beforeEach(async ({ page }, info) => {
+  if (!info.title.startsWith('Help:'))
+    await page.addInitScript(() => localStorage.setItem('wise-help:v1:20000000-0000-4000-8000-000000000001', 'seen'));
 });
-test('Help: Arabic page explanations and welcome work on mobile and offline',async({page,context})=>{
- await page.goto('/');await page.getByRole('dialog').getByRole('button',{name:'Not now'}).click();await page.getByRole('button',{name:'العربية',exact:true}).click();
- await page.getByRole('button',{name:'مساعدة',exact:true}).click();await expect(page.getByRole('dialog').getByText('نقطة البداية اليومية: شاهد المهام التي تحتاج انتباهك والدفعات النشطة.')).toBeVisible();
- await page.keyboard.press('Escape');await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await context.setOffline(true);await page.reload();await page.getByRole('button',{name:'مساعدة',exact:true}).click();await expect(page.getByRole('dialog').getByRole('button',{name:'البدء',exact:true})).toBeVisible();
+test('Help: welcome is dismissible, remembered, and replayable with page guidance', async ({ page }) => {
+  await page.goto('/');
+  const dialog = page.getByRole('dialog');
+  await expect(dialog.getByRole('heading', { name: 'Welcome to WISE' })).toBeVisible();
+  await dialog.getByRole('button', { name: 'Next', exact: true }).click();
+  await expect(dialog.getByRole('heading', { name: 'Follow the product from source to sale' })).toBeVisible();
+  await dialog.getByRole('button', { name: 'Next', exact: true }).click();
+  await dialog.getByRole('button', { name: 'Start using WISE' }).click();
+  await page.reload();
+  await expect(page.locator('main')).toBeVisible();
+  await expect(dialog).toHaveCount(0);
+  await page.goto('/batches');
+  await page.getByRole('button', { name: 'Help', exact: true }).click();
+  await expect(
+    dialog.getByText('Follow production from allocated inputs through stages, checks and packaging.'),
+  ).toBeVisible();
+  await dialog.getByRole('button', { name: 'Explore pages' }).click();
+  await expect(dialog.locator('summary')).toHaveCount(10);
+  await expect(dialog.locator('summary').filter({ hasText: 'Administration' })).toHaveCount(0);
+  const guide = dialog.getByRole('link', { name: 'Download the full guide (English)' });
+  const response = await page.request.get((await guide.getAttribute('href'))!);
+  expect(response.ok()).toBeTruthy();
+  expect(await response.text()).toContain('Your first ten minutes');
+  await dialog.getByRole('button', { name: 'Getting started' }).click();
+  await expect(dialog.getByRole('heading', { name: 'Start with your daily tasks' })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(dialog).toHaveCount(0);
+  await page.getByRole('button', { name: 'Help', exact: true }).click();
+  await dialog.getByRole('button', { name: 'Close', exact: true }).click();
 });
-test('producer attention cards open a camera-first checkpoint flow',async({page})=>{await page.goto('/');await page.getByRole('button',{name:/Checkpoint due/}).click();await expect(page.getByText('Photograph evidence',{exact:true})).toBeVisible();await page.getByRole('spinbutton',{name:'Confirmed value'}).fill('26');await page.getByRole('button',{name:'Save record',exact:true}).click();await expect(page.getByRole('status')).toContainText('Saved successfully');});
-test('batch created offline survives reload with device-saved status',async({page,context})=>{await page.goto('/');await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await page.reload();await page.goto('/batches');await context.setOffline(true);await page.getByRole('button',{name:'Start a batch',exact:true}).click();await page.getByRole('button',{name:'Save record',exact:true}).click();await expect(page.getByText('Saved on device',{exact:true})).toBeVisible();await page.reload();await expect(page.getByText('Saved on device',{exact:true})).toBeVisible();});
-test('material receipt pre-fills supplier declarations',async({page})=>{await page.goto('/');await page.getByRole('button',{name:'Receive material',exact:true}).click();await expect(page.getByText('Declared by supplier',{exact:true})).toBeVisible();await expect(page.getByText('starter culture: Cultured labneh')).toBeVisible();});
-test('genealogy shows ancestry and leaves unrelated packaging materials out',async({page,isMobile})=>{await page.goto('/batches');await page.getByRole('button',{name:/KB-AKR01-261004-02/}).first().click();await expect(page.getByRole('heading',{name:'Follow the thread'})).toBeVisible();await expect(page.getByText('WL-AKR01-261006-01',{exact:true})).toBeVisible();await expect(page.getByText('PM-AKR01-260901-01',{exact:true})).not.toBeVisible();if(isMobile)await expect(page.getByRole('dialog')).toBeVisible();});
-test('Arabic changes document direction and keeps lot codes LTR',async({page})=>{await page.goto('/');await page.getByRole('button',{name:'العربية',exact:true}).click();await expect(page.locator('html')).toHaveAttribute('dir','rtl');await expect(page.getByRole('heading',{name:'شو بدّه انتباهك اليوم؟'})).toBeVisible();await expect(page.locator('bdi.lot-label').first()).toHaveAttribute('dir','ltr');});
-test('public unknown QR is neutral and ships without React',async({page})=>{await page.goto('/p/?t=unknown');await expect(page.locator('#status')).toHaveText('Information not available');await expect(page.locator('#product')).toBeHidden();await expect(page.locator('#root')).toHaveCount(0);await page.getByRole('button',{name:'العربية'}).click();await expect(page.locator('html')).toHaveAttribute('dir','rtl');await expect(page.locator('#status')).toHaveText('المعلومات غير متاحة');});
-test('all producer routes load without uncaught errors',async({page})=>{const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));for(const route of ['/','/whey','/batches','/inventory','/deviations','/recall','/training','/equipment','/reports','/organization']){await page.goto(route);await expect(page.locator('main')).toBeVisible();}expect(errors).toEqual([]);});
-test('illustrated bilingual learning survives offline reload and rejects incorrect answers',async({page,context})=>{await page.goto('/training');await page.evaluate(async()=>{await navigator.serviceWorker.ready;});await expect(page.getByRole('heading',{name:'Good practice and traceable records'})).toBeVisible();await page.getByText('Does saving a checkpoint release the batch?',{exact:true}).click();await expect(page.getByText('No. An authorized reviewer makes a separate release decision after reviewing the required records and deviations.',{exact:true})).toBeVisible();await context.setOffline(true);await page.reload();await page.getByRole('button',{name:'Complete assessment',exact:true}).click();const dialog=page.getByRole('dialog');await expect(dialog.locator('svg.instruction-picture')).toHaveCount(5);await dialog.getByRole('radio',{name:'Equipment with residues',exact:true}).check();await dialog.getByRole('button',{name:'Save record',exact:true}).click();await expect(dialog.getByRole('alert')).toBeVisible();await dialog.getByRole('radio',{name:'Clean equipment',exact:true}).check();await dialog.getByRole('button',{name:'Save record',exact:true}).click();await expect(dialog).toBeHidden();await page.getByRole('button',{name:'العربية',exact:true}).click();await expect(page.locator('html')).toHaveAttribute('dir','rtl');await expect(page.getByRole('heading',{name:'الممارسات الجيدة والسجلات القابلة للتتبع'})).toBeVisible();});
+test('Help: Arabic page explanations and welcome work on mobile and offline', async ({ page, context }) => {
+  await page.goto('/');
+  await page.getByRole('dialog').getByRole('button', { name: 'Not now' }).click();
+  await page.getByRole('button', { name: 'العربية', exact: true }).click();
+  await page.getByRole('button', { name: 'مساعدة', exact: true }).click();
+  await expect(
+    page.getByRole('dialog').getByText('نقطة البداية اليومية: شاهد المهام التي تحتاج انتباهك والدفعات النشطة.'),
+  ).toBeVisible();
+  await page.keyboard.press('Escape');
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+  });
+  await context.setOffline(true);
+  await page.reload();
+  await page.getByRole('button', { name: 'مساعدة', exact: true }).click();
+  await expect(page.getByRole('dialog').getByRole('button', { name: 'البدء', exact: true })).toBeVisible();
+});
+test('producer attention cards open a camera-first checkpoint flow', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: /Checkpoint due/ }).click();
+  await expect(page.getByText('Photograph evidence', { exact: true })).toBeVisible();
+  await page.getByRole('spinbutton', { name: 'Confirmed value' }).fill('26');
+  await page.getByRole('button', { name: 'Save record', exact: true }).click();
+  await expect(page.getByRole('status')).toContainText('Saved successfully');
+});
+test('batch created offline survives reload with device-saved status', async ({ page, context }) => {
+  await page.goto('/');
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+  });
+  await page.reload();
+  await page.goto('/batches');
+  await context.setOffline(true);
+  await page.getByRole('button', { name: 'Start a batch', exact: true }).click();
+  await page.getByRole('button', { name: 'Save record', exact: true }).click();
+  await expect(page.getByText('Saved on device', { exact: true })).toBeVisible();
+  await page.reload();
+  await expect(page.getByText('Saved on device', { exact: true })).toBeVisible();
+});
+test('material receipt pre-fills supplier declarations', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Receive material', exact: true }).click();
+  await expect(page.getByText('Declared by supplier', { exact: true })).toBeVisible();
+  await expect(page.getByText('starter culture: Cultured labneh')).toBeVisible();
+});
+test('genealogy shows ancestry and leaves unrelated packaging materials out', async ({ page, isMobile }) => {
+  await page.goto('/batches');
+  await page
+    .getByRole('button', { name: /KB-AKR01-261004-02/ })
+    .first()
+    .click();
+  await expect(page.getByRole('heading', { name: 'Follow the thread' })).toBeVisible();
+  await expect(page.getByText('WL-AKR01-261006-01', { exact: true })).toBeVisible();
+  await expect(page.getByText('PM-AKR01-260901-01', { exact: true })).not.toBeVisible();
+  if (isMobile) await expect(page.getByRole('dialog')).toBeVisible();
+});
+test('Arabic changes document direction and keeps lot codes LTR', async ({ page }) => {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'العربية', exact: true }).click();
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page.getByRole('heading', { name: 'شو بدّه انتباهك اليوم؟' })).toBeVisible();
+  await expect(page.locator('bdi.lot-label').first()).toHaveAttribute('dir', 'ltr');
+});
+test('public unknown QR is neutral and ships without React', async ({ page }) => {
+  await page.goto('/p/?t=unknown');
+  await expect(page.locator('#status')).toHaveText('Information not available');
+  await expect(page.locator('#product')).toBeHidden();
+  await expect(page.locator('#root')).toHaveCount(0);
+  await page.getByRole('button', { name: 'العربية' }).click();
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page.locator('#status')).toHaveText('المعلومات غير متاحة');
+});
+test('all producer routes load without uncaught errors', async ({ page }) => {
+  const errors: string[] = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  for (const route of [
+    '/',
+    '/whey',
+    '/batches',
+    '/inventory',
+    '/deviations',
+    '/recall',
+    '/training',
+    '/equipment',
+    '/reports',
+    '/organization',
+  ]) {
+    await page.goto(route);
+    await expect(page.locator('main')).toBeVisible();
+  }
+  expect(errors).toEqual([]);
+});
+test('illustrated bilingual learning survives offline reload and rejects incorrect answers', async ({
+  page,
+  context,
+}) => {
+  await page.goto('/training');
+  await page.evaluate(async () => {
+    await navigator.serviceWorker.ready;
+  });
+  await expect(page.getByRole('heading', { name: 'Good practice and traceable records' })).toBeVisible();
+  await page.getByText('Does saving a checkpoint release the batch?', { exact: true }).click();
+  await expect(
+    page.getByText(
+      'No. An authorized reviewer makes a separate release decision after reviewing the required records and deviations.',
+      { exact: true },
+    ),
+  ).toBeVisible();
+  await context.setOffline(true);
+  await page.reload();
+  await page.getByRole('button', { name: 'Complete assessment', exact: true }).click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog.locator('svg.instruction-picture')).toHaveCount(5);
+  await dialog.getByRole('radio', { name: 'Equipment with residues', exact: true }).check();
+  await dialog.getByRole('button', { name: 'Save record', exact: true }).click();
+  await expect(dialog.getByRole('alert')).toBeVisible();
+  await dialog.getByRole('radio', { name: 'Clean equipment', exact: true }).check();
+  await dialog.getByRole('button', { name: 'Save record', exact: true }).click();
+  await expect(dialog).toBeHidden();
+  await page.getByRole('button', { name: 'العربية', exact: true }).click();
+  await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+  await expect(page.getByRole('heading', { name: 'الممارسات الجيدة والسجلات القابلة للتتبع' })).toBeVisible();
+});

@@ -1,0 +1,8 @@
+[Unit]
+Description=Encrypted WISE database and private media backup
+Requires=docker.service
+After=docker.service
+[Service]
+Type=oneshot
+ExecStart=/opt/wise/backup.sh
+UMask=0077

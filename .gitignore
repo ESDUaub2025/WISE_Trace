@@ -7,8 +7,6 @@ playwright-report/
 test-results/
 out/live-tests/
 coverage/
-supabase/.temp/
-supabase/.branches/
 *.dump
 *.age
 *.bootstrap.json
@@ -17,6 +15,7 @@ build/live/
 
 build/
 out/
+.playwright-mcp/
 .projectgraph/.writer.lock
 .vapid.env
 

@@ -2,7 +2,7 @@
 
 Prepared 20 October 2026. Target: your own cloud virtual machine, PostgreSQL and an application backend under your control. Supabase software and Supabase Cloud are excluded from the target architecture. Cloudflare hosting is optional and is not required by this plan.
 
-**Status:** this is the migration and deployment plan. The current application still depends on Supabase. The replacement backend, Docker deployment package and production recovery drill have not been implemented or tested. Existing application test results do not establish readiness of the replacement system.
+**Historical plan, superseded:** the independent backend and Docker package are now implemented and deployed to the existing AWS instance. Use [VPS operations](VPS_OPERATIONS.md) for the current setup, account controls, recovery and cost boundaries. The Oracle recommendations below were not used.
 
 ## 1. Choose the server and understand the free budget
 
@@ -43,7 +43,7 @@ flowchart TD
 
 Proposed software: the existing React/Vite frontend; Node.js matching the supported project runtime; [Fastify](https://fastify.dev/docs/latest/) for the application API; PostgreSQL; Caddy; Docker Compose; and a worker built from the same backend codebase. Start with ordinary database-backed jobs and local private media. Add a separate queue service or object store when measurements justify them.
 
-Use an established authentication library rather than building password/session cryptography. The proposed candidate is Better Auth with PostgreSQL, email/password and its TOTP plugin. It has an official [Fastify integration](https://better-auth.com/docs/integrations/fastify), [database setup](https://better-auth.com/docs/installation), and [two-factor authentication support](https://better-auth.com/docs/plugins/2fa). Validate its registration approval hooks, account switching and offline requirements in a small prototype before committing the migration to it. Choosing the library does not replace WISE's workspace authorization or fresh-PIN rules.
+**Superseded 2026-11-11:** sign-in is now the project's own module built on Node's standard cryptography; see [DECISIONS.md](DECISIONS.md) and [AUTH.md](AUTH.md). Original plan: use an established authentication library rather than building password/session cryptography. The proposed candidate is Better Auth with PostgreSQL, email/password and its TOTP plugin. It has an official [Fastify integration](https://better-auth.com/docs/integrations/fastify), [database setup](https://better-auth.com/docs/installation), and [two-factor authentication support](https://better-auth.com/docs/plugins/2fa). Validate its registration approval hooks, account switching and offline requirements in a small prototype before committing the migration to it. Choosing the library does not replace WISE's workspace authorization or fresh-PIN rules.
 
 ## 3. Migrate the backend before deploying the application
 

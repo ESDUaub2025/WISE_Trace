@@ -1,0 +1,9 @@
+name: wise-standalone
+services:
+  postgres:
+    image: public.ecr.aws/docker/library/postgres:17-alpine
+    environment: {POSTGRES_DB: wise, POSTGRES_PASSWORD: wise-local-integration-only}
+    ports: ["127.0.0.1:55579:5432"]
+    volumes: [local_database:/var/lib/postgresql/data]
+volumes:
+  local_database:

@@ -34,5 +34,23 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_DISCOVERED_FILES",
+    "note": "Added scripts/showcase.mjs (+ npm showcase:demo / showcase:clean, --reset) for local stakeholder demos: demo = fixture DB 'wise', clean = separate DB 'wise_clean' bootstrapped with wise_admin/wise_food_safety only. Verified both modes, logins, and public QR page locally. README updated. VPS/Supabase-replacement work unchanged.",
+    "next_action": "Gather showcase feedback; resume VPS server setup per earlier handoff.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-27T10:10:23.525666+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]

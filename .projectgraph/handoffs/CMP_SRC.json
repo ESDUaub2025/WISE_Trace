@@ -142,5 +142,113 @@
       "linked_worktree": false,
       "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
     }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "2026-11-11 refactor: one app, two workspaces (src/simple at /today, src/full at /) under a shared shell (src/app) with one sign-in (src/session, src/account), one data loader/sync, one connection indicator (src/connectivity). Server sign-in rewritten as server/auth (Better Auth removed; migration 202611110094; docs/AUTH.md). Codebase formatted with Prettier. Verified: tsc, eslint, 122 unit, 15 server, 306 SQL assertions, 20 demo e2e, 30 live e2e. Not done: nothing committed; production EC2 not touched; scripts/media-backup age round-trip test needs the age tool installed locally.",
+    "next_action": "User to review and commit. Before deploying: run migration, then node server/cli/account.mjs set-password for both owner accounts (docs/AUTH.md section 6). Candidates next: move simple settings server-side; split src/full/features.tsx (1,500 lines) by flow; security review of server/auth before pilot.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-11T12:33:05.458950+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Connected isolated GitHub Pages test mode to the user-deployed Google Apps Script endpoint. Added memory-only tester sign-in, separate IndexedDB, shared immutable action replay, conflict retry and idempotent sends, explicit unsupported-operation errors, bilingual testing notices, hash routing and project-relative assets/PWA paths. Published only the compiled build to the new public NizarSH98/wise-trace-test repository (commit 64ae13c); original source repository remains private. Live URL https://nizarsh98.github.io/wise-trace-test/ returns 200. Headless Chromium confirmed live cross-origin health and rejected invalid login without page errors. ProjectGraph verify CMP_SRC returned PASS for types, lint, 126 unit tests, existing desktop/mobile browser tests and two new shared-file browser scenarios. Successful live authenticated writes were not tested because tester access keys remain private with the user; shared saves were tested using a simulated backend in independent browsers.",
+    "next_action": "User signs in as tester1/tester2/viewer with the private access keys from Apps Script setup, saves a fictional record and checks it from another device. Continue from real tester feedback. Rebuild with npm run build:file-test and publish only build/file-test contents to the dedicated Pages repo for updates. This mode omits uploads, signoffs, administration, scheduled reporting and production SQL enforcement; do not describe it as full server parity.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T14:35:10.182023+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Replaced file-test access-key sign-in with username-only automatic registration and remembered usernames, leaving normal server authentication unchanged. Added a blank testing snapshot with no seeded people/lots/suppliers/equipment/tasks/completions, equal test editor roles, minimal supplier/equipment registry support, a new isolated local database and epoch checks that clear cached/pending data after a backend reset. ProjectGraph verify returned PASS for types, lint, 129 unit tests, existing desktop/mobile tests and four new open-testing browser scenarios. Published compiled update c628d05955002ac59a96207ae7a4dc793e7e162e to NizarSH98/wise-trace-test; GitHub Pages reports built. Live page returns 200, has exactly one username input and no password fields, with no page errors. Live Google endpoint STILL reports the previous keyed version; username-only access and remote data reset await the owner updating Code.gs and deploying New version. An async owner-update question is pending. No live usernames were created during verification.",
+    "next_action": "Wait for user to paste the public updated Code.gs and redeploy the existing Google deployment. Then check GET mode=username-only-v2; its first use migrates to empty records/users and deletes old key digests. Do not claim live users/data were cleared until that mode is observed. Test real activity with the user's chosen name; do not seed artificial accounts.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T14:58:33.263348+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "The published c628d05 username-only testing frontend is now connected to the correctly updated live Google backend at its existing /exec URL. Live Chromium check returned page HTTP 200, exactly one username field, zero password fields, successful health mode=username-only-v2 and invalid_username POST response, with no JavaScript errors. No source changes or new deployment were needed. No artificial live accounts/data were introduced. Previous type/lint/unit/browser verification evidence remains the source evidence.",
+    "next_action": "User can start testing immediately by entering their own chosen username at https://nizarsh98.github.io/wise-trace-test/. Continue from actual feedback; maintain the blank shared setup and avoid reintroducing fictional user records.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T15:33:58.367356+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Read-only interface audit completed against available draft PRD, targeted source and published GitHub Pages UI with fictional intercepted backend fixtures; no application code edits or live data writes. Report: out/usability-audit/WISE_INTERFACE_AUDIT.md. Findings: three-role test profile defaults to Full and exposes 12 navigation choices; generic raw-data rendering; 30-control inspected receipt; 14-action inspected batch detail and overflowing mobile tables; Simple missing-supplier dead end; /training link reproduces GitHub Pages HTTP 404; test backend capability gaps. Browser evidence and screenshots in out/usability-audit. This is analysis, not worker-study validation or ProjectGraph verification.",
+    "next_action": "Review audit and agree worker responsibilities, field ownership and test backend scope. Prepare receiving and routine-check prototypes and a worker usability plan before changing application code.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T15:53:23.666649+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SRC",
+    "note": "Live worker revamp published at https://nizarsh98.github.io/wise-trace-test/ in commit 66fd89e19db66cbdda166fd477a46e3cbb7ea480. Final CMP_SRC verification returned VERIFIED: type/lint/unit/browser/shared-file-browser all passed. See CMP_SIMPLE_APP handoff and docs/WORKER_REVAMP.md. Public release.json and index hash match final artifacts; five published UI inspections passed with intercepted fictional backend data. No Apps Script redeployment or shared-data reset required.",
+    "next_action": "Continue from the published worker application and review tester feedback; preserve current shared data and temporary username-only protocol.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T17:30:35.571280+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
   }
 ]

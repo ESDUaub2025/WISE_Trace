@@ -1,35 +1,254 @@
-import {formatNumber} from './format';
+import { formatNumber } from './format';
 import QRCode from 'qrcode';
-import type {Row,Snapshot} from './data';
-import type {Lot} from './domain';
-export interface LabelManifest {code:string;product:string;ingredients:string;allergens:string;cooperative:string;netWeight:string;productionDate:string;bestBefore:string;storage:string;url:string;released:boolean;}
-function localized(value:unknown,lang:'en'|'ar'){const translated=value&&typeof value==='object'?(value as Record<string,unknown>)[lang]:value;return Array.isArray(translated)?translated.map(String).join(lang==='ar'?'، ':', '):String(translated??'');}
-export function labelManifest(lot:Lot,packaging:Row,data:Pick<Snapshot,'lots'|'cooperatives'>,lang:'en'|'ar'):LabelManifest{
- const label=packaging.label as Row;const batch=data.lots.find(l=>l.id===packaging.batch_id);const cooperative=data.cooperatives.find(c=>c.id===lot.cooperative_id);const product=localized(label?.product,lang),ingredients=localized(label?.ingredients,lang),allergens=localized(label?.allergens,lang),storage=localized(label?.storage_advice,lang);
- if(!product||!ingredients||!allergens||!storage||!cooperative?.name||!batch||!packaging.public_token||!packaging.best_before||!(Number(packaging.size_kg)>0))throw new Error('labelDataMissing');
- return{code:lot.code,product,ingredients,allergens,storage,cooperative:String(cooperative.name),netWeight:formatNumber(Number(packaging.size_kg)*1000,lang,{maximumFractionDigits:3})+(lang==='ar'?' غ':' g'),productionDate:new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Beirut'}).format(new Date(batch.observed_at)),bestBefore:String(packaging.best_before),url:`${location.origin}/p/?t=${packaging.public_token}`,released:lot.state==='released'};
+import type { Row, Snapshot } from './data';
+import type { Lot } from './domain';
+export interface LabelManifest {
+  code: string;
+  product: string;
+  ingredients: string;
+  allergens: string;
+  cooperative: string;
+  netWeight: string;
+  productionDate: string;
+  bestBefore: string;
+  storage: string;
+  url: string;
+  released: boolean;
 }
-export async function renderLabel(manifest:LabelManifest,lang:'en'|'ar',t:(key:string)=>string){
- await document.fonts.ready;const canvas=document.createElement('canvas');canvas.width=1050;canvas.height=742;const ctx=canvas.getContext('2d');if(!ctx)throw new Error('labelRenderFailed');const qr=new Image();qr.src=await QRCode.toDataURL(manifest.url,{width:240,margin:2,errorCorrectionLevel:'M'});await qr.decode();
- const lines=[manifest.product,manifest.cooperative,`${t('ingredients')}: ${manifest.ingredients}`,`${t('allergens')}: ${manifest.allergens}`,`${t('netWeight')}: ${manifest.netWeight}`,`${t('productionDate')}: \u2066${manifest.productionDate}\u2069`,`${t('bestBefore')}: \u2066${manifest.bestBefore}\u2069`,`${t('storageAdvice')}: ${manifest.storage}`,manifest.code,...(!manifest.released?[t('labelUnreleased')]:[])];
- let fit=false;for(let size=32;size>=18;size-=2){ctx.fillStyle='#fff';ctx.fillRect(0,0,1050,742);ctx.strokeStyle='#777';ctx.strokeRect(8,8,1034,726);ctx.fillStyle='#111';ctx.font=`${size}px "IBM Plex Sans Arabic","IBM Plex Sans",sans-serif`;ctx.direction=lang==='ar'?'rtl':'ltr';ctx.textAlign=lang==='ar'?'right':'left';const textX=lang==='ar'?1010:40;let y=60;for(const [index,line] of lines.entries()){const width=650;let row='';ctx.font=`${index===0?'600 ':''}${index===0?size+10:size}px "IBM Plex Sans Arabic","IBM Plex Sans",sans-serif`;for(const word of line.split(/\s+/)){if(ctx.measureText(word).width>width)throw new Error('labelContentTooLong');const next=row?row+' '+word:word;if(row&&ctx.measureText(next).width>width){ctx.fillText(row,textX,y);y+=size+14;row=word;}else row=next;}ctx.fillText(row,textX,y);y+=size+20;}if(y<710){fit=true;break;}}
- if(!fit)throw new Error('labelContentTooLong');ctx.drawImage(qr,lang==='ar'?30:780,45,230,230);return canvas;
+function localized(value: unknown, lang: 'en' | 'ar') {
+  const translated = value && typeof value === 'object' ? (value as Record<string, unknown>)[lang] : value;
+  return Array.isArray(translated)
+    ? translated.map(String).join(lang === 'ar' ? '، ' : ', ')
+    : String(translated ?? '');
 }
-export async function labelSheet(manifest:LabelManifest,lang:'en'|'ar',t:(key:string)=>string,count:number){
- if(!Number.isInteger(count)||count<1||count>1000)throw new Error('invalidLabelCount');const [{PDFDocument},canvas]=await Promise.all([import('pdf-lib'),renderLabel(manifest,lang,t)]);const pdf=await PDFDocument.create();pdf.setTitle(`WISE labels ${manifest.code}`);const image=await pdf.embedPng(canvas.toDataURL('image/png'));const width=595.276,height=841.89;
- for(let start=0;start<count;start+=8){const page=pdf.addPage([width,height]);for(let i=0;i<Math.min(8,count-start);i++)page.drawImage(image,{x:(i%2)*width/2+4,y:height-(Math.floor(i/2)+1)*height/4+4,width:width/2-8,height:height/4-8});}return pdf.save();
+export function labelManifest(
+  lot: Lot,
+  packaging: Row,
+  data: Pick<Snapshot, 'lots' | 'cooperatives'>,
+  lang: 'en' | 'ar',
+): LabelManifest {
+  const label = packaging.label as Row;
+  const batch = data.lots.find((l) => l.id === packaging.batch_id);
+  const cooperative = data.cooperatives.find((c) => c.id === lot.cooperative_id);
+  const product = localized(label?.product, lang),
+    ingredients = localized(label?.ingredients, lang),
+    allergens = localized(label?.allergens, lang),
+    storage = localized(label?.storage_advice, lang);
+  if (
+    !product ||
+    !ingredients ||
+    !allergens ||
+    !storage ||
+    !cooperative?.name ||
+    !batch ||
+    !packaging.public_token ||
+    !packaging.best_before ||
+    !(Number(packaging.size_kg) > 0)
+  )
+    throw new Error('labelDataMissing');
+  return {
+    code: lot.code,
+    product,
+    ingredients,
+    allergens,
+    storage,
+    cooperative: String(cooperative.name),
+    netWeight:
+      formatNumber(Number(packaging.size_kg) * 1000, lang, { maximumFractionDigits: 3 }) +
+      (lang === 'ar' ? ' غ' : ' g'),
+    productionDate: new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Beirut' }).format(new Date(batch.observed_at)),
+    bestBefore: String(packaging.best_before),
+    url: `${location.origin}${import.meta.env.BASE_URL}p/?t=${packaging.public_token}`,
+    released: lot.state === 'released',
+  };
 }
-export function thermalRaster(rgba:Uint8ClampedArray,width:number,height:number){
- if(width%8!==0||width<8||width>832||height<1||height>4096||rgba.length!==width*height*4)throw new Error('Invalid raster dimensions');const bytes=width/8;const output=new Uint8Array(8+bytes*height+3);output.set([0x1d,0x76,0x30,0,bytes&255,bytes>>8,height&255,height>>8]);for(let y=0;y<height;y++)for(let x=0;x<width;x++){const i=(y*width+x)*4;if(rgba[i+3]>127&&rgba[i]*.299+rgba[i+1]*.587+rgba[i+2]*.114<150)output[8+y*bytes+(x>>3)]|=0x80>>(x%8);}output.set([10,10,10],output.length-3);return output;
+export async function renderLabel(manifest: LabelManifest, lang: 'en' | 'ar', t: (key: string) => string) {
+  await document.fonts.ready;
+  const canvas = document.createElement('canvas');
+  canvas.width = 1050;
+  canvas.height = 742;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) throw new Error('labelRenderFailed');
+  const qr = new Image();
+  qr.src = await QRCode.toDataURL(manifest.url, { width: 240, margin: 2, errorCorrectionLevel: 'M' });
+  await qr.decode();
+  const lines = [
+    manifest.product,
+    manifest.cooperative,
+    `${t('ingredients')}: ${manifest.ingredients}`,
+    `${t('allergens')}: ${manifest.allergens}`,
+    `${t('netWeight')}: ${manifest.netWeight}`,
+    `${t('productionDate')}: \u2066${manifest.productionDate}\u2069`,
+    `${t('bestBefore')}: \u2066${manifest.bestBefore}\u2069`,
+    `${t('storageAdvice')}: ${manifest.storage}`,
+    manifest.code,
+    ...(!manifest.released ? [t('labelUnreleased')] : []),
+  ];
+  let fit = false;
+  for (let size = 32; size >= 18; size -= 2) {
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, 1050, 742);
+    ctx.strokeStyle = '#777';
+    ctx.strokeRect(8, 8, 1034, 726);
+    ctx.fillStyle = '#111';
+    ctx.font = `${size}px "IBM Plex Sans Arabic","IBM Plex Sans",sans-serif`;
+    ctx.direction = lang === 'ar' ? 'rtl' : 'ltr';
+    ctx.textAlign = lang === 'ar' ? 'right' : 'left';
+    const textX = lang === 'ar' ? 1010 : 40;
+    let y = 60;
+    for (const [index, line] of lines.entries()) {
+      const width = 650;
+      let row = '';
+      ctx.font = `${index === 0 ? '600 ' : ''}${index === 0 ? size + 10 : size}px "IBM Plex Sans Arabic","IBM Plex Sans",sans-serif`;
+      for (const word of line.split(/\s+/)) {
+        if (ctx.measureText(word).width > width) throw new Error('labelContentTooLong');
+        const next = row ? row + ' ' + word : word;
+        if (row && ctx.measureText(next).width > width) {
+          ctx.fillText(row, textX, y);
+          y += size + 14;
+          row = word;
+        } else row = next;
+      }
+      ctx.fillText(row, textX, y);
+      y += size + 20;
+    }
+    if (y < 710) {
+      fit = true;
+      break;
+    }
+  }
+  if (!fit) throw new Error('labelContentTooLong');
+  ctx.drawImage(qr, lang === 'ar' ? 30 : 780, 45, 230, 230);
+  return canvas;
 }
-async function thermalLabel(manifest:LabelManifest,lang:'en'|'ar',t:(key:string)=>string,width:number){
- await document.fonts.ready;const canvas=document.createElement('canvas');canvas.width=width;canvas.height=4096;const ctx=canvas.getContext('2d')!;ctx.fillStyle='#fff';ctx.fillRect(0,0,width,4096);ctx.fillStyle='#000';ctx.font='20px "IBM Plex Sans Arabic","IBM Plex Sans",sans-serif';ctx.direction=lang==='ar'?'rtl':'ltr';ctx.textAlign=lang==='ar'?'right':'left';let y=30;
- const lines=[manifest.product,manifest.cooperative,`${t('ingredients')}: ${manifest.ingredients}`,`${t('allergens')}: ${manifest.allergens}`,`${t('netWeight')}: ${manifest.netWeight}`,`${t('productionDate')}: \u2066${manifest.productionDate}\u2069`,`${t('bestBefore')}: \u2066${manifest.bestBefore}\u2069`,manifest.storage,manifest.code,...(!manifest.released?[t('labelUnreleased')]:[])];
- for(const line of lines){let row='';for(const character of line){if(row&&ctx.measureText(row+character).width>width-32){ctx.fillText(row,lang==='ar'?width-16:16,y);y+=28;row=character;}else row+=character;}ctx.fillText(row,lang==='ar'?width-16:16,y);y+=34;}const qr=new Image();qr.src=await QRCode.toDataURL(manifest.url,{width:200,margin:2,errorCorrectionLevel:'M'});await qr.decode();if(y+220>4096)throw new Error('labelContentTooLong');ctx.drawImage(qr,(width-200)/2,y,200,200);const output=document.createElement('canvas');output.width=width;output.height=y+220;output.getContext('2d')!.drawImage(canvas,0,0);return output;
+export async function labelSheet(
+  manifest: LabelManifest,
+  lang: 'en' | 'ar',
+  t: (key: string) => string,
+  count: number,
+) {
+  if (!Number.isInteger(count) || count < 1 || count > 1000) throw new Error('invalidLabelCount');
+  const [{ PDFDocument }, canvas] = await Promise.all([import('pdf-lib'), renderLabel(manifest, lang, t)]);
+  const pdf = await PDFDocument.create();
+  pdf.setTitle(`WISE labels ${manifest.code}`);
+  const image = await pdf.embedPng(canvas.toDataURL('image/png'));
+  const width = 595.276,
+    height = 841.89;
+  for (let start = 0; start < count; start += 8) {
+    const page = pdf.addPage([width, height]);
+    for (let i = 0; i < Math.min(8, count - start); i++)
+      page.drawImage(image, {
+        x: ((i % 2) * width) / 2 + 4,
+        y: height - ((Math.floor(i / 2) + 1) * height) / 4 + 4,
+        width: width / 2 - 8,
+        height: height / 4 - 8,
+      });
+  }
+  return pdf.save();
 }
-interface PrinterCharacteristic {writeValueWithResponse(value:Uint8Array):Promise<void>;}
-interface PrinterDevice {gatt?:{connect():Promise<{getPrimaryService(service:string):Promise<{getCharacteristic(characteristic:string):Promise<PrinterCharacteristic>}>}>;disconnect():void;};}
-export async function printBluetooth(manifest:LabelManifest,lang:'en'|'ar',t:(key:string)=>string,profile:{service:string;characteristic:string;width_dots?:number}){
- const bluetooth=(navigator as Navigator&{bluetooth?:{requestDevice(options:{filters:{services:string[]}[]}):Promise<PrinterDevice>}}).bluetooth;if(!bluetooth||!isSecureContext)throw new Error('bluetoothUnavailable');if(!profile.service||!profile.characteristic)throw new Error('printerNotConfigured');const width=profile.width_dots??384;if(width%8||width<320||width>832)throw new Error('printerNotConfigured');
- const device=await bluetooth.requestDevice({filters:[{services:[profile.service]}]});try{if(!device.gatt)throw new Error('printerNotConfigured');const server=await device.gatt.connect(),service=await server.getPrimaryService(profile.service),characteristic=await service.getCharacteristic(profile.characteristic);const canvas=await thermalLabel(manifest,lang,t,width);const ctx=canvas.getContext('2d')!;const bytes=thermalRaster(ctx.getImageData(0,0,canvas.width,canvas.height).data,canvas.width,canvas.height);for(let offset=0;offset<bytes.length;offset+=20)await characteristic.writeValueWithResponse(bytes.slice(offset,offset+20));}finally{device.gatt?.disconnect();}
+export function thermalRaster(rgba: Uint8ClampedArray, width: number, height: number) {
+  if (width % 8 !== 0 || width < 8 || width > 832 || height < 1 || height > 4096 || rgba.length !== width * height * 4)
+    throw new Error('Invalid raster dimensions');
+  const bytes = width / 8;
+  const output = new Uint8Array(8 + bytes * height + 3);
+  output.set([0x1d, 0x76, 0x30, 0, bytes & 255, bytes >> 8, height & 255, height >> 8]);
+  for (let y = 0; y < height; y++)
+    for (let x = 0; x < width; x++) {
+      const i = (y * width + x) * 4;
+      if (rgba[i + 3] > 127 && rgba[i] * 0.299 + rgba[i + 1] * 0.587 + rgba[i + 2] * 0.114 < 150)
+        output[8 + y * bytes + (x >> 3)] |= 0x80 >> (x % 8);
+    }
+  output.set([10, 10, 10], output.length - 3);
+  return output;
+}
+async function thermalLabel(manifest: LabelManifest, lang: 'en' | 'ar', t: (key: string) => string, width: number) {
+  await document.fonts.ready;
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = 4096;
+  const ctx = canvas.getContext('2d')!;
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, width, 4096);
+  ctx.fillStyle = '#000';
+  ctx.font = '20px "IBM Plex Sans Arabic","IBM Plex Sans",sans-serif';
+  ctx.direction = lang === 'ar' ? 'rtl' : 'ltr';
+  ctx.textAlign = lang === 'ar' ? 'right' : 'left';
+  let y = 30;
+  const lines = [
+    manifest.product,
+    manifest.cooperative,
+    `${t('ingredients')}: ${manifest.ingredients}`,
+    `${t('allergens')}: ${manifest.allergens}`,
+    `${t('netWeight')}: ${manifest.netWeight}`,
+    `${t('productionDate')}: \u2066${manifest.productionDate}\u2069`,
+    `${t('bestBefore')}: \u2066${manifest.bestBefore}\u2069`,
+    manifest.storage,
+    manifest.code,
+    ...(!manifest.released ? [t('labelUnreleased')] : []),
+  ];
+  for (const line of lines) {
+    let row = '';
+    for (const character of line) {
+      if (row && ctx.measureText(row + character).width > width - 32) {
+        ctx.fillText(row, lang === 'ar' ? width - 16 : 16, y);
+        y += 28;
+        row = character;
+      } else row += character;
+    }
+    ctx.fillText(row, lang === 'ar' ? width - 16 : 16, y);
+    y += 34;
+  }
+  const qr = new Image();
+  qr.src = await QRCode.toDataURL(manifest.url, { width: 200, margin: 2, errorCorrectionLevel: 'M' });
+  await qr.decode();
+  if (y + 220 > 4096) throw new Error('labelContentTooLong');
+  ctx.drawImage(qr, (width - 200) / 2, y, 200, 200);
+  const output = document.createElement('canvas');
+  output.width = width;
+  output.height = y + 220;
+  output.getContext('2d')!.drawImage(canvas, 0, 0);
+  return output;
+}
+interface PrinterCharacteristic {
+  writeValueWithResponse(value: Uint8Array): Promise<void>;
+}
+interface PrinterDevice {
+  gatt?: {
+    connect(): Promise<{
+      getPrimaryService(
+        service: string,
+      ): Promise<{ getCharacteristic(characteristic: string): Promise<PrinterCharacteristic> }>;
+    }>;
+    disconnect(): void;
+  };
+}
+export async function printBluetooth(
+  manifest: LabelManifest,
+  lang: 'en' | 'ar',
+  t: (key: string) => string,
+  profile: { service: string; characteristic: string; width_dots?: number },
+) {
+  const bluetooth = (
+    navigator as Navigator & {
+      bluetooth?: { requestDevice(options: { filters: { services: string[] }[] }): Promise<PrinterDevice> };
+    }
+  ).bluetooth;
+  if (!bluetooth || !isSecureContext) throw new Error('bluetoothUnavailable');
+  if (!profile.service || !profile.characteristic) throw new Error('printerNotConfigured');
+  const width = profile.width_dots ?? 384;
+  if (width % 8 || width < 320 || width > 832) throw new Error('printerNotConfigured');
+  const device = await bluetooth.requestDevice({ filters: [{ services: [profile.service] }] });
+  try {
+    if (!device.gatt) throw new Error('printerNotConfigured');
+    const server = await device.gatt.connect(),
+      service = await server.getPrimaryService(profile.service),
+      characteristic = await service.getCharacteristic(profile.characteristic);
+    const canvas = await thermalLabel(manifest, lang, t, width);
+    const ctx = canvas.getContext('2d')!;
+    const bytes = thermalRaster(ctx.getImageData(0, 0, canvas.width, canvas.height).data, canvas.width, canvas.height);
+    for (let offset = 0; offset < bytes.length; offset += 20)
+      await characteristic.writeValueWithResponse(bytes.slice(offset, offset + 20));
+  } finally {
+    device.gatt?.disconnect();
+  }
 }

@@ -1,0 +1,930 @@
+{
+  "node": "CMP_SELF_HOSTED",
+  "evidence_id": "2934da3aadb442e9bcc51d5a5371fd8f",
+  "result": "PASS",
+  "started_at": "2026-11-11T12:31:26+00:00",
+  "finished_at": "2026-11-11T12:31:39+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:c3de4d732751b19e3597ddd052f853d6ef790183f561560a788cfcf7733ad4db",
+  "dep_fingerprint": "sha256:5d55915e408f66234f020250067d617d3be50fbad715d7ec1f8446e495df7b45",
+  "artifacts": [
+    {
+      "path": "deploy/.env.example",
+      "hash": "c7e5d359daa8c894cd066184704ef8e2ddb7de5cd61014ce7a0468f0ff0340d3"
+    },
+    {
+      "path": "deploy/Caddyfile",
+      "hash": "83bad8e3f634b099a685b1809218c6efa056de88ec5762c505645fdf798034d8"
+    },
+    {
+      "path": "deploy/Dockerfile",
+      "hash": "50e1ef7be811306095dd61fc9d040e1c4d3ce9652b0979529001ce624c3960b2"
+    },
+    {
+      "path": "deploy/Postgres.test.Dockerfile",
+      "hash": "6bb5bf6e0cb2132e59c81fb88e4783e4326e20989ae649d0be824de54b810fa7"
+    },
+    {
+      "path": "deploy/backup.sh",
+      "hash": "fc541bebaecb04dba74c4ed0b077e1dd16c412bcce1cb4fe1482340d5afd7c62"
+    },
+    {
+      "path": "deploy/compose.local.yaml",
+      "hash": "f60d56acb876c8639297233d17d963aee10e0f88dcb23b55bfb28c6964531b00"
+    },
+    {
+      "path": "deploy/compose.yaml",
+      "hash": "fd28de3cadda1d82cc1fc70c6fe3193a02075bb30272f4519e7969fbe4905f39"
+    },
+    {
+      "path": "deploy/create-secrets.mjs",
+      "hash": "931ed525093f009b1ec82eab0fa9759c035567088274c289b043c89805b1b5cb"
+    },
+    {
+      "path": "deploy/prepare-server.sh",
+      "hash": "c48255c64e9c692f4911197e020f2b35adee3e48f0130dc9235c37ff9bc99e3b"
+    },
+    {
+      "path": "deploy/wise-backup.service",
+      "hash": "05e8d87abde1879b830b622c2b9ddc529ff80a668479bb38777c06817caefbb0"
+    },
+    {
+      "path": "deploy/wise-backup.timer",
+      "hash": "b01f0041ba0252d0aeb0d9601c93d0ee83c3a1ee6717b0fe0ec99a69d66f9729"
+    },
+    {
+      "path": "docs/AUTH.md",
+      "hash": "3ec488ae3a22242ddac289f0afea4ad942f36f8cb003cd390b00a62935ff71ec"
+    },
+    {
+      "path": "server/app.mjs",
+      "hash": "2613ed55fad23c2cb7e22f73f977a4f75a1e9155c00a19b78d9c33d7fe43f403"
+    },
+    {
+      "path": "server/auth/accounts.mjs",
+      "hash": "36e59aeba489630bb7829886af9eb8b5d3da62f040288cd31955e88ad96906a7"
+    },
+    {
+      "path": "server/auth/errors.mjs",
+      "hash": "107ae036ee1395b54ad891f54768912dfb295d8f750f67a463843d587792c9b6"
+    },
+    {
+      "path": "server/auth/passwords.mjs",
+      "hash": "3fa4e1e81bfa7610b47d87d1d2890b02252290300756d07705e26879a48c0e40"
+    },
+    {
+      "path": "server/auth/policy.mjs",
+      "hash": "1db409687e77782b5f292dd5a3389288a3565abc7ad1f3b4468c456bfa90c00a"
+    },
+    {
+      "path": "server/auth/profile.mjs",
+      "hash": "acc168ec633239f6c649033421e0026a6b3526f023f77d32e339bbe8970a5c3e"
+    },
+    {
+      "path": "server/auth/service.mjs",
+      "hash": "a05b998c31fbe25c94ba0bc28c7a5e9909471df94528da15559d093222ad38df"
+    },
+    {
+      "path": "server/auth/sessions.mjs",
+      "hash": "de8f0377214168e9c989406aff853580515ed3707e6bf9eb23adaccf143112ca"
+    },
+    {
+      "path": "server/auth/totp.mjs",
+      "hash": "38f822c033abe49702bc6b331d9403e498e0001da5e2e6adbfa29137453083cc"
+    },
+    {
+      "path": "server/bootstrap.mjs",
+      "hash": "538911e120cb5df62dab7bb06a672bd075d215a807fc8aa4059f04e344be5d95"
+    },
+    {
+      "path": "server/cli/account.mjs",
+      "hash": "ca9bc4eac72022b626b1ab4e6d13866f7a49c48e233256348b9084cd63ab9905"
+    },
+    {
+      "path": "server/context.mjs",
+      "hash": "45fe69db700407a881a3dfd48ac5dcc555bfb57fc4d895692bb7c85f32f214a3"
+    },
+    {
+      "path": "server/database.mjs",
+      "hash": "20d9a6ec02b0653ac577d62c23a01bdb641bdb5f1f779d476f63c10d20622693"
+    },
+    {
+      "path": "server/db/bootstrap.sql",
+      "hash": "61a870aeca5c9efd87ffcf3dfb503fe9a2feaf5eedf1a0230822c6156cfba947"
+    },
+    {
+      "path": "server/functions/_shared/FONT-LICENSE.txt",
+      "hash": "1c32ddc3fc6efd167cdcbe475195287f2dc26ed1a4c92fbe31c87ceaffe44f98"
+    },
+    {
+      "path": "server/functions/_shared/alerts.mjs",
+      "hash": "7fd41a383bee3cdc5e23c8aaf837f93358075b20afc5ce3c3b7014373b2f6766"
+    },
+    {
+      "path": "server/functions/_shared/http.mjs",
+      "hash": "4dc4580730d32e3672175bd719a3aa80b0377fbb685d4585ad51112da9575271"
+    },
+    {
+      "path": "server/functions/_shared/monthly-reports.mjs",
+      "hash": "ebd671d402ddfaebde32a9e48d2470901d2adeabd180ea4c65fdcc76177790d2"
+    },
+    {
+      "path": "server/functions/_shared/plex-arabic.ttf",
+      "hash": "8e0f1046c736bf939d4939ee3ae0116acf61cbcd6592deae7656761627080981"
+    },
+    {
+      "path": "server/functions/_shared/push.mjs",
+      "hash": "69ced4655ae49fcc5507a241e82f016667fa2557785030b9c9f862d0a91b89cd"
+    },
+    {
+      "path": "server/functions/_shared/vapid.d.mts",
+      "hash": "ec3731623ce5d31cd84d05c7a7627d4e530d698437f95aaddbcd2b1da2e740d1"
+    },
+    {
+      "path": "server/functions/_shared/vapid.mjs",
+      "hash": "17a4083c32638d9f4d10865bf312fee6479787d14b91460048ecfea4942218c7"
+    },
+    {
+      "path": "server/functions/notifications/index.mjs",
+      "hash": "eda5a78eb12631a24044a8bdc225e0a5b02be034be58f8931ea8d3126bc065d7"
+    },
+    {
+      "path": "server/functions/ocr/index.mjs",
+      "hash": "f7f4c9ffb6ca005fffc23cff56c7aec6eb503347ee7a2a6d3538f02426334459"
+    },
+    {
+      "path": "server/functions/report/index.mjs",
+      "hash": "9a397e8b46487e87c88fdfa4d756f857652c1fec00c1232814d8551027eeff21"
+    },
+    {
+      "path": "server/functions/scheduled-tasks/index.mjs",
+      "hash": "55579e32074bf28564bd00124fe78bd002f2cbf8e6f4e35bc7f1fc658cfdd1b7"
+    },
+    {
+      "path": "server/functions/subject-privacy/index.mjs",
+      "hash": "4f11b2638e6e6bb69605b64c784ff7c00c4bb3b50c1abe7dc2273c7193ba0b22"
+    },
+    {
+      "path": "server/functions/sync/index.mjs",
+      "hash": "a6f4a56d2dddca192d11221fd13e11a6dece1d6fd6169180ebab975c73473aa2"
+    },
+    {
+      "path": "server/functions/user-admin/index.mjs",
+      "hash": "eb81250d1f0af978420eeccd97609c097d124ee6115a35f6536c498d8ce87b74"
+    },
+    {
+      "path": "server/http/data-routes.mjs",
+      "hash": "d9e1d3a985b378ace4067f8ef3a94a501201a88eb302164ec194e3f47e69bbb2"
+    },
+    {
+      "path": "server/http/media-routes.mjs",
+      "hash": "417e48575e1e0a62f92af1add45c4d8edb2f4a7b9ca32ded3ba533f10d12d938"
+    },
+    {
+      "path": "server/http/session-routes.mjs",
+      "hash": "33b906ee1f49032094e2f1859e95be8332ad3e8416503e20f3599a7c9ba2964d"
+    },
+    {
+      "path": "server/index.mjs",
+      "hash": "1d78a574d675979e7d3d194e978685b72271e14c7fc47cd0be69e41a17ac7367"
+    },
+    {
+      "path": "server/media-backup-client.mjs",
+      "hash": "6fb50dbc55cbdd604009696358a51b84049ac278625ef535cead823eb4fe7b89"
+    },
+    {
+      "path": "server/migrate.mjs",
+      "hash": "54e87581a995632a381f7b410ccc5492e77a1e51738ae93c7f2c10e1c98de054"
+    },
+    {
+      "path": "server/migrations/202610060001_foundation.sql",
+      "hash": "d4f4deeb6a742a92910d67fea79cac98802df644bfae8ec9b1d88e167aaf4894"
+    },
+    {
+      "path": "server/migrations/202610060002_operations.sql",
+      "hash": "6702a2bf43c1aa7b444890540acaebf0f16de66afda7b581e10c59e8da8889fc"
+    },
+    {
+      "path": "server/migrations/202610060003_administration.sql",
+      "hash": "3f8cad43b4b92ffb5a19fbbdce93e75086736e3cd8e12be5b1a93975746417a4"
+    },
+    {
+      "path": "server/migrations/202610060004_kpis.sql",
+      "hash": "d743e9748cba1af9d5f3059e95c7b167ca9a312261b023314070e67c10197e55"
+    },
+    {
+      "path": "server/migrations/202610060005_provisioning.sql",
+      "hash": "d78931335664260c3154c84d99aeb1b8fa66065e17e452e12f19865bbdaea03a"
+    },
+    {
+      "path": "server/migrations/202610060006_history.sql",
+      "hash": "39c73209dc1ecefab93d6d4b512c27496f6fee94ee14e25436af9ea8037e9dfd"
+    },
+    {
+      "path": "server/migrations/202610060007_feedback.sql",
+      "hash": "c36978b5f8824cd69c6c20ff78aa0aea544af4c612058bcb3b3405bd102b635d"
+    },
+    {
+      "path": "server/migrations/202610060008_management.sql",
+      "hash": "9f3261936175f55d3eec02489bc362eefcaeb3266804e3f25ee04aa845984260"
+    },
+    {
+      "path": "server/migrations/202610060009_validation.sql",
+      "hash": "01ee5703f9f11f64539fcdd0ac19ef3b40427f60ccfea7884018db69b80c353a"
+    },
+    {
+      "path": "server/migrations/202610060010_privacy.sql",
+      "hash": "76b712f216a128c041c98f1eff6bba93312d839246052cfea55f00e393d836b4"
+    },
+    {
+      "path": "server/migrations/202610060011_lifecycle.sql",
+      "hash": "fc5b867470b9b55aca080a8c7d6b48e5cdea56f660fce6b2baa42bc91b96c188"
+    },
+    {
+      "path": "server/migrations/202610060012_whey_rules.sql",
+      "hash": "73d495829c56f709ac540e4223f98454b2be8ddbce4ef0b515d9a33a10c0e4b1"
+    },
+    {
+      "path": "server/migrations/202610060013_sync_qualification.sql",
+      "hash": "8aea49a929a879ad0b803fd892e8ee3b7fc95af041f7d16c5b9608a578ebf1ad"
+    },
+    {
+      "path": "server/migrations/202610060014_execute_privileges.sql",
+      "hash": "931de8a490fe8c8d708ba387b99be4b82b36df09c65618d4f9af872a38e814c6"
+    },
+    {
+      "path": "server/migrations/202610060015_explicit_rpc_grants.sql",
+      "hash": "a356db6bc76409879901b5027594f8048198e7d0abc58ec18701fde822d271af"
+    },
+    {
+      "path": "server/migrations/202610060016_investigation.sql",
+      "hash": "38da560dfb3452bdd21d393894a3e1cf610aedeb765608f866580fb11652020f"
+    },
+    {
+      "path": "server/migrations/202610060017_public_label_source.sql",
+      "hash": "200ef691097662e0782bb8ece338381577e0bd4ae64b4a27203e31f176f4cffa"
+    },
+    {
+      "path": "server/migrations/202610060018_task_coverage.sql",
+      "hash": "95cf09a059aba8734ec2a15c0e57a44a6ac09aa01ad44135edd5096893027ab8"
+    },
+    {
+      "path": "server/migrations/202610060019_stock_training_rules.sql",
+      "hash": "3ad82603ae43a5d9b35bf58b30ace95f8e099ec881cc3b101e69d5f9ca639a78"
+    },
+    {
+      "path": "server/migrations/202610060020_balance_query.sql",
+      "hash": "24b3c9687abf4bebac15ea9cd8f10294371542bb69a53139bd7866fb0bc119df"
+    },
+    {
+      "path": "server/migrations/202610060021_viewer_sessions.sql",
+      "hash": "98286aaa1086053d88a05ec27e52ca7bafede108316629a75aa5aa309bfce178"
+    },
+    {
+      "path": "server/migrations/202610060022_viewer_pin.sql",
+      "hash": "a4634ef8a672b6c307b17dc6a4896b7923b546e7c0a1e2f6d0ac8c3b48938893"
+    },
+    {
+      "path": "server/migrations/202610060023_training_versions.sql",
+      "hash": "85975cdb2b4b0726d1c253d3c5d2eec7d3fa000c6a86c8fd00e6a121c1563af6"
+    },
+    {
+      "path": "server/migrations/202610060024_training_sync.sql",
+      "hash": "80cf1bbabb3d59e8967d7e42df4335a84d65a7b5f3071de39067a1e0977b5b0f"
+    },
+    {
+      "path": "server/migrations/202610060025_related_scope.sql",
+      "hash": "ac3de77648ad5cc288d35ccc60d9eb2ce49609ea2bbb122d656f251b6ebf3da7"
+    },
+    {
+      "path": "server/migrations/202610060026_stage_history.sql",
+      "hash": "22a4d1b248f29d090e51d87b9aad122d1381d67ce3ee98acaa69c4717b9393f3"
+    },
+    {
+      "path": "server/migrations/202610060027_stage_sync.sql",
+      "hash": "26027ada23ba4d5874cf1585cd9c1be7d29a35d352a879bec3a26841355ec387"
+    },
+    {
+      "path": "server/migrations/202610060028_attachment_receipts.sql",
+      "hash": "183efdc1f779f8449116d8ca190063a9f9aa8425710505a7c0becbe01ec1a2c3"
+    },
+    {
+      "path": "server/migrations/202610060029_ledger_controls.sql",
+      "hash": "6bc44787faf473455700da65d706a6b79ec0298c099978d3b6d866db55de1d03"
+    },
+    {
+      "path": "server/migrations/202610060030_checkpoint_evidence.sql",
+      "hash": "3f507b02078631182b704eee973933f9d3cf7685d375fa63561f4e61e2808e86"
+    },
+    {
+      "path": "server/migrations/202610060031_permission_scope.sql",
+      "hash": "f7f2678ea1d434eed1bddff5e9cd332d9ae3a1d629ef346561dbb8288e136b08"
+    },
+    {
+      "path": "server/migrations/202610060032_bootstrap.sql",
+      "hash": "77af717558f22e0ae3bed34cf34bfc9514c28211bc02907fa0734ed205f6491b"
+    },
+    {
+      "path": "server/migrations/202610060033_offline_signoff.sql",
+      "hash": "c54dea9fd068c20ae5c9895193e6e3bdb26d4f5418f5589c88e60b3304970cf9"
+    },
+    {
+      "path": "server/migrations/202610060034_offline_decision_sync.sql",
+      "hash": "a1c78d95d3e54106ba3944b5899c4ab6c98f9a86442d819ff2ecb9527c2a7ba2"
+    },
+    {
+      "path": "server/migrations/202610060035_impact_permissions.sql",
+      "hash": "dec4b81a63776056972e89d5fd4d566c86519841fbabcffabe47ab55649cbde7"
+    },
+    {
+      "path": "server/migrations/202610060036_production_sync.sql",
+      "hash": "925a48eb77fc363675b435074b103bc720cca6d153a4c2483a265743bbfe1e0e"
+    },
+    {
+      "path": "server/migrations/202610060037_stage_schedules.sql",
+      "hash": "ee899e233c56107416b4f524438769db479fd3f1f5874fc3594565d92b6ea144"
+    },
+    {
+      "path": "server/migrations/202610060038_registry_edits.sql",
+      "hash": "673f85a6794016acda764a0c41b2a75aeddc18841f753a4f2e2d34d59515f1fb"
+    },
+    {
+      "path": "server/migrations/202610060039_equipment_verification.sql",
+      "hash": "508171a3184bf5544ef381b18f61d1cbcbf9fc3e6d789f819c5914dfcb8750d3"
+    },
+    {
+      "path": "server/migrations/202610060040_verification_required_fields.sql",
+      "hash": "d4014d360bdf851c87894a698f37c0bc51552a03ed201fb78aa71fef58653147"
+    },
+    {
+      "path": "server/migrations/202610060041_training_assets.sql",
+      "hash": "457c9d295ba9e7fa8a9325e75a46c16730838558da1549c764a0fd543ff6992c"
+    },
+    {
+      "path": "server/migrations/202610060042_training_validation.sql",
+      "hash": "9360fbab053ca924e768c35285cb4445afbbd879cdb659825b7ad1df0452dc00"
+    },
+    {
+      "path": "server/migrations/202610060043_training_refreshers.sql",
+      "hash": "139b10700ed3e926edd43ebb42c5576ecc577b3802f9ea7a683dce5d051a6af6"
+    },
+    {
+      "path": "server/migrations/202610060044_training_content_contract.sql",
+      "hash": "d4fe597596f80d018563b9a510b54539c1ece7e8723f5b5ab0599de63c1c488e"
+    },
+    {
+      "path": "server/migrations/202610060045_training_task_refresh.sql",
+      "hash": "6d8e6af1c322d9f474aec066886b88476b35e5526c24650a7492eb017ae5b595"
+    },
+    {
+      "path": "server/migrations/202610060046_training_version_scope.sql",
+      "hash": "4e169ae91ce6e72255a6edbeee7b6a49f07a2aa84c5733029eb7b7e5c1fef149"
+    },
+    {
+      "path": "server/migrations/202610060047_receipt_measurement_evidence.sql",
+      "hash": "5549871e6e73cf9c48713e1199e4614e70c1f0697cc0a7dc8f06f3df03ef31d4"
+    },
+    {
+      "path": "server/migrations/202610060048_text_reception_measurements.sql",
+      "hash": "910a049bc80285b121b49bde942316d5344a62530c1c24a4a4c1092270061d24"
+    },
+    {
+      "path": "server/migrations/202610060049_sop_training_refresh.sql",
+      "hash": "7b6ffcd372358a641ef477f572ed8f3a5a0764db95afc4b0a4412fa4e8cfef18"
+    },
+    {
+      "path": "server/migrations/202610060050_future_training_tasks.sql",
+      "hash": "f1401bd8c1ba16cb2c6e7dfcc23333061bfcb14e175245ceac25180c721cdd74"
+    },
+    {
+      "path": "server/migrations/202610060051_material_disposition.sql",
+      "hash": "a45cb83036531f52fd82d40bbe11f93cbc3341aa39f2c6ee0044668e5b55e1f1"
+    },
+    {
+      "path": "server/migrations/202610060052_material_disposition_sync.sql",
+      "hash": "2d0194aedbf5960fd5c22cb9654750cb9111a50eb05707ebb7f9dfc60e691fd8"
+    },
+    {
+      "path": "server/migrations/202610060053_material_balance_order.sql",
+      "hash": "1866239e6cc60a034dcba318bd385365b230d4235f8d6799a06f298fab538320"
+    },
+    {
+      "path": "server/migrations/202610060054_packaging_yield_review.sql",
+      "hash": "95f12afa9f1ee4162c3c023784aad98bcf65c5928b35c1ce98b89f0148dfe797"
+    },
+    {
+      "path": "server/migrations/202610060055_impact_dictionary_calculations.sql",
+      "hash": "ed2ec1d06a8238044727fc3f16b73642468eeede30f6b3719b2dce35441dc3a8"
+    },
+    {
+      "path": "server/migrations/202610060056_notification_preferences.sql",
+      "hash": "ea4c053ee540012e46a637efb380eae21ede94c1f1a822f0aee8975c91717445"
+    },
+    {
+      "path": "server/migrations/202610060057_task_notifications.sql",
+      "hash": "4cccfe8224bfd5824f9c891fb72761106e274b4129f0773ba18f2f208eaacb05"
+    },
+    {
+      "path": "server/migrations/202610060058_closed_material_classification.sql",
+      "hash": "866eae53c5c201e575ef34935c68f7b6344ac18a866c337b7e5d2438e57eeb23"
+    },
+    {
+      "path": "server/migrations/202610060059_impact_activity_boundaries.sql",
+      "hash": "75d5a7eed9be86b39b010926648b880cc850854466215e9c5b86424e52b49f7e"
+    },
+    {
+      "path": "server/migrations/202610060060_push_subscriptions.sql",
+      "hash": "3baf141380aa0eb01eeb573065beab010c67ca632063dd3838280bc8bea93d85"
+    },
+    {
+      "path": "server/migrations/202610060061_scoped_configuration.sql",
+      "hash": "28d190f6e17a84285f3f451013cf66682aa1364181cf4f6d6f9587418adfa2e5"
+    },
+    {
+      "path": "server/migrations/202610060062_quality_records.sql",
+      "hash": "cc7f74880aaa5cbf085537661d67937f4b4568e21bc057be3944c4b397670b0d"
+    },
+    {
+      "path": "server/migrations/202610060063_release_intervals.sql",
+      "hash": "c081fde801224d847a73db760edcd6169bf7a0b0d4401521fe21d92683a97292"
+    },
+    {
+      "path": "server/migrations/202610060064_dashboard_filters.sql",
+      "hash": "331e9b242245e933fef74676a2ac051837667544ec59d5242180d6e4efe20b28"
+    },
+    {
+      "path": "server/migrations/202610060065_incremental_snapshots.sql",
+      "hash": "69ec85deeadb6983f87cacd9bea34ea782a7f29c46c47152a749e6b4d0a0d5d8"
+    },
+    {
+      "path": "server/migrations/202610060066_stage_clock_boundaries.sql",
+      "hash": "d5a7771bb248abb12154455a29acb227a03426b1ec50ad24dc0449a84fe622bf"
+    },
+    {
+      "path": "server/migrations/202610070067_recall_actions.sql",
+      "hash": "d446021fbc8409b7ba611b7ddb068f85ff8f4751c0c9fdc3666ff79846ca68c4"
+    },
+    {
+      "path": "server/migrations/202610070068_operational_dashboards.sql",
+      "hash": "da58daf7a6572587916822bc7f05ac8352f95c6f7f44002f0021f471e7fc5866"
+    },
+    {
+      "path": "server/migrations/202610070069_creation_sop.sql",
+      "hash": "613c74381fd4dc85d081121d52f779c0c2f1323d29835611e3a2bb41228832cb"
+    },
+    {
+      "path": "server/migrations/202610070070_partner_agreements.sql",
+      "hash": "048c61d10022e3c7a4e03c9c92a926d7d8ecdc48d0eed013794bca9a54a7717c"
+    },
+    {
+      "path": "server/migrations/202610070071_critical_alert_queue.sql",
+      "hash": "6e849e423e9b4c76b43460338eaa1ddb5569189472bd5fbfd17bff01caa5dc90"
+    },
+    {
+      "path": "server/migrations/202610070072_monthly_reports.sql",
+      "hash": "30000a102e298009fd39755af8a83cca12fd8bd8ec519357b0c9e8edd31de5e3"
+    },
+    {
+      "path": "server/migrations/202610070073_subject_privacy.sql",
+      "hash": "3c43469480e0ab61be50e32c08240382ca1a65af68d77e001de4153959c462af"
+    },
+    {
+      "path": "server/migrations/202610070074_operational_cache.sql",
+      "hash": "c57090149f8f402ecc86e241574ff30a2d380b943db0bc6d4e7aae07251899bf"
+    },
+    {
+      "path": "server/migrations/202610070075_dashboard_operations.sql",
+      "hash": "0467235713cb5358f20fd222e54b24c77178e0ecc763422c93cdcdf9b4f81b6a"
+    },
+    {
+      "path": "server/migrations/202610070076_storage_inspections.sql",
+      "hash": "e4f2b13bfa6ea060900bcd4c2946befd78f177cdd51f6ddba82f9cbad2f937d0"
+    },
+    {
+      "path": "server/migrations/202610070077_stock_balance.sql",
+      "hash": "01643093e037b3b9be84eb3a8111c4015b4598d4fe42b4a962dae41a9a4596f8"
+    },
+    {
+      "path": "server/migrations/202610070078_mock_recall_completion.sql",
+      "hash": "29aa94f6d8269911061c3b63e138d0df61615f1ec51de7d6348eb2bae06acbac"
+    },
+    {
+      "path": "server/migrations/202610070079_deviation_recurrence.sql",
+      "hash": "48756c33346bfa4c383cff5aaa3ab9f43a9ca656048456e8c1c1420cefd3a22c"
+    },
+    {
+      "path": "server/migrations/202610070080_sop_migration.sql",
+      "hash": "061c51ac604b332f302be66141f2af0b2fe2dd3188d714c7ba34865f1bf6e49b"
+    },
+    {
+      "path": "server/migrations/202610070081_sop_migration_compatibility.sql",
+      "hash": "70af314cde6fcf6ee18a47fe4fd0bdcaba324b247515e2c025c807e82ca366d2"
+    },
+    {
+      "path": "server/migrations/202610070082_ocr_crosscheck.sql",
+      "hash": "011bb8306687eedd7e674647ebc81a4e35e27c2b11f6ab5dd94c17cab64b1048"
+    },
+    {
+      "path": "server/migrations/202610070083_data_quality_overrides.sql",
+      "hash": "93c6562189d984a39b284a2e55b5b1155ae5f60ae9818b69d42bcc814e536481"
+    },
+    {
+      "path": "server/migrations/202610070084_ingredient_photo_policy.sql",
+      "hash": "7e11731977fa9a0b56b1830ea3900c6523decc0159258811ba75c6bf38e854dc"
+    },
+    {
+      "path": "server/migrations/202610070085_metric_cohorts_dictionary.sql",
+      "hash": "0de1d8d3efdb0fe1ffa55264f447a04dc7dadffb409e7bf48e607451997c695b"
+    },
+    {
+      "path": "server/migrations/202610070086_dashboard_privacy_diagnostics.sql",
+      "hash": "adeb8514d2b9323e0e93591e42b79ae9aecedf86efd26d6faa8e22eb50eb60f3"
+    },
+    {
+      "path": "server/migrations/202610070087_operational_product_filter.sql",
+      "hash": "a2f9f00460ad972cf1565bdd737b2a11095494eff78964e4e2c1a09389d05442"
+    },
+    {
+      "path": "server/migrations/202610070088_configurable_data_quality.sql",
+      "hash": "8cd36d79ebeb6f61bba5d24dfc09bba3b14961e47a47a8351afcef152ee09800"
+    },
+    {
+      "path": "server/migrations/202610070089_metric_editor_read.sql",
+      "hash": "b48f3fb8af20b6e03c8615ab11b2068584edb8d3a319408f6f6b53f3f44bcca9"
+    },
+    {
+      "path": "server/migrations/202610070090_demographic_consent_guard.sql",
+      "hash": "3514904004dd80c1b3b51a2a34de661cd1726de6bd8da37fad38030f947cda8a"
+    },
+    {
+      "path": "server/migrations/202610070091_privacy_epoch_update.sql",
+      "hash": "5c5eec85fd03db31965d71be5f4e7ab328e0527b43153e6d87a6804fd853b52b"
+    },
+    {
+      "path": "server/migrations/202610070092_self_registration.sql",
+      "hash": "04cefac2828b456a6ef75430e6ded7a47cfd8c90fd65aefe723f61afe881c02f"
+    },
+    {
+      "path": "server/migrations/202610070093_trial_reporting_scope.sql",
+      "hash": "d6dbc107a15878f626c2a395b3bf4727311c82aed82c73b29c69bac37f4d493d"
+    },
+    {
+      "path": "server/migrations/202611110094_account_sessions.sql",
+      "hash": "93d60a7a391697489193fde29af3f7fb656ec0ff49b7c4486708d592142736d2"
+    },
+    {
+      "path": "server/provision-runtime.mjs",
+      "hash": "3468f1c2034d72d89f2fe3d04e9354dd63a99d73733da2117fae08b44ad59887"
+    },
+    {
+      "path": "server/storage.mjs",
+      "hash": "1a110c342f17ce48bf922c1f3207d9a176ef134b42a804e638ef3e4450fcc550"
+    },
+    {
+      "path": "server/tests/auth-unit.test.mjs",
+      "hash": "3356766ef6e57d63150ea2678ffe7fe775fa8ce71c0820efb3430f35b95a3b41"
+    },
+    {
+      "path": "server/tests/backend.test.mjs",
+      "hash": "a68caa186de65b2f875932284621d5dfb1eab920bf7ce84369f2c377fffae0b7"
+    },
+    {
+      "path": "server/tests/business-rules.mjs",
+      "hash": "5ea86e83500236ca9cd87a1ad6a4db9d1b10ee2aca48f579713c0d2ee245ae62"
+    },
+    {
+      "path": "server/tests/fixtures.sql",
+      "hash": "b1c787f519598baea28d81bb71130fdb1751a1ef185cc8f5dd7fa8dbedb9237c"
+    },
+    {
+      "path": "server/tests/serve.mjs",
+      "hash": "bbd53a226f8f8c8e64dd8ba976a457916f355e8fa8f407e4468b153b9ceadff6"
+    },
+    {
+      "path": "server/tests/snapshot-concurrency.mjs",
+      "hash": "752e5f218e519834078261a6aa37a2c37f6885a2593942eaa9c04fcee896dafe"
+    },
+    {
+      "path": "server/tests/sql/bootstrap.test.sql",
+      "hash": "3b59e2e944902ab2649d7542d64dff3c1b348cac209ee6bd02fc630135d11d02"
+    },
+    {
+      "path": "server/tests/sql/configuration.test.sql",
+      "hash": "f416d5d11edcfee0c892af5369f23023124261e3cf7d7feb01a07bd67e02fccb"
+    },
+    {
+      "path": "server/tests/sql/creation-sop.test.sql",
+      "hash": "58324ab7289c4cfe8da0657734e7d22d496e7371685aa14cd769f7a5777182ad"
+    },
+    {
+      "path": "server/tests/sql/dashboard-completion.test.sql",
+      "hash": "fa66c0a1efff6bbf78c54ddabef7051f36b29255fe7987a5749d0b3298f55a13"
+    },
+    {
+      "path": "server/tests/sql/dashboard-filters.test.sql",
+      "hash": "462db960afe805d92d574a61a5e0012d64f0cd53a2405d4bca4777daf4c9ec27"
+    },
+    {
+      "path": "server/tests/sql/impact.test.sql",
+      "hash": "018067ea64c089aeb01f0fccfe5d671a47e11e1471fbfd3ce7de3929608e843b"
+    },
+    {
+      "path": "server/tests/sql/material-balance.test.sql",
+      "hash": "d3ba305596a7d3cc5cb871b78173c324011cc4619236d500824583d4ccf0b7f8"
+    },
+    {
+      "path": "server/tests/sql/mvp-completion.test.sql",
+      "hash": "ff48ad71c25f54aad0b0b2228088bc74e1ab4025d7266b903854e6ffe73ec4be"
+    },
+    {
+      "path": "server/tests/sql/notifications.test.sql",
+      "hash": "fbdfa34ba01dd34c62ac070e1e42b49ef5a5c59ddcd90afd9a4247a79cd9d1e5"
+    },
+    {
+      "path": "server/tests/sql/offline-signoff.test.sql",
+      "hash": "79eaf7299f10956efc8c27a4eaf2d142412e8d6859c5c3a8fae674aa6b3dad10"
+    },
+    {
+      "path": "server/tests/sql/operational-cache.test.sql",
+      "hash": "910664f2adcc72bc04c5aecca125368f8bdc80015c48ca174c47f16f615cb6f1"
+    },
+    {
+      "path": "server/tests/sql/operational-dashboard.test.sql",
+      "hash": "a03c5539260c95c34505e9f0824010ca38012ae585fd3a7d2e7cb9bdb3b82ffc"
+    },
+    {
+      "path": "server/tests/sql/production.test.sql",
+      "hash": "b1ef92405ada2dd92aa88086ab2111225a9da973c5b7be29721911d146ef257b"
+    },
+    {
+      "path": "server/tests/sql/push.test.sql",
+      "hash": "c47f2a8c8c1c90186035ff5e0e54a5b0a35a50d1d8430cc41006e1709bd481bc"
+    },
+    {
+      "path": "server/tests/sql/quality.test.sql",
+      "hash": "20626435d8f993edf1ffc19bdeb734df823e89dc32096b3e08938fa9cc00ef9c"
+    },
+    {
+      "path": "server/tests/sql/recall-actions.test.sql",
+      "hash": "dd36e23413c2122b7133f12d394a5dcebf237dc7c3acda2081785cc40c902bac"
+    },
+    {
+      "path": "server/tests/sql/receipt-measurements.test.sql",
+      "hash": "fe82602b8cd59905e5516e6b44ce9c4a13ef73ebcafe670aa3f8c8454a81dbe0"
+    },
+    {
+      "path": "server/tests/sql/registration.test.sql",
+      "hash": "c76618234dc96358b8b404f9ca8f973a1e704e6b6499e92d526c890b92af5b54"
+    },
+    {
+      "path": "server/tests/sql/release-intervals.test.sql",
+      "hash": "24e4a55636924cca4c5170ef8b7cc345546d6652a2c5fc69d98bb2f2ac362274"
+    },
+    {
+      "path": "server/tests/sql/rules.test.sql",
+      "hash": "112cf7c7f448353182be5e76a8fc05746f3ef80a131cf448d000411a2945b7f2"
+    },
+    {
+      "path": "server/tests/sql/scheduled-delivery.test.sql",
+      "hash": "0f0641af15207cc59bcf81bc075539fafec3f0e9af0f050ee105592f5310ab89"
+    },
+    {
+      "path": "server/tests/sql/security.test.sql",
+      "hash": "78e304bc554d5d32a8a677e3b74f21f4aa6f32cda03668cc3d0590c44c1b3c26"
+    },
+    {
+      "path": "server/tests/sql/snapshot.test.sql",
+      "hash": "455179b009f1ce80fd0fb9115ce62ddfce076c835f719b7e0bad32554c983b61"
+    },
+    {
+      "path": "server/tests/sql/stage-clock.test.sql",
+      "hash": "ce267274473de6a0efa27bbbbb9871b471351afc2732ce23bcaed04bd944b003"
+    },
+    {
+      "path": "server/tests/sql/storage-stock.test.sql",
+      "hash": "bfd3c9c1e0440764feca01ca164aaa72b4aa1f90c5d45c2cc3ab8520a0e141ae"
+    },
+    {
+      "path": "server/tests/sql/subject-privacy.test.sql",
+      "hash": "890e5ab02c7f6223181e0ec912abbb16f5e1f411710f0db2bb9a0df77678e615"
+    },
+    {
+      "path": "server/tests/sql/training.test.sql",
+      "hash": "2ab0c0b8afa886b81742807141bce6f1b68f879c05670f67ada07fa25c04093b"
+    },
+    {
+      "path": "server/tests/sql/yield.test.sql",
+      "hash": "962ff16324c64d17f254d78d90bf70ae594150f3817ffc781f07f08136c924f2"
+    },
+    {
+      "path": "server/worker.mjs",
+      "hash": "4054df6c49b0fb09f82f7c9ea58e50b652f5aa6ef39a425676dea8f2003bdaae"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_DEPLOY_CREATE_SECRETS_MJS",
+      "fingerprint": "sha256:8eedc1e89bdc20d3aaa8d2a402a287e59bdae2b49c7b5894ae49e5bed9eb272f"
+    },
+    {
+      "id": "F_SERVER_APP_MJS",
+      "fingerprint": "sha256:aab681c38514f05e32129501d12290e0f7e86e8e5a0403494924d30d0bbcc9db"
+    },
+    {
+      "id": "F_SERVER_AUTH_ACCOUNTS_MJS",
+      "fingerprint": "sha256:093b94716476222c536069afbc7af66fabd1cdfd06a3d96429c2819b90c46b98"
+    },
+    {
+      "id": "F_SERVER_AUTH_ERRORS_MJS",
+      "fingerprint": "sha256:51b3425a97aa052c33f7995f3209f03f98866baf3a79b6d72deec1f2e04f82e1"
+    },
+    {
+      "id": "F_SERVER_AUTH_PASSWORDS_MJS",
+      "fingerprint": "sha256:ae9d5c7aa996a46104049fa46b9695b5764ed4dbad69c7f3005962203d1302b4"
+    },
+    {
+      "id": "F_SERVER_AUTH_POLICY_MJS",
+      "fingerprint": "sha256:0138214e6bfe9ab6165399d66ee287f4557404c03408a79ea16c00a6e07a370c"
+    },
+    {
+      "id": "F_SERVER_AUTH_PROFILE_MJS",
+      "fingerprint": "sha256:e27109818ec8bc4e3905b22f9cce2883b2fe9a8ae3880e94663b7d848c759ad6"
+    },
+    {
+      "id": "F_SERVER_AUTH_SERVICE_MJS",
+      "fingerprint": "sha256:d46cff446a020830def0e4fbae4cb57fbc5f9c7105fd5bfeadeb9a28592b573c"
+    },
+    {
+      "id": "F_SERVER_AUTH_SESSIONS_MJS",
+      "fingerprint": "sha256:1cf76ccddc1c6c89b02e87baa1a16570153fabc8232d5944ae3e2fa9505b058a"
+    },
+    {
+      "id": "F_SERVER_AUTH_TOTP_MJS",
+      "fingerprint": "sha256:0c4c54f61bcb3827fff5e8af16ac582e8cefd9eeb4a42b6665ed5d754e640f1f"
+    },
+    {
+      "id": "F_SERVER_BOOTSTRAP_MJS",
+      "fingerprint": "sha256:1dba8576225a4f42e14844c151d2f0b6c03521399608efd2b4a1c22522211c5f"
+    },
+    {
+      "id": "F_SERVER_CLI_ACCOUNT_MJS",
+      "fingerprint": "sha256:b053ed98823d14252276e48db5d630b59a2dd8fd958d924728abf5f2259910b0"
+    },
+    {
+      "id": "F_SERVER_CONTEXT_MJS",
+      "fingerprint": "sha256:bbc4a8f7a1e1b17761af7fbfd019c9f907cac4fdd02e55d50d69e608f33ec697"
+    },
+    {
+      "id": "F_SERVER_DATABASE_MJS",
+      "fingerprint": "sha256:2b0fc11f187c780f3cd584c501e370ad7ba4d070a761a2b4c266297e004fa79f"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_NOTIFICATIONS_INDEX_MJS",
+      "fingerprint": "sha256:a026a9999724349ffe6521419c23a466a55a18e6186c80743b51bc2c8ca3dcc6"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_OCR_INDEX_MJS",
+      "fingerprint": "sha256:6311a9b0574113a1df54806f70af1d9cac3da7e214004c5c9fa373d5b1665e9a"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_REPORT_INDEX_MJS",
+      "fingerprint": "sha256:52ef1779520a68d15b9f809259f203d3f9a0671f18e095a3c62c06b08cbab31a"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_SCHEDULED_TASKS_INDEX_MJS",
+      "fingerprint": "sha256:3b1ead8413e3298fac5fe0a2a1708e0329131d65fc1647d1ca12d650cdf8b06f"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_SHARED_ALERTS_MJS",
+      "fingerprint": "sha256:10b842b8a308dbffcd7080ffb3f17b52c656e98cc96449307a8c3d20b37a9652"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_SHARED_HTTP_MJS",
+      "fingerprint": "sha256:241026c9c37d92f3f5c611106277a6498e892bed6ad62b4516a4c6e1d8ac06f7"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_SHARED_MONTHLY_REPORTS_MJS",
+      "fingerprint": "sha256:d4daf991a7b9275cdea0844e8d84b1772f748906c70b7123e947947048abf9d8"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_SHARED_PUSH_MJS",
+      "fingerprint": "sha256:6c42ea3c456dbda78ab7a1763c7b6ebe4d0e0ccc303dd98984b9ee18b04d74f0"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_SHARED_VAPID_MJS",
+      "fingerprint": "sha256:0c81a72a1f4cf368e8a77c6630fb99ed448980750a8778f9f86b7a07c0c64cc2"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_SUBJECT_PRIVACY_INDEX_MJS",
+      "fingerprint": "sha256:4e6edbdcf42d4adb6362624170b1d65f23c6dc7c0113810a03b7d5f709d42100"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_SYNC_INDEX_MJS",
+      "fingerprint": "sha256:6898e2b6c0c1121d41b6eaf79ea81fe752390c564402ed0cd75a3ace4d299a37"
+    },
+    {
+      "id": "F_SERVER_FUNCTIONS_USER_ADMIN_INDEX_MJS",
+      "fingerprint": "sha256:13538c5ce71f7e3d2d9e1cdf957658ae7d760a9a331a7dea988cfa5b422d8918"
+    },
+    {
+      "id": "F_SERVER_HTTP_DATA_ROUTES_MJS",
+      "fingerprint": "sha256:93b545d715f4582a6206cd36db5915714c7553e70affecc8200840e42d6e675f"
+    },
+    {
+      "id": "F_SERVER_HTTP_MEDIA_ROUTES_MJS",
+      "fingerprint": "sha256:1da48002b5b5eae0594518094b8d8987bfc5130034ea653a0a548db9eb4d74af"
+    },
+    {
+      "id": "F_SERVER_HTTP_SESSION_ROUTES_MJS",
+      "fingerprint": "sha256:e2cc3a5904d374c423e72f1c5b1b644ad8e8680b9483c1c7a6da40ce02aee246"
+    },
+    {
+      "id": "F_SERVER_INDEX_MJS",
+      "fingerprint": "sha256:1cbbb1f2e1cbd412c5c0e92c3b367f40affe05dacb4605f45af6b65088d91f14"
+    },
+    {
+      "id": "F_SERVER_MIGRATE_MJS",
+      "fingerprint": "sha256:51a436a60f8a984ef389146d795871d29ab6fd68cafd9dfa6f31345431fd4278"
+    },
+    {
+      "id": "F_SERVER_PROVISION_RUNTIME_MJS",
+      "fingerprint": "sha256:0c9585e690f3140dfa95b254ac5dac022cdcd221f9cb526a3fde9e4348a5bb3e"
+    },
+    {
+      "id": "F_SERVER_STORAGE_MJS",
+      "fingerprint": "sha256:1dee2a7407b72379439b1ce10a14c35da863586172a2a9024baedd228c6a2bb4"
+    },
+    {
+      "id": "F_SERVER_TESTS_AUTH_UNIT_TEST_MJS",
+      "fingerprint": "sha256:be3567cef774329fd343079bc421ece15b0b06e816a76bfdd9618e30a071be77"
+    },
+    {
+      "id": "F_SERVER_TESTS_BACKEND_TEST_MJS",
+      "fingerprint": "sha256:736a1684083c12516e434dce4ec177e01bf40477cbf31b9fe8034272d6a82fc2"
+    },
+    {
+      "id": "F_SERVER_TESTS_SERVE_MJS",
+      "fingerprint": "sha256:73d903c6d093a99d7977be274f7ad8db40354659dc396d01a38730cbab5a4789"
+    },
+    {
+      "id": "F_SERVER_WORKER_MJS",
+      "fingerprint": "sha256:bcab996be17058f2ec34df2c4574109e0058aec8d139f26bce136d9a65464d9d"
+    },
+    {
+      "id": "F_SRC_LIB_DEMO_TS",
+      "fingerprint": "sha256:821eff0b75991dcd5baa33211daef0223fee4dd01b7997c70a601d0b509f2b8a"
+    },
+    {
+      "id": "F_SRC_LIB_DOMAIN_TS",
+      "fingerprint": "sha256:4c129b84e3cf2d535fd759ff078cf9b2fc5d1abe948f11bb6f61cf60d891df36"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "server/auth/policy.mjs",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "server/auth/service.mjs",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "server/migrations/202611110094_account_sessions.sql",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "docs/AUTH.md",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "backend-security",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "node --test server/tests/*.test.mjs",
+      "exit_code": 0,
+      "duration_s": 12.734,
+      "stdout_digest": "sha256:4f5d531d0ba22595cdee3f40a9e0f03dfd7464d6353ffbad979739440c4bb64d",
+      "output_tail": "\u00e2\u0153\u201d passwords: hash verifies, wrong password fails, hashes are salted (895.9279ms)\n\u00e2\u0153\u201d passwords: malformed stored values never verify and length limits are enforced (0.64ms)\n\u00e2\u0153\u201d TOTP matches the RFC 6238 SHA-1 test vectors (1.2686ms)\n\u00e2\u0153\u201d TOTP accepts the current window once and rejects replays and bad input (0.5796ms)\n\u00e2\u0153\u201d authenticator secrets are sealed and tamper-evident (1.1068ms)\n\u00e2\u0153\u201d reject SQL and filesystem injection (0.9713ms)\n\u00e2\u2013\u00b6 standalone PostgreSQL, real HTTP authentication and permissions\n  \u00e2\u0153\u201d empty installation has all migrations and no generated records (4.7143ms)\n  \u00e2\u0153\u201d origin protection and anonymous restrictions (52.5748ms)\n  \u00e2\u0153\u201d self-registration: email must be verified; sign-in sets an HttpOnly cookie and leaks no secret (1659.9932ms)\n  \u00e2\u0153\u201d registration is pending and cannot self-approve (295.4704ms)\n  \u00e2\u0153\u201d administrators must add and prove an authenticator before any data access (986.2829ms)\n  \u00e2\u0153\u201d shared phone: two people on one cookie, PIN unlock, per-person sign-out (1874.7006ms)\n  \u00e2\u0153\u201d repeated wrong passwords pause the account; an administrator reset restores access (4108.9925ms)\n  \u00e2\u0153\u201d restricted runtime role can sign in, store private evidence, and respects disablement (803.2497ms)\n\u00e2\u0153\u201d standalone PostgreSQL, real HTTP authentication and permissions (12164.4557ms)\n\u00e2\u201e\u00b9 tests 15\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 15\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 12665.2628\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

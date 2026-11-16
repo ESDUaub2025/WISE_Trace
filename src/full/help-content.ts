@@ -1,0 +1,242 @@
+export type PageHelp = { purpose: string; steps: string[]; tip: string };
+export const pageHelp: Record<'en' | 'ar', Record<string, PageHelp>> = {
+  en: {
+    home: {
+      purpose: 'Your daily starting point: see what needs attention and which batches are active.',
+      steps: [
+        'Open a due task to work on its record.',
+        'Complete required training and checks before starting new work.',
+        'Use the connection indicator to synchronize saved records.',
+      ],
+      tip: 'A saved record and an approved product are different things. Always check the lot status.',
+    },
+    whey: {
+      purpose: 'Register incoming whey, ingredients and packaging materials, and follow their remaining quantities.',
+      steps: [
+        'Choose Receive material and select its type and supplier.',
+        'Enter the supplier lot, quantity, actual receipt time and required measurements; attach evidence.',
+        'Open the lot to inspect its decision, allocations, disposal or diversion history.',
+      ],
+      tip: 'Held, rejected or expired inputs cannot be used. Offline receipts may still need server review.',
+    },
+    batches: {
+      purpose: 'Follow production from allocated inputs through stages, checks and packaging.',
+      steps: [
+        'Complete required Knowledge training, then choose Start a batch.',
+        'Allocate accepted source lots and open the batch code.',
+        'Record each required check with its actual time and evidence, then advance the stage when complete.',
+      ],
+      tip: 'Packaging produces stock awaiting review. An authorized reviewer must release it before sale.',
+    },
+    inventory: {
+      purpose: 'Track packaging lots, available stock, storage conditions and actual sales.',
+      steps: [
+        'Create packaging from a completed production batch.',
+        'Open a packaging lot to inspect its balance and download labels.',
+        'Record sales of released stock, losses, storage inspections and physical stock counts.',
+      ],
+      tip: 'Record actual transactions only. Restricted stock stays separate from released stock.',
+    },
+    review: {
+      purpose: 'Help authorized reviewers decide whether a batch can be released, held or rejected.',
+      steps: [
+        'Open the lot and inspect its checkpoints, evidence, training and laboratory results.',
+        'Resolve missing evidence and critical deviations.',
+        'Make the decision online and re-enter your own PIN.',
+      ],
+      tip: 'Production completion does not grant release. A producer normally cannot release their own batch.',
+    },
+    deviations: {
+      purpose: 'Record a process problem or complaint and track its corrective action.',
+      steps: [
+        'Create a deviation with the affected lot, category, severity and description.',
+        'Assign corrective actions, an owner and a due date.',
+        'Document the outcome and have the authorized reviewer close it.',
+      ],
+      tip: 'An open critical deviation blocks release; closing it requires the appropriate online authorization.',
+    },
+    recall: {
+      purpose: 'Trace product ancestry and affected stock, and document real recalls or practice exercises.',
+      steps: [
+        'Open a lot to follow its source materials and related products.',
+        'Authorized staff can start a real recall or a mock exercise.',
+        'Open the case, record stop-sale, contact and recovery actions, then document closure.',
+      ],
+      tip: 'Mock exercises preserve product status. Closing a real case preserves its recall history.',
+    },
+    training: {
+      purpose: 'Learn the approved procedure with illustrated instructions and assessments.',
+      steps: [
+        'Open a module and read its steps, FAQs and troubleshooting.',
+        'Download its media while online if you will work without a connection.',
+        'Complete the assessment; revisit the instructions if an answer is incorrect.',
+      ],
+      tip: 'Training is tied to a procedure version. A changed procedure may require refresher training.',
+    },
+    equipment: {
+      purpose: 'Keep instruments registered and record calibration checks and verification.',
+      steps: [
+        'Inspect instrument status and the next due date.',
+        'Record the method, reference, measured value, unit and result.',
+        'Attach evidence and ask a supervisor to review a failed or overdue instrument.',
+      ],
+      tip: 'A verification record does not replace official calibration.',
+    },
+    dashboards: {
+      purpose: 'Understand operations and impact within your authorized scope.',
+      steps: [
+        'Choose the available cooperative, project or impact view.',
+        'Set dates, region, cooperative, product or status filters.',
+        'Read indicator definitions before interpreting or exporting the figures.',
+      ],
+      tip: 'Donors see aggregates; small demographic groups are hidden. Recorded sales are gross revenue, not profit.',
+    },
+    reports: {
+      purpose: 'Export authorized records for review, traceability and reporting.',
+      steps: [
+        'Select the report and date period.',
+        'Apply the cooperative and procedure filters available to your role.',
+        'Download CSV, Excel or PDF; use a lot trace report for its genealogy.',
+      ],
+      tip: 'Exports follow your access permissions. Check filters and units before sharing.',
+    },
+    organization: {
+      purpose:
+        'Manage your profile, consent and alert preferences; authorized managers also manage people and devices.',
+      steps: [
+        'Update your own profile and explicit notification consent.',
+        'Managers can manage account authorizations, device revocation and data agreements.',
+        'Managers can configure monthly report recipients and inspect delivery status.',
+      ],
+      tip: 'Use your own account on shared phones. External alerts and scheduled emails need configured providers.',
+    },
+    admin: {
+      purpose: 'Administer versioned procedures, training, indicator definitions and operational controls.',
+      steps: [
+        'Create a procedure or indicator draft and inspect its changes.',
+        'A different Food-Safety Lead approves eligible drafts with MFA and PIN.',
+        'Review diagnostics, training exceptions and compatible batch migrations when needed.',
+      ],
+      tip: 'Existing batches retain their original procedure unless an authorized compatible migration is recorded.',
+    },
+  },
+  ar: {
+    home: {
+      purpose: 'نقطة البداية اليومية: شاهد المهام التي تحتاج انتباهك والدفعات النشطة.',
+      steps: [
+        'افتح المهمة المستحقة للوصول إلى سجلها.',
+        'أكمل التدريب والفحوص المطلوبة قبل بدء عمل جديد.',
+        'اضغط مؤشر الاتصال لمزامنة السجلات المحفوظة.',
+      ],
+      tip: 'حفظ السجل يختلف عن اعتماد المنتج. تحقق دائماً من حالة الدفعة.',
+    },
+    whey: {
+      purpose: 'سجل استلام مصل اللبن والمكونات ومواد التغليف وتابع الكميات المتبقية.',
+      steps: [
+        'اختر استلام مواد ثم النوع والمورد.',
+        'أدخل رمز دفعة المورد والكمية ووقت الاستلام الفعلي والقياسات وأرفق الأدلة.',
+        'افتح الدفعة لمراجعة القرار والتخصيص والتخلص أو التحويل.',
+      ],
+      tip: 'لا تستخدم مدخلات معلقة أو مرفوضة أو منتهية. قد يحتاج الاستلام دون اتصال مراجعة الخادم.',
+    },
+    batches: {
+      purpose: 'تابع الإنتاج من تخصيص المدخلات إلى المراحل والفحوص والتغليف.',
+      steps: [
+        'أكمل التدريب المطلوب ثم اختر بدء دفعة.',
+        'خصص مواد مقبولة وافتح رمز دفعة الإنتاج.',
+        'سجل كل فحص بوقته الفعلي وأدلته ثم انتقل إلى المرحلة التالية عند اكتمالها.',
+      ],
+      tip: 'التغليف ينشئ مخزوناً بانتظار المراجعة. يجب الإفراج عنه بواسطة مراجع مخول قبل البيع.',
+    },
+    inventory: {
+      purpose: 'تابع دفعات التغليف والمخزون وظروف التخزين والمبيعات الفعلية.',
+      steps: [
+        'أنشئ التغليف من دفعة إنتاج مكتملة.',
+        'افتح دفعة التغليف لمراجعة الرصيد وتنزيل الملصقات.',
+        'سجل مبيعات المخزون المفرج عنه والفواقد وفحوص التخزين والجرد.',
+      ],
+      tip: 'سجل المعاملات الفعلية فقط. يبقى المخزون المقيد منفصلاً عن المخزون المفرج عنه.',
+    },
+    review: {
+      purpose: 'ساعد المراجعين المخولين في اتخاذ قرار الإفراج أو التعليق أو الرفض.',
+      steps: [
+        'افتح الدفعة وراجع الفحوص والأدلة والتدريب ونتائج المختبر.',
+        'عالج الأدلة الناقصة والانحرافات الحرجة.',
+        'اتخذ القرار أثناء الاتصال وأعد إدخال رمزك الشخصي.',
+      ],
+      tip: 'اكتمال الإنتاج لا يعني الإفراج. لا يستطيع المنتج عادة الإفراج عن دفعته بنفسه.',
+    },
+    deviations: {
+      purpose: 'سجل مشكلة أو شكوى وتابع الإجراءات التصحيحية.',
+      steps: [
+        'أنشئ انحرافاً وحدد الدفعة والفئة والخطورة والوصف.',
+        'حدد الإجراء والمسؤول والموعد.',
+        'وثق النتيجة واطلب من المراجع المخول إغلاق السجل.',
+      ],
+      tip: 'الانحراف الحرج المفتوح يمنع الإفراج ويتطلب إغلاقه التفويض المناسب أثناء الاتصال.',
+    },
+    recall: {
+      purpose: 'تتبع مصادر المنتج والمخزون المتأثر ووثق السحب الحقيقي أو التدريب العملي.',
+      steps: [
+        'افتح الدفعة لتتبع مصادرها والمنتجات المرتبطة.',
+        'يمكن للمخولين بدء سحب حقيقي أو تمرين تجريبي.',
+        'افتح الحالة وسجل وقف البيع والتواصل والاسترجاع ثم وثق الإغلاق.',
+      ],
+      tip: 'التمرين التجريبي يحافظ على حالة المنتج. إغلاق السحب الحقيقي يحفظ تاريخه.',
+    },
+    training: {
+      purpose: 'تعلم الإجراء المعتمد من خلال التعليمات المصورة والتقييمات.',
+      steps: [
+        'افتح الوحدة واقرأ الخطوات والأسئلة وحلول المشكلات.',
+        'نزل الوسائط أثناء الاتصال إذا كنت ستعمل دون شبكة.',
+        'أكمل التقييم وراجع التعليمات عند اختيار جواب خاطئ.',
+      ],
+      tip: 'يرتبط التدريب بإصدار الإجراء وقد يتطلب تغييره تدريباً تنشيطياً.',
+    },
+    equipment: {
+      purpose: 'سجل الأجهزة وتابع مواعيد المعايرة والتحقق.',
+      steps: [
+        'راجع حالة الجهاز وموعد الفحص القادم.',
+        'سجل الطريقة والمرجع والقياس والوحدة والنتيجة.',
+        'أرفق الأدلة واطلب مراجعة المشرف للجهاز المتأخر أو غير الناجح.',
+      ],
+      tip: 'سجل التحقق لا يحل محل المعايرة الرسمية.',
+    },
+    dashboards: {
+      purpose: 'افهم العمليات والأثر ضمن نطاق صلاحياتك.',
+      steps: [
+        'اختر عرض التعاونية أو المشروع أو الأثر المتاح لك.',
+        'حدد الفترة والمنطقة والتعاونية والمنتج والحالة.',
+        'اقرأ تعريف المؤشر قبل تفسير الأرقام أو تصديرها.',
+      ],
+      tip: 'يرى المانحون المجاميع وتخفى المجموعات الصغيرة. المبيعات إيراد إجمالي وليست ربحاً.',
+    },
+    reports: {
+      purpose: 'صدر السجلات المسموح بها للمراجعة والتتبع والتقارير.',
+      steps: [
+        'اختر التقرير والفترة.',
+        'حدد التعاونية وإصدار الإجراء المتاح لصلاحياتك.',
+        'نزل ملفاً جدولياً أو تقريراً للطباعة واستخدم تقرير التتبع لمعرفة أصل الدفعة.',
+      ],
+      tip: 'تتبع الصادرات صلاحياتك. راجع الفلاتر والوحدات قبل المشاركة.',
+    },
+    organization: {
+      purpose: 'أدر ملفك وموافقتك وتفضيلات التنبيه ويستطيع المديرون إدارة الأشخاص والأجهزة.',
+      steps: [
+        'حدث ملفك وموافقتك الصريحة على التنبيهات.',
+        'يمكن للمدير إدارة التفويضات وإلغاء الأجهزة واتفاقيات البيانات.',
+        'يمكن للمدير إعداد مستلمي التقارير الشهرية ومراجعة التسليم.',
+      ],
+      tip: 'استخدم حسابك على الهاتف المشترك. تحتاج التنبيهات الخارجية والبريد المجدول مزوداً معداً.',
+    },
+    admin: {
+      purpose: 'أدر إصدارات الإجراءات والتدريب وتعريفات المؤشرات والضوابط.',
+      steps: [
+        'أنشئ مسودة إجراء أو مؤشر وراجع تغييراتها.',
+        'يعتمد مسؤول سلامة غذاء مختلف المسودة بالمصادقة الإضافية والرمز الشخصي.',
+        'راجع التشخيص واستثناءات التدريب ونقل الدفعات المتوافق عند الحاجة.',
+      ],
+      tip: 'تحتفظ الدفعات بإجراءها الأصلي إلا عند تسجيل نقل متوافق ومخول.',
+    },
+  },
+};

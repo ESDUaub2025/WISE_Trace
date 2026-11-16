@@ -4,7 +4,10 @@ WISE helps a cooperative record where materials came from, how a product was mad
 
 ## Your first ten minutes
 
-1. Sign in with your own username, password and PIN. The local demonstration accounts are `rima` (producer), `karim` (supervisor) and `manager1` (manager), with password `wise-demo-only` and PIN `2468`. These are fictional local accounts, not production credentials.
+On the deployed service, the project administrator provides your first login. Public email registration becomes available when the project enables its email sender. Free trials are saved online and start without sample business records. An administrator approves each workspace and any upgrade to full service.
+
+1. Sign in. The first time on a phone or computer: enter your username and password, then your PIN. After that, tap your name and enter your PIN; it works without a connection too. The local demonstration accounts are `rima` (producer), `karim` (supervisor) and `manager1` (manager), with password `wise-demo-only` and PIN `2468`. These are fictional local accounts, not production credentials.
+   Producers open in **Simple mode**, which shows one next step at a time. Supervisors and managers open in the **Full workspace**. Switch between them from the account button (the person icon, or your name in the side menu).
 2. Read the three welcome screens. You can dismiss them with **Not now** or the close button. The walkthrough is remembered separately for each account on this browser.
 3. On **Today**, open one due task. This takes you to its relevant record or form. Start with required training if you have not completed it.
 4. Open a lot code to inspect its status, history, measurements and linked materials. A lot is a separately identified quantity of material or product.
@@ -12,13 +15,13 @@ WISE helps a cooperative record where materials came from, how a product was mad
 
 ## Registering and using the free online trial
 
-On the sign-in screen, choose **Sign up** for full-service access or **Free online trial**. Both use the actual online application and require project administrator approval. Trials start with zero lots, suppliers, equipment, sales or production records; only entries you create appear in your workspace. Procedure definitions and learning materials are configuration, not example business records.
+On the sign-in screen, choose **Sign up**; you pick full-service access or the free online trial in the request. Both use the actual online application and require project administrator approval. Trials start with zero lots, suppliers, equipment, sales or production records; only entries you create appear in your workspace. Procedure definitions and learning materials are configuration, not example business records.
 
-1. Enter your real email, a password of at least 12 characters, a username, your name, workspace name, region and a personal PIN. Choose the requested access plan.
-2. Confirm your email using the verification message. If the signup screen asks you to check your email, sign in afterward using that email, password and PIN, then complete the workspace request. Production email verification must be enabled; local development automatically confirms email.
+1. Choose **Sign up** and enter your name, your real email and a password of at least 12 characters.
+2. Confirm your email using the verification message, then sign in with that email and password. The app asks you to complete the request: username, workspace name, region, a personal PIN and the access plan.
 3. The request status page remains available while the administrator reviews it. You cannot enter an unapproved workspace. Use **Refresh status** to check the decision.
 4. An administrator with MFA opens **Administration → Registration requests**, enters a review reason and chooses trial approval, full-service approval or rejection. Approval creates a new isolated workspace and grants manager/producer roles, never platform-admin or Food-Safety Lead roles.
-5. Once approved, return to sign in. Newly registered accounts sign in using their email. Previously provisioned staff accounts retain username sign-in.
+5. Once approved, press **Refresh status** and sign in. Registered accounts can sign in with their email or their username.
 6. Trial workspaces support one account and store real entries online. In **Whey & materials**, the workspace founder can register their own supplier before receiving material. They can also register instruments in **Equipment**. Complete required training before starting production.
 7. A workspace without an effective approved procedure shows a setup message. Its administrator must arrange the normal procedure and training approvals before production; registration never substitutes for those approvals.
 8. The administrator can upgrade a trial to full service, with a recorded reason, to permit a team. Existing records remain in the same workspace. Batch release still needs an authorized independent reviewer and the required evidence.
@@ -98,7 +101,11 @@ The following sections describe the remaining controls and advanced workflows. W
 
 **Producer:** Sign in online once. Complete current required training. Today shows overdue checks first. Receive materials from registered suppliers; supplier declarations remain distinct from your measurements. Open a batch to record a current-stage check; photograph the display, confirm the value and save. Attach a voice note when useful. Records show saved on device until synchronization succeeds. Excess provisional allocation needs a reason and supervisor review. Rejected/held/expired inputs are excluded. Packaging creates review stock and never implies release.
 
-**Shared phone:** Each person signs in separately with their own username/password and PIN. Use the person button to switch with a PIN. Every saved record carries the active person's identity. Do not share PINs. Re-authenticate online when the offline session expires.
+**Shared phone:** Each person signs in once with their own username and password, then appears by name on the start screen. To hand the phone over, open the account button and choose **Lock or switch person**; the next person taps their name and enters their own PIN. Every saved record carries the active person's identity. Do not share PINs. The app locks by itself after a while without use. After several days without a connection, connect once and unlock again.
+
+**Forgot your password or PIN:** Ask your cooperative manager or the WISE administrator. In **Organization → Reset password or PIN** they give you a new one. Five wrong tries pause the PIN or password for 15 minutes.
+
+**Connection indicator:** The pill at the top says whether WISE is reachable and how many of your records are still waiting on this phone. Tap it for details and **Send now**. You can always keep recording; waiting records are sent automatically.
 
 **Offline receiving:** An authorized receiver signing in online prepares a PIN-protected credential on that device. Enter the PIN again to Accept, Hold or Reject whey received on that same device while offline. The decision remains provisional; other devices must wait for synchronization. Expired, revoked or altered signatures become review conflicts. Batch release, recall and critical deviation closure still require a connection.
 

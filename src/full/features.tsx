@@ -1,0 +1,1568 @@
+import { isOnline } from '../connectivity/connectivity';
+import { MetricEditor } from './metric-editor';
+import { DiagnosticPanel } from './diagnostics';
+import { ConfigurationFiles } from './configuration-files';
+import { BatchStatus } from './batch-status';
+import { StockBalance } from './stock-balance';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import { Camera, Check, ClipboardCheck, Mic, Plus, ShieldCheck, StopCircle } from 'lucide-react';
+import QRCode from 'qrcode';
+import { Button } from '../components/ui/button';
+import { saveAction, signedAction, type Snapshot } from '../lib/data';
+import { allocationCheck, recallTrace, trace, type Identity, type Lot, type Config } from '../lib/domain';
+import { compressPhoto } from '../lib/media';
+import { demo, api } from '../lib/api';
+import { TrainingEditor } from './training-editor';
+import { EvidenceList } from './evidence';
+import { lotConfig, stageTimeline, checkpointReview } from '../lib/schedules';
+import { downloadReport } from '../lib/reports';
+import { InstructionPicture, ModuleContent } from './knowledge';
+import { receiptMeasurements, receiptField, measurementUnit } from '../lib/receipts';
+import { MaterialBalance } from './material-balance';
+import { LabelCard } from './label-card';
+import { PackagingFields } from './packaging-fields';
+import { Label, RecordList, Status, localDate } from './FullWorkspace';
+
+export function Field({
+  name,
+  label,
+  children,
+  ...props
+}: {
+  name: string;
+  label: string;
+  children?: ReactNode;
+  type?: string;
+  required?: boolean;
+  defaultValue?: string | number;
+  min?: number;
+  step?: string;
+  placeholder?: string;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+}) {
+  return (
+    <label>
+      {label}
+      {children ?? <input name={name} {...props} />}
+    </label>
+  );
+}
+export function Flow({
+  action,
+  data,
+  identity,
+  lot,
+  onDone,
+}: {
+  action: string;
+  data: Snapshot;
+  identity: Identity;
+  lot: Lot | null;
+  onDone: () => Promise<void>;
+}) {
+  const config = lotConfig(data, lot);
+  const { t, i18n } = useTranslation();
+  const [error, setError] = useState(''),
+    [busy, setBusy] = useState(false),
+    [selectedSupplier, setSelectedSupplier] = useState(data.suppliers[0]?.id ?? ''),
+    [photo, setPhoto] = useState<Blob | null>(null),
+    [voice, setVoice] = useState<Blob | null>(null),
+    [recording, setRecording] = useState(false),
+    [suggestion, setSuggestion] = useState<{ value: number; unit: string; confidence: number } | null>(null),
+    [lotSuggestion, setLotSuggestion] = useState<{
+      value: string;
+      confidence: number;
+      manual_required: boolean;
+    } | null>(null),
+    [reading, setReading] = useState(''),
+    [checkpointKey, setCheckpointKey] = useState(
+      (action.startsWith('checkpoint:')
+        ? action.split(':')[1]
+        : config.definition.checkpoints.find((c) => !lot || c.stage === lot.stage)?.key) ?? '',
+    ),
+    [checks, setChecks] = useState<Record<string, boolean>>({}),
+    [receptionValues, setReceptionValues] = useState<Record<string, number>>({}),
+    [receiptType, setReceiptType] = useState('whey');
+  const recorder = useRef<MediaRecorder | null>(null);
+  const form = useForm<{ quantity: number }>({ defaultValues: { quantity: 40 } });
+  const supplier = data.suppliers.find((s) => s.id === selectedSupplier);
+  const actionName = action.split(':')[0];
+  useEffect(
+    () => () => {
+      if (recorder.current?.state === 'recording') recorder.current.stop();
+      recorder.current?.stream.getTracks().forEach((track) => track.stop());
+    },
+    [],
+  );
+  const checkpoints = config.definition.checkpoints.filter((c) => !lot || c.stage === lot.stage);
+  const offlineDecision =
+    actionName === 'decision' &&
+    lot?.type === 'whey' &&
+    (identity.roles.includes('supervisor') ||
+      (identity.roles.includes('producer') && identity.authorizations.receive_whey));
+  const selectedCheckpoint = checkpoints.find((c) => c.key === checkpointKey) ?? checkpoints[0];
+  const contextModule = (data.trainingHistory?.length ? data.trainingHistory : data.training)
+    .filter(
+      (m) =>
+        m.module_key === selectedCheckpoint?.help_module_key &&
+        (!m.config_version_id || m.config_version_id === config.id) &&
+        (!m.effective_at || String(m.effective_at) === '-infinity' || Date.parse(String(m.effective_at)) <= Date.now()),
+    )
+    .sort((a, b) => Number(b.version) - Number(a.version))[0];
+  const trained =
+    demo ||
+    data.training
+      .filter((module) => module.required !== false)
+      .every((module) =>
+        data.completions.some(
+          (c) =>
+            c.user_id === identity.id &&
+            c.module_id === module.id &&
+            (!c.expires_at || Date.parse(String(c.expires_at)) > Date.now()),
+        ),
+      );
+  async function startVoice() {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const r = new MediaRecorder(stream, { audioBitsPerSecond: 64000 });
+      const chunks: BlobPart[] = [];
+      r.ondataavailable = (e) => chunks.push(e.data);
+      r.onstop = () => {
+        const clip = new Blob(chunks, { type: r.mimeType });
+        if (clip.size <= 1024 * 1024) setVoice(clip);
+        else setError('voiceTooLarge');
+        setRecording(false);
+        stream.getTracks().forEach((track) => track.stop());
+      };
+      recorder.current = r;
+      r.start();
+      setTimeout(() => {
+        if (r.state === 'recording') r.stop();
+      }, 45000);
+      setRecording(true);
+    } catch {
+      setError('error');
+    }
+  }
+  async function submit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setBusy(true);
+    setError('');
+    const f = new FormData(event.currentTarget);
+    const text = (key: string) => String(f.get(key) ?? '');
+    const number = (key: string) => Number(f.get(key));
+    let payload: Record<string, unknown> = {};
+    let actual = actionName;
+    try {
+      if (actionName === 'receipt') {
+        if (text('type') === 'ingredient' && config.definition.ingredient_photo_required && !photo)
+          throw new Error('photoRequired');
+        const observedAt = text('observed_at') ? new Date(text('observed_at')).toISOString() : new Date().toISOString();
+        const isWhey = text('type') === 'whey';
+        const declarations = {
+          ...supplier?.declarations,
+          pasteurized: text('pasteurized') === 'unknown' ? 'unknown' : text('pasteurized') === 'yes',
+          labneh_ingredients: text('labneh_ingredients'),
+          starter_culture: text('starter_culture'),
+          salt_stage: text('salt_stage'),
+          other: text('other_declarations'),
+        };
+        payload = {
+          type: text('type'),
+          supplier_id: text('supplier_id'),
+          quantity: z.number().positive().parse(number('quantity')),
+          unit: text('unit'),
+          generation_at: isWhey && text('generation_at') ? new Date(text('generation_at')).toISOString() : undefined,
+          expires_at: text('expires_at') ? new Date(text('expires_at')).toISOString() : undefined,
+          facts: {
+            supplier_reference: text('reference'),
+            supplier_lot: text('supplier_lot'),
+            ai_supplier_lot: lotSuggestion,
+            confirmed_supplier_lot: text('supplier_lot'),
+            ingredient_type: text('ingredient_type') || supplier?.type,
+            ...(isWhey
+              ? {
+                  declarations,
+                  declarations_confirmed: f.has('declarations_confirmed'),
+                  declared_by_supplier: true,
+                  ...receiptMeasurements(
+                    f,
+                    config.definition.reception_measurements ?? [],
+                    identity,
+                    observedAt,
+                    !!photo,
+                  ),
+                  labneh_lot: text('labneh_lot'),
+                  milk_species: text('milk_species'),
+                  collection_at: text('collection_at') ? new Date(text('collection_at')).toISOString() : undefined,
+                  transport_method: text('transport_method'),
+                  transport_conditions: text('transport_conditions'),
+                  container_type: text('container_type'),
+                  container_condition: text('container_condition'),
+                  appearance: text('appearance'),
+                  odour: text('odour'),
+                }
+              : {}),
+          },
+        };
+      }
+      if (actionName === 'batch') {
+        if (!trained) throw new Error('trainingRequired');
+        payload = { unit: 'kg', quantity: 0, facts: {} };
+      }
+      if (actionName === 'allocation') {
+        const input = data.lots.find((l) => l.id === text('input_lot_id'));
+        const check = allocationCheck(input?.available ?? 0, number('quantity'), isOnline(), text('reason'));
+        if (!check.allowed) throw new Error(check.reason);
+        payload = {
+          input_lot_id: text('input_lot_id'),
+          output_lot_id: text('output_lot_id'),
+          quantity: number('quantity'),
+          unit: input?.unit,
+          reason: text('reason'),
+        };
+      }
+      if (actionName === 'checkpoint' && selectedCheckpoint?.required_photo && !photo) throw new Error('photoRequired');
+      if (
+        [
+          'checkpoint',
+          'measurement',
+          'checklist',
+          'storage_inspection',
+          'note',
+          'sample',
+          'lab',
+          'calibration',
+          'complaint',
+        ].includes(actionName)
+      )
+        payload = {
+          lot_id: lot?.id ?? text('lot_id'),
+          definition_key: text('definition_key'),
+          values: {
+            value: text('value') ? number('value') : undefined,
+            unit: text('unit'),
+            all_ok:
+              actionName === 'checkpoint' && selectedCheckpoint?.checklist_items?.length
+                ? selectedCheckpoint.checklist_items.every((item) => checks[item.key])
+                : f.has('all_ok'),
+            checklist: checks,
+            equipment_id: text('equipment_id'),
+            note: text('reason'),
+            ai_value: suggestion,
+            confirmed_value: text('value') ? number('value') : undefined,
+          },
+        };
+      if (actionName === 'storage_inspection') {
+        if (!photo) throw new Error('photoRequired');
+        payload = {
+          lot_id: lot?.id ?? text('lot_id'),
+          values: {
+            storage_location: text('storage_location'),
+            temperature: text('storage_temperature') ? number('storage_temperature') : undefined,
+            humidity: text('storage_humidity') ? number('storage_humidity') : undefined,
+            clean: f.has('clean'),
+            dry: f.has('dry'),
+            pest_protected: f.has('pest_protected'),
+            off_floor: f.has('off_floor'),
+            all_ok: ['clean', 'dry', 'pest_protected', 'off_floor'].every((k) => f.has(k)),
+            note: text('reason'),
+          },
+        };
+      }
+      if (actionName === 'deviation')
+        payload = {
+          lot_id: lot?.id ?? text('lot_id'),
+          category: text('category') || 'manual',
+          severity: text('severity'),
+          issue: text('issue'),
+          corrective_action: text('corrective_action'),
+          preventive_action: text('preventive_action'),
+          owner_id: text('owner_id') || undefined,
+          due_at: text('due_at') ? new Date(text('due_at')).toISOString() : undefined,
+        };
+      if (actionName === 'handover')
+        payload = { lot_id: lot?.id, next_producer: text('next_producer'), reason: text('reason') };
+      if (actionName === 'abandon') payload = { lot_id: lot?.id, reason: text('reason') };
+      if (['sample', 'lab'].includes(actionName))
+        payload = {
+          lot_id: lot?.id,
+          values: {
+            sample_id: text('sample_id'),
+            sampled_at: text('sampled_at') ? new Date(text('sampled_at')).toISOString() : undefined,
+            lab: text('lab'),
+            reference: text('reference'),
+            result: text('result'),
+            note: text('reason'),
+          },
+        };
+      if (actionName === 'calibration')
+        payload = {
+          values: {
+            equipment_id: text('equipment_id'),
+            method: text('method'),
+            reference_value: z.number().finite().parse(number('reference_value')),
+            measured_value: z.number().finite().parse(number('measured_value')),
+            unit: text('unit'),
+            result: text('result'),
+            note: text('reason'),
+          },
+        };
+      if (actionName === 'packaging')
+        payload = {
+          batch_id: text('batch_id'),
+          packaging_material_id: text('packaging_material_id'),
+          package_type: text('package_type'),
+          size_kg: number('size_kg'),
+          package_count: number('package_count'),
+          best_before: text('best_before'),
+          storage_location: text('storage_location'),
+          reason: text('reason'),
+          label: config.definition.label_template ?? {},
+        };
+      if (actionName === 'sale')
+        payload = {
+          packaging_lot_id: text('packaging_lot_id'),
+          quantity: number('quantity'),
+          transaction_type: text('transaction_type'),
+          customer_category: text('customer_category'),
+          customer_contact:
+            text('customer_name') || text('customer_phone')
+              ? { name: text('customer_name'), phone: text('customer_phone') }
+              : undefined,
+          total: number('total'),
+          currency: text('currency'),
+          usd_rate: text('currency') === 'USD' ? 1 : number('usd_rate'),
+        };
+      if (actionName === 'stock_movement') {
+        actual = 'movement';
+        payload = {
+          lot_id: lot?.id ?? text('lot_id'),
+          type: text('movement_type'),
+          quantity: -z.number().int().positive().parse(number('quantity')),
+          unit: 'unit',
+          reason: text('reason'),
+        };
+      }
+      if (actionName === 'movement') {
+        actual = 'material_disposition';
+        payload = {
+          lot_id: lot?.id ?? text('lot_id'),
+          kind: text('kind'),
+          quantity: z.number().positive().parse(number('quantity')),
+          unit: lot?.unit ?? text('unit'),
+          method: text('method'),
+          destination: text('destination'),
+          reason: text('reason'),
+          close_lot: f.has('close_lot'),
+        };
+      }
+      if (actionName === 'training') {
+        actual = 'training';
+        const answers = Object.fromEntries(
+          [...f.entries()]
+            .filter(([key]) => key.startsWith('answer:'))
+            .map(([key, value]) => [key.slice(7), String(value)]),
+        );
+        const assessment = data.training.find((m) => m.id === action.split(':')[1])?.assessment as
+          { key: string; correct: string }[] | undefined;
+        if (assessment?.some((q) => answers[q.key] !== q.correct)) throw new Error('trainingNotPassed');
+        payload = { module_id: action.split(':')[1], answers };
+      }
+      if (offlineDecision && !isOnline()) {
+        await saveAction(
+          identity,
+          (data.configs.find((c) => c.id === lot?.config_version_id) as unknown as Config) ?? data.config,
+          'whey_decision',
+          { lot_id: lot!.id, outcome: text('outcome'), reason: text('reason') },
+          [],
+          text('pin'),
+        );
+      } else if (['decision', 'recall', 'close_deviation'].includes(actionName)) {
+        const target = actionName === 'close_deviation' ? text('deviation_id') : (lot?.id ?? text('lot_id'));
+        const args =
+          actionName === 'decision'
+            ? { outcome: text('outcome'), reason: text('reason') }
+            : actionName === 'recall'
+              ? { mock: f.has('mock'), reason: text('reason'), notice: { en: text('notice'), ar: text('notice') } }
+              : { resolution: text('resolution') };
+        await signedAction(identity, actionName, target, text('pin'), args);
+      } else {
+        const subject = data.lots.find((l) => l.id === (payload.lot_id ?? payload.batch_id ?? payload.output_lot_id));
+        const config = subject
+          ? ((data.configs.find((c) => c.id === subject.config_version_id) as unknown as Config) ?? data.config)
+          : data.config;
+        const author =
+          actionName === 'deviation' && subject ? { ...identity, cooperative_id: subject.cooperative_id } : identity;
+        await saveAction(
+          author,
+          config,
+          actual,
+          payload,
+          [
+            ...(photo ? [{ blob: photo, type: 'image/jpeg' }] : []),
+            ...(voice ? [{ blob: voice, type: voice.type || 'audio/webm' }] : []),
+          ],
+          undefined,
+          text('observed_at') ? new Date(text('observed_at')).toISOString() : undefined,
+        );
+      }
+      await onDone();
+    } catch (e) {
+      setError(e instanceof z.ZodError ? 'positive_quantity' : e instanceof Error ? e.message : 'error');
+    } finally {
+      setBusy(false);
+    }
+  }
+  const lotSelect = (name: string, filter: (l: Lot) => boolean, label: string) => (
+    <Field name={name} label={t(label)}>
+      <select name={name} required defaultValue={lot?.id}>
+        {data.lots.filter(filter).map((l) => (
+          <option key={l.id} value={l.id}>
+            {l.code} · {l.available ?? 0} {l.unit}
+          </option>
+        ))}
+      </select>
+    </Field>
+  );
+  const evidence = (
+    <div className="evidence-capture">
+      <p className="quiet">{t('photoPrivacyHelp')}</p>
+      <label className="photo-button">
+        <Camera size={28} />
+        <strong>{t('photo')}</strong>
+        <span>{photo ? <Check size={20} /> : t('cameraFirst')}</span>
+        <input
+          className="sr-only"
+          type="file"
+          accept="image/*"
+          capture="environment"
+          onChange={async (e) => {
+            if (e.target.files?.[0])
+              try {
+                setPhoto(await compressPhoto(e.target.files[0]));
+              } catch {
+                setError('photo_failed');
+              }
+          }}
+        />
+      </label>
+      <Button
+        variant="outline"
+        type="button"
+        onClick={() => (recording ? recorder.current?.stop() : void startVoice())}
+      >
+        {recording ? <StopCircle size={20} /> : <Mic size={20} />} {t(recording ? 'stopVoice' : 'voice')}
+        {voice && <Check size={16} />}
+      </Button>
+    </div>
+  );
+  return (
+    <form className="record-form" onSubmit={submit}>
+      {!['receipt', 'sample', 'lab', 'decision', 'recall', 'close_deviation', 'training'].includes(actionName) &&
+        evidence}
+      {actionName === 'calibration' && (
+        <>
+          <Field name="equipment_id" label={t('equipmentId')}>
+            <select name="equipment_id" required>
+              {data.equipment
+                .filter((e) => e.status === 'active')
+                .map((e) => (
+                  <option key={String(e.id)} value={String(e.id)}>
+                    {String(e.label)}
+                  </option>
+                ))}
+            </select>
+          </Field>
+          <Field name="method" label={t('verificationMethod')}>
+            <select name="method">
+              {['ice_water', 'reference_weight', 'standard_buffer', 'custom'].map((method) => (
+                <option key={method} value={method}>
+                  {t(method)}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <div className="form-grid">
+            <Field name="reference_value" label={t('referenceValue')} type="number" step="any" required />
+            <Field name="measured_value" label={t('measuredValue')} type="number" step="any" required />
+          </div>
+          <Field name="unit" label={t('unit')} required />
+          <Field name="result" label={t('verificationResult')}>
+            <select name="result">
+              <option value="pass">{t('pass')}</option>
+              <option value="fail">{t('fail')}</option>
+            </select>
+          </Field>
+          <Field name="reason" label={t('reason')} />
+          <p className="callout">{t('verificationNotice')}</p>
+        </>
+      )}
+      {actionName === 'receipt' && (
+        <>
+          <Field name="type" label={t('type')}>
+            <select
+              name="type"
+              value={receiptType}
+              onChange={(e) => {
+                setReceiptType(e.target.value);
+                setReceptionValues({});
+              }}
+            >
+              <option value="whey">{t('whey')}</option>
+              <option value="ingredient">{t('ingredient')}</option>
+              <option value="packaging_material">{t('packaging_material')}</option>
+            </select>
+          </Field>
+          <Field name="supplier_id" label={t('supplier')}>
+            <select
+              name="supplier_id"
+              value={selectedSupplier}
+              onChange={(e) => setSelectedSupplier(e.target.value)}
+              required
+            >
+              {data.suppliers
+                .filter((s) => s.status !== 'suspended')
+                .map((s) => (
+                  <option key={s.id} value={s.id}>
+                    {s.name}
+                  </option>
+                ))}
+            </select>
+          </Field>
+          <div className="form-grid">
+            <Field name="quantity" label={t('quantity')} type="number" min={0.001} step="any" required />
+            <Field name="unit" label={t('unit')}>
+              <select name="unit">
+                {(receiptType === 'whey' ? ['kg'] : (config.definition.units ?? ['kg', 'L', 'unit'])).map((unit) => (
+                  <option key={unit}>{unit}</option>
+                ))}
+              </select>
+            </Field>
+          </div>
+          <Field name="reference" label={t('reference')} />
+          <Field name="supplier_lot" label={t('supplierLot')} />
+          {receiptType === 'ingredient' && (
+            <Field name="ingredient_type" label={t('ingredientType')}>
+              <select name="ingredient_type">
+                {(config.definition.ingredient_types ?? ['bulgur', 'salt', 'ingredient']).map((value) => (
+                  <option key={value} value={value}>
+                    {t(value)}
+                  </option>
+                ))}
+              </select>
+            </Field>
+          )}
+          {photo && api && isOnline() && (
+            <Button
+              variant="outline"
+              type="button"
+              onClick={(event) => {
+                const input = event.currentTarget
+                  .closest('form')
+                  ?.querySelector<HTMLInputElement>('input[name="supplier_lot"]');
+                const reader = new FileReader();
+                reader.onload = async () => {
+                  try {
+                    const reply = await api!.functions.invoke('ocr', {
+                      body: { image: String(reader.result).split(',')[1], media_type: 'image/jpeg', kind: 'text' },
+                    });
+                    if (reply.error) throw reply.error;
+                    setLotSuggestion(reply.data);
+                    if (reply.data.manual_required) {
+                      setError('manualFallback');
+                    } else if (input && !input.value) input.value = String(reply.data.value);
+                  } catch (e) {
+                    setError(e instanceof Error ? e.message : 'error');
+                  }
+                };
+                reader.readAsDataURL(photo);
+              }}
+            >
+              {t('readPrintedLot')}
+            </Button>
+          )}
+          {lotSuggestion && (
+            <p className="callout">
+              {t('ocrSuggestion')}: {lotSuggestion.value} ? {Math.round(lotSuggestion.confidence * 100)}% ?{' '}
+              {t('manualFallback')}
+            </p>
+          )}
+          <Field name="observed_at" label={t('receiptTime')} type="datetime-local" />
+          {receiptType === 'whey' ? (
+            <>
+              <fieldset className="declaration-block" key={selectedSupplier}>
+                <legend>{t('declarations')}</legend>
+                {Object.entries(supplier?.declarations ?? {}).map(([key, value]) => (
+                  <p key={key}>
+                    {key.replaceAll('_', ' ')}: {String(value)}
+                  </p>
+                ))}
+                <Field name="pasteurized" label={t('pasteurization')}>
+                  <select
+                    name="pasteurized"
+                    defaultValue={
+                      supplier?.declarations.pasteurized === true
+                        ? 'yes'
+                        : supplier?.declarations.pasteurized === false
+                          ? 'no'
+                          : 'unknown'
+                    }
+                  >
+                    <option value="yes">{t('yes')}</option>
+                    <option value="no">{t('no')}</option>
+                    <option value="unknown">{t('unknownDeclaration')}</option>
+                  </select>
+                </Field>
+                {['labneh_ingredients', 'starter_culture', 'salt_stage', 'other_declarations'].map((key) => (
+                  <Field
+                    key={key}
+                    name={key}
+                    label={t(key)}
+                    defaultValue={String(supplier?.declarations[key === 'other_declarations' ? 'other' : key] ?? '')}
+                  />
+                ))}
+                <label className="checkbox">
+                  <input name="declarations_confirmed" type="checkbox" required />
+                  {t('confirmDeclarations')}
+                </label>
+              </fieldset>
+              <Field name="labneh_lot" label={t('labnehLot')} />
+              <Field name="milk_species" label={t('species')} />
+              <Field name="generation_at" label={t('generation')} type="datetime-local" required />
+              <Field name="collection_at" label={t('collection')} type="datetime-local" />
+              <div className="form-grid">
+                <Field name="transport_method" label={t('transportMethod')} />
+                <Field name="transport_conditions" label={t('transport')} />
+                <Field name="container_type" label={t('containerType')} />
+                <Field name="container_condition" label={t('container')} />
+                <Field name="appearance" label={t('appearance')} />
+                <Field name="odour" label={t('odour')} />
+              </div>
+              {(config.definition.reception_measurements ?? []).map((rule) => (
+                <fieldset key={rule.key}>
+                  <legend>
+                    {rule.label?.[i18n.language === 'ar' ? 'ar' : 'en'] ??
+                      t(rule.key === 'reception_temperature' ? 'temperature' : rule.key)}
+                  </legend>
+                  <div className="form-grid">
+                    <Field
+                      name={receiptField(rule.key)}
+                      label={
+                        rule.label?.[i18n.language === 'ar' ? 'ar' : 'en'] ??
+                        t(rule.key === 'reception_temperature' ? 'temperature' : rule.key)
+                      }
+                      type={rule.response_type === 'text' ? 'text' : 'number'}
+                      step="any"
+                      required={rule.required}
+                      onChange={(e) =>
+                        setReceptionValues((v) => {
+                          const next = { ...v };
+                          if (e.target.value === '') delete next[rule.key];
+                          else next[rule.key] = Number(e.target.value);
+                          return next;
+                        })
+                      }
+                    />
+                    <Field
+                      name={'unit:' + rule.key}
+                      label={t('unit')}
+                      defaultValue={measurementUnit(rule)}
+                      required={!!rule.unit}
+                    />
+                  </div>
+                  <Field name={'equipment:' + rule.key} label={t('equipmentId')}>
+                    <select name={'equipment:' + rule.key} required={rule.equipment_required}>
+                      <option value="">—</option>
+                      {data.equipment
+                        .filter((e) => e.status === 'active' || demo)
+                        .map((e) => (
+                          <option value={String(e.id)} key={String(e.id)}>
+                            {String(e.label)}
+                            {e.next_due_at && Date.parse(String(e.next_due_at)) < Date.now()
+                              ? ' · ' + t('calibrationOverdue')
+                              : ''}
+                          </option>
+                        ))}
+                    </select>
+                  </Field>
+                </fieldset>
+              ))}
+              {config.definition.reception_measurements?.some(
+                (rule) =>
+                  receptionValues[rule.key] !== undefined &&
+                  ((rule.min !== undefined && receptionValues[rule.key] < rule.min) ||
+                    (rule.max !== undefined && receptionValues[rule.key] > rule.max)),
+              ) && (
+                <div className="callout">
+                  {t('suggestedOutcome')}: {t('hold')}
+                </div>
+              )}
+            </>
+          ) : (
+            <Field name="expires_at" label={t('expires_at')} type="datetime-local" />
+          )}
+          {evidence}
+        </>
+      )}
+      {['checkpoint', 'measurement', 'checklist', 'storage_inspection', 'sample', 'lab', 'note'].includes(
+        actionName,
+      ) && <Field name="observed_at" label={t('observedTime')} type="datetime-local" />}
+      {['handover', 'abandon'].includes(actionName) && (
+        <>
+          {actionName === 'handover' && (
+            <Field name="next_producer" label={t('responsibleProducer')}>
+              <select name="next_producer" required>
+                {data.members
+                  .filter(
+                    (m) =>
+                      m.status === 'active' &&
+                      (m.roles as string[])?.includes('producer') &&
+                      m.cooperative_id === lot?.cooperative_id,
+                  )
+                  .map((m) => (
+                    <option key={String(m.user_id)} value={String(m.user_id)}>
+                      {String(m.display_name)}
+                    </option>
+                  ))}
+              </select>
+            </Field>
+          )}
+          <Field name="reason" label={t('reason')} required />
+          {actionName === 'abandon' && <p className="callout">{t('abandonWarning')}</p>}
+        </>
+      )}
+      {['sample', 'lab'].includes(actionName) && (
+        <>
+          <Field name="sample_id" label={t('sampleId')} required />
+          <Field name="sampled_at" label={t('sampledAt')} type="datetime-local" required />
+          <Field name="lab" label={t('laboratory')} required={actionName === 'lab'} />
+          <Field name="reference" label={t('reference')} required={actionName === 'lab'} />
+          {actionName === 'lab' && (
+            <Field name="result" label={t('labResult')}>
+              <select name="result" aria-label={t('labResult')}>
+                <option value="pending">{t('pending')}</option>
+                <option value="pass">{t('pass')}</option>
+                <option value="fail">{t('fail')}</option>
+              </select>
+            </Field>
+          )}
+          {evidence}
+        </>
+      )}
+      {actionName === 'batch' && (
+        <div className="callout">
+          <ShieldCheck />
+          <p>{t(trained ? 'trained' : 'trainingRequired')}</p>
+        </div>
+      )}
+      {actionName === 'allocation' && (
+        <>
+          {lotSelect(
+            'input_lot_id',
+            (l) =>
+              ['accepted', 'received'].includes(l.state) &&
+              (l.type !== 'whey' || l.state === 'accepted') &&
+              l.type !== 'batch' &&
+              (!l.expires_at || Date.parse(l.expires_at) > Date.now()),
+            'input',
+          )}
+          {lotSelect(
+            'output_lot_id',
+            (l) => l.type === 'batch' && ['draft', 'in_production'].includes(l.state),
+            'output',
+          )}
+          <label>
+            {t('quantity')}
+            <input
+              {...form.register('quantity', { valueAsNumber: true })}
+              type="number"
+              min="0.001"
+              step="any"
+              required
+            />
+          </label>
+          <p className="callout">{t('allocationWarning')}</p>
+          <Field name="reason" label={t('reason')} />
+        </>
+      )}
+      {['checkpoint', 'measurement'].includes(actionName) && (
+        <>
+          {!lot && lotSelect('lot_id', (l) => l.type === 'batch', 'lot')}
+          <Field name="definition_key" label={t('checkpoints')}>
+            <select
+              name="definition_key"
+              value={checkpointKey}
+              onChange={(e) => {
+                setCheckpointKey(e.target.value);
+                setReading('');
+                setChecks({});
+              }}
+            >
+              {checkpoints.map((c) => (
+                <option key={c.key} value={c.key}>
+                  {c.label[i18n.language === 'ar' ? 'ar' : 'en']}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <p className="quiet">{t('manualFallback')}</p>
+          {photo && api && isOnline() && (
+            <Button
+              variant="outline"
+              type="button"
+              onClick={async () => {
+                try {
+                  const reader = new FileReader();
+                  reader.onload = async () => {
+                    const response = await api!.functions.invoke('ocr', {
+                      body: { image: String(reader.result).split(',')[1], media_type: 'image/jpeg' },
+                    });
+                    if (response.error) setError(response.error.message);
+                    else {
+                      setSuggestion(response.data);
+                      setReading(response.data.manual_required ? '' : String(response.data.value));
+                    }
+                  };
+                  reader.readAsDataURL(photo);
+                } catch {
+                  setError('error');
+                }
+              }}
+            >
+              {t('ocr')}
+            </Button>
+          )}
+          {selectedCheckpoint?.unit || selectedCheckpoint?.response_type === 'number' ? (
+            <>
+              <Field name="value" label={t('value')}>
+                <input
+                  name="value"
+                  type="number"
+                  step="any"
+                  value={reading}
+                  onChange={(e) => setReading(e.target.value)}
+                  required
+                />
+              </Field>
+              <Field name="unit" label={t('unit')} defaultValue={selectedCheckpoint?.unit ?? ''} key={checkpointKey} />
+            </>
+          ) : (
+            <>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() =>
+                  setChecks({
+                    all_ok: true,
+                    ...Object.fromEntries((selectedCheckpoint?.checklist_items ?? []).map((item) => [item.key, true])),
+                  })
+                }
+              >
+                {t('allOkay')}
+              </Button>
+              {selectedCheckpoint?.checklist_items?.length ? (
+                selectedCheckpoint.checklist_items.map((item) => (
+                  <label className="checkbox" key={item.key}>
+                    <input
+                      type="checkbox"
+                      checked={checks[item.key] ?? false}
+                      onChange={(e) => setChecks((old) => ({ ...old, [item.key]: e.target.checked }))}
+                    />
+                    {item.label[i18n.language === 'ar' ? 'ar' : 'en']}
+                  </label>
+                ))
+              ) : (
+                <label className="checkbox">
+                  <input
+                    name="all_ok"
+                    type="checkbox"
+                    checked={checks.all_ok ?? false}
+                    onChange={(e) => setChecks((old) => ({ ...old, all_ok: e.target.checked }))}
+                    required
+                  />
+                  {t('hygieneAnswer')}
+                </label>
+              )}
+              <Field name="reason" label={t('exceptions')} />
+            </>
+          )}
+          <Field name="equipment_id" label={t('equipmentId')}>
+            <select name="equipment_id">
+              <option value="">—</option>
+              {data.equipment.map((e) => (
+                <option key={String(e.id)} value={String(e.id)}>
+                  {String(e.label)}
+                </option>
+              ))}
+            </select>
+          </Field>
+        </>
+      )}
+      {actionName === 'checkpoint' && selectedCheckpoint?.help_module_key && contextModule && (
+        <details className="checkpoint-help">
+          <summary>{t('checkpointHelp')}</summary>
+          <ModuleContent module={contextModule!} step={selectedCheckpoint.help_step} data={data} identity={identity} />
+        </details>
+      )}
+      {actionName === 'storage_inspection' && (
+        <>
+          {lotSelect('lot_id', (l) => ['packaging', 'whey'].includes(l.type), 'lot')}
+          <Field name="storage_location" label={t('storage_location')} required />
+          {['clean', 'dry', 'pest_protected', 'off_floor'].map((check) => (
+            <label className="checkbox" key={check}>
+              <input name={check} type="checkbox" />
+              {t('storage_' + check)}
+            </label>
+          ))}
+          <div className="form-grid">
+            <Field name="storage_temperature" label={t('storage_temperature')} type="number" step="any" />
+            <Field name="storage_humidity" label={t('storage_humidity')} type="number" min={0} step="any" />
+          </div>
+          <Field name="reason" label={t('reason')} />
+        </>
+      )}
+      {actionName === 'deviation' && (
+        <>
+          {!lot && lotSelect('lot_id', () => true, 'lot')}
+          <Field name="category" label={t('category')}>
+            <select name="category">
+              {(
+                config.definition.deviation_categories ?? ['manual', 'hygiene', 'equipment', 'storage', 'complaint']
+              ).map((category) => (
+                <option key={category} value={category}>
+                  {t(category)}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field name="severity" label={t('severity')}>
+            <select name="severity">
+              {['minor', 'major', 'critical'].map((s) => (
+                <option key={s} value={s}>
+                  {t(s)}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field name="issue" label={t('issue')} required />
+          <Field name="corrective_action" label={t('corrective')} />
+          <Field name="preventive_action" label={t('preventive')} />
+          <Field name="owner_id" label={t('actionOwner')}>
+            <select name="owner_id">
+              <option value="">—</option>
+              {data.members
+                .filter((m) => m.status === 'active')
+                .map((m) => (
+                  <option key={String(m.user_id)} value={String(m.user_id)}>
+                    {String(m.display_name)}
+                  </option>
+                ))}
+            </select>
+          </Field>
+          <Field name="due_at" label={t('due')} type="datetime-local" />
+        </>
+      )}
+      {actionName === 'packaging' && <PackagingFields data={data} lot={lot} />}
+      {actionName === 'sale' && (
+        <>
+          {lotSelect(
+            'packaging_lot_id',
+            (l) =>
+              l.type === 'packaging' &&
+              l.state === 'released' &&
+              (!l.expires_at || Date.parse(l.expires_at) > Date.now()),
+            'lot',
+          )}
+          <div className="form-grid">
+            <Field name="quantity" label={t('quantity')} type="number" min={1} required />
+            <Field name="transaction_type" label={t('transaction')}>
+              <select name="transaction_type">
+                {['sale', 'consignment', 'donation', 'sample', 'internal_use', 'return'].map((type) => (
+                  <option value={type} key={type}>
+                    {t(type)}
+                  </option>
+                ))}
+              </select>
+            </Field>
+          </div>
+          <Field name="customer_category" label={t('customerCategory')} required />
+          <Field name="customer_name" label={t('optionalBuyerName')} />
+          <Field name="customer_phone" label={t('optionalBuyerContact')} />
+          <div className="form-grid">
+            <Field name="total" label={t('total')} type="number" min={0} step="any" defaultValue={0} required />
+            <Field name="currency" label={t('currency')}>
+              <select name="currency">
+                <option>USD</option>
+                <option>LBP</option>
+              </select>
+            </Field>
+          </div>
+          <Field name="usd_rate" label={t('rate')} type="number" min={1} defaultValue={1} required />
+        </>
+      )}
+      {actionName === 'stock_movement' && (
+        <>
+          {lotSelect('lot_id', (l) => l.type === 'packaging', 'lot')}
+          <Field name="movement_type" label={t('type')}>
+            <select name="movement_type">
+              {['lost', 'disposed', 'sample'].map((type) => (
+                <option value={type} key={type}>
+                  {t(type)}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field name="quantity" label={t('quantity')} type="number" min={1} step="1" required />
+          <Field name="reason" label={t('reason')} required />
+        </>
+      )}
+      {actionName === 'movement' && (
+        <>
+          <Field name="kind" label={t('dispositionKind')}>
+            <select name="kind">
+              {[
+                'disposed',
+                'diverted',
+                'lost',
+                ...(identity.roles.some((r) => ['supervisor', 'manager'].includes(r))
+                  ? ['measurement_difference']
+                  : []),
+              ].map((kind) => (
+                <option value={kind} key={kind}>
+                  {t('balance_' + kind)}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field name="quantity" label={t('quantity')} type="number" min={0.001} step="any" required />
+          <Field name="method" label={t('disposalMethod')} required />
+          <Field name="destination" label={t('diversionDestination')} />
+          <Field name="reason" label={t('reason')} required />
+          <label className="checkbox">
+            <input type="checkbox" name="close_lot" />
+            {t('closeMaterialLot')}
+          </label>
+          <p className="quiet">{t('closeResidualNote')}</p>
+        </>
+      )}
+      {actionName === 'training' && (
+        <>
+          {data.training.find((m) => m.id === action.split(':')[1]) && (
+            <ModuleContent
+              module={data.training.find((m) => m.id === action.split(':')[1])!}
+              data={data}
+              identity={identity}
+            />
+          )}
+          <p>{t('assessmentAnswer')}</p>
+          {(
+            (data.training.find((m) => m.id === action.split(':')[1])?.assessment ?? [
+              {
+                key: 'hygiene',
+                question: { en: t('assessmentAnswer'), ar: t('assessmentAnswer') },
+                options: [
+                  { key: 'safe', label: { en: t('hygieneAnswer'), ar: t('hygieneAnswer') } },
+                  { key: 'unsafe', label: { en: t('unsafeAnswer'), ar: t('unsafeAnswer') } },
+                ],
+              },
+            ]) as {
+              key: string;
+              question?: Record<string, string>;
+              options?: { key: string; illustration?: string; label: Record<string, string> }[];
+            }[]
+          ).map((q) => (
+            <fieldset key={q.key}>
+              <legend>{q.question?.[i18n.language] ?? q.key}</legend>
+              {(
+                q.options ?? [
+                  { key: 'safe', label: { en: t('hygieneAnswer'), ar: t('hygieneAnswer') } },
+                  { key: 'unsafe', label: { en: t('unsafeAnswer'), ar: t('unsafeAnswer') } },
+                ]
+              ).map((option) => (
+                <label className="assessment-option" key={option.key}>
+                  <input
+                    type="radio"
+                    aria-label={option.label[i18n.language]}
+                    name={'answer:' + q.key}
+                    value={option.key}
+                    required
+                  />
+                  {option.illustration && (
+                    <InstructionPicture kind={option.illustration} label={option.label[i18n.language]} />
+                  )}
+                  {option.label[i18n.language]}
+                </label>
+              ))}
+            </fieldset>
+          ))}
+        </>
+      )}
+      {actionName === 'decision' && (
+        <>
+          {!isOnline() && offlineDecision && <p className="callout">{t('offlineDecisionNote')}</p>}
+          <Field name="outcome" label={t('status')}>
+            <select name="outcome">
+              {(lot?.type === 'whey' ? ['accepted', 'hold', 'rejected'] : ['released', 'on_hold', 'rejected']).map(
+                (state) => (
+                  <option key={state} value={state}>
+                    {t(state)}
+                  </option>
+                ),
+              )}
+            </select>
+          </Field>
+          <Field name="reason" label={t('reason')} required />
+        </>
+      )}
+      {actionName === 'recall' && (
+        <>
+          <label className="checkbox">
+            <input name="mock" type="checkbox" defaultChecked />
+            {t('mockRecall')}
+          </label>
+          <Field name="reason" label={t('recallReason')} required />
+          <Field name="notice" label={t('notice')} required />
+        </>
+      )}
+      {actionName === 'close_deviation' && (
+        <>
+          <Field name="deviation_id" label={t('deviations')}>
+            <select name="deviation_id" defaultValue={action.split(':')[1]}>
+              {data.deviations
+                .filter((d) => !d.closed_at)
+                .map((d) => (
+                  <option key={String(d.id)} value={String(d.id)}>
+                    {String(d.issue)}
+                  </option>
+                ))}
+            </select>
+          </Field>
+          <Field name="resolution" label={t('resolution')} required />
+        </>
+      )}
+      {['decision', 'recall', 'close_deviation'].includes(actionName) && (
+        <>
+          <div className="callout">
+            <ShieldCheck size={20} />
+            {t('signoff')}
+          </div>
+          <Field name="pin" label={t('pin')}>
+            <input name="pin" type="password" pattern="[0-9]{4,6}" inputMode="numeric" required autoComplete="off" />
+          </Field>
+        </>
+      )}
+      {error && (
+        <p className="error-box" role="alert">
+          {t(error)}
+        </p>
+      )}
+      <Button
+        type="submit"
+        disabled={
+          busy ||
+          (['decision', 'recall', 'close_deviation'].includes(actionName) &&
+            ((!isOnline() && !offlineDecision) || demo))
+        }
+      >
+        {busy ? t('loading') : t('save')}
+        <Check size={18} />
+      </Button>
+    </form>
+  );
+}
+
+export function LotDetail({
+  lot,
+  data,
+  identity,
+  open,
+  onDone,
+}: {
+  lot: Lot;
+  data: Snapshot;
+  identity: Identity;
+  open: (action: string) => void;
+  onDone: () => Promise<void>;
+}) {
+  const config = lotConfig(data, lot);
+  const { t, i18n } = useTranslation();
+  const [direction, setDirection] = useState<'forward' | 'back'>('back'),
+    [qr, setQr] = useState(''),
+    [error, setError] = useState('');
+  const records = data.records.filter((r) => r.lot_id === lot.id);
+  const deviations = data.deviations.filter((d) => d.lot_id === lot.id);
+  const critical = deviations.some((d) => d.severity === 'critical' && !d.closed_at);
+  const coverage = checkpointReview(data, lot);
+  const required = config.definition.checkpoints.filter((c) => c.required);
+  const completed = required.filter((c) =>
+    coverage.some((item) => item.key === c.key && item.missing === 0 && !item.stageMissing),
+  );
+  const genealogy =
+    direction === 'forward' ? recallTrace(data.lots, data.edges, lot.id) : trace(data.lots, data.edges, lot.id, 'back');
+  const packaging = data.packaging.find((p) => p.lot_id === lot.id);
+  const canDecide =
+    identity.roles.some((r) => ['supervisor', 'food_safety'].includes(r)) ||
+    (lot.type === 'whey' && identity.authorizations.receive_whey);
+  const labMissing =
+    config.definition.lab_before_release &&
+    !records.some(
+      (r) =>
+        r.kind === 'lab' &&
+        (r.payload as Record<string, unknown>)?.result === 'pass' &&
+        data.attachments.some((a) => a.record_id === r.id),
+    );
+  const releasable =
+    ['awaiting_review', 'on_hold'].includes(lot.state) &&
+    !critical &&
+    !labMissing &&
+    completed.length === required.length &&
+    data.packaging.some((p) => p.batch_id === lot.id) &&
+    (identity.id !== lot.producer_id || config.definition.self_release);
+  useEffect(() => {
+    if (packaging?.public_token)
+      void QRCode.toDataURL(`${location.origin}/p/?t=${packaging.public_token}`, { width: 240, margin: 2 }).then(setQr);
+  }, [packaging]);
+  return (
+    <div className="lot-detail">
+      <div className="detail-summary">
+        <Label code={lot.code} />
+        <Status value={lot.state} />
+        <strong className="quantity-display">
+          {lot.available ?? 0}
+          <small> {lot.unit}</small>
+        </strong>
+        <p>{t('available')}</p>
+        <p className="quiet">
+          <bdi>{localDate(lot.observed_at)}</bdi>
+        </p>
+        {lot.sync_status && <Status value={lot.sync_status} />}
+      </div>
+      {lot.type === 'batch' && (
+        <>
+          <BatchStatus lot={lot} data={data} />
+          <div className="detail-indicators">
+            <div>
+              <strong>
+                {required.length
+                  ? Math.round(
+                      (coverage.reduce((sum, item) => sum + item.completed, 0) /
+                        Math.max(
+                          1,
+                          coverage.reduce((sum, item) => sum + item.expected, 0),
+                        )) *
+                        100,
+                    )
+                  : 0}
+                %
+              </strong>
+              <span>{t('completeness')}</span>
+            </div>
+            <div>
+              <strong>{deviations.filter((d) => !d.closed_at).length}</strong>
+              <span>{t('deviations')}</span>
+            </div>
+          </div>
+          <div className="stage-list">
+            {config.definition.stages.map((stage) => (
+              <div key={stage.key} className={stage.key === lot.stage ? 'current' : ''}>
+                <i />
+                <span>{stage.label[i18n.language === 'ar' ? 'ar' : 'en']}</span>
+                {stage.key === lot.stage && <Status value={lot.state} />}
+              </div>
+            ))}
+          </div>
+          <Button onClick={() => open('checkpoint')}>
+            <Camera size={18} />
+            {t('recordCheck')}
+          </Button>
+          {!demo && (
+            <Button
+              variant="outline"
+              onClick={async () => {
+                const current = config.definition.stages.findIndex((s) => s.key === lot.stage);
+                const next = config.definition.stages[current + 1];
+                if (next) {
+                  try {
+                    await saveAction(identity, config, 'stage', { lot_id: lot.id, next_stage: next.key });
+                    await onDone();
+                  } catch (e) {
+                    setError(e instanceof Error ? e.message : 'error');
+                  }
+                }
+              }}
+            >
+              {t('stageAdvance')}
+            </Button>
+          )}
+        </>
+      )}
+      {['whey', 'ingredient', 'packaging_material'].includes(lot.type) && <MaterialBalance data={data} lot={lot} />}
+      {lot.type === 'packaging' && <StockBalance lot={lot} />}
+      {lot.type === 'batch' && canDecide && identity.id === lot.producer_id && !config.definition.self_release && (
+        <p className="error-box">{t('selfReleaseBlocked')}</p>
+      )}
+      {lot.type === 'batch' && labMissing && <p className="error-box">{t('labReleaseBlocked')}</p>}
+      {lot.wise_review && <p className="callout">{t('remoteReview')}</p>}
+      {critical && <p className="error-box">{t('criticalBlock')}</p>}
+      {canDecide && ['received', 'hold', 'on_hold', 'awaiting_review'].includes(lot.state) && (
+        <Button onClick={() => open('decision')} variant="outline">
+          <ClipboardCheck size={18} />
+          {t(lot.type === 'whey' ? 'awaiting_decision' : 'review')}
+        </Button>
+      )}
+      {lot.type === 'batch' && canDecide && (
+        <Button disabled={!releasable || !isOnline() || demo} onClick={() => open('decision')}>
+          <ShieldCheck size={18} />
+          {t('release')}
+        </Button>
+      )}
+      <div className="button-group">
+        {['packaging', 'whey'].includes(lot.type) && (
+          <Button variant="outline" onClick={() => open('storage_inspection')}>
+            {t('newInspection')}
+          </Button>
+        )}
+        {lot.type === 'packaging' && (
+          <Button variant="outline" onClick={() => open('stock_movement')}>
+            {t('removeStock')}
+          </Button>
+        )}
+        <Button variant="outline" onClick={() => open('deviation')}>
+          <Plus size={16} />
+          {t('newDeviation')}
+        </Button>
+        {['whey', 'ingredient'].includes(lot.type) && (
+          <Button variant="outline" onClick={() => open('movement')}>
+            {t('newDisposal')}
+          </Button>
+        )}
+        {identity.roles.some((r) => ['supervisor', 'manager', 'admin', 'food_safety'].includes(r)) && (
+          <Button variant="outline" onClick={() => open('recall')}>
+            {t('recall')}
+          </Button>
+        )}
+      </div>
+      {lot.type === 'batch' &&
+        identity.roles.some((r) => ['producer', 'supervisor'].includes(r)) &&
+        ['draft', 'in_production'].includes(lot.state) && (
+          <div className="button-group">
+            <Button variant="outline" onClick={() => open('handover')}>
+              {t('handover')}
+            </Button>
+            {!data.packaging.some((p) => p.batch_id === lot.id) && (
+              <Button variant="outline" onClick={() => open('abandon')}>
+                {t('abandon')}
+              </Button>
+            )}
+          </div>
+        )}
+      {['whey', 'ingredient', 'batch', 'packaging'].includes(lot.type) && (
+        <div className="button-group">
+          <Button variant="outline" onClick={() => open('sample')}>
+            {t('recordSample')}
+          </Button>
+          <Button variant="outline" onClick={() => open('lab')}>
+            {t('recordLab')}
+          </Button>
+        </div>
+      )}
+      <h2>{t('ancestry')}</h2>
+      <div className="segmented">
+        <button className={direction === 'back' ? 'active' : ''} onClick={() => setDirection('back')}>
+          {t('back')}
+        </button>
+        <button className={direction === 'forward' ? 'active' : ''} onClick={() => setDirection('forward')}>
+          {t('forward')}
+        </button>
+      </div>
+      <div className="genealogy">
+        {genealogy.map((l) => (
+          <div key={l.id}>
+            <span className="thread-node" />
+            <Label code={l.code} />
+            <Status value={l.state} />
+            <small>
+              {l.available ?? 0} {l.unit}
+            </small>
+          </div>
+        ))}
+      </div>
+      {!demo && (
+        <div className="button-group">
+          {(['csv', 'xlsx', 'pdf'] as const).map((format) => (
+            <Button
+              variant="outline"
+              key={format}
+              onClick={async () => {
+                try {
+                  await downloadReport('traceability', format, lot.id);
+                } catch (e) {
+                  setError(e instanceof Error ? e.message : 'error');
+                }
+              }}
+            >
+              {t('traceabilityExport')} · {format.toUpperCase()}
+            </Button>
+          ))}
+        </div>
+      )}
+      {lot.type === 'batch' && (
+        <>
+          <h2>{t('checkpointReview')}</h2>
+          <div className="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>{t('checkpoint')}</th>
+                  <th>{t('expectedChecks')}</th>
+                  <th>{t('completedChecks')}</th>
+                  <th>{t('missingChecks')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {coverage.map((item) => (
+                  <tr key={item.key}>
+                    <td>{item.label[i18n.language === 'ar' ? 'ar' : 'en']}</td>
+                    <td>{item.expected}</td>
+                    <td>{item.completed}</td>
+                    <td>{item.stageMissing ? t('stage') : item.missing}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      )}
+      <h2>{t('stageHistory')}</h2>
+      <RecordList
+        rows={stageTimeline(lot, data.stageEvents, config)}
+        fields={['stage', 'observed_at', 'ended_at', 'elapsed_hours', 'overdue']}
+      />
+      <EvidenceList
+        recordIds={[lot.id, ...records.map((r) => String(r.id))]}
+        attachments={data.attachments}
+        records={records}
+        onDone={onDone}
+      />
+      <h2>{t('sale')}</h2>
+      <RecordList
+        rows={data.sales.filter((s) => genealogy.some((l) => l.id === s.packaging_lot_id))}
+        fields={['transaction_type', 'quantity', 'customer_category', 'observed_at']}
+      />
+      <h2>{t('details')}</h2>
+      <RecordList
+        rows={records}
+        fields={['kind', 'definition_key', 'payload', 'observed_at', 'recorded_at', 'due_at', 'late']}
+      />
+      <h2>{t('deviations')}</h2>
+      <RecordList rows={deviations} fields={['severity', 'issue', 'closed_at']} />
+      <h2>{t('audit')}</h2>
+      <RecordList
+        rows={data.audits.filter((a) => a.object_id === lot.id)}
+        fields={['field', 'old_value', 'new_value', 'recorded_at', 'reason']}
+      />
+      {qr && packaging && <LabelCard lot={lot} packaging={packaging} data={data} config={config} qr={qr} />}
+      {error && <p className="error-box">{t(error)}</p>}
+    </div>
+  );
+}
+
+export function AdminPanel({
+  data,
+  identity,
+  onDone,
+}: {
+  data: Snapshot;
+  identity: Identity;
+  onDone: () => Promise<void>;
+}) {
+  const { t } = useTranslation();
+  const [json, setJson] = useState(JSON.stringify(data.config.definition, null, 2)),
+    [error, setError] = useState('');
+  return (
+    <>
+      {identity.roles.includes('admin') && <MetricEditor onDone={onDone} />}
+      <DiagnosticPanel />
+      <TrainingEditor identity={identity} config={data.config.id} data={data} onDone={onDone} />
+      <RecordList rows={data.configs} fields={['kind', 'version', 'status', 'effective_at', 'placeholder']} />
+      <form
+        onSubmit={async (e) => {
+          e.preventDefault();
+          try {
+            const fields = new FormData(e.currentTarget);
+            if (!api || demo) throw new Error('onlineRequired');
+            const response = await api.rpc('draft_scoped_configuration', {
+              kind: 'sop',
+              definition: JSON.parse(json),
+              effective: new Date(String(fields.get('effective'))).toISOString(),
+              scope: String(fields.get('scope') ?? '') || null,
+            });
+            if (response.error) throw response.error;
+            await onDone();
+          } catch (err) {
+            setError(err instanceof Error ? err.message : 'error');
+          }
+        }}
+      >
+        <ConfigurationFiles
+          config={data.config}
+          canImport={identity.roles.includes('admin')}
+          onImport={setJson}
+          onError={setError}
+        />
+        <Field name="scope" label={t('configScope')}>
+          <select name="scope" aria-label={t('configScope')}>
+            <option value="">{t('globalConfig')}</option>
+            {data.cooperatives.map((c) => (
+              <option value={String(c.id)} key={String(c.id)}>
+                {String(c.name)}
+              </option>
+            ))}
+          </select>
+        </Field>
+        <Field name="definition" label={t('configDefinition')}>
+          <textarea rows={18} className="mono" value={json} onChange={(e) => setJson(e.target.value)} />
+        </Field>
+        <Field name="effective" label={t('effective')} type="datetime-local" required />
+        <Button disabled={!identity.roles.includes('admin') || demo}>
+          <Plus size={18} />
+          {t('draftConfig')}
+        </Button>
+      </form>
+      {data.configs
+        .filter((c) => c.status === 'draft')
+        .map((c) => (
+          <Button
+            key={String(c.id)}
+            disabled={!identity.roles.includes('food_safety') || demo}
+            onClick={async () => {
+              if (api) {
+                const pin = window.prompt(t('signoff'));
+                if (pin) {
+                  const sign = await api.rpc('pin_signoff', {
+                    pin,
+                    device: await import('../lib/data').then((m) => m.getDevice()),
+                    action: 'config',
+                    object_id: c.id,
+                  });
+                  if (sign.error || !sign.data) setError('authFailed');
+                  else {
+                    const reply = await api.rpc('approve_configuration', { target: c.id, sign: sign.data });
+                    if (reply.error) setError(reply.error.message);
+                    else await onDone();
+                  }
+                }
+              }
+            }}
+          >
+            {t('approveConfig')} · {String(c.version)}
+          </Button>
+        ))}
+      {error && <p className="error-box">{t(error)}</p>}
+    </>
+  );
+}

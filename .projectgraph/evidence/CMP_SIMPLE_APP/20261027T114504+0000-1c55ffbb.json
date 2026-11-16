@@ -1,0 +1,175 @@
+{
+  "node": "CMP_SIMPLE_APP",
+  "evidence_id": "1c55ffbb95e5452084669381956511b4",
+  "result": "PASS",
+  "started_at": "2026-10-27T11:44:47+00:00",
+  "finished_at": "2026-10-27T11:45:04+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:a7d962ea70a942c45af674a54d67e7fda7ce4cf20965266b02ec8ea4e71135a3",
+  "dep_fingerprint": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "artifacts": [
+    {
+      "path": "simple/index.html",
+      "hash": "5c35a57ec6980878c59d0fe9a0bd9ea4e33220c381f286b793ba56c7c1188811"
+    },
+    {
+      "path": "src/simple/SimpleApp.tsx",
+      "hash": "e5c240899a636df336dc7986f50e4054a6245ce10ab7857ef77ac18741ce0ac4"
+    },
+    {
+      "path": "src/simple/access.ts",
+      "hash": "7705afd99cb854b9afb32d69679dadf4e5ea89163005824a59f2a9fad419a1de"
+    },
+    {
+      "path": "src/simple/fixtures.test-helpers.ts",
+      "hash": "f606bb090747740585dd4df1fde368e5d589e2c5ebdb4ee338ce13ed9f10fd42"
+    },
+    {
+      "path": "src/simple/flow.tsx",
+      "hash": "d7085f77f28310c621abd8862e8a1074e9a9dcd98163f0dc709602daf4982e08"
+    },
+    {
+      "path": "src/simple/home.tsx",
+      "hash": "d4916a44dea23f3b85d12c32a2d33df478e6f6d168b8a098df42d95ad755cfee"
+    },
+    {
+      "path": "src/simple/jobs.test.ts",
+      "hash": "047e814b7a1c47a0da43c0319542ba4b04009b9edf804de36169ffbc959e40c9"
+    },
+    {
+      "path": "src/simple/jobs.ts",
+      "hash": "d50cb14255c1e68c8cb728586ea0fd560b040e16c5a4704b911fb63b851e5c22"
+    },
+    {
+      "path": "src/simple/main.tsx",
+      "hash": "4f969f7e5189662c358bd4993222c2059659f9759dc30b14077e8d0993143214"
+    },
+    {
+      "path": "src/simple/memory.test.ts",
+      "hash": "6ba55fd96bddd1b4a69a3c708b43919290dfe169b95293017d1c2d4d1fc43e74"
+    },
+    {
+      "path": "src/simple/memory.ts",
+      "hash": "3a4da9329cfa0a9e4d670c94a03c809c655029afc5572866357c272f19990933"
+    },
+    {
+      "path": "src/simple/payloads.test.ts",
+      "hash": "c05373571cf701867e873045da3e7bb269dc8bd48458c488abf563408460f011"
+    },
+    {
+      "path": "src/simple/payloads.ts",
+      "hash": "2093338d4ecb4dc5caf5aefef99abe84c0af372338364edef9a01878e4f76d59"
+    },
+    {
+      "path": "src/simple/production.tsx",
+      "hash": "fae1a33aa0f7dfc3d8ab84d80c010a56349970cca38dc0aa21d384077d21004f"
+    },
+    {
+      "path": "src/simple/receive.tsx",
+      "hash": "3634a08beb4aab3fc6fa77f7834a4bd052fd428cbd838a5f02dde8eef71990e0"
+    },
+    {
+      "path": "src/simple/sales.tsx",
+      "hash": "51551413948122825bcb100c66c318cc4d76797918267261c596ca29904f430b"
+    },
+    {
+      "path": "src/simple/settings.test.ts",
+      "hash": "94ebd50d1a421c63daad225b3d343c6631f026b67ba24b4236421137b8d0a2e2"
+    },
+    {
+      "path": "src/simple/settings.ts",
+      "hash": "f1271125b982b13d0fcf4e88dfac714cfa959cf0c2ecfb2188d972c505d88658"
+    },
+    {
+      "path": "src/simple/setup.tsx",
+      "hash": "69d1677d77acd8218a358187ea0f546d582386da4047193045f2934d753dfa63"
+    },
+    {
+      "path": "src/simple/sign-in.tsx",
+      "hash": "b73b960b568a67c573a1b4eb19e7e8cb36a6b99e8fd623a8e5609b10f483414b"
+    },
+    {
+      "path": "src/simple/simple.css",
+      "hash": "d2090bd568fed5144fb2463aebeacb8dbb4751aca9be764ae57d47ed682af877"
+    },
+    {
+      "path": "src/simple/text.ts",
+      "hash": "e6ff81c809a73816c4edf97132dabfdc26987dbcd5a738e1580bfa467bdbded2"
+    },
+    {
+      "path": "src/simple/ui.tsx",
+      "hash": "adc0844e99efb513dcd1163ef8b216a270dadb090dbf8907421362c886df457d"
+    },
+    {
+      "path": "src/simple/words.test.ts",
+      "hash": "06781c6536f68893ed9784bdc96c30a216795611cff94f177974ea760cf03bb5"
+    },
+    {
+      "path": "src/simple/words.ts",
+      "hash": "71df86ec2d3b90ca27e274b489bb5722902ff54f52e4430cd8bf6a131b4ff12f"
+    },
+    {
+      "path": "tests/live/simple.spec.ts",
+      "hash": "d2c30778936410259b6e06c69598dbd1ac59b94a34d67c017631df2c987b1da8"
+    }
+  ],
+  "dependencies": [],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "simple/index.html",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "src/simple/settings.ts",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "simple-unit",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npx vitest run src/simple",
+      "exit_code": 0,
+      "duration_s": 1.828,
+      "stdout_digest": "sha256:ba8fd094291fca7f76bac4d1bce6db47e4d9c20b315bdbd7843967a44f43e6e5",
+      "output_tail": "\n RUN  v5.0.3 D:/Programing/WISE_Trace\n\n\n Test Files  5 passed (5)\n      Tests  39 passed (39)\n   Start at  13:44:48\n   Duration  409ms (import 34%, transform 32%, setup 23%, tests 8%, worker 4%)\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "types",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run typecheck",
+      "exit_code": 0,
+      "duration_s": 10.609,
+      "stdout_digest": "sha256:7aacbbafb0eab13e5c3a6ab7214826f6c6e4b0e01058ab8de1015d391ca182e1",
+      "output_tail": "\n> wise_trace@1.0.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "lint",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npx eslint src/simple tests/live/simple.spec.ts",
+      "exit_code": 0,
+      "duration_s": 3.297,
+      "stdout_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

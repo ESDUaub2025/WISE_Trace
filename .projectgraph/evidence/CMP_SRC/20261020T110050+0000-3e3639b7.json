@@ -1,0 +1,699 @@
+{
+  "node": "CMP_SRC",
+  "evidence_id": "3e3639b76ebf4123a45dc5b207980e91",
+  "result": "FAIL",
+  "started_at": "2026-10-20T10:59:51+00:00",
+  "finished_at": "2026-10-20T11:00:50+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:8f02a80fa815228b57bfe34aa5410c7584b67a9fc81edabc618862fc1e8042e8",
+  "dep_fingerprint": "sha256:4e7f58462d0da50b5985ea9f2cc839bfdac96e9aed200a6161138da771dcf82f",
+  "artifacts": [
+    {
+      "path": "src/App.tsx",
+      "hash": "68999ecb141c27a6ff4ab291f3c36c0366a255d1b1e4f7632cd10147ffdb5b13"
+    },
+    {
+      "path": "src/archive-search.tsx",
+      "hash": "cb91f64949695e1256e7c3333eef6d22ad55265049f2778f9f9da4cf4be59f58"
+    },
+    {
+      "path": "src/batch-status.tsx",
+      "hash": "8893176324bd037785b9d1f13c195d5d322307581d025a54ba14bad8abf8ef5f"
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "hash": "1ba77f1984595f4694c24c6aae86d70d9f5a323b592ed7be3f75206a9084db85"
+    },
+    {
+      "path": "src/components/ui/sheet.tsx",
+      "hash": "25f93ec58b879e5c858904e3b89eea51c2579e50ac2820ef9b7be5333f394962"
+    },
+    {
+      "path": "src/configuration-files.tsx",
+      "hash": "cad08b149869a8ad30b963accd2f993df4e7f1bc0e9924f2b09918f9ed0381f0"
+    },
+    {
+      "path": "src/dashboard.tsx",
+      "hash": "8ddb90b071a7ee7ebca14c337551a7e37f37f4160ba6ae61944d307daa6d681a"
+    },
+    {
+      "path": "src/diagnostics.tsx",
+      "hash": "2d412326d5db32ee7099054ff3da1a8290fb81c27930b63b723abaa2f94624bf"
+    },
+    {
+      "path": "src/display-settings.tsx",
+      "hash": "9ba9d585d3bfeb684822ebcceadf9ff2a525df9e469768e020e83604330fb7d7"
+    },
+    {
+      "path": "src/evidence.tsx",
+      "hash": "4b94e0b5736359aafc4208dd0103fd042c91a53cffb859c56e3bc92a71fe8c43"
+    },
+    {
+      "path": "src/features.tsx",
+      "hash": "2dc4aa83975e6f4fe67c76c87200bf84e193183fa0ec88201ce88456f29a2e1d"
+    },
+    {
+      "path": "src/help-content.ts",
+      "hash": "c36009b74965f12b5f190e1f2347cd760b7b4a6c2dd842c3f0cf756af0f1e5a1"
+    },
+    {
+      "path": "src/help.tsx",
+      "hash": "04bf5bb43f95848088779c96fcb56814ca197a4c20b77bdb0503f8d62c86b181"
+    },
+    {
+      "path": "src/i18n/ar.json",
+      "hash": "e8711da02c3df9cecbdfadcf85b46fa687d5559023c32325d62e89c5f0b2f28c"
+    },
+    {
+      "path": "src/i18n/en.json",
+      "hash": "8fa5238e9ae0a6be0a2bf34bda659d9067f8e6676d96a73e2e9250d827f7cfb8"
+    },
+    {
+      "path": "src/i18n/index.ts",
+      "hash": "d6d93d571af2a69e331c0aa6440c958ebac851210a6037b8fd7302dc0dcb2b12"
+    },
+    {
+      "path": "src/i18n/translations.test.ts",
+      "hash": "88b295a32b86fbd640a3606325bc343414112027a7c675635f52e2fecc901136"
+    },
+    {
+      "path": "src/knowledge.tsx",
+      "hash": "c883ab11a7c5246ccfd32a6cbdd94a7f08cce9b2001fbb6982531f9f4bbb4802"
+    },
+    {
+      "path": "src/label-card.tsx",
+      "hash": "19f58d48ff3bdb678d50de8ac64fe4615100243da53d238c8c4e358a0bed76ec"
+    },
+    {
+      "path": "src/lib/api.ts",
+      "hash": "c8b42730ad7205319a8ef128288c9b0fc1a5aa3d0e2df3518d743f4e91874807"
+    },
+    {
+      "path": "src/lib/attention.test.ts",
+      "hash": "47ace1e8cd6fe19d66528e3a13385aedf9917e8310a4cf05c2fed6e8d0dbb032"
+    },
+    {
+      "path": "src/lib/attention.ts",
+      "hash": "e42aaa5892fe1fb96a50b410e523c86b943385e4f70444e6c30b9acc745b7b8a"
+    },
+    {
+      "path": "src/lib/auth.ts",
+      "hash": "5c06b04ebe28813d8490fa772a9985214cf743682619be0ec310a936b0fbfee8"
+    },
+    {
+      "path": "src/lib/checkpoint-review.test.ts",
+      "hash": "510728ef9d8fc100a191902e71effaa46d740b1a576b6a3f8a5f3f24ee01faad"
+    },
+    {
+      "path": "src/lib/config-files.test.ts",
+      "hash": "67f239ac8e741a83c3612848901545812b592c6407c42e64404a19c57994c049"
+    },
+    {
+      "path": "src/lib/config-files.ts",
+      "hash": "91ba82f907cba4cb30df99e0d66da3a736d6d1e9c6d6573012842d5ad4c71045"
+    },
+    {
+      "path": "src/lib/data.ts",
+      "hash": "ed4afa3db8c7596f7124f790333d16ec751040c5c5d08e9d773932d72cec4d75"
+    },
+    {
+      "path": "src/lib/demo.ts",
+      "hash": "bd89a8079d30231855eeca0f330228061c17c6403be06db3b116174b352f7e46"
+    },
+    {
+      "path": "src/lib/domain.test.ts",
+      "hash": "d4510044d05c2b7101622e9f70191f388e6de0ca338483d4b76baf1077c57ee6"
+    },
+    {
+      "path": "src/lib/domain.ts",
+      "hash": "84cc8331accb5b4609dac21e1d2735dc64d88af423c50fdffc2c23ad61e86e01"
+    },
+    {
+      "path": "src/lib/format.test.ts",
+      "hash": "e2542e09a8111f27a1a71ecd21c42e420cae931d71fdcfcbb7d4acff6c4d8876"
+    },
+    {
+      "path": "src/lib/format.ts",
+      "hash": "df829f2aa23164165d03678ee4dc61d5557c57c71958d179de491f015055eb5e"
+    },
+    {
+      "path": "src/lib/labels.test.ts",
+      "hash": "be61f5e8966326ea52db88062c9b82411368adceee61a2e1c5abf13afb778156"
+    },
+    {
+      "path": "src/lib/labels.ts",
+      "hash": "d01a856208f863b4a25081d60812602cf17508d6804379768d7c8433ef573b5c"
+    },
+    {
+      "path": "src/lib/learning-demo.ts",
+      "hash": "3bf7da4bca04aff53b73dd5512da8b898d2f8a77aef68c00f720d1116aabd71b"
+    },
+    {
+      "path": "src/lib/media.ts",
+      "hash": "99dc724aa075af6856147c3d994191fe2db5863ce42c61a49855b6406b20ea6a"
+    },
+    {
+      "path": "src/lib/mfa.ts",
+      "hash": "834df23aecb0e1d8ef22c2f005a8129b8251f067622f347b066d573504984cca"
+    },
+    {
+      "path": "src/lib/offline-signoff.ts",
+      "hash": "60fcf28725262274f3a425953b805e08c9a48141fa79edb51d475e7f4c48a834"
+    },
+    {
+      "path": "src/lib/overlay.test.ts",
+      "hash": "587d55ccb923e969fd91dcde0430fabade4484aeb76e3a57e88d23ebc3893b20"
+    },
+    {
+      "path": "src/lib/pin.test.ts",
+      "hash": "a037086e2fee03b7565756f2a53e519524966c77d23bb0d71af9b7155e6678cb"
+    },
+    {
+      "path": "src/lib/pin.ts",
+      "hash": "bc0ced82e329967ae10544be3a6f211eff7f4f00f0dcdf39fcc1d582f415cdc2"
+    },
+    {
+      "path": "src/lib/receipts.test.ts",
+      "hash": "65853034509c38b613cb7193a738be2f60656a570d62245f7009ccd3a41d5b98"
+    },
+    {
+      "path": "src/lib/receipts.ts",
+      "hash": "dc533610e914c91ad0d4923b2a4ec5ba4dfca885f1ed60bca09907412601dcd9"
+    },
+    {
+      "path": "src/lib/reports.ts",
+      "hash": "1e09f3a334303391595563014d7c7267ac91fd4ceb02793d0e0ff291a83f0eca"
+    },
+    {
+      "path": "src/lib/schedules.test.ts",
+      "hash": "05159bce3e746bd49a4ffe937c9b9e641a95cf6cbb02a39b7fafe800c43f8e6b"
+    },
+    {
+      "path": "src/lib/schedules.ts",
+      "hash": "7c0554c5264df34e49ebceac6237185bd248ed88d10cf2d278af1783fd5fe6e6"
+    },
+    {
+      "path": "src/lib/sealed-ticket.test.ts",
+      "hash": "2057cdf00f64507873c546241d5dbf9de8b8a1e8f4c8172c5dc4aff99a646f57"
+    },
+    {
+      "path": "src/lib/sealed-ticket.ts",
+      "hash": "9eddec2e52492e0a09396e95c054929bcb99e7e85968206f7a2236110040f403"
+    },
+    {
+      "path": "src/lib/session-policy.test.ts",
+      "hash": "7fbb9d63954e8cee2b0909cdb58bce17e834c20309cce01fab6663f6c2626097"
+    },
+    {
+      "path": "src/lib/session-policy.ts",
+      "hash": "184788ef67b7598c1862c87e5d043a150ede7bd2d31ac5b5f1a98cfe9c34cc9a"
+    },
+    {
+      "path": "src/lib/snapshot-lock.test.ts",
+      "hash": "e72bafd7c7afe18033b45c48ff9f56f8e580aeaf09ab418cbcec6fc79474a93e"
+    },
+    {
+      "path": "src/lib/snapshot-sync.test.ts",
+      "hash": "4fe0e78b914a9278ec608b2e4c6b90866628d3f98a5065d8235e2a5a97190378"
+    },
+    {
+      "path": "src/lib/snapshot-sync.ts",
+      "hash": "1534ca2e1f5122f8d18e5b331450eea8d230bdd8fcbb08964d67325f7ea68523"
+    },
+    {
+      "path": "src/lib/telemetry.ts",
+      "hash": "bdf48ab93e2166b2ae7a9a35fa0923e24c963fc55586c35f303ea84149a451be"
+    },
+    {
+      "path": "src/lib/training-media.ts",
+      "hash": "ba27899f16b50403cc14466d0e1e5dba182052bf83b2f81d64ddf72bb77babfd"
+    },
+    {
+      "path": "src/lib/vapid.test.ts",
+      "hash": "3412f51ece95b5b1b69505a87b9b0f59139b705a3e57f527fd40242c1a56c95c"
+    },
+    {
+      "path": "src/main.tsx",
+      "hash": "ea4b272c36ddaaaf3e35f4d96589c32bc1feecb26e1a6f86404263608a031e96"
+    },
+    {
+      "path": "src/management.tsx",
+      "hash": "bd85421c6854ef89981af9ed48e77089a358b2dbafeb2c9a3913bd7bbb6c957a"
+    },
+    {
+      "path": "src/material-balance.tsx",
+      "hash": "208e01c8dc935f8fb7d458e55148ef4ccaa55a5e9c564585461ef3d5ad7dc811"
+    },
+    {
+      "path": "src/metric-editor.tsx",
+      "hash": "d3245c151475328d9f3a6399e0c1091df383a0701fe53a0bd612505656792732"
+    },
+    {
+      "path": "src/notifications.test.ts",
+      "hash": "11c28451256a5296a3d0ace6c22392a1e1ad349015eafb2bac64c2135d71d61f"
+    },
+    {
+      "path": "src/notifications.tsx",
+      "hash": "39be0dd4c508df71df8fd1085b15f350e9b13980b1566a4a3cbc3bdffe753e7a"
+    },
+    {
+      "path": "src/offline/db.test.ts",
+      "hash": "e2ab77f768af473bfba3d15823680632e2cdfa1961e05ffd7b91a3fac755ecf0"
+    },
+    {
+      "path": "src/offline/db.ts",
+      "hash": "06097f9d9e9fb5f8cdd1a471ad7c41ae577b6d44d65518a51308016ab6b26188"
+    },
+    {
+      "path": "src/packaging-fields.tsx",
+      "hash": "f75a9b4c6064ce2b3a732d1a5d4562aceee37cb89b5e6d08f1465b5747dc54c1"
+    },
+    {
+      "path": "src/push-settings.tsx",
+      "hash": "4db5215f93e73de0db2da856b51a7a6db3db1b2ba339b7b8d0ddee305a6b0509"
+    },
+    {
+      "path": "src/quality-panel.tsx",
+      "hash": "72ec212a6b9dba2e25033d66d7acad469b1da34b67918119a7e0b06ad1ad5584"
+    },
+    {
+      "path": "src/recall-cases.tsx",
+      "hash": "f5e3862233dcf572ca5394fb5ae8fbec775787bebc6d783d5ebcbf24d3dd8f40"
+    },
+    {
+      "path": "src/registration-review.tsx",
+      "hash": "ecb5ad662dfbb8e71005283d0ff13ec7e42e5e26ac88623987a36b269e29f9fd"
+    },
+    {
+      "path": "src/registration.tsx",
+      "hash": "f2c789c3e37970934720f967b994140a9111d55370c27deb477d327af9d37e78"
+    },
+    {
+      "path": "src/report-page.tsx",
+      "hash": "93e9f40051d11d84e328e75f0d801455d9f10f358f1b82079568acdbf62d7da4"
+    },
+    {
+      "path": "src/report-schedules.tsx",
+      "hash": "13bb5b2efc0cab626326200b24555a23d37e65f357468068238bb53bc1558958"
+    },
+    {
+      "path": "src/scanner.tsx",
+      "hash": "ba91b5a0e433adfdce3465d7f63aa4581dba2cacebafada3e872323a6d8005f2"
+    },
+    {
+      "path": "src/stock-balance.tsx",
+      "hash": "2fdbee913542a75a0372a7789626399dd648cead0a309e46da6bc872a5e96097"
+    },
+    {
+      "path": "src/styles.css",
+      "hash": "c46b0ba34629ad0e22a69126c6871021af14b708f51337420b9988d31c28254b"
+    },
+    {
+      "path": "src/test-setup.ts",
+      "hash": "b49fd5d5843c0fc5362222331c9848c9bc0f56fbe08dccadc27b9c227b9875d9"
+    },
+    {
+      "path": "src/training-assets.tsx",
+      "hash": "8f2395a38e7916948f7ad2160e79ac95d7c695d2160beccac6d5e9eff9c9043a"
+    },
+    {
+      "path": "src/training-editor.tsx",
+      "hash": "53c5840d1b6e0d707c570bfd2e6e60e32ad6a1b21e41a1f6eb1dbdff5a8ca643"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_SERVER_FUNCTIONS_SHARED_VAPID_MJS",
+      "fingerprint": "sha256:e8e4e2d2f9090529115d7bfe980a15fc62aa2d2a0f95cb68d72d37fdfec3ad40"
+    },
+    {
+      "id": "F_SRC_APP_TSX",
+      "fingerprint": "sha256:ff103a82209f665c59467f22ddf8d6cf4cfd1eee6b4ebd0b2290404e92f820ac"
+    },
+    {
+      "id": "F_SRC_ARCHIVE_SEARCH_TSX",
+      "fingerprint": "sha256:d32b0b0d7f01ebe1809577a69146d15f79d0d9e1be2a2bf49a6d73ba16d2f334"
+    },
+    {
+      "id": "F_SRC_BATCH_STATUS_TSX",
+      "fingerprint": "sha256:967a467dd7850edfca6130063d7da8278f869f4d5a225bacadcb910ef82e69ae"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+      "fingerprint": "sha256:ff9744c686545b312fe4c0512c38794f1dfb36344f9f36fb9eaaef36a57b1a11"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_SHEET_TSX",
+      "fingerprint": "sha256:7e81c51974eccbda71c9884b3430a03c77340ff2041a19c448da3eb85af6c167"
+    },
+    {
+      "id": "F_SRC_CONFIGURATION_FILES_TSX",
+      "fingerprint": "sha256:97870f3942e8b537682d062caed9592c578a71016ccc21e54dde3947f9f256cf"
+    },
+    {
+      "id": "F_SRC_DASHBOARD_TSX",
+      "fingerprint": "sha256:5ae1bc528575927ba6af586492f5adb43b090d4ffcf2d1e2ec215e58ee79c632"
+    },
+    {
+      "id": "F_SRC_DIAGNOSTICS_TSX",
+      "fingerprint": "sha256:6df74470fa54891cd8071a14cd88ef26809a9baa194c10669f0a8bc0a93252a0"
+    },
+    {
+      "id": "F_SRC_DISPLAY_SETTINGS_TSX",
+      "fingerprint": "sha256:7b876b27451f444b3c38d7091e9be8b2a4113f8c801ee149f35bb65be821a9d4"
+    },
+    {
+      "id": "F_SRC_EVIDENCE_TSX",
+      "fingerprint": "sha256:aad5c144e6f412b2928ea466255da03b0c3023ddb29f6572b0ca41cd9db1c07f"
+    },
+    {
+      "id": "F_SRC_FEATURES_TSX",
+      "fingerprint": "sha256:55af922e6f48baa578b6764814cc2c3352fdbf568dce356629710ec248a49440"
+    },
+    {
+      "id": "F_SRC_HELP_CONTENT_TS",
+      "fingerprint": "sha256:2c590142d7e870d73ba71ad4c790f7e83b6ad0ffd4756ad967d2b6ae36890c3f"
+    },
+    {
+      "id": "F_SRC_HELP_TSX",
+      "fingerprint": "sha256:df1b97907e0ad2b66efdf0e84e9eab02164540cde8115c56e7a23d66ed9d291e"
+    },
+    {
+      "id": "F_SRC_I18N_INDEX_TS",
+      "fingerprint": "sha256:0d8ea56614f0ca9612b7ad2653508c7828cfdea765aa1f5e0880c572e5fb1efb"
+    },
+    {
+      "id": "F_SRC_I18N_TRANSLATIONS_TEST_TS",
+      "fingerprint": "sha256:cd1b9c048c8d9bf8d7d2cc4992d3f15a91f0ce1e49ee737d21e9081179c23288"
+    },
+    {
+      "id": "F_SRC_KNOWLEDGE_TSX",
+      "fingerprint": "sha256:6dd29586d6de8b6755d2176ffb6fb40578f7695a265c5f065b697e1d1e26b97e"
+    },
+    {
+      "id": "F_SRC_LABEL_CARD_TSX",
+      "fingerprint": "sha256:1c91799e0e38237ff7cc51e015bf2ec7f0188189034aa6958f4df51e8c7e125c"
+    },
+    {
+      "id": "F_SRC_LIB_API_TS",
+      "fingerprint": "sha256:0b4a819a9d790db5b64a61dc16655bc586fc2245e76d101b6fe8c928362242e0"
+    },
+    {
+      "id": "F_SRC_LIB_ATTENTION_TEST_TS",
+      "fingerprint": "sha256:df9a59cc0b69a4bb56ad6732e6c4f8943e2ad7a629103efa90e9d1e742e51099"
+    },
+    {
+      "id": "F_SRC_LIB_ATTENTION_TS",
+      "fingerprint": "sha256:c8ccb97f5b19fd54926fea76d3c787b27a1c1531eb1c69dcb1fc448e9fd16185"
+    },
+    {
+      "id": "F_SRC_LIB_AUTH_TS",
+      "fingerprint": "sha256:c8f89a8e4edf03d972a400730187570b2044118e2980d2b950cd9d07594e86a6"
+    },
+    {
+      "id": "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS",
+      "fingerprint": "sha256:dcb8832e69dd3f15d979124daddfd48fa79f12e1f646b70ef59fe5ad44ca7f77"
+    },
+    {
+      "id": "F_SRC_LIB_CONFIG_FILES_TEST_TS",
+      "fingerprint": "sha256:ee24b13228d4b9e69c1570fa857d4c364a9e6a2f73ad0227ab0e90624fe3cc5e"
+    },
+    {
+      "id": "F_SRC_LIB_CONFIG_FILES_TS",
+      "fingerprint": "sha256:3e1b0f981b88734d9886245875fd79648b67ff0fd6ec4c86af20e513e41b9044"
+    },
+    {
+      "id": "F_SRC_LIB_DATA_TS",
+      "fingerprint": "sha256:3bec9ed83101864265b6ab0f98aff8dded8d351ce78831f23cd7cf2fa587732e"
+    },
+    {
+      "id": "F_SRC_LIB_DEMO_TS",
+      "fingerprint": "sha256:37b026c2f34523c1a9ef488326a7e9c9821ed3b596b613bdd490fdc61a462fd2"
+    },
+    {
+      "id": "F_SRC_LIB_DOMAIN_TEST_TS",
+      "fingerprint": "sha256:14806866635ab7ca1e0cbd0cec8ed80c3849e8cb55a629de5f6022f2e4625189"
+    },
+    {
+      "id": "F_SRC_LIB_DOMAIN_TS",
+      "fingerprint": "sha256:c880cd18489225fd8bacc8869245ae14243a8254f48aa43596e3eeffc83b09ee"
+    },
+    {
+      "id": "F_SRC_LIB_FORMAT_TEST_TS",
+      "fingerprint": "sha256:e5abb465f37cfd6ad198d298680eb15630558549c6fbcfba21acd239f8e322ee"
+    },
+    {
+      "id": "F_SRC_LIB_FORMAT_TS",
+      "fingerprint": "sha256:fb1db0401981de26e546ab3ec88fcebe49eec1a1b8af22790aad17353c0c4499"
+    },
+    {
+      "id": "F_SRC_LIB_LABELS_TEST_TS",
+      "fingerprint": "sha256:a4545e291003ed3cd17e7580050fac2be00d32c238f5926859f5652662fa46d7"
+    },
+    {
+      "id": "F_SRC_LIB_LABELS_TS",
+      "fingerprint": "sha256:77663aafc4f5bed7ce86bd60079830562c179d5efa7ab6a74bdd225abbaa7ed4"
+    },
+    {
+      "id": "F_SRC_LIB_LEARNING_DEMO_TS",
+      "fingerprint": "sha256:c0a63f79b807219ef9d65233fe1571f6bfc87aec758148c8dab58ceafe2d4efe"
+    },
+    {
+      "id": "F_SRC_LIB_MEDIA_TS",
+      "fingerprint": "sha256:07a066e1e3b8dc84cf832719a76879588508ee6bfcc4c9c47147f99256a8c7a1"
+    },
+    {
+      "id": "F_SRC_LIB_MFA_TS",
+      "fingerprint": "sha256:2f76427de8ada164693d1c136d516221f21940920ea3a99ce22dfba247053a65"
+    },
+    {
+      "id": "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
+      "fingerprint": "sha256:5967b604228128dd943ed907fec480ed6ec2dc8b63bc8362ca43ab3378a17f49"
+    },
+    {
+      "id": "F_SRC_LIB_OVERLAY_TEST_TS",
+      "fingerprint": "sha256:7abbe4411be01aea21d33acedb3bf6aa7edcc9f308dabbb4477557a2cb752b95"
+    },
+    {
+      "id": "F_SRC_LIB_PIN_TEST_TS",
+      "fingerprint": "sha256:0098b8cd5057693b43dfe29cfd40335d6f962d9245f0dccbc5a6cdd8e9386cc7"
+    },
+    {
+      "id": "F_SRC_LIB_PIN_TS",
+      "fingerprint": "sha256:d7d3547cc947880295b9a122f2436fb60ddf02ede6215568017426e17280ed24"
+    },
+    {
+      "id": "F_SRC_LIB_RECEIPTS_TEST_TS",
+      "fingerprint": "sha256:8619ef539394337d8e42084bcbfcc9ea6cd4cc39b092f9c3592929c84c6557a0"
+    },
+    {
+      "id": "F_SRC_LIB_RECEIPTS_TS",
+      "fingerprint": "sha256:94dd71fa884a34aa876058513ecc0aa3a4cb74858ab2df72a4a0725fb810bad0"
+    },
+    {
+      "id": "F_SRC_LIB_REPORTS_TS",
+      "fingerprint": "sha256:5889604b8d73429351621383215664ea147a86d6e84cd0b1d165fd24aa3f43d3"
+    },
+    {
+      "id": "F_SRC_LIB_SCHEDULES_TEST_TS",
+      "fingerprint": "sha256:60734e00c9f8807866498acdac7ca91063951e26152ef894d21c909d25b2de58"
+    },
+    {
+      "id": "F_SRC_LIB_SCHEDULES_TS",
+      "fingerprint": "sha256:f4d374c9d611e220377e7473cc4ea2b15801d95455645097d577b68cf37fe376"
+    },
+    {
+      "id": "F_SRC_LIB_SEALED_TICKET_TEST_TS",
+      "fingerprint": "sha256:2aad0922d4672a8e2417dcc3f06f78488d17106522ac1eeb880019d8453e4fb8"
+    },
+    {
+      "id": "F_SRC_LIB_SEALED_TICKET_TS",
+      "fingerprint": "sha256:3aa38ba525c270d25bcd3ca9de35046a26894ec6e31c209f60bdefc940c0e1e5"
+    },
+    {
+      "id": "F_SRC_LIB_SESSION_POLICY_TEST_TS",
+      "fingerprint": "sha256:604efc226edcb666c7b81f9b4bc4afeed19a656fd87e81d92ad6896d98bacf2e"
+    },
+    {
+      "id": "F_SRC_LIB_SESSION_POLICY_TS",
+      "fingerprint": "sha256:c662b4c0708a5f9535c8c0da042ebfa3d8954cd1d3b964c5a25ac119103627fc"
+    },
+    {
+      "id": "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS",
+      "fingerprint": "sha256:619df8df19540d425efa11face2ca690024abd78f8f7c4c61445316b77ab043b"
+    },
+    {
+      "id": "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS",
+      "fingerprint": "sha256:80f09480f12d9e24918b15757c227ce875b91d84e701f70ce4965878913e5981"
+    },
+    {
+      "id": "F_SRC_LIB_SNAPSHOT_SYNC_TS",
+      "fingerprint": "sha256:e8505c0cdd8925b1f5476ace4eec1b150c0b5c1880d94b5cd59d2bef4255754a"
+    },
+    {
+      "id": "F_SRC_LIB_TELEMETRY_TS",
+      "fingerprint": "sha256:fc880e880fddbca4b5a6805f06b3bc654493e4750349896a8433b5cad0bb9c46"
+    },
+    {
+      "id": "F_SRC_LIB_TRAINING_MEDIA_TS",
+      "fingerprint": "sha256:a7a27c79aa7732995dcff8deb32e933db0ccfbe11ffcc8eabdd01e4f21d53216"
+    },
+    {
+      "id": "F_SRC_LIB_VAPID_TEST_TS",
+      "fingerprint": "sha256:7c921521c43b5b405b4948deab4e6b3342b459557d1fa3dab84351eb39559d3b"
+    },
+    {
+      "id": "F_SRC_MAIN_TSX",
+      "fingerprint": "sha256:feb0e8772fb0c0c00049f29ae8847c4be33f88510a5bb405853a2988d8c18379"
+    },
+    {
+      "id": "F_SRC_MANAGEMENT_TSX",
+      "fingerprint": "sha256:cd873e0b9b46e53afa8c87b3bd0350873bfd2225d230ffb576ffc610910bf60d"
+    },
+    {
+      "id": "F_SRC_MATERIAL_BALANCE_TSX",
+      "fingerprint": "sha256:f04cb2eb9d3aa66c795b0687ecc8519f2443e8b765ec967cbe067817181b61e2"
+    },
+    {
+      "id": "F_SRC_METRIC_EDITOR_TSX",
+      "fingerprint": "sha256:2dc94ba59952ef79637cd3b9260514810384f01dab30d30b39bfb88caed8f470"
+    },
+    {
+      "id": "F_SRC_NOTIFICATIONS_TEST_TS",
+      "fingerprint": "sha256:b630575936bc200e1e5be0104f9c7f63f6889feb3e621d32823a1560def0002d"
+    },
+    {
+      "id": "F_SRC_NOTIFICATIONS_TSX",
+      "fingerprint": "sha256:6f8401c3a242fd493a0eec8ae1f8759645a72efb2210841933239a3bb3c57643"
+    },
+    {
+      "id": "F_SRC_OFFLINE_DB_TEST_TS",
+      "fingerprint": "sha256:c129acf3287b6bd9336a0cecb1a8cc2219d1622f2afb3daaeacf1f390c1d3014"
+    },
+    {
+      "id": "F_SRC_OFFLINE_DB_TS",
+      "fingerprint": "sha256:75ff9cb2d70c3e3763cafc23183be85fafaa876940d1d35de66e4bb38b7aa2f3"
+    },
+    {
+      "id": "F_SRC_PACKAGING_FIELDS_TSX",
+      "fingerprint": "sha256:84aa310bed77286ad24b8f2bccea1beae1db121682ca989b28e7d3ccfac61653"
+    },
+    {
+      "id": "F_SRC_PUSH_SETTINGS_TSX",
+      "fingerprint": "sha256:59eb8c37c040a6a5852e10d0c35789179da5b0a0e6c334539aa8784bbb3957f3"
+    },
+    {
+      "id": "F_SRC_QUALITY_PANEL_TSX",
+      "fingerprint": "sha256:7bc0209170acd517f9e351c8f3d6d95143dee3eb25a1c991472de0589dd559fb"
+    },
+    {
+      "id": "F_SRC_RECALL_CASES_TSX",
+      "fingerprint": "sha256:6e59f5dda52be52d0e548cb183949399c076d98f363aa4271664ed0923f3020e"
+    },
+    {
+      "id": "F_SRC_REGISTRATION_REVIEW_TSX",
+      "fingerprint": "sha256:2e9dccd7e3ffe33ca9afc953a326525fab9e2f73a0e6302e2f28bd10258fa977"
+    },
+    {
+      "id": "F_SRC_REGISTRATION_TSX",
+      "fingerprint": "sha256:0584155c414ab0f10f0e7405257f15e0544b313593b17f280464cfc4e31b587a"
+    },
+    {
+      "id": "F_SRC_REPORT_PAGE_TSX",
+      "fingerprint": "sha256:02e330de2c96314e9b9e6b7430b0bf364a5b6a871a09a5f2048cf58810d7250c"
+    },
+    {
+      "id": "F_SRC_REPORT_SCHEDULES_TSX",
+      "fingerprint": "sha256:1a77788ae7181f6ba1dfe6b1c07e4d5de4d5912841d1f4b0327ef78507879879"
+    },
+    {
+      "id": "F_SRC_SCANNER_TSX",
+      "fingerprint": "sha256:a4270f3e6638de958da6928d193110b4eaaf102b3ad2881383108e93212856e1"
+    },
+    {
+      "id": "F_SRC_STOCK_BALANCE_TSX",
+      "fingerprint": "sha256:438b778056381d3363a5296ca40ce8d554f9bc77e3e1e91e9c2ee4be21bcf9a4"
+    },
+    {
+      "id": "F_SRC_TEST_SETUP_TS",
+      "fingerprint": "sha256:4f007a9b0c007b18ac970ff56b9b2dd0ef852d2f9eeac9796d1e1387d25ba52f"
+    },
+    {
+      "id": "F_SRC_TRAINING_ASSETS_TSX",
+      "fingerprint": "sha256:85838daaa630921089056e459416809db919bd907b6e61f52fd0183989af01be"
+    },
+    {
+      "id": "F_SRC_TRAINING_EDITOR_TSX",
+      "fingerprint": "sha256:3c3e88b19057e0a206ded4ede7a4244e0f311806074cc54c9031cdb42d5f0a8d"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "src/main.tsx",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "src/offline/db.ts",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "types",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run typecheck",
+      "exit_code": 0,
+      "duration_s": 7.859,
+      "stdout_digest": "sha256:7aacbbafb0eab13e5c3a6ab7214826f6c6e4b0e01058ab8de1015d391ca182e1",
+      "output_tail": "\n> wise_trace@1.0.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "lint",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run lint",
+      "exit_code": 0,
+      "duration_s": 4.141,
+      "stdout_digest": "sha256:858387c90a13db210686c6fdfc4e50cd365f1384f7af51cc7219608480c63f55",
+      "output_tail": "\n> wise_trace@1.0.0 lint\n> eslint .\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "unit",
+      "ok": false,
+      "detail": "exit 1 (expected 0)",
+      "run": "npm test",
+      "exit_code": 1,
+      "duration_s": 2.391,
+      "stdout_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    },
+    {
+      "kind": "command",
+      "name": "browser",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run test:e2e",
+      "exit_code": 0,
+      "duration_s": 42.093,
+      "stdout_digest": "sha256:5b3ce71e4f7e6df1cd0ab340af25937980da3e6ac87affe37537c4a82fc2097d",
+      "output_tail": " chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting\n[WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.\n[WebServer] (node:22816) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:33616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n[WebServer] (node:25856) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)\n(node:29356) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:17592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:32808) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:19628) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:31180) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:16524) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:17832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:2464) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:33264) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:25156) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:34512) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:34520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:34188) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:34240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:34304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:33888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:26752) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:33896) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:21028) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n(node:28764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

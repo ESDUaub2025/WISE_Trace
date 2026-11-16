@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+out
+test-results
+.projectgraph
+.playwright-mcp
+package-lock.json
+secrets
+*.md
+*.sql
+tsconfig.tsbuildinfo

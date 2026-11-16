@@ -30,11 +30,15 @@ nodes:
   source: migrated
 - id: CMP_SUPABASE
   type: COMPONENT
-  title: supabase
-  summary: 2 source file(s) under supabase/.
+  title: PostgreSQL business rules
+  summary: Independent PostgreSQL migrations and permission tests. Historical node ID retained to preserve evidence history.
   artifacts:
-  - supabase/**
-  - scripts/check-snapshot-concurrency.mjs
+  - server/migrations/**
+  - server/db/**
+  - server/tests/sql/**
+  - server/tests/fixtures.sql
+  - server/tests/business-rules.mjs
+  - server/tests/snapshot-concurrency.mjs
   source: migrated
   confidence: medium
 - id: CMP_SRC
@@ -43,6 +47,11 @@ nodes:
   summary: 2 source file(s) under src/.
   artifacts:
   - src/**
+  - scripts/build-file-test.mjs
+  - scripts/build-production.mjs
+  - playwright.file.config.ts
+  - tests/file-testing.spec.ts
+  - vite.config.ts
   source: migrated
   confidence: medium
 - id: CMP_SRC_COMPONENTS
@@ -60,9 +69,47 @@ nodes:
   artifacts:
   - scripts/media-backup.mjs
   - scripts/media-backup.test.mjs
-  - .github/workflows/backup.yml
+  - scripts/recovery-drill.mjs
+  - server/media-backup-client.mjs
+  - deploy/backup.sh
+  - deploy/wise-backup.*
+  source: authored
+- id: CMP_GOOGLE_FILE_BACKEND
+  type: COMPONENT
+  title: Google Drive JSON testing backend
+  summary: Temporary username-only open testing with automatic account creation, a blank shared workspace, legacy-data reset and conflict-checked file updates. Not a production authentication service.
+  artifacts:
+  - deploy/google-file-backend/**
+  source: authored
+  confidence: medium
+- id: CMP_SELF_HOSTED
+  type: COMPONENT
+  title: Independent PostgreSQL backend
+  summary: Application-owned authentication, database context and private media for VPS deployment.
+  artifacts:
+  - server/**
+  - deploy/**
+  source: authored
+- id: CMP_SIMPLE_APP
+  type: COMPONENT
+  title: Guided worker application
+  summary: The live file-backed application uses src/worker with Today, My work, Help, setup, readable records and test reviews. Guided question pipelines in src/simple share identity, offline storage and synchronization with the application shell.
+  artifacts:
+  - src/simple/**
+  - src/worker/**
+  - tests/file-testing.spec.ts
+  - tests/live/simple.spec.ts
   source: authored
 edges:
+- from: SYS_DATA
+  to: CMP_GOOGLE_FILE_BACKEND
+  type: CONTAINS
+- from: SYS_FRONTEND
+  to: CMP_SIMPLE_APP
+  type: CONTAINS
+- from: SYS_DATA
+  to: CMP_SELF_HOSTED
+  type: CONTAINS
 - from: SYS_DATA
   to: CMP_RECOVERY
   type: CONTAINS

@@ -1,0 +1,128 @@
+[
+  {
+    "node": "CMP_GOOGLE_FILE_BACKEND",
+    "note": "Prepared copy-and-paste deploy/google-file-backend/Code.gs, setup instructions and five Node tests using in-memory Google service substitutes. setup creates a private Drive JSON file and two editor tester accounts plus a viewer, with individual generated access keys stored only as digests. POST requires credentials, serializes file writes and rejects stale versions. GET reveals health only. ProjectGraph verify returned PASS, status VERIFIED for this starter contract. No Google deployment, live cross-origin validation, GitHub Pages publication or WISE frontend/business-workflow adaptation performed.",
+    "next_action": "User creates Apps Script, pastes Code.gs, runs setup and saves privately printed tester keys, deploys Web app executing as Me with Anyone access, then supplies only the /exec URL. Validate live Google deployment and cross-origin POST behavior before adapting WISE frontend. Current accounts share one generic test workspace; they do not implement existing WISE role/MFA/SQL workflows.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T13:35:15.549041+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_GOOGLE_FILE_BACKEND",
+    "note": "User deployed Code.gs at the configured /exec URL. Confirmed GET health ready:true and POST invalid_credentials from a real browser on the published GitHub Pages origin. Existing deployed script did not need changes; repository changes added public endpoint config and integration/publishing instructions, plus a URL import in the local test. ProjectGraph verify returned PASS for required files and all five file-service tests. No tester access keys were obtained or published, and no authenticated live database records were written during verification.",
+    "next_action": "Use the published app with privately issued tester access keys. For a failed sign-in or save, collect only the visible error and account name, not the key. Keep Drive JSON private and leave Google script deployment executing as owner.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T14:35:10.985899+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_GOOGLE_FILE_BACKEND",
+    "note": "Prepared and published replacement Code.gs with username-only-v2 protocol, automatic username registration, no passwords or keys, serialized versioned writes, workspace epochs, and owner-only resetTestingData. First health/setup call after Google redeployment clears legacy keyed users/digests and records once, preserving subsequent new data. All six backend tests pass, including migration, repeat access, Unicode names, stale epochs and conflicts; ProjectGraph verify returned PASS. Public copy is at https://github.com/NizarSH98/wise-trace-test/blob/main/Code.gs. The available tools cannot update Google script deployments. Last live health check still showed previous-keyed-version, so the live reset has NOT happened yet.",
+    "next_action": "User replaces existing Google Code.gs, saves, then Deploy > Manage deployments > Edit > New version > Deploy using the same URL. Read GET health to confirm username-only-v2 and trigger the authorized one-time legacy-data cleanup. No separate setup or reset run is required.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T14:58:34.185919+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_GOOGLE_FILE_BACKEND",
+    "note": "User reports deploying the new Google version, but fresh health GET (with unique cache-busting query) still has no mode field, and a username-only invalid-name POST returns invalid_credentials, proving the configured /exec URL still serves the earlier keyed script. Public GitHub Code.gs exists at the current c628d05 site release. Asked whether Google created a new /exec URL and requested it if so. No live accounts or records were created or modified.",
+    "next_action": "If user supplies a new /exec URL, validate its mode=username-only-v2, update deploy/google-file-backend/config.json, run the relevant build/checks and republish compiled Pages output. If URL is unchanged, guide owner to save the updated Code.gs and edit the existing deployment to select New version. Do not claim remote data reset completed while the configured endpoint still serves keyed auth.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T15:28:19.948850+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_GOOGLE_FILE_BACKEND",
+    "note": "User supplied a /dev test-deployment URL (AKfycbxJo60QrQh8gPwWRDQxCeFqxPcj6TwqOvCpDbuAcVo). This is editor-only and cannot be used by public GitHub Pages testers. Official Apps Script docs confirm /dev is the head test deployment. Do not replace /dev with /exec by guessing. Existing configured /exec still serves keyed auth. No configuration changed; public username-only frontend remains ready.",
+    "next_action": "User opens Deploy > Manage deployments, edits the Web app deployment, selects New version, deploys, and copies the actual public Web app URL ending in /exec. Validate that URL reports username-only-v2; update and republish Pages only if the actual URL changed.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T15:29:11.332917+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_GOOGLE_FILE_BACKEND",
+    "note": "After user again reported deployment and supplied the same /exec URL, unique health GET still lacked mode=username-only-v2 and a harmless invalid-name POST still returned invalid_credentials. This endpoint continues to serve the old keyed code. Confirmed the public GitHub Code.gs contains OPEN_TEST_MODE. Asked user whether the Google editor's Code.gs contains const OPEN_TEST_MODE = 'username-only-v2'; to distinguish missing code replacement from selecting an old deployment version. No code/config changes and no live test users or records created.",
+    "next_action": "Await source-line confirmation. If missing, have owner replace all of Code.gs using the raw public script, save and deploy New version. If present, have owner edit the actual Web app deployment ending AKfycbzsaUrATm35... and select New version, or provide a new actual /exec URL. Validate health mode and invalid-name response before claiming activation or cleanup.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T15:31:31.659000+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_GOOGLE_FILE_BACKEND",
+    "note": "Activation confirmed after owner corrected deployment. The original configured /exec URL now returns ready:true and mode:username-only-v2; invalid-name POST returns invalid_username instead of old invalid_credentials. Headless Chromium on https://nizarsh98.github.io/wise-trace-test/ successfully performed both live cross-origin checks with no page errors. The first new-mode health request runs the implemented one-time legacy-data migration. No artificial live usernames or business records were created; full live signup/write was left for the user's chosen username. No URL or code change was needed in this turn.",
+    "next_action": "Users open the Pages site, choose any username and click Start testing; accounts are created automatically and names remembered. Collect testing feedback. For any subsequent owner reset, cache/queue epochs prevent old data returning. Normal WISE source authentication remains separate; file testing still omits full-server approvals, uploads, administration and scheduled reporting.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T15:33:57.524346+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  }
+]

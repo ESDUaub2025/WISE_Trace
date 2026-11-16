@@ -1,13 +1,19 @@
 flowchart TB
-    CMP_DISCOVERED_FILES["Discovered files<br/><small>COMPONENT - READY</small>"]
-    CMP_RECOVERY["Encrypted database and media recovery<br/><small>COMPONENT - VERIFIED</small>"]
+    CMP_DISCOVERED_FILES["Discovered files<br/><small>COMPONENT - FAILED</small>"]
+    CMP_GOOGLE_FILE_BACKEND["Google Drive JSON testing backend<br/><small>COMPONENT - VERIFIED</small>"]
+    CMP_RECOVERY["Encrypted database and media recovery<br/><small>COMPONENT - STALE</small>"]
+    CMP_SELF_HOSTED["Independent PostgreSQL backend<br/><small>COMPONENT - STALE</small>"]
+    CMP_SIMPLE_APP["Guided worker application<br/><small>COMPONENT - VERIFIED</small>"]
     CMP_SRC["src<br/><small>COMPONENT - VERIFIED</small>"]
     CMP_SRC_COMPONENTS["src / components<br/><small>COMPONENT - VERIFIED</small>"]
-    CMP_SUPABASE["supabase<br/><small>COMPONENT - VERIFIED</small>"]
+    CMP_SUPABASE["PostgreSQL business rules<br/><small>COMPONENT - VERIFIED</small>"]
     REQ_FULL_MVP(["Every PRD M/S requirement and Appendix A story<br/><small>REQUIREMENT - READY</small>"])
-    SYS_DATA["Data<br/><small>SYSTEM - VERIFIED</small>"]
-    SYS_FRONTEND["Frontend<br/><small>SYSTEM - READY</small>"]
-    WISE_TRACE[["WISE_Trace<br/><small>PROJECT - ACTIVE</small>"]]
+    SYS_DATA["Data<br/><small>SYSTEM - STALE</small>"]
+    SYS_FRONTEND["Frontend<br/><small>SYSTEM - FAILED</small>"]
+    WISE_TRACE[["WISE_Trace<br/><small>PROJECT - FAILED</small>"]]
+    SYS_DATA --> CMP_GOOGLE_FILE_BACKEND
+    SYS_FRONTEND --> CMP_SIMPLE_APP
+    SYS_DATA --> CMP_SELF_HOSTED
     SYS_DATA --> CMP_RECOVERY
     WISE_TRACE --> SYS_FRONTEND
     WISE_TRACE --> SYS_DATA
@@ -26,6 +32,7 @@ flowchart TB
     classDef blocked fill:#7b3fbf,stroke:#333,stroke-width:1px,color:#ffffff;
     classDef stale fill:#8d6e3a,stroke:#333,stroke-width:1px,color:#ffffff;
     classDef superseded fill:#c9c9c9,stroke:#333,stroke-width:1px,color:#333333;
-    class WISE_TRACE active;
-    class CMP_DISCOVERED_FILES,REQ_FULL_MVP,SYS_FRONTEND ready;
-    class CMP_RECOVERY,CMP_SRC,CMP_SRC_COMPONENTS,CMP_SUPABASE,SYS_DATA verified;
+    class CMP_DISCOVERED_FILES,SYS_FRONTEND,WISE_TRACE failed;
+    class REQ_FULL_MVP ready;
+    class CMP_RECOVERY,CMP_SELF_HOSTED,SYS_DATA stale;
+    class CMP_GOOGLE_FILE_BACKEND,CMP_SIMPLE_APP,CMP_SRC,CMP_SRC_COMPONENTS,CMP_SUPABASE verified;

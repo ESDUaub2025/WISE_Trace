@@ -1,0 +1,435 @@
+/* Account screens (choose your name, PIN, password, authenticator) and the account sheet.
+   Built for a phone held in one hand in daylight: 56px targets, 18px text, strong contrast.
+   Colours come from the tokens in src/styles.css; sizes specific to these screens are below. */
+.acct-page,
+.acct-menu,
+.acct-form {
+  --acct-tap: 56px;
+  --acct-radius: 14px;
+  --acct-danger: #a1301f;
+  --acct-danger-soft: #f8dfd9;
+  --acct-notice-soft: #fbecd2;
+  --acct-notice-ink: #6f4200;
+  --acct-green-soft: #e3ead9;
+}
+
+.acct-page {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--color-background);
+  color: var(--color-ink);
+  font-size: 18px;
+  line-height: 1.45;
+}
+.acct-card {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .acct-card {
+    padding: 32px;
+    background: var(--color-surface);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+  }
+}
+.acct-language-first {
+  align-items: center;
+  text-align: center;
+}
+.acct-language-first .acct-primary {
+  width: 100%;
+  font-size: 22px;
+}
+
+.acct-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+}
+.acct-brand {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-inline-end: auto;
+}
+.acct-back,
+.acct-language {
+  min-height: 44px;
+  min-width: 44px;
+  border: 0;
+  background: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+}
+.acct-back {
+  margin-inline-start: -8px;
+}
+[dir='rtl'] .acct-page .directional {
+  transform: scaleX(-1);
+}
+.acct-title {
+  margin: 4px 0 0;
+  font-size: clamp(26px, 6vw, 32px);
+  line-height: 1.15;
+  font-weight: 600;
+  text-wrap: balance;
+}
+.acct-foot {
+  max-width: 440px;
+  margin: 0;
+  font-size: 13px;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+/* People remembered on this phone */
+.acct-people {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.acct-people button {
+  width: 100%;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  text-align: start;
+  background: var(--color-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--acct-radius);
+  color: inherit;
+}
+.acct-people button:hover {
+  border-color: var(--color-primary);
+}
+.acct-face {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+.acct-person-name {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.acct-person-name strong {
+  font-size: 19px;
+  overflow-wrap: anywhere;
+}
+.acct-person-name small {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* Forms */
+.acct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.acct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.acct-label {
+  font-weight: 600;
+  font-size: 16px;
+}
+.acct-field input,
+.acct-field select {
+  width: 100%;
+  min-height: var(--acct-tap);
+  padding: 0 14px;
+  font-size: 18px;
+  color: var(--color-ink);
+  background: #fff;
+  border: 1.5px solid #8b8f80;
+  border-radius: 12px;
+}
+.acct-password {
+  position: relative;
+  display: block;
+}
+.acct-password input {
+  padding-inline-end: 56px;
+}
+.acct-password button {
+  position: absolute;
+  inset-block: 4px;
+  inset-inline-end: 4px;
+  width: 48px;
+  border: 0;
+  background: none;
+  color: var(--color-muted);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+}
+.acct-code {
+  font-family: var(--font-mono);
+  font-size: 28px !important;
+  letter-spacing: 0.3em;
+  text-align: center;
+}
+.acct-primary,
+.acct-secondary,
+.acct-danger {
+  min-height: var(--acct-tap);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: var(--acct-radius);
+  border: 1.5px solid transparent;
+}
+.acct-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.acct-primary:disabled {
+  background: #c9cdbf;
+  color: #4a4e42;
+  opacity: 1;
+}
+.acct-secondary {
+  background: transparent;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.acct-danger {
+  background: var(--acct-danger-soft);
+  color: var(--acct-danger);
+  border-color: var(--acct-danger);
+}
+.acct-link {
+  min-height: 44px;
+  align-self: center;
+  border: 0;
+  background: none;
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.acct-page :focus-visible,
+.acct-menu :focus-visible,
+.acct-form :focus-visible {
+  outline: 3px solid var(--color-terracotta);
+  outline-offset: 2px;
+}
+.acct-hint,
+.acct-quiet {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 15px;
+  text-wrap: pretty;
+}
+.acct-notice,
+.acct-error {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+.acct-notice {
+  background: var(--acct-notice-soft);
+  color: var(--acct-notice-ink);
+}
+.acct-error {
+  background: var(--acct-danger-soft);
+  color: var(--acct-danger);
+  font-weight: 600;
+}
+.acct-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--acct-radius);
+}
+.acct-confirm p {
+  margin: 0;
+  font-size: 15px;
+}
+
+/* PIN */
+.acct-pin {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.acct-pin-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.acct-pin-dots {
+  display: flex;
+  gap: 12px;
+  direction: ltr;
+  height: 28px;
+  align-items: center;
+}
+.acct-pin-dots i {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+}
+.acct-pin-dots i.optional {
+  border-color: #b9bdae;
+  border-style: dashed;
+}
+.acct-pin-dots i.filled {
+  background: var(--color-primary);
+  border-style: solid;
+  border-color: var(--color-primary);
+}
+/* The real input sits invisibly over the dots: it takes focus, keyboard input and autofill hints. */
+.acct-pin-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  border: 0;
+}
+.acct-pin-field:focus-within .acct-pin-dots {
+  outline: 3px solid var(--color-terracotta);
+  outline-offset: 8px;
+  border-radius: 20px;
+}
+.acct-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
+}
+.acct-keys button {
+  min-height: 64px;
+  font-size: 26px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  background: var(--color-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--acct-radius);
+  color: var(--color-ink);
+  display: grid;
+  place-items: center;
+}
+.acct-keys button:active {
+  background: var(--acct-green-soft);
+}
+.acct-keys .acct-key-quiet {
+  background: transparent;
+  border-color: transparent;
+  color: var(--color-muted);
+}
+
+/* Authenticator set-up */
+.acct-steps {
+  margin: 0;
+  padding-inline-start: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+}
+.acct-steps img {
+  display: block;
+  margin: 10px 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.acct-secret {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  overflow-wrap: anywhere;
+  user-select: all;
+  padding: 8px 10px;
+  background: var(--beige);
+  border-radius: 8px;
+}
+
+/* Account sheet */
+.acct-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.acct-menu-item {
+  width: 100%;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 14px;
+  text-align: start;
+  background: var(--color-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--acct-radius);
+  color: var(--color-ink);
+}
+.acct-menu-item svg {
+  flex: none;
+  color: var(--color-primary);
+}
+.acct-menu-item span {
+  display: flex;
+  flex-direction: column;
+}
+.acct-menu-item small {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+.acct-menu-danger,
+.acct-menu-danger svg {
+  color: var(--acct-danger);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .acct-keys button,
+  .acct-primary,
+  .acct-people button {
+    transition:
+      background-color 120ms ease-out,
+      border-color 120ms ease-out;
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "node": "CMP_GOOGLE_FILE_BACKEND",
+  "evidence_id": "93daf5cf8ecc46f3afcbc6210d2c8966",
+  "result": "PASS",
+  "started_at": "2026-11-15T13:34:59+00:00",
+  "finished_at": "2026-11-15T13:35:00+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:8decbbc81eb7ad265f8c3bd72d83bf8e47129e3aa6a8023155b0b1409f8b1fcb",
+  "dep_fingerprint": "sha256:2220c54822a310f8413e44a0442ff5e83d28aa409b5c7a8d5f0f3edf6f3fc3f2",
+  "artifacts": [
+    {
+      "path": "deploy/google-file-backend/Code.gs",
+      "hash": "f417b00c99ccc5f13ad5d69e290bb214fcc3a3a69a54b0c39f06d9c6fc305f27"
+    },
+    {
+      "path": "deploy/google-file-backend/README.md",
+      "hash": "4fdae9e07482413bdc5501ca95b62fa43517e4bcabbe2b5db2a1343b903f3a79"
+    },
+    {
+      "path": "deploy/google-file-backend/backend.test.mjs",
+      "hash": "3f480d3b4200d05ca7ffb23ebfebc52c4590c71f7514cf3a8744ce84054493af"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_DEPLOY_GOOGLE_FILE_BACKEND_BACKEND_TEST_MJS",
+      "fingerprint": "sha256:42d8c4087cefa7f8c6226219bae776103eec69a0b8114ae29d83a47417a998fc"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "deploy/google-file-backend/Code.gs",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "deploy/google-file-backend/README.md",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "file-backend-security-and-updates",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "node --test deploy/google-file-backend/backend.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.172,
+      "stdout_digest": "sha256:c762f094c5e373f8fe3f5048942d9ef7fb30d979ccfb4c914803bf07ffd9885f",
+      "output_tail": "\u00e2\u0153\u201d setup creates a private file, hashes credentials and preserves both when rerun (3.7481ms)\n\u00e2\u0153\u201d public health and invalid requests never disclose data or credentials (1.0618ms)\n\u00e2\u0153\u201d individual accounts share records but viewers cannot mutate them (1.6979ms)\n\u00e2\u0153\u201d outdated writes are rejected; subsequent updates and deletes record the actor (0.8747ms)\n\u00e2\u0153\u201d disabled credentials, missing versions, oversized writes and busy locks fail without changing data (1.5811ms)\n\u00e2\u201e\u00b9 tests 5\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 5\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 80.6276\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

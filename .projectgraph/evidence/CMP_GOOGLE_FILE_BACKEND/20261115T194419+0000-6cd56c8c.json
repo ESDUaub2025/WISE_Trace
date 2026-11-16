@@ -1,0 +1,70 @@
+{
+  "node": "CMP_GOOGLE_FILE_BACKEND",
+  "evidence_id": "6cd56c8c30454cf2a9a07c47d92dffd9",
+  "result": "PASS",
+  "started_at": "2026-11-15T19:44:19+00:00",
+  "finished_at": "2026-11-15T19:44:19+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:2b9f51dc3441cce20a2f9d0d538da587e3322ab99fd2c48375b67339f9447949",
+  "dep_fingerprint": "sha256:b78b473e733eacde44db4df4b21de8e4161f41c8e89a48f13f30cadc726b3f2d",
+  "artifacts": [
+    {
+      "path": "deploy/google-file-backend/Code.gs",
+      "hash": "b9233f77b42e0def3c66b7dd5061c133ab68d1339e3e180c6e9b6f72ec9d4c2e"
+    },
+    {
+      "path": "deploy/google-file-backend/README.md",
+      "hash": "318ff278c5bbf2930b53955d20df4797991f3c528d0266046f2c648b8e9402d8"
+    },
+    {
+      "path": "deploy/google-file-backend/backend.test.mjs",
+      "hash": "5816d3d5163bd3aab1349860be3c791d0501e755f390546547df8ac48ac6a8fd"
+    },
+    {
+      "path": "deploy/google-file-backend/config.json",
+      "hash": "a9d06939d588f9617c55b298f1846ea3a6446e2ab7b56bdf3a7ddf0e1375aae3"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_DEPLOY_GOOGLE_FILE_BACKEND_BACKEND_TEST_MJS",
+      "fingerprint": "sha256:8fe58a1e5d43c1acc42fd5ebe4b42b33edf745b8e04b4fe195dbfc39ba188420"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "deploy/google-file-backend/Code.gs",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "deploy/google-file-backend/README.md",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "file-backend-security-and-updates",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "node --test deploy/google-file-backend/backend.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.172,
+      "stdout_digest": "sha256:9b7ea345518916e77fc282e06e2ab35866d8af113ccf2f3703608175e0fed286",
+      "output_tail": "\u00e2\u0153\u201d a new setup is private and empty; choosing a name creates/reopens one account without secrets (5.1966ms)\n\u00e2\u0153\u201d first use clears legacy users and records exactly once (0.8557ms)\n\u00e2\u0153\u201d validates names and refuses unregistered requests and public reset actions (1.3953ms)\n\u00e2\u0153\u201d new users share changes; versions prevent overwriting another save (1.6018ms)\n\u00e2\u0153\u201d owner reset removes all users/data and rejects an old browser workspace (0.7848ms)\n\u00e2\u0153\u201d invalid and oversized writes and busy locks cannot change the file (1.2839ms)\n\u00e2\u201e\u00b9 tests 6\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 6\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 82.1971\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

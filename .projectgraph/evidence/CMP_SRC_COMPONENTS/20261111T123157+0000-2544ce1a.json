@@ -1,0 +1,66 @@
+{
+  "node": "CMP_SRC_COMPONENTS",
+  "evidence_id": "2544ce1a5f5b4bfcb701480db4397e34",
+  "result": "PASS",
+  "started_at": "2026-11-11T12:31:51+00:00",
+  "finished_at": "2026-11-11T12:31:57+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:561607258046118b95242d45c7132a8ba686928dc52994051d4c228c479fe777",
+  "dep_fingerprint": "sha256:a118bbe3c3fbd846897a7587c6630b066a515e2e995a755295c1ce90f5f9f27c",
+  "artifacts": [
+    {
+      "path": "src/components/ui/button.tsx",
+      "hash": "4f77e1bbbf0c3d3e8240269e2963ef4c533bab82f0a6ab872409184601179ea1"
+    },
+    {
+      "path": "src/components/ui/sheet.tsx",
+      "hash": "9a417414b02e405eb4393c21bf0ef1fb2bc387d250763707e03286390396598f"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+      "fingerprint": "sha256:385377946151af9027ef57ab5f7f9ab5467486f1c50a7bb70b4e53fabb71a098"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_SHEET_TSX",
+      "fingerprint": "sha256:8027aa570729590b2bfc40a65e341e68590994bb364c4ccd865a8f9e3b8c8563"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "src/components/ui/button.tsx",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "src/components/ui/sheet.tsx",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "types",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run typecheck",
+      "exit_code": 0,
+      "duration_s": 5.453,
+      "stdout_digest": "sha256:7aacbbafb0eab13e5c3a6ab7214826f6c6e4b0e01058ab8de1015d391ca182e1",
+      "output_tail": "\n> wise_trace@1.0.0 typecheck\n> tsc --noEmit\n\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

@@ -3,7 +3,7 @@
   "_comment": "ENGINE-OWNED FILE. Written by ProjectGraph; do not hand-edit. Statuses such as VERIFIED are derived, never stored here.",
   "nodes": {
     "CFG_PROJECT_MANIFESTS": {
-      "lifecycle": "IMPLEMENTED",
+      "lifecycle": "ACTIVE",
       "run_status": "IDLE",
       "result": null,
       "evidence_id": null,
@@ -13,7 +13,14 @@
       "dep_fingerprint": null,
       "git_commit": null,
       "attestations": [],
-      "history": []
+      "history": [
+        {
+          "at": "2026-10-20T10:46:10+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "IMPLEMENTED"
+        }
+      ]
     },
     "CMP_DISCOVERED_FILES": {
       "lifecycle": "ACTIVE",
@@ -44,6 +51,93 @@
           "event": "begin",
           "actor": "cli",
           "previous_status": "FAILED"
+        },
+        {
+          "at": "2026-10-27T09:59:52+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "FAILED"
+        },
+        {
+          "at": "2026-10-27T10:10:22+00:00",
+          "event": "verify",
+          "result": "UNVERIFIABLE",
+          "detail": "This node has no verification contract. Add one to `.projectgraph/verification.yaml` before it can be verified."
+        }
+      ]
+    },
+    "CMP_GOOGLE_FILE_BACKEND": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "6cd56c8c30454cf2a9a07c47d92dffd9",
+      "evidence_path": ".projectgraph/evidence/CMP_GOOGLE_FILE_BACKEND/20261115T194419+0000-6cd56c8c.json",
+      "verified_at": "2026-11-15T19:44:19+00:00",
+      "self_fingerprint": "sha256:2b9f51dc3441cce20a2f9d0d538da587e3322ab99fd2c48375b67339f9447949",
+      "dep_fingerprint": "sha256:b78b473e733eacde44db4df4b21de8e4161f41c8e89a48f13f30cadc726b3f2d",
+      "git_commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-11-15T13:31:05+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-11-15T13:34:58+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-11-15T13:35:00+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "93daf5cf8ecc46f3afcbc6210d2c8966"
+        },
+        {
+          "at": "2026-11-15T14:26:27+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "STALE"
+        },
+        {
+          "at": "2026-11-15T14:31:27+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-11-15T14:32:43+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "93c53666d57941cd95a28d88525578f2"
+        },
+        {
+          "at": "2026-11-15T14:42:33+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-11-15T14:54:46+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-11-15T14:56:14+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "dc22028996614c0eb5787c0e8e2cc446"
+        },
+        {
+          "at": "2026-11-15T19:44:19+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "6cd56c8c30454cf2a9a07c47d92dffd9"
         }
       ]
     },
@@ -51,12 +145,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "0ea2411363ad403c831b780a2a24d0df",
-      "evidence_path": ".projectgraph/evidence/CMP_RECOVERY/20261006T140540+0000-0ea24113.json",
-      "verified_at": "2026-10-06T14:05:40+00:00",
-      "self_fingerprint": "sha256:f034bbb322f57f707e3a6ca385ed7af444ace7145718804cd917f2d351cc6097",
-      "dep_fingerprint": "sha256:687e273868e446819b7e78e4f11c221325d4d8340d4eef4efadaaf3a4c49e840",
-      "git_commit": "f5077d053849eb171f02076ad43085a0798e4ac3",
+      "evidence_id": "e1790e678284426c8593b2a558b6d1e2",
+      "evidence_path": ".projectgraph/evidence/CMP_RECOVERY/20261020T110540+0000-e1790e67.json",
+      "verified_at": "2026-10-20T11:05:40+00:00",
+      "self_fingerprint": "sha256:0250993875e41573c194ffb44f43139c345993f24478cf8f810311ebfba50cb5",
+      "dep_fingerprint": "sha256:2dea1f743686053a88e87c86004e31f20a4598425426615658526f06c56525b8",
+      "git_commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
       "attestations": [],
       "history": [
         {
@@ -78,6 +172,184 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "0ea2411363ad403c831b780a2a24d0df"
+        },
+        {
+          "at": "2026-10-20T10:46:09+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "STALE"
+        },
+        {
+          "at": "2026-10-20T10:59:50+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "74f37f7a08fe43f3abff188d76f1827b"
+        },
+        {
+          "at": "2026-10-20T11:05:40+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "e1790e678284426c8593b2a558b6d1e2"
+        }
+      ]
+    },
+    "CMP_SELF_HOSTED": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "2934da3aadb442e9bcc51d5a5371fd8f",
+      "evidence_path": ".projectgraph/evidence/CMP_SELF_HOSTED/20261111T123139+0000-2934da3a.json",
+      "verified_at": "2026-11-11T12:31:39+00:00",
+      "self_fingerprint": "sha256:c3de4d732751b19e3597ddd052f853d6ef790183f561560a788cfcf7733ad4db",
+      "dep_fingerprint": "sha256:5d55915e408f66234f020250067d617d3be50fbad715d7ec1f8446e495df7b45",
+      "git_commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-10-20T10:10:51+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-10-20T10:59:35+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "571d2216a0de4174804a887f0d477373"
+        },
+        {
+          "at": "2026-10-20T11:05:38+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "d7060e2861d54d4da8ec498e1ea42a8c"
+        },
+        {
+          "at": "2026-11-11T11:35:16+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-11-11T12:31:39+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "2934da3aadb442e9bcc51d5a5371fd8f"
+        }
+      ]
+    },
+    "CMP_SIMPLE_APP": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": "PASS",
+      "evidence_id": "8482e26d9a7b43a4a2bfca329f91652c",
+      "evidence_path": ".projectgraph/evidence/CMP_SIMPLE_APP/20261115T194257+0000-8482e26d.json",
+      "verified_at": "2026-11-15T19:42:57+00:00",
+      "self_fingerprint": "sha256:1f6c8079b5a5b2f1672a80a192e6548285d039c700221f43d9ed4815fe709774",
+      "dep_fingerprint": "sha256:05693858fafcca6af88b1c6ab33e62452a2e7469f09f94b313ce93a48a6aa143",
+      "git_commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "attestations": [],
+      "history": [
+        {
+          "at": "2026-10-27T11:17:54+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "READY"
+        },
+        {
+          "at": "2026-10-27T11:44:46+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-10-27T11:45:04+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "1c55ffbb95e5452084669381956511b4"
+        },
+        {
+          "at": "2026-10-28T06:37:05+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-10-28T07:00:30+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-10-28T07:00:42+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "9800825ce9cd469ba62771b332d2ae85"
+        },
+        {
+          "at": "2026-10-28T09:19:00+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "2e95b5b559c04492b264b71169c90868"
+        },
+        {
+          "at": "2026-11-11T09:13:32+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-11-11T09:17:38+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "8b2a2e994d2c490189d23e58c1b87a1e"
+        },
+        {
+          "at": "2026-11-11T12:32:11+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "76a25973877443349bbe57e3ea1a0d38"
+        },
+        {
+          "at": "2026-11-15T16:51:08+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "STALE"
+        },
+        {
+          "at": "2026-11-15T17:17:35+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "927ab889a17e4a4da13ef84049a748ef"
+        },
+        {
+          "at": "2026-11-15T17:20:13+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "8e48f76fdf784553a299509bb869ff46"
+        },
+        {
+          "at": "2026-11-15T17:25:17+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "b7dfcff4cad64ae89754f38316d4185f"
+        },
+        {
+          "at": "2026-11-15T19:42:57+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "8482e26d9a7b43a4a2bfca329f91652c"
         }
       ]
     },
@@ -85,12 +357,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "83868ca0e0534eb580f234cc12e41c3d",
-      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261007T104010+0000-83868ca0.json",
-      "verified_at": "2026-10-07T10:40:10+00:00",
-      "self_fingerprint": "sha256:235e9d6100d28303786315d0e1e142a9ef46bcef2daf746a47caaaf846d2769f",
-      "dep_fingerprint": "sha256:b60bcac40339850a9ed537686418db3cd3dec0f5de162056a67325f0ff28c5eb",
-      "git_commit": "35a8fa5f8ff6d5a6b34ec567605c0074a7671e6a",
+      "evidence_id": "e1f66605ba1c4a94a5905eb656da093a",
+      "evidence_path": ".projectgraph/evidence/CMP_SRC/20261115T194417+0000-e1f66605.json",
+      "verified_at": "2026-11-15T19:44:17+00:00",
+      "self_fingerprint": "sha256:67822df440af506334508f0755197d8c5e6180231606e39fe917ec06bb0c402c",
+      "dep_fingerprint": "sha256:14f056b052713057149055c2add2502a08d162eeb02de661b4aa12bef685bc68",
+      "git_commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
       "attestations": [],
       "history": [
         {
@@ -284,6 +556,109 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "83868ca0e0534eb580f234cc12e41c3d"
+        },
+        {
+          "at": "2026-10-20T10:16:30+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-10-20T11:00:50+00:00",
+          "event": "verify",
+          "result": "FAIL",
+          "actor": "cli",
+          "evidence_id": "3e3639b76ebf4123a45dc5b207980e91"
+        },
+        {
+          "at": "2026-10-20T11:02:44+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "abbfb82647b546d19768c48de82eec1f"
+        },
+        {
+          "at": "2026-11-11T11:35:17+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "STALE"
+        },
+        {
+          "at": "2026-11-11T12:32:53+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "deb0ad16dac4427b918725daea6a0556"
+        },
+        {
+          "at": "2026-11-15T14:22:09+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "STALE"
+        },
+        {
+          "at": "2026-11-15T14:31:27+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-11-15T14:32:34+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "e79d23f10f2c4b79a62d9d549120697d"
+        },
+        {
+          "at": "2026-11-15T14:42:32+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-11-15T14:54:46+00:00",
+          "event": "implement",
+          "actor": "cli"
+        },
+        {
+          "at": "2026-11-15T14:55:52+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "29822a0e982048a0bf30dace73212bf1"
+        },
+        {
+          "at": "2026-11-15T16:52:31+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-11-15T17:19:46+00:00",
+          "event": "verify",
+          "result": "FAIL",
+          "actor": "cli",
+          "evidence_id": "83b1e4fb099e4a0a9db89c805afe2594"
+        },
+        {
+          "at": "2026-11-15T17:21:32+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "13e95a302a6241bf84f47042ceb81e97"
+        },
+        {
+          "at": "2026-11-15T17:26:37+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "c2d6c7e274664712ab8392a8c3ca0eed"
+        },
+        {
+          "at": "2026-11-15T19:44:17+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "e1f66605ba1c4a94a5905eb656da093a"
         }
       ]
     },
@@ -291,12 +666,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "ce92917fc9b34d5fb6207e6cc6977464",
-      "evidence_path": ".projectgraph/evidence/CMP_SRC_COMPONENTS/20261006T104819+0000-ce92917f.json",
-      "verified_at": "2026-10-06T10:48:19+00:00",
-      "self_fingerprint": "sha256:80ceccc6e2d213e71edb84e4a18313266d9aaba6b648685a77d065375ae43567",
-      "dep_fingerprint": "sha256:4ac47fe6c136568d00ca564e6a83c74cafa31c57d5509f0fc372b65b11107e24",
-      "git_commit": "d3c414700d4696047f1b539b5340236b72d0c638",
+      "evidence_id": "2544ce1a5f5b4bfcb701480db4397e34",
+      "evidence_path": ".projectgraph/evidence/CMP_SRC_COMPONENTS/20261111T123157+0000-2544ce1a.json",
+      "verified_at": "2026-11-11T12:31:57+00:00",
+      "self_fingerprint": "sha256:561607258046118b95242d45c7132a8ba686928dc52994051d4c228c479fe777",
+      "dep_fingerprint": "sha256:a118bbe3c3fbd846897a7587c6630b066a515e2e995a755295c1ce90f5f9f27c",
+      "git_commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
       "attestations": [],
       "history": [
         {
@@ -305,6 +680,13 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "ce92917fc9b34d5fb6207e6cc6977464"
+        },
+        {
+          "at": "2026-11-11T12:31:57+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "2544ce1a5f5b4bfcb701480db4397e34"
         }
       ]
     },
@@ -312,12 +694,12 @@
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": "PASS",
-      "evidence_id": "ed5d05d11d97405aaa6f8ad48daa8086",
-      "evidence_path": ".projectgraph/evidence/CMP_SUPABASE/20261007T103845+0000-ed5d05d1.json",
-      "verified_at": "2026-10-07T10:38:45+00:00",
-      "self_fingerprint": "sha256:9d37e7cfcecf58d0365e10c3dff58d49010bbf2203e9f9d29504cb1880638cec",
-      "dep_fingerprint": "sha256:9f5f2601c04971fafb6f51cb3ae38d14482774f3d2dcb8e1210b5ae31960404c",
-      "git_commit": "35a8fa5f8ff6d5a6b34ec567605c0074a7671e6a",
+      "evidence_id": "ad882d975bcf4a8f8762400bdded3baa",
+      "evidence_path": ".projectgraph/evidence/CMP_SUPABASE/20261111T123149+0000-ad882d97.json",
+      "verified_at": "2026-11-11T12:31:49+00:00",
+      "self_fingerprint": "sha256:9ca1da5dca370d567b688c21058dedb2fb1b724cc09483c31d57f6837b0dafde",
+      "dep_fingerprint": "sha256:be979afd75f4fe2c3eb8c110c29d9a5a36b718d1ab920478ac7159d48a163cb9",
+      "git_commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
       "attestations": [],
       "history": [
         {
@@ -491,8 +873,54 @@
           "result": "PASS",
           "actor": "cli",
           "evidence_id": "ed5d05d11d97405aaa6f8ad48daa8086"
+        },
+        {
+          "at": "2026-10-20T10:46:11+00:00",
+          "event": "begin",
+          "actor": "cli",
+          "previous_status": "VERIFIED"
+        },
+        {
+          "at": "2026-10-20T10:59:47+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "112db48d9cbf46a2a3f11724c3745311"
+        },
+        {
+          "at": "2026-11-11T12:31:49+00:00",
+          "event": "verify",
+          "result": "PASS",
+          "actor": "cli",
+          "evidence_id": "ad882d975bcf4a8f8762400bdded3baa"
         }
       ]
+    },
+    "F_DEPLOY_CREATE_SECRETS_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_DEPLOY_GOOGLE_FILE_BACKEND_BACKEND_TEST_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
     },
     "F_ESLINT_CONFIG_JS": {
       "lifecycle": "IMPLEMENTED",
@@ -508,6 +936,19 @@
       "history": []
     },
     "F_PLAYWRIGHT_CONFIG_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_PLAYWRIGHT_FILE_CONFIG_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -559,19 +1000,6 @@
       "attestations": [],
       "history": []
     },
-    "F_SCRIPTS_BOOTSTRAP_OWNER_MJS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SCRIPTS_BROWSER_PREVIEW_MJS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
@@ -585,7 +1013,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SCRIPTS_CHECK_LIVE_UI_MJS": {
+    "F_SCRIPTS_BUILD_FILE_TEST_MJS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -598,72 +1026,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SCRIPTS_CHECK_PDF_MJS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SCRIPTS_CHECK_PRIVACY_MJS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SCRIPTS_CHECK_REPORTS_MJS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SCRIPTS_CHECK_SNAPSHOT_CONCURRENCY_MJS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SCRIPTS_CREATE_HISTORY_SEED_MJS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SCRIPTS_CREATE_SEED_MJS": {
+    "F_SCRIPTS_BUILD_PRODUCTION_MJS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -677,19 +1040,6 @@
       "history": []
     },
     "F_SCRIPTS_GENERATE_VAPID_MJS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SCRIPTS_LIVE_API_CHECK_MJS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -728,7 +1078,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SCRIPTS_SETUP_LOCAL_MJS": {
+    "F_SCRIPTS_RECOVERY_DRILL_MJS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -741,7 +1091,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS": {
+    "F_SCRIPTS_SHOWCASE_MJS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -754,7 +1104,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_APP_TSX": {
+    "F_SERVER_APP_MJS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -767,7 +1117,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_ARCHIVE_SEARCH_TSX": {
+    "F_SERVER_AUTH_ACCOUNTS_MJS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -780,7 +1130,1437 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_BATCH_STATUS_TSX": {
+    "F_SERVER_AUTH_ERRORS_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_AUTH_PASSWORDS_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_AUTH_POLICY_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_AUTH_PROFILE_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_AUTH_SERVICE_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_AUTH_SESSIONS_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_AUTH_TOTP_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_BOOTSTRAP_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_CLI_ACCOUNT_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_CONTEXT_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_DATABASE_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_DB_BOOTSTRAP_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_NOTIFICATIONS_INDEX_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_OCR_INDEX_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_REPORT_INDEX_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_SCHEDULED_TASKS_INDEX_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_SHARED_ALERTS_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_SHARED_HTTP_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_SHARED_MONTHLY_REPORTS_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_SHARED_PUSH_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_SHARED_VAPID_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_SUBJECT_PRIVACY_INDEX_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_SYNC_INDEX_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_FUNCTIONS_USER_ADMIN_INDEX_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_HTTP_DATA_ROUTES_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_HTTP_MEDIA_ROUTES_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_HTTP_SESSION_ROUTES_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_INDEX_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MEDIA_BACKUP_CLIENT_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATE_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060001_FOUNDATION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060002_OPERATIONS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060003_ADMINISTRATION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060004_KPIS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060005_PROVISIONING_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060006_HISTORY_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060008_MANAGEMENT_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060009_VALIDATION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060010_PRIVACY_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060011_LIFECYCLE_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060022_VIEWER_PIN_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060024_TRAINING_SYNC_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060026_STAGE_HISTORY_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060027_STAGE_SYNC_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060032_BOOTSTRAP_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATIONS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070069_CREATION_SOP_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070080_SOP_MIGRATION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS_S": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070092_SELF_REGISTRATION_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202610070093_TRIAL_REPORTING_SCOPE_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_MIGRATIONS_202611110094_ACCOUNT_SESSIONS_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_PROVISION_RUNTIME_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_STORAGE_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_AUTH_UNIT_TEST_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_BACKEND_TEST_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_BUSINESS_RULES_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_FIXTURES_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_SERVE_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_SNAPSHOT_CONCURRENCY_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_SQL_DASHBOARD_COMPLETION_TEST_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_SQL_PUSH_TEST_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_SQL_REGISTRATION_TEST_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_TESTS_SQL_TRAINING_TEST_SQL": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SERVER_WORKER_MJS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_ACCOUNT_ACCOUNTMENU_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_ACCOUNT_ACCOUNTSCREENS_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_ACCOUNT_PINPAD_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_ACCOUNT_REGISTRATION_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_APP_APPROOT_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_APP_APP_RULES_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_APP_APP_UPDATE_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_APP_CONNECTIONSTATUS_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_APP_STATUS_SUMMARY_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_APP_USE_STATUS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_APP_WORKSPACEDATA_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -819,7 +2599,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_CONFIGURATION_FILES_TSX": {
+    "F_SRC_CONFIG_CONNECTIVITY_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -832,7 +2612,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_DASHBOARD_TSX": {
+    "F_SRC_CONFIG_SESSION_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -845,7 +2625,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_DIAGNOSTICS_TSX": {
+    "F_SRC_CONFIG_WORKSPACES_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -858,7 +2638,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_DISPLAY_SETTINGS_TSX": {
+    "F_SRC_CONNECTIVITY_CONNECTIVITY_TEST_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -871,7 +2651,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_EVIDENCE_TSX": {
+    "F_SRC_CONNECTIVITY_CONNECTIVITY_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -884,7 +2664,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_FEATURES_TSX": {
+    "F_SRC_FULL_ARCHIVE_SEARCH_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -897,7 +2677,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_HELP_CONTENT_TS": {
+    "F_SRC_FULL_BATCH_STATUS_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -910,7 +2690,345 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_HELP_TSX": {
+    "F_SRC_FULL_CONFIGURATION_FILES_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_DASHBOARD_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_DIAGNOSTICS_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_DISPLAY_SETTINGS_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_EVIDENCE_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_FEATURES_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_FULLWORKSPACE_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_HELP_CONTENT_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_HELP_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_KNOWLEDGE_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_LABEL_CARD_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_MANAGEMENT_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_MATERIAL_BALANCE_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_METRIC_EDITOR_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_NOTIFICATIONS_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_NOTIFICATIONS_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_PACKAGING_FIELDS_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_PUSH_SETTINGS_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_QUALITY_PANEL_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_RECALL_CASES_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_REGISTRATION_REVIEW_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_REPORT_PAGE_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_REPORT_SCHEDULES_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_SCANNER_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_STOCK_BALANCE_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_TRAINING_ASSETS_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_FULL_TRAINING_EDITOR_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -949,20 +3067,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_KNOWLEDGE_TSX": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LABEL_CARD_TSX": {
+    "F_SRC_LIB_API_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -989,19 +3094,6 @@
       "history": []
     },
     "F_SRC_LIB_ATTENTION_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LIB_AUTH_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1067,6 +3159,19 @@
       "history": []
     },
     "F_SRC_LIB_DEMO_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_LIB_DEV_ORIGIN_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1183,59 +3288,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_LIB_MFA_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LIB_OFFLINE_SIGNOFF_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SRC_LIB_OVERLAY_TEST_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LIB_PIN_TEST_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LIB_PIN_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1313,58 +3366,6 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_LIB_SEALED_TICKET_TEST_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LIB_SEALED_TICKET_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LIB_SESSION_POLICY_TEST_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LIB_SESSION_POLICY_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
@@ -1392,19 +3393,6 @@
       "history": []
     },
     "F_SRC_LIB_SNAPSHOT_SYNC_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_LIB_SUPABASE_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1469,71 +3457,6 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_MANAGEMENT_TSX": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_MATERIAL_BALANCE_TSX": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_METRIC_EDITOR_TSX": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_NOTIFICATIONS_TEST_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SRC_NOTIFICATIONS_TSX": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SRC_OFFLINE_DB_TEST_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
@@ -1560,7 +3483,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_PACKAGING_FIELDS_TSX": {
+    "F_SRC_OFFLINE_SYNC_STATUS_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1573,7 +3496,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_PUSH_SETTINGS_TSX": {
+    "F_SRC_SESSION_DEVICE_TEST_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1586,7 +3509,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_QUALITY_PANEL_TSX": {
+    "F_SRC_SESSION_DEVICE_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1599,7 +3522,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_RECALL_CASES_TSX": {
+    "F_SRC_SESSION_OFFLINE_SIGNOFF_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1612,7 +3535,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_REGISTRATION_REVIEW_TSX": {
+    "F_SRC_SESSION_PIN_TEST_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1625,7 +3548,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_REGISTRATION_TSX": {
+    "F_SRC_SESSION_PIN_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1638,7 +3561,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_REPORT_PAGE_TSX": {
+    "F_SRC_SESSION_PROFILES_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1651,7 +3574,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_REPORT_SCHEDULES_TSX": {
+    "F_SRC_SESSION_SEALED_TICKET_TEST_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1664,7 +3587,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_SCANNER_TSX": {
+    "F_SRC_SESSION_SEALED_TICKET_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1677,7 +3600,540 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_STOCK_BALANCE_TSX": {
+    "F_SRC_SESSION_SESSIONPROVIDER_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SESSION_SESSION_API_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SESSION_SESSION_POLICY_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SESSION_SESSION_POLICY_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SESSION_SESSION_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SESSION_SESSION_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_ACCESS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_CONTEXT_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_FIRST_TIME_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_FIXTURES_TEST_HELPERS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_FLOW_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_HOME_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_JOBS_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_JOBS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_LEVELS_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_LEVELS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_MEMORY_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_MEMORY_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_NAMES_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_PAYLOADS_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_PAYLOADS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_PRODUCTION_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_RECEIVE_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_SALES_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_SETTINGS_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_SETTINGS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_SETUP_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_SIMPLEWORKSPACE_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_TEXT_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_UI_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_VOICE_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_WORDS_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_SIMPLE_WORDS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_ACTION_VALIDATION_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_ACTION_VALIDATION_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_BATCH_STATUS_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_BATCH_STATUS_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_EMPTY_WORKSPACE_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_FILESIGNIN_TSX": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_FILE_BACKEND_TEST_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_FILE_BACKEND_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_SRC_TESTING_FILE_MODE_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1703,7 +4159,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_TRAINING_ASSETS_TSX": {
+    "F_SRC_WORKER_COPY_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1716,7 +4172,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SRC_TRAINING_EDITOR_TSX": {
+    "F_SRC_WORKER_DRAFTS_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1729,7 +4185,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS": {
+    "F_SRC_WORKER_MODEL_TEST_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1742,7 +4198,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS": {
+    "F_SRC_WORKER_MODEL_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1755,7 +4211,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS": {
+    "F_SRC_WORKER_PENDINGCHANGES_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1768,7 +4224,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS": {
+    "F_SRC_WORKER_PREPARATION_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1781,7 +4237,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_FUNCTIONS_SHARED_ALERTS_TS": {
+    "F_SRC_WORKER_WORKDETAIL_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1794,163 +4250,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_FUNCTIONS_SHARED_MONTHLY_REPORTS_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_FUNCTIONS_SUBJECT_PRIVACY_INDEX_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL": {
+    "F_SRC_WORKER_WORKERWORKSPACE_TSX": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -1976,72 +4276,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2093,33 +4328,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2145,46 +4354,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2210,111 +4380,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2340,33 +4406,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2393,45 +4433,6 @@
       "history": []
     },
     "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2509,19 +4510,6 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
@@ -2535,72 +4523,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2639,45 +4562,6 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
@@ -2704,85 +4588,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070069_CREATION_SOP_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2808,46 +4614,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2886,59 +4653,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070080_SOP_MIGRATION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_S": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -2965,32 +4680,6 @@
       "history": []
     },
     "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -3042,59 +4731,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070092_SELF_REGISTRATION_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_MIGRATIONS_202610070093_TRIAL_REPORTING_SCOPE_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_SEED_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -3134,19 +4771,6 @@
       "history": []
     },
     "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_TESTS_DASHBOARD_COMPLETION_TEST_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -3276,19 +4900,6 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_TESTS_PUSH_TEST_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
     "F_SUPABASE_TESTS_QUALITY_TEST_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
@@ -3316,19 +4927,6 @@
       "history": []
     },
     "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL": {
-      "lifecycle": "IMPLEMENTED",
-      "run_status": "IDLE",
-      "result": null,
-      "evidence_id": null,
-      "evidence_path": null,
-      "verified_at": null,
-      "self_fingerprint": null,
-      "dep_fingerprint": null,
-      "git_commit": null,
-      "attestations": [],
-      "history": []
-    },
-    "F_SUPABASE_TESTS_REGISTRATION_TEST_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -3445,7 +5043,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_TESTS_TRAINING_TEST_SQL": {
+    "F_SUPABASE_TESTS_YIELD_TEST_SQL": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -3458,7 +5056,7 @@
       "attestations": [],
       "history": []
     },
-    "F_SUPABASE_TESTS_YIELD_TEST_SQL": {
+    "F_TESTS_FILE_TESTING_SPEC_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -3485,6 +5083,19 @@
       "history": []
     },
     "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_TESTS_LIVE_CLIENT_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,
@@ -3628,6 +5239,32 @@
       "history": []
     },
     "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_TESTS_LIVE_SIGN_IN_TS": {
+      "lifecycle": "IMPLEMENTED",
+      "run_status": "IDLE",
+      "result": null,
+      "evidence_id": null,
+      "evidence_path": null,
+      "verified_at": null,
+      "self_fingerprint": null,
+      "dep_fingerprint": null,
+      "git_commit": null,
+      "attestations": [],
+      "history": []
+    },
+    "F_TESTS_LIVE_SIMPLE_SPEC_TS": {
       "lifecycle": "IMPLEMENTED",
       "run_status": "IDLE",
       "result": null,

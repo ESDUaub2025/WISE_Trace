@@ -1,6 +1,22 @@
 # Verification contracts derived by migration.
 # These are STARTING POINTS: a file-existence check is not proof of
 # correctness. Add real test commands before trusting VERIFIED.
+CMP_GOOGLE_FILE_BACKEND:
+  required_files:
+  - deploy/google-file-backend/Code.gs
+  - deploy/google-file-backend/README.md
+  commands:
+  - name: file-backend-security-and-updates
+    run: node --test deploy/google-file-backend/backend.test.mjs
+CMP_SELF_HOSTED:
+  required_files:
+  - server/auth/policy.mjs
+  - server/auth/service.mjs
+  - server/migrations/202611110094_account_sessions.sql
+  - docs/AUTH.md
+  commands:
+  - name: backend-security
+    run: node --test server/tests/*.test.mjs
 CMP_RECOVERY:
   commands:
   - name: media-recovery
@@ -8,6 +24,9 @@ CMP_RECOVERY:
 CMP_SRC:
   required_files:
   - src/main.tsx
+  - src/app/AppRoot.tsx
+  - src/session/session.ts
+  - src/connectivity/connectivity.ts
   - src/offline/db.ts
   commands:
   - name: types
@@ -18,6 +37,8 @@ CMP_SRC:
     run: npm test
   - name: browser
     run: npm run test:e2e
+  - name: shared-file-browser
+    run: npm run test:file-test
 CMP_SRC_COMPONENTS:
   required_files:
   - src/components/ui/button.tsx
@@ -27,10 +48,23 @@ CMP_SRC_COMPONENTS:
     run: npm run typecheck
 CMP_SUPABASE:
   required_files:
-  - supabase/migrations/202610060001_foundation.sql
-  - supabase/tests/security.test.sql
+  - server/migrations/202610060001_foundation.sql
+  - server/tests/sql/security.test.sql
   commands:
   - name: database
     run: npm run test:db
   - name: concurrent-snapshot
-    run: node scripts/check-snapshot-concurrency.mjs
+    run: node server/tests/snapshot-concurrency.mjs
+CMP_SIMPLE_APP:
+  required_files:
+  - src/simple/SimpleWorkspace.tsx
+  - src/simple/settings.ts
+  - src/worker/WorkerWorkspace.tsx
+  - src/worker/WorkDetail.tsx
+  commands:
+  - name: simple-unit
+    run: npx vitest run src/simple src/worker src/testing
+  - name: types
+    run: npm run typecheck
+  - name: lint
+    run: npx eslint src/simple src/worker src/testing tests/file-testing.spec.ts tests/live/simple.spec.ts

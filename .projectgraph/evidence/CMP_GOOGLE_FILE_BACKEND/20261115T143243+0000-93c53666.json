@@ -1,0 +1,70 @@
+{
+  "node": "CMP_GOOGLE_FILE_BACKEND",
+  "evidence_id": "93c53666d57941cd95a28d88525578f2",
+  "result": "PASS",
+  "started_at": "2026-11-15T14:32:42+00:00",
+  "finished_at": "2026-11-15T14:32:43+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:27f915433bf5c2cc341808738eb787290b9b9b1110dd598a385aa58edb034316",
+  "dep_fingerprint": "sha256:70cbc72e765bd56aa38593f0fa8e78aaa84d0d72653fa388a0ba2a19c4e24216",
+  "artifacts": [
+    {
+      "path": "deploy/google-file-backend/Code.gs",
+      "hash": "f417b00c99ccc5f13ad5d69e290bb214fcc3a3a69a54b0c39f06d9c6fc305f27"
+    },
+    {
+      "path": "deploy/google-file-backend/README.md",
+      "hash": "6c553a373c7d5e95b144c9a190396d8ec33e7c94561ed6fdb982143e9a479678"
+    },
+    {
+      "path": "deploy/google-file-backend/backend.test.mjs",
+      "hash": "7e2305603e5c0f6098828f5e64832f8337314d175a4c767d7da3a8d7b3146bd4"
+    },
+    {
+      "path": "deploy/google-file-backend/config.json",
+      "hash": "a9d06939d588f9617c55b298f1846ea3a6446e2ab7b56bdf3a7ddf0e1375aae3"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_DEPLOY_GOOGLE_FILE_BACKEND_BACKEND_TEST_MJS",
+      "fingerprint": "sha256:e7554b9f1288f9bd0de0d476afebfa33622d5b13e9afc7dc708be8715baad285"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "deploy/google-file-backend/Code.gs",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "deploy/google-file-backend/README.md",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "file-backend-security-and-updates",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "node --test deploy/google-file-backend/backend.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.171,
+      "stdout_digest": "sha256:042c202e688d1a286c46838e6021fc2d7250997b12ff43acf5b26281c4472693",
+      "output_tail": "\u00e2\u0153\u201d setup creates a private file, hashes credentials and preserves both when rerun (4.7912ms)\n\u00e2\u0153\u201d public health and invalid requests never disclose data or credentials (1.8072ms)\n\u00e2\u0153\u201d individual accounts share records but viewers cannot mutate them (2.6174ms)\n\u00e2\u0153\u201d outdated writes are rejected; subsequent updates and deletes record the actor (1.0391ms)\n\u00e2\u0153\u201d disabled credentials, missing versions, oversized writes and busy locks fail without changing data (1.654ms)\n\u00e2\u201e\u00b9 tests 5\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 5\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 90.4757\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

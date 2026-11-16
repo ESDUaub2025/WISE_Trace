@@ -1,0 +1,552 @@
+{
+  "node": "CMP_SIMPLE_APP",
+  "evidence_id": "8482e26d9a7b43a4a2bfca329f91652c",
+  "result": "PASS",
+  "started_at": "2026-11-15T19:42:43+00:00",
+  "finished_at": "2026-11-15T19:42:57+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:1f6c8079b5a5b2f1672a80a192e6548285d039c700221f43d9ed4815fe709774",
+  "dep_fingerprint": "sha256:05693858fafcca6af88b1c6ab33e62452a2e7469f09f94b313ce93a48a6aa143",
+  "artifacts": [
+    {
+      "path": "src/simple/SimpleWorkspace.tsx",
+      "hash": "6ac7a76ddae4e0bdcaa0629bb3c9122a6c72902689369dcca831d602a55c2812"
+    },
+    {
+      "path": "src/simple/access.ts",
+      "hash": "c8d16ef5c431404fae1973146303b711e38ca979c236594da8564b2f6891da32"
+    },
+    {
+      "path": "src/simple/context.tsx",
+      "hash": "cd1ef1354eca13afa3ecf0d4ef987956da97092ede7137426dc9de1b5cde1a1b"
+    },
+    {
+      "path": "src/simple/first-time.test.ts",
+      "hash": "0335a082686002832b9e57bcd769130e73890b4382da5656253fcd8df76228e3"
+    },
+    {
+      "path": "src/simple/fixtures.test-helpers.ts",
+      "hash": "73ed73140d880fab00cd753c32b5cae3e742ad4025f0f1e1a9c3ce40f7d90ede"
+    },
+    {
+      "path": "src/simple/flow.tsx",
+      "hash": "755536f888f9155cca8afffead3e15d2abf9ed208a3e8d15963887a7a3a520c6"
+    },
+    {
+      "path": "src/simple/home.tsx",
+      "hash": "e1f52b2b9fd19e72c503906a682f25ba2ef8e809b81a9f165e968ad79e02a6ce"
+    },
+    {
+      "path": "src/simple/jobs.test.ts",
+      "hash": "053e9dd238f4d11b71ecf86f8c4224277579cee278b808973752e96abfb2867b"
+    },
+    {
+      "path": "src/simple/jobs.ts",
+      "hash": "d8578f86a6ab3ef2fe2d71936652743188569a66e7c85d5b152369f636b1c8db"
+    },
+    {
+      "path": "src/simple/levels.test.ts",
+      "hash": "46386eceb70489bb26d50bc8c50141df11cf1772e6c99d65a5dd2831fcb67f8f"
+    },
+    {
+      "path": "src/simple/levels.ts",
+      "hash": "46778e908f7fc3ee3b418c1c152bc13d69e5f51622a62666db3b4eb82057aa9a"
+    },
+    {
+      "path": "src/simple/memory.test.ts",
+      "hash": "094d93183fcb8deff599cbe6b2d0a710420a07e8f01bfb5ce6a42f95de510755"
+    },
+    {
+      "path": "src/simple/memory.ts",
+      "hash": "65cd74fb6dca26e0dd11ab7415fafa6b79e66f6d612d366c51725e520c6bfa13"
+    },
+    {
+      "path": "src/simple/names.ts",
+      "hash": "ef71a9192e7930faa5c58371ea99e57ce615246f74624d247ad2e56bf64ec2f7"
+    },
+    {
+      "path": "src/simple/payloads.test.ts",
+      "hash": "39ece541966e29db1c19dd5009295e32aff1eb4b3c94136fbab38057c12aa56e"
+    },
+    {
+      "path": "src/simple/payloads.ts",
+      "hash": "5b392491f084c074ad1f119701d1663d7c810d9331a21e47fd61acbbf23fbccf"
+    },
+    {
+      "path": "src/simple/production.tsx",
+      "hash": "cb4a43513c8a8d3d7a11318f7590072e90cb787ea68137d0d292b258dc6bde1a"
+    },
+    {
+      "path": "src/simple/receive.tsx",
+      "hash": "830f9d0b9c628f060bf86e20709a3899b4611121829e15d87e88e0d40a11fefe"
+    },
+    {
+      "path": "src/simple/sales.tsx",
+      "hash": "58d418eb2ae1556a520a6735583fb4014fbabc3487902de39135263d72aceb10"
+    },
+    {
+      "path": "src/simple/settings.test.ts",
+      "hash": "578be6a3855b7c9ade00650c824a2827a58e0b410b834a20f553ae990f16f27b"
+    },
+    {
+      "path": "src/simple/settings.ts",
+      "hash": "3aa7f7a98db21eec47d6600374cc167f732ac95f17d4595da45699db968e1fe8"
+    },
+    {
+      "path": "src/simple/setup.tsx",
+      "hash": "40999eac671b29c5622146778a1bcf5191cb85fe63ed1a2b597f0e7abf0ed542"
+    },
+    {
+      "path": "src/simple/simple.css",
+      "hash": "ec4d14024cd6637981851d68d0a7436e7c4489edb54b06a6ad24e45b598e7cc3"
+    },
+    {
+      "path": "src/simple/text.ts",
+      "hash": "abc161a964b41ba080424687ec773895e57a4db1297fe9b5053fdb140b15431f"
+    },
+    {
+      "path": "src/simple/ui.tsx",
+      "hash": "4bb20f9774bff520d2614b42f7606701db00fe2606cbec9d6ebef5217149bafe"
+    },
+    {
+      "path": "src/simple/voice.ts",
+      "hash": "1252f9922b99e5e56859b0ac5959fbd840aca8d205a8fdcfc3b546e2b4d1b406"
+    },
+    {
+      "path": "src/simple/words.test.ts",
+      "hash": "de2b10b04f9e761b494a187f51f40d26868d6e84055e120bf0f27b2b5ff8a566"
+    },
+    {
+      "path": "src/simple/words.ts",
+      "hash": "42fa7f02ef5126f17088acc5de110b0553b1c1055c7d31836a7a2ffb01ee6a1d"
+    },
+    {
+      "path": "src/worker/PendingChanges.tsx",
+      "hash": "ef7af774656edbace08d88e4b1f31d353d3ed43c55540ef8c48471c950571a97"
+    },
+    {
+      "path": "src/worker/Preparation.tsx",
+      "hash": "e0b4d0cb66d5be3846e986e6fd5ea87d72ebfa24940ec8174cadb4f6d86de188"
+    },
+    {
+      "path": "src/worker/WorkDetail.tsx",
+      "hash": "c61dabb7b29596f06f5c9b2d028fc9d7a0adc8e0984e175038df695a60714227"
+    },
+    {
+      "path": "src/worker/WorkerWorkspace.tsx",
+      "hash": "e4da971680ed19d4cf97c05fff78328d015053958ee80e48a7dfb0b1754068b5"
+    },
+    {
+      "path": "src/worker/copy.ts",
+      "hash": "d5b7f76c94f808b9d87eb6c4eab7c14e2ba82a0bbe92250884250772d27fd602"
+    },
+    {
+      "path": "src/worker/drafts.ts",
+      "hash": "0075376557838cecdcdeab50187d19b6dde3a11200aefb1fd1e53392888d6306"
+    },
+    {
+      "path": "src/worker/model.test.ts",
+      "hash": "3ab6b660b5e9161e437cead7f64f73e3cc4e47bb5bf86553b854c1f07856caa8"
+    },
+    {
+      "path": "src/worker/model.ts",
+      "hash": "326bb5e15f706235ab92c654f44593c244cc864860be9b2c85472f1eaa19ef2a"
+    },
+    {
+      "path": "src/worker/worker.css",
+      "hash": "151aa71351693de081efad8d1ee5642dbf3b5a200d5bd5d1ef6bf6d03ea28767"
+    },
+    {
+      "path": "tests/file-testing.spec.ts",
+      "hash": "d923602c2e2cb4d7b85a025ad162e420c91c69e384a62d5f03e2588025314886"
+    },
+    {
+      "path": "tests/live/simple.spec.ts",
+      "hash": "4c5ed123342dea2d0277638fc3b35009826eeb174ebce2e4baed326e04bcf694"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_SERVER_AUTH_PASSWORDS_MJS",
+      "fingerprint": "sha256:ae9d5c7aa996a46104049fa46b9695b5764ed4dbad69c7f3005962203d1302b4"
+    },
+    {
+      "id": "F_SERVER_AUTH_POLICY_MJS",
+      "fingerprint": "sha256:0138214e6bfe9ab6165399d66ee287f4557404c03408a79ea16c00a6e07a370c"
+    },
+    {
+      "id": "F_SERVER_DATABASE_MJS",
+      "fingerprint": "sha256:2b0fc11f187c780f3cd584c501e370ad7ba4d070a761a2b4c266297e004fa79f"
+    },
+    {
+      "id": "F_SRC_ACCOUNT_ACCOUNTMENU_TSX",
+      "fingerprint": "sha256:680c4d56e37482a668e7b05e4ed884ed76418c5fd1085b81f5e88ceba79cac19"
+    },
+    {
+      "id": "F_SRC_APP_CONNECTIONSTATUS_TSX",
+      "fingerprint": "sha256:9d6023512ba97cacfca17283982dc9556653a2aeeb491380abf417739fbaa540"
+    },
+    {
+      "id": "F_SRC_APP_STATUS_SUMMARY_TS",
+      "fingerprint": "sha256:7fd84d7a183def62745d0abb7a4f629b9dc49da850e5aa2c05c26d114216a924"
+    },
+    {
+      "id": "F_SRC_APP_USE_STATUS_TS",
+      "fingerprint": "sha256:c4940817c0dabd1c6e8dea1a892ce24c47289b6a5ada66b337d4ade1e8263fdf"
+    },
+    {
+      "id": "F_SRC_APP_WORKSPACEDATA_TSX",
+      "fingerprint": "sha256:df52f42de1c087838a27f2ac35e515c138ca6e0e217946b169be44dcea981c4b"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
+      "fingerprint": "sha256:385377946151af9027ef57ab5f7f9ab5467486f1c50a7bb70b4e53fabb71a098"
+    },
+    {
+      "id": "F_SRC_COMPONENTS_UI_SHEET_TSX",
+      "fingerprint": "sha256:8027aa570729590b2bfc40a65e341e68590994bb364c4ccd865a8f9e3b8c8563"
+    },
+    {
+      "id": "F_SRC_CONFIG_CONNECTIVITY_TS",
+      "fingerprint": "sha256:8e9327a46687b1b017285ef28b0c2be42df37308d89853c4128cb19e78d75675"
+    },
+    {
+      "id": "F_SRC_CONFIG_SESSION_TS",
+      "fingerprint": "sha256:3c0e1e9ba8f216dfed2febcc29153f0d3006ed21df5302f8657f2a9c25776c90"
+    },
+    {
+      "id": "F_SRC_CONFIG_WORKSPACES_TS",
+      "fingerprint": "sha256:b20c888757edfa66d7f885aa477d00418e673d06f5fd1e04c2f09b1d93c55709"
+    },
+    {
+      "id": "F_SRC_CONNECTIVITY_CONNECTIVITY_TS",
+      "fingerprint": "sha256:2acf89a4d206e6591d067f531837f0b2d1c44e7c259ca9203a86cbfe841e5c08"
+    },
+    {
+      "id": "F_SRC_FULL_NOTIFICATIONS_TSX",
+      "fingerprint": "sha256:ed8c13512402f36e6e96b3f75cfbccf0c9eab6bd0ea069e0a645df5b3d6ba33c"
+    },
+    {
+      "id": "F_SRC_FULL_PUSH_SETTINGS_TSX",
+      "fingerprint": "sha256:3a5c78c0de92de414506320cbefacb2ab5009936096b691038607b699e7af05a"
+    },
+    {
+      "id": "F_SRC_I18N_INDEX_TS",
+      "fingerprint": "sha256:55ca64d14e3ca6456e79ec9e7728e40701665cdedf809afe894819f3ceb1d509"
+    },
+    {
+      "id": "F_SRC_LIB_API_TS",
+      "fingerprint": "sha256:96734b9de8e11cd7c79efd97c1154dc3cd5e8c973071352aa6a1cf293e53a554"
+    },
+    {
+      "id": "F_SRC_LIB_ATTENTION_TS",
+      "fingerprint": "sha256:7ad31856091cf5954239ae72b67119ca29f131ca45766f131bfac93347ff656b"
+    },
+    {
+      "id": "F_SRC_LIB_DATA_TS",
+      "fingerprint": "sha256:7e78e4dfd4e1df3a31c86de7cb35b80e1cb9189d3f602f4271b5098e01e2818e"
+    },
+    {
+      "id": "F_SRC_LIB_DEMO_TS",
+      "fingerprint": "sha256:e38a3c936137e881022f309070b9e83e4bc315369c27b75f9bf6008b52228976"
+    },
+    {
+      "id": "F_SRC_LIB_DOMAIN_TS",
+      "fingerprint": "sha256:4c129b84e3cf2d535fd759ff078cf9b2fc5d1abe948f11bb6f61cf60d891df36"
+    },
+    {
+      "id": "F_SRC_LIB_FORMAT_TS",
+      "fingerprint": "sha256:f0ae196c52446c974f91693b4f165dacee965adcd557f305a6dfb17f21e4d7a5"
+    },
+    {
+      "id": "F_SRC_LIB_LEARNING_DEMO_TS",
+      "fingerprint": "sha256:f32bbae4c4e0a607251c0a02aa0d579dbffa13258d81a7d7ebc837abf90b684b"
+    },
+    {
+      "id": "F_SRC_LIB_MEDIA_TS",
+      "fingerprint": "sha256:d682823ca8d7f11a663e8476e1281a5619788c95105ee1b3b6dbcacc1963a4b2"
+    },
+    {
+      "id": "F_SRC_LIB_RECEIPTS_TS",
+      "fingerprint": "sha256:d9ae6b1a8095a17a1f799cc9e8f52a057a2a8537062be342a4cf9909d27ce437"
+    },
+    {
+      "id": "F_SRC_LIB_SCHEDULES_TS",
+      "fingerprint": "sha256:a81d006ab9cc94fa116d82eb0071f12199d4c1de6f42bdff66e6a093d8fa53ed"
+    },
+    {
+      "id": "F_SRC_LIB_SNAPSHOT_SYNC_TS",
+      "fingerprint": "sha256:bc83e9d3db5f90523f9c67b8bfa1b517fc6d79221e492ed5d0083cb6ab2b74e1"
+    },
+    {
+      "id": "F_SRC_LIB_TELEMETRY_TS",
+      "fingerprint": "sha256:ad8e4d48f0a69d0f46b839c313c63decab378352612afa591603abff6132a5da"
+    },
+    {
+      "id": "F_SRC_OFFLINE_DB_TS",
+      "fingerprint": "sha256:2c3944ff23a2ee771f4af32e27dd0a35dbe40772de0166efe5b6b89374e6e5bb"
+    },
+    {
+      "id": "F_SRC_OFFLINE_SYNC_STATUS_TS",
+      "fingerprint": "sha256:39d9697b7be2b0894ccf4dd9d5a46d28b0b9f2208cef041cfa6a6e4c31087f79"
+    },
+    {
+      "id": "F_SRC_SESSION_DEVICE_TS",
+      "fingerprint": "sha256:64586521c18a1684c1d5cc18fba016ef80de4631c887b2c453bb8cb9501eeaf8"
+    },
+    {
+      "id": "F_SRC_SESSION_OFFLINE_SIGNOFF_TS",
+      "fingerprint": "sha256:ebe70e73ef1fbb61582035416c43c2f874cc17b66721d5719c69790ec3050896"
+    },
+    {
+      "id": "F_SRC_SESSION_PIN_TS",
+      "fingerprint": "sha256:319353fa237de2eb6758f809276e91b8895d7b342001d4ccb0344e93a813f9c1"
+    },
+    {
+      "id": "F_SRC_SESSION_PROFILES_TS",
+      "fingerprint": "sha256:c917061c2c9bc6f279f2bd5dca6777cc7558db6ccc8456ae7a9de6b7911a52f2"
+    },
+    {
+      "id": "F_SRC_SESSION_SEALED_TICKET_TS",
+      "fingerprint": "sha256:bf799017c0e9a60bad80a6dce507ce5ff397393e0c6e7e845c2a165ae2bfd348"
+    },
+    {
+      "id": "F_SRC_SESSION_SESSIONPROVIDER_TSX",
+      "fingerprint": "sha256:722ed4bc4d50290155aa87b087583980ddfa82040cb55d8d290d4e9ee9a3f022"
+    },
+    {
+      "id": "F_SRC_SESSION_SESSION_API_TS",
+      "fingerprint": "sha256:82f590f7b620f7e6de418e7fc496e9a199cfd988c4bb81e4d79fa1d5c6c005e0"
+    },
+    {
+      "id": "F_SRC_SESSION_SESSION_POLICY_TS",
+      "fingerprint": "sha256:b167ee8558a8902c45dfb4cd8552a5e9af791ea933824db1ec59b904f661981d"
+    },
+    {
+      "id": "F_SRC_SESSION_SESSION_TS",
+      "fingerprint": "sha256:5113a4a9851f39578e15ce0e9eae8a118d08d7f6fe30982b07fd0917a6172100"
+    },
+    {
+      "id": "F_SRC_SIMPLE_ACCESS_TS",
+      "fingerprint": "sha256:1c608b36fee107b2649910dcea55448a1b465dcdd6ea071cdc7332650996fbb3"
+    },
+    {
+      "id": "F_SRC_SIMPLE_CONTEXT_TSX",
+      "fingerprint": "sha256:79fa7c9d262137ead92a0ee94b9c9469b6e7ac516f06ce0a757177e9bd20ba4f"
+    },
+    {
+      "id": "F_SRC_SIMPLE_FIRST_TIME_TEST_TS",
+      "fingerprint": "sha256:768e2cc76cfaa64cff31642260dab04f34d35552ab24b23b5f44bb04d726599b"
+    },
+    {
+      "id": "F_SRC_SIMPLE_FIXTURES_TEST_HELPERS_TS",
+      "fingerprint": "sha256:86d17f4abd99ae73056929a447e4dc794cdf0856ac39cd7d0dfe8ea2c9f5d0cd"
+    },
+    {
+      "id": "F_SRC_SIMPLE_FLOW_TSX",
+      "fingerprint": "sha256:a8ee92531da2fd5722ee9d47365aa76612a79ec0102ad297716fc52deef772b4"
+    },
+    {
+      "id": "F_SRC_SIMPLE_HOME_TSX",
+      "fingerprint": "sha256:336285b25932c160a95bd1af9ac17757438360d76efd827fad22660c6287a29f"
+    },
+    {
+      "id": "F_SRC_SIMPLE_JOBS_TEST_TS",
+      "fingerprint": "sha256:1b8246f02d0a47e99d88983d7865836d8778beb6c067374105e2707271a35dcc"
+    },
+    {
+      "id": "F_SRC_SIMPLE_JOBS_TS",
+      "fingerprint": "sha256:216dcaac6912960a0a860be04dba929f41d4f3bf3e7193b8c9377a33081c06ca"
+    },
+    {
+      "id": "F_SRC_SIMPLE_LEVELS_TEST_TS",
+      "fingerprint": "sha256:613666c8bac6352f8f7e557fd0a0fd6887b584c6ce76b24cf14fc8b236c42bab"
+    },
+    {
+      "id": "F_SRC_SIMPLE_LEVELS_TS",
+      "fingerprint": "sha256:e2e6816b517534b315adeef36e5dddd9591fb8807b64e03af025062ec20ced84"
+    },
+    {
+      "id": "F_SRC_SIMPLE_MEMORY_TEST_TS",
+      "fingerprint": "sha256:355501f1f3a4f5ae434e17d692b59a0805f3907838074a60d1fc6fabbf41c7ab"
+    },
+    {
+      "id": "F_SRC_SIMPLE_MEMORY_TS",
+      "fingerprint": "sha256:50143d40019dd9ff32a19372829a4e65bb4c10b92b99793c59ce1b697738c7bc"
+    },
+    {
+      "id": "F_SRC_SIMPLE_NAMES_TS",
+      "fingerprint": "sha256:6d21b09590d474c6cc7b209588040242bd23be901b28c05a67222e6d31e30d6d"
+    },
+    {
+      "id": "F_SRC_SIMPLE_PAYLOADS_TEST_TS",
+      "fingerprint": "sha256:525e991bd02c27ab7fb6b3c4ef8f5a26919a89af511162568d6551a903fd026d"
+    },
+    {
+      "id": "F_SRC_SIMPLE_PAYLOADS_TS",
+      "fingerprint": "sha256:8ee310a2331c2026b34a41e703bd2093967b6cb7251fcc0fa3124a263336b24d"
+    },
+    {
+      "id": "F_SRC_SIMPLE_PRODUCTION_TSX",
+      "fingerprint": "sha256:709018114eff1d0994a5d18726d29a491dcd942868696dd2aa325260d03923da"
+    },
+    {
+      "id": "F_SRC_SIMPLE_RECEIVE_TSX",
+      "fingerprint": "sha256:9c682b4671e9e08efc6204b1cb7fa1844abef6be45655d3593b56ebf5d4cc4d8"
+    },
+    {
+      "id": "F_SRC_SIMPLE_SALES_TSX",
+      "fingerprint": "sha256:584f1cfbbf21351467d95f0a47a2dcdb3b14f3a7520527af8a6c7f056d87e377"
+    },
+    {
+      "id": "F_SRC_SIMPLE_SETTINGS_TEST_TS",
+      "fingerprint": "sha256:88d7637233985da68522cef73168661e5db384946f21fe0fdd19cea41d6aee9d"
+    },
+    {
+      "id": "F_SRC_SIMPLE_SETTINGS_TS",
+      "fingerprint": "sha256:08bb1782bc52d4b2b632b181b77da95acc3c46cd41f7ac551c38905dc701fe01"
+    },
+    {
+      "id": "F_SRC_SIMPLE_SETUP_TSX",
+      "fingerprint": "sha256:6e3854aa1ff4b99516567d4e15d9e624d555c1e069c2fe3d6473376bcee6c6ce"
+    },
+    {
+      "id": "F_SRC_SIMPLE_SIMPLEWORKSPACE_TSX",
+      "fingerprint": "sha256:4bd534238c487942d0f77791cd5208c0769aa12fe04252400cf89ceff75d3cfc"
+    },
+    {
+      "id": "F_SRC_SIMPLE_TEXT_TS",
+      "fingerprint": "sha256:73577e1412348821b959cc636d5f4b74838c1a168af94b69a480c763f5f0c960"
+    },
+    {
+      "id": "F_SRC_SIMPLE_UI_TSX",
+      "fingerprint": "sha256:34911faed961441273d146fb7721e8054c03403dde37ecd2fff292e66b7e1b25"
+    },
+    {
+      "id": "F_SRC_SIMPLE_VOICE_TS",
+      "fingerprint": "sha256:306a47b7277d4d777fa3e1504a243e8a17f7622a4ec2a27d7fca42cb3127a13a"
+    },
+    {
+      "id": "F_SRC_SIMPLE_WORDS_TEST_TS",
+      "fingerprint": "sha256:c6704895766051dd505702afe7bf7c9dfd6261c4233ae19f5ad93793cb42df00"
+    },
+    {
+      "id": "F_SRC_SIMPLE_WORDS_TS",
+      "fingerprint": "sha256:6108279dda020e056e10e2ed63f45c9009fc8daeabf4da07d3446ea94135f103"
+    },
+    {
+      "id": "F_SRC_TESTING_ACTION_VALIDATION_TS",
+      "fingerprint": "sha256:4e637760ef463d24d9e84b3a89871cd07136ed95bfba56d9a172f82d4773abbe"
+    },
+    {
+      "id": "F_SRC_TESTING_BATCH_STATUS_TS",
+      "fingerprint": "sha256:a8e64da919273d0d7c8056bd816bf21a992f836877c5b0d530a61930c935efca"
+    },
+    {
+      "id": "F_SRC_TESTING_EMPTY_WORKSPACE_TS",
+      "fingerprint": "sha256:81f3266d0b92888b69a305fa8fd3a5123bbdb28ad4526024404923f592abc139"
+    },
+    {
+      "id": "F_SRC_TESTING_FILE_BACKEND_TS",
+      "fingerprint": "sha256:461e812eceec345f685195e2c0c014fa890298c8d53f997c9bc5077a3703c100"
+    },
+    {
+      "id": "F_SRC_TESTING_FILE_MODE_TS",
+      "fingerprint": "sha256:8eda2f7dd46dd5257055da15c667eeb72fd9ee1f2e29afa59057dc705df1306e"
+    },
+    {
+      "id": "F_SRC_WORKER_COPY_TS",
+      "fingerprint": "sha256:4701b0856cf445559949576eb6eea227f2300b74d3a9d26294a0e1428d2ccbf6"
+    },
+    {
+      "id": "F_SRC_WORKER_DRAFTS_TS",
+      "fingerprint": "sha256:4ca478de25358fc47c98c84ab051d0ea5f5de2aa8a8e55f764a51f866a3da684"
+    },
+    {
+      "id": "F_TESTS_LIVE_CLIENT_TS",
+      "fingerprint": "sha256:3990a93ff0d688f65b50c0516f8faa6a20626dcb5f9a0d014e7e0b1448035862"
+    },
+    {
+      "id": "F_TESTS_LIVE_FIXTURES_TS",
+      "fingerprint": "sha256:4c9a39085411dbec7833efdacae953d57caedcef74f9be5e8b6eca200004f959"
+    },
+    {
+      "id": "F_TESTS_LIVE_SIGN_IN_TS",
+      "fingerprint": "sha256:a1a05619b49fceca9e456ed0f58cfab29f5b9f88fe43b1852ea6b66aa239b3f8"
+    },
+    {
+      "id": "F_TESTS_LIVE_SIMPLE_SPEC_TS",
+      "fingerprint": "sha256:e85797181b60f5e9c585e1337fb9bc4c62c06b5b861f8d497a1638c517fbb796"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "required_file",
+      "name": "src/simple/SimpleWorkspace.tsx",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "src/simple/settings.ts",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "src/worker/WorkerWorkspace.tsx",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "required_file",
+      "name": "src/worker/WorkDetail.tsx",
+      "ok": true,
+      "detail": "1 file(s) matched"
+    },
+    {
+      "kind": "command",
+      "name": "simple-unit",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npx vitest run src/simple src/worker src/testing",
+      "exit_code": 0,
+      "duration_s": 2.578,
+      "stdout_digest": "sha256:e41e04aeb951f158a9d8c8acbaf0e47fc3838a573c56075ca9e188a40b814899",
+      "output_tail": "\n RUN  v5.0.3 D:/Programing/WISE_Trace\n\n\n Test Files  11 passed (11)\n      Tests  87 passed (87)\n   Start at  21:42:45\n   Duration  774ms (setup 37%, transform 28%, import 23%, tests 9%, worker 3%)\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "types",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npm run typecheck",
+      "exit_code": 0,
+      "duration_s": 5.797,
+      "stdout_digest": "sha256:7aacbbafb0eab13e5c3a6ab7214826f6c6e4b0e01058ab8de1015d391ca182e1",
+      "output_tail": "\n> wise_trace@1.0.0 typecheck\n> tsc --noEmit\n\n"
+    },
+    {
+      "kind": "command",
+      "name": "lint",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "npx eslint src/simple src/worker src/testing tests/file-testing.spec.ts tests/live/simple.spec.ts",
+      "exit_code": 0,
+      "duration_s": 4.328,
+      "stdout_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output_tail": ""
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

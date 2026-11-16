@@ -1,0 +1,78 @@
+{
+  "node": "CMP_RECOVERY",
+  "evidence_id": "74f37f7a08fe43f3abff188d76f1827b",
+  "result": "PASS",
+  "started_at": "2026-10-20T10:59:49+00:00",
+  "finished_at": "2026-10-20T10:59:50+00:00",
+  "git": {
+    "available": true,
+    "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+    "short_commit": "f317f6fc552b",
+    "branch": "master",
+    "dirty": true,
+    "worktree": "D:\\Programing\\WISE_Trace",
+    "linked_worktree": false,
+    "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+  },
+  "self_fingerprint": "sha256:8170e8ff0f91781d80d667378928296ba73603d55df6096377cb88785fbd9eb6",
+  "dep_fingerprint": "sha256:2dea1f743686053a88e87c86004e31f20a4598425426615658526f06c56525b8",
+  "artifacts": [
+    {
+      "path": "deploy/backup.sh",
+      "hash": "347d0b89f4a08ebb9a77dd64b58ad6c33a8a077c2fdfebd84c76a36d05101e0c"
+    },
+    {
+      "path": "deploy/wise-backup.service",
+      "hash": "05e8d87abde1879b830b622c2b9ddc529ff80a668479bb38777c06817caefbb0"
+    },
+    {
+      "path": "deploy/wise-backup.timer",
+      "hash": "b01f0041ba0252d0aeb0d9601c93d0ee83c3a1ee6717b0fe0ec99a69d66f9729"
+    },
+    {
+      "path": "scripts/media-backup.mjs",
+      "hash": "ac6460ddb2d0a2f859c77f16beaceb40756a7f987244bca6ef1eb9520591a1b1"
+    },
+    {
+      "path": "scripts/media-backup.test.mjs",
+      "hash": "b7b1e5474ed1bd93a7b74d62266bcd98ae22518025b770d8e79b298d076746a3"
+    },
+    {
+      "path": "server/media-backup-client.mjs",
+      "hash": "44967a8f77226fd1d2c47f0dfb423d8e9a9909c9ac657de7ddbbbad3db5472e6"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "F_SCRIPTS_MEDIA_BACKUP_MJS",
+      "fingerprint": "sha256:91bfc347f795eb6925bfead33a81e48b9eae94c9d4f9787c45b49d33fea40761"
+    },
+    {
+      "id": "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
+      "fingerprint": "sha256:6a85764f90feb9c35444e5c873443417676f1fad20dba394a0c31ce4f0004b44"
+    },
+    {
+      "id": "F_SERVER_MEDIA_BACKUP_CLIENT_MJS",
+      "fingerprint": "sha256:2ad787400f70c446b5cb0a381ad3a2fb5814aed7ca311a581b18d708d0c15f5e"
+    },
+    {
+      "id": "F_SERVER_STORAGE_MJS",
+      "fingerprint": "sha256:166cb360155ec47c368d2dac5c7b7a13789def3b424344342ca9b272fe015925"
+    }
+  ],
+  "checks": [
+    {
+      "kind": "command",
+      "name": "media-recovery",
+      "ok": true,
+      "detail": "exit 0",
+      "run": "node --test scripts/media-backup.test.mjs",
+      "exit_code": 0,
+      "duration_s": 0.437,
+      "stdout_digest": "sha256:82c17dddadeff801ddce318851bc8e257c44425f5e99beeae2c53f8b9b3ecfcf",
+      "output_tail": "\u00e2\u0153\u201d recursive paginated backup preserves exact media bytes, names and private buckets (18.7598ms)\n\u00e2\u0153\u201d corruption or truncation rejects whole archive before any upload (0.8857ms)\n\u00e2\u0153\u201d requires explicit separate target and empty private buckets (0.4503ms)\n\u00e2\u0153\u201d unsafe names, duplicate objects and public buckets fail validation (0.3525ms)\n\u00e2\u0153\u201d actual age encryption round trip rejects tampering and wrong identity (225.6548ms)\n\u00e2\u201e\u00b9 tests 5\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 5\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 355.8316\n"
+    }
+  ],
+  "actor": "cli",
+  "tool_version": "0.3.0"
+}

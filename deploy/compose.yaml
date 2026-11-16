@@ -1,0 +1,97 @@
+name: wise
+x-logging: &logging
+  driver: json-file
+  options: {max-size: "5m", max-file: "2"}
+services:
+  postgres:
+    image: public.ecr.aws/docker/library/postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: wise
+      POSTGRES_USER: wise_owner
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?Set DATABASE_PASSWORD}
+    command: [postgres, -c, shared_buffers=48MB, -c, max_connections=25, -c, work_mem=2MB]
+    volumes: [database:/var/lib/postgresql/data]
+    networks: [private]
+    mem_limit: 220m
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U wise_owner -d wise"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    logging: *logging
+  migrate:
+    image: wise-api:${RELEASE:-local}
+    profiles: [tools]
+    environment: &environment
+      DATABASE_URL: postgres://wise_owner:${DATABASE_PASSWORD}@postgres:5432/wise
+      APP_ORIGIN: ${APP_ORIGIN:?Set APP_ORIGIN}
+      AUTH_SECRET: ${AUTH_SECRET:?Set AUTH_SECRET}
+      APP_DATABASE_PASSWORD: ${APP_DATABASE_PASSWORD:?Set APP_DATABASE_PASSWORD}
+      SMTP_URL: ${SMTP_URL:-}
+      MAIL_FROM: ${MAIL_FROM:-}
+      MEDIA_ROOT: /var/lib/wise/media
+    command: [node, server/migrate.mjs]
+    volumes: ["./server:/app/server:ro"]
+    networks: [private]
+    depends_on: {postgres: {condition: service_healthy}}
+    mem_limit: 160m
+    logging: *logging
+  api:
+    image: wise-api:${RELEASE:-local}
+    restart: unless-stopped
+    environment:
+      <<: *environment
+      DATABASE_URL: postgres://wise_app:${APP_DATABASE_PASSWORD}@postgres:5432/wise
+      APP_DATABASE_PASSWORD: ""
+    volumes: ["media:/var/lib/wise/media", "./server:/app/server:ro"]
+    networks: [private, outgoing]
+    depends_on: {postgres: {condition: service_healthy}}
+    read_only: true
+    tmpfs: [/tmp:size=16m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 240m
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging: *logging
+  worker:
+    image: wise-api:${RELEASE:-local}
+    restart: unless-stopped
+    environment:
+      <<: *environment
+      DATABASE_URL: postgres://wise_app:${APP_DATABASE_PASSWORD}@postgres:5432/wise
+      APP_DATABASE_PASSWORD: ""
+    command: [node, server/worker.mjs]
+    volumes: ["./server:/app/server:ro"]
+    networks: [private, outgoing]
+    depends_on: {api: {condition: service_healthy}}
+    read_only: true
+    tmpfs: [/tmp:size=8m]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 160m
+    logging: *logging
+  web:
+    image: wise-web:${RELEASE:-local}
+    restart: unless-stopped
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:?Set SITE_ADDRESS}
+      ACME_EMAIL: ${ACME_EMAIL:?Set ACME_EMAIL}
+    ports: ["80:80", "443:443", "443:443/udp"]
+    volumes: ["certificates:/data", "caddy_config:/config", "./site:/srv:ro"]
+    networks: [outgoing]
+    depends_on: {api: {condition: service_healthy}}
+    mem_limit: 64m
+    logging: *logging
+networks:
+  private: {internal: true}
+  outgoing: {}
+volumes:
+  database:
+  media:
+  certificates:
+  caddy_config:

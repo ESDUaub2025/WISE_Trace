@@ -1,0 +1,128 @@
+[
+  {
+    "node": "CMP_SIMPLE_APP",
+    "note": "Simple producer app at /simple/ (src/simple/**, simple/index.html, one input line in vite.config.ts). Reuses lib/data, lib/auth, offline outbox and server unchanged; payload builders mirror features.tsx. Settings in src/simple/settings.ts (recording mode, question memory, task->pipeline map, home actions); procedure measurements always fresh. 40 unit tests in src/simple, 3 live e2e in tests/live/simple.spec.ts (pass). Not covered yet: ingredient lots in UI only tested by unit, photo-required checks untested live, PWA manifest start_url still /.",
+    "next_action": "User manual testing of /simple/; then decide on moving settings server-side and adding storage inspection / disposal pipelines.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-27T11:46:40.375562+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SIMPLE_APP",
+    "note": "Simple producer app at /simple/ (src/simple/**, simple/index.html, one input line in vite.config.ts). Reuses lib/data, lib/auth, offline outbox and server unchanged; payload builders mirror features.tsx. Settings in src/simple/settings.ts (recording mode, question memory, task->pipeline map, home actions); procedure measurements always fresh. 39 unit tests in src/simple, 3 live e2e in tests/live/simple.spec.ts (pass). Not covered yet: ingredient lots tested by unit only, photo-required checks untested live, PWA manifest start_url still /.",
+    "next_action": "User manual testing of /simple/; then decide on moving settings server-side and adding storage inspection / disposal pipelines.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-27T11:46:48.389785+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SIMPLE_APP",
+    "note": "Simplified simple app: one-card home + More sheet, training-wheel levels (src/simple/levels.ts), everyday lot names (names.ts), cards/chat styles sharing one step model (ui.tsx Step/ChatStep, flow.tsx Runner history), whey decision modes choose/signal (payloads.decisionPlan), TTS/recorded voice + chime/vibration (voice.ts), one-time hints and ? help, emoji placeholder pictures per option (settings). All configurable in settings.ts. 54 simple unit tests, 5 live e2e pass. nadia = empty first-day account seeded by scripts/showcase.mjs.",
+    "next_action": "User manual testing with nadia (cards) and ?style=chat; collect real container photos and decide voice + whey decision mode; then consider Undo-after-save and QR scan-to-open.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-28T07:01:17.405460+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SIMPLE_APP",
+    "note": "Full and simple apps share src/lib/dev-origin.ts: in dev, localhost redirects to 127.0.0.1 (the only trusted origin), so both apps share one address and one sign-in. Verified in browser both directions.",
+    "next_action": "Collect the user's list of kinks in the simple app and address them.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-28T09:19:08.168306+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SIMPLE_APP",
+    "note": "Sign-in failed when one browser was shared by people from different cooperatives: the server ties a device to one cooperative. src/lib/data.ts selectDevice keeps one device id per cooperative per browser (login and switchUser pick it); revoked devices now say deviceRevoked. Verified in one browser switching nadia/rima/karim across both apps. Run vitest from D:\\ (lowercase d: loads Vitest twice).",
+    "next_action": "Collect the user's simple-app kinks; pending decisions on VPS/AWS foundation.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-11T09:17:46.558905+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SIMPLE_APP",
+    "note": "Revamped and published current GitHub Pages file-backed application only. Live commit 66fd89e19db66cbdda166fd477a46e3cbb7ea480, Pages run 43741339579 succeeded. Three destinations: Today/My work/Help; one worker shell for existing bookmarks; guided receive-to-sale flows, inline setup, readable details/history, explicit test reviews and problem resolution, quantity confirmation, atomic file-backed batch allocations, fresh evidence, recurring-check due-time fix, drafts, offline sending and conflict recovery. Existing Google deployment/records/usernames preserved. ProjectGraph CMP_SIMPLE_APP and CMP_SRC returned VERIFIED after final edits. Type/lint, 140 unit tests, existing browser tests and 9 file workflow tests passed. Published index matches local artifact; five live desktop/mobile/Arabic fixture inspections passed without real backend writes. docs/WORKER_REVAMP.md documents boundaries; screenshots and evidence in out/worker-revamp.",
+    "next_action": "Gather worker feedback on the current live site. Run the PRD pilot usability study with producers; confirm locally appropriate Arabic wording and physical batch labels. Photos, formal training/signatures and production approvals remain outside the temporary file backend; test reviews are explicitly simulations.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T17:30:34.951017+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SIMPLE_APP",
+    "note": "Logic and reliability review of the file-backed worker build (2026-11-15). Fixed: refused saves no longer poison later saves or cause double entry (refreshSaved takes the saved id; discardConflict in offline/db.ts); decision/problem screens show the real reason; app reopens offline (file-backend resumeFileSession); connection indicator updates on failed file calls; numbers validated on their own question (memory.numberProblem), implausible reception readings blocked; Runner steps are in the address (?step=N) so Back returns one question. Logic: failed checks open problems until resolved; batch can be stopped (abandon); ingredient prompt; yield reason (payloads.batchYield + action-validation); several packing sessions; batch status follows its packs (testing/batch-status.ts); decision screen shows suggestion and declarations; history names authors. Removed dead Supabase-era scripts/docs/_headers and unused code. Checks: 156 unit, 12 file-test e2e, 20 preview e2e pass; live suite 28/29 (A2 fails because the local fixture whey lot expired on 2026-11-13, full workspace untouched).",
+    "next_action": "User reviews and publishes build/file-test to the wise-trace-test Pages repo when ready (not published). Reset the local fixture DB (npm run showcase:demo -- --reset) and rerun npm run test:live to confirm A2. Remove the two stale VITE_SUPABASE_* lines from .env.local. Commit the working tree.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T19:44:21.158298+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  }
+]

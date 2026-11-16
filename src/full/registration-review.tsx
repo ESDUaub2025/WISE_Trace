@@ -1,0 +1,139 @@
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { api } from '../lib/api';
+import { Button } from '../components/ui/button';
+import type { Row } from '../lib/data';
+export function RegistrationReview({ cooperatives, onDone }: { cooperatives: Row[]; onDone: () => Promise<void> }) {
+  const { t } = useTranslation();
+  const [rows, setRows] = useState<Row[]>([]),
+    [error, setError] = useState(''),
+    [busy, setBusy] = useState(false),
+    [reasons, setReasons] = useState<Record<string, string>>({});
+  const refresh = async () => {
+    const reply = await api?.from('registration_request').select('*').eq('status', 'pending').order('requested_at');
+    if (reply?.error) setError(reply.error.message);
+    else setRows(reply?.data ?? []);
+  };
+  useEffect(() => {
+    let active = true;
+    void api
+      ?.from('registration_request')
+      .select('*')
+      .eq('status', 'pending')
+      .order('requested_at')
+      .then((reply) => {
+        if (active) {
+          if (reply.error) setError(reply.error.message);
+          else setRows(reply.data ?? []);
+        }
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+  const decide = async (id: string, outcome: string, plan: string) => {
+    setBusy(true);
+    setError('');
+    try {
+      const reply = await api?.rpc('review_registration', { target: id, outcome, plan, reason: reasons[id] ?? '' });
+      if (reply?.error) throw reply.error;
+      await refresh();
+      await onDone();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : String((e as { message?: string }).message ?? 'error'));
+    } finally {
+      setBusy(false);
+    }
+  };
+  return (
+    <section className="registration-review">
+      <h2>{t('registrationRequests')}</h2>
+      <p>{t('registrationReviewIntro')}</p>
+      <Button type="button" variant="outline" onClick={() => void refresh()}>
+        {t('refreshStatus')}
+      </Button>
+      {error && (
+        <p role="alert" className="error-box">
+          {t(error)}
+        </p>
+      )}
+      {rows.length === 0 && <p>{t('noRegistrationRequests')}</p>}
+      {rows.map((row) => {
+        const id = String(row.user_id);
+        return (
+          <article className="card" key={id}>
+            <h3>{String(row.workspace_name)}</h3>
+            <p>
+              {String(row.display_name)} · {String(row.username)} · {String(row.region)}
+            </p>
+            <p>
+              {t('accessPlan')}: {t(row.requested_plan === 'trial' ? 'freeTrial' : 'fullService')}
+            </p>
+            <label>
+              {t('reason')}
+              <input
+                value={reasons[id] ?? ''}
+                onChange={(event) => setReasons({ ...reasons, [id]: event.target.value })}
+              />
+            </label>
+            <div className="button-group">
+              <Button
+                type="button"
+                disabled={busy || (reasons[id]?.trim().length ?? 0) < 3}
+                onClick={() => void decide(id, 'approved', 'trial')}
+              >
+                {t('approveTrial')}
+              </Button>
+              <Button
+                type="button"
+                disabled={busy || (reasons[id]?.trim().length ?? 0) < 3}
+                onClick={() => void decide(id, 'approved', 'full')}
+              >
+                {t('approveFull')}
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                disabled={busy || (reasons[id]?.trim().length ?? 0) < 3}
+                onClick={() => void decide(id, 'rejected', 'trial')}
+              >
+                {t('reject')}
+              </Button>
+            </div>
+          </article>
+        );
+      })}
+      {cooperatives
+        .filter((c) => c.service_plan === 'trial')
+        .map((coop) => {
+          const id = String(coop.id);
+          return (
+            <article className="card" key={id}>
+              <h3>{String(coop.name)}</h3>
+              <p>{t('freeTrial')}</p>
+              <label>
+                {t('reason')}
+                <input
+                  value={reasons[id] ?? ''}
+                  onChange={(event) => setReasons({ ...reasons, [id]: event.target.value })}
+                />
+              </label>
+              <Button
+                type="button"
+                disabled={busy || (reasons[id]?.trim().length ?? 0) < 3}
+                onClick={async () => {
+                  setBusy(true);
+                  const reply = await api?.rpc('upgrade_workspace', { target: id, reason: reasons[id] });
+                  if (reply?.error) setError(reply.error.message);
+                  else await onDone();
+                  setBusy(false);
+                }}
+              >
+                {t('approveFull')}
+              </Button>
+            </article>
+          );
+        })}
+    </section>
+  );
+}

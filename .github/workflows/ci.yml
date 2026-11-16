@@ -27,34 +27,28 @@ jobs:
           path: out/preview-tests
   database:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env: {POSTGRES_DB: wise, POSTGRES_PASSWORD: wise-local-integration-only}
+        ports: ["55579:5432"]
+        options: --health-cmd "pg_isready -U postgres -d wise" --health-interval 5s --health-timeout 5s --health-retries 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: npm
+        with: {node-version: 24, cache: npm}
       - run: npm ci
-      - run: npx supabase start
-      - run: npx supabase test db
-      - run: node scripts/setup-local.mjs
+      - run: npm run test:server
+      - run: node server/tests/snapshot-concurrency.mjs
+      - run: docker build -f deploy/Postgres.test.Dockerfile -t wise-postgres-test .
+      - run: docker run -d --name wise-rule-tests -e POSTGRES_DB=wise -e POSTGRES_PASSWORD=wise-local-integration-only -p 127.0.0.1:55580:5432 wise-postgres-test
+      - run: until docker exec wise-rule-tests pg_isready -U postgres -d wise; do sleep 1; done
+      - run: npm run test:db
       - run: npx playwright install --with-deps chromium
-      - name: Start local Edge functions
-        run: npx supabase functions serve > /tmp/wise-functions.log 2>&1 &
-      - run: node scripts/wait-for-functions.mjs
-      - run: npm run test:api
-      - run: node scripts/check-snapshot-concurrency.mjs
-      - run: node scripts/check-reports.mjs
+      - name: Start local integration API
+        run: node server/tests/serve.mjs > /tmp/wise-api.log 2>&1 &
+      - run: for attempt in $(seq 1 30); do curl --fail --silent http://127.0.0.1:3007/api/health && exit 0; sleep 1; done; exit 1
       - run: npm run test:live
-      - run: node scripts/check-privacy.mjs
       - uses: actions/upload-artifact@v4
         if: failure()
-        with:
-          name: live-browser-test-results
-          path: out/live-tests
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: edge-runtime-logs
-          path: /tmp/wise-functions.log
-      - run: npx supabase stop
-        if: always()
+        with: {name: live-test-results, path: out/live-tests}

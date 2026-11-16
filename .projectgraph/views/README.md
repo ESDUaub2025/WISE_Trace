@@ -9,15 +9,17 @@ works, there is no server to start. Hover a node to isolate its
 connections, click one to see why it has the status it has, and
 double-click to drill in.
 
-- Nodes: **190**  |  Edges: **382**
-- Verified: **62%** of live nodes
+- Nodes: **355**  |  Edges: **1012**
+- Verified: **45%** of live nodes
 
 | Status | Nodes |
 |---|---|
-| READY | 3 |
+| READY | 1 |
 | ACTIVE | 1 |
-| IMPLEMENTED | 181 |
+| IMPLEMENTED | 342 |
 | VERIFIED | 5 |
+| FAILED | 3 |
+| STALE | 3 |
 
 ## Mermaid sources
 

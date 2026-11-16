@@ -60,3 +60,17 @@ Monthly reporting shares `private.impact_metrics_core` with interactive metrics 
 The departure workflow uses the server-only [Supabase Auth admin update API](https://supabase.com/docs/reference/javascript/auth-admin-updateuserbyid) after a scoped database action. It preserves UUID-based operational authorship and records the reason rather than deleting traceability. Protected archives are retained separately from app-visible profile history.
 
 Active-batch SOP migration requires unchanged stages/checkpoints, current new training, Admin MFA and a fresh PIN. This avoids retroactively applying different safety checks to measurements collected under another protocol. Materially changed protocols apply to newly created batches. Cross-check OCR is append-only, never an automatic safety decision.
+
+
+### Sign-in rebuild and one app (2026-11-11)
+
+**Own session layer instead of a sign-in library.** The VPS plan chose an established authentication library, and Better Auth was used. It is replaced by `server/auth` (see [AUTH.md](AUTH.md)). Reasons: the library allowed one signed-in person per browser, which made online person-switching on a shared phone (FR-AUTH-03) impossible; staff usernames, the second-factor level and administrator account creation each needed a workaround around it; and two user tables had to be kept in step. What is written here is the session and flow logic only. All cryptography comes from Node's standard library (scrypt, HMAC-SHA-1 for RFC 6238, AES-256-GCM, HKDF, CSPRNG); nothing cryptographic is invented. The cost of this choice: the project now maintains this code, and it must be included in the security review the PRD requires before pilot go-live (§12.1).
+
+**Password once per device, PIN every time.** Previously every online sign-in asked for username, password and PIN together, and reopening the app after 30 minutes asked for all three again. Producers now pick their name and enter a PIN. The password is asked again only when the server-side sign-in has expired (30 days unused; 12 hours for administrators and Food-Safety Leads).
+
+**"Online" means the server answered.** `navigator.onLine` was used in about 60 places and reports a Wi-Fi network without internet as online. One module now asks `/api/health` and distinguishes online, unreachable and offline.
+
+**One app, two workspaces.** The simple app was a second page with its own sign-in, data loading, sync timer and offline indicator, so the two could disagree. Both are now workspaces under one shell (`src/app`). The simple workspace moved from `/simple/` to `/today`; the old address redirects.
+
+**Existing accounts need new passwords.** Old password hashes are not carried over (different library format, and the owner approved erasing user data). Roles, PINs and all business records are kept.
+

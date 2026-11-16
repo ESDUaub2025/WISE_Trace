@@ -1,5 +1,29 @@
-import {it,expect,vi} from 'vitest';
-import {labelManifest,thermalRaster} from './labels';
-import {demoLots,ids,demoConfig} from './demo';
-it('label content includes mandatory approved bilingual fields and never falls back to missing values',()=>{vi.stubGlobal('location',{origin:'https://wise.example'});const data={lots:demoLots,cooperatives:[{id:ids.coop,name:'Akkar Harvest'}]};const packaging={batch_id:ids.batch,label:demoConfig.definition.label_template,public_token:'opaque-token',size_kg:.5,best_before:'2027-04-01'};const manifest=labelManifest(demoLots[2],packaging,data,'ar');expect(manifest.product).toBe('كشك بمصل الحليب');expect(manifest.allergens).toContain('الحليب');expect(manifest.url).toBe('https://wise.example/p/?t=opaque-token');expect(manifest.netWeight).toContain('غ');expect(()=>labelManifest(demoLots[2],{...packaging,label:{}},data,'ar')).toThrow('labelDataMissing');vi.unstubAllGlobals();});
-it('thermal raster retains monochrome pixels, row length and printer header',()=>{const rgba=new Uint8ClampedArray(8*2*4).fill(255);rgba.set([0,0,0,255],0);rgba.set([0,0,0,255],7*4);rgba.set([0,0,0,255],(8+3)*4);expect([...thermalRaster(rgba,8,2)]).toEqual([29,118,48,0,1,0,2,0,129,16,10,10,10]);expect(()=>thermalRaster(rgba,7,2)).toThrow('Invalid raster dimensions');});
+import { it, expect, vi } from 'vitest';
+import { labelManifest, thermalRaster } from './labels';
+import { demoLots, ids, demoConfig } from './demo';
+it('label content includes mandatory approved bilingual fields and never falls back to missing values', () => {
+  vi.stubGlobal('location', { origin: 'https://wise.example' });
+  const data = { lots: demoLots, cooperatives: [{ id: ids.coop, name: 'Akkar Harvest' }] };
+  const packaging = {
+    batch_id: ids.batch,
+    label: demoConfig.definition.label_template,
+    public_token: 'opaque-token',
+    size_kg: 0.5,
+    best_before: '2027-04-01',
+  };
+  const manifest = labelManifest(demoLots[2], packaging, data, 'ar');
+  expect(manifest.product).toBe('كشك بمصل الحليب');
+  expect(manifest.allergens).toContain('الحليب');
+  expect(manifest.url).toBe('https://wise.example/p/?t=opaque-token');
+  expect(manifest.netWeight).toContain('غ');
+  expect(() => labelManifest(demoLots[2], { ...packaging, label: {} }, data, 'ar')).toThrow('labelDataMissing');
+  vi.unstubAllGlobals();
+});
+it('thermal raster retains monochrome pixels, row length and printer header', () => {
+  const rgba = new Uint8ClampedArray(8 * 2 * 4).fill(255);
+  rgba.set([0, 0, 0, 255], 0);
+  rgba.set([0, 0, 0, 255], 7 * 4);
+  rgba.set([0, 0, 0, 255], (8 + 3) * 4);
+  expect([...thermalRaster(rgba, 8, 2)]).toEqual([29, 118, 48, 0, 1, 0, 2, 0, 129, 16, 10, 10, 10]);
+  expect(() => thermalRaster(rgba, 7, 2)).toThrow('Invalid raster dimensions');
+});

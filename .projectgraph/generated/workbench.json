@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-10-06T14:06:32+00:00",
+  "generated_at": "2026-11-15T17:29:09+00:00",
   "rule": "workbench.project.v1",
   "default_scale": "portfolio",
   "scales": [
@@ -27,7 +27,7 @@
           "label": "Data",
           "type": "SYSTEM",
           "tier": 1,
-          "status": "VERIFIED",
+          "status": "STALE",
           "cluster": "parent:WISE_TRACE"
         },
         {
@@ -36,7 +36,7 @@
           "label": "Frontend",
           "type": "SYSTEM",
           "tier": 1,
-          "status": "READY",
+          "status": "FAILED",
           "cluster": "parent:WISE_TRACE"
         },
         {
@@ -45,7 +45,7 @@
           "label": "WISE_Trace",
           "type": "PROJECT",
           "tier": 0,
-          "status": "ACTIVE",
+          "status": "FAILED",
           "cluster": "type:PROJECT"
         }
       ],
@@ -75,7 +75,7 @@
             "SYS_FRONTEND"
           ],
           "size": 2,
-          "status": "READY"
+          "status": "FAILED"
         },
         {
           "id": "type:PROJECT",
@@ -85,7 +85,7 @@
             "WISE_TRACE"
           ],
           "size": 1,
-          "status": "ACTIVE"
+          "status": "FAILED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -121,7 +121,7 @@
           "label": "WISE_Trace",
           "type": "PROJECT",
           "tier": 0,
-          "status": "ACTIVE",
+          "status": "FAILED",
           "cluster": "type:PROJECT"
         }
       ],
@@ -153,7 +153,7 @@
             "WISE_TRACE"
           ],
           "size": 1,
-          "status": "ACTIVE"
+          "status": "FAILED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -173,7 +173,7 @@
         "INFRASTRUCTURE",
         "CONFIG"
       ],
-      "total_nodes": 8,
+      "total_nodes": 11,
       "collapsed": false,
       "collapse_threshold": 60,
       "truncated": false,
@@ -184,7 +184,7 @@
           "label": "Project manifests",
           "type": "CONFIG",
           "tier": 4,
-          "status": "IMPLEMENTED",
+          "status": "ACTIVE",
           "cluster": "parent:WISE_TRACE"
         },
         {
@@ -193,8 +193,17 @@
           "label": "Discovered files",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "READY",
+          "status": "FAILED",
           "cluster": "parent:SYS_FRONTEND"
+        },
+        {
+          "id": "CMP_GOOGLE_FILE_BACKEND",
+          "composite": false,
+          "label": "Google Drive JSON testing backend",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "VERIFIED",
+          "cluster": "parent:SYS_DATA"
         },
         {
           "id": "CMP_RECOVERY",
@@ -202,8 +211,26 @@
           "label": "Encrypted database and media recovery",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "VERIFIED",
+          "status": "STALE",
           "cluster": "parent:SYS_DATA"
+        },
+        {
+          "id": "CMP_SELF_HOSTED",
+          "composite": false,
+          "label": "Independent PostgreSQL backend",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "STALE",
+          "cluster": "parent:SYS_DATA"
+        },
+        {
+          "id": "CMP_SIMPLE_APP",
+          "composite": false,
+          "label": "Guided worker application",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "VERIFIED",
+          "cluster": "parent:SYS_FRONTEND"
         },
         {
           "id": "CMP_SRC",
@@ -226,7 +253,7 @@
         {
           "id": "CMP_SUPABASE",
           "composite": false,
-          "label": "supabase",
+          "label": "PostgreSQL business rules",
           "type": "COMPONENT",
           "tier": 3,
           "status": "VERIFIED",
@@ -238,7 +265,7 @@
           "label": "Data",
           "type": "SYSTEM",
           "tier": 1,
-          "status": "VERIFIED",
+          "status": "STALE",
           "cluster": "parent:WISE_TRACE"
         },
         {
@@ -247,11 +274,32 @@
           "label": "Frontend",
           "type": "SYSTEM",
           "tier": 1,
-          "status": "READY",
+          "status": "FAILED",
           "cluster": "parent:WISE_TRACE"
         }
       ],
       "edges": [
+        {
+          "from": "SYS_DATA",
+          "to": "CMP_GOOGLE_FILE_BACKEND",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "SYS_FRONTEND",
+          "to": "CMP_SIMPLE_APP",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
+        {
+          "from": "SYS_DATA",
+          "to": "CMP_SELF_HOSTED",
+          "type": "CONTAINS",
+          "gating": false,
+          "staleness": false
+        },
         {
           "from": "SYS_DATA",
           "to": "CMP_RECOVERY",
@@ -290,16 +338,30 @@
       ],
       "clusters": [
         {
+          "id": "parent:SYS_DATA",
+          "label": "Data",
+          "strategy": "parent",
+          "members": [
+            "CMP_GOOGLE_FILE_BACKEND",
+            "CMP_RECOVERY",
+            "CMP_SELF_HOSTED",
+            "CMP_SUPABASE"
+          ],
+          "size": 4,
+          "status": "STALE"
+        },
+        {
           "id": "parent:SYS_FRONTEND",
           "label": "Frontend",
           "strategy": "parent",
           "members": [
             "CMP_DISCOVERED_FILES",
+            "CMP_SIMPLE_APP",
             "CMP_SRC",
             "CMP_SRC_COMPONENTS"
           ],
-          "size": 3,
-          "status": "READY"
+          "size": 4,
+          "status": "FAILED"
         },
         {
           "id": "parent:WISE_TRACE",
@@ -311,18 +373,7 @@
             "SYS_FRONTEND"
           ],
           "size": 3,
-          "status": "READY"
-        },
-        {
-          "id": "parent:SYS_DATA",
-          "label": "Data",
-          "strategy": "parent",
-          "members": [
-            "CMP_RECOVERY",
-            "CMP_SUPABASE"
-          ],
-          "size": 2,
-          "status": "VERIFIED"
+          "status": "FAILED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -338,7 +389,7 @@
         "MODULE",
         "CAPABILITY"
       ],
-      "total_nodes": 5,
+      "total_nodes": 8,
       "collapsed": false,
       "collapse_threshold": 60,
       "truncated": false,
@@ -349,13 +400,40 @@
           "label": "Discovered files",
           "type": "COMPONENT",
           "tier": 3,
-          "status": "READY",
-          "cluster": "status:READY"
+          "status": "FAILED",
+          "cluster": "status:FAILED"
+        },
+        {
+          "id": "CMP_GOOGLE_FILE_BACKEND",
+          "composite": false,
+          "label": "Google Drive JSON testing backend",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "VERIFIED",
+          "cluster": "status:VERIFIED"
         },
         {
           "id": "CMP_RECOVERY",
           "composite": false,
           "label": "Encrypted database and media recovery",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "STALE",
+          "cluster": "status:STALE"
+        },
+        {
+          "id": "CMP_SELF_HOSTED",
+          "composite": false,
+          "label": "Independent PostgreSQL backend",
+          "type": "COMPONENT",
+          "tier": 3,
+          "status": "STALE",
+          "cluster": "status:STALE"
+        },
+        {
+          "id": "CMP_SIMPLE_APP",
+          "composite": false,
+          "label": "Guided worker application",
           "type": "COMPONENT",
           "tier": 3,
           "status": "VERIFIED",
@@ -382,7 +460,7 @@
         {
           "id": "CMP_SUPABASE",
           "composite": false,
-          "label": "supabase",
+          "label": "PostgreSQL business rules",
           "type": "COMPONENT",
           "tier": 3,
           "status": "VERIFIED",
@@ -396,23 +474,35 @@
           "label": "VERIFIED",
           "strategy": "status",
           "members": [
-            "CMP_RECOVERY",
+            "CMP_GOOGLE_FILE_BACKEND",
+            "CMP_SIMPLE_APP",
             "CMP_SRC",
             "CMP_SRC_COMPONENTS",
             "CMP_SUPABASE"
           ],
-          "size": 4,
+          "size": 5,
           "status": "VERIFIED"
         },
         {
-          "id": "status:READY",
-          "label": "READY",
+          "id": "status:STALE",
+          "label": "STALE",
+          "strategy": "status",
+          "members": [
+            "CMP_RECOVERY",
+            "CMP_SELF_HOSTED"
+          ],
+          "size": 2,
+          "status": "STALE"
+        },
+        {
+          "id": "status:FAILED",
+          "label": "FAILED",
           "strategy": "status",
           "members": [
             "CMP_DISCOVERED_FILES"
           ],
           "size": 1,
-          "status": "READY"
+          "status": "FAILED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -430,605 +520,104 @@
         "TEST",
         "VALIDATION"
       ],
-      "total_nodes": 34,
-      "collapsed": false,
+      "total_nodes": 62,
+      "collapsed": true,
       "collapse_threshold": 60,
       "truncated": false,
       "nodes": [
         {
-          "id": "CMP_DISCOVERED_FILES",
-          "composite": false,
-          "label": "Discovered files",
-          "type": "COMPONENT",
-          "tier": 3,
-          "status": "READY",
-          "cluster": "evidence:none"
+          "id": "evidence:none",
+          "composite": true,
+          "label": "no contract",
+          "status": "FAILED",
+          "size": 55,
+          "members": [
+            "CMP_DISCOVERED_FILES",
+            "F_SERVER_TESTS_AUTH_UNIT_TEST_MJS",
+            "F_SERVER_TESTS_BACKEND_TEST_MJS",
+            "F_SERVER_TESTS_BUSINESS_RULES_MJS",
+            "F_SERVER_TESTS_FIXTURES_SQL",
+            "F_SERVER_TESTS_SERVE_MJS",
+            "F_SERVER_TESTS_SNAPSHOT_CONCURRENCY_MJS",
+            "F_SERVER_TESTS_SQL_DASHBOARD_COMPLETION_TEST_SQL",
+            "F_SERVER_TESTS_SQL_PUSH_TEST_SQL",
+            "F_SERVER_TESTS_SQL_REGISTRATION_TEST_SQL",
+            "F_SERVER_TESTS_SQL_TRAINING_TEST_SQL",
+            "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
+            "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+            "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL",
+            "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
+            "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
+            "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+            "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL",
+            "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
+            "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+            "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL",
+            "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL",
+            "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
+            "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+            "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL",
+            "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
+            "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
+            "F_SUPABASE_TESTS_RULES_TEST_SQL",
+            "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL",
+            "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
+            "F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL",
+            "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL",
+            "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL",
+            "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL",
+            "F_SUPABASE_TESTS_YIELD_TEST_SQL",
+            "F_TESTS_FILE_TESTING_SPEC_TS",
+            "F_TESTS_FLOWS_SPEC_TS",
+            "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+            "F_TESTS_LIVE_CLIENT_TS",
+            "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
+            "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
+            "F_TESTS_LIVE_FIXTURES_TS",
+            "F_TESTS_LIVE_LABELS_SPEC_TS",
+            "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
+            "F_TESTS_LIVE_MFA_TS",
+            "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
+            "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+            "F_TESTS_LIVE_OPERATIONS_SPEC_TS",
+            "F_TESTS_LIVE_REGISTRATION_SPEC_TS",
+            "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+            "F_TESTS_LIVE_SIGN_IN_TS",
+            "F_TESTS_LIVE_SIMPLE_SPEC_TS",
+            "F_TESTS_LIVE_SNAPSHOT_SPEC_TS",
+            "F_TESTS_LIVE_TRAINING_SPEC_TS",
+            "REQ_FULL_MVP"
+          ],
+          "members_truncated": false
         },
         {
-          "id": "CMP_RECOVERY",
-          "composite": false,
-          "label": "Encrypted database and media recovery",
-          "type": "COMPONENT",
-          "tier": 3,
-          "status": "VERIFIED",
-          "cluster": "evidence:commands"
-        },
-        {
-          "id": "CMP_SRC",
-          "composite": false,
-          "label": "src",
-          "type": "COMPONENT",
-          "tier": 3,
-          "status": "VERIFIED",
-          "cluster": "evidence:commands"
-        },
-        {
-          "id": "CMP_SRC_COMPONENTS",
-          "composite": false,
-          "label": "src / components",
-          "type": "COMPONENT",
-          "tier": 3,
-          "status": "VERIFIED",
-          "cluster": "evidence:commands"
-        },
-        {
-          "id": "CMP_SUPABASE",
-          "composite": false,
-          "label": "supabase",
-          "type": "COMPONENT",
-          "tier": 3,
-          "status": "VERIFIED",
-          "cluster": "evidence:commands"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/bootstrap.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/configuration.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/dashboard-filters.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/impact.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/material-balance.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/notifications.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/offline-signoff.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/production.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_PUSH_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/push.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/quality.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/receipt-measurements.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/release-intervals.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_RULES_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/rules.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/security.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/training.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_SUPABASE_TESTS_YIELD_TEST_SQL",
-          "composite": false,
-          "label": "supabase/tests/yield.test.sql",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_FLOWS_SPEC_TS",
-          "composite": false,
-          "label": "tests/flows.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/acceptance.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/configuration.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/dashboard-filters.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_FIXTURES_TS",
-          "composite": false,
-          "label": "tests/live/fixtures.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_LABELS_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/labels.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/material-balance.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_MFA_TS",
-          "composite": false,
-          "label": "tests/live/mfa.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/notifications.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/offline-receiving.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/self-release.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "F_TESTS_LIVE_TRAINING_SPEC_TS",
-          "composite": false,
-          "label": "tests/live/training.spec.ts",
-          "type": "TEST",
-          "tier": 6,
-          "status": "IMPLEMENTED",
-          "cluster": "evidence:none"
-        },
-        {
-          "id": "REQ_FULL_MVP",
-          "composite": false,
-          "label": "Every PRD M/S requirement and Appendix A story",
-          "type": "REQUIREMENT",
-          "tier": 2,
-          "status": "READY",
-          "cluster": "evidence:none"
+          "id": "evidence:commands",
+          "composite": true,
+          "label": "commands and structure",
+          "status": "STALE",
+          "size": 7,
+          "members": [
+            "CMP_GOOGLE_FILE_BACKEND",
+            "CMP_RECOVERY",
+            "CMP_SELF_HOSTED",
+            "CMP_SIMPLE_APP",
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS",
+            "CMP_SUPABASE"
+          ],
+          "members_truncated": false
         }
       ],
       "edges": [
         {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_RULES_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_FLOWS_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_TRAINING_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_YIELD_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_LABELS_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_PUSH_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_MFA_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_SUPABASE",
-          "to": "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "CMP_DISCOVERED_FILES",
-          "to": "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
-          "type": "CONTAINS",
-          "gating": false,
-          "staleness": false
-        },
-        {
-          "from": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
-          "to": "F_TESTS_LIVE_MFA_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
-          "to": "F_TESTS_LIVE_MFA_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_LABELS_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_MFA_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_TRAINING_SPEC_TS",
-          "to": "F_TESTS_LIVE_MFA_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
-        },
-        {
-          "from": "F_TESTS_LIVE_TRAINING_SPEC_TS",
-          "to": "F_TESTS_LIVE_FIXTURES_TS",
-          "type": "CONSUMES",
-          "gating": false,
-          "staleness": true
+          "from": "evidence:commands",
+          "to": "evidence:none",
+          "composite": true,
+          "count": 36,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
         }
       ],
       "clusters": [
@@ -1038,24 +627,44 @@
           "strategy": "evidence",
           "members": [
             "CMP_DISCOVERED_FILES",
+            "F_SERVER_TESTS_AUTH_UNIT_TEST_MJS",
+            "F_SERVER_TESTS_BACKEND_TEST_MJS",
+            "F_SERVER_TESTS_BUSINESS_RULES_MJS",
+            "F_SERVER_TESTS_FIXTURES_SQL",
+            "F_SERVER_TESTS_SERVE_MJS",
+            "F_SERVER_TESTS_SNAPSHOT_CONCURRENCY_MJS",
+            "F_SERVER_TESTS_SQL_DASHBOARD_COMPLETION_TEST_SQL",
+            "F_SERVER_TESTS_SQL_PUSH_TEST_SQL",
+            "F_SERVER_TESTS_SQL_REGISTRATION_TEST_SQL",
+            "F_SERVER_TESTS_SQL_TRAINING_TEST_SQL",
             "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
             "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+            "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL",
             "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
             "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
             "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+            "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL",
             "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
             "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+            "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL",
+            "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL",
             "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
-            "F_SUPABASE_TESTS_PUSH_TEST_SQL",
             "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+            "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL",
             "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
             "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
             "F_SUPABASE_TESTS_RULES_TEST_SQL",
+            "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL",
             "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
-            "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+            "F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL",
+            "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL",
+            "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL",
+            "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL",
             "F_SUPABASE_TESTS_YIELD_TEST_SQL",
+            "F_TESTS_FILE_TESTING_SPEC_TS",
             "F_TESTS_FLOWS_SPEC_TS",
             "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+            "F_TESTS_LIVE_CLIENT_TS",
             "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
             "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
             "F_TESTS_LIVE_FIXTURES_TS",
@@ -1064,25 +673,33 @@
             "F_TESTS_LIVE_MFA_TS",
             "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
             "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+            "F_TESTS_LIVE_OPERATIONS_SPEC_TS",
+            "F_TESTS_LIVE_REGISTRATION_SPEC_TS",
             "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+            "F_TESTS_LIVE_SIGN_IN_TS",
+            "F_TESTS_LIVE_SIMPLE_SPEC_TS",
+            "F_TESTS_LIVE_SNAPSHOT_SPEC_TS",
             "F_TESTS_LIVE_TRAINING_SPEC_TS",
             "REQ_FULL_MVP"
           ],
-          "size": 30,
-          "status": "READY"
+          "size": 55,
+          "status": "FAILED"
         },
         {
           "id": "evidence:commands",
           "label": "commands and structure",
           "strategy": "evidence",
           "members": [
+            "CMP_GOOGLE_FILE_BACKEND",
             "CMP_RECOVERY",
+            "CMP_SELF_HOSTED",
+            "CMP_SIMPLE_APP",
             "CMP_SRC",
             "CMP_SRC_COMPONENTS",
             "CMP_SUPABASE"
           ],
-          "size": 4,
-          "status": "VERIFIED"
+          "size": 7,
+          "status": "STALE"
         }
       ],
       "rule": "workbench.project.v1"
@@ -1100,7 +717,7 @@
         "FUNCTION",
         "TEST"
       ],
-      "total_nodes": 185,
+      "total_nodes": 350,
       "collapsed": true,
       "collapse_threshold": 60,
       "truncated": false,
@@ -1108,99 +725,135 @@
         {
           "id": "parent:CMP_SUPABASE",
           "composite": true,
-          "label": "supabase",
+          "label": "PostgreSQL business rules",
           "status": "IMPLEMENTED",
-          "size": 90,
+          "size": 126,
           "members": [
-            "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
-            "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
-            "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
-            "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS",
-            "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL",
+            "F_SERVER_DB_BOOTSTRAP_SQL",
+            "F_SERVER_MIGRATIONS_202610060001_FOUNDATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060002_OPERATIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060004_KPIS_SQL",
+            "F_SERVER_MIGRATIONS_202610060005_PROVISIONING_SQL",
+            "F_SERVER_MIGRATIONS_202610060006_HISTORY_SQL",
+            "F_SERVER_MIGRATIONS_202610060008_MANAGEMENT_SQL",
+            "F_SERVER_MIGRATIONS_202610060009_VALIDATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060010_PRIVACY_SQL",
+            "F_SERVER_MIGRATIONS_202610060011_LIFECYCLE_SQL",
+            "F_SERVER_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
+            "F_SERVER_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
+            "F_SERVER_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
+            "F_SERVER_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
+            "F_SERVER_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
+            "F_SERVER_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
+            "F_SERVER_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
+            "F_SERVER_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
+            "F_SERVER_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
+            "F_SERVER_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
+            "F_SERVER_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
+            "F_SERVER_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
+            "F_SERVER_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
+            "F_SERVER_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
+            "F_SERVER_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
+            "F_SERVER_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATIONS",
+            "F_SERVER_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
+            "F_SERVER_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQL",
+            "F_SERVER_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
+            "F_SERVER_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL",
+            "F_SERVER_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL",
+            "F_SERVER_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610070069_CREATION_SOP_SQL",
+            "F_SERVER_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL",
+            "F_SERVER_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL",
+            "F_SERVER_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL",
+            "F_SERVER_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL",
+            "F_SERVER_MIGRATIONS_202610070080_SOP_MIGRATION_SQL",
+            "F_SERVER_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_SQL",
+            "F_SERVER_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL",
+            "F_SERVER_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL",
+            "F_SERVER_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS_S",
+            "F_SERVER_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL",
+            "F_SERVER_MIGRATIONS_202610070092_SELF_REGISTRATION_SQL",
+            "F_SERVER_MIGRATIONS_202610070093_TRIAL_REPORTING_SCOPE_SQL",
+            "F_SERVER_MIGRATIONS_202611110094_ACCOUNT_SESSIONS_SQL",
+            "F_SERVER_TESTS_BUSINESS_RULES_MJS",
+            "F_SERVER_TESTS_FIXTURES_SQL",
+            "F_SERVER_TESTS_SNAPSHOT_CONCURRENCY_MJS",
+            "F_SERVER_TESTS_SQL_DASHBOARD_COMPLETION_TEST_SQL",
+            "F_SERVER_TESTS_SQL_PUSH_TEST_SQL",
+            "F_SERVER_TESTS_SQL_REGISTRATION_TEST_SQL",
+            "F_SERVER_TESTS_SQL_TRAINING_TEST_SQL",
             "F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL",
             "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
             "F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL",
             "F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
             "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
             "F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
             "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
             "F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
             "F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
             "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL",
             "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS",
-            "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL",
             "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL",
             "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL",
             "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE",
             "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S",
-            "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
             "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
             "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
-            "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
             "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
-            "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
-            "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
             "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
-            "F_SUPABASE_SEED_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ",
+            "F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL",
             "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
             "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+            "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL",
             "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
             "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
             "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+            "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL",
             "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
             "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+            "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL",
+            "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL",
             "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
-            "F_SUPABASE_TESTS_PUSH_TEST_SQL",
             "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+            "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL",
             "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
             "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
             "F_SUPABASE_TESTS_RULES_TEST_SQL",
+            "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL",
             "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
-            "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+            "F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL",
+            "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL",
+            "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL",
+            "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL",
             "F_SUPABASE_TESTS_YIELD_TEST_SQL"
           ],
           "members_truncated": false
@@ -1210,25 +863,66 @@
           "composite": true,
           "label": "src",
           "status": "IMPLEMENTED",
-          "size": 56,
+          "size": 112,
           "members": [
-            "F_SRC_APP_TSX",
-            "F_SRC_CONFIGURATION_FILES_TSX",
-            "F_SRC_DASHBOARD_TSX",
-            "F_SRC_DISPLAY_SETTINGS_TSX",
-            "F_SRC_EVIDENCE_TSX",
-            "F_SRC_FEATURES_TSX",
+            "F_PLAYWRIGHT_FILE_CONFIG_TS",
+            "F_SCRIPTS_BUILD_FILE_TEST_MJS",
+            "F_SRC_ACCOUNT_ACCOUNTMENU_TSX",
+            "F_SRC_ACCOUNT_ACCOUNTSCREENS_TSX",
+            "F_SRC_ACCOUNT_PINPAD_TSX",
+            "F_SRC_ACCOUNT_REGISTRATION_TSX",
+            "F_SRC_APP_APPROOT_TSX",
+            "F_SRC_APP_APP_RULES_TEST_TS",
+            "F_SRC_APP_APP_UPDATE_TS",
+            "F_SRC_APP_CONNECTIONSTATUS_TSX",
+            "F_SRC_APP_STATUS_SUMMARY_TS",
+            "F_SRC_APP_USE_STATUS_TS",
+            "F_SRC_APP_WORKSPACEDATA_TSX",
+            "F_SRC_CONFIG_CONNECTIVITY_TS",
+            "F_SRC_CONFIG_SESSION_TS",
+            "F_SRC_CONFIG_WORKSPACES_TS",
+            "F_SRC_CONNECTIVITY_CONNECTIVITY_TEST_TS",
+            "F_SRC_CONNECTIVITY_CONNECTIVITY_TS",
+            "F_SRC_FULL_ARCHIVE_SEARCH_TSX",
+            "F_SRC_FULL_BATCH_STATUS_TSX",
+            "F_SRC_FULL_CONFIGURATION_FILES_TSX",
+            "F_SRC_FULL_DASHBOARD_TSX",
+            "F_SRC_FULL_DIAGNOSTICS_TSX",
+            "F_SRC_FULL_DISPLAY_SETTINGS_TSX",
+            "F_SRC_FULL_EVIDENCE_TSX",
+            "F_SRC_FULL_FEATURES_TSX",
+            "F_SRC_FULL_FULLWORKSPACE_TSX",
+            "F_SRC_FULL_HELP_CONTENT_TS",
+            "F_SRC_FULL_HELP_TSX",
+            "F_SRC_FULL_KNOWLEDGE_TSX",
+            "F_SRC_FULL_LABEL_CARD_TSX",
+            "F_SRC_FULL_MANAGEMENT_TSX",
+            "F_SRC_FULL_MATERIAL_BALANCE_TSX",
+            "F_SRC_FULL_METRIC_EDITOR_TSX",
+            "F_SRC_FULL_NOTIFICATIONS_TEST_TS",
+            "F_SRC_FULL_NOTIFICATIONS_TSX",
+            "F_SRC_FULL_PACKAGING_FIELDS_TSX",
+            "F_SRC_FULL_PUSH_SETTINGS_TSX",
+            "F_SRC_FULL_QUALITY_PANEL_TSX",
+            "F_SRC_FULL_RECALL_CASES_TSX",
+            "F_SRC_FULL_REGISTRATION_REVIEW_TSX",
+            "F_SRC_FULL_REPORT_PAGE_TSX",
+            "F_SRC_FULL_REPORT_SCHEDULES_TSX",
+            "F_SRC_FULL_SCANNER_TSX",
+            "F_SRC_FULL_STOCK_BALANCE_TSX",
+            "F_SRC_FULL_TRAINING_ASSETS_TSX",
+            "F_SRC_FULL_TRAINING_EDITOR_TSX",
             "F_SRC_I18N_INDEX_TS",
             "F_SRC_I18N_TRANSLATIONS_TEST_TS",
-            "F_SRC_KNOWLEDGE_TSX",
-            "F_SRC_LABEL_CARD_TSX",
+            "F_SRC_LIB_API_TS",
             "F_SRC_LIB_ATTENTION_TEST_TS",
             "F_SRC_LIB_ATTENTION_TS",
-            "F_SRC_LIB_AUTH_TS",
+            "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS",
             "F_SRC_LIB_CONFIG_FILES_TEST_TS",
             "F_SRC_LIB_CONFIG_FILES_TS",
             "F_SRC_LIB_DATA_TS",
             "F_SRC_LIB_DEMO_TS",
+            "F_SRC_LIB_DEV_ORIGIN_TS",
             "F_SRC_LIB_DOMAIN_TEST_TS",
             "F_SRC_LIB_DOMAIN_TS",
             "F_SRC_LIB_FORMAT_TEST_TS",
@@ -1237,37 +931,99 @@
             "F_SRC_LIB_LABELS_TS",
             "F_SRC_LIB_LEARNING_DEMO_TS",
             "F_SRC_LIB_MEDIA_TS",
-            "F_SRC_LIB_MFA_TS",
-            "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
             "F_SRC_LIB_OVERLAY_TEST_TS",
-            "F_SRC_LIB_PIN_TEST_TS",
-            "F_SRC_LIB_PIN_TS",
             "F_SRC_LIB_RECEIPTS_TEST_TS",
             "F_SRC_LIB_RECEIPTS_TS",
             "F_SRC_LIB_REPORTS_TS",
             "F_SRC_LIB_SCHEDULES_TEST_TS",
             "F_SRC_LIB_SCHEDULES_TS",
-            "F_SRC_LIB_SEALED_TICKET_TEST_TS",
-            "F_SRC_LIB_SEALED_TICKET_TS",
-            "F_SRC_LIB_SESSION_POLICY_TEST_TS",
-            "F_SRC_LIB_SESSION_POLICY_TS",
-            "F_SRC_LIB_SUPABASE_TS",
+            "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS",
+            "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS",
+            "F_SRC_LIB_SNAPSHOT_SYNC_TS",
+            "F_SRC_LIB_TELEMETRY_TS",
             "F_SRC_LIB_TRAINING_MEDIA_TS",
             "F_SRC_LIB_VAPID_TEST_TS",
             "F_SRC_MAIN_TSX",
-            "F_SRC_MANAGEMENT_TSX",
-            "F_SRC_MATERIAL_BALANCE_TSX",
-            "F_SRC_NOTIFICATIONS_TEST_TS",
-            "F_SRC_NOTIFICATIONS_TSX",
             "F_SRC_OFFLINE_DB_TEST_TS",
             "F_SRC_OFFLINE_DB_TS",
-            "F_SRC_PACKAGING_FIELDS_TSX",
-            "F_SRC_PUSH_SETTINGS_TSX",
-            "F_SRC_REPORT_PAGE_TSX",
-            "F_SRC_SCANNER_TSX",
+            "F_SRC_OFFLINE_SYNC_STATUS_TS",
+            "F_SRC_SESSION_DEVICE_TEST_TS",
+            "F_SRC_SESSION_DEVICE_TS",
+            "F_SRC_SESSION_OFFLINE_SIGNOFF_TS",
+            "F_SRC_SESSION_PIN_TEST_TS",
+            "F_SRC_SESSION_PIN_TS",
+            "F_SRC_SESSION_PROFILES_TS",
+            "F_SRC_SESSION_SEALED_TICKET_TEST_TS",
+            "F_SRC_SESSION_SEALED_TICKET_TS",
+            "F_SRC_SESSION_SESSIONPROVIDER_TSX",
+            "F_SRC_SESSION_SESSION_API_TS",
+            "F_SRC_SESSION_SESSION_POLICY_TEST_TS",
+            "F_SRC_SESSION_SESSION_POLICY_TS",
+            "F_SRC_SESSION_SESSION_TEST_TS",
+            "F_SRC_SESSION_SESSION_TS",
+            "F_SRC_TESTING_ACTION_VALIDATION_TEST_TS",
+            "F_SRC_TESTING_ACTION_VALIDATION_TS",
+            "F_SRC_TESTING_EMPTY_WORKSPACE_TS",
+            "F_SRC_TESTING_FILESIGNIN_TSX",
+            "F_SRC_TESTING_FILE_BACKEND_TEST_TS",
+            "F_SRC_TESTING_FILE_BACKEND_TS",
             "F_SRC_TEST_SETUP_TS",
-            "F_SRC_TRAINING_ASSETS_TSX",
-            "F_SRC_TRAINING_EDITOR_TSX"
+            "F_SRC_WORKER_COPY_TS",
+            "F_SRC_WORKER_DRAFTS_TS",
+            "F_SRC_WORKER_MODEL_TEST_TS",
+            "F_SRC_WORKER_MODEL_TS",
+            "F_SRC_WORKER_PENDINGCHANGES_TSX",
+            "F_SRC_WORKER_PREPARATION_TSX",
+            "F_SRC_WORKER_WORKDETAIL_TSX",
+            "F_SRC_WORKER_WORKERWORKSPACE_TSX",
+            "F_TESTS_FILE_TESTING_SPEC_TS"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:CMP_SELF_HOSTED",
+          "composite": true,
+          "label": "Independent PostgreSQL backend",
+          "status": "IMPLEMENTED",
+          "size": 37,
+          "members": [
+            "F_DEPLOY_CREATE_SECRETS_MJS",
+            "F_SERVER_APP_MJS",
+            "F_SERVER_AUTH_ACCOUNTS_MJS",
+            "F_SERVER_AUTH_ERRORS_MJS",
+            "F_SERVER_AUTH_PASSWORDS_MJS",
+            "F_SERVER_AUTH_POLICY_MJS",
+            "F_SERVER_AUTH_PROFILE_MJS",
+            "F_SERVER_AUTH_SERVICE_MJS",
+            "F_SERVER_AUTH_SESSIONS_MJS",
+            "F_SERVER_AUTH_TOTP_MJS",
+            "F_SERVER_BOOTSTRAP_MJS",
+            "F_SERVER_CLI_ACCOUNT_MJS",
+            "F_SERVER_CONTEXT_MJS",
+            "F_SERVER_DATABASE_MJS",
+            "F_SERVER_FUNCTIONS_NOTIFICATIONS_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_OCR_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_REPORT_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_SCHEDULED_TASKS_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_ALERTS_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_HTTP_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_MONTHLY_REPORTS_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_PUSH_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_VAPID_MJS",
+            "F_SERVER_FUNCTIONS_SUBJECT_PRIVACY_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_SYNC_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_USER_ADMIN_INDEX_MJS",
+            "F_SERVER_HTTP_DATA_ROUTES_MJS",
+            "F_SERVER_HTTP_MEDIA_ROUTES_MJS",
+            "F_SERVER_HTTP_SESSION_ROUTES_MJS",
+            "F_SERVER_INDEX_MJS",
+            "F_SERVER_MIGRATE_MJS",
+            "F_SERVER_PROVISION_RUNTIME_MJS",
+            "F_SERVER_STORAGE_MJS",
+            "F_SERVER_TESTS_AUTH_UNIT_TEST_MJS",
+            "F_SERVER_TESTS_BACKEND_TEST_MJS",
+            "F_SERVER_TESTS_SERVE_MJS",
+            "F_SERVER_WORKER_MJS"
           ],
           "members_truncated": false
         },
@@ -1276,26 +1032,24 @@
           "composite": true,
           "label": "Discovered files",
           "status": "IMPLEMENTED",
-          "size": 30,
+          "size": 32,
           "members": [
             "F_ESLINT_CONFIG_JS",
             "F_PLAYWRIGHT_CONFIG_TS",
             "F_PLAYWRIGHT_LIVE_CONFIG_TS",
             "F_PUBLIC_PUSH_EVENTS_JS",
             "F_P_PUBLIC_TS",
-            "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
             "F_SCRIPTS_BROWSER_PREVIEW_MJS",
+            "F_SCRIPTS_BUILD_PRODUCTION_MJS",
             "F_SCRIPTS_CHECK_LIVE_UI_MJS",
             "F_SCRIPTS_CHECK_PDF_MJS",
-            "F_SCRIPTS_CHECK_REPORTS_MJS",
             "F_SCRIPTS_CREATE_HISTORY_SEED_MJS",
             "F_SCRIPTS_CREATE_SEED_MJS",
             "F_SCRIPTS_GENERATE_VAPID_MJS",
-            "F_SCRIPTS_LIVE_API_CHECK_MJS",
-            "F_SCRIPTS_SETUP_LOCAL_MJS",
-            "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS",
+            "F_SCRIPTS_SHOWCASE_MJS",
             "F_TESTS_FLOWS_SPEC_TS",
             "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+            "F_TESTS_LIVE_CLIENT_TS",
             "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
             "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
             "F_TESTS_LIVE_FIXTURES_TS",
@@ -1304,7 +1058,11 @@
             "F_TESTS_LIVE_MFA_TS",
             "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
             "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+            "F_TESTS_LIVE_OPERATIONS_SPEC_TS",
+            "F_TESTS_LIVE_REGISTRATION_SPEC_TS",
             "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+            "F_TESTS_LIVE_SIGN_IN_TS",
+            "F_TESTS_LIVE_SNAPSHOT_SPEC_TS",
             "F_TESTS_LIVE_TRAINING_SPEC_TS",
             "F_VITEST_CONFIG_TS",
             "F_VITE_CONFIG_TS"
@@ -1312,15 +1070,40 @@
           "members_truncated": false
         },
         {
-          "id": "parent:SYS_FRONTEND",
+          "id": "parent:CMP_SIMPLE_APP",
           "composite": true,
-          "label": "Frontend",
-          "status": "READY",
-          "size": 3,
+          "label": "Guided worker application",
+          "status": "IMPLEMENTED",
+          "size": 28,
           "members": [
-            "CMP_DISCOVERED_FILES",
-            "CMP_SRC",
-            "CMP_SRC_COMPONENTS"
+            "F_SRC_SIMPLE_ACCESS_TS",
+            "F_SRC_SIMPLE_CONTEXT_TSX",
+            "F_SRC_SIMPLE_FIRST_TIME_TEST_TS",
+            "F_SRC_SIMPLE_FIXTURES_TEST_HELPERS_TS",
+            "F_SRC_SIMPLE_FLOW_TSX",
+            "F_SRC_SIMPLE_HOME_TSX",
+            "F_SRC_SIMPLE_JOBS_TEST_TS",
+            "F_SRC_SIMPLE_JOBS_TS",
+            "F_SRC_SIMPLE_LEVELS_TEST_TS",
+            "F_SRC_SIMPLE_LEVELS_TS",
+            "F_SRC_SIMPLE_MEMORY_TEST_TS",
+            "F_SRC_SIMPLE_MEMORY_TS",
+            "F_SRC_SIMPLE_NAMES_TS",
+            "F_SRC_SIMPLE_PAYLOADS_TEST_TS",
+            "F_SRC_SIMPLE_PAYLOADS_TS",
+            "F_SRC_SIMPLE_PRODUCTION_TSX",
+            "F_SRC_SIMPLE_RECEIVE_TSX",
+            "F_SRC_SIMPLE_SALES_TSX",
+            "F_SRC_SIMPLE_SETTINGS_TEST_TS",
+            "F_SRC_SIMPLE_SETTINGS_TS",
+            "F_SRC_SIMPLE_SETUP_TSX",
+            "F_SRC_SIMPLE_SIMPLEWORKSPACE_TSX",
+            "F_SRC_SIMPLE_TEXT_TS",
+            "F_SRC_SIMPLE_UI_TSX",
+            "F_SRC_SIMPLE_VOICE_TS",
+            "F_SRC_SIMPLE_WORDS_TEST_TS",
+            "F_SRC_SIMPLE_WORDS_TS",
+            "F_TESTS_LIVE_SIMPLE_SPEC_TS"
           ],
           "members_truncated": false
         },
@@ -1329,10 +1112,40 @@
           "composite": true,
           "label": "Encrypted database and media recovery",
           "status": "IMPLEMENTED",
-          "size": 2,
+          "size": 4,
           "members": [
             "F_SCRIPTS_MEDIA_BACKUP_MJS",
-            "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS"
+            "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
+            "F_SCRIPTS_RECOVERY_DRILL_MJS",
+            "F_SERVER_MEDIA_BACKUP_CLIENT_MJS"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:SYS_DATA",
+          "composite": true,
+          "label": "Data",
+          "status": "STALE",
+          "size": 4,
+          "members": [
+            "CMP_GOOGLE_FILE_BACKEND",
+            "CMP_RECOVERY",
+            "CMP_SELF_HOSTED",
+            "CMP_SUPABASE"
+          ],
+          "members_truncated": false
+        },
+        {
+          "id": "parent:SYS_FRONTEND",
+          "composite": true,
+          "label": "Frontend",
+          "status": "FAILED",
+          "size": 4,
+          "members": [
+            "CMP_DISCOVERED_FILES",
+            "CMP_SIMPLE_APP",
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS"
           ],
           "members_truncated": false
         },
@@ -1349,14 +1162,13 @@
           "members_truncated": false
         },
         {
-          "id": "parent:SYS_DATA",
+          "id": "parent:CMP_GOOGLE_FILE_BACKEND",
           "composite": true,
-          "label": "Data",
-          "status": "VERIFIED",
-          "size": 2,
+          "label": "Google Drive JSON testing backend",
+          "status": "IMPLEMENTED",
+          "size": 1,
           "members": [
-            "CMP_RECOVERY",
-            "CMP_SUPABASE"
+            "F_DEPLOY_GOOGLE_FILE_BACKEND_BACKEND_TEST_MJS"
           ],
           "members_truncated": false
         }
@@ -1364,9 +1176,59 @@
       "edges": [
         {
           "from": "parent:CMP_DISCOVERED_FILES",
+          "to": "parent:CMP_SELF_HOSTED",
+          "composite": true,
+          "count": 2,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_DISCOVERED_FILES",
           "to": "parent:CMP_SRC",
           "composite": true,
-          "count": 3,
+          "count": 2,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_RECOVERY",
+          "to": "parent:CMP_SELF_HOSTED",
+          "composite": true,
+          "count": 1,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_SELF_HOSTED",
+          "to": "parent:CMP_SRC",
+          "composite": true,
+          "count": 1,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_SIMPLE_APP",
+          "to": "parent:CMP_DISCOVERED_FILES",
+          "composite": true,
+          "count": 2,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_SIMPLE_APP",
+          "to": "parent:CMP_SRC",
+          "composite": true,
+          "count": 52,
           "types": [
             "CONSUMES"
           ],
@@ -1374,7 +1236,17 @@
         },
         {
           "from": "parent:CMP_SRC",
-          "to": "parent:CMP_SRC_COMPONENTS",
+          "to": "parent:CMP_SELF_HOSTED",
+          "composite": true,
+          "count": 1,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_SRC",
+          "to": "parent:CMP_SIMPLE_APP",
           "composite": true,
           "count": 15,
           "types": [
@@ -1384,9 +1256,19 @@
         },
         {
           "from": "parent:CMP_SRC",
-          "to": "parent:CMP_SUPABASE",
+          "to": "parent:CMP_SRC_COMPONENTS",
           "composite": true,
-          "count": 1,
+          "count": 26,
+          "types": [
+            "CONSUMES"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:CMP_SUPABASE",
+          "to": "parent:CMP_SELF_HOSTED",
+          "composite": true,
+          "count": 4,
           "types": [
             "CONSUMES"
           ],
@@ -1394,9 +1276,29 @@
         },
         {
           "from": "parent:SYS_DATA",
+          "to": "parent:CMP_GOOGLE_FILE_BACKEND",
+          "composite": true,
+          "count": 1,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:SYS_DATA",
           "to": "parent:CMP_RECOVERY",
           "composite": true,
-          "count": 2,
+          "count": 4,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:SYS_DATA",
+          "to": "parent:CMP_SELF_HOSTED",
+          "composite": true,
+          "count": 37,
           "types": [
             "CONTAINS"
           ],
@@ -1406,7 +1308,7 @@
           "from": "parent:SYS_DATA",
           "to": "parent:CMP_SUPABASE",
           "composite": true,
-          "count": 90,
+          "count": 126,
           "types": [
             "CONTAINS"
           ],
@@ -1416,7 +1318,17 @@
           "from": "parent:SYS_FRONTEND",
           "to": "parent:CMP_DISCOVERED_FILES",
           "composite": true,
-          "count": 30,
+          "count": 32,
+          "types": [
+            "CONTAINS"
+          ],
+          "gating": false
+        },
+        {
+          "from": "parent:SYS_FRONTEND",
+          "to": "parent:CMP_SIMPLE_APP",
+          "composite": true,
+          "count": 28,
           "types": [
             "CONTAINS"
           ],
@@ -1426,7 +1338,7 @@
           "from": "parent:SYS_FRONTEND",
           "to": "parent:CMP_SRC",
           "composite": true,
-          "count": 56,
+          "count": 112,
           "types": [
             "CONTAINS"
           ],
@@ -1446,101 +1358,137 @@
       "clusters": [
         {
           "id": "parent:CMP_SUPABASE",
-          "label": "supabase",
+          "label": "PostgreSQL business rules",
           "strategy": "parent",
           "members": [
-            "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
-            "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
-            "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
-            "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS",
-            "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS",
-            "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL",
+            "F_SERVER_DB_BOOTSTRAP_SQL",
+            "F_SERVER_MIGRATIONS_202610060001_FOUNDATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060002_OPERATIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060004_KPIS_SQL",
+            "F_SERVER_MIGRATIONS_202610060005_PROVISIONING_SQL",
+            "F_SERVER_MIGRATIONS_202610060006_HISTORY_SQL",
+            "F_SERVER_MIGRATIONS_202610060008_MANAGEMENT_SQL",
+            "F_SERVER_MIGRATIONS_202610060009_VALIDATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060010_PRIVACY_SQL",
+            "F_SERVER_MIGRATIONS_202610060011_LIFECYCLE_SQL",
+            "F_SERVER_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
+            "F_SERVER_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
+            "F_SERVER_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
+            "F_SERVER_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
+            "F_SERVER_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
+            "F_SERVER_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
+            "F_SERVER_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
+            "F_SERVER_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
+            "F_SERVER_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
+            "F_SERVER_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
+            "F_SERVER_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
+            "F_SERVER_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
+            "F_SERVER_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
+            "F_SERVER_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
+            "F_SERVER_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
+            "F_SERVER_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
+            "F_SERVER_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATIONS",
+            "F_SERVER_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
+            "F_SERVER_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQL",
+            "F_SERVER_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
+            "F_SERVER_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
+            "F_SERVER_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL",
+            "F_SERVER_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL",
+            "F_SERVER_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610070069_CREATION_SOP_SQL",
+            "F_SERVER_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL",
+            "F_SERVER_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL",
+            "F_SERVER_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL",
+            "F_SERVER_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL",
+            "F_SERVER_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL",
+            "F_SERVER_MIGRATIONS_202610070080_SOP_MIGRATION_SQL",
+            "F_SERVER_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_SQL",
+            "F_SERVER_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL",
+            "F_SERVER_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL",
+            "F_SERVER_MIGRATIONS_202610070086_DASHBOARD_PRIVACY_DIAGNOSTICS_S",
+            "F_SERVER_MIGRATIONS_202610070090_DEMOGRAPHIC_CONSENT_GUARD_SQL",
+            "F_SERVER_MIGRATIONS_202610070092_SELF_REGISTRATION_SQL",
+            "F_SERVER_MIGRATIONS_202610070093_TRIAL_REPORTING_SCOPE_SQL",
+            "F_SERVER_MIGRATIONS_202611110094_ACCOUNT_SESSIONS_SQL",
+            "F_SERVER_TESTS_BUSINESS_RULES_MJS",
+            "F_SERVER_TESTS_FIXTURES_SQL",
+            "F_SERVER_TESTS_SNAPSHOT_CONCURRENCY_MJS",
+            "F_SERVER_TESTS_SQL_DASHBOARD_COMPLETION_TEST_SQL",
+            "F_SERVER_TESTS_SQL_PUSH_TEST_SQL",
+            "F_SERVER_TESTS_SQL_REGISTRATION_TEST_SQL",
+            "F_SERVER_TESTS_SQL_TRAINING_TEST_SQL",
             "F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL",
             "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
             "F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL",
             "F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
             "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
             "F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
             "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
             "F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
             "F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
             "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL",
             "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS",
-            "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL",
             "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL",
             "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL",
             "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE",
             "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S",
-            "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
             "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
             "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
-            "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
             "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
-            "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
-            "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
             "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL",
             "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL",
-            "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
-            "F_SUPABASE_SEED_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ",
+            "F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL",
+            "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL",
             "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
             "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
+            "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL",
             "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
             "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
             "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
+            "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL",
             "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
             "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
+            "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL",
+            "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL",
             "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
-            "F_SUPABASE_TESTS_PUSH_TEST_SQL",
             "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
+            "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL",
             "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
             "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
             "F_SUPABASE_TESTS_RULES_TEST_SQL",
+            "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL",
             "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
-            "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
+            "F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL",
+            "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL",
+            "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL",
+            "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL",
             "F_SUPABASE_TESTS_YIELD_TEST_SQL"
           ],
-          "size": 90,
+          "size": 126,
           "status": "IMPLEMENTED"
         },
         {
@@ -1548,23 +1496,64 @@
           "label": "src",
           "strategy": "parent",
           "members": [
-            "F_SRC_APP_TSX",
-            "F_SRC_CONFIGURATION_FILES_TSX",
-            "F_SRC_DASHBOARD_TSX",
-            "F_SRC_DISPLAY_SETTINGS_TSX",
-            "F_SRC_EVIDENCE_TSX",
-            "F_SRC_FEATURES_TSX",
+            "F_PLAYWRIGHT_FILE_CONFIG_TS",
+            "F_SCRIPTS_BUILD_FILE_TEST_MJS",
+            "F_SRC_ACCOUNT_ACCOUNTMENU_TSX",
+            "F_SRC_ACCOUNT_ACCOUNTSCREENS_TSX",
+            "F_SRC_ACCOUNT_PINPAD_TSX",
+            "F_SRC_ACCOUNT_REGISTRATION_TSX",
+            "F_SRC_APP_APPROOT_TSX",
+            "F_SRC_APP_APP_RULES_TEST_TS",
+            "F_SRC_APP_APP_UPDATE_TS",
+            "F_SRC_APP_CONNECTIONSTATUS_TSX",
+            "F_SRC_APP_STATUS_SUMMARY_TS",
+            "F_SRC_APP_USE_STATUS_TS",
+            "F_SRC_APP_WORKSPACEDATA_TSX",
+            "F_SRC_CONFIG_CONNECTIVITY_TS",
+            "F_SRC_CONFIG_SESSION_TS",
+            "F_SRC_CONFIG_WORKSPACES_TS",
+            "F_SRC_CONNECTIVITY_CONNECTIVITY_TEST_TS",
+            "F_SRC_CONNECTIVITY_CONNECTIVITY_TS",
+            "F_SRC_FULL_ARCHIVE_SEARCH_TSX",
+            "F_SRC_FULL_BATCH_STATUS_TSX",
+            "F_SRC_FULL_CONFIGURATION_FILES_TSX",
+            "F_SRC_FULL_DASHBOARD_TSX",
+            "F_SRC_FULL_DIAGNOSTICS_TSX",
+            "F_SRC_FULL_DISPLAY_SETTINGS_TSX",
+            "F_SRC_FULL_EVIDENCE_TSX",
+            "F_SRC_FULL_FEATURES_TSX",
+            "F_SRC_FULL_FULLWORKSPACE_TSX",
+            "F_SRC_FULL_HELP_CONTENT_TS",
+            "F_SRC_FULL_HELP_TSX",
+            "F_SRC_FULL_KNOWLEDGE_TSX",
+            "F_SRC_FULL_LABEL_CARD_TSX",
+            "F_SRC_FULL_MANAGEMENT_TSX",
+            "F_SRC_FULL_MATERIAL_BALANCE_TSX",
+            "F_SRC_FULL_METRIC_EDITOR_TSX",
+            "F_SRC_FULL_NOTIFICATIONS_TEST_TS",
+            "F_SRC_FULL_NOTIFICATIONS_TSX",
+            "F_SRC_FULL_PACKAGING_FIELDS_TSX",
+            "F_SRC_FULL_PUSH_SETTINGS_TSX",
+            "F_SRC_FULL_QUALITY_PANEL_TSX",
+            "F_SRC_FULL_RECALL_CASES_TSX",
+            "F_SRC_FULL_REGISTRATION_REVIEW_TSX",
+            "F_SRC_FULL_REPORT_PAGE_TSX",
+            "F_SRC_FULL_REPORT_SCHEDULES_TSX",
+            "F_SRC_FULL_SCANNER_TSX",
+            "F_SRC_FULL_STOCK_BALANCE_TSX",
+            "F_SRC_FULL_TRAINING_ASSETS_TSX",
+            "F_SRC_FULL_TRAINING_EDITOR_TSX",
             "F_SRC_I18N_INDEX_TS",
             "F_SRC_I18N_TRANSLATIONS_TEST_TS",
-            "F_SRC_KNOWLEDGE_TSX",
-            "F_SRC_LABEL_CARD_TSX",
+            "F_SRC_LIB_API_TS",
             "F_SRC_LIB_ATTENTION_TEST_TS",
             "F_SRC_LIB_ATTENTION_TS",
-            "F_SRC_LIB_AUTH_TS",
+            "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS",
             "F_SRC_LIB_CONFIG_FILES_TEST_TS",
             "F_SRC_LIB_CONFIG_FILES_TS",
             "F_SRC_LIB_DATA_TS",
             "F_SRC_LIB_DEMO_TS",
+            "F_SRC_LIB_DEV_ORIGIN_TS",
             "F_SRC_LIB_DOMAIN_TEST_TS",
             "F_SRC_LIB_DOMAIN_TS",
             "F_SRC_LIB_FORMAT_TEST_TS",
@@ -1573,39 +1562,100 @@
             "F_SRC_LIB_LABELS_TS",
             "F_SRC_LIB_LEARNING_DEMO_TS",
             "F_SRC_LIB_MEDIA_TS",
-            "F_SRC_LIB_MFA_TS",
-            "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
             "F_SRC_LIB_OVERLAY_TEST_TS",
-            "F_SRC_LIB_PIN_TEST_TS",
-            "F_SRC_LIB_PIN_TS",
             "F_SRC_LIB_RECEIPTS_TEST_TS",
             "F_SRC_LIB_RECEIPTS_TS",
             "F_SRC_LIB_REPORTS_TS",
             "F_SRC_LIB_SCHEDULES_TEST_TS",
             "F_SRC_LIB_SCHEDULES_TS",
-            "F_SRC_LIB_SEALED_TICKET_TEST_TS",
-            "F_SRC_LIB_SEALED_TICKET_TS",
-            "F_SRC_LIB_SESSION_POLICY_TEST_TS",
-            "F_SRC_LIB_SESSION_POLICY_TS",
-            "F_SRC_LIB_SUPABASE_TS",
+            "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS",
+            "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS",
+            "F_SRC_LIB_SNAPSHOT_SYNC_TS",
+            "F_SRC_LIB_TELEMETRY_TS",
             "F_SRC_LIB_TRAINING_MEDIA_TS",
             "F_SRC_LIB_VAPID_TEST_TS",
             "F_SRC_MAIN_TSX",
-            "F_SRC_MANAGEMENT_TSX",
-            "F_SRC_MATERIAL_BALANCE_TSX",
-            "F_SRC_NOTIFICATIONS_TEST_TS",
-            "F_SRC_NOTIFICATIONS_TSX",
             "F_SRC_OFFLINE_DB_TEST_TS",
             "F_SRC_OFFLINE_DB_TS",
-            "F_SRC_PACKAGING_FIELDS_TSX",
-            "F_SRC_PUSH_SETTINGS_TSX",
-            "F_SRC_REPORT_PAGE_TSX",
-            "F_SRC_SCANNER_TSX",
+            "F_SRC_OFFLINE_SYNC_STATUS_TS",
+            "F_SRC_SESSION_DEVICE_TEST_TS",
+            "F_SRC_SESSION_DEVICE_TS",
+            "F_SRC_SESSION_OFFLINE_SIGNOFF_TS",
+            "F_SRC_SESSION_PIN_TEST_TS",
+            "F_SRC_SESSION_PIN_TS",
+            "F_SRC_SESSION_PROFILES_TS",
+            "F_SRC_SESSION_SEALED_TICKET_TEST_TS",
+            "F_SRC_SESSION_SEALED_TICKET_TS",
+            "F_SRC_SESSION_SESSIONPROVIDER_TSX",
+            "F_SRC_SESSION_SESSION_API_TS",
+            "F_SRC_SESSION_SESSION_POLICY_TEST_TS",
+            "F_SRC_SESSION_SESSION_POLICY_TS",
+            "F_SRC_SESSION_SESSION_TEST_TS",
+            "F_SRC_SESSION_SESSION_TS",
+            "F_SRC_TESTING_ACTION_VALIDATION_TEST_TS",
+            "F_SRC_TESTING_ACTION_VALIDATION_TS",
+            "F_SRC_TESTING_EMPTY_WORKSPACE_TS",
+            "F_SRC_TESTING_FILESIGNIN_TSX",
+            "F_SRC_TESTING_FILE_BACKEND_TEST_TS",
+            "F_SRC_TESTING_FILE_BACKEND_TS",
             "F_SRC_TEST_SETUP_TS",
-            "F_SRC_TRAINING_ASSETS_TSX",
-            "F_SRC_TRAINING_EDITOR_TSX"
+            "F_SRC_WORKER_COPY_TS",
+            "F_SRC_WORKER_DRAFTS_TS",
+            "F_SRC_WORKER_MODEL_TEST_TS",
+            "F_SRC_WORKER_MODEL_TS",
+            "F_SRC_WORKER_PENDINGCHANGES_TSX",
+            "F_SRC_WORKER_PREPARATION_TSX",
+            "F_SRC_WORKER_WORKDETAIL_TSX",
+            "F_SRC_WORKER_WORKERWORKSPACE_TSX",
+            "F_TESTS_FILE_TESTING_SPEC_TS"
           ],
-          "size": 56,
+          "size": 112,
+          "status": "IMPLEMENTED"
+        },
+        {
+          "id": "parent:CMP_SELF_HOSTED",
+          "label": "Independent PostgreSQL backend",
+          "strategy": "parent",
+          "members": [
+            "F_DEPLOY_CREATE_SECRETS_MJS",
+            "F_SERVER_APP_MJS",
+            "F_SERVER_AUTH_ACCOUNTS_MJS",
+            "F_SERVER_AUTH_ERRORS_MJS",
+            "F_SERVER_AUTH_PASSWORDS_MJS",
+            "F_SERVER_AUTH_POLICY_MJS",
+            "F_SERVER_AUTH_PROFILE_MJS",
+            "F_SERVER_AUTH_SERVICE_MJS",
+            "F_SERVER_AUTH_SESSIONS_MJS",
+            "F_SERVER_AUTH_TOTP_MJS",
+            "F_SERVER_BOOTSTRAP_MJS",
+            "F_SERVER_CLI_ACCOUNT_MJS",
+            "F_SERVER_CONTEXT_MJS",
+            "F_SERVER_DATABASE_MJS",
+            "F_SERVER_FUNCTIONS_NOTIFICATIONS_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_OCR_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_REPORT_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_SCHEDULED_TASKS_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_ALERTS_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_HTTP_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_MONTHLY_REPORTS_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_PUSH_MJS",
+            "F_SERVER_FUNCTIONS_SHARED_VAPID_MJS",
+            "F_SERVER_FUNCTIONS_SUBJECT_PRIVACY_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_SYNC_INDEX_MJS",
+            "F_SERVER_FUNCTIONS_USER_ADMIN_INDEX_MJS",
+            "F_SERVER_HTTP_DATA_ROUTES_MJS",
+            "F_SERVER_HTTP_MEDIA_ROUTES_MJS",
+            "F_SERVER_HTTP_SESSION_ROUTES_MJS",
+            "F_SERVER_INDEX_MJS",
+            "F_SERVER_MIGRATE_MJS",
+            "F_SERVER_PROVISION_RUNTIME_MJS",
+            "F_SERVER_STORAGE_MJS",
+            "F_SERVER_TESTS_AUTH_UNIT_TEST_MJS",
+            "F_SERVER_TESTS_BACKEND_TEST_MJS",
+            "F_SERVER_TESTS_SERVE_MJS",
+            "F_SERVER_WORKER_MJS"
+          ],
+          "size": 37,
           "status": "IMPLEMENTED"
         },
         {
@@ -1618,19 +1668,17 @@
             "F_PLAYWRIGHT_LIVE_CONFIG_TS",
             "F_PUBLIC_PUSH_EVENTS_JS",
             "F_P_PUBLIC_TS",
-            "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
             "F_SCRIPTS_BROWSER_PREVIEW_MJS",
+            "F_SCRIPTS_BUILD_PRODUCTION_MJS",
             "F_SCRIPTS_CHECK_LIVE_UI_MJS",
             "F_SCRIPTS_CHECK_PDF_MJS",
-            "F_SCRIPTS_CHECK_REPORTS_MJS",
             "F_SCRIPTS_CREATE_HISTORY_SEED_MJS",
             "F_SCRIPTS_CREATE_SEED_MJS",
             "F_SCRIPTS_GENERATE_VAPID_MJS",
-            "F_SCRIPTS_LIVE_API_CHECK_MJS",
-            "F_SCRIPTS_SETUP_LOCAL_MJS",
-            "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS",
+            "F_SCRIPTS_SHOWCASE_MJS",
             "F_TESTS_FLOWS_SPEC_TS",
             "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
+            "F_TESTS_LIVE_CLIENT_TS",
             "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
             "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
             "F_TESTS_LIVE_FIXTURES_TS",
@@ -1639,25 +1687,54 @@
             "F_TESTS_LIVE_MFA_TS",
             "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
             "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
+            "F_TESTS_LIVE_OPERATIONS_SPEC_TS",
+            "F_TESTS_LIVE_REGISTRATION_SPEC_TS",
             "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
+            "F_TESTS_LIVE_SIGN_IN_TS",
+            "F_TESTS_LIVE_SNAPSHOT_SPEC_TS",
             "F_TESTS_LIVE_TRAINING_SPEC_TS",
             "F_VITEST_CONFIG_TS",
             "F_VITE_CONFIG_TS"
           ],
-          "size": 30,
+          "size": 32,
           "status": "IMPLEMENTED"
         },
         {
-          "id": "parent:SYS_FRONTEND",
-          "label": "Frontend",
+          "id": "parent:CMP_SIMPLE_APP",
+          "label": "Guided worker application",
           "strategy": "parent",
           "members": [
-            "CMP_DISCOVERED_FILES",
-            "CMP_SRC",
-            "CMP_SRC_COMPONENTS"
+            "F_SRC_SIMPLE_ACCESS_TS",
+            "F_SRC_SIMPLE_CONTEXT_TSX",
+            "F_SRC_SIMPLE_FIRST_TIME_TEST_TS",
+            "F_SRC_SIMPLE_FIXTURES_TEST_HELPERS_TS",
+            "F_SRC_SIMPLE_FLOW_TSX",
+            "F_SRC_SIMPLE_HOME_TSX",
+            "F_SRC_SIMPLE_JOBS_TEST_TS",
+            "F_SRC_SIMPLE_JOBS_TS",
+            "F_SRC_SIMPLE_LEVELS_TEST_TS",
+            "F_SRC_SIMPLE_LEVELS_TS",
+            "F_SRC_SIMPLE_MEMORY_TEST_TS",
+            "F_SRC_SIMPLE_MEMORY_TS",
+            "F_SRC_SIMPLE_NAMES_TS",
+            "F_SRC_SIMPLE_PAYLOADS_TEST_TS",
+            "F_SRC_SIMPLE_PAYLOADS_TS",
+            "F_SRC_SIMPLE_PRODUCTION_TSX",
+            "F_SRC_SIMPLE_RECEIVE_TSX",
+            "F_SRC_SIMPLE_SALES_TSX",
+            "F_SRC_SIMPLE_SETTINGS_TEST_TS",
+            "F_SRC_SIMPLE_SETTINGS_TS",
+            "F_SRC_SIMPLE_SETUP_TSX",
+            "F_SRC_SIMPLE_SIMPLEWORKSPACE_TSX",
+            "F_SRC_SIMPLE_TEXT_TS",
+            "F_SRC_SIMPLE_UI_TSX",
+            "F_SRC_SIMPLE_VOICE_TS",
+            "F_SRC_SIMPLE_WORDS_TEST_TS",
+            "F_SRC_SIMPLE_WORDS_TS",
+            "F_TESTS_LIVE_SIMPLE_SPEC_TS"
           ],
-          "size": 3,
-          "status": "READY"
+          "size": 28,
+          "status": "IMPLEMENTED"
         },
         {
           "id": "parent:CMP_RECOVERY",
@@ -1665,10 +1742,38 @@
           "strategy": "parent",
           "members": [
             "F_SCRIPTS_MEDIA_BACKUP_MJS",
-            "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS"
+            "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
+            "F_SCRIPTS_RECOVERY_DRILL_MJS",
+            "F_SERVER_MEDIA_BACKUP_CLIENT_MJS"
           ],
-          "size": 2,
+          "size": 4,
           "status": "IMPLEMENTED"
+        },
+        {
+          "id": "parent:SYS_DATA",
+          "label": "Data",
+          "strategy": "parent",
+          "members": [
+            "CMP_GOOGLE_FILE_BACKEND",
+            "CMP_RECOVERY",
+            "CMP_SELF_HOSTED",
+            "CMP_SUPABASE"
+          ],
+          "size": 4,
+          "status": "STALE"
+        },
+        {
+          "id": "parent:SYS_FRONTEND",
+          "label": "Frontend",
+          "strategy": "parent",
+          "members": [
+            "CMP_DISCOVERED_FILES",
+            "CMP_SIMPLE_APP",
+            "CMP_SRC",
+            "CMP_SRC_COMPONENTS"
+          ],
+          "size": 4,
+          "status": "FAILED"
         },
         {
           "id": "parent:CMP_SRC_COMPONENTS",
@@ -1682,15 +1787,14 @@
           "status": "IMPLEMENTED"
         },
         {
-          "id": "parent:SYS_DATA",
-          "label": "Data",
+          "id": "parent:CMP_GOOGLE_FILE_BACKEND",
+          "label": "Google Drive JSON testing backend",
           "strategy": "parent",
           "members": [
-            "CMP_RECOVERY",
-            "CMP_SUPABASE"
+            "F_DEPLOY_GOOGLE_FILE_BACKEND_BACKEND_TEST_MJS"
           ],
-          "size": 2,
-          "status": "VERIFIED"
+          "size": 1,
+          "status": "IMPLEMENTED"
         }
       ],
       "rule": "workbench.project.v1"
@@ -1717,11 +1821,11 @@
   ],
   "provenance": {
     "by_generator": {
-      "authored": 8,
-      "projectgraph.imports.v1": 374
+      "authored": 11,
+      "projectgraph.imports.v1": 1001
     },
-    "generated_edges": 374,
-    "authored_edges": 8,
+    "generated_edges": 1001,
+    "authored_edges": 11,
     "detail": [
       {
         "from": "SYS_FRONTEND",
@@ -1814,33 +1918,6 @@
         "origin_file": "observed.yaml"
       },
       {
-        "from": "CMP_DISCOVERED_FILES",
-        "to": "F_SCRIPTS_LIVE_API_CHECK_MJS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_DISCOVERED_FILES",
-        "to": "F_SCRIPTS_SETUP_LOCAL_MJS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_APP_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
         "from": "CMP_SRC_COMPONENTS",
         "to": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
         "type": "CONTAINS",
@@ -1860,43 +1937,7 @@
       },
       {
         "from": "CMP_SRC",
-        "to": "F_SRC_DASHBOARD_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_EVIDENCE_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_FEATURES_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
         "to": "F_SRC_I18N_INDEX_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_LIB_AUTH_TS",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -1950,33 +1991,6 @@
       },
       {
         "from": "CMP_SRC",
-        "to": "F_SRC_LIB_MFA_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_LIB_PIN_TEST_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_LIB_PIN_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
         "to": "F_SRC_LIB_REPORTS_TS",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
@@ -1986,43 +2000,7 @@
       },
       {
         "from": "CMP_SRC",
-        "to": "F_SRC_LIB_SESSION_POLICY_TEST_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_LIB_SESSION_POLICY_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_LIB_SUPABASE_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
         "to": "F_SRC_MAIN_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_MANAGEMENT_TSX",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2049,142 +2027,7 @@
       },
       {
         "from": "CMP_SRC",
-        "to": "F_SRC_SCANNER_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
         "to": "F_SRC_TEST_SETUP_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_TRAINING_EDITOR_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2202,52 +2045,7 @@
       },
       {
         "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2283,25 +2081,7 @@
       },
       {
         "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2319,34 +2099,7 @@
       },
       {
         "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2364,52 +2117,7 @@
       },
       {
         "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_SEED_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2480,42 +2188,6 @@
         "origin_file": "observed.yaml"
       },
       {
-        "from": "CMP_DISCOVERED_FILES",
-        "to": "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_DISCOVERED_FILES",
-        "to": "F_SCRIPTS_CHECK_REPORTS_MJS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_DISCOVERED_FILES",
-        "to": "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
         "from": "CMP_SRC",
         "to": "F_SRC_LIB_SCHEDULES_TEST_TS",
         "type": "CONTAINS",
@@ -2534,69 +2206,6 @@
         "origin_file": "observed.yaml"
       },
       {
-        "from": "CMP_SRC",
-        "to": "F_SRC_LIB_SEALED_TICKET_TEST_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_LIB_SEALED_TICKET_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_REPORT_PAGE_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
         "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL",
         "type": "CONTAINS",
@@ -2607,25 +2216,7 @@
       },
       {
         "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2688,52 +2279,7 @@
       },
       {
         "from": "CMP_SRC",
-        "to": "F_SRC_KNOWLEDGE_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
         "to": "F_SRC_LIB_TRAINING_MEDIA_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_TRAINING_ASSETS_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2814,25 +2360,7 @@
       },
       {
         "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -2868,15 +2396,6 @@
       },
       {
         "from": "CMP_SRC",
-        "to": "F_SRC_LABEL_CARD_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
         "to": "F_SRC_LIB_LABELS_TEST_TS",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
@@ -2894,62 +2413,8 @@
         "origin_file": "observed.yaml"
       },
       {
-        "from": "CMP_SRC",
-        "to": "F_SRC_MATERIAL_BALANCE_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_PACKAGING_FIELDS_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
         "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -3020,24 +2485,6 @@
         "origin_file": "observed.yaml"
       },
       {
-        "from": "CMP_SRC",
-        "to": "F_SRC_NOTIFICATIONS_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
         "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
         "type": "CONTAINS",
@@ -3049,15 +2496,6 @@
       {
         "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -3102,15 +2540,6 @@
       },
       {
         "from": "CMP_SRC",
-        "to": "F_SRC_CONFIGURATION_FILES_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
         "to": "F_SRC_LIB_CONFIG_FILES_TEST_TS",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
@@ -3130,51 +2559,6 @@
       {
         "from": "CMP_SRC",
         "to": "F_SRC_LIB_VAPID_TEST_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
-        "to": "F_SRC_PUSH_SETTINGS_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -3202,15 +2586,6 @@
       {
         "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_TESTS_PUSH_TEST_SQL",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
         "evidence_count": 0,
@@ -3282,15 +2657,6 @@
       },
       {
         "from": "CMP_SRC",
-        "to": "F_SRC_DISPLAY_SETTINGS_TSX",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SRC",
         "to": "F_SRC_LIB_FORMAT_TEST_TS",
         "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
@@ -3317,24 +2683,6 @@
         "origin_file": "observed.yaml"
       },
       {
-        "from": "CMP_SRC",
-        "to": "F_SRC_NOTIFICATIONS_TEST_TS",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
-        "from": "CMP_SUPABASE",
-        "to": "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
-        "type": "CONTAINS",
-        "generator": "projectgraph.imports.v1",
-        "evidence_count": 0,
-        "first_evidence": null,
-        "origin_file": "observed.yaml"
-      },
-      {
         "from": "CMP_SUPABASE",
         "to": "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
         "type": "CONTAINS",
@@ -3353,307 +2701,930 @@
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
-        "to": "F_SRC_LIB_DEMO_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SNAPSHOT_SYNC_TEST_TS",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "scripts/bootstrap-owner.mjs",
-          "target": "src/lib/demo.ts",
-          "import": "../src/lib/demo.ts",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SCRIPTS_CREATE_SEED_MJS",
-        "to": "F_SRC_LIB_DEMO_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SNAPSHOT_SYNC_TS",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "scripts/create-seed.mjs",
-          "target": "src/lib/demo.ts",
-          "import": "../src/lib/demo.ts",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SCRIPTS_CREATE_SEED_MJS",
-        "to": "F_SRC_LIB_LEARNING_DEMO_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_SNAPSHOT_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "scripts/create-seed.mjs",
-          "target": "src/lib/learning-demo.ts",
-          "import": "../src/lib/learning-demo.ts",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
-        "to": "F_SCRIPTS_MEDIA_BACKUP_MJS",
-        "type": "CONSUMES",
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_SNAPSHOT_SPEC_TS",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "scripts/media-backup.test.mjs",
-          "target": "scripts/media-backup.mjs",
-          "import": "./media-backup.mjs",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_DISPLAY_SETTINGS_TSX",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_STAGE_CLOCK_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/display-settings.tsx",
-          "import": "./display-settings",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_LIB_FORMAT_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_CHECKPOINT_REVIEW_TEST_TS",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/lib/format.ts",
-          "import": "./lib/format",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_COMPONENTS_UI_BUTTON_TSX",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070068_OPERATIONAL_DASHBOARDS_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/components/ui/button.tsx",
-          "import": "./components/ui/button",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_COMPONENTS_UI_SHEET_TSX",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070071_CRITICAL_ALERT_QUEUE_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/components/ui/sheet.tsx",
-          "import": "./components/ui/sheet",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_LIB_DATA_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070074_OPERATIONAL_CACHE_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/lib/data.ts",
-          "import": "./lib/data",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_LIB_SUPABASE_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070076_STORAGE_INSPECTIONS_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/lib/supabase.ts",
-          "import": "./lib/supabase",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_LIB_DOMAIN_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070077_STOCK_BALANCE_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/lib/domain.ts",
-          "import": "./lib/domain",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_LIB_AUTH_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070079_DEVIATION_RECURRENCE_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/lib/auth.ts",
-          "import": "./lib/auth",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_OFFLINE_DB_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_CREATION_SOP_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/offline/db.ts",
-          "import": "./offline/db",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_LIB_MFA_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_OPERATIONAL_CACHE_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/lib/mfa.ts",
-          "import": "./lib/mfa",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_LIB_SESSION_POLICY_TS",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_OPERATIONAL_DASHBOARD_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/lib/session-policy.ts",
-          "import": "./lib/session-policy",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_MANAGEMENT_TSX",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_RECALL_ACTIONS_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/management.tsx",
-          "import": "./management",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_SCANNER_TSX",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_SCHEDULED_DELIVERY_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/scanner.tsx",
-          "import": "./scanner",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_REPORT_PAGE_TSX",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_STORAGE_STOCK_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/report-page.tsx",
-          "import": "./report-page",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       },
       {
-        "from": "F_SRC_APP_TSX",
-        "to": "F_SRC_KNOWLEDGE_TSX",
-        "type": "CONSUMES",
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_SUBJECT_PRIVACY_TEST_SQL",
+        "type": "CONTAINS",
         "generator": "projectgraph.imports.v1",
-        "evidence_count": 1,
-        "first_evidence": {
-          "source": "src/App.tsx",
-          "target": "src/knowledge.tsx",
-          "import": "./knowledge",
-          "line": null,
-          "resolver": "projectgraph.imports.v1",
-          "confidence": "medium"
-        },
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_OPERATIONS_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_SNAPSHOT_LOCK_TEST_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070083_DATA_QUALITY_OVERRIDES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070084_INGREDIENT_PHOTO_POLICY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_TESTS_MVP_COMPLETION_TEST_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070087_OPERATIONAL_PRODUCT_FILTER_SQ",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070088_CONFIGURABLE_DATA_QUALITY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070089_METRIC_EDITOR_READ_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SRC",
+        "to": "F_SRC_LIB_TELEMETRY_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SUPABASE_MIGRATIONS_202610070091_PRIVACY_EPOCH_UPDATE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_DISCOVERED_FILES",
+        "to": "F_TESTS_LIVE_REGISTRATION_SPEC_TS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_DEPLOY_CREATE_SECRETS_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_APP_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_BOOTSTRAP_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_CONTEXT_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_DATABASE_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_DB_BOOTSTRAP_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_SHARED_ALERTS_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_SHARED_HTTP_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_SHARED_MONTHLY_REPORTS_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_SHARED_PUSH_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_SHARED_VAPID_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_NOTIFICATIONS_INDEX_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_OCR_INDEX_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_REPORT_INDEX_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_SCHEDULED_TASKS_INDEX_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_SUBJECT_PRIVACY_INDEX_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_SYNC_INDEX_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_FUNCTIONS_USER_ADMIN_INDEX_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_INDEX_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_RECOVERY",
+        "to": "F_SERVER_MEDIA_BACKUP_CLIENT_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SELF_HOSTED",
+        "to": "F_SERVER_MIGRATE_MJS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060001_FOUNDATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060002_OPERATIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060004_KPIS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060005_PROVISIONING_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060006_HISTORY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060008_MANAGEMENT_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060009_VALIDATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060010_PRIVACY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060011_LIFECYCLE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATIONS",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060065_INCREMENTAL_SNAPSHOTS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610060066_STAGE_CLOCK_BOUNDARIES_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070067_RECALL_ACTIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070069_CREATION_SOP_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070070_PARTNER_AGREEMENTS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070072_MONTHLY_REPORTS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070073_SUBJECT_PRIVACY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070075_DASHBOARD_OPERATIONS_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070078_MOCK_RECALL_COMPLETION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070080_SOP_MIGRATION_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070081_SOP_MIGRATION_COMPATIBILITY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070082_OCR_CROSSCHECK_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
+        "origin_file": "observed.yaml"
+      },
+      {
+        "from": "CMP_SUPABASE",
+        "to": "F_SERVER_MIGRATIONS_202610070085_METRIC_COHORTS_DICTIONARY_SQL",
+        "type": "CONTAINS",
+        "generator": "projectgraph.imports.v1",
+        "evidence_count": 0,
+        "first_evidence": null,
         "origin_file": "observed.yaml"
       }
     ],
@@ -3661,218 +3632,36 @@
     "rule": "workbench.project.v1"
   },
   "temporal": {
-    "baseline": "2026-10-06T09:39:07+00:00",
+    "baseline": "2026-11-15T14:54:44+00:00",
     "comparable": true,
     "added": [
-      "CMP_DISCOVERED_FILES",
-      "CMP_RECOVERY",
-      "F_ESLINT_CONFIG_JS",
-      "F_PLAYWRIGHT_CONFIG_TS",
-      "F_PLAYWRIGHT_LIVE_CONFIG_TS",
-      "F_PUBLIC_PUSH_EVENTS_JS",
-      "F_P_PUBLIC_TS",
-      "F_SCRIPTS_BOOTSTRAP_OWNER_MJS",
-      "F_SCRIPTS_BROWSER_PREVIEW_MJS",
-      "F_SCRIPTS_CHECK_LIVE_UI_MJS",
-      "F_SCRIPTS_CHECK_PDF_MJS",
-      "F_SCRIPTS_CHECK_REPORTS_MJS",
-      "F_SCRIPTS_CREATE_HISTORY_SEED_MJS",
-      "F_SCRIPTS_CREATE_SEED_MJS",
-      "F_SCRIPTS_GENERATE_VAPID_MJS",
-      "F_SCRIPTS_LIVE_API_CHECK_MJS",
-      "F_SCRIPTS_MEDIA_BACKUP_MJS",
-      "F_SCRIPTS_MEDIA_BACKUP_TEST_MJS",
-      "F_SCRIPTS_SETUP_LOCAL_MJS",
-      "F_SCRIPTS_WAIT_FOR_FUNCTIONS_MJS",
-      "F_SRC_APP_TSX",
-      "F_SRC_COMPONENTS_UI_BUTTON_TSX",
-      "F_SRC_COMPONENTS_UI_SHEET_TSX",
-      "F_SRC_CONFIGURATION_FILES_TSX",
-      "F_SRC_DASHBOARD_TSX",
-      "F_SRC_DISPLAY_SETTINGS_TSX",
-      "F_SRC_EVIDENCE_TSX",
-      "F_SRC_FEATURES_TSX",
-      "F_SRC_I18N_INDEX_TS",
-      "F_SRC_I18N_TRANSLATIONS_TEST_TS",
-      "F_SRC_KNOWLEDGE_TSX",
-      "F_SRC_LABEL_CARD_TSX",
-      "F_SRC_LIB_ATTENTION_TEST_TS",
-      "F_SRC_LIB_ATTENTION_TS",
-      "F_SRC_LIB_AUTH_TS",
-      "F_SRC_LIB_CONFIG_FILES_TEST_TS",
-      "F_SRC_LIB_CONFIG_FILES_TS",
-      "F_SRC_LIB_DATA_TS",
-      "F_SRC_LIB_DEMO_TS",
-      "F_SRC_LIB_DOMAIN_TEST_TS",
-      "F_SRC_LIB_DOMAIN_TS",
-      "F_SRC_LIB_FORMAT_TEST_TS",
-      "F_SRC_LIB_FORMAT_TS",
-      "F_SRC_LIB_LABELS_TEST_TS",
-      "F_SRC_LIB_LABELS_TS",
-      "F_SRC_LIB_LEARNING_DEMO_TS",
-      "F_SRC_LIB_MEDIA_TS",
-      "F_SRC_LIB_MFA_TS",
-      "F_SRC_LIB_OFFLINE_SIGNOFF_TS",
-      "F_SRC_LIB_OVERLAY_TEST_TS",
-      "F_SRC_LIB_PIN_TEST_TS",
-      "F_SRC_LIB_PIN_TS",
-      "F_SRC_LIB_RECEIPTS_TEST_TS",
-      "F_SRC_LIB_RECEIPTS_TS",
-      "F_SRC_LIB_REPORTS_TS",
-      "F_SRC_LIB_SCHEDULES_TEST_TS",
-      "F_SRC_LIB_SCHEDULES_TS",
-      "F_SRC_LIB_SEALED_TICKET_TEST_TS",
-      "F_SRC_LIB_SEALED_TICKET_TS",
-      "F_SRC_LIB_SESSION_POLICY_TEST_TS",
-      "F_SRC_LIB_SESSION_POLICY_TS",
-      "F_SRC_LIB_SUPABASE_TS",
-      "F_SRC_LIB_TRAINING_MEDIA_TS",
-      "F_SRC_LIB_VAPID_TEST_TS",
-      "F_SRC_MAIN_TSX",
-      "F_SRC_MANAGEMENT_TSX",
-      "F_SRC_MATERIAL_BALANCE_TSX",
-      "F_SRC_NOTIFICATIONS_TEST_TS",
-      "F_SRC_NOTIFICATIONS_TSX",
-      "F_SRC_OFFLINE_DB_TEST_TS",
-      "F_SRC_OFFLINE_DB_TS",
-      "F_SRC_PACKAGING_FIELDS_TSX",
-      "F_SRC_PUSH_SETTINGS_TSX",
-      "F_SRC_REPORT_PAGE_TSX",
-      "F_SRC_SCANNER_TSX",
-      "F_SRC_TEST_SETUP_TS",
-      "F_SRC_TRAINING_ASSETS_TSX",
-      "F_SRC_TRAINING_EDITOR_TSX",
-      "F_SUPABASE_FUNCTIONS_NOTIFICATIONS_INDEX_TS",
-      "F_SUPABASE_FUNCTIONS_OCR_INDEX_TS",
-      "F_SUPABASE_FUNCTIONS_REPORT_INDEX_TS",
-      "F_SUPABASE_FUNCTIONS_SCHEDULED_TASKS_INDEX_TS",
-      "F_SUPABASE_FUNCTIONS_SHARED_HTTP_TS",
-      "F_SUPABASE_FUNCTIONS_SHARED_PUSH_TS",
-      "F_SUPABASE_FUNCTIONS_SHARED_VAPID_TS",
-      "F_SUPABASE_FUNCTIONS_SYNC_INDEX_TS",
-      "F_SUPABASE_FUNCTIONS_USER_ADMIN_INDEX_TS",
-      "F_SUPABASE_MIGRATIONS_202610060001_FOUNDATION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060002_OPERATIONS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060003_ADMINISTRATION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060004_KPIS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060005_PROVISIONING_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060006_HISTORY_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060007_FEEDBACK_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060008_MANAGEMENT_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060009_VALIDATION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060010_PRIVACY_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060011_LIFECYCLE_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060012_WHEY_RULES_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060013_SYNC_QUALIFICATION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060014_EXECUTE_PRIVILEGES_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060015_EXPLICIT_RPC_GRANTS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060016_INVESTIGATION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060017_PUBLIC_LABEL_SOURCE_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060018_TASK_COVERAGE_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060019_STOCK_TRAINING_RULES_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060020_BALANCE_QUERY_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060021_VIEWER_SESSIONS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060022_VIEWER_PIN_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060023_TRAINING_VERSIONS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060024_TRAINING_SYNC_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060025_RELATED_SCOPE_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060026_STAGE_HISTORY_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060027_STAGE_SYNC_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060028_ATTACHMENT_RECEIPTS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060029_LEDGER_CONTROLS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060030_CHECKPOINT_EVIDENCE_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060031_PERMISSION_SCOPE_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060032_BOOTSTRAP_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060033_OFFLINE_SIGNOFF_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060034_OFFLINE_DECISION_SYNC_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060035_IMPACT_PERMISSIONS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060036_PRODUCTION_SYNC_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060037_STAGE_SCHEDULES_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060038_REGISTRY_EDITS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060039_EQUIPMENT_VERIFICATION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060040_VERIFICATION_REQUIRED_FIELDS",
-      "F_SUPABASE_MIGRATIONS_202610060041_TRAINING_ASSETS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060042_TRAINING_VALIDATION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060043_TRAINING_REFRESHERS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060044_TRAINING_CONTENT_CONTRACT_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060045_TRAINING_TASK_REFRESH_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060046_TRAINING_VERSION_SCOPE_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060047_RECEIPT_MEASUREMENT_EVIDENCE",
-      "F_SUPABASE_MIGRATIONS_202610060048_TEXT_RECEPTION_MEASUREMENTS_S",
-      "F_SUPABASE_MIGRATIONS_202610060049_SOP_TRAINING_REFRESH_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060050_FUTURE_TRAINING_TASKS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060051_MATERIAL_DISPOSITION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060052_MATERIAL_DISPOSITION_SYNC_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060053_MATERIAL_BALANCE_ORDER_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060054_PACKAGING_YIELD_REVIEW_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060055_IMPACT_DICTIONARY_CALCULATION",
-      "F_SUPABASE_MIGRATIONS_202610060056_NOTIFICATION_PREFERENCES_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060057_TASK_NOTIFICATIONS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060058_CLOSED_MATERIAL_CLASSIFICATIO",
-      "F_SUPABASE_MIGRATIONS_202610060059_IMPACT_ACTIVITY_BOUNDARIES_SQ",
-      "F_SUPABASE_MIGRATIONS_202610060060_PUSH_SUBSCRIPTIONS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060061_SCOPED_CONFIGURATION_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060062_QUALITY_RECORDS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060063_RELEASE_INTERVALS_SQL",
-      "F_SUPABASE_MIGRATIONS_202610060064_DASHBOARD_FILTERS_SQL",
-      "F_SUPABASE_SEED_SQL",
-      "F_SUPABASE_TESTS_BOOTSTRAP_TEST_SQL",
-      "F_SUPABASE_TESTS_CONFIGURATION_TEST_SQL",
-      "F_SUPABASE_TESTS_DASHBOARD_FILTERS_TEST_SQL",
-      "F_SUPABASE_TESTS_IMPACT_TEST_SQL",
-      "F_SUPABASE_TESTS_MATERIAL_BALANCE_TEST_SQL",
-      "F_SUPABASE_TESTS_NOTIFICATIONS_TEST_SQL",
-      "F_SUPABASE_TESTS_OFFLINE_SIGNOFF_TEST_SQL",
-      "F_SUPABASE_TESTS_PRODUCTION_TEST_SQL",
-      "F_SUPABASE_TESTS_PUSH_TEST_SQL",
-      "F_SUPABASE_TESTS_QUALITY_TEST_SQL",
-      "F_SUPABASE_TESTS_RECEIPT_MEASUREMENTS_TEST_SQL",
-      "F_SUPABASE_TESTS_RELEASE_INTERVALS_TEST_SQL",
-      "F_SUPABASE_TESTS_RULES_TEST_SQL",
-      "F_SUPABASE_TESTS_SECURITY_TEST_SQL",
-      "F_SUPABASE_TESTS_TRAINING_TEST_SQL",
-      "F_SUPABASE_TESTS_YIELD_TEST_SQL",
-      "F_TESTS_FLOWS_SPEC_TS",
-      "F_TESTS_LIVE_ACCEPTANCE_SPEC_TS",
-      "F_TESTS_LIVE_CONFIGURATION_SPEC_TS",
-      "F_TESTS_LIVE_DASHBOARD_FILTERS_SPEC_TS",
-      "F_TESTS_LIVE_FIXTURES_TS",
-      "F_TESTS_LIVE_LABELS_SPEC_TS",
-      "F_TESTS_LIVE_MATERIAL_BALANCE_SPEC_TS",
-      "F_TESTS_LIVE_MFA_TS",
-      "F_TESTS_LIVE_NOTIFICATIONS_SPEC_TS",
-      "F_TESTS_LIVE_OFFLINE_RECEIVING_SPEC_TS",
-      "F_TESTS_LIVE_SELF_RELEASE_SPEC_TS",
-      "F_TESTS_LIVE_TRAINING_SPEC_TS",
-      "F_VITEST_CONFIG_TS",
-      "F_VITE_CONFIG_TS"
+      "F_SRC_TESTING_ACTION_VALIDATION_TEST_TS",
+      "F_SRC_TESTING_ACTION_VALIDATION_TS",
+      "F_SRC_WORKER_COPY_TS",
+      "F_SRC_WORKER_DRAFTS_TS",
+      "F_SRC_WORKER_MODEL_TEST_TS",
+      "F_SRC_WORKER_MODEL_TS",
+      "F_SRC_WORKER_PENDINGCHANGES_TSX",
+      "F_SRC_WORKER_PREPARATION_TSX",
+      "F_SRC_WORKER_WORKDETAIL_TSX",
+      "F_SRC_WORKER_WORKERWORKSPACE_TSX"
     ],
     "removed": [],
     "status_changes": [
       {
+        "id": "CMP_GOOGLE_FILE_BACKEND",
+        "from": "STALE",
+        "to": "VERIFIED"
+      },
+      {
+        "id": "CMP_SIMPLE_APP",
+        "from": "STALE",
+        "to": "VERIFIED"
+      },
+      {
         "id": "CMP_SRC",
-        "from": "ACTIVE",
+        "from": "STALE",
         "to": "VERIFIED"
-      },
-      {
-        "id": "CMP_SRC_COMPONENTS",
-        "from": "IMPLEMENTED",
-        "to": "VERIFIED"
-      },
-      {
-        "id": "CMP_SUPABASE",
-        "from": "ACTIVE",
-        "to": "VERIFIED"
-      },
-      {
-        "id": "SYS_DATA",
-        "from": "ACTIVE",
-        "to": "VERIFIED"
-      },
-      {
-        "id": "SYS_FRONTEND",
-        "from": "ACTIVE",
-        "to": "READY"
       }
     ],
     "quiet": false,
@@ -3895,20 +3684,20 @@
         "gaps": 1
       },
       "state": {
-        "score": 0.625,
+        "score": 0.4545,
         "band": "weak",
-        "gaps": 3
+        "gaps": 6
       },
       "task_context": {
-        "score": 0.75,
-        "band": "fair",
-        "gaps": 1
+        "score": 1.0,
+        "band": "strong",
+        "gaps": 0
       }
     },
     "uncertainty": {
-      "unresolved": 4,
+      "unresolved": 11,
       "ambiguous": 0,
-      "unsupported": 81,
+      "unsupported": 124,
       "stale_facts": 0,
       "contradictions": 0
     }

@@ -1,0 +1,74 @@
+[
+  {
+    "node": "CMP_SELF_HOSTED",
+    "note": "Read-only deployment assessment: inspected Compose, Dockerfile, Caddy, bootstrap, build and backup scripts; researched current GCP/AWS eligibility and OVH/Hetzner pricing. No application changes or deployment performed. User requests chat guidance and no new documents. Map reconciliation preview found two added script nodes; not applied during advisory work.",
+    "next_action": "Confirm whether predictable paid VPS is acceptable or hosting must remain strictly zero dollars. Inspect selected provider billing/checkout via user screenshot before provisioning. Before code changes reconcile map; prepare production build, deployment file layout, fresh secrets and hostname, migrations/bootstrap, and encrypted off-host backup with restore check.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-21T08:58:29.264518+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SELF_HOSTED",
+    "note": "User clarified hosting must be strictly zero dollars and stop rather than charge. Paid VPS options excluded. GCP Compute Engine paid-account free-tier allowances and alerts/spend caps do not guarantee this. No deployment or application changes performed; no documents created.",
+    "next_action": "Request AWS Billing Free Tier plan screenshot with private identifiers hidden. Determine whether account has protected Free account plan and unexpired credits; never upgrade to Paid. If unavailable, assess existing hardware hosting or an eligible protected trial, explaining duration and backup/export before expiry. No billable provisioning.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-10-21T08:58:53.146104+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SELF_HOSTED",
+    "note": "Read-only deployment assessment: current stack is React/Vite plus Fastify, PostgreSQL 17, local private media and a background worker. Browser-only VITE_DEMO_MODE supports a static UI preview. Compared current official Cloudflare Pages, Quick Tunnels, Oracle Always Free and Render limitations. Existing EC2 costs are explicitly unconfirmed in docs/VPS_OPERATIONS.md. No application changes or deployment performed; discovery reconciliation added src/app/app-update.ts to the map.",
+    "next_action": "Choose testing scope: full shared-data testing via an isolated local stack and Cloudflare Quick Tunnel, browser-only demo on Cloudflare Pages, or a full Docker stack on Oracle Always Free if available. For a tunnel, configure the exact public APP_ORIGIN, same-origin /api routing and separate tester credentials; do not expose the local fixture server unchanged.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T12:34:03.821957+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  },
+  {
+    "node": "CMP_SELF_HOSTED",
+    "note": "User rejected Cloudflare/Oracle/Render access complexity and requested GitHub Pages with simple data storage. Clarification confirms shared records across devices and real user accounts are REQUIRED; device-local demo is not acceptable. Read-only assessment: Pages cannot accept JSON writes or run existing Fastify API. Firebase Spark offers auth/data but replacing PostgreSQL RPC workflows would be substantial; Cloud Storage now requires Blaze. GitHub Pages plus Supabase Free is closer to existing PostgreSQL architecture, but current independent auth/media/functions need an intentional managed-backend adapter; the earlier Supabase walkthrough is historical, not a working current deployment. No code changed or deployment performed.",
+    "next_action": "Use GitHub Pages frontend plus a user-owned Supabase Free project if accessible; obtain project URL and publishable key after project setup. Implement managed auth, role-protected database/storage access and equivalents for current server operations, preserving existing self-hosted mode. Do not publish browser-only demo as a substitute for shared multi-user functionality.",
+    "actor": "cli",
+    "kind": "agent-or-user-assertion",
+    "at": "2026-11-15T13:02:14.394858+00:00",
+    "git": {
+      "available": true,
+      "commit": "f317f6fc552bfdf18d7225c93e7ce1f541271222",
+      "short_commit": "f317f6fc552b",
+      "branch": "master",
+      "dirty": true,
+      "worktree": "D:\\Programing\\WISE_Trace",
+      "linked_worktree": false,
+      "git_common_dir": "D:\\Programing\\WISE_Trace\\.git"
+    }
+  }
+]
